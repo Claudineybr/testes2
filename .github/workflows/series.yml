@@ -71,29 +71,19 @@ jobs:
 
           def log(*a): print(*a, flush=True); sys.stdout.flush()
 
-          # ==========================================
-          # FUNÇÃO DE LIMPEZA BLINDADA (O SEGREDO)
-          # ==========================================
+          # FUNÇÃO DE LIMPEZA BLINDADA
           def limpar_titulo_bruto(titulo, url):
               if not titulo: titulo = ""
-              
-              if "http" in titulo.lower() or titulo.lower().endswith(".html"):
-                  titulo = ""
-                  
+              if "http" in titulo.lower() or titulo.lower().endswith(".html"): titulo = ""
               titulo = unicodedata.normalize('NFKD', str(titulo))
               titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
-              
               titulo = re.sub(r'^(?:Marcøsx7|Marcos|Vini7x|ViNi7x|inix|arc|entre_nos)[^a-zA-Z0-9]*[-]?', '', titulo, flags=re.I).strip()
               titulo = re.sub(r'\s*[-–—]\s*(?:assistir|online|serie|completo|dublado|legendado|hd|temporada).*$', '', titulo, flags=re.I).strip()
               titulo = titulo.replace('🍿Clau', '').strip(' -')
-              
               partes = [p.strip() for p in re.split(r'\s+[-–—]\s+', titulo) if p.strip()]
               validas = [p for p in partes if not any(x in p.lower() for x in ['vini','marcos','grave','online','blogspot'])]
-              if validas:
-                  titulo = max(validas, key=len)
-              
+              if validas: titulo = max(validas, key=len)
               titulo = titulo.strip()
-              
               if len(titulo) < 3:
                   m = re.search(r'/([^/]+)\.html', url)
                   if m:
@@ -101,10 +91,8 @@ jobs:
                       slug = re.sub(r'^(?:inix|arc|entre-nos)[-_]', '', slug, flags=re.I)
                       slug = re.sub(r'[-_]\d{4}$', '', slug)
                       titulo = slug.replace('-', ' ').replace('_', ' ').title()
-              
               titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip()
               titulo = re.sub(r'\s*-\s*(?:\d+\s*[ªº]\s*)?(?:temporada|season)\b.*$', '', titulo, flags=re.I).strip()
-              
               return titulo
 
           def construir_fila():
@@ -168,15 +156,12 @@ jobs:
                       elif isinstance(dados, dict):
                           if dados.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
                   except: pass
-
               for a in soup.find_all('a', href=True):
                   if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return True
                   if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return True
-
               texto_pagina = soup.get_text(" ", strip=True).lower()
               if re.search(r'lista de epis[oó]dios', texto_pagina, re.I): return True
               if re.search(r'\b\d+\s*[ªº]\s*temporada', texto_pagina, re.I): return True
-
               return False
 
           def extrair_dados_pagina(html_text, url_pagina):
@@ -190,9 +175,7 @@ jobs:
               if not titulo:
                   og = soup.find('meta', property='og:title')
                   if og and og.get('content'): titulo = og['content']
-              if not titulo and soup.title:
-                  titulo = soup.title.string
-                  
+              if not titulo and soup.title: titulo = soup.title.string
               titulo = limpar_titulo_bruto(titulo, url_pagina)
 
               capa = ""
@@ -200,7 +183,6 @@ jobs:
               if script_ld:
                   try: capa = json.loads(script_ld.string).get('thumbnailUrl', [''])[0]
                   except: pass
-              
               if not capa or capa == 'h' or len(capa) < 5:
                   m = re.search(r'https://blogger\.googleusercontent\.com/img/[^"\'\s<>]+', html_text)
                   if m: capa = m.group(0)
@@ -219,8 +201,7 @@ jobs:
                       if dados_ld.get('contentUrl'): return dados_ld['contentUrl']
                   except: pass
               matches = re.findall(r'(https?://[^"\'\s<>]+(?:\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site)[^"\'\s<>]*)', html_text)
-              if matches:
-                  return matches[0]
+              if matches: return matches[0]
               return None
 
           async def obter_link_episodio(context, url_ep):
@@ -347,8 +328,27 @@ jobs:
                           if item.get("tentativas",0) >= MAX_TENTATIVAS: continue
                           log(f"--> Tentativa {item['tentativas']+1}/{MAX_TENTATIVAS}: {item['arquivo']}")
                           link = await obter_link_episodio(ctx, item['url'])
+                          
+                          # CORREÇÃO DO ERRO: Extrai a capa da página do episódio no retry
+                          capa_ep = "https://via.placeholder.com/500x750?text=Sem+Capa"
+                          try:
+                              r_ep = await asyncio.to_thread(requests.get, item['url'], headers=HEADERS, timeout=20)
+                              soup_ep = BeautifulSoup(r_ep.text, 'html.parser')
+                              m_img = re.search(r'https://blogger\.googleusercontent\.com/img/[^"\'\s<>]+', r_ep.text)
+                              if m_img: capa_ep = m_img.group(0)
+                              script_ld_ep = soup_ep.find('script', type='application/ld+json')
+                              if script_ld_ep:
+                                  try:
+                                      dados_ep = json.loads(script_ld_ep.string)
+                                      thumbs = dados_ep.get('thumbnailUrl', [])
+                                      if thumbs and len(thumbs) > 0 and thumbs[0] != 'h':
+                                          capa_ep = thumbs[0]
+                                  except: pass
+                          except: pass
+
                           if link:
-                              salvar_html(item['arquivo'], item['nome_json'], link, capa_url)
+                              salvar_html(item['arquivo'], item['nome_json'], link, capa_ep)
+                              log("    [+] SUCESSO")
                           else:
                               item["tentativas"] = item.get("tentativas",1) + 1
                               ainda.append(item)
