@@ -1,80 +1,140 @@
 [
   {
-    "arquivo": "sandman_t1e3.html",
-    "nome_json": "Sandman - T1E3 - Sonhe um Pouco Comigo - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2025/09/inix-sandman-tp1e03.html",
-    "tentativas": 6
-  },
-  {
-    "arquivo": "sandman_t1e8.html",
-    "nome_json": "Sandman - T1E8 - Brincando de Casinha - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2025/09/inix-sandman-tp1e08.html",
-    "tentativas": 6
-  },
-  {
     "arquivo": "dead_like_me_t2e2.html",
     "nome_json": "Dead Like Me - T2E2 - Dead Girl Walking (Os últimos passos de uma garota) - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e02.html",
-    "tentativas": 5
+    "tentativas": 6
   },
   {
     "arquivo": "wandinha_t1e1.html",
     "nome_json": "Wandinha - T1E1 - Wandinha É Só Desgosto - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e01_1.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t1e2.html",
     "nome_json": "Wandinha - T1E2 - Desgosto Solitário - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e02_1.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t1e4.html",
     "nome_json": "Wandinha - T1E4 - Noite de Desgosto - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e04_1.html",
-    "tentativas": 2
-  },
-  {
-    "arquivo": "wandinha_t1e5.html",
-    "nome_json": "Wandinha - T1E5 - Quem Planta Desgosto, Colhe? - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e05_1.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t1e6.html",
     "nome_json": "Wandinha - T1E6 - Toma Lá, Não Dá Cá - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e06_1.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t1e7.html",
     "nome_json": "Wandinha - T1E7 - Se Não Me Conhece Ainda? - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e07.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t2e1.html",
     "nome_json": "Wandinha - T2E1 - Mais Desgosto - 🍿Clau",
     "url": "https://vini7xgseries2.blogspot.com/2025/08/inix-wandinha-tp2e01.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t2e4.html",
     "nome_json": "Wandinha - T2E4 - Se Estas Paredes Falassem - 🍿Clau",
     "url": "https://vini7xgseries2.blogspot.com/2025/08/inix-wandinha-tp2e04.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t2e6.html",
     "nome_json": "Wandinha - T2E6 - Conheçe a ti mesmo - 🍿Clau",
     "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-wandinha-tp2e06.html",
-    "tentativas": 2
+    "tentativas": 3
   },
   {
     "arquivo": "wandinha_t2e7.html",
     "nome_json": "Wandinha - T2E7 - De olho no dinheiro - 🍿Clau",
     "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-wandinha-tp2e07.html",
+    "tentativas": 3
+  },
+  {
+    "arquivo": "berserk_2016_legendado_t1e6.html",
+    "nome_json": "Berserk 2016 (LEGENDADO) - T1E6 - .Festim Noturno: Queimando na Fogueira - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e06_1.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e2.html",
+    "nome_json": "Dungeon Meshi - T1E2 - Basilisco Assado; Omelete; Kakiage - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e02.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e3.html",
+    "nome_json": "Dungeon Meshi - T1E3 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e03.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e4.html",
+    "nome_json": "Dungeon Meshi - T1E4 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e04.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e5.html",
+    "nome_json": "Dungeon Meshi - T1E5 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e05.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e7.html",
+    "nome_json": "Dungeon Meshi - T1E7 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e07.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e8.html",
+    "nome_json": "Dungeon Meshi - T1E8 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e08.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e9.html",
+    "nome_json": "Dungeon Meshi - T1E9 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e09.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e10.html",
+    "nome_json": "Dungeon Meshi - T1E10 - Sapos Gigantes; Na Superfície - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e10.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e11.html",
+    "nome_json": "Dungeon Meshi - T1E11 - Dragão Vermelho I - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e11.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e12.html",
+    "nome_json": "Dungeon Meshi - T1E12 - Dragão Vermelho II - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e12.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e14.html",
+    "nome_json": "Dungeon Meshi - T1E14 -  - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e14.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "dungeon_meshi_t1e16.html",
+    "nome_json": "Dungeon Meshi - T1E16 - Faxineiros; Comida com Amor - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e16.html",
     "tentativas": 2
   }
 ]
