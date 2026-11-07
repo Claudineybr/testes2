@@ -479,16 +479,38 @@ jobs:
                           browser = await pw.chromium.launch(headless=True)
                           page = await browser.new_page()
                           await page.goto(url_serie, wait_until="domcontentloaded", timeout=20000)
-                          await asyncio.sleep(5)
-                          html_render = await page.content()
-                          soup_render = BeautifulSoup(html_render, 'html.parser')
-                          if not eh_serie(soup_render, url_serie):
+                          
+                          # 1. Espera o carregamento inicial
+                          await asyncio.sleep(10)
+                          
+                          # 2. Tenta clicar em elementos que revelam episódios
+                          try:
+                              botoes = await page.query_selector_all("text=/Lista de Epis|Temporada|Episódio/i")
+                              for btn in botoes:
+                                  try:
+                                      await btn.click(timeout=2000)
+                                      log(f"    [🖱️] Clicou em '{await btn.inner_text()}'")
+                                      await asyncio.sleep(2)
+                                  except: pass
+                          except: pass
+                          
+                          # 3. Pega o texto renderizado
+                          texto_render = await page.inner_text('body')
+                          texto_render = html.unescape(texto_render).lower()
+                          
+                          # 4. Verifica no texto renderizado
+                          if re.search(r'lista de epis[oó]dios', texto_render, re.I) or re.search(r'\b\d+\s*[ªº]\s*temporada', texto_render, re.I) or re.search(r'\btemporada\b', texto_render, re.I) or re.search(r'\bepis[oó]dio\b', texto_render, re.I):
+                              log("    [✅] Série detectada via texto renderizado após clique!")
+                              html_render = await page.content()
+                              soup_render = BeautifulSoup(html_render, 'html.parser')
+                              html_final = html_render
+                              soup = soup_render
+                          else:
                               log("    (É FILME. Pulando...)")
                               with open(ARQ_FEITAS,"a",encoding="utf-8") as f: f.write(url_serie.strip()+"\n")
                               await browser.close()
                               return
-                          html_final = html_render
-                          soup = soup_render
+                          
                           await browser.close()
 
                   titulo, capa_url = extrair_dados_pagina(html_final, url_serie)
@@ -649,7 +671,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de series (deteccao de serie ultra-robusta)"
+          git commit -m "feat: mega extracao de series (clique automatico e espera de 10s para series dinamicas)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
