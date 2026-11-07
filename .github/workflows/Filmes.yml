@@ -76,15 +76,11 @@ jobs:
           ARQ_FEITAS      = Path("filmes_feitos.txt")
           ARQ_PENDENTES   = Path("filmes_pendentes.json")
           ARQ_DESCARTADOS = Path("filmes_descartados.txt")
+          ARQ_REPROCESSAR = Path("reprocessar.txt")
 
           MAX_TENTATIVAS = 6
           LOTE_SIZE = int(os.environ.get('LOTE_SIZE', 100))
           MODO = os.environ.get('MODO_EXECUCAO', 'baixar_e_consertar').lower()
-
-          # Override manual (emergência): URL -> título correto
-          OVERRIDE_TITULOS = {
-              # "https://www.vini7xgrave.site/2026/11/inix-bela-e-fera-1991.html": "A Bela e a Fera",
-          }
 
           def log(*a):
               print(*a, flush=True)
@@ -93,8 +89,16 @@ jobs:
           def parece_sujo(titulo):
               """True se o título AINDA começa com nome do site após limpeza."""
               t = (titulo or '').strip().lower()
-              prefixos = r'(?:vini|marcos|inix|arc|grave|clau|site|filmes\s*e\s*series|rave)'
+              prefixos = r'(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)'
               return bool(re.match(r'^[^\w]*' + prefixos + r'(?:[^a-z]|$)', t))
+
+          def decodificar_escapes_unicode(texto):
+              """Transforma \\ud835\\udc7d (literal) no caractere real 𝑽."""
+              return re.sub(
+                  r'\\u([0-9a-fA-F]{4})',
+                  lambda m: chr(int(m.group(1), 16)),
+                  texto
+              )
 
           def limpar_titulo_bruto(titulo, url):
               if not titulo:
@@ -102,21 +106,36 @@ jobs:
               if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"):
                   titulo = ""
 
+              # Decodifica escapes Unicode literais (\ud835\udc7d → 𝑽)
+              titulo = decodificar_escapes_unicode(str(titulo))
+
               # Normaliza unicode (𝑽 -> V, 𝟕 -> 7, remove diacríticos)
-              titulo = unicodedata.normalize('NFKD', str(titulo))
+              titulo = unicodedata.normalize('NFKD', titulo)
               titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
 
-              # Formato pgTtl: "Vini7x Rave - Filmes e Séries: Titulo Real"
-              if ':' in titulo:
-                  prefixo, resto = titulo.split(':', 1)
-                  if re.search(r'(?:vini|marcos|inix|arc|grave|clau|site|filmes|series|rave)', prefixo, re.I):
-                      titulo = resto.strip()
+              # Regex do nome do site COM word boundary
+              padrao_site = r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s+e\s+s[eé]ries)\b'
 
-              # Formato "Site - Titulo" (só remove se o prefixo tiver nome do site)
-              if ' - ' in titulo:
-                  prefixo, resto = titulo.split(' - ', 1)
-                  if re.search(r'(?:vini|marcos|inix|arc|grave|clau|site|filmes|series|rave)', prefixo, re.I):
-                      titulo = resto.strip()
+              # Loop: remove prefixos do site repetidamente (se houver camadas)
+              for _ in range(5):
+                  mudou = False
+
+                  # 1) Primeiro " - " (formato mais comum)
+                  if ' - ' in titulo:
+                      prefixo, resto = titulo.split(' - ', 1)
+                      if re.search(padrao_site, prefixo, re.I):
+                          titulo = resto.strip()
+                          mudou = True
+
+                  # 2) Depois ":" (formato pgTtl "Site: Título")
+                  if ':' in titulo:
+                      prefixo, resto = titulo.split(':', 1)
+                      if re.search(padrao_site, prefixo, re.I):
+                          titulo = resto.strip()
+                          mudou = True
+
+                  if not mudou:
+                      break
 
               # Remove sufixos (" - Assistir Online", " Dublado" etc)
               titulo = re.sub(
@@ -329,11 +348,31 @@ jobs:
                   pass
           pendentes = list(pendentes_dict.values())
 
+          # === Lê reprocessar.txt (URLs que o usuário quer forçar) ===
+          reprocessar_urls = []
+          if ARQ_REPROCESSAR.exists():
+              for linha in ARQ_REPROCESSAR.read_text(encoding="utf-8").splitlines():
+                  u = linha.strip()
+                  if u and not u.startswith("#"):
+                      reprocessar_urls.append(u)
+
+          if reprocessar_urls:
+              log(f"Reprocessar.txt: {len(reprocessar_urls)} URL(s) forçada(s)")
+              for u in reprocessar_urls:
+                  if u in feitas:
+                      feitas.discard(u)
+                      log(f"    [🔁] Retirada de 'feitas': {u}")
+              # Esvazia o arquivo (para não repetir na próxima run)
+              ARQ_REPROCESSAR.write_text("", encoding="utf-8")
+
           todas = [u.strip() for u in ARQ_FILA.read_text(encoding="utf-8").splitlines() if u.strip()]
-          fila = [u for u in todas if u not in feitas]
+          fila_normal = [u for u in todas if u not in feitas and u not in reprocessar_urls]
+
+          # Prioriza URLs de reprocessar no início do lote
+          fila = reprocessar_urls + fila_normal
           lote = fila[:LOTE_SIZE]
 
-          log(f"Fila: {len(todas)} | Faltam: {len(fila)} | Lote: {LOTE_SIZE} | Modo: {MODO}")
+          log(f"Fila: {len(todas)} | Faltam: {len(fila_normal)} | Lote: {LOTE_SIZE} | Modo: {MODO}")
 
           async def extrair_video_playwright(context, url_ep):
               page = await context.new_page()
@@ -381,14 +420,9 @@ jobs:
                   if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I):
                       return None, None, "SÉRIE"
 
-              # 🗳️ Votação por consenso
+              # Votação por consenso
               fontes = extrair_titulos_fontes(soup, html_text)
               titulo = votar_titulos(fontes, url_pagina)
-
-              # Override manual, se existir
-              if url_pagina in OVERRIDE_TITULOS:
-                  titulo = OVERRIDE_TITULOS[url_pagina]
-                  log(f"    [🔧] Override aplicado: '{titulo}'")
 
               # Capa
               capa = ""
@@ -468,7 +502,10 @@ jobs:
                       "inix" in nome_norm.lower() or
                       "http" in nome_norm.lower() or
                       len(nome_norm) < 3 or
-                      bool(re.search(r'^(?:[^\w]*)(?:vini|marcos|inix|arc|grave|clau|site)', nome_norm, re.I))
+                      bool(re.search(
+                          r'^(?:[^\w]*)(?:vini7x|vini|marcos|inix|grave|clau|site|rave)',
+                          nome_norm, re.I
+                      ))
                   )
                   c_quebrada = ("placeholder" in capa or "Sem+Capa" in capa or not capa or is_icon_url(capa))
                   return n_quebrado, c_quebrada
@@ -633,7 +670,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de filmes (votacao por consenso)"
+          git commit -m "feat: mega extracao (votacao consenso + reprocessar.txt)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
