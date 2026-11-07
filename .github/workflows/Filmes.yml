@@ -63,7 +63,7 @@ jobs:
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
-          import asyncio, re, json, requests, sys, unicodedata, os
+          import asyncio, re, json, requests, sys, unicodedata, os, html
           from collections import Counter
           from bs4 import BeautifulSoup
           from pathlib import Path
@@ -86,19 +86,36 @@ jobs:
               print(*a, flush=True)
               sys.stdout.flush()
 
+          def remover_surrogates(texto):
+              """Remove qualquer surrogate órfão que tenha sobrado."""
+              if not texto:
+                  return texto
+              return ''.join(
+                  c for c in texto
+                  if not (0xD800 <= ord(c) <= 0xDFFF)
+              )
+
+          def decodificar_escapes_unicode(texto):
+              """Transforma \\ud835\\udc7d (par surrogate) no caractere real 𝑽."""
+              if not texto or '\\u' not in texto:
+                  return texto
+              # json.loads combina pares surrogate automaticamente
+              try:
+                  return json.loads('"' + texto.replace('"', '\\"') + '"')
+              except Exception:
+                  pass
+              # Fallback: descarta surrogates órfãos
+              def _repl(m):
+                  code = int(m.group(1), 16)
+                  if 0xD800 <= code <= 0xDFFF:
+                      return ''
+                  return chr(code)
+              return re.sub(r'\\u([0-9a-fA-F]{4})', _repl, texto)
+
           def parece_sujo(titulo):
-              """True se o título AINDA começa com nome do site após limpeza."""
               t = (titulo or '').strip().lower()
               prefixos = r'(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)'
               return bool(re.match(r'^[^\w]*' + prefixos + r'(?:[^a-z]|$)', t))
-
-          def decodificar_escapes_unicode(texto):
-              """Transforma \\ud835\\udc7d (literal) no caractere real 𝑽."""
-              return re.sub(
-                  r'\\u([0-9a-fA-F]{4})',
-                  lambda m: chr(int(m.group(1), 16)),
-                  texto
-              )
 
           def limpar_titulo_bruto(titulo, url):
               if not titulo:
@@ -106,55 +123,71 @@ jobs:
               if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"):
                   titulo = ""
 
-              # Decodifica escapes Unicode literais (\ud835\udc7d → 𝑽)
-              titulo = decodificar_escapes_unicode(str(titulo))
+              # 1) HTML unescape (&#8211; → –, &amp; → &, etc.)
+              titulo = html.unescape(str(titulo))
 
-              # Normaliza unicode (𝑽 -> V, 𝟕 -> 7, remove diacríticos)
+              # 2) Decodifica escapes Unicode literais (\ud835\udc7d → 𝑽)
+              titulo = decodificar_escapes_unicode(titulo)
+
+              # 3) Normaliza unicode (𝑽 -> V, 𝟕 -> 7, remove diacríticos)
               titulo = unicodedata.normalize('NFKD', titulo)
               titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
 
-              # Regex do nome do site COM word boundary
+              # 4) Regex do nome do site COM word boundary
               padrao_site = r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s+e\s+s[eé]ries)\b'
 
-              # Loop: remove prefixos do site repetidamente (se houver camadas)
-              for _ in range(5):
+              # 5) Loop: remove prefixos/sufixos do site repetidamente
+              for _ in range(6):
                   mudou = False
 
-                  # 1) Primeiro " - " (formato mais comum)
+                  # 5a) Prefixo com " - " (Site - Title)
                   if ' - ' in titulo:
                       prefixo, resto = titulo.split(' - ', 1)
                       if re.search(padrao_site, prefixo, re.I):
                           titulo = resto.strip()
                           mudou = True
 
-                  # 2) Depois ":" (formato pgTtl "Site: Título")
+                  # 5b) Prefixo com ":" (Site: Title)
                   if ':' in titulo:
                       prefixo, resto = titulo.split(':', 1)
                       if re.search(padrao_site, prefixo, re.I):
                           titulo = resto.strip()
                           mudou = True
 
+                  # 5c) SUFIXO com " - " (Title - Site)
+                  if ' - ' in titulo:
+                      prefixo, resto = titulo.rsplit(' - ', 1)
+                      if re.search(padrao_site, resto, re.I):
+                          titulo = prefixo.strip()
+                          mudou = True
+
                   if not mudou:
                       break
 
-              # Remove sufixos (" - Assistir Online", " Dublado" etc)
+              # 6) Remove sufixos ruins
               titulo = re.sub(
                   r'\s*[-–—]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada).*$',
                   '', titulo, flags=re.I
               ).strip()
-              titulo = titulo.replace('🍿Clau', '').strip(' -')
+              titulo = titulo.replace('🍿Clau', '').strip(' -–—')
 
-              # Remove o ano do final (ele é re-adicionado separadamente)
-              titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip()
+              # 7) Remove ano do final
+              titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip(' -–—')
 
-              # Fallback: se ficou vazio, usa o slug da URL
+              # 8) Limpa hífens/espaços sobrando no início/fim
+              titulo = re.sub(r'\s+', ' ', titulo).strip(' -–—')
+
+              # 9) Fallback via URL
               if len(titulo) < 3:
                   m = re.search(r'/([^/]+)\.html', url)
                   if m:
                       slug = m.group(1)
                       slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
-                      slug = re.sub(r'[-_]\d{4}$', '', slug)
+                      slug = re.sub(r'[-_]\d{4}.*$', '', slug)
                       titulo = slug.replace('-', ' ').replace('_', ' ').title()
+
+              # 10) Safety net: remove qualquer surrogate que tenha sobrado
+              titulo = remover_surrogates(titulo)
 
               return titulo
 
@@ -166,7 +199,6 @@ jobs:
               return any(x in url_lower for x in lixos)
 
           def extrair_titulos_fontes(soup, html_text):
-              """Coleta o título bruto de TODAS as fontes disponíveis."""
               fontes = {}
 
               h1 = soup.find('h1', class_='post-title') or soup.find('h1')
@@ -235,7 +267,6 @@ jobs:
               return fontes
 
           def votar_titulos(fontes, url):
-              """Limpa cada fonte e devolve o título mais votado."""
               if not fontes:
                   return limpar_titulo_bruto("", url)
 
@@ -250,12 +281,10 @@ jobs:
               if not limpos:
                   return limpar_titulo_bruto("", url)
 
-              # 1ª passada: descarta fontes que AINDA parecem sujas
               limpos_bons = {k: v for k, v in limpos.items() if not parece_sujo(v)}
               if limpos_bons:
                   limpos = limpos_bons
 
-              # 2ª passada: votação (case-insensitive)
               contagem = Counter()
               original = {}
               for nome, valor in limpos.items():
@@ -276,7 +305,7 @@ jobs:
               else:
                   log(f"    [🗳️] Consenso total ({votos}/{total}): '{titulo_final}'")
 
-              return titulo_final
+              return remover_surrogates(titulo_final)
 
           def construir_indice_videos():
               log("Mapeando arquivos existentes...")
@@ -348,7 +377,6 @@ jobs:
                   pass
           pendentes = list(pendentes_dict.values())
 
-          # === Lê reprocessar.txt (URLs que o usuário quer forçar) ===
           reprocessar_urls = []
           if ARQ_REPROCESSAR.exists():
               for linha in ARQ_REPROCESSAR.read_text(encoding="utf-8").splitlines():
@@ -362,13 +390,11 @@ jobs:
                   if u in feitas:
                       feitas.discard(u)
                       log(f"    [🔁] Retirada de 'feitas': {u}")
-              # Esvazia o arquivo (para não repetir na próxima run)
               ARQ_REPROCESSAR.write_text("", encoding="utf-8")
 
           todas = [u.strip() for u in ARQ_FILA.read_text(encoding="utf-8").splitlines() if u.strip()]
           fila_normal = [u for u in todas if u not in feitas and u not in reprocessar_urls]
 
-          # Prioriza URLs de reprocessar no início do lote
           fila = reprocessar_urls + fila_normal
           lote = fila[:LOTE_SIZE]
 
@@ -413,18 +439,15 @@ jobs:
           def extrair_dados_pagina(html_text, url_pagina):
               soup = BeautifulSoup(html_text, 'html.parser')
 
-              # Checagem de série
               for a in soup.find_all('a', href=True):
                   if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I):
                       return None, None, "SÉRIE"
                   if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I):
                       return None, None, "SÉRIE"
 
-              # Votação por consenso
               fontes = extrair_titulos_fontes(soup, html_text)
               titulo = votar_titulos(fontes, url_pagina)
 
-              # Capa
               capa = ""
               script_ld = soup.find('script', type='application/ld+json')
               if script_ld:
@@ -444,7 +467,6 @@ jobs:
                       else:
                           capa = "https://via.placeholder.com/500x750?text=Sem+Capa"
 
-              # Vídeo
               video = None
               if script_ld:
                   try:
@@ -462,6 +484,9 @@ jobs:
               return titulo.strip(), capa, video
 
           def salvar_html(caminho_destino, nome_json, link, capa_url):
+              nome_json = remover_surrogates(nome_json)
+              capa_url = remover_surrogates(capa_url) if capa_url else capa_url
+
               uid = re.sub(r'[^a-zA-Z0-9]', '', caminho_destino.name.replace('.html', ''))
               base_url = "https://api-pobreflix-filmes.pages.dev"
               file_url = f"{base_url}/{caminho_destino.name}"
@@ -474,7 +499,7 @@ jobs:
                   "contentUrl": link, "embedUrl": link
               }
               js = json.dumps(dados, ensure_ascii=False, indent=4)
-              html = (
+              html_out = (
                   f'<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n<meta charset="UTF-8">\n'
                   f'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
                   f'<script type="application/ld+json">\n{js}\n</script>\n<title>{nome_json}</title>\n'
@@ -482,7 +507,7 @@ jobs:
                   f'video {{ width: 100%; height: 100%; outline: none; }}\n</style>\n</head>\n<body>\n'
                   f'<video src="{link}" poster="{capa_url}" controls autoplay playsinline></video>\n</body>\n</html>'
               )
-              caminho_destino.write_text(html, encoding='utf-8')
+              caminho_destino.write_text(html_out, encoding='utf-8', errors='replace')
 
           def checar_defeitos(arquivo):
               try:
@@ -646,7 +671,6 @@ jobs:
 
                   if pendentes:
                       log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
-                      ainda = []
                       for item in pendentes:
                           if Path(item['arquivo']).exists():
                               continue
@@ -670,7 +694,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao (votacao consenso + reprocessar.txt)"
+          git commit -m "feat: mega extracao (fix surrogates + html unescape + sufixo site)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
@@ -697,7 +721,6 @@ jobs:
           echo "Faltam: $FALTAM"
           if [ "$FALTAM" -le 0 ]; then exit 0; fi
 
-          LIMITE_ISO=$(date -u -d '60 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
           RECENTES=$(gh run list --workflow="Filmes.yml" --limit 100 --json event,createdAt --jq "[.[] | select(.event == \"workflow_dispatch\")] | length" --repo "$REPO" 2>/dev/null || echo 0)
           if [ "$RECENTES" -ge 100 ]; then exit 0; fi
 
