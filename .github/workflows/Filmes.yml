@@ -337,7 +337,7 @@ jobs:
                   except: pass
               if not video:
                   matches = re.findall(
-                      r'(https?://[^"\'\s<>]+?\.(?:mp4|m3u8)(?:[?"\'\s<>]|$)|https?://[^"\'\s<>]+?oneplayer\.site[^"\'\s<>]*|https?://[^"\'\s<>]+?tankie\.tube/videos/embed[^"\'\s<>]*)',
+                      r'((?:https?:)?//[^"\'\s<>]+?\.(?:mp4|m3u8)(?:[?"\'\s<>]|$)|(?:https?:)?//[^"\'\s<>]+?oneplayer\.site[^"\'\s<>]*|(?:https?:)?//[^"\'\s<>]+?tankie\.tube/videos/embed[^"\'\s<>]*)',
                       html_text, re.I
                   )
                   if matches: video = matches[0]
@@ -348,18 +348,24 @@ jobs:
               capa_url = remover_surrogates(capa_url) if capa_url else ""
               if not capa_url or capa_url in ('h', 'None', 'null') or is_icon_url(capa_url): capa_url = CAPA_FALLBACK
               
-              if not link and caminho_destino.exists():
+              # Lê o link antigo do arquivo, se existir, para nunca sobrescrever com nada
+              link_antigo = None
+              if caminho_destino.exists():
                   try:
                       antigo = caminho_destino.read_text(encoding="utf-8")
                       m = re.search(r'"contentUrl":\s*"([^"]+)"', antigo)
                       if m and m.group(1) not in ("None", "null", ""):
-                          link = m.group(1)
-                          log("    [ℹ️] Link preservado do arquivo existente.")
+                          link_antigo = m.group(1)
                   except Exception: pass
 
-              if not link:
-                  log("    [⚠️] Sem link de vídeo — abortando salvamento para não corromper.")
+              # Usa o link novo, se veio. Senão, usa o antigo. Senão, aborta.
+              link_final = link if link else link_antigo
+              if not link_final:
+                  log("    [⚠️] Sem link de vídeo novo ou antigo — impossível consertar.")
                   return False
+
+              if not link:
+                  log(f"    [ℹ️] Link do arquivo antigo preservado: {link_final[:50]}...")
 
               base_url = "https://api-pobreflix-filmes.pages.dev"
               file_url = f"{base_url}/{caminho_destino.name}"
@@ -369,7 +375,7 @@ jobs:
                   "name": nome_json, "description": f"Assista {nome_json}",
                   "thumbnailUrl": [capa_url],
                   "uploadDate": "2020-01-01T00:00:00+00:00", "inLanguage": "pt",
-                  "contentUrl": link, "embedUrl": link,
+                  "contentUrl": link_final, "embedUrl": link_final,
                   "supportPlatform": ["https://schema.org/IOSPlatform", "https://schema.org/AndroidPlatform"],
                   "duration": "PT02H00M00S",
                   "interactionStatistic": {"@type": "InteractionCounter", "interactionType": {"@type": "WatchAction"}, "userInteractionCount": 9458}
@@ -377,7 +383,7 @@ jobs:
               js = json.dumps(dados, ensure_ascii=False, indent=4)
               js = js.replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
               title_attr = html.escape(nome_json, quote=True)
-              link_attr  = html.escape(link, quote=True)
+              link_attr  = html.escape(link_final, quote=True)
               capa_attr  = html.escape(capa_url, quote=True)
 
               html_out = (
@@ -410,31 +416,72 @@ jobs:
                   nome_norm = "".join([c for c in nome_norm if not unicodedata.combining(c)])
                   n_quebrado = ("inix" in nome_norm.lower() or "http" in nome_norm.lower() or len(nome_norm) < 3 or bool(re.search(r'^(?:[^\w]*)(?:vini7x|vini|marcos|inix|grave|clau|site|rave)', nome_norm, re.I)))
                   c_quebrada = ("placeholder" in capa or "Sem+Capa" in capa or not capa or is_icon_url(capa))
-                  l_quebrado = (not link or link in ("None", "null", "") or not re.match(r'https?://', str(link)))
+                  l_quebrado = (
+                      not link or 
+                      link in ("None", "null", "") or 
+                      not re.match(r'(?:https?:)?//', str(link))
+                  )
                   return n_quebrado, c_quebrada, l_quebrado
               except: return True, True, True
 
-          async def capturar_link_dom(page):
-              """Varre o DOM renderizado em busca de links de vídeo em <a> ou <iframe>."""
-              links = await page.evaluate("""
-                  () => {
-                      const urls = [];
-                      document.querySelectorAll('a').forEach(a => {
-                          if (a.href && (a.href.includes('oneplayer') || a.href.endsWith('.mp4') || a.href.includes('.m3u8'))) {
-                              urls.push(a.href);
+          async def tentar_extrair_link_playwright(context, url_pagina):
+              page = await context.new_page()
+              capturados = []
+              def on_response(res):
+                  u = res.url
+                  if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I) or 'tankie' in u or 'oneplayer' in u:
+                      capturados.append(u)
+              page.on("response", on_response)
+              
+              link_final = None
+              try:
+                  await page.goto(url_pagina, wait_until="domcontentloaded", timeout=20000)
+                  await asyncio.sleep(4.0) # Espera carregar o DOM
+                  
+                  # 1. Tenta buscar no DOM diretamente (incluindo atributos href e src)
+                  links = await page.evaluate("""
+                      () => {
+                          const urls = [];
+                          document.querySelectorAll('a, iframe, video, source').forEach(el => {
+                              if (el.href && (el.href.includes('oneplayer') || el.href.endsWith('.mp4') || el.href.includes('.m3u8'))) urls.push(el.href);
+                              if (el.src && (el.src.includes('oneplayer') || el.src.endsWith('.mp4') || el.src.includes('.m3u8'))) urls.push(el.src);
+                          });
+                          return urls;
+                      }
+                  """)
+                  if links:
+                      link_final = links[0]
+                      log(f"    [🎯] Link encontrado direto no DOM: {link_final[:60]}...")
+                  
+                  # 2. Se não achou, tenta forçar o play
+                  if not link_final:
+                      # Tenta clicar no elemento #play ou .play ou no centro da tela
+                      clicou = await page.evaluate("""
+                          () => {
+                              const el = document.querySelector('#play, .play, [class*="play"], button');
+                              if (el) { el.click(); return true; }
+                              return false;
                           }
-                      });
-                      document.querySelectorAll('iframe').forEach(ifr => {
-                          if (ifr.src && (ifr.src.includes('oneplayer') || ifr.src.endsWith('.mp4') || ifr.src.includes('.m3u8'))) {
-                              urls.push(ifr.src);
-                          }
-                      });
-                      return urls;
-                  }
-              """)
-              if links:
-                  return links[0]
-              return None
+                      """)
+                      if not clicou:
+                          # Se não achou botão, clica no meio da tela onde o player está
+                          await page.mouse.click(400, 300)
+                          log("    [🖱️] Clicou no centro da tela...")
+                      else:
+                          log("    [🖱️] Clicou no botão de play...")
+                          
+                      await asyncio.sleep(5.0) # Espera a requisição do vídeo acontecer
+                      
+                      if capturados:
+                          # Filtra para pegar o .mp4 se tiver, senão pega o primeiro
+                          diretos = [u for u in capturados if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I)]
+                          link_final = diretos[0] if diretos else capturados[0]
+                          log(f"    [🎯] Link capturado via Network após clique: {link_final[:60]}...")
+              except Exception as e:
+                  log(f"    [⚠️] Playwright falhou: {e}")
+              finally:
+                  await page.close()
+              return link_final
 
           async def processar_item(context, url_pagina):
               log(f"\n--> Verificando: {url_pagina}")
@@ -449,44 +496,10 @@ jobs:
                   titulo, capa_url, link = extrair_dados_pagina(r.text, url_pagina)
 
                   if not link:
-                      page = await context.new_page()
-                      capturados = []
-                      def on_response(res):
-                          u = res.url
-                          if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I) or 'tankie' in u or 'oneplayer' in u:
-                              capturados.append(u)
-                      page.on("response", on_response)
-                      try:
-                          await page.goto(url_pagina, wait_until="domcontentloaded", timeout=20000)
-                          await asyncio.sleep(5.0)
-                          
-                          # Varre o DOM renderizado em busca de links
-                          link_dom = await capturar_link_dom(page)
-                          if link_dom:
-                              link = link_dom
-                              log(f"    [🎯] Link encontrado no DOM: {link[:60]}...")
-                          
-                          if not link and capturados:
-                              diretos = [u for u in capturados if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I)]
-                              link = diretos[0] if diretos else capturados[0]
-                              log(f"    [🎯] Link capturado via Network: {link[:60]}...")
-
-                          if not link:
-                              html_render = await page.content()
-                              soup_render = BeautifulSoup(html_render, 'html.parser')
-                              if eh_serie(soup_render, url_pagina):
-                                  log("    (É SÉRIE detectada via Playwright. Pulando...)")
-                                  marcar_feita(url_pagina)
-                                  return
-                              titulo_r, capa_r, link = extrair_dados_pagina(html_render, url_pagina)
-                              if not capa_url or capa_url == 'h' or is_icon_url(capa_url): capa_url = capa_r
-                              # Prioriza título do Playwright (mais fontes votadas)
-                              if titulo_r and titulo_r != 'h':
-                                  titulo = titulo_r
-                      except Exception as e:
-                          log(f"    [⚠️] Playwright falhou: {e}")
-                      finally:
-                          await page.close()
+                      link = await tentar_extrair_link_playwright(context, url_pagina)
+                      if not link:
+                          # Tenta mais uma vez puxar título/capa do Playwright se necessário
+                          pass
 
                   ano = ""
                   m = re.search(r'/([^/]+)\.html', url_pagina)
@@ -617,7 +630,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao (dom link capture + titulo playwright prioridade)"
+          git commit -m "feat: mega extracao (fix link null + click play button + regex //)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
