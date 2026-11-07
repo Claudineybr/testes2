@@ -318,6 +318,49 @@ jobs:
           def extrair_dados_pagina(html_text, url_pagina):
               soup = BeautifulSoup(html_text, 'html.parser')
               titulo = votar_titulos(extrair_titulos_fontes(soup, html_text), url_pagina)
+              
+              video = None
+              
+              # 1. Varre TODOS os scripts JSON-LD procurando por contentUrl ou embedUrl
+              for script in soup.find_all('script', type='application/ld+json'):
+                  try:
+                      d = json.loads(script.string)
+                      if isinstance(d, dict):
+                          if d.get('contentUrl'): video = d['contentUrl']; break
+                          if d.get('embedUrl'): video = d['embedUrl']; break
+                      elif isinstance(d, list):
+                          for item in d:
+                              if isinstance(item, dict) and item.get('contentUrl'): video = item['contentUrl']; break
+                              if isinstance(item, dict) and item.get('embedUrl'): video = item['embedUrl']; break
+                      if video: break
+                  except: pass
+                  
+              # 2. Se não achou, varre as tags <a> do HTML (como o href do vini-thumb)
+              if not video:
+                  for a in soup.find_all('a', href=True):
+                      href = a['href']
+                      if 'oneplayer' in href or '.mp4' in href or '.m3u8' in href:
+                          video = href
+                          break
+                          
+              # 3. Se não achou, varre iframes, videos e sources
+              if not video:
+                  for tag in soup.find_all(['iframe', 'video', 'source']):
+                      src = tag.get('src', '')
+                      if 'oneplayer' in src or '.mp4' in src or '.m3u8' in src:
+                          video = src
+                          break
+                          
+              # 4. Fallback com regex bruta no texto do HTML
+              if not video:
+                  matches = re.findall(
+                      r'(?:https?:)?//[^"\'\s<>]+?(?:\.mp4|\.m3u8|oneplayer\.site|tankie\.tube/videos/embed)[^"\'\s<>]*',
+                      html_text, re.I
+                  )
+                  if matches:
+                      video = matches[0]
+
+              # --- EXTRAÇÃO DA CAPA ---
               capa = ""
               script_ld = soup.find('script', type='application/ld+json')
               if script_ld:
@@ -329,18 +372,14 @@ jobs:
                   else:
                       og_img = soup.find('meta', property='og:image')
                       if og_img and og_img.get('content') and not is_icon_url(og_img['content']): capa = og_img['content']
-                      else: capa = CAPA_FALLBACK
+                      else:
+                          # Tenta achar a imagem do TMDB que está no snippet
+                          img_tag = soup.find('img', src=re.compile(r'image\.tmdb\.org'))
+                          if img_tag and img_tag.get('src') and not is_icon_url(img_tag['src']):
+                              capa = img_tag['src']
+                          else:
+                              capa = CAPA_FALLBACK
               
-              video = None
-              if script_ld:
-                  try: video = json.loads(script_ld.string).get('contentUrl')
-                  except: pass
-              if not video:
-                  matches = re.findall(
-                      r'((?:https?:)?//[^"\'\s<>]+?\.(?:mp4|m3u8)(?:[?"\'\s<>]|$)|(?:https?:)?//[^"\'\s<>]+?oneplayer\.site[^"\'\s<>]*|(?:https?:)?//[^"\'\s<>]+?tankie\.tube/videos/embed[^"\'\s<>]*)',
-                      html_text, re.I
-                  )
-                  if matches: video = matches[0]
               return titulo.strip(), capa, video
 
           def salvar_html(caminho_destino, nome_json, link, capa_url):
@@ -348,7 +387,6 @@ jobs:
               capa_url = remover_surrogates(capa_url) if capa_url else ""
               if not capa_url or capa_url in ('h', 'None', 'null') or is_icon_url(capa_url): capa_url = CAPA_FALLBACK
               
-              # Lê o link antigo do arquivo, se existir, para nunca sobrescrever com nada
               link_antigo = None
               if caminho_destino.exists():
                   try:
@@ -358,7 +396,6 @@ jobs:
                           link_antigo = m.group(1)
                   except Exception: pass
 
-              # Usa o link novo, se veio. Senão, usa o antigo. Senão, aborta.
               link_final = link if link else link_antigo
               if not link_final:
                   log("    [⚠️] Sem link de vídeo novo ou antigo — impossível consertar.")
@@ -419,69 +456,26 @@ jobs:
                   l_quebrado = (
                       not link or 
                       link in ("None", "null", "") or 
-                      not re.match(r'(?:https?:)?//', str(link))
+                      not re.search(r'\.(mp4|m3u8|oneplayer\.site|tankie\.tube)', str(link), re.I)
                   )
                   return n_quebrado, c_quebrada, l_quebrado
               except: return True, True, True
 
           async def tentar_extrair_link_playwright(context, url_pagina):
               page = await context.new_page()
-              capturados = []
-              def on_response(res):
-                  u = res.url
-                  if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I) or 'tankie' in u or 'oneplayer' in u:
-                      capturados.append(u)
-              page.on("response", on_response)
-              
-              link_final = None
               try:
                   await page.goto(url_pagina, wait_until="domcontentloaded", timeout=20000)
-                  await asyncio.sleep(4.0) # Espera carregar o DOM
-                  
-                  # 1. Tenta buscar no DOM diretamente (incluindo atributos href e src)
-                  links = await page.evaluate("""
-                      () => {
-                          const urls = [];
-                          document.querySelectorAll('a, iframe, video, source').forEach(el => {
-                              if (el.href && (el.href.includes('oneplayer') || el.href.endsWith('.mp4') || el.href.includes('.m3u8'))) urls.push(el.href);
-                              if (el.src && (el.src.includes('oneplayer') || el.src.endsWith('.mp4') || el.src.includes('.m3u8'))) urls.push(el.src);
-                          });
-                          return urls;
-                      }
-                  """)
-                  if links:
-                      link_final = links[0]
-                      log(f"    [🎯] Link encontrado direto no DOM: {link_final[:60]}...")
-                  
-                  # 2. Se não achou, tenta forçar o play
-                  if not link_final:
-                      # Tenta clicar no elemento #play ou .play ou no centro da tela
-                      clicou = await page.evaluate("""
-                          () => {
-                              const el = document.querySelector('#play, .play, [class*="play"], button');
-                              if (el) { el.click(); return true; }
-                              return false;
-                          }
-                      """)
-                      if not clicou:
-                          # Se não achou botão, clica no meio da tela onde o player está
-                          await page.mouse.click(400, 300)
-                          log("    [🖱️] Clicou no centro da tela...")
-                      else:
-                          log("    [🖱️] Clicou no botão de play...")
-                          
-                      await asyncio.sleep(5.0) # Espera a requisição do vídeo acontecer
-                      
-                      if capturados:
-                          # Filtra para pegar o .mp4 se tiver, senão pega o primeiro
-                          diretos = [u for u in capturados if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I)]
-                          link_final = diretos[0] if diretos else capturados[0]
-                          log(f"    [🎯] Link capturado via Network após clique: {link_final[:60]}...")
+                  await asyncio.sleep(4.0)
+                  html_render = await page.content()
+                  _, _, link = extrair_dados_pagina(html_render, url_pagina)
+                  if link:
+                      log(f"    [🎯] Link capturado via Playwright: {link[:60]}...")
+                      return link
               except Exception as e:
                   log(f"    [⚠️] Playwright falhou: {e}")
               finally:
                   await page.close()
-              return link_final
+              return None
 
           async def processar_item(context, url_pagina):
               log(f"\n--> Verificando: {url_pagina}")
@@ -497,9 +491,6 @@ jobs:
 
                   if not link:
                       link = await tentar_extrair_link_playwright(context, url_pagina)
-                      if not link:
-                          # Tenta mais uma vez puxar título/capa do Playwright se necessário
-                          pass
 
                   ano = ""
                   m = re.search(r'/([^/]+)\.html', url_pagina)
@@ -630,7 +621,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao (fix link null + click play button + regex //)"
+          git commit -m "feat: mega extracao (varredura completa json-ld, href e iframe)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
