@@ -89,13 +89,14 @@ jobs:
               return ''.join(c for c in texto if not (0xD800 <= ord(c) <= 0xDFFF))
 
           def decodificar_escapes_unicode(texto):
-              if not texto or '\\u' not in texto: return texto
-              try: return json.loads('"' + texto.replace('"', '\\"') + '"')
-              except: pass
-              def _repl(m):
-                  code = int(m.group(1), 16)
-                  return '' if 0xD800 <= code <= 0xDFFF else chr(code)
-              return re.sub(r'\\u([0-9a-fA-F]{4})', _repl, texto)
+              if not texto: return texto
+              if '\\u' in texto:
+                  try: texto = json.loads('"' + texto.replace('"', '\\"') + '"')
+                  except: pass
+              if '\\x' in texto:
+                  try: texto = bytes(texto, 'utf-8').decode('unicode_escape')
+                  except: pass
+              return texto
 
           def parece_sujo(titulo):
               t = (titulo or '').strip().lower()
@@ -247,6 +248,14 @@ jobs:
 
           INDICE_VIDEOS = construir_indice_videos()
 
+          def obter_url_origem(arquivo):
+              try:
+                  conteudo = arquivo.read_text(encoding="utf-8")
+                  m = re.search(r'<meta name="source" content="([^"]+)">', conteudo)
+                  if m: return m.group(1)
+              except: pass
+              return None
+
           def construir_fila():
               log("Criando/atualizando fila de filmes...")
               urls, vistos = [], set()
@@ -355,7 +364,7 @@ jobs:
 
               return titulo.strip(), capa, video
 
-          def salvar_html(caminho_destino, nome_json, link, capa_url):
+          def salvar_html(caminho_destino, nome_json, link, capa_url, url_pagina=""):
               nome_json = remover_surrogates(nome_json)
               capa_url = remover_surrogates(capa_url) if capa_url else ""
               if not capa_url or capa_url in ('h', 'None', 'null') or is_icon_url(capa_url): capa_url = CAPA_FALLBACK
@@ -389,10 +398,12 @@ jobs:
               }
               js = json.dumps(dados, ensure_ascii=False, indent=4).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
               title_attr, link_attr, capa_attr = html.escape(nome_json, quote=True), html.escape(link_final, quote=True), html.escape(capa_url, quote=True)
+              source_attr = html.escape(url_pagina, quote=True)
 
               html_out = (
                   f'<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n<meta charset="UTF-8">\n'
                   f'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+                  f'<meta name="source" content="{source_attr}">\n'
                   f'<link rel="icon" href="data:,">\n<script type="application/ld+json">\n{js}\n</script>\n'
                   f'<title>{title_attr}</title>\n'
                   f'<style>\nbody, html {{ margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }}\nvideo {{ width: 100%; height: 100%; outline: none; }}\n</style>\n</head>\n<body>\n'
@@ -450,7 +461,7 @@ jobs:
                               await browser.close()
                               return
                           if not capa_url or capa_url == 'h': capa_url = capa_r
-                          if titulo_r and titulo_r != 'h': titulo = titulo_r  # <-- AQUI: Atualiza o título com o do Playwright
+                          if titulo_r and titulo_r != 'h': titulo = titulo_r
                           await browser.close()
 
                   ano = ""
@@ -475,38 +486,46 @@ jobs:
                       n_quebrado, c_quebrada, l_quebrado = checar_defeitos(arquivo_existente)
                       renomear = (arquivo_existente.name != nome_arquivo_calculado)
                       
-                      if MODO == 'apenas_baixar':
-                          log(f"    (Arquivo existente: {arquivo_existente.name}). Modo Apenas Baixar: Ignorando conserto.")
-                          with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                          return
-                          
-                      if not renomear and not n_quebrado and not c_quebrada and not l_quebrado:
-                          log(f"    (Arquivo existente: {arquivo_existente.name}). (Já está perfeito).")
-                          with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                          return
-                          
-                      log(f"    (Arquivo existente: {arquivo_existente.name})")
-                      acoes = []
-                      if renomear: acoes.append("Renomeado")
-                      if n_quebrado: acoes.append("Título corrigido")
-                      if c_quebrada: acoes.append("Capa corrigida")
-                      if l_quebrado: acoes.append("Link corrigido")
-                      log(f"    [🔄] {', '.join(acoes)}...")
+                      if renomear:
+                          url_origem = obter_url_origem(arquivo_existente)
+                          if url_origem and url_origem != url_pagina:
+                              log(f"    [⚠️] Link duplicado na fonte! O link também pertence a: {url_origem}")
+                              log(f"    [ℹ️] Criando novo arquivo para '{nome_json}' sem apagar o antigo.")
+                              arquivo_existente = None
                       
-                      novo_caminho = Path(nome_arquivo_calculado) if renomear else arquivo_existente
-                      sucesso = salvar_html(novo_caminho, nome_json, link, capa_url)
-                      
-                      if sucesso:
-                          if renomear and arquivo_existente.exists():
-                              arquivo_existente.unlink()
-                              if link: INDICE_VIDEOS[link] = novo_caminho
-                              log(f"    [+] Salvo como: {novo_caminho.name}")
+                      if arquivo_existente:
+                          if MODO == 'apenas_baixar':
+                              log(f"    (Arquivo existente: {arquivo_existente.name}). Modo Apenas Baixar: Ignorando conserto.")
+                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                              return
+                              
+                          if not renomear and not n_quebrado and not c_quebrada and not l_quebrado:
+                              log(f"    (Arquivo existente: {arquivo_existente.name}). (Já está perfeito).")
+                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                              return
+                              
+                          log(f"    (Arquivo existente: {arquivo_existente.name})")
+                          acoes = []
+                          if renomear: acoes.append("Renomeado")
+                          if n_quebrado: acoes.append("Título corrigido")
+                          if c_quebrada: acoes.append("Capa corrigida")
+                          if l_quebrado: acoes.append("Link corrigido")
+                          log(f"    [🔄] {', '.join(acoes)}...")
+                          
+                          novo_caminho = Path(nome_arquivo_calculado) if renomear else arquivo_existente
+                          sucesso = salvar_html(novo_caminho, nome_json, link, capa_url, url_pagina)
+                          
+                          if sucesso:
+                              if renomear and arquivo_existente.exists():
+                                  arquivo_existente.unlink()
+                                  if link: INDICE_VIDEOS[link] = novo_caminho
+                                  log(f"    [+] Salvo como: {novo_caminho.name}")
+                              else:
+                                  log(f"    [+] Arquivo atualizado in-place.")
+                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
                           else:
-                              log(f"    [+] Arquivo atualizado in-place.")
-                          with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                      else:
-                          log(f"    [⚠️] Falha ao consertar. Deixando na fila.")
-                      return
+                              log(f"    [⚠️] Falha ao consertar. Deixando na fila.")
+                          return
 
                   arquivo_por_nome = Path(nome_arquivo_calculado)
                   if arquivo_por_nome.exists():
@@ -524,7 +543,7 @@ jobs:
                           if l_quebrado: acoes.append("Link corrigido")
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado})")
                           log(f"    [🔄] {', '.join(acoes)}...")
-                          sucesso = salvar_html(arquivo_por_nome, nome_json, link, capa_url)
+                          sucesso = salvar_html(arquivo_por_nome, nome_json, link, capa_url, url_pagina)
                           if sucesso:
                               if link: INDICE_VIDEOS[link] = arquivo_por_nome
                               log(f"    [+] Arquivo atualizado.")
@@ -544,8 +563,9 @@ jobs:
                   if not link:
                       if not any(p['arquivo']==nome_arquivo_calculado for p in pendentes):
                           pendentes.append({"arquivo": nome_arquivo_calculado, "nome_json": nome_json, "url": url_pagina, "tentativas": 1})
+                      log(f"      [⏳] Sem link. Vai para pendentes.")
                       return
-                  sucesso = salvar_html(Path(nome_arquivo_calculado), nome_json, link, capa_url)
+                  sucesso = salvar_html(Path(nome_arquivo_calculado), nome_json, link, capa_url, url_pagina)
                   if sucesso:
                       INDICE_VIDEOS[link] = Path(nome_arquivo_calculado)
                       log(f"      [+] Salvo: {nome_arquivo_calculado}")
@@ -584,7 +604,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de filmes (fix: deteccao robusta de series + prioridade titulo playwright)"
+          git commit -m "feat: fix link duplicado e melhora no log de retry"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
