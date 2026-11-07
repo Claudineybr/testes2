@@ -64,6 +64,7 @@ jobs:
         run: |
           cat > /tmp/mega_series.py << 'PYEOF'
           import asyncio, re, json, requests, sys, unicodedata, os, html
+          from collections import Counter
           from bs4 import BeautifulSoup
           from pathlib import Path
           from playwright.async_api import async_playwright
@@ -83,35 +84,138 @@ jobs:
 
           def log(*a): print(*a, flush=True); sys.stdout.flush()
 
+          def remover_surrogates(texto):
+              if not texto: return texto
+              return ''.join(c for c in texto if not (0xD800 <= ord(c) <= 0xDFFF))
+
+          def decodificar_escapes_unicode(texto):
+              if not texto: return texto
+              if '\\u' in texto:
+                  try: texto = json.loads('"' + texto.replace('"', '\\"') + '"')
+                  except: pass
+              if '\\x' in texto:
+                  try: texto = bytes(texto, 'utf-8').decode('unicode_escape')
+                  except: pass
+              return texto
+
+          def parece_sujo(titulo):
+              t = (titulo or '').strip().lower()
+              prefixos = r'(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)'
+              return bool(re.match(r'^[^\w]*' + prefixos + r'(?:[^a-z]|$)', t))
+
           def limpar_titulo_bruto(titulo, url):
               if not titulo: titulo = ""
-              is_url = "http" in titulo.lower() or titulo.lower().endswith(".html")
-              if is_url: titulo = ""
-              
-              titulo = unicodedata.normalize('NFKD', str(titulo))
+              if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"): titulo = ""
+              titulo = html.unescape(str(titulo))
+              titulo = decodificar_escapes_unicode(titulo)
+              titulo = unicodedata.normalize('NFKD', titulo)
               titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
+              padrao_site = r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s+e\s+s[eé]ries)\b'
               
-              titulo = re.sub(r'^(?:Marcøsx7|Marcos|Vini7x|ViNi7x|inix|arc|entre_nos)[^a-zA-Z0-9]*[-:]?', '', titulo, flags=re.I).strip()
+              for _ in range(6):
+                  mudou = False
+                  if ' - ' in titulo:
+                      prefixo, resto = titulo.split(' - ', 1)
+                      if re.search(padrao_site, prefixo, re.I): titulo = resto.strip(); mudou = True
+                  if ':' in titulo:
+                      prefixo, resto = titulo.split(':', 1)
+                      if re.search(padrao_site, prefixo, re.I): titulo = resto.strip(); mudou = True
+                  if ' - ' in titulo:
+                      prefixo, resto = titulo.rsplit(' - ', 1)
+                      if re.search(padrao_site, resto, re.I): titulo = prefixo.strip(); mudou = True
+                  if not mudou: break
+                  
               titulo = re.sub(r'\s*[-–—]\s*(?:assistir|online|serie|completo|dublado|legendado|hd|temporada).*$', '', titulo, flags=re.I).strip()
-              titulo = titulo.replace('🍿Clau', '').strip(' -')
+              titulo = titulo.replace('🍿Clau', '').strip(' -–—')
+              titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip(' -–—')
+              titulo = re.sub(r'\s+', ' ', titulo).strip(' -–—')
               
               if len(titulo) < 3:
                   m = re.search(r'/([^/]+)\.html', url)
                   if m:
                       slug = m.group(1)
-                      slug = re.sub(r'^(?:inix|arc|entre-nos)[-_]', '', slug, flags=re.I)
-                      slug = re.sub(r'[-_]\d{4}$', '', slug)
+                      slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
+                      slug = re.sub(r'[-_]\d{4}.*$', '', slug)
                       titulo = slug.replace('-', ' ').replace('_', ' ').title()
-              
-              titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip()
-              titulo = re.sub(r'\s*-\s*(?:\d+\s*[ªº]\s*)?(?:temporada|season)\b.*$', '', titulo, flags=re.I).strip()
-              return titulo
+
+              titulo = re.sub(r'\s*-\s*(?:\d+\s*[ªº]\s*)?(?:temporada|season)\b.*$', '', titulo, flags=re.I).strip(' -–—')
+              return remover_surrogates(titulo)
 
           def is_icon_url(url):
               if not url: return True
               url_lower = url.lower()
               lixos = ['icon', 'logo', 'favicon', 'avatar', 'banner', 'default', 'profile']
               return any(x in url_lower for x in lixos)
+
+          def extrair_titulos_fontes(soup, html_text):
+              fontes = {}
+              h1 = soup.find('h1', class_='post-title') or soup.find('h1')
+              if h1 and h1.text.strip(): fontes['h1'] = h1.text.strip()
+              if soup.title and soup.title.string: fontes['title_tag'] = soup.title.string
+              for prop, key in [('og:title', 'og_title'), ('og:description', 'og_desc')]:
+                  tag = soup.find('meta', property=prop)
+                  if tag and tag.get('content'): fontes[key] = tag['content']
+              for name, key in [('twitter:title', 'tw_title'), ('description', 'meta_desc')]:
+                  tag = soup.find('meta', attrs={'name': name})
+                  if tag and tag.get('content'): fontes[key] = tag['content']
+              bm = soup.find(attrs={'data-bm-title': True})
+              if bm: fontes['bm_title'] = bm['data-bm-title']
+              for script in soup.find_all('script', type='application/ld+json'):
+                  try:
+                      texto_script = script.get_text()
+                      if not texto_script: continue
+                      d = json.loads(texto_script)
+                      if isinstance(d, dict):
+                          if d.get('headline'): fontes['ld_headline'] = d['headline']
+                          if d.get('name') and d.get('@type') in ('VideoObject', 'TVSeries', 'TVEpisode'): fontes['ld_video'] = d['name']
+                  except: pass
+              json_data = soup.find('script', id='json:data')
+              if json_data:
+                  try:
+                      d = json.loads(json_data.string)
+                      bg, vw = d.get('bg', {}), d.get('vw', {})
+                      if bg.get('pgNm'): fontes['pgNm'] = bg['pgNm']
+                      if bg.get('pgTtl'): fontes['pgTtl'] = bg['pgTtl']
+                      if vw.get('ttl'): fontes['vw_ttl'] = vw['ttl']
+                  except: pass
+              json_posts = soup.find('script', id='json:blogposts')
+              if json_posts:
+                  try:
+                      d = json.loads(json_posts.string)
+                      for _, v in d.items():
+                          if isinstance(v, dict) and v.get('ttl'): fontes['blogposts_ttl'] = v['ttl']; break
+                  except: pass
+              sh = soup.find('div', class_='shPt')
+              if sh and sh.get('data-text'): fontes['share'] = sh['data-text']
+              m = re.search(r"'pageName':\s*'([^']+)'", html_text)
+              if m: fontes['pageName'] = m.group(1)
+              return fontes
+
+          def votar_titulos(fontes, url):
+              if not fontes: return limpar_titulo_bruto("", url)
+              limpos = {}
+              for nome, valor in fontes.items():
+                  if not valor or str(valor).strip() == 'h' or len(str(valor).strip()) < 2: continue
+                  limpo = limpar_titulo_bruto(str(valor), url)
+                  if limpo and len(limpo) >= 2: limpos[nome] = limpo
+              if not limpos: return limpar_titulo_bruto("", url)
+              limpos_bons = {k: v for k, v in limpos.items() if not parece_sujo(v)}
+              if limpos_bons: limpos = limpos_bons
+              contagem, original = Counter(), {}
+              for nome, valor in limpos.items():
+                  chave = valor.lower().strip()
+                  contagem[chave] += 1
+                  if chave not in original: original[chave] = valor
+              mais_votado, votos = contagem.most_common(1)[0]
+              titulo_final = original[mais_votado]
+              total = len(limpos)
+              if votos < total:
+                  log(f"    [🗳️] Votação: {votos}/{total} -> '{titulo_final}'")
+                  for chave, cnt in contagem.items():
+                      if chave != mais_votado: log(f"        ⚠️  Divergência ({cnt}x): '{original[chave]}'")
+              else:
+                  log(f"    [🗳️] Consenso total ({votos}/{total}): '{titulo_final}'")
+              return remover_surrogates(titulo_final)
 
           def construir_indice_videos():
               log("Mapeando arquivos existentes...")
@@ -188,7 +292,7 @@ jobs:
           def eh_serie(soup, url_pagina):
               for script in soup.find_all('script', type='application/ld+json'):
                   try:
-                      txt = script.get_text()  # CORREÇÃO: get_text() evita o bug do script.string
+                      txt = script.get_text()
                       if not txt: continue
                       dados = json.loads(txt)
                       if isinstance(dados, list):
@@ -206,18 +310,13 @@ jobs:
               return False
 
           def extrair_dados_pagina(html_text, url_pagina):
-              soup = BeautifulSoup(html_text, 'html.parser')
+              soup = BeautifulSoup(html_text, 'lxml')
               if not eh_serie(soup, url_pagina):
                   return None, None, "FILME"
 
-              titulo = ""
-              h1 = soup.find('h1', class_='post-title') or soup.find('h1')
-              if h1: titulo = h1.text.strip()
-              if not titulo:
-                  og = soup.find('meta', property='og:title')
-                  if og and og.get('content'): titulo = og['content']
-              if not titulo and soup.title: titulo = soup.title.string
-              titulo = limpar_titulo_bruto(titulo, url_pagina)
+              # AQUI ENTRA A VOTAÇÃO DE TÍTULOS
+              fontes = extrair_titulos_fontes(soup, html_text)
+              titulo = votar_titulos(fontes, url_pagina)
 
               capa = ""
               script_ld = soup.find('script', type='application/ld+json')
@@ -236,16 +335,20 @@ jobs:
                       if og_img and og_img.get('content') and not is_icon_url(og_img['content']):
                           capa = og_img['content']
                       else:
-                          capa = CAPA_FALLBACK
+                          img_tag = soup.find('img', src=re.compile(r'image\.tmdb\.org'))
+                          if img_tag and img_tag.get('src') and not is_icon_url(img_tag['src']):
+                              capa = img_tag['src']
+                          else:
+                              capa = CAPA_FALLBACK
 
               return titulo.strip(), capa
 
           def extrair_video_da_pagina(html_text):
-              soup = BeautifulSoup(html_text, 'html.parser')
+              soup = BeautifulSoup(html_text, 'lxml')
               script_ld = soup.find('script', type='application/ld+json')
               if script_ld:
                   try:
-                      txt = script_ld.get_text()  # CORREÇÃO
+                      txt = script_ld.get_text()
                       if txt:
                           dados_ld = json.loads(txt)
                           if dados_ld.get('contentUrl'): return dados_ld['contentUrl']
@@ -272,8 +375,9 @@ jobs:
               return None
 
           def salvar_html(caminho_destino, nome_json, link, capa_url, url_pagina=""):
-              nome_json = nome_json if nome_json else "Sem Nome"
-              capa_url = capa_url if capa_url else CAPA_FALLBACK
+              nome_json = remover_surrogates(nome_json)
+              capa_url = remover_surrogates(capa_url) if capa_url else ""
+              if not capa_url or capa_url in ('h', 'None', 'null') or is_icon_url(capa_url): capa_url = CAPA_FALLBACK
 
               link_antigo = None
               if caminho_destino.exists():
@@ -333,7 +437,7 @@ jobs:
               """Retorna (nome_quebrado, capa_quebrada, link_quebrado)"""
               try:
                   conteudo = arquivo.read_text(encoding="utf-8")
-                  soup = BeautifulSoup(conteudo, 'html.parser')
+                  soup = BeautifulSoup(conteudo, 'lxml')
                   script = soup.find('script', type='application/ld+json')
                   if not script: return True, True, True
                   txt = script.get_text()
@@ -343,7 +447,9 @@ jobs:
                   capa = dados.get('thumbnailUrl', [''])[0] if dados.get('thumbnailUrl') else ''
                   link = dados.get('contentUrl', '')
                   
-                  n_quebrado = ("inix" in nome.lower() or "http" in nome.lower() or len(nome) < 3)
+                  nome_norm = unicodedata.normalize('NFKD', nome)
+                  nome_norm = "".join([c for c in nome_norm if not unicodedata.combining(c)])
+                  n_quebrado = ("inix" in nome_norm.lower() or "http" in nome_norm.lower() or len(nome_norm) < 3 or bool(re.search(r'^(?:[^\w]*)(?:vini7x|vini|marcos|inix|grave|clau|site|rave)', nome_norm, re.I)))
                   c_quebrada = ("placeholder" in capa or "Sem+Capa" in capa or not capa or is_icon_url(capa))
                   l_quebrado = (not link or link in ("None", "null", "") or not re.search(r'\.(mp4|m3u8|oneplayer\.site|tankie\.tube)', str(link), re.I))
                   return n_quebrado, c_quebrada, l_quebrado
@@ -406,7 +512,7 @@ jobs:
 
                   for it in eps:
                       nome_arquivo_calculado = f"{slug}_t{it['temp']}e{it['ep']}.html"
-                      nome_json = f"{titulo} - T{it['temp']}E{it['ep']} - {it['titulo']} - 🍿Clau"
+                      nome_json = remover_surrogates(f"{titulo} - T{it['temp']}E{it['ep']} - {it['titulo']} - 🍿Clau")
 
                       link = await obter_link_episodio(context, it['url'])
                       arquivo_existente = INDICE_VIDEOS.get(link) if link else None
@@ -533,7 +639,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de series (template rave + fix script.get_text)"
+          git commit -m "feat: mega extracao de series (votacao por consenso)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
