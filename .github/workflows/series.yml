@@ -218,6 +218,7 @@ jobs:
               return remover_surrogates(titulo_final)
 
           def eh_serie(soup, url_pagina):
+              # 1. JSON-LD
               for script in soup.find_all('script', type='application/ld+json'):
                   try:
                       texto_script = script.get_text()
@@ -229,12 +230,21 @@ jobs:
                       elif isinstance(dados, dict):
                           if dados.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
                   except: pass
+
+              # 2. Links (href)
               for a in soup.find_all('a', href=True):
-                  if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return True
-                  if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return True
-              texto_pagina = soup.get_text(" ", strip=True).lower()
+                  href_lower = a['href'].lower()
+                  if re.search(r'epis[oó]dio[-_/]\d+', href_lower, re.I): return True
+                  if re.search(r'temporada', href_lower, re.I): return True
+                  texto_link = html.unescape(a.get_text(strip=True)).lower()
+                  if re.search(r'epis[oó]dio\s+\d+', texto_link, re.I): return True
+
+              # 3. Texto da página (com unescape)
+              texto_pagina = html.unescape(soup.get_text(" ", strip=True)).lower()
               if re.search(r'lista de epis[oó]dios', texto_pagina, re.I): return True
               if re.search(r'\b\d+\s*[ªº]\s*temporada', texto_pagina, re.I): return True
+              if re.search(r'\btemporada\b', texto_pagina, re.I): return True
+              if re.search(r'\bepis[oó]dio\b', texto_pagina, re.I): return True
               return False
 
           def construir_indice_videos():
@@ -639,7 +649,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de series (fix link duplicado e extracao json-ld)"
+          git commit -m "feat: mega extracao de series (deteccao de serie ultra-robusta)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
