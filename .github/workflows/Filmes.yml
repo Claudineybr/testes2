@@ -214,7 +214,6 @@ jobs:
                   log(f"    [🗳️] Consenso total ({votos}/{total}): '{titulo_final}'")
               return remover_surrogates(titulo_final)
 
-          # --- FUNÇÃO ROBUSTA DE DETECÇÃO DE SÉRIE (COPIADA DO SERIES.YML) ---
           def eh_serie(soup, url_pagina):
               for script in soup.find_all('script', type='application/ld+json'):
                   try:
@@ -298,7 +297,6 @@ jobs:
               try: soup = BeautifulSoup(html_text, 'lxml')
               except: soup = BeautifulSoup(html_text, 'html.parser')
               
-              # Usa a função robusta para detectar série
               if eh_serie(soup, url_pagina): 
                   return None, None, "SÉRIE"
 
@@ -452,6 +450,7 @@ jobs:
                               await browser.close()
                               return
                           if not capa_url or capa_url == 'h': capa_url = capa_r
+                          if titulo_r and titulo_r != 'h': titulo = titulo_r  # <-- AQUI: Atualiza o título com o do Playwright
                           await browser.close()
 
                   ano = ""
@@ -585,7 +584,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de filmes (fix: deteccao robusta de series)"
+          git commit -m "feat: mega extracao de filmes (fix: deteccao robusta de series + prioridade titulo playwright)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
