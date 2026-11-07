@@ -414,6 +414,28 @@ jobs:
                   return n_quebrado, c_quebrada, l_quebrado
               except: return True, True, True
 
+          async def capturar_link_dom(page):
+              """Varre o DOM renderizado em busca de links de vídeo em <a> ou <iframe>."""
+              links = await page.evaluate("""
+                  () => {
+                      const urls = [];
+                      document.querySelectorAll('a').forEach(a => {
+                          if (a.href && (a.href.includes('oneplayer') || a.href.endsWith('.mp4') || a.href.includes('.m3u8'))) {
+                              urls.push(a.href);
+                          }
+                      });
+                      document.querySelectorAll('iframe').forEach(ifr => {
+                          if (ifr.src && (ifr.src.includes('oneplayer') || ifr.src.endsWith('.mp4') || ifr.src.includes('.m3u8'))) {
+                              urls.push(ifr.src);
+                          }
+                      });
+                      return urls;
+                  }
+              """)
+              if links:
+                  return links[0]
+              return None
+
           async def processar_item(context, url_pagina):
               log(f"\n--> Verificando: {url_pagina}")
               try:
@@ -436,23 +458,31 @@ jobs:
                       page.on("response", on_response)
                       try:
                           await page.goto(url_pagina, wait_until="domcontentloaded", timeout=20000)
-                          await asyncio.sleep(6.0)
-                          html_render = await page.content()
-                          soup_render = BeautifulSoup(html_render, 'html.parser')
-                          if eh_serie(soup_render, url_pagina):
-                              log("    (É SÉRIE detectada via Playwright. Pulando...)")
-                              marcar_feita(url_pagina)
-                              return
+                          await asyncio.sleep(5.0)
                           
-                          if capturados:
+                          # Varre o DOM renderizado em busca de links
+                          link_dom = await capturar_link_dom(page)
+                          if link_dom:
+                              link = link_dom
+                              log(f"    [🎯] Link encontrado no DOM: {link[:60]}...")
+                          
+                          if not link and capturados:
                               diretos = [u for u in capturados if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I)]
                               link = diretos[0] if diretos else capturados[0]
                               log(f"    [🎯] Link capturado via Network: {link[:60]}...")
 
                           if not link:
+                              html_render = await page.content()
+                              soup_render = BeautifulSoup(html_render, 'html.parser')
+                              if eh_serie(soup_render, url_pagina):
+                                  log("    (É SÉRIE detectada via Playwright. Pulando...)")
+                                  marcar_feita(url_pagina)
+                                  return
                               titulo_r, capa_r, link = extrair_dados_pagina(html_render, url_pagina)
                               if not capa_url or capa_url == 'h' or is_icon_url(capa_url): capa_url = capa_r
-                              if not titulo or titulo == 'h': titulo = titulo_r
+                              # Prioriza título do Playwright (mais fontes votadas)
+                              if titulo_r and titulo_r != 'h':
+                                  titulo = titulo_r
                       except Exception as e:
                           log(f"    [⚠️] Playwright falhou: {e}")
                       finally:
@@ -587,7 +617,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao (network intercept oneplayer + template rave)"
+          git commit -m "feat: mega extracao (dom link capture + titulo playwright prioridade)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
