@@ -1,0 +1,156 @@
+name: Atualizar Filas com Novos Posts
+ 
+on:
+  schedule:
+    - cron: '0 * * * *' # Roda a cada 1 hora (no minuto 0)
+  workflow_dispatch:    # Permite rodar manualmente também
+ 
+permissions:
+  contents: write
+ 
+concurrency:
+  group: atualizar-filas
+  cancel-in-progress: false
+ 
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+ 
+      - name: Instalar dependências
+        run: pip install requests
+ 
+      - name: Atualizar filas
+        run: |
+          cat > /tmp/atualizar_filas.py << 'PYEOF'
+          import requests, sys, os, json, time
+          from pathlib import Path
+ 
+          BASE_URL = "https://www.vini7xgrave.site"
+          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+ 
+ 
+          def log(*a):
+              print(*a, flush=True)
+ 
+ 
+          def ler_linhas(arq):
+              """Lê um .txt de URLs: ignora vazios e duplicados, MANTÉM a ordem."""
+              arq = Path(arq)
+              if not arq.exists():
+                  return []
+              vistos, saida = set(), []
+              for linha in arq.read_text(encoding="utf-8").splitlines():
+                  linha = linha.strip()
+                  if linha and linha not in vistos:
+                      vistos.add(linha)
+                      saida.append(linha)
+              return saida
+ 
+ 
+          def escrever_linhas(arq, linhas):
+              """Escrita atômica (arquivo temporário + replace) para nunca deixar a fila pela metade."""
+              arq = Path(arq)
+              tmp = arq.with_name(arq.name + ".tmp")
+              tmp.write_text("\n".join(linhas) + ("\n" if linhas else ""), encoding="utf-8")
+              tmp.replace(arq)
+ 
+ 
+          def buscar_urls_feed():
+              """Percorre o feed do Blogger. Retorna (lista_de_urls_na_ordem_do_feed, completo?)."""
+              urls, vistos = [], set()
+              start, completo = 1, True
+              while True:
+                  url_feed = f"{BASE_URL}/feeds/posts/default?alt=json&max-results=150&start-index={start}"
+                  entries = None
+                  for tentativa in range(3):
+                      try:
+                          r = requests.get(url_feed, headers=HEADERS, timeout=20)
+                          if r.status_code == 200:
+                              entries = r.json().get("feed", {}).get("entry", [])
+                              break
+                          log(f"Feed HTTP {r.status_code} (tentativa {tentativa + 1}/3)")
+                      except Exception as e:
+                          log(f"Erro ao buscar feed: {e} (tentativa {tentativa + 1}/3)")
+                      time.sleep(2 * (tentativa + 1))
+                  if entries is None:
+                      completo = False
+                      break
+                  if not entries:
+                      break
+                  for e in entries:
+                      link = next((l["href"] for l in e.get("link", []) if l.get("rel") == "alternate"), None)
+                      if link:
+                          u = link.split("?")[0].strip()
+                          if u and u not in vistos:
+                              vistos.add(u)
+                              urls.append(u)
+                  start += 150
+                  if len(entries) < 150:
+                      break
+              return urls, completo
+ 
+ 
+          ARQ_FILA_FILMES = Path("filmes_fila.txt")
+          ARQ_FILA_SERIES = Path("series_fila.txt")
+ 
+ 
+          def atualizar_fila(arq, feed):
+              """Coloca as URLs novas NO INÍCIO da fila (posts recentes primeiro) e preserva a ordem do resto."""
+              atuais = ler_linhas(arq)
+              existentes = set(atuais)
+              novas = [u for u in feed if u not in existentes]
+              if novas:
+                  escrever_linhas(arq, novas + atuais)
+              return len(atuais), len(novas)
+ 
+ 
+          def main():
+              log("Buscando todas as URLs do site...")
+              feed, completo = buscar_urls_feed()
+              log(f"Encontradas {len(feed)} URLs no site." + ("" if completo else " (feed incompleto)"))
+              if not feed:
+                  log("⚠️ Feed vazio ou com erro: as filas não foram alteradas.")
+                  return
+ 
+              for arq in (ARQ_FILA_FILMES, ARQ_FILA_SERIES):
+                  antes, novas = atualizar_fila(arq, feed)
+                  if novas:
+                      log(f"🆕 {arq.name}: +{novas} URLs novas (antes: {antes}, agora: {antes + novas}).")
+                  else:
+                      log(f"✅ {arq.name}: nenhuma URL nova (total: {antes}).")
+ 
+ 
+          if __name__ == "__main__":
+              main()
+ 
+          PYEOF
+          python3 /tmp/atualizar_filas.py
+ 
+      - name: Salvar arquivos e progresso
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+ 
+          git add -A
+          git reset .github/ 2>/dev/null || true
+ 
+          if git diff --cached --quiet; then echo "Nada novo nas filas."; exit 0; fi
+          git commit -m "chore: atualizar filas com novos posts do site"
+ 
+          ok=0
+          for i in $(seq 1 5); do
+            if git push origin HEAD:main; then ok=1; break; fi
+            echo "Conflito detectado. Sincronizando de forma segura..."
+            git pull origin main --no-rebase -X ours --no-edit
+            git add -A
+            git reset .github/ 2>/dev/null || true
+            git commit -m "chore: retry atualizar filas $i" || true
+            sleep $((RANDOM % 10 + 5))
+          done
+          if [ "$ok" != "1" ]; then echo "::error::Não consegui dar push depois de 5 tentativas"; exit 1; fi
