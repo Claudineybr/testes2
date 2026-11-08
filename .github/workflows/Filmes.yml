@@ -29,6 +29,11 @@ on:
         required: false
         default: true
         type: boolean
+      tempo_max_min:
+        description: 'Minutos máximos de trabalho por run (depois ele salva e encadeia a próxima)'
+        required: false
+        default: '40'
+        type: string
 
 permissions:
   contents: write
@@ -40,6 +45,7 @@ concurrency:
 jobs:
   extrair:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v5
@@ -49,818 +55,882 @@ jobs:
       - name: Limpar arquivos de controle (Opcional)
         if: ${{ inputs.reprocessar_tudo == true || inputs.reprocessar_tudo == 'true' }}
         run: |
-          rm -f filmes_fila.txt filmes_feitos.txt filmes_pendentes.json filmes_descartados.txt filmes_attempts.json
+          rm -f filmes_fila.txt filmes_feitos.txt filmes_consertados.txt filmes_pendentes.json filmes_descartados.txt filmes_erros.json
 
       - name: Instalar Python e Playwright
         run: |
           pip install playwright beautifulsoup4 requests
-          playwright install chromium
-          playwright install-deps
+          playwright install --with-deps chromium
 
       - name: Extrair Filmes e Retentar Falhas
         env:
           LOTE_SIZE: ${{ inputs.lote || '100' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
+          TEMPO_MAX_MIN: ${{ inputs.tempo_max_min || '40' }}
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
-          import asyncio, re, json, requests, sys, unicodedata, os, html, random
-          from collections import Counter
-          from difflib import SequenceMatcher
-          from bs4 import BeautifulSoup
+          import requests, sys, os, json, time
           from pathlib import Path
-          from playwright.async_api import async_playwright
 
           BASE_URL = "https://www.vini7xgrave.site"
-          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-          ARQ_FILA        = Path("filmes_fila.txt")
-          ARQ_FEITAS      = Path("filmes_feitos.txt")
-          ARQ_PENDENTES   = Path("filmes_pendentes.json")
-          ARQ_DESCARTADOS = Path("filmes_descartados.txt")
-          ARQ_REPROCESSAR = Path("reprocessar.txt")
-          ARQ_ATTEMPTS    = Path("filmes_attempts.json")
-
-          MAX_TENTATIVAS = 6
-          MAX_TENTATIVAS_CAPTCHA = 4
-          LOTE_SIZE = int(os.environ.get('LOTE_SIZE', 100))
-          MODO = os.environ.get('MODO_EXECUCAO', 'baixar_e_consertar').lower()
-
-          MIN_FONTES_CONFIAVEL = 3
-          WARMUP_DELAY = 3
-          SIMILARIDADE_MIN = 0.85
-          PREFIXO_MIN_RATIO = 0.70
-          SLUG_OVERLAP_MIN = 0.50
-
-          STOPWORDS_SLUG = {'a','o','e','de','da','do','das','dos','em','no','na',
-                            'nos','nas','um','uma','uns','umas','para','por','com',
-                            'the','and','of','in','to','at','on','for','by','from'}
 
           def log(*a):
-              print(*a, flush=True); sys.stdout.flush()
+              print(*a, flush=True)
 
-          def remover_surrogates(texto):
-              if not texto: return texto
-              return ''.join(c for c in texto if not (0xD800 <= ord(c) <= 0xDFFF))
 
-          def decodificar_escapes_unicode(texto):
-              if not texto or '\\u' not in texto: return texto
-              try:
-                  return json.loads('"' + texto.replace('"', '\\"') + '"')
-              except Exception:
-                  pass
-              def _repl(m):
-                  code = int(m.group(1), 16)
-                  if 0xD800 <= code <= 0xDFFF: return ''
-                  return chr(code)
-              return re.sub(r'\\u([0-9a-fA-F]{4})', _repl, texto)
+          def ler_linhas(arq):
+              """Lê um .txt de URLs: ignora vazios e duplicados, MANTÉM a ordem."""
+              arq = Path(arq)
+              if not arq.exists():
+                  return []
+              vistos, saida = set(), []
+              for linha in arq.read_text(encoding="utf-8").splitlines():
+                  linha = linha.strip()
+                  if linha and linha not in vistos:
+                      vistos.add(linha)
+                      saida.append(linha)
+              return saida
 
-          def parece_sujo(titulo):
-              t = (titulo or '').strip().lower()
-              prefixos = r'(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)'
-              return bool(re.match(r'^[^\w]*' + prefixos + r'(?:[^a-z]|$)', t))
 
-          def limpar_titulo_bruto(titulo, url):
-              if not titulo: titulo = ""
-              if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"): titulo = ""
-              titulo = html.unescape(str(titulo))
-              titulo = decodificar_escapes_unicode(titulo)
-              titulo = unicodedata.normalize('NFKD', titulo)
-              titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
+          def escrever_linhas(arq, linhas):
+              """Escrita atômica (arquivo temporário + replace) para nunca deixar a fila pela metade."""
+              arq = Path(arq)
+              tmp = arq.with_name(arq.name + ".tmp")
+              tmp.write_text("\n".join(linhas) + ("\n" if linhas else ""), encoding="utf-8")
+              tmp.replace(arq)
 
-              padrao_prefixo_curto = r'(?:Marcøsx7|Marcos|Vini7x|ViNi7x|inix|arc|entre_nos)'
-              titulo = re.sub(rf'^{padrao_prefixo_curto}\b[^a-zA-Z0-9]*[-:]\s*', '', titulo, flags=re.I).strip()
 
-              if ':' in titulo:
-                  prefixo, resto = titulo.split(':', 1)
-                  if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)\b', prefixo, re.I):
-                      titulo = resto.strip()
-
-              if ' - ' in titulo:
-                  prefixo, resto = titulo.split(' - ', 1)
-                  if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave)\b', prefixo, re.I):
-                      titulo = resto.strip()
-
-              if ' - ' in titulo:
-                  prefixo, resto = titulo.rsplit(' - ', 1)
-                  if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave)\b', resto, re.I):
-                      titulo = prefixo.strip()
-
-              titulo = re.sub(r'\s*[-–—]\s*(?:assistir|online|filme|serie|completo|dublado|legendado|hd|temporada).*$', '', titulo, flags=re.I).strip()
-              titulo = titulo.replace('🍿Clau', '').strip(' -–—')
-              titulo = re.sub(r'\s*[-–—]?\s*\d+\s*[ªº]\s*temporada.*$', '', titulo, flags=re.I).strip(' -–—')
-              titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip(' -–—')
-              titulo = re.sub(r'\s+', ' ', titulo).strip(' -–—')
-
-              if len(titulo) < 3:
-                  m = re.search(r'/([^/]+)\.html', url)
-                  if m:
-                      slug = m.group(1)
-                      slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
-                      slug = re.sub(r'[-_]\d{4}.*$', '', slug)
-                      titulo = slug.replace('-', ' ').replace('_', ' ').title()
-
-              return remover_surrogates(titulo)
-
-          def slug_para_titulo(url):
-              m = re.search(r'/([^/]+)\.html', url)
-              if not m: return ""
-              slug = m.group(1)
-              slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
-              slug = re.sub(r'[-_]\d{4}(?:_.*)?$', '', slug)
-              return slug.replace('-', ' ').replace('_', ' ').title()
-
-          def titulo_bate_com_slug(titulo, url):
-              m = re.search(r'/([^/]+)\.html', url)
-              if not m: return True
-              slug = m.group(1)
-              slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos|marc_sx7)[-_]', '', slug, flags=re.I)
-              slug = re.sub(r'[-_]\d{4}(?:_.*)?$', '', slug)
-
-              slug_words = set(re.findall(r'\w+', slug.lower()))
-              tit_words = set(re.findall(r'\w+', norm_nome(titulo)))
-
-              slug_sig = slug_words - STOPWORDS_SLUG
-              tit_sig = tit_words - STOPWORDS_SLUG
-
-              if not slug_sig or not tit_sig:
-                  return True
-
-              overlap = len(slug_sig & tit_sig)
-              return overlap / min(len(slug_sig), len(tit_sig)) >= SLUG_OVERLAP_MIN
-
-          def is_icon_url(url):
-              if not url: return True
-              url_lower = url.lower()
-              lixos = ['icon', 'logo', 'favicon', 'avatar', 'banner', 'default', 'profile']
-              return any(x in url_lower for x in lixos)
-
-          def norm_nome(nome):
-              if not nome: return ""
-              n = re.sub(r'\s*-?\s*🍿Clau', '', nome, flags=re.I)
-              n = re.sub(r'\s*\(\d{4}\)', '', n)
-              n = re.sub(r'[^\w\s]', '', n)
-              n = re.sub(r'\s+', ' ', n)
-              n = re.sub(r'^(a|o|as|os|an|the)\s+', '', n, flags=re.I)
-              return n.lower().strip()
-
-          def nomes_compativeis(nome_a, nome_b, arquivo_a=None, arquivo_b=None):
-              if arquivo_a and arquivo_b and arquivo_a == arquivo_b: return True
-              na = norm_nome(nome_a); nb = norm_nome(nome_b)
-              if not na or not nb: return False
-              if na == nb: return True
-              menor, maior = (na, nb) if len(na) <= len(nb) else (nb, na)
-              if maior.startswith(menor) and len(menor) / len(maior) >= PREFIXO_MIN_RATIO:
-                  return True
-              return SequenceMatcher(None, na, nb).ratio() >= SIMILARIDADE_MIN
-
-          def eh_serie(soup, url_pagina):
-              for script in soup.find_all('script', type='application/ld+json'):
-                  try:
-                      dados = json.loads(script.string)
-                      if isinstance(dados, list):
-                          for d in dados:
-                              if d.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
-                      elif isinstance(dados, dict):
-                          if dados.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
-                  except: pass
-              for script in soup.find_all('script', type='application/ld+json'):
-                  texto_ld = script.string or ''
-                  if not texto_ld: continue
-                  if re.search(r'lista\s+de\s+epis[oó]dios', texto_ld, re.I): return True
-                  if re.search(r'\d+\s*[ªº]\s*temporada', texto_ld, re.I): return True
-                  if len(re.findall(r'epis[oó]dio\s+\d+', texto_ld, re.I)) >= 2: return True
-              for a in soup.find_all('a', href=True):
-                  if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return True
-                  if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return True
-                  if re.search(r'/episode[-_/]?\d+', a['href'], re.I): return True
-              texto_pagina = soup.get_text(" ", strip=True).lower()
-              for p in [r'lista\s+de\s+epis[oó]dios', r'\b\d+\s*[ªº]\s*temporada', r'\btemporada\s+\d+',
-                        r'\b\d+\s+temporadas\b', r'\bseason\s+\d+', r'\bepis[oó]dios?\b',
-                        r'\bepisodes?\b', r'\bS\d{1,2}\s*E\d{1,3}\b', r'\bT\d{1,2}\s*E\d{1,3}\b',
-                        r'\b\d{1,2}\s*x\s*\d{1,3}\b', r'\bcap[ií]tulo\s+\d+']:
-                  if re.search(p, texto_pagina, re.I): return True
-              return False
-
-          def extrair_titulos_fontes(soup, html_text):
-              fontes = {}
-              h1 = soup.find('h1', class_='post-title') or soup.find('h1')
-              if h1 and h1.text.strip(): fontes['h1'] = h1.text.strip()
-              if soup.title and soup.title.string: fontes['title_tag'] = soup.title.string
-              for prop, key in [('og:title', 'og_title'), ('og:description', 'og_desc')]:
-                  tag = soup.find('meta', property=prop)
-                  if tag and tag.get('content'): fontes[key] = tag['content']
-              for name, key in [('twitter:title', 'tw_title'), ('description', 'meta_desc')]:
-                  tag = soup.find('meta', attrs={'name': name})
-                  if tag and tag.get('content'): fontes[key] = tag['content']
-              bm = soup.find(attrs={'data-bm-title': True})
-              if bm: fontes['bm_title'] = bm['data-bm-title']
-              for script in soup.find_all('script', type='application/ld+json'):
-                  try:
-                      d = json.loads(script.string)
-                      if isinstance(d, dict):
-                          if d.get('headline'): fontes['ld_headline'] = d['headline']
-                          if d.get('name') and d.get('@type') == 'VideoObject': fontes['ld_video'] = d['name']
-                  except Exception: pass
-              json_data = soup.find('script', id='json:data')
-              if json_data:
-                  try:
-                      d = json.loads(json_data.string)
-                      bg = d.get('bg', {}); vw = d.get('vw', {})
-                      if bg.get('pgNm'): fontes['pgNm'] = bg['pgNm']
-                      if bg.get('pgTtl'): fontes['pgTtl'] = bg['pgTtl']
-                      if vw.get('ttl'): fontes['vw_ttl'] = vw['ttl']
-                  except Exception: pass
-              json_posts = soup.find('script', id='json:blogposts')
-              if json_posts:
-                  try:
-                      d = json.loads(json_posts.string)
-                      for _, v in d.items():
-                          if isinstance(v, dict) and v.get('ttl'):
-                              fontes['blogposts_ttl'] = v['ttl']; break
-                  except Exception: pass
-              sh = soup.find('div', class_='shPt')
-              if sh and sh.get('data-text'): fontes['share'] = sh['data-text']
-              m = re.search(r"'pageName':\s*'([^']+)'", html_text)
-              if m: fontes['pageName'] = m.group(1)
-              return fontes
-
-          def votar_titulos(fontes, url):
-              if not fontes: return limpar_titulo_bruto("", url), 0, 0
-              limpos = {}
-              for nome, valor in fontes.items():
-                  if not valor or str(valor).strip() == 'h' or len(str(valor).strip()) < 2: continue
-                  limpo = limpar_titulo_bruto(str(valor), url)
-                  if limpo and len(limpo) >= 2: limpos[nome] = limpo
-              if not limpos: return limpar_titulo_bruto("", url), 0, 0
-              limpos_bons = {k: v for k, v in limpos.items() if not parece_sujo(v)}
-              if limpos_bons: limpos = limpos_bons
-              contagem = Counter(); original = {}
-              for nome, valor in limpos.items():
-                  chave = valor.lower().strip()
-                  contagem[chave] += 1
-                  if chave not in original: original[chave] = valor
-              mais_votado, votos = contagem.most_common(1)[0]
-              titulo_final = original[mais_votado]
-              total = len(limpos)
-              if votos < total:
-                  log(f"    [🗳️] Votação: {votos}/{total} -> '{titulo_final}'")
-                  for chave, cnt in contagem.items():
-                      if chave != mais_votado:
-                          log(f"        ⚠️  Divergência ({cnt}x): '{original[chave]}'")
-              else:
-                  log(f"    [🗳️] Consenso total ({votos}/{total}): '{titulo_final}'")
-              return remover_surrogates(titulo_final), votos, total
-
-          def construir_indice_videos():
-              log("Mapeando arquivos existentes...")
-              indice = {}
-              for f in Path(".").glob("*.html"):
-                  try:
-                      texto = f.read_text(encoding="utf-8")
-                      m = re.search(r'"contentUrl":\s*"([^"]+)"', texto)
-                      if m: indice.setdefault(m.group(1), []).append(f)
-                  except: pass
-              return indice
-
-          INDICE_VIDEOS = construir_indice_videos()
-
-          def carregar_attempts():
-              if ARQ_ATTEMPTS.exists():
-                  try: return json.loads(ARQ_ATTEMPTS.read_text(encoding="utf-8"))
-                  except Exception: return {}
-              return {}
-
-          def salvar_attempts(data):
-              try: ARQ_ATTEMPTS.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-              except Exception: pass
-
-          ATTEMPTS = carregar_attempts()
-
-          def construir_fila():
-              log("Criando/atualizando fila de filmes...")
+          def buscar_urls_feed():
+              """Percorre o feed do Blogger. Retorna (lista_de_urls_na_ordem_do_feed, completo?)."""
               urls, vistos = [], set()
-              if ARQ_FILA.exists():
-                  for u in ARQ_FILA.read_text(encoding="utf-8").splitlines():
-                      u = u.strip()
-                      if u and u not in vistos: urls.append(u); vistos.add(u)
-              start = 1
+              start, completo = 1, True
               while True:
                   url_feed = f"{BASE_URL}/feeds/posts/default?alt=json&max-results=150&start-index={start}"
+                  entries = None
+                  for tentativa in range(3):
+                      try:
+                          r = requests.get(url_feed, headers=HEADERS, timeout=20)
+                          if r.status_code == 200:
+                              entries = r.json().get("feed", {}).get("entry", [])
+                              break
+                          log(f"Feed HTTP {r.status_code} (tentativa {tentativa + 1}/3)")
+                      except Exception as e:
+                          log(f"Erro ao buscar feed: {e} (tentativa {tentativa + 1}/3)")
+                      time.sleep(2 * (tentativa + 1))
+                  if entries is None:
+                      completo = False
+                      break
+                  if not entries:
+                      break
+                  for e in entries:
+                      link = next((l["href"] for l in e.get("link", []) if l.get("rel") == "alternate"), None)
+                      if link:
+                          u = link.split("?")[0].strip()
+                          if u and u not in vistos:
+                              vistos.add(u)
+                              urls.append(u)
+                  start += 150
+                  if len(entries) < 150:
+                      break
+              return urls, completo
+
+
+          import asyncio, re, json, base64, unicodedata
+          import html as htmllib
+          from urllib.parse import urlparse
+          from bs4 import BeautifulSoup
+
+          PAGES_URL = "https://api-pobreflix-filmes.pages.dev"
+          PLACEHOLDER = "https://placehold.co/500x750?text=Sem+Capa"
+          SUFIXO = "🍿Clau"
+          MARCADOR_FORMATO = 'data-rave="2"'
+
+          MAX_TENTATIVAS = 6
+          LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 100)
+          MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
+          TEMPO_MAX = int(os.environ.get("TEMPO_MAX_MIN") or 40) * 60
+          FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
+          T0 = time.time()
+
+
+          def tempo_esgotado():
+              return (time.time() - T0) > TEMPO_MAX
+
+
+          # ----------------------------------------------------------------------------
+          # Rede
+          # ----------------------------------------------------------------------------
+          def http_get(url, timeout=20, tentativas=3):
+              """Retorna (status, texto). Se a rede falhar, (None, mensagem_de_erro)."""
+              ultimo = "erro desconhecido"
+              for i in range(tentativas):
                   try:
-                      r = requests.get(url_feed, headers=HEADERS, timeout=15)
-                      if r.status_code != 200: break
-                      entries = r.json().get("feed", {}).get("entry", [])
-                      if not entries: break
-                      for e in entries:
-                          link = next((l["href"] for l in e.get("link", []) if l.get("rel") == "alternate"), None)
-                          if link:
-                              u = link.split("?")[0].strip()
-                              if u and u not in vistos: urls.append(u); vistos.add(u)
-                      start += 150
-                      if len(entries) < 150: break
-                  except: break
-              ARQ_FILA.write_text("\n".join(urls), encoding="utf-8")
+                      r = requests.get(url, headers=HEADERS, timeout=timeout)
+                      if r.status_code in (429, 500, 502, 503, 504):
+                          ultimo = f"HTTP {r.status_code}"
+                          time.sleep(2 * (i + 1))
+                          continue
+                      return r.status_code, r.text
+                  except Exception as e:
+                      ultimo = str(e)
+                      time.sleep(2 * (i + 1))
+              return None, ultimo
 
-          if not ARQ_FILA.exists(): construir_fila()
 
-          feitas = set()
-          if ARQ_FEITAS.exists():
-              feitas = set(l.strip() for l in ARQ_FEITAS.read_text(encoding="utf-8").splitlines() if l.strip())
-
-          descartados = set()
-          if ARQ_DESCARTADOS.exists():
-              descartados = set(l.strip() for l in ARQ_DESCARTADOS.read_text(encoding="utf-8").splitlines() if l.strip())
-
-          pendentes_dict = {}
-          if ARQ_PENDENTES.exists():
-              try:
-                  for p in json.loads(ARQ_PENDENTES.read_text(encoding="utf-8")):
-                      if p['arquivo'] not in pendentes_dict: pendentes_dict[p['arquivo']] = p
-                      else: pendentes_dict[p['arquivo']]['tentativas'] = max(pendentes_dict[p['arquivo']].get('tentativas',1), p.get('tentativas',1))
-              except: pass
-          pendentes = list(pendentes_dict.values())
-
-          reprocessar_urls = []
-          if ARQ_REPROCESSAR.exists():
-              for linha in ARQ_REPROCESSAR.read_text(encoding="utf-8").splitlines():
-                  u = linha.strip()
-                  if u and not u.startswith("#"): reprocessar_urls.append(u)
-          if reprocessar_urls:
-              log(f"Reprocessar.txt: {len(reprocessar_urls)} URL(s) forçada(s)")
-              for u in reprocessar_urls:
-                  if u in feitas:
-                      feitas.discard(u)
-                      log(f"    [🔁] Retirada de 'feitas': {u}")
-                  if u in descartados:
-                      descartados.discard(u)
-                      log(f"    [🔁] Retirada de 'descartados': {u}")
-                  if u in ATTEMPTS:
-                      del ATTEMPTS[u]
-              ARQ_REPROCESSAR.write_text("", encoding="utf-8")
-              ARQ_DESCARTADOS.write_text("\n".join(sorted(descartados)), encoding="utf-8")
-
-          todas = [u.strip() for u in ARQ_FILA.read_text(encoding="utf-8").splitlines() if u.strip()]
-          fila_normal = [u for u in todas if u not in feitas and u not in reprocessar_urls and u not in descartados]
-          fila = reprocessar_urls + fila_normal
-          lote = fila[:LOTE_SIZE]
-
-          log(f"Fila: {len(todas)} | Faltam: {len(fila_normal)} | Descartados: {len(descartados)} | Lote: {LOTE_SIZE} | Modo: {MODO}")
-
-          async def fetch_raw_seguro(url, context):
-              """Tenta requests → Playwright. Detecta CAPTCHA do Google."""
-              try:
-                  r = await asyncio.to_thread(requests.get, url, headers=HEADERS, timeout=25, allow_redirects=True)
-                  if 'google.com/sorry' in r.url or '/sorry/index' in r.url:
-                      log(f"    [🚫] requests → CAPTCHA Google")
-                  elif r.status_code == 200:
-                      return r.text, r.url
-                  else:
-                      log(f"    [⚠️] requests HTTP {r.status_code}")
-              except Exception as e:
-                  log(f"    [⚠️] requests falhou: {type(e).__name__}")
-
-              log(f"    [🔄] Tentando Playwright...")
+          async def renderizar(context, url, espera=5.0):
+              """Abre a página no Chromium (JS executado) e devolve o HTML renderizado."""
               page = await context.new_page()
+              html = ""
               try:
-                  await page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                  await asyncio.sleep(3)
-                  if 'google.com/sorry' in page.url or '/sorry/index' in page.url:
-                      return None, "captcha"
+                  await page.goto(url, wait_until="domcontentloaded", timeout=25000)
+                  await asyncio.sleep(espera)
+                  html = await page.content()
+              except Exception as e:
+                  log(f"    (Falha ao renderizar: {str(e)[:120]})")
                   try:
-                      await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                      await asyncio.sleep(2)
+                      html = await page.content()
+                  except Exception:
+                      html = ""
+              finally:
+                  try:
+                      await page.close()
                   except Exception:
                       pass
-                  html_r = await page.content()
-                  return html_r, page.url
-              except Exception as e:
-                  return None, f"erro: {type(e).__name__}"
-              finally:
-                  try: await page.close()
-                  except: pass
+              return html
 
-          async def extrair_video_playwright(context, url_ep):
-              page = await context.new_page()
-              capturados = []
-              def on_response(res):
-                  u = res.url
-                  if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I) or 'tankie' in u or 'oneplayer' in u:
-                      capturados.append(u)
-              page.on("response", on_response)
+
+          # ----------------------------------------------------------------------------
+          # JSON auxiliar (pendentes / erros)
+          # ----------------------------------------------------------------------------
+          def carregar_json(arq, padrao):
               try:
-                  await page.goto(url_ep, wait_until="domcontentloaded", timeout=20000)
-                  await asyncio.sleep(4.0)
-                  if not capturados:
-                      html_r = await page.content()
-                      soup = BeautifulSoup(html_r, 'html.parser')
-                      for iframe in soup.find_all('iframe'):
-                          src = iframe.get('src', '')
-                          if src and 'google' not in src.lower() and 'ads' not in src.lower():
-                              capturados.append(src)
-                      if not capturados:
-                          m = re.search(r'(https?://[^"\']+(?:tankie|oneplayer)[^"\']+)', html_r)
-                          if m: capturados.append(m.group(1))
-              except Exception: pass
-              finally: await page.close()
-              diretos = [u for u in capturados if re.search(r"[.](mp4|m3u8)([?]|$)", u, re.I)]
-              if diretos: return diretos[0]
-              if capturados: return capturados[0]
+                  return json.loads(Path(arq).read_text(encoding="utf-8"))
+              except Exception:
+                  return padrao
+
+
+          def salvar_json(arq, dados):
+              Path(arq).write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+          def carregar_pendentes(arq):
+              """Carrega a lista de pendentes juntando duplicados (mantém o maior nº de tentativas)."""
+              por_arquivo = {}
+              for p in carregar_json(arq, []):
+                  if not isinstance(p, dict) or "arquivo" not in p:
+                      continue
+                  if p["arquivo"] in por_arquivo:
+                      ant = por_arquivo[p["arquivo"]]
+                      ant["tentativas"] = max(ant.get("tentativas", 1), p.get("tentativas", 1))
+                  else:
+                      p.setdefault("tentativas", 1)
+                      por_arquivo[p["arquivo"]] = p
+              return list(por_arquivo.values())
+
+
+          def anexar_linha(arq, linha):
+              with open(arq, "a", encoding="utf-8") as f:
+                  f.write(linha.strip() + "\n")
+
+
+          # ----------------------------------------------------------------------------
+          # JSON-LD
+          # ----------------------------------------------------------------------------
+          def ler_ld(soup):
+              """Gera todos os objetos JSON-LD (dict) da página, inclusive dentro de listas e @graph."""
+              for s in soup.find_all("script", type="application/ld+json"):
+                  try:
+                      dados = json.loads(s.string or s.get_text())
+                  except Exception:
+                      continue
+                  pilha = dados if isinstance(dados, list) else [dados]
+                  for item in pilha:
+                      if not isinstance(item, dict):
+                          continue
+                      if isinstance(item.get("@graph"), list):
+                          for sub in item["@graph"]:
+                              if isinstance(sub, dict):
+                                  yield sub
+                      yield item
+
+
+          def como_lista(v):
+              if isinstance(v, str):
+                  return [v]
+              if isinstance(v, dict):
+                  return como_lista(v.get("url"))
+              if isinstance(v, list):
+                  saida = []
+                  for x in v:
+                      saida.extend(como_lista(x))
+                  return saida
+              return []
+
+
+          # ----------------------------------------------------------------------------
+          # Títulos
+          # ----------------------------------------------------------------------------
+          # Prefixos de "lixo" do site. Palavras comuns (arc, inix) só são removidas quando
+          # seguidas de separador, para nunca cortar títulos reais como "Arcane" ou "Arctic".
+          _PREFIXO = re.compile(
+              r"^(?:(?i:marc[øo]s\s*x\s*7|vini\s*7x)"
+              r"|(?:(?i:entre[ _-]nos|inix)|arc)(?=[\s\-_:|]))[\s\-_:|]*"
+          )
+          _ANO_RE = r"(?<!\d)(?:19|20)\d{2}(?!\d)"
+
+
+          def ano_da_url(url):
+              m = re.search(r"/([^/?#]+?)(?:\.html)?(?:[?#].*)?$", url or "")
+              if not m:
+                  return ""
+              anos = re.findall(_ANO_RE, m.group(1))
+              return anos[-1] if anos else ""
+
+
+          def extrair_ano(titulo_bruto, url):
+              ano = ano_da_url(url)
+              if ano:
+                  return ano
+              m = re.search(r"\(\s*((?:19|20)\d{2})\s*\)", str(titulo_bruto or ""))
+              return m.group(1) if m else ""
+
+
+          def _titulo_pela_url(url):
+              m = re.search(r"/([^/?#]+?)\.html", url or "")
+              if not m:
+                  return ""
+              slug = m.group(1)
+              slug = re.sub(r"^(?:inix|arc|entre-nos)[-_]", "", slug, flags=re.I)
+              slug = re.sub(r"[-_]\d{4}$", "", slug)
+              palavras = slug.replace("-", " ").replace("_", " ").split()
+              return " ".join(p[:1].upper() + p[1:] for p in palavras)
+
+
+          def limpar_titulo_bruto(titulo, url="", fallback=True):
+              t = str(titulo or "")
+              if re.search(r"https?:|\.html?\b", t, re.I):
+                  t = ""
+              t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
+              t = re.sub(r"\s+", " ", t).strip(" -–—|:")
+
+              for _ in range(3):  # prefixos empilhados
+                  novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
+                  if novo == t:
+                      break
+                  t = novo
+
+              t = re.sub(r"^(?:assistir|baixar|download)\s+", "", t, flags=re.I)
+              t = re.sub(
+                  r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
+                  "", t, flags=re.I)
+              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
+              # (o NFKC transforma "2ª" em "2a", por isso o [ªº°ao])
+              t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
+              t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
+
+              # Ano: "(2019)" no fim sempre sai; um ano solto no fim só sai se for o mesmo
+              # ano da URL (assim "Blade Runner 2049" e "Wonder Woman 1984" ficam intactos).
+              ano_url = ano_da_url(url)
+              for _ in range(3):
+                  novo = re.sub(r"\s*\(\s*(?:19|20)\d{2}\s*\)\s*$", "", t)
+                  if ano_url:
+                      novo = re.sub(r"\s+" + ano_url + r"\s*$", "", novo)
+                  novo = novo.strip(" -–—|:")
+                  if novo == t:
+                      break
+                  t = novo
+
+              if len(t) < 3 and fallback:
+                  t = _titulo_pela_url(url)
+              return t.strip()
+
+
+          def candidatos_titulo(soup):
+              c = []
+              h1 = soup.find("h1", class_="post-title") or soup.find("h1")
+              if h1:
+                  c.append(h1.get_text(" ", strip=True))
+              og = soup.find("meta", property="og:title")
+              if og and og.get("content"):
+                  c.append(og["content"])
+              if soup.title and soup.title.string:
+                  c.append(soup.title.string)
+              return c
+
+
+          def escolher_titulo(soup, url):
+              """Prioridade: <h1>, og:title, <title>, e só por último a URL. Retorna (titulo, ano)."""
+              for raw in candidatos_titulo(soup):
+                  t = limpar_titulo_bruto(raw, url, fallback=False)
+                  if len(t) >= 3:
+                      return t, extrair_ano(raw, url)
+              return limpar_titulo_bruto("", url), extrair_ano("", url)
+
+
+          def fazer_slug(titulo, url=""):
+              t = unicodedata.normalize("NFKD", str(titulo or ""))
+              t = "".join(c for c in t if not unicodedata.combining(c))
+              s = re.sub(r"[^a-z0-9]", "_", t.lower())
+              s = re.sub(r"_+", "_", s).strip("_")
+              if not s:
+                  m = re.search(r"/([^/?#]+?)(?:\.html)?(?:[?#].*)?$", url or "")
+                  s = re.sub(r"[^a-z0-9]+", "_", (m.group(1) if m else "").lower()).strip("_")
+              return s or "sem_titulo"
+
+
+          # ----------------------------------------------------------------------------
+          # Capas
+          # ----------------------------------------------------------------------------
+          def is_icon_url(url):
+              if not url:
+                  return True
+              u = str(url).lower()
+              if "placeholder" in u or "placehold.co" in u or "sem+capa" in u:
+                  return True
+              caminho = urlparse(u).path
+              if re.search(r"(?:^|[/_.\-])(?:favicon|icon|logo|avatar)s?(?:[/_.\-0-9]|$)", caminho):
+                  return True
+              if re.search(r"\.(?:ico|svg)$", caminho):
+                  return True
+              if re.search(r"[=/]s(?:16|24|32|48|64|72|96)(?:-[a-z]+)?(?:[/?]|$)", u):
+                  return True  # miniaturas minúsculas do Blogger (favicon / avatar)
+              return False
+
+
+          def normalizar_url(u):
+              u = (u or "").strip()
+              if u.startswith("//"):
+                  u = "https:" + u
+              if u.startswith("http://"):
+                  u = "https://" + u[7:]
+              return u
+
+
+          def capa_valida(u):
+              u = normalizar_url(u)
+              return len(u) >= 10 and u.startswith("https://") and not is_icon_url(u)
+
+
+          def corpo_post(soup):
+              return soup.select_one(".post-body, .entry-content, article") or soup
+
+
+          def escolher_capa(soup, html_text=""):
+              candidatas = []
+              for ld in ler_ld(soup):
+                  candidatas += como_lista(ld.get("thumbnailUrl"))
+                  candidatas += como_lista(ld.get("image"))
+              for prop in ("og:image", "twitter:image"):
+                  m = soup.find("meta", property=prop) or soup.find("meta", attrs={"name": prop})
+                  if m and m.get("content"):
+                      candidatas.append(m["content"])
+              for img in corpo_post(soup).find_all("img"):
+                  for attr in ("src", "data-src"):
+                      if img.get(attr):
+                          candidatas.append(img[attr])
+              candidatas += re.findall(r"https://blogger\.googleusercontent\.com/img/[^\"'\s<>]+", html_text or "")
+              for c in candidatas:
+                  c = normalizar_url(c)
+                  if capa_valida(c):
+                      return c
+              return PLACEHOLDER
+
+
+          # ----------------------------------------------------------------------------
+          # Vídeo
+          # ----------------------------------------------------------------------------
+          def extrair_link_estatico(html_text, soup=None):
+              """Mesma regra de antes (contentUrl do JSON-LD, senão 1º link que bate), para não
+              gerar duplicados nos arquivos que já existem. <video>/<source> só como último recurso."""
+              soup = soup or BeautifulSoup(html_text, "html.parser")
+              for ld in ler_ld(soup):
+                  v = ld.get("contentUrl")
+                  if isinstance(v, str) and v.startswith("http"):
+                      return v
+              m = re.findall(
+                  r"(https?://[^\"'\s<>]+(?:\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site)[^\"'\s<>]*)",
+                  html_text)
+              if m:
+                  return m[0]
+              for tag in soup.find_all(["video", "source"]):
+                  src = tag.get("src") or ""
+                  if src.startswith("http"):
+                      return src
               return None
 
-          def extrair_dados_pagina(html_text, url_pagina):
-              soup = BeautifulSoup(html_text, 'html.parser')
-              if eh_serie(soup, url_pagina):
-                  return None, None, None, "SÉRIE", 0
 
-              fontes = extrair_titulos_fontes(soup, html_text)
-              titulo, votos, total = votar_titulos(fontes, url_pagina)
+          # ----------------------------------------------------------------------------
+          # Arquivos .html (saída para o Rave)
+          # ----------------------------------------------------------------------------
+          _TEMPLATE = """<!DOCTYPE html>
+          <html lang="pt-BR">
+          <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script type="application/ld+json">
+          __JSON__
+          </script>
+          <title>__TITULO__</title>
+          <style>
+          body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
+          video { width: 100%; height: 100%; outline: none; background: #000; }
+          </style>
+          </head>
+          <body>
+          <video id="v" __MARCADOR__ controls playsinline preload="none" poster="__CAPA__"></video>
+          <script>
+          (function () {
+            var v = document.getElementById("v");
+            var u = atob("__B64__");
+            var iniciado = false;
+            function iniciar() {
+              if (iniciado) { return; }
+              iniciado = true;
+              v.src = u;
+              v.load();
+              var p = v.play();
+              if (p && p.catch) { p.catch(function () {}); }
+            }
+            v.addEventListener("click", iniciar);
+            v.addEventListener("touchend", iniciar);
+            v.addEventListener("play", iniciar);
+          })();
+          </script>
+          </body>
+          </html>
+          """
 
-              capa = ""
-              script_ld = soup.find('script', type='application/ld+json')
-              if script_ld:
-                  try: capa = json.loads(script_ld.string).get('thumbnailUrl', [''])[0]
-                  except: pass
-              if not capa or capa == 'h' or len(capa) < 5 or is_icon_url(capa):
-                  m = re.search(r'https://blogger\.googleusercontent\.com/img/[^"\'\s<>]+', html_text)
-                  if m and not is_icon_url(m.group(0)): capa = m.group(0)
-                  else:
-                      og_img = soup.find('meta', property='og:image')
-                      if og_img and og_img.get('content') and not is_icon_url(og_img['content']):
-                          capa = og_img['content']
-                      else:
-                          capa = "https://via.placeholder.com/500x750?text=Sem+Capa"
 
-              video = None
-              if script_ld:
-                  try: video = json.loads(script_ld.string).get('contentUrl')
-                  except: pass
-              if not video:
-                  matches = re.findall(r'(https?://[^"\'\s<>]+(?:\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site)[^"\'\s<>]*)', html_text)
-                  if matches: video = matches[0]
-
-              duracao = "PT01H30M00S"
-              if script_ld:
-                  try:
-                      dados_ld = json.loads(script_ld.string)
-                      if dados_ld.get('duration'): duracao = dados_ld['duration']
-                  except: pass
-
-              return titulo.strip(), capa, video, duracao, total
-
-          def salvar_html(caminho_destino, nome_json, link, capa_url, duracao="PT01H30M00S"):
-              nome_json = remover_surrogates(nome_json)
-              capa_url = remover_surrogates(capa_url) if capa_url else capa_url
-              base_url = "https://api-pobreflix-filmes.pages.dev"
-              file_url = f"{base_url}/{caminho_destino.name}"
+          def montar_html(arquivo, nome_json, link, capa):
+              file_url = f"{PAGES_URL}/{arquivo}"
               dados = {
                   "@context": "https://schema.org", "@type": "VideoObject",
                   "@id": file_url, "url": file_url,
                   "name": nome_json, "description": f"Assista {nome_json}",
-                  "thumbnailUrl": [capa_url],
+                  "thumbnailUrl": [capa],
                   "uploadDate": "2020-01-01T00:00:00+00:00", "inLanguage": "pt",
                   "contentUrl": link, "embedUrl": link,
-                  "supportPlatform": ["https://schema.org/IOSPlatform", "https://schema.org/AndroidPlatform"],
-                  "duration": duracao,
-                  "interactionStatistic": {"@type": "InteractionCounter",
-                      "interactionType": {"@type": "WatchAction"},
-                      "userInteractionCount": 9458}
               }
-              js = json.dumps(dados, ensure_ascii=False, indent=4)
-              title_attr = html.escape(nome_json, quote=True)
-              html_out = (
-                  f'<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n'
-                  f'<meta charset="UTF-8">\n'
-                  f'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
-                  f'<link rel="icon" href="data:,">\n'
-                  f'<script type="application/ld+json">\n{js}\n</script>\n'
-                  f'<title>{nome_json}</title>\n'
-                  f'<style>\nbody, html {{ margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }}\n'
-                  f'video {{ width: 100%; height: 100%; outline: none; }}\n</style>\n</head>\n<body>\n'
-                  f'<video id="player-video" title="{title_attr}" poster="{capa_url}" src="{link}" controls autoplay playsinline></video>\n'
-                  f'</body>\n</html>'
-              )
-              caminho_destino.write_text(html_out, encoding='utf-8', errors='replace')
+              js = json.dumps(dados, ensure_ascii=False, indent=4).replace("</", "<\\/")
+              b64 = base64.b64encode(link.encode("utf-8")).decode("ascii")
+              return (_TEMPLATE
+                      .replace("__JSON__", js)
+                      .replace("__TITULO__", htmllib.escape(nome_json))
+                      .replace("__MARCADOR__", MARCADOR_FORMATO)
+                      .replace("__CAPA__", htmllib.escape(capa, quote=True))
+                      .replace("__B64__", b64))
+
+
+          def salvar_html(destino, nome_json, link, capa):
+              destino = Path(destino)
+              destino.write_text(montar_html(destino.name, nome_json, link, capa), encoding="utf-8")
+
+
+          # ----------------------------------------------------------------------------
+          # Índice de vídeos já existentes (deduplicação)
+          # ----------------------------------------------------------------------------
+          INDICE = {}        # link  -> Path
+          LINK_DO_ARQ = {}   # Path  -> link
+
+
+          def construir_indice():
+              INDICE.clear()
+              LINK_DO_ARQ.clear()
+              duplicados = 0
+              for f in sorted(Path(".").glob("*.html")):
+                  try:
+                      texto = f.read_text(encoding="utf-8")
+                  except Exception:
+                      continue
+                  m = re.search(r'"contentUrl":\s*"([^"]+)"', texto)
+                  if not m:
+                      continue
+                  link = m.group(1)
+                  if link in INDICE:
+                      duplicados += 1
+                  INDICE[link] = f
+                  LINK_DO_ARQ[f] = link
+              log(f"Índice: {len(LINK_DO_ARQ)} arquivos mapeados"
+                  + (f" ({duplicados} com vídeo duplicado)" if duplicados else ""))
+
+
+          def registrar(path, link):
+              path = Path(path)
+              antigo = LINK_DO_ARQ.get(path)
+              if antigo and INDICE.get(antigo) == path:
+                  del INDICE[antigo]
+              INDICE[link] = path
+              LINK_DO_ARQ[path] = link
+
+
+          def nome_ok(nome_atual, stem):
+              """True se o arquivo já tem o nome calculado (ou o nome + sufixo de colisão _2, _3...)."""
+              if nome_atual == stem + ".html":
+                  return True
+              return nome_atual.startswith(stem + "_") and bool(
+                  re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
+
+
+          def escolher_nome(stem, link):
+              """Nunca sobrescreve o arquivo de OUTRO vídeo: se o nome já é de outro link, usa _2, _3..."""
+              i = 1
+              while True:
+                  nome = f"{stem}.html" if i == 1 else f"{stem}_{i}.html"
+                  p = Path(nome)
+                  if not p.exists():
+                      return nome
+                  dono = LINK_DO_ARQ.get(p)
+                  if dono is None or dono == link:
+                      return nome
+                  i += 1
+
+
+          def buscar_por_stem(stem):
+              for p in LINK_DO_ARQ:
+                  if nome_ok(p.name, stem) and p.exists():
+                      return p
+              return None
+
 
           def checar_defeitos(arquivo):
+              """Retorna dict: n=nome quebrado, c=capa quebrada, f=formato antigo (src solto no HTML)."""
+              d = {"n": True, "c": True, "f": True, "nome": "", "capa": ""}
               try:
-                  conteudo = arquivo.read_text(encoding="utf-8")
-                  soup = BeautifulSoup(conteudo, 'html.parser')
-                  script = soup.find('script', type='application/ld+json')
-                  if not script: return True, True, "", ""
-                  dados = json.loads(script.string)
-                  nome = dados.get('name', '') or ''
-                  capa = dados.get('thumbnailUrl', [''])[0] if dados.get('thumbnailUrl') else ''
-                  nome_norm = unicodedata.normalize('NFKD', nome)
-                  nome_norm = "".join([c for c in nome_norm if not unicodedata.combining(c)])
-                  has_surrogates = any(0xD800 <= ord(c) <= 0xDFFF for c in nome)
-                  n_quebrado = (
-                      len(nome_norm) < 3 or
-                      bool(re.match(r'^(?:[^\w]*)(?:vini7x|vini|marcos|inix|grave|clau|site|rave)\b', nome_norm, re.I)) or
-                      "http" in nome_norm.lower() or has_surrogates
-                  )
-                  c_quebrada = ("placeholder" in capa or "Sem+Capa" in capa or not capa or is_icon_url(capa))
-                  return n_quebrado, c_quebrada, nome, capa
-              except: return True, True, "", ""
-
-          async def processar_item(context, url_pagina):
-              log(f"\n--> Verificando: {url_pagina}")
-              tentativas = ATTEMPTS.get(url_pagina, 0)
+                  conteudo = Path(arquivo).read_text(encoding="utf-8")
+              except Exception:
+                  return d
+              d["f"] = MARCADOR_FORMATO not in conteudo
               try:
-                  html_raw, final_url = await fetch_raw_seguro(url_pagina, context)
+                  soup = BeautifulSoup(conteudo, "html.parser")
+                  ld = next(ler_ld(soup), None)
+              except Exception:
+                  ld = None
+              if not ld:
+                  return d
+              nome = str(ld.get("name") or "")
+              capas = como_lista(ld.get("thumbnailUrl"))
+              capa = capas[0] if capas else ""
+              d["nome"], d["capa"] = nome, capa
+              d["n"] = bool(
+                  len(nome.strip()) < 3
+                  or re.search(r"https?:|\.html?\b|\bNone\b", nome)
+                  or _PREFIXO.match(nome)
+                  or nome.count(SUFIXO) != 1
+                  or re.search(r"\((\d{4})\)\s*\(\1\)", nome))
+              d["c"] = (not capa) or capa == "h" or is_icon_url(capa)
+              return d
 
-                  if html_raw is None:
-                      ATTEMPTS[url_pagina] = tentativas + 1
-                      if tentativas + 1 >= MAX_TENTATIVAS_CAPTCHA:
-                          log(f"    [🚨] {MAX_TENTATIVAS_CAPTCHA}x bloqueado ({final_url}). Descartando.")
-                          with open(ARQ_DESCARTADOS, "a", encoding="utf-8") as f:
-                              f.write(url_pagina.strip()+"\n")
-                      else:
-                          log(f"    [🚫] Bloqueado ({final_url}). Tentativa {tentativas+1}/{MAX_TENTATIVAS_CAPTCHA}. Pulando (retry próximo run).")
-                      return
 
-                  if final_url != url_pagina:
-                      log(f"    [ℹ️] URL final: {final_url}")
-                      url_pagina = final_url
+          def upsert(stem, nome_json, link, capa, modo, ind="    "):
+              """Cria ou conserta o arquivo de um vídeo. Retorna:
+              novo | corrigido | perfeito | ignorado | pulado | sem_link"""
+              existente = INDICE.get(link) if link else None
+              if existente is not None and not existente.exists():
+                  existente = None
+              if not link:  # sem link novo: ainda dá para consertar nome/capa de um arquivo já existente
+                  existente = buscar_por_stem(stem)
+                  if existente is None:
+                      return "sem_link"
+                  link = LINK_DO_ARQ[existente]
 
-                  titulo, capa_url, link, duracao, total = extrair_dados_pagina(html_raw, url_pagina)
-
-                  if duracao == "SÉRIE":
-                      log("    (É SÉRIE. Pulando...)")
-                      with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                      return
-
-                  # Warmup: só se poucas fontes e ainda não foi via Playwright
-                  if total < MIN_FONTES_CONFIAVEL:
-                      log(f"    [🔄] Warmup: raw tem {total} fonte(s). Retry em {WARMUP_DELAY}s...")
-                      await asyncio.sleep(WARMUP_DELAY)
-                      try:
-                          r2 = await asyncio.to_thread(requests.get, url_pagina, headers=HEADERS, timeout=20, allow_redirects=True)
-                          if 'google.com/sorry' not in r2.url and '/sorry/index' not in r2.url:
-                              html_raw2 = r2.text
-                              titulo2, capa2, link2, dur2, total2 = extrair_dados_pagina(html_raw2, url_pagina)
-                              if dur2 == "SÉRIE":
-                                  log("    (É SÉRIE. Pulando...)")
-                                  with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                                  if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                                  return
-                              if total2 > total:
-                                  log(f"    [🔄] Warmup OK: {total} → {total2} fontes")
-                                  titulo, capa_url, link, duracao, total = titulo2, capa2, link2, dur2, total2
-                      except Exception:
-                          pass
-
-                  precisa_renderizar = (not link) or (not titulo) or (total < MIN_FONTES_CONFIAVEL)
-
-                  if precisa_renderizar:
-                      if total > 0 and total < MIN_FONTES_CONFIAVEL:
-                          log(f"    [🔄] Renderizando (raw ainda com {total} fonte(s))...")
-                      async with async_playwright() as pw:
-                          browser = await pw.chromium.launch(headless=True)
-                          page = await browser.new_page()
-                          html_render = html_raw
-                          try:
-                              await page.goto(url_pagina, wait_until="domcontentloaded", timeout=30000)
-                              if 'google.com/sorry' in page.url or '/sorry/index' in page.url:
-                                  log(f"    [🚫] Render também bloqueado. Tentativa {tentativas+1}/{MAX_TENTATIVAS_CAPTCHA}.")
-                                  await browser.close()
-                                  ATTEMPTS[url_pagina] = tentativas + 1
-                                  if tentativas + 1 >= MAX_TENTATIVAS_CAPTCHA:
-                                      log(f"    [🚨] Descartando.")
-                                      with open(ARQ_DESCARTADOS, "a", encoding="utf-8") as f:
-                                          f.write(url_pagina.strip()+"\n")
-                                  return
-                              await asyncio.sleep(8)
-                              await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                              await asyncio.sleep(2)
-                              html_render = await page.content()
-                          except Exception as e:
-                              log(f"    [⚠️] Render falhou: {e}")
-                          await browser.close()
-
-                          titulo_r, capa_r, link_r, duracao_r, total_r = extrair_dados_pagina(html_render, url_pagina)
-
-                          if duracao_r == "SÉRIE":
-                              log("    (É SÉRIE. Pulando...)")
-                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                              if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                              return
-
-                          if titulo_r and (not titulo or total_r > total):
-                              if titulo and titulo_r != titulo:
-                                  log(f"    [🔄] Título atualizado via render: '{titulo}' → '{titulo_r}'")
-                              titulo = titulo_r
-                              total = total_r
-                          if not capa_url or capa_url == 'h': capa_url = capa_r
-                          if not link: link = link_r
-                          if duracao_r and duracao_r != "SÉRIE": duracao = duracao_r
-
-                  # Slug fallback
-                  if total < MIN_FONTES_CONFIAVEL:
-                      slug_titulo = slug_para_titulo(url_pagina)
-                      if slug_titulo and len(slug_titulo) > len(titulo or ""):
-                          log(f"    [🔄] Fallback via slug: '{titulo}' → '{slug_titulo}'")
-                          titulo = slug_titulo
-                  elif not titulo_bate_com_slug(titulo, url_pagina):
-                      slug_titulo = slug_para_titulo(url_pagina)
-                      if slug_titulo and len(slug_titulo) > 3:
-                          log(f"    [⚠️] Título '{titulo}' não bate com URL. Usando slug: '{slug_titulo}'")
-                          titulo = slug_titulo
-
-                  if not link:
-                      log(f"    [🔄] Link não encontrado. Tentando interceptação de rede...")
-                      link = await extrair_video_playwright(context, url_pagina)
-                      if link:
-                          log(f"    [🔄] Link via interceptação: {link[:60]}...")
-
-                  if duracao == "SÉRIE" or not titulo:
-                      log("    (É SÉRIE. Pulando...)")
-                      with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                      return
-
-                  ano = ""
-                  m = re.search(r'/([^/]+)\.html', url_pagina)
-                  if m:
-                      anos = re.findall(r'(?<!\d)(?:19|20)\d{2}(?!\d)', m.group(1))
-                      if anos: ano = anos[-1]
-
-                  slug = re.sub(r'[^a-z0-9]', '_', titulo.lower())
-                  slug = re.sub(r'_+', '_', slug).strip('_')
-
-                  if ano and not re.search(r'\d{4}', titulo):
-                      nome_arquivo_calculado = f"{slug}_{ano}.html"
-                      nome_json = f"{titulo} ({ano}) - 🍿Clau"
+              if existente is not None:
+                  d = checar_defeitos(existente)
+                  renomear = not nome_ok(existente.name, stem)
+                  log(f"{ind}(Arquivo existente: {existente.name})")
+                  if modo == "apenas_baixar":
+                      log(f"{ind}Modo Apenas Baixar: ignorando conserto.")
+                      return "ignorado"
+                  if not (renomear or d["n"] or d["c"] or d["f"]):
+                      log(f"{ind}(Já está perfeito).")
+                      return "perfeito"
+                  acoes = []
+                  if renomear: acoes.append("Renomeado")
+                  if d["n"]: acoes.append("Título corrigido")
+                  if d["c"]: acoes.append("Capa corrigida")
+                  if d["f"]: acoes.append("Formato atualizado")
+                  log(f"{ind}[🔄] {', '.join(acoes)}...")
+                  capa_final = capa if capa_valida(capa) else (d["capa"] if capa_valida(d["capa"]) else capa)
+                  nome_final = nome_json if (renomear or d["n"] or not d["nome"]) else d["nome"]
+                  destino = Path(escolher_nome(stem, link)) if renomear else existente
+                  salvar_html(destino, nome_final, link, capa_final)
+                  if destino != existente:
+                      existente.unlink()
+                      LINK_DO_ARQ.pop(existente, None)
+                      log(f"{ind}[+] Salvo como: {destino.name}")
                   else:
-                      nome_arquivo_calculado = f"{slug}.html"
-                      nome_json = f"{titulo} - 🍿Clau"
+                      log(f"{ind}[+] Arquivo atualizado in-place.")
+                  registrar(destino, link)
+                  return "corrigido"
 
-                  with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+              destino = Path(escolher_nome(stem, link))
+              if destino.exists():  # arquivo sem contentUrl (quebrado) ocupando o nome
+                  if modo == "apenas_baixar":
+                      log(f"{ind}(Arquivo quebrado {destino.name}). Modo Apenas Baixar: ignorando.")
+                      return "ignorado"
+                  log(f"{ind}[🔄] Refazendo arquivo quebrado: {destino.name}")
+                  salvar_html(destino, nome_json, link, capa)
+                  registrar(destino, link)
+                  return "corrigido"
+              if modo == "apenas_consertar":
+                  log(f"{ind}(Não existe e o modo é Apenas Consertar. Pulando.)")
+                  return "pulado"
+              salvar_html(destino, nome_json, link, capa)
+              registrar(destino, link)
+              log(f"{ind}[+] Salvo: {destino.name}")
+              return "novo"
 
-                  candidatos = INDICE_VIDEOS.get(link, []) if link else []
-                  arquivo_existente = None
-                  for cand in candidatos:
-                      if not cand.exists(): continue
-                      _, _, nome_cand, _ = checar_defeitos(cand)
-                      if nomes_compativeis(nome_cand, nome_json, cand.name, nome_arquivo_calculado):
-                          arquivo_existente = cand
-                          break
 
-                  if arquivo_existente is None and candidatos:
-                      nomes_outros = []
-                      for c in candidatos:
-                          if c.exists():
-                              _, _, n_outro, _ = checar_defeitos(c)
-                              if n_outro: nomes_outros.append(f"'{c.name}' ({n_outro})")
-                      if nomes_outros:
-                          log(f"    [⚠️] URL compartilhada com outro(s) filme(s): {', '.join(nomes_outros)} — criando arquivo separado")
+          def registrar_erro(erros, url, arq_descartados, maximo=3):
+              """Conta falhas por URL; após `maximo` falhas descarta para a fila não travar. True se descartou."""
+              erros[url] = erros.get(url, 0) + 1
+              if erros[url] >= maximo:
+                  anexar_linha(arq_descartados, url)
+                  erros.pop(url, None)
+                  return True
+              return False
 
-                  if arquivo_existente:
-                      n_quebrado, c_quebrada, nome_antigo, capa_antiga = checar_defeitos(arquivo_existente)
-                      renomear = (arquivo_existente.name != nome_arquivo_calculado)
 
-                      if MODO == 'apenas_baixar':
-                          log(f"    (Arquivo existente: {arquivo_existente.name}). Modo Apenas Baixar: Ignorando conserto.")
-                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                          return
-
-                      if not renomear and not n_quebrado and not c_quebrada:
-                          log(f"    (Arquivo existente: {arquivo_existente.name}). (Já está perfeito).")
-                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                          return
-
-                      log(f"    (Arquivo existente: {arquivo_existente.name})")
-                      acoes = []
-                      if renomear: acoes.append(f"Renomeado ({arquivo_existente.name} → {nome_arquivo_calculado})")
-                      if n_quebrado: acoes.append(f"Título corrigido ('{nome_antigo}' → '{nome_json}')")
-                      if c_quebrada: acoes.append("Capa corrigida")
-                      log(f"    [🔄] {', '.join(acoes)}...")
-
-                      novo_caminho = Path(nome_arquivo_calculado) if renomear else arquivo_existente
-                      salvar_html(novo_caminho, nome_json, link, capa_url, duracao)
-
-                      if renomear and arquivo_existente.exists():
-                          arquivo_existente.unlink()
-                          log(f"    [+] Salvo como: {novo_caminho.name}")
-                      else:
-                          log(f"    [+] Arquivo atualizado in-place.")
-                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                      return
-
-                  arquivo_por_nome = Path(nome_arquivo_calculado)
-                  if arquivo_por_nome.exists():
-                      n_quebrado, c_quebrada, nome_antigo, capa_antiga = checar_defeitos(arquivo_por_nome)
-                      nome_nao_bate_url = not titulo_bate_com_slug(nome_antigo, url_pagina)
-
-                      if MODO == 'apenas_baixar':
-                          log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado}). Modo Apenas Baixar: Ignorando.")
-                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                          return
-
-                      if n_quebrado or c_quebrada or nome_nao_bate_url:
-                          acoes = []
-                          if nome_nao_bate_url: acoes.append(f"Título não bate com URL")
-                          if n_quebrado: acoes.append("Título corrigido")
-                          if c_quebrada: acoes.append("Capa corrigida")
-                          log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado})")
-                          log(f"    [🔄] {', '.join(acoes)}...")
-                          salvar_html(arquivo_por_nome, nome_json, link, capa_url, duracao)
-                          log(f"    [+] Arquivo atualizado.")
-                      else:
-                          log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado}). (Já está perfeito).")
-                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                      return
-
-                  if MODO == 'apenas_consertar':
-                      log(f"    (Não existe e modo é Apenas Consertar. Pulando.)")
-                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
-                      return
-
-                  log(f"    Filme: '{nome_json}'")
-                  if not link:
-                      if not any(p['arquivo']==nome_arquivo_calculado for p in pendentes):
-                          pendentes.append({"arquivo": nome_arquivo_calculado, "nome_json": nome_json, "url": url_pagina, "tentativas": 1})
-                      return
-                  salvar_html(Path(nome_arquivo_calculado), nome_json, link, capa_url, duracao)
-                  log(f"      [+] Salvo: {nome_arquivo_calculado}")
-                  if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
+          def escrever_faltam(n):
+              try:
+                  FALTAM_ARQ.write_text(str(int(n)), encoding="utf-8")
               except Exception as e:
-                  log(f"    Erro em {url_pagina}: {e}")
+                  log(f"(não consegui gravar {FALTAM_ARQ}: {e})")
+
+
+          from playwright.async_api import async_playwright
+
+          ARQ_FILA        = Path("filmes_fila.txt")
+          ARQ_FEITAS      = Path("filmes_feitos.txt")        # passada de DOWNLOAD concluída
+          ARQ_CONSERTADOS = Path("filmes_consertados.txt")   # passada de CONSERTO concluída
+          ARQ_PENDENTES   = Path("filmes_pendentes.json")
+          ARQ_DESCARTADOS = Path("filmes_descartados.txt")
+          ARQ_ERROS       = Path("filmes_erros.json")
+
+          # 'apenas_consertar' usa a sua própria lista de progresso. Assim rodar o modo de conserto
+          # nunca faz o robô "achar" que os filmes já foram baixados.
+          ARQ_PROGRESSO = ARQ_CONSERTADOS if MODO == "apenas_consertar" else ARQ_FEITAS
+
+
+          def marcar(url):
+              anexar_linha(ARQ_PROGRESSO, url)
+              if MODO == "baixar_e_consertar":
+                  anexar_linha(ARQ_CONSERTADOS, url)
+
+
+          def eh_serie_estrito(soup):
+              for ld in ler_ld(soup):
+                  tipos = ld.get("@type")
+                  tipos = tipos if isinstance(tipos, list) else [tipos]
+                  if any(t in ("TVSeries", "TVSeason", "TVEpisode") for t in tipos):
+                      return True
+              for a in soup.find_all("a", href=True):
+                  if re.search(r"epis[oó]dio[-_/]\d+", a["href"], re.I):
+                      return True
+                  if re.search(r"\bepis[oó]dio\s+\d+", a.get_text(strip=True), re.I):
+                      return True
+              return False
+
+
+          async def processar_filme(ctx, url):
+              """Retorna (status, info). status:
+              serie | descartar | erro_rede | sem_link | novo | corrigido | perfeito | ignorado | pulado"""
+              log(f"\n--> Verificando: {url}")
+              status, texto = await asyncio.to_thread(http_get, url)
+              if status is None:
+                  log(f"    Falha de rede: {texto}")
+                  return "erro_rede", None
+              if status in (404, 410):
+                  log(f"    (Página não existe mais: HTTP {status}. Pulando...)")
+                  return "descartar", None
+              if status != 200:
+                  log(f"    HTTP {status}. Tentaremos de novo depois.")
+                  return "erro_rede", None
+
+              soup = BeautifulSoup(texto, "html.parser")
+              if eh_serie_estrito(soup):
+                  log("    (É SÉRIE. Pulando...)")
+                  return "serie", None
+
+              link = extrair_link_estatico(texto, soup)
+              soup_capa, html_capa = soup, texto
+              if not link:
+                  html_r = await renderizar(ctx, url)
+                  if html_r:
+                      soup_r = BeautifulSoup(html_r, "html.parser")
+                      if eh_serie_estrito(soup_r):
+                          log("    (É SÉRIE. Pulando...)")
+                          return "serie", None
+                      link = extrair_link_estatico(html_r, soup_r)
+                      soup_capa, html_capa = soup_r, html_r
+
+              titulo, ano = escolher_titulo(soup, url)
+              capa = escolher_capa(soup, texto)
+              if not capa_valida(capa) and soup_capa is not soup:
+                  capa = escolher_capa(soup_capa, html_capa)
+
+              slug = fazer_slug(titulo, url)
+              if ano and not re.search(r"\d{4}", titulo):
+                  stem = f"{slug}_{ano}"
+                  nome_json = f"{titulo} ({ano}) - {SUFIXO}"
+              else:
+                  stem = slug
+                  nome_json = f"{titulo} - {SUFIXO}"
+
+              res = upsert(stem, nome_json, link, capa, MODO)
+              if res == "sem_link":
+                  log(f"    Filme '{nome_json}': vídeo não encontrado (vai para a fila de retentativa).")
+                  return "sem_link", {"arquivo": stem + ".html", "nome_json": nome_json, "url": url, "capa": capa}
+              return res, None
+
 
           async def main():
+              construir_indice()
+              if not ARQ_FILA.exists():
+                  log("Criando fila de filmes...")
+                  urls, _ = buscar_urls_feed()
+                  if urls:
+                      escrever_linhas(ARQ_FILA, urls)
+
+              todas = ler_linhas(ARQ_FILA)
+              feitas = set(ler_linhas(ARQ_PROGRESSO))
+              fila = [u for u in todas if u not in feitas]
+              lote = fila[:LOTE_SIZE]
+              log(f"Fila: {len(todas)} | Faltam: {len(fila)} | Lote: {LOTE_SIZE} | Modo: {MODO} | Tempo máx: {TEMPO_MAX // 60} min")
+
+              pendentes = carregar_pendentes(ARQ_PENDENTES)
+              anteriores = list(pendentes) if MODO != "apenas_consertar" else []
+              erros = carregar_json(ARQ_ERROS, {})
+              erros_desta_run, site_fora = [], False
+
               async with async_playwright() as pw:
                   browser = await pw.chromium.launch(headless=True)
-                  ctx = await browser.new_context(
-                      user_agent=HEADERS["User-Agent"],
-                      viewport={"width": 1366, "height": 768},
-                      locale="pt-BR",
-                  )
-                  for i, url in enumerate(lote, 1):
-                      log(f"[{i}/{len(lote)}]")
-                      await processar_item(ctx, url)
-                      # Delay aleatório para evitar CAPTCHA
-                      if i < len(lote):
-                          delay = random.uniform(1.5, 3.5)
-                          await asyncio.sleep(delay)
+                  ctx = await browser.new_context(user_agent=HEADERS["User-Agent"])
+                  seguidos_sem_rede = 0
 
-                  if pendentes:
-                      log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
-                      ainda = []
-                      for item in pendentes:
-                          if Path(item['arquivo']).exists(): continue
-                          if item.get("tentativas", 0) >= MAX_TENTATIVAS:
-                              log(f"--> Descartado (max tentativas): {item['arquivo']}")
-                              continue
-                          log(f"--> Tentativa {item['tentativas']+1}/{MAX_TENTATIVAS}: {item['arquivo']}")
-                          await processar_item(ctx, item['url'])
-                          if not Path(item['arquivo']).exists():
+                  for i, url in enumerate(lote, 1):
+                      if tempo_esgotado():
+                          log("\n⏱️ Tempo máximo da run atingido: parando e salvando o progresso.")
+                          break
+                      log(f"[{i}/{len(lote)}]")
+                      try:
+                          status, info = await processar_filme(ctx, url)
+                      except Exception as e:
+                          log(f"    Erro em {url}: {e}")
+                          status, info = "erro", None
+
+                      if status in ("erro_rede", "erro"):
+                          erros_desta_run.append(url)
+                          seguidos_sem_rede = seguidos_sem_rede + 1 if status == "erro_rede" else 0
+                          if seguidos_sem_rede >= 8:
+                              log("\n⚠️ 8 falhas de rede seguidas: o site parece fora do ar. Encerrando esta run.")
+                              site_fora = True
+                              break
+                          continue
+                      seguidos_sem_rede = 0
+
+                      marcar(url)
+                      if status == "descartar":
+                          anexar_linha(ARQ_DESCARTADOS, url)
+                      elif status == "sem_link" and MODO != "apenas_consertar":
+                          if not any(p["arquivo"] == info["arquivo"] for p in pendentes):
+                              pendentes.append({**info, "tentativas": 1})
+
+                  if not site_fora:
+                      for url in erros_desta_run:
+                          if registrar_erro(erros, url, ARQ_DESCARTADOS):
+                              log(f"    (Descartado após várias falhas: {url})")
+                              marcar(url)
+
+                  # Retentativas de runs anteriores (as adicionadas nesta run esperam a próxima)
+                  if anteriores and not site_fora and not tempo_esgotado():
+                      log(f"\n=== RETENTANDO {len(anteriores)} FILMES SEM LINK ===")
+                      for item in anteriores:
+                          if tempo_esgotado():
+                              break
+                          log(f"--> Tentativa {item.get('tentativas', 1) + 1}/{MAX_TENTATIVAS}: {item['arquivo']}")
+                          try:
+                              status, info = await processar_filme(ctx, item["url"])
+                          except Exception as e:
+                              log(f"    Erro: {e}")
+                              status, info = "erro", None
+                          if status == "sem_link":
                               item["tentativas"] = item.get("tentativas", 1) + 1
-                              ainda.append(item)
-                      pendentes.clear()
-                      pendentes.extend(ainda)
+                              if item["tentativas"] >= MAX_TENTATIVAS:
+                                  log(f"    Desistindo de {item['arquivo']} após {MAX_TENTATIVAS} tentativas.")
+                                  anexar_linha(ARQ_DESCARTADOS, item["url"])
+                                  pendentes[:] = [p for p in pendentes if p["arquivo"] != item["arquivo"]]
+                          elif status in ("erro", "erro_rede"):
+                              pass  # mantém como está
+                          else:
+                              pendentes[:] = [p for p in pendentes if p["arquivo"] != item["arquivo"]]
+
                   await browser.close()
+
+              salvar_json(ARQ_PENDENTES, pendentes)
+              salvar_json(ARQ_ERROS, erros)
+
+              feitas = set(ler_linhas(ARQ_PROGRESSO))
+              faltam = 0 if site_fora else len([u for u in ler_linhas(ARQ_FILA) if u not in feitas])
+              escrever_faltam(faltam)
+              log(f"\nFim da run. Faltam {faltam} URLs. Pendentes de retentativa: {len(pendentes)}.")
+
 
           if __name__ == "__main__":
               asyncio.run(main())
-              ARQ_PENDENTES.write_text(json.dumps(pendentes, ensure_ascii=False, indent=2), encoding="utf-8", errors="replace")
-              salvar_attempts(ATTEMPTS)
+
           PYEOF
           python3 /tmp/mega_filmes.py
 
       - name: Salvar arquivos e progresso
+        if: ${{ !cancelled() }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "fix: CAPTCHA detection + Playwright fallback + delays + attempts tracking"
+          git commit -m "feat: mega extracao de filmes (logs detalhados)"
+          ok=0
           for i in $(seq 1 5); do
-            if git push origin HEAD:main; then break; fi
+            if git push origin HEAD:main; then ok=1; break; fi
             git pull origin main --no-rebase -X ours --no-edit
             git add -A
             git reset .github/ 2>/dev/null || true
             git commit -m "feat: retry $i" || true
             sleep $((RANDOM % 10 + 5))
           done
+          if [ "$ok" != "1" ]; then echo "::error::Não consegui dar push depois de 5 tentativas"; exit 1; fi
 
       - name: Disparar próxima run (se fila não vazia)
         if: |
           success() && (
-            github.event_name == 'schedule' || 
-            inputs.auto_run == true || 
+            github.event_name == 'schedule' ||
+            inputs.auto_run == true ||
             inputs.auto_run == 'true'
           )
         env:
           GH_TOKEN: ${{ secrets.PAT_CHAIN }}
           REPO: ${{ github.repository }}
+          LOTE_IN: ${{ inputs.lote || '100' }}
+          MODO_IN: ${{ inputs.modo || 'baixar_e_consertar' }}
+          TEMPO_IN: ${{ inputs.tempo_max_min || '40' }}
         run: |
-          TOTAL=$(wc -l < filmes_fila.txt)
-          FEITOS=$(sort -u filmes_feitos.txt | wc -l)
-          FALTAM=$((TOTAL - FEITOS))
+          if [ -z "$GH_TOKEN" ]; then echo "PAT_CHAIN não configurado: sem auto-chain."; exit 0; fi
+          FALTAM=$(cat /tmp/faltam.txt 2>/dev/null || echo 0)
           echo "Faltam: $FALTAM"
-          if [ "$FALTAM" -le 0 ]; then exit 0; fi
-          RECENTES=$(gh run list --workflow="Filmes.yml" --limit 100 --json event,createdAt --jq "[.[] | select(.event == \"workflow_dispatch\")] | length" --repo "$REPO" 2>/dev/null || echo 0)
-          if [ "$RECENTES" -ge 100 ]; then exit 0; fi
+          if [ "${FALTAM:-0}" -le 0 ]; then exit 0; fi
+
+          # Freio de segurança: no máximo 60 encadeamentos por hora
+          LIMITE_ISO=$(date -u -d '60 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+          RECENTES=$(gh run list --workflow="Filmes.yml" --event workflow_dispatch --limit 100 \
+            --json createdAt --jq "[.[] | select(.createdAt > \"$LIMITE_ISO\")] | length" \
+            --repo "$REPO" 2>/dev/null || echo 0)
+          echo "Encadeamentos na última hora: $RECENTES"
+          if [ "${RECENTES:-0}" -ge 60 ]; then echo "Limite por hora atingido."; exit 0; fi
+
           sleep 30
-          gh workflow run "Filmes.yml" --repo "$REPO" --ref main -f auto_run=true -f lote="${{ inputs.lote || '100' }}" -f reprocessar_tudo=false -f modo="${{ inputs.modo || 'baixar_e_consertar' }}"
+          gh workflow run "Filmes.yml" --repo "$REPO" --ref main \
+            -f auto_run=true -f lote="$LOTE_IN" -f reprocessar_tudo=false \
+            -f modo="$MODO_IN" -f tempo_max_min="$TEMPO_IN"
