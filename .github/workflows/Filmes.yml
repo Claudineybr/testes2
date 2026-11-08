@@ -49,7 +49,7 @@ jobs:
       - name: Limpar arquivos de controle (Opcional)
         if: ${{ inputs.reprocessar_tudo == true || inputs.reprocessar_tudo == 'true' }}
         run: |
-          rm -f filmes_fila.txt filmes_feitos.txt filmes_pendentes.json filmes_descartados.txt
+          rm -f filmes_fila.txt filmes_feitos.txt filmes_pendentes.json filmes_descartados.txt filmes_attempts.json
 
       - name: Instalar Python e Playwright
         run: |
@@ -63,7 +63,7 @@ jobs:
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
-          import asyncio, re, json, requests, sys, unicodedata, os, html
+          import asyncio, re, json, requests, sys, unicodedata, os, html, random
           from collections import Counter
           from difflib import SequenceMatcher
           from bs4 import BeautifulSoup
@@ -71,15 +71,17 @@ jobs:
           from playwright.async_api import async_playwright
 
           BASE_URL = "https://www.vini7xgrave.site"
-          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
           ARQ_FILA        = Path("filmes_fila.txt")
           ARQ_FEITAS      = Path("filmes_feitos.txt")
           ARQ_PENDENTES   = Path("filmes_pendentes.json")
           ARQ_DESCARTADOS = Path("filmes_descartados.txt")
           ARQ_REPROCESSAR = Path("reprocessar.txt")
+          ARQ_ATTEMPTS    = Path("filmes_attempts.json")
 
           MAX_TENTATIVAS = 6
+          MAX_TENTATIVAS_CAPTCHA = 4
           LOTE_SIZE = int(os.environ.get('LOTE_SIZE', 100))
           MODO = os.environ.get('MODO_EXECUCAO', 'baixar_e_consertar').lower()
 
@@ -164,16 +166,15 @@ jobs:
               if not m: return ""
               slug = m.group(1)
               slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
-              slug = re.sub(r'[-_]\d{4}.*$', '', slug)
+              slug = re.sub(r'[-_]\d{4}(?:_.*)?$', '', slug)
               return slug.replace('-', ' ').replace('_', ' ').title()
 
           def titulo_bate_com_slug(titulo, url):
-              """True se o título compartilha palavras significativas com a URL."""
               m = re.search(r'/([^/]+)\.html', url)
               if not m: return True
               slug = m.group(1)
               slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos|marc_sx7)[-_]', '', slug, flags=re.I)
-              slug = re.sub(r'[-_]\d{4}.*$', '', slug)
+              slug = re.sub(r'[-_]\d{4}(?:_.*)?$', '', slug)
 
               slug_words = set(re.findall(r'\w+', slug.lower()))
               tit_words = set(re.findall(r'\w+', norm_nome(titulo)))
@@ -323,6 +324,18 @@ jobs:
 
           INDICE_VIDEOS = construir_indice_videos()
 
+          def carregar_attempts():
+              if ARQ_ATTEMPTS.exists():
+                  try: return json.loads(ARQ_ATTEMPTS.read_text(encoding="utf-8"))
+                  except Exception: return {}
+              return {}
+
+          def salvar_attempts(data):
+              try: ARQ_ATTEMPTS.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+              except Exception: pass
+
+          ATTEMPTS = carregar_attempts()
+
           def construir_fila():
               log("Criando/atualizando fila de filmes...")
               urls, vistos = [], set()
@@ -354,6 +367,10 @@ jobs:
           if ARQ_FEITAS.exists():
               feitas = set(l.strip() for l in ARQ_FEITAS.read_text(encoding="utf-8").splitlines() if l.strip())
 
+          descartados = set()
+          if ARQ_DESCARTADOS.exists():
+              descartados = set(l.strip() for l in ARQ_DESCARTADOS.read_text(encoding="utf-8").splitlines() if l.strip())
+
           pendentes_dict = {}
           if ARQ_PENDENTES.exists():
               try:
@@ -374,14 +391,53 @@ jobs:
                   if u in feitas:
                       feitas.discard(u)
                       log(f"    [🔁] Retirada de 'feitas': {u}")
+                  if u in descartados:
+                      descartados.discard(u)
+                      log(f"    [🔁] Retirada de 'descartados': {u}")
+                  if u in ATTEMPTS:
+                      del ATTEMPTS[u]
               ARQ_REPROCESSAR.write_text("", encoding="utf-8")
+              ARQ_DESCARTADOS.write_text("\n".join(sorted(descartados)), encoding="utf-8")
 
           todas = [u.strip() for u in ARQ_FILA.read_text(encoding="utf-8").splitlines() if u.strip()]
-          fila_normal = [u for u in todas if u not in feitas and u not in reprocessar_urls]
+          fila_normal = [u for u in todas if u not in feitas and u not in reprocessar_urls and u not in descartados]
           fila = reprocessar_urls + fila_normal
           lote = fila[:LOTE_SIZE]
 
-          log(f"Fila: {len(todas)} | Faltam: {len(fila_normal)} | Lote: {LOTE_SIZE} | Modo: {MODO}")
+          log(f"Fila: {len(todas)} | Faltam: {len(fila_normal)} | Descartados: {len(descartados)} | Lote: {LOTE_SIZE} | Modo: {MODO}")
+
+          async def fetch_raw_seguro(url, context):
+              """Tenta requests → Playwright. Detecta CAPTCHA do Google."""
+              try:
+                  r = await asyncio.to_thread(requests.get, url, headers=HEADERS, timeout=25, allow_redirects=True)
+                  if 'google.com/sorry' in r.url or '/sorry/index' in r.url:
+                      log(f"    [🚫] requests → CAPTCHA Google")
+                  elif r.status_code == 200:
+                      return r.text, r.url
+                  else:
+                      log(f"    [⚠️] requests HTTP {r.status_code}")
+              except Exception as e:
+                  log(f"    [⚠️] requests falhou: {type(e).__name__}")
+
+              log(f"    [🔄] Tentando Playwright...")
+              page = await context.new_page()
+              try:
+                  await page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                  await asyncio.sleep(3)
+                  if 'google.com/sorry' in page.url or '/sorry/index' in page.url:
+                      return None, "captcha"
+                  try:
+                      await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                      await asyncio.sleep(2)
+                  except Exception:
+                      pass
+                  html_r = await page.content()
+                  return html_r, page.url
+              except Exception as e:
+                  return None, f"erro: {type(e).__name__}"
+              finally:
+                  try: await page.close()
+                  except: pass
 
           async def extrair_video_playwright(context, url_ep):
               page = await context.new_page()
@@ -506,16 +562,24 @@ jobs:
                   return n_quebrado, c_quebrada, nome, capa
               except: return True, True, "", ""
 
-          async def fetch_raw(url):
-              r = await asyncio.to_thread(requests.get, url, headers=HEADERS, timeout=20)
-              return r.text, r.url
-
           async def processar_item(context, url_pagina):
               log(f"\n--> Verificando: {url_pagina}")
+              tentativas = ATTEMPTS.get(url_pagina, 0)
               try:
-                  html_raw, final_url = await fetch_raw(url_pagina)
+                  html_raw, final_url = await fetch_raw_seguro(url_pagina, context)
+
+                  if html_raw is None:
+                      ATTEMPTS[url_pagina] = tentativas + 1
+                      if tentativas + 1 >= MAX_TENTATIVAS_CAPTCHA:
+                          log(f"    [🚨] {MAX_TENTATIVAS_CAPTCHA}x bloqueado ({final_url}). Descartando.")
+                          with open(ARQ_DESCARTADOS, "a", encoding="utf-8") as f:
+                              f.write(url_pagina.strip()+"\n")
+                      else:
+                          log(f"    [🚫] Bloqueado ({final_url}). Tentativa {tentativas+1}/{MAX_TENTATIVAS_CAPTCHA}. Pulando (retry próximo run).")
+                      return
+
                   if final_url != url_pagina:
-                      log(f"    [⚠️] Redirecionado: {url_pagina} → {final_url}")
+                      log(f"    [ℹ️] URL final: {final_url}")
                       url_pagina = final_url
 
                   titulo, capa_url, link, duracao, total = extrair_dados_pagina(html_raw, url_pagina)
@@ -523,20 +587,28 @@ jobs:
                   if duracao == "SÉRIE":
                       log("    (É SÉRIE. Pulando...)")
                       with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                       return
 
+                  # Warmup: só se poucas fontes e ainda não foi via Playwright
                   if total < MIN_FONTES_CONFIAVEL:
                       log(f"    [🔄] Warmup: raw tem {total} fonte(s). Retry em {WARMUP_DELAY}s...")
                       await asyncio.sleep(WARMUP_DELAY)
-                      html_raw2, _ = await fetch_raw(url_pagina)
-                      titulo2, capa2, link2, dur2, total2 = extrair_dados_pagina(html_raw2, url_pagina)
-                      if dur2 == "SÉRIE":
-                          log("    (É SÉRIE. Pulando...)")
-                          with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                          return
-                      if total2 > total:
-                          log(f"    [🔄] Warmup OK: {total} → {total2} fontes")
-                          titulo, capa_url, link, duracao, total = titulo2, capa2, link2, dur2, total2
+                      try:
+                          r2 = await asyncio.to_thread(requests.get, url_pagina, headers=HEADERS, timeout=20, allow_redirects=True)
+                          if 'google.com/sorry' not in r2.url and '/sorry/index' not in r2.url:
+                              html_raw2 = r2.text
+                              titulo2, capa2, link2, dur2, total2 = extrair_dados_pagina(html_raw2, url_pagina)
+                              if dur2 == "SÉRIE":
+                                  log("    (É SÉRIE. Pulando...)")
+                                  with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                                  if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
+                                  return
+                              if total2 > total:
+                                  log(f"    [🔄] Warmup OK: {total} → {total2} fontes")
+                                  titulo, capa_url, link, duracao, total = titulo2, capa2, link2, dur2, total2
+                      except Exception:
+                          pass
 
                   precisa_renderizar = (not link) or (not titulo) or (total < MIN_FONTES_CONFIAVEL)
 
@@ -546,15 +618,24 @@ jobs:
                       async with async_playwright() as pw:
                           browser = await pw.chromium.launch(headless=True)
                           page = await browser.new_page()
+                          html_render = html_raw
                           try:
-                              await page.goto(url_pagina, wait_until="domcontentloaded", timeout=25000)
+                              await page.goto(url_pagina, wait_until="domcontentloaded", timeout=30000)
+                              if 'google.com/sorry' in page.url or '/sorry/index' in page.url:
+                                  log(f"    [🚫] Render também bloqueado. Tentativa {tentativas+1}/{MAX_TENTATIVAS_CAPTCHA}.")
+                                  await browser.close()
+                                  ATTEMPTS[url_pagina] = tentativas + 1
+                                  if tentativas + 1 >= MAX_TENTATIVAS_CAPTCHA:
+                                      log(f"    [🚨] Descartando.")
+                                      with open(ARQ_DESCARTADOS, "a", encoding="utf-8") as f:
+                                          f.write(url_pagina.strip()+"\n")
+                                  return
                               await asyncio.sleep(8)
                               await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                               await asyncio.sleep(2)
                               html_render = await page.content()
                           except Exception as e:
                               log(f"    [⚠️] Render falhou: {e}")
-                              html_render = html_raw
                           await browser.close()
 
                           titulo_r, capa_r, link_r, duracao_r, total_r = extrair_dados_pagina(html_render, url_pagina)
@@ -562,6 +643,7 @@ jobs:
                           if duracao_r == "SÉRIE":
                               log("    (É SÉRIE. Pulando...)")
                               with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                              if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                               return
 
                           if titulo_r and (not titulo or total_r > total):
@@ -573,11 +655,11 @@ jobs:
                           if not link: link = link_r
                           if duracao_r and duracao_r != "SÉRIE": duracao = duracao_r
 
-                  # ✅ NOVO: slug fallback — se título não bate com URL, confia no slug
+                  # Slug fallback
                   if total < MIN_FONTES_CONFIAVEL:
                       slug_titulo = slug_para_titulo(url_pagina)
                       if slug_titulo and len(slug_titulo) > len(titulo or ""):
-                          log(f"    [🔄] Fallback via slug (poucas fontes): '{titulo}' → '{slug_titulo}'")
+                          log(f"    [🔄] Fallback via slug: '{titulo}' → '{slug_titulo}'")
                           titulo = slug_titulo
                   elif not titulo_bate_com_slug(titulo, url_pagina):
                       slug_titulo = slug_para_titulo(url_pagina)
@@ -594,6 +676,7 @@ jobs:
                   if duracao == "SÉRIE" or not titulo:
                       log("    (É SÉRIE. Pulando...)")
                       with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                       return
 
                   ano = ""
@@ -638,10 +721,12 @@ jobs:
 
                       if MODO == 'apenas_baixar':
                           log(f"    (Arquivo existente: {arquivo_existente.name}). Modo Apenas Baixar: Ignorando conserto.")
+                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                           return
 
                       if not renomear and not n_quebrado and not c_quebrada:
                           log(f"    (Arquivo existente: {arquivo_existente.name}). (Já está perfeito).")
+                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                           return
 
                       log(f"    (Arquivo existente: {arquivo_existente.name})")
@@ -659,21 +744,22 @@ jobs:
                           log(f"    [+] Salvo como: {novo_caminho.name}")
                       else:
                           log(f"    [+] Arquivo atualizado in-place.")
+                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                       return
 
                   arquivo_por_nome = Path(nome_arquivo_calculado)
                   if arquivo_por_nome.exists():
                       n_quebrado, c_quebrada, nome_antigo, capa_antiga = checar_defeitos(arquivo_por_nome)
-                      # ✅ NOVO: verifica se o nome interno do arquivo bate com a URL
                       nome_nao_bate_url = not titulo_bate_com_slug(nome_antigo, url_pagina)
 
                       if MODO == 'apenas_baixar':
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado}). Modo Apenas Baixar: Ignorando.")
+                          if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                           return
 
                       if n_quebrado or c_quebrada or nome_nao_bate_url:
                           acoes = []
-                          if nome_nao_bate_url: acoes.append(f"Título não bate com URL ('{nome_antigo}' → '{nome_json}')")
+                          if nome_nao_bate_url: acoes.append(f"Título não bate com URL")
                           if n_quebrado: acoes.append("Título corrigido")
                           if c_quebrada: acoes.append("Capa corrigida")
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado})")
@@ -682,10 +768,12 @@ jobs:
                           log(f"    [+] Arquivo atualizado.")
                       else:
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado}). (Já está perfeito).")
+                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                       return
 
                   if MODO == 'apenas_consertar':
                       log(f"    (Não existe e modo é Apenas Consertar. Pulando.)")
+                      if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
                       return
 
                   log(f"    Filme: '{nome_json}'")
@@ -695,16 +783,25 @@ jobs:
                       return
                   salvar_html(Path(nome_arquivo_calculado), nome_json, link, capa_url, duracao)
                   log(f"      [+] Salvo: {nome_arquivo_calculado}")
+                  if url_pagina in ATTEMPTS: del ATTEMPTS[url_pagina]
               except Exception as e:
                   log(f"    Erro em {url_pagina}: {e}")
 
           async def main():
               async with async_playwright() as pw:
                   browser = await pw.chromium.launch(headless=True)
-                  ctx = await browser.new_context(user_agent=HEADERS["User-Agent"])
+                  ctx = await browser.new_context(
+                      user_agent=HEADERS["User-Agent"],
+                      viewport={"width": 1366, "height": 768},
+                      locale="pt-BR",
+                  )
                   for i, url in enumerate(lote, 1):
                       log(f"[{i}/{len(lote)}]")
                       await processar_item(ctx, url)
+                      # Delay aleatório para evitar CAPTCHA
+                      if i < len(lote):
+                          delay = random.uniform(1.5, 3.5)
+                          await asyncio.sleep(delay)
 
                   if pendentes:
                       log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
@@ -726,6 +823,7 @@ jobs:
           if __name__ == "__main__":
               asyncio.run(main())
               ARQ_PENDENTES.write_text(json.dumps(pendentes, ensure_ascii=False, indent=2), encoding="utf-8", errors="replace")
+              salvar_attempts(ATTEMPTS)
           PYEOF
           python3 /tmp/mega_filmes.py
 
@@ -736,7 +834,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "fix: slug fallback quando titulo nao bate com URL + redirect detection"
+          git commit -m "fix: CAPTCHA detection + Playwright fallback + delays + attempts tracking"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
