@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 * * * *' # Roda a cada 1 hora (no minuto 0)
   workflow_dispatch:    # Permite rodar manualmente também
+    inputs:
+      reclassificar:
+        description: 'Tirar das filas atuais as URLs do tipo errado (filmes x séries)?'
+        required: false
+        default: false
+        type: boolean
  
 permissions:
   contents: write
@@ -26,9 +32,11 @@ jobs:
         run: pip install requests
  
       - name: Atualizar filas
+        env:
+          RECLASSIFICAR: ${{ inputs.reclassificar == true || inputs.reclassificar == 'true' }}
         run: |
           cat > /tmp/atualizar_filas.py << 'PYEOF'
-          import requests, sys, os, json, time
+          import requests, sys, os, json, time, re
           from pathlib import Path
  
           BASE_URL = "https://www.vini7xgrave.site"
@@ -61,9 +69,40 @@ jobs:
               tmp.replace(arq)
  
  
-          def buscar_urls_feed():
-              """Percorre o feed do Blogger. Retorna (lista_de_urls_na_ordem_do_feed, completo?)."""
-              urls, vistos = [], set()
+          _VIDEO_RE = re.compile(r"\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site", re.I)
+          _EP_LISTA_RE = re.compile(
+              r"epis[oó]dio[-_/]\d+|\bepis[oó]dio\s+\d+|lista de epis[oó]dios|\b\d+\s*[ªº°]\s*temporada", re.I)
+          _CAT_SERIE_RE = re.compile(r"s[eé]rie|temporada|season|novela|anime|doram|epis[oó]dio", re.I)
+          _CAT_FILME_RE = re.compile(r"filme|movie", re.I)
+ 
+ 
+          def classificar_entrada(entry):
+              """Classifica um post do feed SEM abrir a página: 'serie', 'filme' ou 'incerto'.
+              Usa as categorias (marcadores) do Blogger e o HTML do post que já vem no feed."""
+              cats = [str(c.get("term", "")) for c in entry.get("category", []) if isinstance(c, dict)]
+              conteudo = ""
+              for campo in ("content", "summary"):
+                  v = entry.get(campo)
+                  if isinstance(v, dict) and v.get("$t"):
+                      conteudo += v["$t"]
+              cat_serie = any(_CAT_SERIE_RE.search(c) for c in cats)
+              cat_filme = any(_CAT_FILME_RE.search(c) for c in cats)
+              ep_lista = bool(_EP_LISTA_RE.search(conteudo))
+              tem_video = bool(_VIDEO_RE.search(conteudo))
+              if ep_lista:
+                  return "serie"
+              if cat_serie and not tem_video:
+                  return "serie"
+              if tem_video and not cat_serie:
+                  return "filme"
+              if cat_filme and not cat_serie:
+                  return "filme"
+              return "incerto"   # na dúvida o post entra nas DUAS filas (cada robô ainda confere a página)
+ 
+ 
+          def buscar_entradas_feed():
+              """Percorre o feed do Blogger. Retorna ([{'url','tipo'}...] na ordem do feed, completo?)."""
+              entradas, vistos = [], set()
               start, completo = 1, True
               while True:
                   url_feed = f"{BASE_URL}/feeds/posts/default?alt=json&max-results=150&start-index={start}"
@@ -89,41 +128,75 @@ jobs:
                           u = link.split("?")[0].strip()
                           if u and u not in vistos:
                               vistos.add(u)
-                              urls.append(u)
+                              entradas.append({"url": u, "tipo": classificar_entrada(e)})
                   start += 150
                   if len(entries) < 150:
                       break
-              return urls, completo
+              return entradas, completo
+ 
+ 
+          def buscar_urls_feed():
+              """Só as URLs (usado pelos robôs para criar a fila quando ela ainda não existe)."""
+              entradas, completo = buscar_entradas_feed()
+              return [e["url"] for e in entradas], completo
  
  
           ARQ_FILA_FILMES = Path("filmes_fila.txt")
           ARQ_FILA_SERIES = Path("series_fila.txt")
+          RECLASSIFICAR = (os.environ.get("RECLASSIFICAR") or "false").lower() == "true"
  
  
-          def atualizar_fila(arq, feed):
+          def separar(entradas):
+              """Filmes -> fila de filmes; séries -> fila de séries; 'incerto' -> as duas."""
+              filmes = [e["url"] for e in entradas if e["tipo"] in ("filme", "incerto")]
+              series = [e["url"] for e in entradas if e["tipo"] in ("serie", "incerto")]
+              return filmes, series
+ 
+ 
+          def atualizar_fila(arq, candidatas):
               """Coloca as URLs novas NO INÍCIO da fila (posts recentes primeiro) e preserva a ordem do resto."""
               atuais = ler_linhas(arq)
               existentes = set(atuais)
-              novas = [u for u in feed if u not in existentes]
+              novas = [u for u in candidatas if u not in existentes]
               if novas:
                   escrever_linhas(arq, novas + atuais)
               return len(atuais), len(novas)
  
  
+          def reclassificar_fila(arq, tipos, remover):
+              """Tira da fila as URLs que o feed diz serem do outro tipo. O progresso (feitos) não é tocado."""
+              atuais = ler_linhas(arq)
+              mantidas = [u for u in atuais if tipos.get(u) != remover]
+              if len(mantidas) != len(atuais):
+                  escrever_linhas(arq, mantidas)
+              return len(atuais) - len(mantidas)
+ 
+ 
           def main():
               log("Buscando todas as URLs do site...")
-              feed, completo = buscar_urls_feed()
-              log(f"Encontradas {len(feed)} URLs no site." + ("" if completo else " (feed incompleto)"))
-              if not feed:
+              entradas, completo = buscar_entradas_feed()
+              log(f"Encontradas {len(entradas)} URLs no site." + ("" if completo else " (feed incompleto)"))
+              if not entradas:
                   log("⚠️ Feed vazio ou com erro: as filas não foram alteradas.")
                   return
  
-              for arq in (ARQ_FILA_FILMES, ARQ_FILA_SERIES):
-                  antes, novas = atualizar_fila(arq, feed)
+              contagem = {t: sum(1 for e in entradas if e["tipo"] == t) for t in ("filme", "serie", "incerto")}
+              log(f"Classificação pelo feed: {contagem['filme']} filmes | {contagem['serie']} séries | "
+                  f"{contagem['incerto']} incertos (vão para as duas filas)")
+ 
+              filmes, series = separar(entradas)
+              for arq, cand in ((ARQ_FILA_FILMES, filmes), (ARQ_FILA_SERIES, series)):
+                  antes, novas = atualizar_fila(arq, cand)
                   if novas:
                       log(f"🆕 {arq.name}: +{novas} URLs novas (antes: {antes}, agora: {antes + novas}).")
                   else:
                       log(f"✅ {arq.name}: nenhuma URL nova (total: {antes}).")
+ 
+              if RECLASSIFICAR:
+                  tipos = {e["url"]: e["tipo"] for e in entradas}
+                  r1 = reclassificar_fila(ARQ_FILA_FILMES, tipos, "serie")
+                  r2 = reclassificar_fila(ARQ_FILA_SERIES, tipos, "filme")
+                  log(f"♻️ Reclassificação: {r1} séries saíram da fila de filmes, {r2} filmes saíram da fila de séries.")
  
  
           if __name__ == "__main__":
