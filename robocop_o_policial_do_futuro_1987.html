@@ -12,7 +12,7 @@
     "name": "RoboCop - O Policial do Futuro (1987) - 🍿Clau",
     "description": "Assista RoboCop - O Policial do Futuro (1987) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vjX0s_hReuxBZUTmRvjE677M4flciR8QcT7Wxxn4O77kfZ2IuuXGnd2-ZRTBJKCo57BdMCrc5B7o87ibL-QQL_dUBnn6m1v_wPyuqhEQWC7hxru5DQvbjMHmOSfuyY2gsMTao9jFU=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vZoFj-guE7BN1fAQfVRDfqgyyqk8oXBxP8fq1getZ-0J0Vi4lbeoJEXLGGBKce4wEVcRSHCZ2K9bkO-M48qdYljmF8DeqdwspBoUOCnuVhalWVQ6-GqH9Lk12P348Cf5LouQI0PUs=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>RoboCop - O Policial do Futuro (1987) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0093870.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vjX0s_hReuxBZUTmRvjE677M4flciR8QcT7Wxxn4O77kfZ2IuuXGnd2-ZRTBJKCo57BdMCrc5B7o87ibL-QQL_dUBnn6m1v_wPyuqhEQWC7hxru5DQvbjMHmOSfuyY2gsMTao9jFU=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vZoFj-guE7BN1fAQfVRDfqgyyqk8oXBxP8fq1getZ-0J0Vi4lbeoJEXLGGBKce4wEVcRSHCZ2K9bkO-M48qdYljmF8DeqdwspBoUOCnuVhalWVQ6-GqH9Lk12P348Cf5LouQI0PUs=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDA5Mzg3MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

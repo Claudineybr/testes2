@@ -12,7 +12,7 @@
     "name": "Branca de Neve e Os Sete Anoes (1937) - 🍿Clau",
     "description": "Assista Branca de Neve e Os Sete Anoes (1937) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u-Pi3i8uP319n-nEsULZHCU2jUD-8kVeL4tJdBV2Cuh_2kGrsvUgdlQKceWWRBvVgDIIru-FDV9Rz8COitEMboOqqG_eH76_S_a0DcR_fMv2b1RQUZYsZ8aeEWjuGum0YXDdJhgIE=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sMF4FUJzTG2FL6ungnWUEiWTeSa6WKkb-aKmuImHJh0p_MARyLSSUvdzSgJBv0xCf9e8sdVkpGi1VwvkGX6PNLx49epWfu_Gqz-LtzOYAE_pMu3ndygqK0QqvcmyUpNyPuAP8BPNM=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Branca de Neve e Os Sete Anoes (1937) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0029583.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u-Pi3i8uP319n-nEsULZHCU2jUD-8kVeL4tJdBV2Cuh_2kGrsvUgdlQKceWWRBvVgDIIru-FDV9Rz8COitEMboOqqG_eH76_S_a0DcR_fMv2b1RQUZYsZ8aeEWjuGum0YXDdJhgIE=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sMF4FUJzTG2FL6ungnWUEiWTeSa6WKkb-aKmuImHJh0p_MARyLSSUvdzSgJBv0xCf9e8sdVkpGi1VwvkGX6PNLx49epWfu_Gqz-LtzOYAE_pMu3ndygqK0QqvcmyUpNyPuAP8BPNM=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMDI5NTgzLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

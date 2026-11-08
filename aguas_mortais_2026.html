@@ -12,7 +12,7 @@
     "name": "Aguas Mortais (2026) - 🍿Clau",
     "description": "Assista Aguas Mortais (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sUfymVLjSDyhhd93XuK5TGqBoJ8m-U6fdKvwiKIziXp8Sv6nomW_qXG7fDa5lSmhXaLVyotC2cHEQVFhU4uBLsk-bf1XgpwBiNVq4fTYyg9P4kONKSE3Wsd2GysE7ONgDHGO5rBg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_viQ_tG0-p2_cI-5pM2_xCcKebStsZDuMsFgJTG45aKR7mK-sh0NNiPkwRrQjqs6zL3Ed2-nC5frcG0VHMiExMHkqyYqSFXudv6ypA02GZvKFrl8OCR0kqtaMosnkzTvtyCYv8RKQ=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Aguas Mortais (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt29516222.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sUfymVLjSDyhhd93XuK5TGqBoJ8m-U6fdKvwiKIziXp8Sv6nomW_qXG7fDa5lSmhXaLVyotC2cHEQVFhU4uBLsk-bf1XgpwBiNVq4fTYyg9P4kONKSE3Wsd2GysE7ONgDHGO5rBg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_viQ_tG0-p2_cI-5pM2_xCcKebStsZDuMsFgJTG45aKR7mK-sh0NNiPkwRrQjqs6zL3Ed2-nC5frcG0VHMiExMHkqyYqSFXudv6ypA02GZvKFrl8OCR0kqtaMosnkzTvtyCYv8RKQ=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjk1MTYyMjIubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

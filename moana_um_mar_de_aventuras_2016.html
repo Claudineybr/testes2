@@ -12,7 +12,7 @@
     "name": "Moana - Um Mar de Aventuras (2016) - 🍿Clau",
     "description": "Assista Moana - Um Mar de Aventuras (2016) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sJj_vOom9Ativg4qB9Z3N82fpSkJkMepbLh8EW8uy8MSs5hTMo6q7MFgOjb1U68UpHtubeXX8hAUXkkk1VShy4CXhpZWPmKu7fylPalp0wARTpkliiP1406uCJkqzsOuc1PH2t4wY=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uz3geMfo8ePboiev2xq0MUeY_a53GxUfO3xxj4x1OVxzuPwsdYugyFoWs49IwahCyMh7CENOUUJWp9RwObxs73StplkWg11sNJTl4w7KTdHUHK_HM-ZBTcl81RRBgCLHDZiFigd1E=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Moana - Um Mar de Aventuras (2016) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt3521164.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sJj_vOom9Ativg4qB9Z3N82fpSkJkMepbLh8EW8uy8MSs5hTMo6q7MFgOjb1U68UpHtubeXX8hAUXkkk1VShy4CXhpZWPmKu7fylPalp0wARTpkliiP1406uCJkqzsOuc1PH2t4wY=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uz3geMfo8ePboiev2xq0MUeY_a53GxUfO3xxj4x1OVxzuPwsdYugyFoWs49IwahCyMh7CENOUUJWp9RwObxs73StplkWg11sNJTl4w7KTdHUHK_HM-ZBTcl81RRBgCLHDZiFigd1E=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQzNTIxMTY0Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Conexao Jamaica (2002) - 🍿Clau",
     "description": "Assista Conexao Jamaica (2002) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t6DxKr2v_9iMNG9nhd33ERgR-13ZFPN1WO2DyWYKrL6RtglsYVCNsiSVFet1AS8NdEUKRGET3l_o-atp0zLxvja08yg7GKcWpvPV4t5z7hDjgrPs6aKqUmk6E0JFuop8hSqjso1x8=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_txkEOrOUgHwUsSkIB13iC0kwGKGxnwejIzHe3x8TWIPE9cJb6lz9y4h1T4t5mWqBVEH7ahBCsX42ZLxt5usk1svJzItRhDTBMD7Fbvsb__oTDYa7QvFfhoTVHp7-yP15Sl26wZW4w=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Conexao Jamaica (2002) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0281190.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t6DxKr2v_9iMNG9nhd33ERgR-13ZFPN1WO2DyWYKrL6RtglsYVCNsiSVFet1AS8NdEUKRGET3l_o-atp0zLxvja08yg7GKcWpvPV4t5z7hDjgrPs6aKqUmk6E0JFuop8hSqjso1x8=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_txkEOrOUgHwUsSkIB13iC0kwGKGxnwejIzHe3x8TWIPE9cJb6lz9y4h1T4t5mWqBVEH7ahBCsX42ZLxt5usk1svJzItRhDTBMD7Fbvsb__oTDYa7QvFfhoTVHp7-yP15Sl26wZW4w=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDI4MTE5MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

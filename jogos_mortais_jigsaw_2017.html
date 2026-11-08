@@ -12,7 +12,7 @@
     "name": "Jogos Mortais: Jigsaw (2017) - 🍿Clau",
     "description": "Assista Jogos Mortais: Jigsaw (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tdG2nHD5ymeZtVq7baOrY7Wg9jx7Rf3glsfI4PDyEnu5j3TkJJSWATtbTikTQAVia9u6zhLDbCnXsbeWv66uqtkkSjGP9Wv8vDkGi9YkBt1OXIzq3YH9Q231DyOksMSOmuC0nOdB8=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ujC9Y-jnCMSEtVF52U-1K65-lrsfARn4nFmL6ejuj1y1SmJwbbVX8w4G1vg10s5MelD-F5k3Y0M0Fs4OcM4EKZ345B_4mKA7ZEEwVQbXFEaXB-pqBe0HwA2eR7Rh-HyoyRbUaKlb4=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Jogos Mortais: Jigsaw (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt3348730.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tdG2nHD5ymeZtVq7baOrY7Wg9jx7Rf3glsfI4PDyEnu5j3TkJJSWATtbTikTQAVia9u6zhLDbCnXsbeWv66uqtkkSjGP9Wv8vDkGi9YkBt1OXIzq3YH9Q231DyOksMSOmuC0nOdB8=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ujC9Y-jnCMSEtVF52U-1K65-lrsfARn4nFmL6ejuj1y1SmJwbbVX8w4G1vg10s5MelD-F5k3Y0M0Fs4OcM4EKZ345B_4mKA7ZEEwVQbXFEaXB-pqBe0HwA2eR7Rh-HyoyRbUaKlb4=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQzMzQ4NzMwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
