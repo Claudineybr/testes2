@@ -12,7 +12,7 @@
     "name": "Proposta Indecente (1993) - 🍿Clau",
     "description": "Assista Proposta Indecente (1993) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s1xG9NHMZV4Q-PCudZUvORrRQKZM3sP-ocxk6vUMzzGHYo_qhYjKQaEKajo2HOuKGPSpHskyhrtQkw4APobVGljGh4_-9bQCYPCLNQFmvnzO8OMDgccnpgcRxxZ2TNs1EOPkMjNg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uvP8Km0Iv9vMfdlMJWAVCvXWv17ic-jQ8u4flxTpcQxBUesA192F4oPveZ8wJiY_338LDVHTl0Nl6fr8eakmXz7qRgdLmcBUTRSpapKJ8_8RhnbvSfByMMMNyvFcmdACgGQjpYPw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Proposta Indecente (1993) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0107211.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s1xG9NHMZV4Q-PCudZUvORrRQKZM3sP-ocxk6vUMzzGHYo_qhYjKQaEKajo2HOuKGPSpHskyhrtQkw4APobVGljGh4_-9bQCYPCLNQFmvnzO8OMDgccnpgcRxxZ2TNs1EOPkMjNg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uvP8Km0Iv9vMfdlMJWAVCvXWv17ic-jQ8u4flxTpcQxBUesA192F4oPveZ8wJiY_338LDVHTl0Nl6fr8eakmXz7qRgdLmcBUTRSpapKJ8_8RhnbvSfByMMMNyvFcmdACgGQjpYPw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDEwNzIxMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

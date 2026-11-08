@@ -23,10 +23,28 @@
 <title>A Estacao do Terror (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt33083649.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4O9wRX_zZpP3j3A08UlezjnxB59O_UEKIm8CRZc_YHUq_4_PQAAPmo4d88zI_jJsHCyDrStBcznJbQV1WJaftpKZGw7ObOA4_eBjQqEFRsCZ8_ma6Qy6ULav89GVLRrPUptZanCbc2RKAIbP2AjB2IPufPwDjZ6_x6Y2Or_QSzyS2AJc4Z1Ar2BnlnwB_/w1280-h720-p-k-no-nu/1001351311.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4O9wRX_zZpP3j3A08UlezjnxB59O_UEKIm8CRZc_YHUq_4_PQAAPmo4d88zI_jJsHCyDrStBcznJbQV1WJaftpKZGw7ObOA4_eBjQqEFRsCZ8_ma6Qy6ULav89GVLRrPUptZanCbc2RKAIbP2AjB2IPufPwDjZ6_x6Y2Or_QSzyS2AJc4Z1Ar2BnlnwB_/w1280-h720-p-k-no-nu/1001351311.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzMwODM2NDkubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

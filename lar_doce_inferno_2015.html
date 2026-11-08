@@ -12,7 +12,7 @@
     "name": "Lar Doce Inferno (2015) - 🍿Clau",
     "description": "Assista Lar Doce Inferno (2015) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tRMWoAbeECTZgJFn-aORVsRU8z5IvICHBBbdJHR_q13lR0bCDwlGb68Qp4n0xjlF0B4UsurGgFUOvTVOezSGfBUtPtOqq5pGRsv7wY4INQhj8-AOL0OBGo1IX2lU8fJvkSNxX8Bw=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uexAVnmft-PHhCbiuB30Nlin_t37EXsFPXeIF6bOnYP2T9_gURHEI4P5nTGhXUjaqEZNDPI1AeYa6M7pTvO5R4ZMtaRTKFsDAlm-Uyv3x_VNmmLjGJ_9e8cCIwcEyRkPYnX_mORQ=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Lar Doce Inferno (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt2802136.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tRMWoAbeECTZgJFn-aORVsRU8z5IvICHBBbdJHR_q13lR0bCDwlGb68Qp4n0xjlF0B4UsurGgFUOvTVOezSGfBUtPtOqq5pGRsv7wY4INQhj8-AOL0OBGo1IX2lU8fJvkSNxX8Bw=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uexAVnmft-PHhCbiuB30Nlin_t37EXsFPXeIF6bOnYP2T9_gURHEI4P5nTGhXUjaqEZNDPI1AeYa6M7pTvO5R4ZMtaRTKFsDAlm-Uyv3x_VNmmLjGJ_9e8cCIwcEyRkPYnX_mORQ=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MjgwMjEzNi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Acompanhante Fatal (2023) - 🍿Clau",
     "description": "Assista Acompanhante Fatal (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_srh24Zx2R7DD0L27BoQeEJpZLumkhYEQeRpDhUVTsLEqJ_a49oEOrcDT1VdGgUhhOFgGes1MGuNSBjfCDuArz2q-XM3WcD8vH_0z0707UKqkPhUBg_CCdYwXmsGgGjWt3OxB5q1A=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sR3GI3_W-EKx8uL4ww4-IzUKV5mJc1wE6a9lhj1hATl02qzjwALuC6kVuXTzops30wb98e4TE_xQw-KOPeWHGCTMbs35p9WGmKz5iy47blnjK0Y1Dm69zaP_clpYkjJ11gC_4mzA=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Acompanhante Fatal (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt28150540.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_srh24Zx2R7DD0L27BoQeEJpZLumkhYEQeRpDhUVTsLEqJ_a49oEOrcDT1VdGgUhhOFgGes1MGuNSBjfCDuArz2q-XM3WcD8vH_0z0707UKqkPhUBg_CCdYwXmsGgGjWt3OxB5q1A=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sR3GI3_W-EKx8uL4ww4-IzUKV5mJc1wE6a9lhj1hATl02qzjwALuC6kVuXTzops30wb98e4TE_xQw-KOPeWHGCTMbs35p9WGmKz5iy47blnjK0Y1Dm69zaP_clpYkjJ11gC_4mzA=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MjgxNTA1NDAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

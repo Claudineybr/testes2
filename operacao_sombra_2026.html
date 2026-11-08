@@ -12,7 +12,7 @@
     "name": "Operacao Sombra (2026) - 🍿Clau",
     "description": "Assista Operacao Sombra (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t0kW_hfoIG99k-0WlIkp1k6USvmC4fnCU7gkkaMyOGede6R-gDrkjg6SGtlsJI05iATeKfxLd2iMQx40cvomVT3U7ir0iBIH12srExduih_0GARK4Mj7k3_bfeml9-6S-19U7n998=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u2EqKFCIQ5mMlMhg9-_giFLHoMzPZfTLlEdOTfZz7CwYpwqLBcXms4awC8Zl9H7-c7VE6cFoRDwqT5vOuvp6K5gYqDf8JKlgkRnMB3x8mFBD7WIBxLaFCxTrGCq468Xo99k76kq_E=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Operacao Sombra (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt34610311.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t0kW_hfoIG99k-0WlIkp1k6USvmC4fnCU7gkkaMyOGede6R-gDrkjg6SGtlsJI05iATeKfxLd2iMQx40cvomVT3U7ir0iBIH12srExduih_0GARK4Mj7k3_bfeml9-6S-19U7n998=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u2EqKFCIQ5mMlMhg9-_giFLHoMzPZfTLlEdOTfZz7CwYpwqLBcXms4awC8Zl9H7-c7VE6cFoRDwqT5vOuvp6K5gYqDf8JKlgkRnMB3x8mFBD7WIBxLaFCxTrGCq468Xo99k76kq_E=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzQ2MTAzMTEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
