@@ -110,49 +110,34 @@ jobs:
               if not titulo: titulo = ""
               if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"): titulo = ""
 
-              # 1) HTML unescape (&#8211; → –, &amp; → &, etc.)
               titulo = html.unescape(str(titulo))
-
-              # 2) Decodifica escapes Unicode literais (\ud835\udc7d → 𝑽)
               titulo = decodificar_escapes_unicode(titulo)
-
-              # 3) Normaliza unicode (𝑽 -> V, 𝟕 -> 7, remove diacríticos)
               titulo = unicodedata.normalize('NFKD', titulo)
               titulo = "".join([c for c in titulo if not unicodedata.combining(c)])
 
-              # 4) Remove prefixo direto com separador obrigatório (\b evita "Arcane"→"ane")
               padrao_prefixo_curto = r'(?:Marcøsx7|Marcos|Vini7x|ViNi7x|inix|arc|entre_nos)'
               titulo = re.sub(rf'^{padrao_prefixo_curto}\b[^a-zA-Z0-9]*[-:]\s*', '', titulo, flags=re.I).strip()
 
-              # 5) Prefixo com ":" (pgTtl "Vini7x Rave - Filmes e Séries: Title")
               if ':' in titulo:
                   prefixo, resto = titulo.split(':', 1)
                   if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave|filmes\s*e\s*s[eé]ries)\b', prefixo, re.I):
                       titulo = resto.strip()
 
-              # 6) Prefixo com " - " (Site - Title)
               if ' - ' in titulo:
                   prefixo, resto = titulo.split(' - ', 1)
                   if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave)\b', prefixo, re.I):
                       titulo = resto.strip()
 
-              # 7) Sufixo com " - " (Title - Site) — formato invertido
               if ' - ' in titulo:
                   prefixo, resto = titulo.rsplit(' - ', 1)
                   if re.search(r'\b(?:vini7x|vini|marcos|inix|grave|clau|site|rave)\b', resto, re.I):
                       titulo = prefixo.strip()
 
-              # 8) Remove sufixos ruins
               titulo = re.sub(r'\s*[-–—]\s*(?:assistir|online|filme|serie|completo|dublado|legendado|hd|temporada).*$', '', titulo, flags=re.I).strip()
               titulo = titulo.replace('🍿Clau', '').strip(' -–—')
-
-              # 9) Remove ano final
               titulo = re.sub(r'\s*\(?\d{4}\)?\s*$', '', titulo).strip(' -–—')
-
-              # 10) Normaliza espaços
               titulo = re.sub(r'\s+', ' ', titulo).strip(' -–—')
 
-              # 11) Fallback via URL
               if len(titulo) < 3:
                   m = re.search(r'/([^/]+)\.html', url)
                   if m:
@@ -161,7 +146,6 @@ jobs:
                       slug = re.sub(r'[-_]\d{4}.*$', '', slug)
                       titulo = slug.replace('-', ' ').replace('_', ' ').title()
 
-              # 12) Safety net
               return remover_surrogates(titulo)
 
           def is_icon_url(url):
@@ -169,6 +153,24 @@ jobs:
               url_lower = url.lower()
               lixos = ['icon', 'logo', 'favicon', 'avatar', 'banner', 'default', 'profile']
               return any(x in url_lower for x in lixos)
+
+          def eh_serie(soup, url_pagina):
+              for script in soup.find_all('script', type='application/ld+json'):
+                  try:
+                      dados = json.loads(script.string)
+                      if isinstance(dados, list):
+                          for d in dados:
+                              if d.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
+                      elif isinstance(dados, dict):
+                          if dados.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
+                  except: pass
+              for a in soup.find_all('a', href=True):
+                  if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return True
+                  if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return True
+              texto_pagina = soup.get_text(" ", strip=True).lower()
+              if re.search(r'lista de epis[oó]dios', texto_pagina, re.I): return True
+              if re.search(r'\b\d+\s*[ªº]\s*temporada', texto_pagina, re.I): return True
+              return False
 
           def extrair_titulos_fontes(soup, html_text):
               fontes = {}
@@ -342,9 +344,10 @@ jobs:
 
           def extrair_dados_pagina(html_text, url_pagina):
               soup = BeautifulSoup(html_text, 'html.parser')
-              for a in soup.find_all('a', href=True):
-                  if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return None, None, None, "SÉRIE"
-                  if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return None, None, None, "SÉRIE"
+
+              # Detecção de série robusta (mesma do script de séries)
+              if eh_serie(soup, url_pagina):
+                  return None, None, None, "SÉRIE"
 
               fontes = extrair_titulos_fontes(soup, html_text)
               titulo = votar_titulos(fontes, url_pagina)
@@ -424,14 +427,13 @@ jobs:
               caminho_destino.write_text(html_out, encoding='utf-8', errors='replace')
 
           def checar_defeitos(arquivo):
-              """Retorna (nome_quebrado, capa_quebrada, nome_antigo, capa_antiga)"""
               try:
                   conteudo = arquivo.read_text(encoding="utf-8")
                   soup = BeautifulSoup(conteudo, 'html.parser')
                   script = soup.find('script', type='application/ld+json')
                   if not script: return True, True, "", ""
                   dados = json.loads(script.string)
-                  nome = dados.get('name', '')
+                  nome = dados.get('name', '') or ''
                   capa = dados.get('thumbnailUrl', [''])[0] if dados.get('thumbnailUrl') else ''
                   nome_norm = unicodedata.normalize('NFKD', nome)
                   nome_norm = "".join([c for c in nome_norm if not unicodedata.combining(c)])
@@ -452,7 +454,8 @@ jobs:
                   r = await asyncio.to_thread(requests.get, url_pagina, headers=HEADERS, timeout=20)
                   titulo, capa_url, link, duracao = extrair_dados_pagina(r.text, url_pagina)
 
-                  if link == "SÉRIE":
+                  # ✅ FIX 1: checar duracao == "SÉRIE" (não link)
+                  if duracao == "SÉRIE" or not titulo:
                       log("    (É SÉRIE. Pulando...)")
                       with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
                       return
@@ -465,11 +468,13 @@ jobs:
                           await asyncio.sleep(5)
                           html_render = await page.content()
                           titulo_r, capa_r, link, duracao_r = extrair_dados_pagina(html_render, url_pagina)
-                          if link == "SÉRIE":
+                          # ✅ FIX 1 (2º lugar)
+                          if duracao_r == "SÉRIE" or not titulo_r:
                               with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
                               await browser.close(); return
                           if not capa_url or capa_url == 'h': capa_url = capa_r
                           if duracao_r: duracao = duracao_r
+                          if not titulo: titulo = titulo_r
                           await browser.close()
 
                   ano = ""
@@ -560,14 +565,24 @@ jobs:
                   for i, url in enumerate(lote, 1):
                       log(f"[{i}/{len(lote)}]")
                       await processar_item(ctx, url)
+
+                  # ✅ FIX 3: retry preserva itens que falharam e incrementa tentativas
                   if pendentes:
                       log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
+                      ainda = []
                       for item in pendentes:
-                          if Path(item['arquivo']).exists(): continue
-                          if item.get("tentativas",0) >= MAX_TENTATIVAS: continue
+                          if Path(item['arquivo']).exists():
+                              continue
+                          if item.get("tentativas", 0) >= MAX_TENTATIVAS:
+                              log(f"--> Descartado (max tentativas): {item['arquivo']}")
+                              continue
                           log(f"--> Tentativa {item['tentativas']+1}/{MAX_TENTATIVAS}: {item['arquivo']}")
                           await processar_item(ctx, item['url'])
+                          if not Path(item['arquivo']).exists():
+                              item["tentativas"] = item.get("tentativas", 1) + 1
+                              ainda.append(item)
                       pendentes.clear()
+                      pendentes.extend(ainda)
                   await browser.close()
 
           if __name__ == "__main__":
@@ -583,7 +598,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega filmes (fix prefix arc + JSON-LD completo + reprocessar)"
+          git commit -m "fix: série detection + duracao==SÉRIE + retry preserva pendentes"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
