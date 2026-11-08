@@ -82,6 +82,8 @@ jobs:
           LOTE_SIZE = int(os.environ.get('LOTE_SIZE', 100))
           MODO = os.environ.get('MODO_EXECUCAO', 'baixar_e_consertar').lower()
 
+          MIN_FONTES_CONFIAVEL = 3   # abaixo disso, força renderização
+
           def log(*a):
               print(*a, flush=True); sys.stdout.flush()
 
@@ -153,32 +155,26 @@ jobs:
               lixos = ['icon', 'logo', 'favicon', 'avatar', 'banner', 'default', 'profile']
               return any(x in url_lower for x in lixos)
 
-          def nomes_compativeis(nome_a, nome_b, arquivo_a, arquivo_b):
-              """Retorna True se os dois arquivos pertencem ao mesmo filme."""
-              # Slug igual → mesmo arquivo
+          def norm_nome(nome):
+              """Normaliza nome para comparação: remove 🍿Clau, ano, pontuação, artigos iniciais."""
+              if not nome: return ""
+              n = re.sub(r'\s*-?\s*🍿Clau', '', nome, flags=re.I)
+              n = re.sub(r'\s*\(\d{4}\)', '', n)
+              n = re.sub(r'[^\w\s]', '', n)
+              n = re.sub(r'\s+', ' ', n)
+              n = re.sub(r'^(a|o|as|os|an|the)\s+', '', n, flags=re.I)
+              return n.lower().strip()
+
+          def nomes_compativeis(nome_a, nome_b, arquivo_a=None, arquivo_b=None):
               if arquivo_a and arquivo_b and arquivo_a == arquivo_b:
                   return True
-              if not nome_a or not nome_b:
-                  return False
-              def norm(n):
-                  n = re.sub(r'\s*-?\s*🍿Clau', '', n, flags=re.I)
-                  n = re.sub(r'\s*\(\d{4}\)', '', n)
-                  n = re.sub(r'[^\w\s]', '', n)
-                  n = re.sub(r'\s+', ' ', n)
-                  return n.lower().strip()
-              na = norm(nome_a)
-              nb = norm(nome_b)
-              if not na or not nb:
-                  return False
-              if na == nb:
-                  return True
-              # Diferenças de artigo (A, O, As, Os)
-              for prefixo in ['a ', 'o ', 'as ', 'os ']:
-                  if na == prefixo + nb or nb == prefixo + na:
-                      return True
-              return False
+              na = norm_nome(nome_a)
+              nb = norm_nome(nome_b)
+              return bool(na and nb and na == nb)
 
           def eh_serie(soup, url_pagina):
+              """Detecção robusta com mais padrões (PT + EN + códigos de episódio)."""
+              # 1. JSON-LD
               for script in soup.find_all('script', type='application/ld+json'):
                   try:
                       dados = json.loads(script.string)
@@ -188,12 +184,31 @@ jobs:
                       elif isinstance(dados, dict):
                           if dados.get('@type') in ['TVSeries','TVSeason','TVEpisode']: return True
                   except: pass
+
+              # 2. Links/textos com episódio
               for a in soup.find_all('a', href=True):
                   if re.search(r'epis[oó]dio[-_/]\d+', a['href'], re.I): return True
                   if re.search(r'\bepis[oó]dio\s+\d+', a.get_text(strip=True), re.I): return True
+                  if re.search(r'/episode[-_/]?\d+', a['href'], re.I): return True
+
+              # 3. Texto da página com múltiplos padrões
               texto_pagina = soup.get_text(" ", strip=True).lower()
-              if re.search(r'lista de epis[oó]dios', texto_pagina, re.I): return True
-              if re.search(r'\b\d+\s*[ªº]\s*temporada', texto_pagina, re.I): return True
+              padroes_serie = [
+                  r'lista\s+de\s+epis[oó]dios',
+                  r'\b\d+\s*[ªº]\s*temporada',       # 1ª Temporada
+                  r'\btemporada\s+\d+',              # Temporada 1
+                  r'\b\d+\s+temporadas\b',           # 2 temporadas
+                  r'\bseason\s+\d+',                 # Season 1
+                  r'\bepis[oó]dios?\b',              # episódio(s)
+                  r'\bepisodes?\b',                  # episode(s)
+                  r'\bS\d{1,2}\s*E\d{1,3}\b',        # S01E01
+                  r'\bT\d{1,2}\s*E\d{1,3}\b',        # T1E1
+                  r'\b\d{1,2}\s*x\s*\d{1,3}\b',      # 1x01
+                  r'\bcap[ií]tulo\s+\d+',            # Capítulo 1
+              ]
+              for p in padroes_serie:
+                  if re.search(p, texto_pagina, re.I): return True
+
               return False
 
           def extrair_titulos_fontes(soup, html_text):
@@ -240,13 +255,14 @@ jobs:
               return fontes
 
           def votar_titulos(fontes, url):
-              if not fontes: return limpar_titulo_bruto("", url)
+              """Retorna (titulo_final, votos, total_fontes)."""
+              if not fontes: return limpar_titulo_bruto("", url), 0, 0
               limpos = {}
               for nome, valor in fontes.items():
                   if not valor or str(valor).strip() == 'h' or len(str(valor).strip()) < 2: continue
                   limpo = limpar_titulo_bruto(str(valor), url)
                   if limpo and len(limpo) >= 2: limpos[nome] = limpo
-              if not limpos: return limpar_titulo_bruto("", url)
+              if not limpos: return limpar_titulo_bruto("", url), 0, 0
               limpos_bons = {k: v for k, v in limpos.items() if not parece_sujo(v)}
               if limpos_bons: limpos = limpos_bons
               contagem = Counter(); original = {}
@@ -264,18 +280,16 @@ jobs:
                           log(f"        ⚠️  Divergência ({cnt}x): '{original[chave]}'")
               else:
                   log(f"    [🗳️] Consenso total ({votos}/{total}): '{titulo_final}'")
-              return remover_surrogates(titulo_final)
+              return remover_surrogates(titulo_final), votos, total
 
           def construir_indice_videos():
-              """Retorna {url: [lista de Path]} — suporta múltiplos filmes com mesma URL."""
               log("Mapeando arquivos existentes...")
               indice = {}
               for f in Path(".").glob("*.html"):
                   try:
                       texto = f.read_text(encoding="utf-8")
                       m = re.search(r'"contentUrl":\s*"([^"]+)"', texto)
-                      if m:
-                          indice.setdefault(m.group(1), []).append(f)
+                      if m: indice.setdefault(m.group(1), []).append(f)
                   except: pass
               return indice
 
@@ -369,12 +383,13 @@ jobs:
               return None
 
           def extrair_dados_pagina(html_text, url_pagina):
+              """Retorna (titulo, capa, link, duracao, total_fontes)."""
               soup = BeautifulSoup(html_text, 'html.parser')
               if eh_serie(soup, url_pagina):
-                  return None, None, None, "SÉRIE"
+                  return None, None, None, "SÉRIE", 0
 
               fontes = extrair_titulos_fontes(soup, html_text)
-              titulo = votar_titulos(fontes, url_pagina)
+              titulo, votos, total = votar_titulos(fontes, url_pagina)
 
               capa = ""
               script_ld = soup.find('script', type='application/ld+json')
@@ -406,7 +421,7 @@ jobs:
                       if dados_ld.get('duration'): duracao = dados_ld['duration']
                   except: pass
 
-              return titulo.strip(), capa, video, duracao
+              return titulo.strip(), capa, video, duracao, total
 
           def salvar_html(caminho_destino, nome_json, link, capa_url, duracao="PT01H30M00S"):
               nome_json = remover_surrogates(nome_json)
@@ -476,28 +491,50 @@ jobs:
               log(f"\n--> Verificando: {url_pagina}")
               try:
                   r = await asyncio.to_thread(requests.get, url_pagina, headers=HEADERS, timeout=20)
-                  titulo, capa_url, link, duracao = extrair_dados_pagina(r.text, url_pagina)
+                  titulo, capa_url, link, duracao, total = extrair_dados_pagina(r.text, url_pagina)
 
-                  if duracao == "SÉRIE" or not titulo:
+                  if duracao == "SÉRIE":
                       log("    (É SÉRIE. Pulando...)")
                       with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
                       return
 
-                  if not link:
+                  # ✅ FIX CRÍTICO: forçar Playwright se:
+                  #   - não tem link, OU
+                  #   - não tem título, OU
+                  #   - poucas fontes (raw HTML truncado)
+                  precisa_renderizar = (not link) or (not titulo) or (total < MIN_FONTES_CONFIAVEL)
+
+                  if precisa_renderizar:
+                      if total > 0 and total < MIN_FONTES_CONFIAVEL:
+                          log(f"    [🔄] Poucas fontes no HTML raw ({total}). Renderizando para confirmar...")
                       async with async_playwright() as pw:
                           browser = await pw.chromium.launch(headless=True)
                           page = await browser.new_page()
                           await page.goto(url_pagina, wait_until="domcontentloaded", timeout=20000)
                           await asyncio.sleep(5)
                           html_render = await page.content()
-                          titulo_r, capa_r, link, duracao_r = extrair_dados_pagina(html_render, url_pagina)
-                          if duracao_r == "SÉRIE" or not titulo_r:
-                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
-                              await browser.close(); return
-                          if not capa_url or capa_url == 'h': capa_url = capa_r
-                          if duracao_r: duracao = duracao_r
-                          if not titulo: titulo = titulo_r
+                          titulo_r, capa_r, link_r, duracao_r, total_r = extrair_dados_pagina(html_render, url_pagina)
                           await browser.close()
+
+                          if duracao_r == "SÉRIE":
+                              log("    (É SÉRIE. Pulando...)")
+                              with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                              return
+
+                          # ✅ Usar versão renderizada se tiver MAIS fontes (ou se raw estiver vazio)
+                          if titulo_r and (not titulo or total_r > total):
+                              if titulo and titulo_r != titulo:
+                                  log(f"    [🔄] Título atualizado via render: '{titulo}' → '{titulo_r}'")
+                              titulo = titulo_r
+                              total = total_r
+                          if not capa_url or capa_url == 'h': capa_url = capa_r
+                          if not link: link = link_r
+                          if duracao_r and duracao_r != "SÉRIE": duracao = duracao_r
+
+                  if duracao == "SÉRIE" or not titulo:
+                      log("    (É SÉRIE. Pulando...)")
+                      with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
+                      return
 
                   ano = ""
                   m = re.search(r'/([^/]+)\.html', url_pagina)
@@ -517,20 +554,15 @@ jobs:
 
                   with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
 
-                  # ✅ NOVO: busca candidatos por URL (pode ser lista)
                   candidatos = INDICE_VIDEOS.get(link, []) if link else []
-
-                  # ✅ NOVO: entre os candidatos, escolhe um cujo nome seja compatível
                   arquivo_existente = None
                   for cand in candidatos:
-                      if not cand.exists():
-                          continue
+                      if not cand.exists(): continue
                       _, _, nome_cand, _ = checar_defeitos(cand)
                       if nomes_compativeis(nome_cand, nome_json, cand.name, nome_arquivo_calculado):
                           arquivo_existente = cand
                           break
 
-                  # ✅ NOVO: avisa quando a URL é compartilhada com outro filme
                   if arquivo_existente is None and candidatos:
                       nomes_outros = []
                       for c in candidatos:
@@ -613,8 +645,7 @@ jobs:
                       log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
                       ainda = []
                       for item in pendentes:
-                          if Path(item['arquivo']).exists():
-                              continue
+                          if Path(item['arquivo']).exists(): continue
                           if item.get("tentativas", 0) >= MAX_TENTATIVAS:
                               log(f"--> Descartado (max tentativas): {item['arquivo']}")
                               continue
@@ -640,7 +671,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "fix: URL compartilhada entre 2 filmes (INDICE lista + compatibilidade de nome)"
+          git commit -m "fix: usa render quando raw tem poucas fontes + eh_serie reforcado + artigo em compat"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
