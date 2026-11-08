@@ -1,20 +1,38 @@
 [
   {
-    "arquivo": "overlord_t3e1.html",
-    "nome_json": "Overlord - T3E1 - A Melancolia de um Lider - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2025/06/inix-tp3e01_10.html",
-    "tentativas": 6
-  },
-  {
-    "arquivo": "overlord_t4e2.html",
-    "nome_json": "Overlord - T4E2 - Reino de Re-Estize - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2025/06/inix-tp4e02_10.html",
-    "tentativas": 6
-  },
-  {
     "arquivo": "berserk_2016_legendado_t1e6.html",
     "nome_json": "Berserk 2016 (LEGENDADO) - T1E6 - .Festim Noturno: Queimando na Fogueira - 🍿Clau",
     "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp1e06_1.html",
-    "tentativas": 5
+    "tentativas": 6
+  },
+  {
+    "arquivo": "meu_demonio_favorito_t1e16.html",
+    "nome_json": "Meu Demonio Favorito - T1E16 - Um Paraiso So Nosso - 🍿Clau",
+    "url": "#",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "cacadores_de_demonios_t1e5.html",
+    "nome_json": "Cacadores de Demonios - T1E5 - Tp1E05 91 - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e05_91.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "cacadores_de_demonios_t1e6.html",
+    "nome_json": "Cacadores de Demonios - T1E6 - Tp1E06 24 - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e06_24.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "cacadores_de_demonios_t1e14.html",
+    "nome_json": "Cacadores de Demonios - T1E14 - Tp1E14 2 - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e14_2.html",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "cacadores_de_demonios_t2e2.html",
+    "nome_json": "Cacadores de Demonios - T2E2 - Tp2E02 2 - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e02_2.html",
+    "tentativas": 2
   }
 ]
