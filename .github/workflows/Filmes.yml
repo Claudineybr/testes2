@@ -87,6 +87,11 @@ jobs:
           WARMUP_DELAY = 3
           SIMILARIDADE_MIN = 0.85
           PREFIXO_MIN_RATIO = 0.70
+          SLUG_OVERLAP_MIN = 0.50
+
+          STOPWORDS_SLUG = {'a','o','e','de','da','do','das','dos','em','no','na',
+                            'nos','nas','um','uma','uns','umas','para','por','com',
+                            'the','and','of','in','to','at','on','for','by','from'}
 
           def log(*a):
               print(*a, flush=True); sys.stdout.flush()
@@ -155,13 +160,32 @@ jobs:
               return remover_surrogates(titulo)
 
           def slug_para_titulo(url):
-              """Fallback: converte o slug da URL em título."""
               m = re.search(r'/([^/]+)\.html', url)
               if not m: return ""
               slug = m.group(1)
               slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos)[-_]', '', slug, flags=re.I)
               slug = re.sub(r'[-_]\d{4}.*$', '', slug)
               return slug.replace('-', ' ').replace('_', ' ').title()
+
+          def titulo_bate_com_slug(titulo, url):
+              """True se o título compartilha palavras significativas com a URL."""
+              m = re.search(r'/([^/]+)\.html', url)
+              if not m: return True
+              slug = m.group(1)
+              slug = re.sub(r'^(?:inix|arc|entre-nos|vini|marcos|marc_sx7)[-_]', '', slug, flags=re.I)
+              slug = re.sub(r'[-_]\d{4}.*$', '', slug)
+
+              slug_words = set(re.findall(r'\w+', slug.lower()))
+              tit_words = set(re.findall(r'\w+', norm_nome(titulo)))
+
+              slug_sig = slug_words - STOPWORDS_SLUG
+              tit_sig = tit_words - STOPWORDS_SLUG
+
+              if not slug_sig or not tit_sig:
+                  return True
+
+              overlap = len(slug_sig & tit_sig)
+              return overlap / min(len(slug_sig), len(tit_sig)) >= SLUG_OVERLAP_MIN
 
           def is_icon_url(url):
               if not url: return True
@@ -179,22 +203,14 @@ jobs:
               return n.lower().strip()
 
           def nomes_compativeis(nome_a, nome_b, arquivo_a=None, arquivo_b=None):
-              """Compatível se: mesmo arquivo, similaridade ≥ 0.85, ou um é prefixo do outro (≥ 70%)."""
-              if arquivo_a and arquivo_b and arquivo_a == arquivo_b:
-                  return True
-              na = norm_nome(nome_a)
-              nb = norm_nome(nome_b)
+              if arquivo_a and arquivo_b and arquivo_a == arquivo_b: return True
+              na = norm_nome(nome_a); nb = norm_nome(nome_b)
               if not na or not nb: return False
               if na == nb: return True
-
-              # Prefixo: "ponto de virada geracao 11 de" é prefixo de "ponto de virada geracao 11 de setembro"
               menor, maior = (na, nb) if len(na) <= len(nb) else (nb, na)
               if maior.startswith(menor) and len(menor) / len(maior) >= PREFIXO_MIN_RATIO:
                   return True
-
-              # Similaridade geral
-              ratio = SequenceMatcher(None, na, nb).ratio()
-              return ratio >= SIMILARIDADE_MIN
+              return SequenceMatcher(None, na, nb).ratio() >= SIMILARIDADE_MIN
 
           def eh_serie(soup, url_pagina):
               for script in soup.find_all('script', type='application/ld+json'):
@@ -438,7 +454,6 @@ jobs:
           def salvar_html(caminho_destino, nome_json, link, capa_url, duracao="PT01H30M00S"):
               nome_json = remover_surrogates(nome_json)
               capa_url = remover_surrogates(capa_url) if capa_url else capa_url
-
               base_url = "https://api-pobreflix-filmes.pages.dev"
               file_url = f"{base_url}/{caminho_destino.name}"
               dados = {
@@ -493,12 +508,16 @@ jobs:
 
           async def fetch_raw(url):
               r = await asyncio.to_thread(requests.get, url, headers=HEADERS, timeout=20)
-              return r.text
+              return r.text, r.url
 
           async def processar_item(context, url_pagina):
               log(f"\n--> Verificando: {url_pagina}")
               try:
-                  html_raw = await fetch_raw(url_pagina)
+                  html_raw, final_url = await fetch_raw(url_pagina)
+                  if final_url != url_pagina:
+                      log(f"    [⚠️] Redirecionado: {url_pagina} → {final_url}")
+                      url_pagina = final_url
+
                   titulo, capa_url, link, duracao, total = extrair_dados_pagina(html_raw, url_pagina)
 
                   if duracao == "SÉRIE":
@@ -509,7 +528,7 @@ jobs:
                   if total < MIN_FONTES_CONFIAVEL:
                       log(f"    [🔄] Warmup: raw tem {total} fonte(s). Retry em {WARMUP_DELAY}s...")
                       await asyncio.sleep(WARMUP_DELAY)
-                      html_raw2 = await fetch_raw(url_pagina)
+                      html_raw2, _ = await fetch_raw(url_pagina)
                       titulo2, capa2, link2, dur2, total2 = extrair_dados_pagina(html_raw2, url_pagina)
                       if dur2 == "SÉRIE":
                           log("    (É SÉRIE. Pulando...)")
@@ -554,12 +573,17 @@ jobs:
                           if not link: link = link_r
                           if duracao_r and duracao_r != "SÉRIE": duracao = duracao_r
 
-                  # ✅ FALLBACK: se ainda tem poucas fontes, usar slug da URL (mais completo que h1 truncado)
+                  # ✅ NOVO: slug fallback — se título não bate com URL, confia no slug
                   if total < MIN_FONTES_CONFIAVEL:
-                      titulo_slug = slug_para_titulo(url_pagina)
-                      if titulo_slug and len(titulo_slug) > len(titulo or ""):
-                          log(f"    [🔄] Fallback via slug: '{titulo}' → '{titulo_slug}'")
-                          titulo = titulo_slug
+                      slug_titulo = slug_para_titulo(url_pagina)
+                      if slug_titulo and len(slug_titulo) > len(titulo or ""):
+                          log(f"    [🔄] Fallback via slug (poucas fontes): '{titulo}' → '{slug_titulo}'")
+                          titulo = slug_titulo
+                  elif not titulo_bate_com_slug(titulo, url_pagina):
+                      slug_titulo = slug_para_titulo(url_pagina)
+                      if slug_titulo and len(slug_titulo) > 3:
+                          log(f"    [⚠️] Título '{titulo}' não bate com URL. Usando slug: '{slug_titulo}'")
+                          titulo = slug_titulo
 
                   if not link:
                       log(f"    [🔄] Link não encontrado. Tentando interceptação de rede...")
@@ -640,12 +664,17 @@ jobs:
                   arquivo_por_nome = Path(nome_arquivo_calculado)
                   if arquivo_por_nome.exists():
                       n_quebrado, c_quebrada, nome_antigo, capa_antiga = checar_defeitos(arquivo_por_nome)
+                      # ✅ NOVO: verifica se o nome interno do arquivo bate com a URL
+                      nome_nao_bate_url = not titulo_bate_com_slug(nome_antigo, url_pagina)
+
                       if MODO == 'apenas_baixar':
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado}). Modo Apenas Baixar: Ignorando.")
                           return
-                      if n_quebrado or c_quebrada:
+
+                      if n_quebrado or c_quebrada or nome_nao_bate_url:
                           acoes = []
-                          if n_quebrado: acoes.append(f"Título corrigido ('{nome_antigo}' → '{nome_json}')")
+                          if nome_nao_bate_url: acoes.append(f"Título não bate com URL ('{nome_antigo}' → '{nome_json}')")
+                          if n_quebrado: acoes.append("Título corrigido")
                           if c_quebrada: acoes.append("Capa corrigida")
                           log(f"    (Arquivo existe pelo nome: {nome_arquivo_calculado})")
                           log(f"    [🔄] {', '.join(acoes)}...")
@@ -707,7 +736,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "fix: nomes_compativeis com prefixo/similaridade + fallback slug (Ponto de Virada)"
+          git commit -m "fix: slug fallback quando titulo nao bate com URL + redirect detection"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
