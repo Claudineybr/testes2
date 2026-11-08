@@ -109,7 +109,6 @@ jobs:
           def limpar_titulo_bruto(titulo, url):
               if not titulo: titulo = ""
               if "http" in str(titulo).lower() or str(titulo).lower().endswith(".html"): titulo = ""
-
               titulo = html.unescape(str(titulo))
               titulo = decodificar_escapes_unicode(titulo)
               titulo = unicodedata.normalize('NFKD', titulo)
@@ -153,6 +152,31 @@ jobs:
               url_lower = url.lower()
               lixos = ['icon', 'logo', 'favicon', 'avatar', 'banner', 'default', 'profile']
               return any(x in url_lower for x in lixos)
+
+          def nomes_compativeis(nome_a, nome_b, arquivo_a, arquivo_b):
+              """Retorna True se os dois arquivos pertencem ao mesmo filme."""
+              # Slug igual → mesmo arquivo
+              if arquivo_a and arquivo_b and arquivo_a == arquivo_b:
+                  return True
+              if not nome_a or not nome_b:
+                  return False
+              def norm(n):
+                  n = re.sub(r'\s*-?\s*🍿Clau', '', n, flags=re.I)
+                  n = re.sub(r'\s*\(\d{4}\)', '', n)
+                  n = re.sub(r'[^\w\s]', '', n)
+                  n = re.sub(r'\s+', ' ', n)
+                  return n.lower().strip()
+              na = norm(nome_a)
+              nb = norm(nome_b)
+              if not na or not nb:
+                  return False
+              if na == nb:
+                  return True
+              # Diferenças de artigo (A, O, As, Os)
+              for prefixo in ['a ', 'o ', 'as ', 'os ']:
+                  if na == prefixo + nb or nb == prefixo + na:
+                      return True
+              return False
 
           def eh_serie(soup, url_pagina):
               for script in soup.find_all('script', type='application/ld+json'):
@@ -243,13 +267,15 @@ jobs:
               return remover_surrogates(titulo_final)
 
           def construir_indice_videos():
+              """Retorna {url: [lista de Path]} — suporta múltiplos filmes com mesma URL."""
               log("Mapeando arquivos existentes...")
               indice = {}
               for f in Path(".").glob("*.html"):
                   try:
                       texto = f.read_text(encoding="utf-8")
                       m = re.search(r'"contentUrl":\s*"([^"]+)"', texto)
-                      if m: indice[m.group(1)] = f
+                      if m:
+                          indice.setdefault(m.group(1), []).append(f)
                   except: pass
               return indice
 
@@ -344,8 +370,6 @@ jobs:
 
           def extrair_dados_pagina(html_text, url_pagina):
               soup = BeautifulSoup(html_text, 'html.parser')
-
-              # Detecção de série robusta (mesma do script de séries)
               if eh_serie(soup, url_pagina):
                   return None, None, None, "SÉRIE"
 
@@ -454,7 +478,6 @@ jobs:
                   r = await asyncio.to_thread(requests.get, url_pagina, headers=HEADERS, timeout=20)
                   titulo, capa_url, link, duracao = extrair_dados_pagina(r.text, url_pagina)
 
-                  # ✅ FIX 1: checar duracao == "SÉRIE" (não link)
                   if duracao == "SÉRIE" or not titulo:
                       log("    (É SÉRIE. Pulando...)")
                       with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
@@ -468,7 +491,6 @@ jobs:
                           await asyncio.sleep(5)
                           html_render = await page.content()
                           titulo_r, capa_r, link, duracao_r = extrair_dados_pagina(html_render, url_pagina)
-                          # ✅ FIX 1 (2º lugar)
                           if duracao_r == "SÉRIE" or not titulo_r:
                               with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
                               await browser.close(); return
@@ -495,7 +517,28 @@ jobs:
 
                   with open(ARQ_FEITAS, "a", encoding="utf-8") as f: f.write(url_pagina.strip()+"\n")
 
-                  arquivo_existente = INDICE_VIDEOS.get(link) if link else None
+                  # ✅ NOVO: busca candidatos por URL (pode ser lista)
+                  candidatos = INDICE_VIDEOS.get(link, []) if link else []
+
+                  # ✅ NOVO: entre os candidatos, escolhe um cujo nome seja compatível
+                  arquivo_existente = None
+                  for cand in candidatos:
+                      if not cand.exists():
+                          continue
+                      _, _, nome_cand, _ = checar_defeitos(cand)
+                      if nomes_compativeis(nome_cand, nome_json, cand.name, nome_arquivo_calculado):
+                          arquivo_existente = cand
+                          break
+
+                  # ✅ NOVO: avisa quando a URL é compartilhada com outro filme
+                  if arquivo_existente is None and candidatos:
+                      nomes_outros = []
+                      for c in candidatos:
+                          if c.exists():
+                              _, _, n_outro, _ = checar_defeitos(c)
+                              if n_outro: nomes_outros.append(f"'{c.name}' ({n_outro})")
+                      if nomes_outros:
+                          log(f"    [⚠️] URL compartilhada com outro(s) filme(s): {', '.join(nomes_outros)} — criando arquivo separado")
 
                   if arquivo_existente:
                       n_quebrado, c_quebrada, nome_antigo, capa_antiga = checar_defeitos(arquivo_existente)
@@ -566,7 +609,6 @@ jobs:
                       log(f"[{i}/{len(lote)}]")
                       await processar_item(ctx, url)
 
-                  # ✅ FIX 3: retry preserva itens que falharam e incrementa tentativas
                   if pendentes:
                       log(f"\n=== RETENTANDO {len(pendentes)} FILMES ===")
                       ainda = []
@@ -598,7 +640,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "fix: série detection + duracao==SÉRIE + retry preserva pendentes"
+          git commit -m "fix: URL compartilhada entre 2 filmes (INDICE lista + compatibilidade de nome)"
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then break; fi
             git pull origin main --no-rebase -X ours --no-edit
