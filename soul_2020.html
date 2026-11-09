@@ -12,7 +12,7 @@
     "name": "Soul (2020) - 🍿Clau",
     "description": "Assista Soul (2020) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s4P2HDubBZLL96VANiK4ADQIm-eQ-RjaCZ_5HRDllnsZg8Jld2objuY5CAZG0NDDdSAqgKUYlkZeKsfNfC5dBsM5eD8SNdFljPWOWamDz8-VbssJwnfc4JrcIB5JLJZZSa6HucrlE=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tb6-A9xYyrpmF7OTKSqP9vpVLx0PP92VDLuD72wUHcyGJZQoy4DpFkYw80hg09hddRHl6Vf5UtPDOPsTZr5CJZQL7moQwEN0L3os6iP84qDJqLMoltEfVZwjTqokWjfRx2PcJOCPo=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Soul (2020) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt2948372.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s4P2HDubBZLL96VANiK4ADQIm-eQ-RjaCZ_5HRDllnsZg8Jld2objuY5CAZG0NDDdSAqgKUYlkZeKsfNfC5dBsM5eD8SNdFljPWOWamDz8-VbssJwnfc4JrcIB5JLJZZSa6HucrlE=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tb6-A9xYyrpmF7OTKSqP9vpVLx0PP92VDLuD72wUHcyGJZQoy4DpFkYw80hg09hddRHl6Vf5UtPDOPsTZr5CJZQL7moQwEN0L3os6iP84qDJqLMoltEfVZwjTqokWjfRx2PcJOCPo=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjk0ODM3Mi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Jexi: Um Celular Sem Filtro (2019) - 🍿Clau",
     "description": "Assista Jexi: Um Celular Sem Filtro (2019) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vxZ14L_JAe7eo0MWPiaG5_zAG3PNgKYgasokODka83K5vILRyi5ylaAFwT1qPBK7LV4MNBTNvM3uRKOczkcw5fuxiX4hQva89cOikRBEX_maFClRpVwH-DsDagqSsMgEQpapOtHRY=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ulpZFp45Pp-gHoCKQRnbe6iULVOwRdIOV9EdCTzyq0GSAx_6-mNDtFRhgI79gUz2-5Qr74g-sLz8EH1g5qCibjkdbAmPLJi4JGQmF2K0AgXt79umh6VEHVKw_LsF3FliUajkm_BOQ=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Jexi: Um Celular Sem Filtro (2019) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://hugh.cdn.rumble.cloud/video/fww1/a9/s8/2/0/p/O/t/0pOtA.aaa.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vxZ14L_JAe7eo0MWPiaG5_zAG3PNgKYgasokODka83K5vILRyi5ylaAFwT1qPBK7LV4MNBTNvM3uRKOczkcw5fuxiX4hQva89cOikRBEX_maFClRpVwH-DsDagqSsMgEQpapOtHRY=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ulpZFp45Pp-gHoCKQRnbe6iULVOwRdIOV9EdCTzyq0GSAx_6-mNDtFRhgI79gUz2-5Qr74g-sLz8EH1g5qCibjkdbAmPLJi4JGQmF2K0AgXt79umh6VEHVKw_LsF3FliUajkm_BOQ=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9odWdoLmNkbi5ydW1ibGUuY2xvdWQvdmlkZW8vZnd3MS9hOS9zOC8yLzAvcC9PL3QvMHBPdEEuYWFhLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Um Tira da Pesada (1984) - 🍿Clau",
     "description": "Assista Um Tira da Pesada (1984) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_twI3axavFW1KxqNnpoDESfksOU6CqpyM8z7Fe713JrJBnt21MzldVhz-uDLhvuooM-qNO4Oof6QGq7gmzQ1kSOVML6n3FXCz6-Ge7SkVllZfgma59z8DqGzbxDr2W1Y6epmJiW3bY=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uVeE1xLSVu-T0-ISyqw3gS-rOi5Q-ar48kVfZwNaxAv3kQDi873pnb0mChVr-986-q9TsVrTXsxyBMVL3nZmzbVfwyfqz7Oi7Qte9Tzk_iZXA6GeUwsqiZNeZi_w38m0q0lXkj4TU=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Tira da Pesada (1984) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0086960.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_twI3axavFW1KxqNnpoDESfksOU6CqpyM8z7Fe713JrJBnt21MzldVhz-uDLhvuooM-qNO4Oof6QGq7gmzQ1kSOVML6n3FXCz6-Ge7SkVllZfgma59z8DqGzbxDr2W1Y6epmJiW3bY=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uVeE1xLSVu-T0-ISyqw3gS-rOi5Q-ar48kVfZwNaxAv3kQDi873pnb0mChVr-986-q9TsVrTXsxyBMVL3nZmzbVfwyfqz7Oi7Qte9Tzk_iZXA6GeUwsqiZNeZi_w38m0q0lXkj4TU=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDA4Njk2MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

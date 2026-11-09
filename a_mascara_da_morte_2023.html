@@ -23,10 +23,28 @@
 <title>A Mascara da Morte (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt21158854.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiquWSJGFAvKeoQo8KWuOq4oaStHTCWj2gvic64jvzefQPtuJzLkEAS2zB1vzF-3CashmuRsZVMNcDPCUPHo0S01JS3SL4K6FINTQRdHrNKUKJVCGFzKiF67Zc3LOFryHhGg25Iy3auE_RzFQOA1sq4xtWZ3M0m04n1nhKCB7KgJ_-9RGdN7sNhSU7aeuk/w1280-h720-p-k-no-nu/6zMP9sxImULoaqW5RWckI0s5qzP.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiquWSJGFAvKeoQo8KWuOq4oaStHTCWj2gvic64jvzefQPtuJzLkEAS2zB1vzF-3CashmuRsZVMNcDPCUPHo0S01JS3SL4K6FINTQRdHrNKUKJVCGFzKiF67Zc3LOFryHhGg25Iy3auE_RzFQOA1sq4xtWZ3M0m04n1nhKCB7KgJ_-9RGdN7sNhSU7aeuk/w1280-h720-p-k-no-nu/6zMP9sxImULoaqW5RWckI0s5qzP.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MjExNTg4NTQubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

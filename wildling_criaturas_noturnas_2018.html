@@ -12,7 +12,7 @@
     "name": "Wildling: Criaturas Noturnas (2018) - 🍿Clau",
     "description": "Assista Wildling: Criaturas Noturnas (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tR-8epPZGaY6D7wwzQwbY5tx8_YkbcPTD3GalsaQi2RsUOeYugt9oNXsihfndBcpDi8J06joAa0qjG3MIjveWaud5UHycjjR18E1x0NYR_K_GZDbJnmrgrukjy7GaRFqPyK6YrKk8=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uE0-GXzuwYho9gLZxpcmweRG8nnKNQhSpNhIBY1MoSKJxpJKhzbWPJAyC6Cqn6CZqqpFbRqRIZQ_az5QeOS0QDT-WkkCJcMuGj-iH80q39e66XnOUszvDgox_a0LZoRCeADXK-g-I=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Wildling: Criaturas Noturnas (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt5085924.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tR-8epPZGaY6D7wwzQwbY5tx8_YkbcPTD3GalsaQi2RsUOeYugt9oNXsihfndBcpDi8J06joAa0qjG3MIjveWaud5UHycjjR18E1x0NYR_K_GZDbJnmrgrukjy7GaRFqPyK6YrKk8=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uE0-GXzuwYho9gLZxpcmweRG8nnKNQhSpNhIBY1MoSKJxpJKhzbWPJAyC6Cqn6CZqqpFbRqRIZQ_az5QeOS0QDT-WkkCJcMuGj-iH80q39e66XnOUszvDgox_a0LZoRCeADXK-g-I=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0NTA4NTkyNC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Um Estranho no Bosque (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt19316408.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEnPDWJx_de0HLAsTeP9ZJCLXfezWT2a0uboDhyqLgrMA_a2AKbFH9RehDQOr5LqRrfm6Yd1ezvSWg0xpEuQPucOivuvyrp9dke7sZ_BUu9JY5g5ZnQDBaSRIhxnde8_f1whjuSFUQ9RveOV73XLzmUIyUKuKs36B4NxBQK0izg3VFJGuSqV6SNvl1Xqzb/w1280-h720-p-k-no-nu/1000346931.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEnPDWJx_de0HLAsTeP9ZJCLXfezWT2a0uboDhyqLgrMA_a2AKbFH9RehDQOr5LqRrfm6Yd1ezvSWg0xpEuQPucOivuvyrp9dke7sZ_BUu9JY5g5ZnQDBaSRIhxnde8_f1whjuSFUQ9RveOV73XLzmUIyUKuKs36B4NxBQK0izg3VFJGuSqV6SNvl1Xqzb/w1280-h720-p-k-no-nu/1000346931.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTkzMTY0MDgubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

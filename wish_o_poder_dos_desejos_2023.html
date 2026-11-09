@@ -12,7 +12,7 @@
     "name": "Wish: O Poder dos Desejos (2023) - 🍿Clau",
     "description": "Assista Wish: O Poder dos Desejos (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sLyfrbEUPfKdcFhYHfcUEVrui0dt2dEZb-AcqDH32ytMnHljt6zW_i3i3gtWM_hrQ7QMJSiFYxN1zG5EDsO-oC_IDqbpj9U5mJPIh4lBQ56TWlCu_un_CPgondYoK7unltx_987cc=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sKfmzJ-2Wc2tus8lLmaIroHwx-EJWLRo8I6pDcCfkPRWOPectS_dy-VYrr2_OT6DMnhgG1HafR7W3zIJRaeOCn0s15BpEvxDU5Yn3yvK8LQzoRU-HwcmcxzG3Apy9Q4-XtxZzl99Y=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Wish: O Poder dos Desejos (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt11304740.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sLyfrbEUPfKdcFhYHfcUEVrui0dt2dEZb-AcqDH32ytMnHljt6zW_i3i3gtWM_hrQ7QMJSiFYxN1zG5EDsO-oC_IDqbpj9U5mJPIh4lBQ56TWlCu_un_CPgondYoK7unltx_987cc=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sKfmzJ-2Wc2tus8lLmaIroHwx-EJWLRo8I6pDcCfkPRWOPectS_dy-VYrr2_OT6DMnhgG1HafR7W3zIJRaeOCn0s15BpEvxDU5Yn3yvK8LQzoRU-HwcmcxzG3Apy9Q4-XtxZzl99Y=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTEzMDQ3NDAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Presos com o Demonio (2022) - 🍿Clau",
     "description": "Assista Presos com o Demonio (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uTndJUgfloVntHgoqUNPF6eux8CIHGNGXkXdCe0J1zzI65dork11MERd38y0HUdOybuTVy5P7plz-hpGdn5ZzGRs2G4ReBmYxK7TkgrqYu2P5pkiC_SAIokKK9fHQ9z2ZqDXiyGgM=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ve-N4QBNYVwk0dziteaSKmA9uHgL38dL9e0JKwdyRQGoPMKVTHwYSSwmIfV8Nb1hQUsb0NRaTkZM7GTLTrr1fQ2l7u-HMCSylB_Frhh69GlCEeAtZN8z7GMQkD6wO0-GadpU91Chk=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Presos com o Demonio (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt12764606.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uTndJUgfloVntHgoqUNPF6eux8CIHGNGXkXdCe0J1zzI65dork11MERd38y0HUdOybuTVy5P7plz-hpGdn5ZzGRs2G4ReBmYxK7TkgrqYu2P5pkiC_SAIokKK9fHQ9z2ZqDXiyGgM=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ve-N4QBNYVwk0dziteaSKmA9uHgL38dL9e0JKwdyRQGoPMKVTHwYSSwmIfV8Nb1hQUsb0NRaTkZM7GTLTrr1fQ2l7u-HMCSylB_Frhh69GlCEeAtZN8z7GMQkD6wO0-GadpU91Chk=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTI3NjQ2MDYubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

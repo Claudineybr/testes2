@@ -12,7 +12,7 @@
     "name": "Clube da Luta para Meninas (2023) - 🍿Clau",
     "description": "Assista Clube da Luta para Meninas (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tgxfiyaua3Sy_-2QnUgUi3F7QeY4KBtvblnHvuOFIT5fFCxD6CQ4MC2qRFjbiHCUfX1oOZQHF8ylv6XWjLF0ROqE_tGG1D7qzXGSp3qlNjHCQbUsv1SIVoZPk7GT8ry-PV6XuTqiI=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vfVTiJz2mon5qaKDoYnSYOZOstgF6yO-bWwa9wTbzJsVFNyhorgs4aVfXUM-p_Etdv4CrhcomnX3-kJGXdPfJ3m1ylu_LchDbUHCBN68Cv-Co201ZkmS55GYl3BguGoLq-1n4o0og=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Clube da Luta para Meninas (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt17527468.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tgxfiyaua3Sy_-2QnUgUi3F7QeY4KBtvblnHvuOFIT5fFCxD6CQ4MC2qRFjbiHCUfX1oOZQHF8ylv6XWjLF0ROqE_tGG1D7qzXGSp3qlNjHCQbUsv1SIVoZPk7GT8ry-PV6XuTqiI=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vfVTiJz2mon5qaKDoYnSYOZOstgF6yO-bWwa9wTbzJsVFNyhorgs4aVfXUM-p_Etdv4CrhcomnX3-kJGXdPfJ3m1ylu_LchDbUHCBN68Cv-Co201ZkmS55GYl3BguGoLq-1n4o0og=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTc1Mjc0NjgubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

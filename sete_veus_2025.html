@@ -12,7 +12,7 @@
     "name": "Sete Veus (2025) - 🍿Clau",
     "description": "Assista Sete Veus (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ulQt9jDpI0TmXWeRMrrYpgQws9_tQhssV_noQODnm5y1yZgNNRHCVwFgvvIePCXI8uIpdU4-gd55cujir7Nl2bmnb-9TgJZukYaqNNg_hyl2igZfCtNawUXwjsLVrynOUfj4W8KQ=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tWH4YBbSEDMpOwQqjnQU1mNSz5WRxaG2Ww-foPncSQ1T3PPk0miXHKhqoayKzWvv-RBnxcQp2ifLDhySA490aKh3o6vtoUouG_FCd03-3b6UM9r-evKVw_a_UcBxp6xGAY8yUjEA=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Sete Veus (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt26671415.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ulQt9jDpI0TmXWeRMrrYpgQws9_tQhssV_noQODnm5y1yZgNNRHCVwFgvvIePCXI8uIpdU4-gd55cujir7Nl2bmnb-9TgJZukYaqNNg_hyl2igZfCtNawUXwjsLVrynOUfj4W8KQ=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tWH4YBbSEDMpOwQqjnQU1mNSz5WRxaG2Ww-foPncSQ1T3PPk0miXHKhqoayKzWvv-RBnxcQp2ifLDhySA490aKh3o6vtoUouG_FCd03-3b6UM9r-evKVw_a_UcBxp6xGAY8yUjEA=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MjY2NzE0MTUubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

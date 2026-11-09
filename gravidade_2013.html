@@ -23,10 +23,28 @@
 <title>Gravidade (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0056.l1s0-cdn-3123123.com/gravidade-fecff186/dubbed/1/bc6864d7-bd6e-4ada-95a1-5543c216616a/stream.mp4?type=movie&expires=1773694026&signature=d9af4edea8a59203f86dc80355c754d8d883883f3ee54ce6088f996739987b3b" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4lgmBxG_0uABj5ZSCu0_4CeggXxqS_P35jb-ZChyphenhyphenQtT2UZveWjgcL2wpYbe_FHWE4YJXT8ve65BF715hMGoCBDTxnvbyNzLgJckrbNobV2So9PEnpMKaCaXCYGFJvsu5ZoHHBzg1HAX6SBB5w6ZAj_WdDyJSLonhVLgMsJ4O8yqwBG6Icf8reutJTNFw/w1280-h720-p-k-no-nu/yO23kDBqHi1cViNcJU0aBjTNZpM.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4lgmBxG_0uABj5ZSCu0_4CeggXxqS_P35jb-ZChyphenhyphenQtT2UZveWjgcL2wpYbe_FHWE4YJXT8ve65BF715hMGoCBDTxnvbyNzLgJckrbNobV2So9PEnpMKaCaXCYGFJvsu5ZoHHBzg1HAX6SBB5w6ZAj_WdDyJSLonhVLgMsJ4O8yqwBG6Icf8reutJTNFw/w1280-h720-p-k-no-nu/yO23kDBqHi1cViNcJU0aBjTNZpM.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1Ni5sMXMwLWNkbi0zMTIzMTIzLmNvbS9ncmF2aWRhZGUtZmVjZmYxODYvZHViYmVkLzEvYmM2ODY0ZDctYmQ2ZS00YWRhLTk1YTEtNTU0M2MyMTY2MTZhL3N0cmVhbS5tcDQ/dHlwZT1tb3ZpZSZleHBpcmVzPTE3NzM2OTQwMjYmc2lnbmF0dXJlPWQ5YWY0ZWRlYThhNTkyMDNmODZkYzgwMzU1Yzc1NGQ4ZDg4Mzg4M2YzZWU1NGNlNjA4OGY5OTY3Mzk5ODdiM2I=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

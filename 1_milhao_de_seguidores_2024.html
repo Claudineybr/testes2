@@ -23,10 +23,28 @@
 <title>1 Milhao de Seguidores (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.vsutx.com/m/1.Milhao.de.Seguidores.2024.1080p.WEB-DL.x264.DUAL.2.0.mp4?cnvs_token=1772576855-IxCzvK8aqjAiK%2BSMVnaYraDZYYNyew1vRsIJLuCNUAg%3D&vid=&pid=&t=1772576855" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtGIuyIviGxcVpCVOfRCiRzMVvZabahyphenhyphenyeUqlZva5Dm8TMDfvGnhGGLrk_jNv9PVFfeh6JF7RnDFBF1HHEN-hdK2bxscizDxBbiUI9uf7-z5BEeNpkiu7t-pUSfburuzLWF1v7WYiJDaF8vzYsXYvAlrENdwpU4FKsb-g99zaJEv-_srpvA2x6VvwINCM/w1280-h720-p-k-no-nu/xyoOC3gTFiFA7vJNz1EKuh1pI2q.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtGIuyIviGxcVpCVOfRCiRzMVvZabahyphenhyphenyeUqlZva5Dm8TMDfvGnhGGLrk_jNv9PVFfeh6JF7RnDFBF1HHEN-hdK2bxscizDxBbiUI9uf7-z5BEeNpkiu7t-pUSfburuzLWF1v7WYiJDaF8vzYsXYvAlrENdwpU4FKsb-g99zaJEv-_srpvA2x6VvwINCM/w1280-h720-p-k-no-nu/xyoOC3gTFiFA7vJNz1EKuh1pI2q.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC52c3V0eC5jb20vbS8xLk1pbGhhby5kZS5TZWd1aWRvcmVzLjIwMjQuMTA4MHAuV0VCLURMLngyNjQuRFVBTC4yLjAubXA0P2NudnNfdG9rZW49MTc3MjU3Njg1NS1JeEN6dks4YXFqQWlLJTJCU01WbmFZcmFEWllZTnlldzF2UnNJSkx1Q05VQWclM0QmdmlkPSZwaWQ9JnQ9MTc3MjU3Njg1NQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

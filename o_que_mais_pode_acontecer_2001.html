@@ -23,10 +23,28 @@
 <title>O Que Mais Pode Acontecer? (2001) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0056.l1s0-cdn-3123123.com/o-que-mais-pode-acontecer-b3175983/dubbed/1/33bf603f-722d-4c60-93b7-8d3be285a58d/stream.mp4?type=movie&expires=1771183151&signature=f4da487f8c35b67d3910471c548068fcc2efa307789554196840d176d5edc585" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBA_eFzNBMXOQm1yWqzN-nZLkzcCdXQ0Kn1qT8SvpHL5n9y_v85AiD97LNy5lDZfqCffmg4mrZIhQJqXX38gmk6mygl1OFTXzLvsUAdnM95SLZtLZ7POALVwvSaCfoz5UEzueRwGh_51MXwNvLi0EZv62_hdzPmIzS_yN8ftL0vP9b-Ye6sZtNLqzN5lc/w1280-h720-p-k-no-nu/bN89fKMQ7peXLzS6pAOZ1yhWOmo.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBA_eFzNBMXOQm1yWqzN-nZLkzcCdXQ0Kn1qT8SvpHL5n9y_v85AiD97LNy5lDZfqCffmg4mrZIhQJqXX38gmk6mygl1OFTXzLvsUAdnM95SLZtLZ7POALVwvSaCfoz5UEzueRwGh_51MXwNvLi0EZv62_hdzPmIzS_yN8ftL0vP9b-Ye6sZtNLqzN5lc/w1280-h720-p-k-no-nu/bN89fKMQ7peXLzS6pAOZ1yhWOmo.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1Ni5sMXMwLWNkbi0zMTIzMTIzLmNvbS9vLXF1ZS1tYWlzLXBvZGUtYWNvbnRlY2VyLWIzMTc1OTgzL2R1YmJlZC8xLzMzYmY2MDNmLTcyMmQtNGM2MC05M2I3LThkM2JlMjg1YTU4ZC9zdHJlYW0ubXA0P3R5cGU9bW92aWUmZXhwaXJlcz0xNzcxMTgzMTUxJnNpZ25hdHVyZT1mNGRhNDg3ZjhjMzViNjdkMzkxMDQ3MWM1NDgwNjhmY2MyZWZhMzA3Nzg5NTU0MTk2ODQwZDE3NmQ1ZWRjNTg1");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

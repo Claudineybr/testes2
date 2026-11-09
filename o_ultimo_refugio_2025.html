@@ -23,10 +23,28 @@
 <title>O Ultimo Refugio (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt29634843.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7m9gpARSz7P0dm866VZGEBCNkzY3aqEODc5EQ5B042hFWEvkoCZJx66U2nruP-UxtSj-RwQWU0-rhQ7SvBxRgXC3gSK3iXpdzcddOCoN2lzeUILtEoYd692xVymNCSMYzRLUpV33kclP5zkRxzehKF5HxNDfjIb9uc4NQIHlQ42q0j7owwr0AQ4_8ul4/w1280-h720-p-k-no-nu/grI71v8Hbbvre3IXbWDTjXj0Fb.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7m9gpARSz7P0dm866VZGEBCNkzY3aqEODc5EQ5B042hFWEvkoCZJx66U2nruP-UxtSj-RwQWU0-rhQ7SvBxRgXC3gSK3iXpdzcddOCoN2lzeUILtEoYd692xVymNCSMYzRLUpV33kclP5zkRxzehKF5HxNDfjIb9uc4NQIHlQ42q0j7owwr0AQ4_8ul4/w1280-h720-p-k-no-nu/grI71v8Hbbvre3IXbWDTjXj0Fb.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjk2MzQ4NDMubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

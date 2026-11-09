@@ -12,7 +12,7 @@
     "name": "A Lista de Schindler (1993) - 🍿Clau",
     "description": "Assista A Lista de Schindler (1993) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t7gnJsX13aPtSUbM0PQtBoN9eD0KrBjMhIHv1pS-jB9up0GkCswPbN4Nligc3FtVqcGI17_lkzbeRxPleAUVbo_RSUmdG17QrsI1u09qMoUXOMSv2pUzyYXcM45mKjZ1s49cIy_2g=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_urRpgB1p7M0spfq2hCmjI0lvQdTHB9_EAEEV97mzFK8WMS52lrC3XTHVrafdRdYRep7mgdpefgF2IdH5AX-oEx5di7Ek0csQT1s5EiDxdSI2kzYeUZbogdjvmPFvo754J6oQQJYYc=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Lista de Schindler (1993) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0108052.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t7gnJsX13aPtSUbM0PQtBoN9eD0KrBjMhIHv1pS-jB9up0GkCswPbN4Nligc3FtVqcGI17_lkzbeRxPleAUVbo_RSUmdG17QrsI1u09qMoUXOMSv2pUzyYXcM45mKjZ1s49cIy_2g=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_urRpgB1p7M0spfq2hCmjI0lvQdTHB9_EAEEV97mzFK8WMS52lrC3XTHVrafdRdYRep7mgdpefgF2IdH5AX-oEx5di7Ek0csQT1s5EiDxdSI2kzYeUZbogdjvmPFvo754J6oQQJYYc=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDEwODA1Mi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

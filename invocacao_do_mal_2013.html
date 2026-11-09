@@ -12,7 +12,7 @@
     "name": "Invocacao do Mal (2013) - 🍿Clau",
     "description": "Assista Invocacao do Mal (2013) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vCvh4-W14FRbRCG5tQIHPlZQ1KG9PWq8WOAD54fgxAwWTSjlzWjWe8eofM7-LJsdeNPL_VfXd-HDg0uJO5Da9yXs2ZVVI3HlkS9zCcWgbnSYcDJoAwxZ_J13A-xVKF7RHREWQPDg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tq-XmKllUpygTP87q3JEdZcw0NSZGPXAB50MkQHrPLaNQuqW2yUI75rY1uXE2SzK2LmtbIDy9e4F2Xe9U0lKJOGnkKERIcbRDnrCw9-3H0uPYnMTUos5Aiiyj6ZGwBs1Z5IqscWw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Invocacao do Mal (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1457767.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vCvh4-W14FRbRCG5tQIHPlZQ1KG9PWq8WOAD54fgxAwWTSjlzWjWe8eofM7-LJsdeNPL_VfXd-HDg0uJO5Da9yXs2ZVVI3HlkS9zCcWgbnSYcDJoAwxZ_J13A-xVKF7RHREWQPDg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tq-XmKllUpygTP87q3JEdZcw0NSZGPXAB50MkQHrPLaNQuqW2yUI75rY1uXE2SzK2LmtbIDy9e4F2Xe9U0lKJOGnkKERIcbRDnrCw9-3H0uPYnMTUos5Aiiyj6ZGwBs1Z5IqscWw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxNDU3NzY3Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

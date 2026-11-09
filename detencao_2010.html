@@ -12,7 +12,7 @@
     "name": "Detencao (2010) - 🍿Clau",
     "description": "Assista Detencao (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tMJM7RzQ0YxvN40UnlZFoLkEvzFMzgtOwRAF_y4CQ_VGqB18f8rf4RvLh8gr2t4vGgvlslnLp1sh45Dp0Ajg1O1YPv77yk-ck5goXz2NDhV3E0tPyquzceLTkdf0ia4XH9s4o4YTg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vosBianWoovx9aX7LzNIo1Yj_M0VjWPgJT06HJNlMD_P8WSZMXKVYKQQ4U7YlKLzdjfNUBsBXH3GucDXBzwWfVJKOon-k3L0q7ju5wpnRsxvlhyGdG3endlk5XE_iO4UD91jSckf4=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Detencao (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD10/tt0997152.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tMJM7RzQ0YxvN40UnlZFoLkEvzFMzgtOwRAF_y4CQ_VGqB18f8rf4RvLh8gr2t4vGgvlslnLp1sh45Dp0Ajg1O1YPv77yk-ck5goXz2NDhV3E0tPyquzceLTkdf0ia4XH9s4o4YTg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vosBianWoovx9aX7LzNIo1Yj_M0VjWPgJT06HJNlMD_P8WSZMXKVYKQQ4U7YlKLzdjfNUBsBXH3GucDXBzwWfVJKOon-k3L0q7ju5wpnRsxvlhyGdG3endlk5XE_iO4UD91jSckf4=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDEwL3R0MDk5NzE1Mi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

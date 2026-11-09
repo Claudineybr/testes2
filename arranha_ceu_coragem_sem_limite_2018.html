@@ -12,7 +12,7 @@
     "name": "Arranha-Ceu: Coragem Sem Limite (2018) - 🍿Clau",
     "description": "Assista Arranha-Ceu: Coragem Sem Limite (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_utpW9kGlLtKst7g9h7dDAvx8wf_nSZtBh4txWiYUED_PeChejpusOTwoZr8i2XayK7xBVYn1l1Q48ODHWNiFOQOYII6hPC0La4l6VPnlnMy6_PRegRtWcOStNqq7CpbhdbbIH9NA=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uovIgDFKPqyVf-6WsY_etNHMuafhe4Ej78HpEDjkSTdOc5pQwx32CUABhw9bs40zqdNg0283E1mvqRFHSnlc88wOYGj9FjShKC8RQysNcelUBhXFHwhUTjJFcw-R-fpi18uKOKLg=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Arranha-Ceu: Coragem Sem Limite (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://server-1.cnvods.com/m/Arranha-C%C3%A9u:%20Coragem%20Sem%20Limite_2018_tt5758778.mp4?cnvs_token=WldReE9UY3hZVEk1T0dNM01XRm1ORTdndFBENDBTQ3Q3RXRFNnJscjRmbk5RVWZGUnFNemdmS0NDazk4KzA2UGs2ajNOejJwREZvbDNhOXllYjdWcjJFVE1UMkR0aGxFQkQ0R0g4N04xR3B6emVHM3dndWVHRjJkUWJhbDhVOUZFMFZ4Sm4rem5JbzJhOENoMkhldXA3SzIwQ0o1WDRYSlhraThJUVI1QnhCYjdYZmcxbEhrMVdDdUNIYlAzQzdC" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_utpW9kGlLtKst7g9h7dDAvx8wf_nSZtBh4txWiYUED_PeChejpusOTwoZr8i2XayK7xBVYn1l1Q48ODHWNiFOQOYII6hPC0La4l6VPnlnMy6_PRegRtWcOStNqq7CpbhdbbIH9NA=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uovIgDFKPqyVf-6WsY_etNHMuafhe4Ej78HpEDjkSTdOc5pQwx32CUABhw9bs40zqdNg0283E1mvqRFHSnlc88wOYGj9FjShKC8RQysNcelUBhXFHwhUTjJFcw-R-fpi18uKOKLg=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zZXJ2ZXItMS5jbnZvZHMuY29tL20vQXJyYW5oYS1DJUMzJUE5dTolMjBDb3JhZ2VtJTIwU2VtJTIwTGltaXRlXzIwMThfdHQ1NzU4Nzc4Lm1wND9jbnZzX3Rva2VuPVdsZFJlRTlVWTNoWlZFazFUMGROTTAxWFJtMU9SVGRuZEZCRU5EQlRRM1EzUlhSRk5uSnNjalJtYms1UlZXWkdVbkZOZW1kbVMwTkRhems0S3pBMlVHczJhak5PZWpKd1JFWnZiRE5oT1hsbFlqZFdjakpGVkUxVU1rUjBhR3hGUWtRMFIwZzROMDR4UjNCNmVtVkhNM2RuZFdWSFJqSmtVV0poYkRoVk9VWkZNRlo0U200cmVtNUpiekpoT0VOb01raGxkWEEzU3pJd1EwbzFXRFJZU2xocmFUaEpVVkkxUW5oQ1lqZFlabWN4YkVock1WZERkVU5JWWxBelF6ZEM=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

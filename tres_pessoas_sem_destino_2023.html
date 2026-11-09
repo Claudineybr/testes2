@@ -12,7 +12,7 @@
     "name": "Tres Pessoas Sem Destino (2023) - 🍿Clau",
     "description": "Assista Tres Pessoas Sem Destino (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vyEhIFjzmA7fYAq7l0OQ7SIaf6VhHnySyGPeDM9-iU5r5fat9h4g-E1G30amM3ZrROA-ADumgRKWXjxnG97IcXlV56-3bra0ajVlIX28QzsFnJxtRFyTcyx8K6iVm4bRvDwE_5p2U=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tSkDvzPfeehbIxYlk3Z-saYHpgngTAGXLZJVHsanqHAlW7cLaCjgejO5Af0Dq4q7o2WsHXR6Z_QGfPgzDpmog74qt-xvFCEcSvMPIeb1RIg2rhsza3ATUMH4nLQ3F5nlidqOaL2l8=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Tres Pessoas Sem Destino (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt27329109.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vyEhIFjzmA7fYAq7l0OQ7SIaf6VhHnySyGPeDM9-iU5r5fat9h4g-E1G30amM3ZrROA-ADumgRKWXjxnG97IcXlV56-3bra0ajVlIX28QzsFnJxtRFyTcyx8K6iVm4bRvDwE_5p2U=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tSkDvzPfeehbIxYlk3Z-saYHpgngTAGXLZJVHsanqHAlW7cLaCjgejO5Af0Dq4q7o2WsHXR6Z_QGfPgzDpmog74qt-xvFCEcSvMPIeb1RIg2rhsza3ATUMH4nLQ3F5nlidqOaL2l8=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MjczMjkxMDkubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

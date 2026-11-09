@@ -12,7 +12,7 @@
     "name": "Velozes e Furiosos 10 - (2023) - 🍿Clau",
     "description": "Assista Velozes e Furiosos 10 - (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vYt-OQO5BEnySAIVk-R7DPPx0RedOdVb6Sp2J1QXeRCVB4EqqsojmEdLRfWx2NZOvD2wTQK3OMkPXrinBtlTFeK8sQg0naZbAx8AG85QzYzAWvsTNEU-w3sBG9o_14l2a1Qkr6OfA=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sCuiyFQNpa-5ud4PrLX4xSZJeL8FlFvAsyeBpBvnNtKTxYOtEJOGEw0VU921gCIKydkdF_9dQyi6eEas1-jtFpsucExMfmEfuaL2GbeC5kzaX6PyK9HiurRzGfVn0OGCYSmz3V6xY=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Velozes e Furiosos 10 - (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt5433140.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vYt-OQO5BEnySAIVk-R7DPPx0RedOdVb6Sp2J1QXeRCVB4EqqsojmEdLRfWx2NZOvD2wTQK3OMkPXrinBtlTFeK8sQg0naZbAx8AG85QzYzAWvsTNEU-w3sBG9o_14l2a1Qkr6OfA=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sCuiyFQNpa-5ud4PrLX4xSZJeL8FlFvAsyeBpBvnNtKTxYOtEJOGEw0VU921gCIKydkdF_9dQyi6eEas1-jtFpsucExMfmEfuaL2GbeC5kzaX6PyK9HiurRzGfVn0OGCYSmz3V6xY=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0NTQzMzE0MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

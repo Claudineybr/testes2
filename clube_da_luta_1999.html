@@ -23,10 +23,28 @@
 <title>Clube da Luta (1999) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0137523.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL84m6mT8Sup9oul5zdpdWEE338qXjlQEI3PlWTEmqbn2uRuIZFZqFQgbCZuHU_FIqolsiVFk8__s6W8Vp4WXj0aGNcBdS7SmhkellKvLiYma13PDYgm7UTii1LsuDnjKPbEGHXfD4OpqJozxr0yx83DATRwEaW5xIuXqFFzUIRruv4VBUg8-jdaptUKEM/w1280-h720-p-k-no-nu/1001204667.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL84m6mT8Sup9oul5zdpdWEE338qXjlQEI3PlWTEmqbn2uRuIZFZqFQgbCZuHU_FIqolsiVFk8__s6W8Vp4WXj0aGNcBdS7SmhkellKvLiYma13PDYgm7UTii1LsuDnjKPbEGHXfD4OpqJozxr0yx83DATRwEaW5xIuXqFFzUIRruv4VBUg8-jdaptUKEM/w1280-h720-p-k-no-nu/1001204667.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMTM3NTIzLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

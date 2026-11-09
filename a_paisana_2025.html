@@ -23,10 +23,28 @@
 <title>A Paisana (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt27550504.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij3r8Y3xT0d7IXhtrWz-lOqaht1FlOGrlrfgB_kcr1vjJ0_OE-KSrB8iB_PioZtyoeb1dLizQ6jgyYZL0ZPvDG-KgGJ89NrJ2QY7m8lNkcUuBTJre3Z-0X5AMz8KnJ6Pe75V0wt7iIgbtIUGBny9h7cdvOkyMiLuLgLIDgfxMTxBI5ZT5S8EcvaLkwZMI/w1280-h720-p-k-no-nu/hkYopYs276hGmt4qc9UJHx8jXpP.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij3r8Y3xT0d7IXhtrWz-lOqaht1FlOGrlrfgB_kcr1vjJ0_OE-KSrB8iB_PioZtyoeb1dLizQ6jgyYZL0ZPvDG-KgGJ89NrJ2QY7m8lNkcUuBTJre3Z-0X5AMz8KnJ6Pe75V0wt7iIgbtIUGBny9h7cdvOkyMiLuLgLIDgfxMTxBI5ZT5S8EcvaLkwZMI/w1280-h720-p-k-no-nu/hkYopYs276hGmt4qc9UJHx8jXpP.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjc1NTA1MDQubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

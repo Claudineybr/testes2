@@ -12,7 +12,7 @@
     "name": "A Cela dos Milagres (2025) - 🍿Clau",
     "description": "Assista A Cela dos Milagres (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_v0X7DtOGBmrPCNgZ4vcF1aDs2GDgi4gdf-3nha8Vex_O6Lm0RuFxwm2g2hrl1R924Y4TezeQQfPdE411vnMwmYbqXxvlCuW_mYUOmAWlYbXQ8AxyvC31t0dOUT6ywssv8k07qyYqw=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tWFh7Eh4zdlIXuXppFe2Qf8ZK4TyHHK06p8FPDhpkk8i6uSNnVVsT8GP7tlyjCh9b8dUAGM_AQ8vM4sSm9fFd4qY12LnADkr1i5X8jlTgzLZP_YRog2vMEEkHygNmAunLPoivChVw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Cela dos Milagres (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt29466658.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_v0X7DtOGBmrPCNgZ4vcF1aDs2GDgi4gdf-3nha8Vex_O6Lm0RuFxwm2g2hrl1R924Y4TezeQQfPdE411vnMwmYbqXxvlCuW_mYUOmAWlYbXQ8AxyvC31t0dOUT6ywssv8k07qyYqw=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tWFh7Eh4zdlIXuXppFe2Qf8ZK4TyHHK06p8FPDhpkk8i6uSNnVVsT8GP7tlyjCh9b8dUAGM_AQ8vM4sSm9fFd4qY12LnADkr1i5X8jlTgzLZP_YRog2vMEEkHygNmAunLPoivChVw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjk0NjY2NTgubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

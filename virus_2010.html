@@ -23,10 +23,28 @@
 <title>Virus (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0806203.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFYXmIhgkxgHe-Piy6wD9a8xSQazf7Mz_TB_EvFILEZ062JkrjWUHgG-usklVmFazAHtd-n1SH4WBoaCKyS37ifzrw0dY_0FZwfnwMBbqIOhZN0e1kFCwVWw4Bhlyiprw2NIn0G1M9qKdGTWDT8N_ldFgNApZ6qDxq3rK3O2UHn4viKUxvIb3jp99yBpA/w1280-h720-p-k-no-nu/Picsart_26-04-06_08-49-59-943.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFYXmIhgkxgHe-Piy6wD9a8xSQazf7Mz_TB_EvFILEZ062JkrjWUHgG-usklVmFazAHtd-n1SH4WBoaCKyS37ifzrw0dY_0FZwfnwMBbqIOhZN0e1kFCwVWw4Bhlyiprw2NIn0G1M9qKdGTWDT8N_ldFgNApZ6qDxq3rK3O2UHn4viKUxvIb3jp99yBpA/w1280-h720-p-k-no-nu/Picsart_26-04-06_08-49-59-943.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDgwNjIwMy5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

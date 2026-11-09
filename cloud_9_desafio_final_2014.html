@@ -12,7 +12,7 @@
     "name": "Cloud 9: Desafio Final (2014) - 🍿Clau",
     "description": "Assista Cloud 9: Desafio Final (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t1Wu3O5QBYzf36SJ_chEp1x4jjjceSHxDQTZ7X8_6AVvDb6szyzbRmwvFuPoAXzB4cUS6CXOcfNfKkNK3AVOzRyNanF9ZkI4_FMgTj2ltYDLuirNxBxTU761APwMFot-GL3JZ4Og=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u4n5kmt2XscyAysQjCvfeLA9rJsQwEdVNjG03d738tteYgZenJnEJbpTQ_NNQzH8FJui2dr-EuoRxVR7B4WZu0HvyW2yOPucoKEBvg_fp8UdbD-eRM_0pmASRKKMzUdSy89kRsCQ=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Cloud 9: Desafio Final (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt2762970.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t1Wu3O5QBYzf36SJ_chEp1x4jjjceSHxDQTZ7X8_6AVvDb6szyzbRmwvFuPoAXzB4cUS6CXOcfNfKkNK3AVOzRyNanF9ZkI4_FMgTj2ltYDLuirNxBxTU761APwMFot-GL3JZ4Og=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u4n5kmt2XscyAysQjCvfeLA9rJsQwEdVNjG03d738tteYgZenJnEJbpTQ_NNQzH8FJui2dr-EuoRxVR7B4WZu0HvyW2yOPucoKEBvg_fp8UdbD-eRM_0pmASRKKMzUdSy89kRsCQ=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0Mjc2Mjk3MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

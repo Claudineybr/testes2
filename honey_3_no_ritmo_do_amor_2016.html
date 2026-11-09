@@ -12,7 +12,7 @@
     "name": "Honey 3: No Ritmo do Amor (2016) - 🍿Clau",
     "description": "Assista Honey 3: No Ritmo do Amor (2016) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vrBaGpxCsfqg7JeFOrdcMQDmGDP2-vz_wW7zYOgw4pXR1OH-c04D8HVcV4EonRRf7N47F2IC3PAYvwB7oZzJwJG0lzlvfkuHSudlVI3i1DW6qjqx6ivUccaIR3D69F_JsJVp4DyEI=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tFPXjTDId7e4-_2h7bWjgCPL2t_8EkuhnBM2TMYo8tiLL4C8hROtEPSlzsAlVd9_rZCbnVHArN5ChzviuiFI-6F8DsvzaI0OFHKDCyXu8DbTHyHRl3dVuSjq7cL6z6Pw16hLWp5Vs=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Honey 3: No Ritmo do Amor (2016) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt4677938.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vrBaGpxCsfqg7JeFOrdcMQDmGDP2-vz_wW7zYOgw4pXR1OH-c04D8HVcV4EonRRf7N47F2IC3PAYvwB7oZzJwJG0lzlvfkuHSudlVI3i1DW6qjqx6ivUccaIR3D69F_JsJVp4DyEI=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tFPXjTDId7e4-_2h7bWjgCPL2t_8EkuhnBM2TMYo8tiLL4C8hROtEPSlzsAlVd9_rZCbnVHArN5ChzviuiFI-6F8DsvzaI0OFHKDCyXu8DbTHyHRl3dVuSjq7cL6z6Pw16hLWp5Vs=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0NDY3NzkzOC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

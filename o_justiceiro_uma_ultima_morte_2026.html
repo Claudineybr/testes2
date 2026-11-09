@@ -12,7 +12,7 @@
     "name": "O Justiceiro: Uma Ultima Morte (2026) - 🍿Clau",
     "description": "Assista O Justiceiro: Uma Ultima Morte (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s5ScadrVplvjPlN1DmRk6pbfmfoKsiYzwfROrnClTi6V9KPdawUBor4c5wlYbJerbcKeA9M_v5_J5Ko6phIxvjVNeD9TuKEOqHQCugOscvz_X59m_jQOFLeitMu_E_A5Fd9LGX66E=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vVaZBgc0R9HPf3KZ7-ydbWEVcMCsfKIkL1P966_DabjUtL-DsExJ_BUMkx2qWpd1GAzstGbDMj_7q6z66zY1mq4dhcI7e2cVin_A7vOrymLfh5nuqDku8UYstJkAPeFJjQgigHfjQ=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Justiceiro: Uma Ultima Morte (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt36042156.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s5ScadrVplvjPlN1DmRk6pbfmfoKsiYzwfROrnClTi6V9KPdawUBor4c5wlYbJerbcKeA9M_v5_J5Ko6phIxvjVNeD9TuKEOqHQCugOscvz_X59m_jQOFLeitMu_E_A5Fd9LGX66E=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vVaZBgc0R9HPf3KZ7-ydbWEVcMCsfKIkL1P966_DabjUtL-DsExJ_BUMkx2qWpd1GAzstGbDMj_7q6z66zY1mq4dhcI7e2cVin_A7vOrymLfh5nuqDku8UYstJkAPeFJjQgigHfjQ=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzYwNDIxNTYubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

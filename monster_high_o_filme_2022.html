@@ -12,7 +12,7 @@
     "name": "Monster High: O Filme (2022) - 🍿Clau",
     "description": "Assista Monster High: O Filme (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tpERlAust0yZ3XP3dcHftoWHB_Y9yXiemIVZ8KJa6m_5W43Jh5hUw3UHfPi6tcnhwwr7lxZgr83azVs9thKlGcECNoO9BGndcLPsaMvnRduNitggq-unAJA7BSc_mkVE-T-8Jskjk=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vccsIlTN8urIf3xbRYjO-WBPDgBHL1q6n7Fp6RAhg3-JaflWwyLluV8hvirPsziYaJJw11O1aVBnl86oTXHjQl23KOIAtpvCEqz_sqwo8JWqZdJ87TwjHiIf4cCoJ1mtumbt9WyHA=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Monster High: O Filme (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt1447981.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tpERlAust0yZ3XP3dcHftoWHB_Y9yXiemIVZ8KJa6m_5W43Jh5hUw3UHfPi6tcnhwwr7lxZgr83azVs9thKlGcECNoO9BGndcLPsaMvnRduNitggq-unAJA7BSc_mkVE-T-8Jskjk=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vccsIlTN8urIf3xbRYjO-WBPDgBHL1q6n7Fp6RAhg3-JaflWwyLluV8hvirPsziYaJJw11O1aVBnl86oTXHjQl23KOIAtpvCEqz_sqwo8JWqZdJ87TwjHiIf4cCoJ1mtumbt9WyHA=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTQ0Nzk4MS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

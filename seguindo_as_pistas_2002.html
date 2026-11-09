@@ -12,7 +12,7 @@
     "name": "Seguindo as Pistas (2002) - 🍿Clau",
     "description": "Assista Seguindo as Pistas (2002) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tm-1rEUQKevEiiOPwWD6-1-vfD3Nsrhck7E_oaZsLM4SfVhAlnWKVrr3zQCTIhFYW0z4ImJiD-aiKtARgAHXeoIQgJN54YyFwAa1ATDzRTzGVeECN64UgyebZ9Tlq8TZ1-V6b-O7k=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ujQZjZfhFAsG1mTqTp5tfbRo9SMSj4wqPVd4LjajhC2fMN85WL8NeKU6vHkCXKZCyRO2wU5ul2qrXHE0lwdKEugp5j0K9ZRMokhzcczBEvd78eRm2IeiFE0VMU2W-qFbzBr13rGEs=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Seguindo as Pistas (2002) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://server-utx.playtxs.com/f/dsny/Seguindo%20as%20Pistas.mp4?cnvs_token=TnpreU9UWTBPRGxtWWpJeU1tUmtaWmN5Ni8ycCtOVVJxRlpXNXkvRWhFVUNNWVlJaEYvbW5NOHljd0s1Z3d0bC8rQ2NmcHZ2ZlhXcURjcUU4TUlMc09MK0xrM3plU3MwMG9vUXdVVk5Rc3QxR0VPR3NFZHlGa0dzZGlDUDVTRVp4VGhhTFM4UERJaHFjNWJUekk1VkN3PT0=" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tm-1rEUQKevEiiOPwWD6-1-vfD3Nsrhck7E_oaZsLM4SfVhAlnWKVrr3zQCTIhFYW0z4ImJiD-aiKtARgAHXeoIQgJN54YyFwAa1ATDzRTzGVeECN64UgyebZ9Tlq8TZ1-V6b-O7k=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ujQZjZfhFAsG1mTqTp5tfbRo9SMSj4wqPVd4LjajhC2fMN85WL8NeKU6vHkCXKZCyRO2wU5ul2qrXHE0lwdKEugp5j0K9ZRMokhzcczBEvd78eRm2IeiFE0VMU2W-qFbzBr13rGEs=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zZXJ2ZXItdXR4LnBsYXl0eHMuY29tL2YvZHNueS9TZWd1aW5kbyUyMGFzJTIwUGlzdGFzLm1wND9jbnZzX3Rva2VuPVRucHJlVTlVV1RCUFJHeHRXV3BKZVUxdFVtdGFXbU41Tmk4eWNDdE9WVkp4UmxwWE5Ya3ZSV2hGVlVOTldWbEphRVl2Ylc1Tk9IbGpkMHMxWjNkMGJDOHJRMk5tY0haMlpsaFhjVVJqY1VVNFRVbE1jMDlNSzB4ck0zcGxVM013TUc5dlVYZFZWazVSYzNReFIwVlBSM05GWkhsR2EwZHpaR2xEVURWVFJWcDRWR2hoVEZNNFVFUkphSEZqTldKVWVrazFWa04zUFQwPQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

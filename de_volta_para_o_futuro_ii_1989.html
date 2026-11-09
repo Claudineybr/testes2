@@ -12,7 +12,7 @@
     "name": "De Volta para o Futuro II (1989) - 🍿Clau",
     "description": "Assista De Volta para o Futuro II (1989) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vy2bYKPdpnusMcsRUzfw8nIpgnAzTKrB8CGapYuUcz7wiAQqQZyZzt6icguo6P_bS90aJqcOT6zPToOCZzXLolJW31lfnyoGVm5RD9jA9oi1aEkJWQG2ckcL4IE-ExD6BSDECvpQ=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uc4Q8jBhEInrbxvf4yiF3M-WersKu-aD6fhClaJkCw567r-4kuOA_kRcMUW00zV4Iy3LtMomxf0eeYvRxtkgcSQev5b414yjbbrHyFpN-q5UNQsC7ycCsyCY2b5A2picefh3bcJw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>De Volta para o Futuro II (1989) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0096874.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vy2bYKPdpnusMcsRUzfw8nIpgnAzTKrB8CGapYuUcz7wiAQqQZyZzt6icguo6P_bS90aJqcOT6zPToOCZzXLolJW31lfnyoGVm5RD9jA9oi1aEkJWQG2ckcL4IE-ExD6BSDECvpQ=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uc4Q8jBhEInrbxvf4yiF3M-WersKu-aD6fhClaJkCw567r-4kuOA_kRcMUW00zV4Iy3LtMomxf0eeYvRxtkgcSQev5b414yjbbrHyFpN-q5UNQsC7ycCsyCY2b5A2picefh3bcJw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMDk2ODc0Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

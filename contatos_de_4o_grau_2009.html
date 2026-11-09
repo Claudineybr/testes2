@@ -12,7 +12,7 @@
     "name": "Contatos de 4o Grau (2009) - 🍿Clau",
     "description": "Assista Contatos de 4o Grau (2009) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t9ote-ETnCC6Y5qWMIAmnMNffQDYpxlXSGPeO_BcF5ZQ7kfXG_8BAvc8sOC0Vhg8SE87YSwe2a-4AhI1XrHLdBkTr90lKrJ64wCoQyhea3WiRucrfbpKyz7XvXdgHDJO0gQAkb1mg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_smAm0unwZkr4FTT4CLyWLolAcXbCNCii-B8Dmt7Xt0AgAods4h9PCibvwUO674B-_ldeh15wUSGtQhu_3C9darH6rqoMhUaOS6glqtWh2oEmJptj81gRR1ZqwaahuUCNDF9-K0KR8=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Contatos de 4o Grau (2009) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1220198.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t9ote-ETnCC6Y5qWMIAmnMNffQDYpxlXSGPeO_BcF5ZQ7kfXG_8BAvc8sOC0Vhg8SE87YSwe2a-4AhI1XrHLdBkTr90lKrJ64wCoQyhea3WiRucrfbpKyz7XvXdgHDJO0gQAkb1mg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_smAm0unwZkr4FTT4CLyWLolAcXbCNCii-B8Dmt7Xt0AgAods4h9PCibvwUO674B-_ldeh15wUSGtQhu_3C9darH6rqoMhUaOS6glqtWh2oEmJptj81gRR1ZqwaahuUCNDF9-K0KR8=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxMjIwMTk4Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

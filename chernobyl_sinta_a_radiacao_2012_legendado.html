@@ -23,10 +23,28 @@
 <title>Chernobyl: Sinta a Radiacao 2012 (LEGENDADO) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1991245LEG.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTamxaF1b1IPX33ocaQwddS4cXraJLnTZOMYzIpMI0Gf8e7sar4nABOatEJmdhoklvnToLd1L3DyZ1LBXbO8Gds4qWS5TokEDn2QFPcPf1pgYFdckj0p3cGsmxpTnHiEjMazKTST6aZqzvn9_PwX2JeqK_hDwPh41goHnnCbVV01aVjfYITzU518EJy0U/w1280-h720-p-k-no-nu/cVLE4OXV83xAIyYxgbx2vwac5Iq.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTamxaF1b1IPX33ocaQwddS4cXraJLnTZOMYzIpMI0Gf8e7sar4nABOatEJmdhoklvnToLd1L3DyZ1LBXbO8Gds4qWS5TokEDn2QFPcPf1pgYFdckj0p3cGsmxpTnHiEjMazKTST6aZqzvn9_PwX2JeqK_hDwPh41goHnnCbVV01aVjfYITzU518EJy0U/w1280-h720-p-k-no-nu/cVLE4OXV83xAIyYxgbx2vwac5Iq.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTk5MTI0NUxFRy5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

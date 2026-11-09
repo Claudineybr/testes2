@@ -12,7 +12,7 @@
     "name": "De Volta para o Futuro (1985) - 🍿Clau",
     "description": "Assista De Volta para o Futuro (1985) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uryA0sVaHiSGP2LdKmvoMlFjBWe1d_czRvFEylCtNq3SVfSuWgX_u6mXs41ZfwLyyMFlD6eXBFwkYpFd2-OsZ1K7me4jbrDOFzqb_ieXj5Wx9Lw7B457GI3sTNfbcKUqhAnQ4RzTs=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_v4ykkZ7bfUxRHzylKReTs80yknzYyFjdqXFGfRgGfIrNeDC_nAEUvtY2suO85_zSCOVHLzzsWEAC9KUbhZ8C1DNUfH7Y0VXhJvAxgYPDOSVABAzGMrOSk3WZ1xoOLLm9wXOJisVd4=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>De Volta para o Futuro (1985) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0088763.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uryA0sVaHiSGP2LdKmvoMlFjBWe1d_czRvFEylCtNq3SVfSuWgX_u6mXs41ZfwLyyMFlD6eXBFwkYpFd2-OsZ1K7me4jbrDOFzqb_ieXj5Wx9Lw7B457GI3sTNfbcKUqhAnQ4RzTs=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_v4ykkZ7bfUxRHzylKReTs80yknzYyFjdqXFGfRgGfIrNeDC_nAEUvtY2suO85_zSCOVHLzzsWEAC9KUbhZ8C1DNUfH7Y0VXhJvAxgYPDOSVABAzGMrOSk3WZ1xoOLLm9wXOJisVd4=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDA4ODc2My5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

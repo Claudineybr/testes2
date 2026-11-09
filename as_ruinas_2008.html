@@ -12,7 +12,7 @@
     "name": "As Ruinas (2008) - 🍿Clau",
     "description": "Assista As Ruinas (2008) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tyawXeRFrmH3cgex19-A4H8MHx6gvpGUGE_7dEk061RilBnIYADmw-0UfVBQJ5JdaEZtN4iZXHWhplnx6-P-ruB5bawhM5XJRj93qlB_bdLYpPkQKEEQZnrYrEA1QTXTAJWLgi-vs=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sDsswAQ_W_a5A0BZV6CjVc9VtknYO-TmbQMMfF7kJiLJ-rcbzZsKH97z56-BxfZVTkviMaUyEGUruZ8T1lokMhzczamMXdD94yLd8UfdqmO031MF9JdwQsV4CMDlfYIGbGMWBsYG0=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>As Ruinas (2008) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0963794.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tyawXeRFrmH3cgex19-A4H8MHx6gvpGUGE_7dEk061RilBnIYADmw-0UfVBQJ5JdaEZtN4iZXHWhplnx6-P-ruB5bawhM5XJRj93qlB_bdLYpPkQKEEQZnrYrEA1QTXTAJWLgi-vs=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sDsswAQ_W_a5A0BZV6CjVc9VtknYO-TmbQMMfF7kJiLJ-rcbzZsKH97z56-BxfZVTkviMaUyEGUruZ8T1lokMhzczamMXdD94yLd8UfdqmO031MF9JdwQsV4CMDlfYIGbGMWBsYG0=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwOTYzNzk0Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Batman: Morte em Familia (2020) - 🍿Clau",
     "description": "Assista Batman: Morte em Familia (2020) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vM2Ikx-aaXAwxRn8Y2p1bSFNykNkYQa3NqEFy9uA1YizTnAFdKIo4CXnHPqYsyFuDvGrBxn0W9LgGeozzOiYLQfjGXnFdeSXQRCrElQWIpQoz0B14rAjgciLGziBRrOoBYE1gnhwQ=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uy-xSMKVT2SjrQVqO7Tzl07yPbkhaWs9MT8tYs9TCnxE7Yh7aXbm5dF6R2_L8mWuGtmN9oOyj8x2kIlt5D4v4jxZucD3_EMI7gZ-TXcQWE784qOzDCELmFKu2W6HqNHUlaY-22lHw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Batman: Morte em Familia (2020) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt12794046.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vM2Ikx-aaXAwxRn8Y2p1bSFNykNkYQa3NqEFy9uA1YizTnAFdKIo4CXnHPqYsyFuDvGrBxn0W9LgGeozzOiYLQfjGXnFdeSXQRCrElQWIpQoz0B14rAjgciLGziBRrOoBYE1gnhwQ=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uy-xSMKVT2SjrQVqO7Tzl07yPbkhaWs9MT8tYs9TCnxE7Yh7aXbm5dF6R2_L8mWuGtmN9oOyj8x2kIlt5D4v4jxZucD3_EMI7gZ-TXcQWE784qOzDCELmFKu2W6HqNHUlaY-22lHw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTI3OTQwNDYubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

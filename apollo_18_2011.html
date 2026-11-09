@@ -12,7 +12,7 @@
     "name": "Apollo 18 (2011) - 🍿Clau",
     "description": "Assista Apollo 18 (2011) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_upAZa-PygIkFxqXFr2CsCEWer87r1-TlJ-THJM1qH6zrVrCIOUYXEGYqejjErKpiUeBSl_ONUZZPKfgH9r42jNMDKLjKr0vyx8Zf4dePwZwnA6MmJJTTwnLN75AqP40n0lvVkqJU4=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vTtfwz81Efl87qqY_68KGc5f_VvpgN4p_D7mD7jerM7c3XgQY0iSabCnOTcqeOshjJrnz3Gfmq97RJc6VE5f-_7hQgMTI5bu2SC8pHeSuscjcD5VF15qubNzqTCOqKtNxPPmzd8gw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Apollo 18 (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1772240.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_upAZa-PygIkFxqXFr2CsCEWer87r1-TlJ-THJM1qH6zrVrCIOUYXEGYqejjErKpiUeBSl_ONUZZPKfgH9r42jNMDKLjKr0vyx8Zf4dePwZwnA6MmJJTTwnLN75AqP40n0lvVkqJU4=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vTtfwz81Efl87qqY_68KGc5f_VvpgN4p_D7mD7jerM7c3XgQY0iSabCnOTcqeOshjJrnz3Gfmq97RJc6VE5f-_7hQgMTI5bu2SC8pHeSuscjcD5VF15qubNzqTCOqKtNxPPmzd8gw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTc3MjI0MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

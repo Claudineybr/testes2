@@ -12,7 +12,7 @@
     "name": "Devoradores de Estrelas (2026) - 🍿Clau",
     "description": "Assista Devoradores de Estrelas (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uvQJSaINOWuEfej49zS7ujKg1ST50ft01fHTQErU92pkh50BhsxnkvfT4Tx0sJzqA6WQXruMRz_slVmNdkjMdfZ8zwA-80dFDL5nXBCx5XrZxmlQC3BJEQzKSXabAPBpgVCCTpIfk=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uSWyrZvtTWeZ50-_RNk_qsDGIdTxfUfqAibLl-Y9k9goHdq6Vheb0lXPKxgrcK3y7iWU7v8oLpFWXS9BVs6aZQWWAbLRJBRKqfnTCs7PSzHdSxKt7zXg7FM7x-FDSzBNL_yZUcmQI=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Devoradores de Estrelas (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt12042730.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uvQJSaINOWuEfej49zS7ujKg1ST50ft01fHTQErU92pkh50BhsxnkvfT4Tx0sJzqA6WQXruMRz_slVmNdkjMdfZ8zwA-80dFDL5nXBCx5XrZxmlQC3BJEQzKSXabAPBpgVCCTpIfk=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uSWyrZvtTWeZ50-_RNk_qsDGIdTxfUfqAibLl-Y9k9goHdq6Vheb0lXPKxgrcK3y7iWU7v8oLpFWXS9BVs6aZQWWAbLRJBRKqfnTCs7PSzHdSxKt7zXg7FM7x-FDSzBNL_yZUcmQI=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTIwNDI3MzAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:,">
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -18,28 +17,34 @@
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
     "contentUrl": "https://play-1.cnvods.com/m/Tim%20Maia_2014_tt3134058.mp4?cnvs_token=1774543696-9an%2FYWXVOmh8bz3C3JRCs7b1ubt6usckIarONNcihU0%3D&vid=73370&pid=2216724&t=1774543696",
-    "embedUrl": "https://play-1.cnvods.com/m/Tim%20Maia_2014_tt3134058.mp4?cnvs_token=1774543696-9an%2FYWXVOmh8bz3C3JRCs7b1ubt6usckIarONNcihU0%3D&vid=73370&pid=2216724&t=1774543696",
-    "supportPlatform": [
-        "https://schema.org/IOSPlatform",
-        "https://schema.org/AndroidPlatform"
-    ],
-    "duration": "PT02H30M00S",
-    "interactionStatistic": {
-        "@type": "InteractionCounter",
-        "interactionType": {
-            "@type": "WatchAction"
-        },
-        "userInteractionCount": 9458
-    }
+    "embedUrl": "https://play-1.cnvods.com/m/Tim%20Maia_2014_tt3134058.mp4?cnvs_token=1774543696-9an%2FYWXVOmh8bz3C3JRCs7b1ubt6usckIarONNcihU0%3D&vid=73370&pid=2216724&t=1774543696"
 }
 </script>
 <title>Tim Maia (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video id="player-video" title="Tim Maia (2014) - 🍿Clau" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4Kt5cJhlXbN1cVTk9RSfjmce8i0Wqqrh_NH52j3-8gqQ8AckvSYCQXJkEdHEyxIRmNZm_ESAWDRoNoiOsqPomuZCGRPrARueHejSkvkkaqC-r6N7DsL4li78xpXlUfTlY14wAPJgdgkSgLpspKi6kyXXklWXTBdRHoonvHs07DuWljQixLWM8eW8-OB0/w1280-h720-p-k-no-nu/1000139444.webp" src="https://play-1.cnvods.com/m/Tim%20Maia_2014_tt3134058.mp4?cnvs_token=1774543696-9an%2FYWXVOmh8bz3C3JRCs7b1ubt6usckIarONNcihU0%3D&vid=73370&pid=2216724&t=1774543696" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4Kt5cJhlXbN1cVTk9RSfjmce8i0Wqqrh_NH52j3-8gqQ8AckvSYCQXJkEdHEyxIRmNZm_ESAWDRoNoiOsqPomuZCGRPrARueHejSkvkkaqC-r6N7DsL4li78xpXlUfTlY14wAPJgdgkSgLpspKi6kyXXklWXTBdRHoonvHs07DuWljQixLWM8eW8-OB0/w1280-h720-p-k-no-nu/1000139444.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LTEuY252b2RzLmNvbS9tL1RpbSUyME1haWFfMjAxNF90dDMxMzQwNTgubXA0P2NudnNfdG9rZW49MTc3NDU0MzY5Ni05YW4lMkZZV1hWT21oOGJ6M0MzSlJDczdiMXVidDZ1c2NrSWFyT05OY2loVTAlM0QmdmlkPTczMzcwJnBpZD0yMjE2NzI0JnQ9MTc3NDU0MzY5Ng==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

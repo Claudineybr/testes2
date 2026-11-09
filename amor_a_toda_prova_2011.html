@@ -12,7 +12,7 @@
     "name": "Amor a Toda Prova (2011) - 🍿Clau",
     "description": "Assista Amor a Toda Prova (2011) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u0nI8RbZEXlbr9cjZWhTJr-mdO2Ky8FI3p_-jyTDR4CxnEHh5ZWKg6aDf_YBEGYuPWoPncsfxjl6JjENUq3Z_aKaooNgHqfnPaLgEvzz4psVIICue1GOCRXRQ45POZPpcRWcQAS6Q=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s5UA5PI3PMjpPA_Z0r3eFhnpQZZxI-vWDUEq9Otws-RcI9esf4dcqSqMel_jDSI72cK0wfoEGxfThz1D8hiHAa81HuPWGXB6KCXk170HRK5Xa5pF2mByVCV8vQO41sqTvr099aBqo=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Amor a Toda Prova (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1570728.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u0nI8RbZEXlbr9cjZWhTJr-mdO2Ky8FI3p_-jyTDR4CxnEHh5ZWKg6aDf_YBEGYuPWoPncsfxjl6JjENUq3Z_aKaooNgHqfnPaLgEvzz4psVIICue1GOCRXRQ45POZPpcRWcQAS6Q=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_s5UA5PI3PMjpPA_Z0r3eFhnpQZZxI-vWDUEq9Otws-RcI9esf4dcqSqMel_jDSI72cK0wfoEGxfThz1D8hiHAa81HuPWGXB6KCXk170HRK5Xa5pF2mByVCV8vQO41sqTvr099aBqo=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxNTcwNzI4Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Little Brother (2026) - 🍿Clau",
     "description": "Assista Little Brother (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uxBod94HfT2mwHvzSbDcdXAQkRseEjsZGCt3EBc89w4TLjNcdQ-AKGk8ETpiMGBF1iYZY7XkWfHLjCBO6z9oz-E_tTwtFDBEUqe9PN217zBIjL_Lk4MkASgGLfdm03X5wic-ajHOQ=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tL_yvmcL2KnXe3uPQI29xTqScUumfWG9Q2ugz3ddgzERFcyv2Bg8SJSXg71stxJmXdMFGWBGcfQTKLcT4-d-qdKeLKQoDTA-VuD-hNkUzwLEyZd4Xe1eF7okd4o3hSZDGGOxVCoNU=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Little Brother (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt34888871.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uxBod94HfT2mwHvzSbDcdXAQkRseEjsZGCt3EBc89w4TLjNcdQ-AKGk8ETpiMGBF1iYZY7XkWfHLjCBO6z9oz-E_tTwtFDBEUqe9PN217zBIjL_Lk4MkASgGLfdm03X5wic-ajHOQ=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tL_yvmcL2KnXe3uPQI29xTqScUumfWG9Q2ugz3ddgzERFcyv2Bg8SJSXg71stxJmXdMFGWBGcfQTKLcT4-d-qdKeLKQoDTA-VuD-hNkUzwLEyZd4Xe1eF7okd4o3hSZDGGOxVCoNU=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzQ4ODg4NzEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

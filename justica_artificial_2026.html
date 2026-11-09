@@ -23,10 +23,28 @@
 <title>Justica Artificial (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.playmycnvs.com/m/Justi%C3%A7a.Artificial.2026.1080p.WEB-DL.x264.DUAL.5.1.mp4?cnvs_token=v_id=1&p_id=2&token=1771455317-NrX95M2F2rxwbEWkho0VahZHg4hnEKomAyY_zBXoaAo" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhz_v7xkSF42pqbj75mZsh-E3tUUIxMJDCzbNXvohKyMHxH0_YzHpozabSL6_968vlbN2dOcK7Q6bXHwDReAeDlJSkDM9FdmFMQaMG-9eK-jZ6m_A3Ke8GoybvWlOs41MnHv1CoySw-HQ6hEoV1Wxab0kAkDBeMZpsjtLFg3a2yi97b2MRLs0_f0M_fKQY/w1280-h720-p-k-no-nu/jSGDTr4TQF6r7iHP4Qbzs3xFmCk.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhz_v7xkSF42pqbj75mZsh-E3tUUIxMJDCzbNXvohKyMHxH0_YzHpozabSL6_968vlbN2dOcK7Q6bXHwDReAeDlJSkDM9FdmFMQaMG-9eK-jZ6m_A3Ke8GoybvWlOs41MnHv1CoySw-HQ6hEoV1Wxab0kAkDBeMZpsjtLFg3a2yi97b2MRLs0_f0M_fKQY/w1280-h720-p-k-no-nu/jSGDTr4TQF6r7iHP4Qbzs3xFmCk.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC5wbGF5bXljbnZzLmNvbS9tL0p1c3RpJUMzJUE3YS5BcnRpZmljaWFsLjIwMjYuMTA4MHAuV0VCLURMLngyNjQuRFVBTC41LjEubXA0P2NudnNfdG9rZW49dl9pZD0xJnBfaWQ9MiZ0b2tlbj0xNzcxNDU1MzE3LU5yWDk1TTJGMnJ4d2JFV2tobzBWYWhaSGc0aG5FS29tQXlZX3pCWG9hQW8=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

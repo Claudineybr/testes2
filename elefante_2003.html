@@ -23,10 +23,28 @@
 <title>Elefante (2003) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0056.l1s0-cdn-3123123.com/elefante-9fbfbcba/dubbed/1/8ae07c5c-67e2-4882-933e-776ddfa96ce1/stream.mp4?type=movie&expires=1773954408&signature=190b27f66e611db83cc0b99ce3aa0768915b6b937e6f5cae0a0c33882c23d57a" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYCMZv-XQhbLdVlLMJZmvO63X0h7k8LEmlYX-x7IPyBWeANk3QIvd_EZ6rZNojJL5nStiF6RnDOaIGIGL7hkstlEqI4AdBY1G0-Lbsy7w_u4llNh5TCaNGwepicmpuBdNjAo8jKBnQhQnw7Ub45mWwFesDWxbZPpi08IZxuYCtW6vRyx6ZE7_XQFp6QtA/w1280-h720-p-k-no-nu/1Aw7WCRrjL1Gh6FHnNn25SrvGMs.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYCMZv-XQhbLdVlLMJZmvO63X0h7k8LEmlYX-x7IPyBWeANk3QIvd_EZ6rZNojJL5nStiF6RnDOaIGIGL7hkstlEqI4AdBY1G0-Lbsy7w_u4llNh5TCaNGwepicmpuBdNjAo8jKBnQhQnw7Ub45mWwFesDWxbZPpi08IZxuYCtW6vRyx6ZE7_XQFp6QtA/w1280-h720-p-k-no-nu/1Aw7WCRrjL1Gh6FHnNn25SrvGMs.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1Ni5sMXMwLWNkbi0zMTIzMTIzLmNvbS9lbGVmYW50ZS05ZmJmYmNiYS9kdWJiZWQvMS84YWUwN2M1Yy02N2UyLTQ4ODItOTMzZS03NzZkZGZhOTZjZTEvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc3Mzk1NDQwOCZzaWduYXR1cmU9MTkwYjI3ZjY2ZTYxMWRiODNjYzBiOTljZTNhYTA3Njg5MTViNmI5MzdlNmY1Y2FlMGEwYzMzODgyYzIzZDU3YQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>A Torradeira (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt34498610.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmkIvYxdBsbW0fk7VVjReDm2C33Wg_GA_DDFirt8SrfZJCMJMz3U52Qp9rgaDOYRqH18S_VODo-FiZaIx5Yg5y1TsTGNvudW25LbL9yjnMDeu7RdrWxoSFPJUn_IPxBpQ2P1s-CQLWwAKm_EegISg_aabSt60iINnBxTX_7K8HhdF-MccwyxFqGYf4LwFQ/w1280-h720-p-k-no-nu/1001187558.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmkIvYxdBsbW0fk7VVjReDm2C33Wg_GA_DDFirt8SrfZJCMJMz3U52Qp9rgaDOYRqH18S_VODo-FiZaIx5Yg5y1TsTGNvudW25LbL9yjnMDeu7RdrWxoSFPJUn_IPxBpQ2P1s-CQLWwAKm_EegISg_aabSt60iINnBxTX_7K8HhdF-MccwyxFqGYf4LwFQ/w1280-h720-p-k-no-nu/1001187558.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzQ0OTg2MTAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Ele Nao Esta Tao a Fim de Voce (2009) - 🍿Clau",
     "description": "Assista Ele Nao Esta Tao a Fim de Voce (2009) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uR5QBQT5y6ii7OthRknB3zKHpE4DHBE5MwKxIi6ODSOKc_xAUP2U8uC1_nthBMFtMixw2_oAcGTT26tXQRpx9CEosDHbdlMyoKQLn4ie0ESmSBW0J7SCTG4uQIO6mxOTSRQvrISiU=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tnw_gjKLy6jPSb9R4PkGtIzG_OBr_tIujdme7_tDNi2j8y0Pl2cQ57zT2uL7okfGjDbc2Pbvp-Oak-x6GwPY9n9UrPtWVDQB_HHdLqpNwfKQSa93m7CKj8-s-xmgbfORp5JOchCPs=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Ele Nao Esta Tao a Fim de Voce (2009) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1001508.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uR5QBQT5y6ii7OthRknB3zKHpE4DHBE5MwKxIi6ODSOKc_xAUP2U8uC1_nthBMFtMixw2_oAcGTT26tXQRpx9CEosDHbdlMyoKQLn4ie0ESmSBW0J7SCTG4uQIO6mxOTSRQvrISiU=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tnw_gjKLy6jPSb9R4PkGtIzG_OBr_tIujdme7_tDNi2j8y0Pl2cQ57zT2uL7okfGjDbc2Pbvp-Oak-x6GwPY9n9UrPtWVDQB_HHdLqpNwfKQSa93m7CKj8-s-xmgbfORp5JOchCPs=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxMDAxNTA4Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

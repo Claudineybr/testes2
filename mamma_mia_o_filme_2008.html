@@ -12,7 +12,7 @@
     "name": "Mamma Mia! O Filme (2008) - 🍿Clau",
     "description": "Assista Mamma Mia! O Filme (2008) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tOH70HFDhXZw3-yS6eSWj7OnbWSad4db4itFJI0NVHqSFfi00Vp8mDrEaqnX58ylzoxQv4hcj2sckNcgK_K3KsdpYQGHGzaC6pOWGVyC2ZnjKSQs-WZv86hiLYPJ02jdSUAgaFYg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ul_vAFCV8GOc1BpdjcKnw8-ZBse3BT_nXbiJ3iE54RBeY4ZwcQck9jgtjmf_dpEG_ldHO-gihm96Q6deW8DB_EcI4QK-CjtgJ5UQ-KFg4WLfHi3epQr5GINDPlKEXh_MywkD_mmw=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Mamma Mia! O Filme (2008) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0795421.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tOH70HFDhXZw3-yS6eSWj7OnbWSad4db4itFJI0NVHqSFfi00Vp8mDrEaqnX58ylzoxQv4hcj2sckNcgK_K3KsdpYQGHGzaC6pOWGVyC2ZnjKSQs-WZv86hiLYPJ02jdSUAgaFYg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ul_vAFCV8GOc1BpdjcKnw8-ZBse3BT_nXbiJ3iE54RBeY4ZwcQck9jgtjmf_dpEG_ldHO-gihm96Q6deW8DB_EcI4QK-CjtgJ5UQ-KFg4WLfHi3epQr5GINDPlKEXh_MywkD_mmw=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDc5NTQyMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

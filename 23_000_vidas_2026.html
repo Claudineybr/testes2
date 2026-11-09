@@ -23,10 +23,28 @@
 <title>23.000 Vidas (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt41983440.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhT4EnJHT5Apn1QCGRBFrU2IIuBtpuMp2kz-x9DBCEQ4LTqkqBZ_Zryo2uImIjbfI_JN9SO1aKX-hy7ZR3ZuG03kNmlnASEnN2KYYA8MfIwjEVcLZMXu48mwCbiYCWq8NZ7KFCVBICgdtidthAf-sgR-lurPhOG-HiAiimUG3tyj4F4BmVoC1CqevtaDzRw/w1280-h720-p-k-no-nu/1000417129.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhT4EnJHT5Apn1QCGRBFrU2IIuBtpuMp2kz-x9DBCEQ4LTqkqBZ_Zryo2uImIjbfI_JN9SO1aKX-hy7ZR3ZuG03kNmlnASEnN2KYYA8MfIwjEVcLZMXu48mwCbiYCWq8NZ7KFCVBICgdtidthAf-sgR-lurPhOG-HiAiimUG3tyj4F4BmVoC1CqevtaDzRw/w1280-h720-p-k-no-nu/1000417129.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0NDE5ODM0NDAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

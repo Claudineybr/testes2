@@ -12,7 +12,7 @@
     "name": "Elize: Sombras de uma Mulher (2026) - 🍿Clau",
     "description": "Assista Elize: Sombras de uma Mulher (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sWplHBSNVxrGt_6A9mEDTxNsueNuOlTmq5zBvVDjcXg2OyKphCcw3Pv9xMu5YowXzUQv_vKkz1ufiethVfX4F3PaduxqKninqrFsQf8usJVuBa8GouHudMZ6MHp6uilggKM12cR7o=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uLn1H25_LLB_TOJ_VmmTmwApMFMPVE_Ocx7e6Ki_0GVmh159hKz1VfNRr8WvshCt3gf6_0NJz3bMpWyiGzdEzLnnqeyGtgNU61jNefP3yjOP44-GC5nPebE_kuGjMkCmVfqAmn87s=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Elize: Sombras de uma Mulher (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt37042085.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sWplHBSNVxrGt_6A9mEDTxNsueNuOlTmq5zBvVDjcXg2OyKphCcw3Pv9xMu5YowXzUQv_vKkz1ufiethVfX4F3PaduxqKninqrFsQf8usJVuBa8GouHudMZ6MHp6uilggKM12cR7o=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uLn1H25_LLB_TOJ_VmmTmwApMFMPVE_Ocx7e6Ki_0GVmh159hKz1VfNRr8WvshCt3gf6_0NJz3bMpWyiGzdEzLnnqeyGtgNU61jNefP3yjOP44-GC5nPebE_kuGjMkCmVfqAmn87s=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzcwNDIwODUubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

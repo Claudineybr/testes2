@@ -23,10 +23,28 @@
 <title>A Princesa Perdida (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt14830912.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQzqHn6dTEbgu3YAnqm9Y_xF9gaWpWU96FB4kSrEB_snBrgKVokyRPY27YvLnZx7OFm6qVJB3TZB6BWpBwKVffn1HbpKUb7-IqMFHH3nhT7lDXoKV8IAVKYDgHqei-G8zDVwW8-1756HxkiSoqETWNtxEZm_1s1QTLecoOKQVH5semowlM59OzxzWE5dPI/w1280-h720-p-k-no-nu/1001171042.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQzqHn6dTEbgu3YAnqm9Y_xF9gaWpWU96FB4kSrEB_snBrgKVokyRPY27YvLnZx7OFm6qVJB3TZB6BWpBwKVffn1HbpKUb7-IqMFHH3nhT7lDXoKV8IAVKYDgHqei-G8zDVwW8-1756HxkiSoqETWNtxEZm_1s1QTLecoOKQVH5semowlM59OzxzWE5dPI/w1280-h720-p-k-no-nu/1001171042.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTQ4MzA5MTIubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

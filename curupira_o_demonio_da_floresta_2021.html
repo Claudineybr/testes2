@@ -12,7 +12,7 @@
     "name": "Curupira – O Demonio da Floresta (2021) - 🍿Clau",
     "description": "Assista Curupira – O Demonio da Floresta (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uFMau61IiHLf7iKKM8MjWcwaevHPbEhZc2bE0LjkmWQp65RywpoINgs3gqChhGLTCdsldy1G0QRB8JkemqLj8H3K28JOa6_dT7L2uZdNDPQ0ULJy24pkEPRqFofHzfa0867V6vD4o=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uTJf0MEoNlRreLpQc2kQVHAzR0GqAnn7Glf8qERjyWk0xqFJaxlgeuZ8neyp6uycksB2fHKa65X1QdF6cCgZgIUCQBnLUGQBVfcplrsitXb2xTooQV4YWReZQb89FtwgU-d3tUmvA=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Curupira – O Demonio da Floresta (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt16426870.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uFMau61IiHLf7iKKM8MjWcwaevHPbEhZc2bE0LjkmWQp65RywpoINgs3gqChhGLTCdsldy1G0QRB8JkemqLj8H3K28JOa6_dT7L2uZdNDPQ0ULJy24pkEPRqFofHzfa0867V6vD4o=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uTJf0MEoNlRreLpQc2kQVHAzR0GqAnn7Glf8qERjyWk0xqFJaxlgeuZ8neyp6uycksB2fHKa65X1QdF6cCgZgIUCQBnLUGQBVfcplrsitXb2xTooQV4YWReZQb89FtwgU-d3tUmvA=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTY0MjY4NzAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
