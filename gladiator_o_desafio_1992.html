@@ -23,10 +23,28 @@
 <title>Gladiator: O Desafio (1992) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0080.l1s0-cdn-3123123.com/gladiator-o-desafio-acea9d3a/dubbed/1/5ea62838-3d7f-4d59-8a6d-e2ebc2e63e19/stream.mp4?type=movie&expires=1770683899&signature=651dd9592d8ef05509dae19f82997fc5df26111664e9689910a7d4678afe9a8b" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2J3KSOfAVQCmnkHq53ru0cLC0pG5fa0hb3S_v0NBN766g8LNZxiRyTYVrlmj_5ZIDOmPRZxS69o3ZT0It-ye1kJ7waS6Vx5pxHd1c_UeCtApjYexDK7Fn-WChn4Hx3stH9MeNbYGPEMxfq0Tr4vKui6Lcdt8EhkfVL-mkoX2pSc3qDO6NQ6EA_n1OHlE/w1280-h720-p-k-no-nu/AnKQUUsULIXJ2z55YehQEg55knQ.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2J3KSOfAVQCmnkHq53ru0cLC0pG5fa0hb3S_v0NBN766g8LNZxiRyTYVrlmj_5ZIDOmPRZxS69o3ZT0It-ye1kJ7waS6Vx5pxHd1c_UeCtApjYexDK7Fn-WChn4Hx3stH9MeNbYGPEMxfq0Tr4vKui6Lcdt8EhkfVL-mkoX2pSc3qDO6NQ6EA_n1OHlE/w1280-h720-p-k-no-nu/AnKQUUsULIXJ2z55YehQEg55knQ.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA4MC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9nbGFkaWF0b3Itby1kZXNhZmlvLWFjZWE5ZDNhL2R1YmJlZC8xLzVlYTYyODM4LTNkN2YtNGQ1OS04YTZkLWUyZWJjMmU2M2UxOS9zdHJlYW0ubXA0P3R5cGU9bW92aWUmZXhwaXJlcz0xNzcwNjgzODk5JnNpZ25hdHVyZT02NTFkZDk1OTJkOGVmMDU1MDlkYWUxOWY4Mjk5N2ZjNWRmMjYxMTE2NjRlOTY4OTkxMGE3ZDQ2NzhhZmU5YThi");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

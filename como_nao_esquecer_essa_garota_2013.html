@@ -23,10 +23,28 @@
 <title>Como Nao Esquecer Essa Garota (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt2770480.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcwemygP1Vf9FconQdD7Bkye310AvB1jeltPCHBi1IjoDzaHPpXpi31mR8vhgAWsmiDJP-BZSLlf7vRIo_aU4hv6zJTMC5MBT-UOHR9LuKYvBZ0yPycy6nBnczQav4AQZzz3aYcvazaNcoCaloh5w8PXqnoCEnYyhU3aA8JkkFewETKey8G8GdVebkO_8/w1280-h720-p-k-no-nu/mT2bKYW5FzdciWlzj5lhLwCeMMI.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcwemygP1Vf9FconQdD7Bkye310AvB1jeltPCHBi1IjoDzaHPpXpi31mR8vhgAWsmiDJP-BZSLlf7vRIo_aU4hv6zJTMC5MBT-UOHR9LuKYvBZ0yPycy6nBnczQav4AQZzz3aYcvazaNcoCaloh5w8PXqnoCEnYyhU3aA8JkkFewETKey8G8GdVebkO_8/w1280-h720-p-k-no-nu/mT2bKYW5FzdciWlzj5lhLwCeMMI.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQyNzcwNDgwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

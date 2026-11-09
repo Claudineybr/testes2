@@ -23,10 +23,28 @@
 <title>A 5a Onda 2016 (1) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/A%205%C2%AA%20Onda_2016_tt2304933.mp4?cnvs_token=WTJaall6ZGxOamRqWmpObFlqSXlNWjBXTEFnRElYT29pVW0zTU00dXgwU2wrM1M5TVVadFgxbm9RNzJIM1V4Yw" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq8nbKltaUqalx-tlNO2WZqmdaPx7QNAigPtSZGa4TD_2iUmiV4PLJUZl-rFQ5Q9SO57khLcCMCfVYKtuicgrC8-5QaNx7NoOJAfQlawlsK1JK5ySZHsOe-Q0vnmbHj1oZpQNj2uKDDqyhEWCOcvShuHJjbebyrRHF3n67N62stulgUu_FntO0ylRSEIw/w1280-h720-p-k-no-nu/dw8njCP3GwT7lBhd2SdgYIcRrpE.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq8nbKltaUqalx-tlNO2WZqmdaPx7QNAigPtSZGa4TD_2iUmiV4PLJUZl-rFQ5Q9SO57khLcCMCfVYKtuicgrC8-5QaNx7NoOJAfQlawlsK1JK5ySZHsOe-Q0vnmbHj1oZpQNj2uKDDqyhEWCOcvShuHJjbebyrRHF3n67N62stulgUu_FntO0ylRSEIw/w1280-h720-p-k-no-nu/dw8njCP3GwT7lBhd2SdgYIcRrpE.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vQSUyMDUlQzIlQUElMjBPbmRhXzIwMTZfdHQyMzA0OTMzLm1wND9jbnZzX3Rva2VuPVdUSmFhbGw2Wkd4T2FtUnFXbXBPYkZscVNYbE5XakJYVEVGblJFbFlUMjlwVlcwelRVMDBkWGd3VTJ3ck0xTTVUVlZhZEZneGJtOVJOekpJTTFWNFl3");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

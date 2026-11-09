@@ -23,10 +23,28 @@
 <title>A Grande Inundacao (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt29927663.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbb_XSdtRZ6DAyrEqQySp8In75pD1y5xhNOhyvQEBKVaezcYQVRMbiXygU6_yIBItosQ3BDX-kKBJz4elJpQ4l1U61b63zCa2hcmlyOPq_DZyWP7lnfM1TEsvD51Fcja3238ua1I-0iaYsJaPx8hf1v3iLFgpRylA40nv3hEcgVnh1765hiVFhhJ1b_lQ/w1280-h720-p-k-no-nu/xAzwi0Du6r2x2n0ELyzgwJYpjs7.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbb_XSdtRZ6DAyrEqQySp8In75pD1y5xhNOhyvQEBKVaezcYQVRMbiXygU6_yIBItosQ3BDX-kKBJz4elJpQ4l1U61b63zCa2hcmlyOPq_DZyWP7lnfM1TEsvD51Fcja3238ua1I-0iaYsJaPx8hf1v3iLFgpRylA40nv3hEcgVnh1765hiVFhhJ1b_lQ/w1280-h720-p-k-no-nu/xAzwi0Du6r2x2n0ELyzgwJYpjs7.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjk5Mjc2NjMubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

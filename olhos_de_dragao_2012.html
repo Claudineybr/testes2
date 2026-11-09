@@ -23,10 +23,28 @@
 <title>Olhos de Dragao (2012) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1735862.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDRfcoiBL9tp0qK89L_v2_Qfd5WZ7YfdqJquDiA4mfOx4FBqBQIV2suQWHzUUsd8GONVPAsZn1Fi2z77x4IBgmX6m6rR8MAVI07498aldFxn9TD27okYUrU0p6hDdKjfaZk3NJ1EJe_zLw7ri1xXwvuHRjG5B0jVyZpQUxc54dJf55Gvls0oIJA23lnIQ/w1280-h720-p-k-no-nu/eeAJpT4ZLX62bg2Bel7oCigIAj5.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDRfcoiBL9tp0qK89L_v2_Qfd5WZ7YfdqJquDiA4mfOx4FBqBQIV2suQWHzUUsd8GONVPAsZn1Fi2z77x4IBgmX6m6rR8MAVI07498aldFxn9TD27okYUrU0p6hDdKjfaZk3NJ1EJe_zLw7ri1xXwvuHRjG5B0jVyZpQUxc54dJf55Gvls0oIJA23lnIQ/w1280-h720-p-k-no-nu/eeAJpT4ZLX62bg2Bel7oCigIAj5.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTczNTg2Mi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>A Rainha dos Condenados (2002) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0238546.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrzHDiEMSlIbD9CIV-G_kNer__6sc7qcBkCPNnvOTswDk9o-nlrT7P-dMfuUGhmzJDuIrKtIPsne2Ur31UgLTOCprTHAsQ96wWMEcmV7mgGgJQ-YQSX1pt9738kfjpru37yUJ55XR5V1-DDMoKf-lGfip3qy1g93Vl-X-9ngdEyS1P4fPZ_8AdipX2pFA/w1280-h720-p-k-no-nu/g9IUnctBucBEaLjU8msPXrBbm7l.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrzHDiEMSlIbD9CIV-G_kNer__6sc7qcBkCPNnvOTswDk9o-nlrT7P-dMfuUGhmzJDuIrKtIPsne2Ur31UgLTOCprTHAsQ96wWMEcmV7mgGgJQ-YQSX1pt9738kfjpru37yUJ55XR5V1-DDMoKf-lGfip3qy1g93Vl-X-9ngdEyS1P4fPZ_8AdipX2pFA/w1280-h720-p-k-no-nu/g9IUnctBucBEaLjU8msPXrBbm7l.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMjM4NTQ2Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

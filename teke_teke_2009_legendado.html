@@ -23,10 +23,28 @@
 <title>Teke Teke 2009 (LEGENDADO) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD10/tt1395146LEG.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz6Cn7Z2YaRfvb3xE_zHn0rxN2t94NZe8roR9AQhTKES8cvNqvRhjZ54j3WsFIP4o2enlZ63XBoQpnx8gPPm6hf9WKlr1OGGwiBWEdunVZV0ax2MHiIqG2vnCPITB0CUr8bJi_3S_X92kaQpatdEmrNGgtv4Rhsq_doQ_GnQpY_BFvFe3VZvCk1E8kXIA/w1280-h720-p-k-no-nu/file_00000000257871f59a6824fb16db50a8.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz6Cn7Z2YaRfvb3xE_zHn0rxN2t94NZe8roR9AQhTKES8cvNqvRhjZ54j3WsFIP4o2enlZ63XBoQpnx8gPPm6hf9WKlr1OGGwiBWEdunVZV0ax2MHiIqG2vnCPITB0CUr8bJi_3S_X92kaQpatdEmrNGgtv4Rhsq_doQ_GnQpY_BFvFe3VZvCk1E8kXIA/w1280-h720-p-k-no-nu/file_00000000257871f59a6824fb16db50a8.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDEwL3R0MTM5NTE0NkxFRy5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

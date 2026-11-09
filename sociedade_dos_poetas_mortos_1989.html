@@ -23,10 +23,28 @@
 <title>Sociedade dos Poetas Mortos (1989) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0097165.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYm4i_0ZbYCHhsLzFWCfj0XqjI6SYg-5Ouvzz9XyQyi5RJUEqNmPCbQd5Z2yed2XynjwABZV-Z7oFq1PQ0WyBO0NzqT8f-uiz5gZ71S36-_Xw_cGuyq98Cl4zaau8wq-YI8JQlrZnwUZsJ1S6Kf4iUYH6dJNJk44Uxhh7D5615RNz64EFlKByp9z-2zP4/w1280-h720-p-k-no-nu/gJ99rBbr1WhCcXF2CgLECsK2YGh.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYm4i_0ZbYCHhsLzFWCfj0XqjI6SYg-5Ouvzz9XyQyi5RJUEqNmPCbQd5Z2yed2XynjwABZV-Z7oFq1PQ0WyBO0NzqT8f-uiz5gZ71S36-_Xw_cGuyq98Cl4zaau8wq-YI8JQlrZnwUZsJ1S6Kf4iUYH6dJNJk44Uxhh7D5615RNz64EFlKByp9z-2zP4/w1280-h720-p-k-no-nu/gJ99rBbr1WhCcXF2CgLECsK2YGh.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDA5NzE2NS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Ja Era Hora (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s3.us-east-1.wasabisys.com/cloudpc/token%3As21expires11365uslink1578l2/flm23/JaEraHora2023.mp4?response-content-type=video%2Fmp4&response-content-disposition=inline&response-cache-control=public%2C%20max-age%3D604800&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IU3PEYNXRJ5YLPUKFCA6%2F20260128%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260128T180030Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Signature=87768082c37018c8860a042c698941e27a372a79ff1c87e1e9420c9726128855" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBO2Tx2pzJWkWhUFIKrRv02sNwKnyWihJMXdduTOy08EEabQdDnK2KOtMXruyjK0I4Z0YN24h2DH3pPOThQQ7DsLeh0dx0lWspa2x_vvEcJcX0rS1Geoz-PMfZXW9JaRsA70ohWI_JBwAkH2KQwp8ZQHSMhi7Fj9eKaruG76uZuP3jQxDAxwKqcm81Y20/w1280-h720-p-k-no-nu/4X3QTfvx9ZeYEIDF7ru8dh8UlGj.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBO2Tx2pzJWkWhUFIKrRv02sNwKnyWihJMXdduTOy08EEabQdDnK2KOtMXruyjK0I4Z0YN24h2DH3pPOThQQ7DsLeh0dx0lWspa2x_vvEcJcX0rS1Geoz-PMfZXW9JaRsA70ohWI_JBwAkH2KQwp8ZQHSMhi7Fj9eKaruG76uZuP3jQxDAxwKqcm81Y20/w1280-h720-p-k-no-nu/4X3QTfvx9ZeYEIDF7ru8dh8UlGj.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMy51cy1lYXN0LTEud2FzYWJpc3lzLmNvbS9jbG91ZHBjL3Rva2VuJTNBczIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2ZsbTIzL0phRXJhSG9yYTIwMjMubXA0P3Jlc3BvbnNlLWNvbnRlbnQtdHlwZT12aWRlbyUyRm1wNCZyZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSZyZXNwb25zZS1jYWNoZS1jb250cm9sPXB1YmxpYyUyQyUyMG1heC1hZ2UlM0Q2MDQ4MDAmWC1BbXotQ29udGVudC1TaGEyNTY9VU5TSUdORUQtUEFZTE9BRCZYLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUlVM1BFWU5YUko1WUxQVUtGQ0E2JTJGMjAyNjAxMjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI4VDE4MDAzMFomWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JlgtQW16LUV4cGlyZXM9MjE2MDAmWC1BbXotU2lnbmF0dXJlPTg3NzY4MDgyYzM3MDE4Yzg4NjBhMDQyYzY5ODk0MWUyN2EzNzJhNzlmZjFjODdlMWU5NDIwYzk3MjYxMjg4NTU=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

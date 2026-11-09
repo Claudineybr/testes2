@@ -23,10 +23,28 @@
 <title>Esta Sou Eu (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://server-utx.playmycnvs.com/m/Esta.Sou.Eu.2026.1080p.WEB-DL.x264.DUAL.5.1.mp4?cnvs_token=WWpFd1lXTTNZakE1WlRFek5tUTNPS204eEF4ODlZYzRRZWp4ZlR1VjFNVXZVazRFODZ3N1U4eC9nY3RVanlRN0w1SThPRjVOcGovcEFBS1YzcGRoclE1QVB4RnRFaXhoV2hUalQ0YjdPLzhKbVFtT1dXYkluaHNhbnlQUmtPc0FSWTJqT01qM3pWZS9ROFVCdURMOG53PT0" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinqFB09U3crqSTSm5BLgHp1nYMNwhnym8FRaNHf4sw310U6x38sLFkmHmn8Q50_OkaO0vfkCDPBndSD7HdzlRI0qQMOUjX1RRy1t3HeCjugRM4kQW9tz521wUUV6BVAIF2GqBYtZfh3754NSeRzr6icOVfbfXlyl1AIqTMVjZvASJs_zK8X2U6kwa74PY/w1280-h720-p-k-no-nu/158huo45QRowqPvw0aN6mXOsKZi.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinqFB09U3crqSTSm5BLgHp1nYMNwhnym8FRaNHf4sw310U6x38sLFkmHmn8Q50_OkaO0vfkCDPBndSD7HdzlRI0qQMOUjX1RRy1t3HeCjugRM4kQW9tz521wUUV6BVAIF2GqBYtZfh3754NSeRzr6icOVfbfXlyl1AIqTMVjZvASJs_zK8X2U6kwa74PY/w1280-h720-p-k-no-nu/158huo45QRowqPvw0aN6mXOsKZi.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zZXJ2ZXItdXR4LnBsYXlteWNudnMuY29tL20vRXN0YS5Tb3UuRXUuMjAyNi4xMDgwcC5XRUItREwueDI2NC5EVUFMLjUuMS5tcDQ/Y252c190b2tlbj1XV3BGZDFsWFRUTlpha0UxV2xSRmVrNXRVVE5QUzIwNGVFRjRPRGxaWXpSUlpXcDRabFIxVmpGTlZYWlZhelJGT0RaM04xVTRlQzluWTNSVmFubFJOMHcxU1RoUFJqVk9jR292Y0VGQlMxWXpjR1JvY2xFMVFWQjRSblJGYVhob1YyaFVhbFEwWWpkUEx6aEtiVkZ0VDFkWFlrbHVhSE5oYm5sUVVtdFBjMEZTV1RKcVQwMXFNM3BXWlM5Uk9GVkNkVVJNT0c1M1BUMA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

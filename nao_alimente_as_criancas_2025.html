@@ -23,10 +23,28 @@
 <title>Nao Alimente As Criancas (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.playmycnvs.com/m/N%C3%A3o.Alimente.as.Crian%C3%A7as.2025.1080p.WEB-DL.DUAL.5.1.mp4?cnvs_token=TjJFd01UUmtNbVU1TVdOaU9HVXpaVnFlMWswYms2UzlNc1ExWG9Gd29sKzVwM0t0blBVVndMU3BZZ21BcEIyTw" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv-4UH98uZU5j3Vbhg0kbMOas5A5k1A4z7G8DYTbW1IlbK0POITA0RM6u2hDw61RnJuXT-yZfyJMZkJwzpC6_RuJXxaWSe-zDyO-Y53DGDDuDNl5DufsNYqoBrj-rTKKDZrBDbHmSiowBXsR3euC6uJNw3QdHzxQuBKCAjfttVDLpyWqgdkHI4dQBx9cw/w1280-h720-p-k-no-nu/file_00000000dbc071f583eaf352a9832849.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv-4UH98uZU5j3Vbhg0kbMOas5A5k1A4z7G8DYTbW1IlbK0POITA0RM6u2hDw61RnJuXT-yZfyJMZkJwzpC6_RuJXxaWSe-zDyO-Y53DGDDuDNl5DufsNYqoBrj-rTKKDZrBDbHmSiowBXsR3euC6uJNw3QdHzxQuBKCAjfttVDLpyWqgdkHI4dQBx9cw/w1280-h720-p-k-no-nu/file_00000000dbc071f583eaf352a9832849.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC5wbGF5bXljbnZzLmNvbS9tL04lQzMlQTNvLkFsaW1lbnRlLmFzLkNyaWFuJUMzJUE3YXMuMjAyNS4xMDgwcC5XRUItREwuRFVBTC41LjEubXA0P2NudnNfdG9rZW49VGpKRmQwMVVVbXROYlZVMVRWZE9hVTlIVlhwYVZuRmxNV3N3WW1zMlV6bE5jMUV4V0c5R2QyOXNLelZ3TTB0MGJsQlZWbmRNVTNCWloyMUJjRUl5VHc=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

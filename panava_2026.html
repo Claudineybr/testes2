@@ -23,10 +23,28 @@
 <title>Panava (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.playmycnvs.com/m/Pavana.2026.1080p.WEB-DL.x264.DUAL.5.1.mp4?cnvs_token=v_id=1&p_id=2&token=1771858347--RcH98i648Lq0HNuLP2z7OATiTEdTBHMQxn9eHlkc4k" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVi1HYDsxsGWid7ygQ4VW9TtZdn4Dq0FBrsX9JRKvfswPMd7MJ9Ag-aG6TXrhyyqkCIT11F7hrgYgKGZQzkhj_iyae-FC64ene-94t4EIPhh4tFQKYvvDmwMu4vD_OeAhf4JR88LA7Z08s5fBkMwTNjPjXBB3_loI9qDDlLYNemAiHJ1OKOnCFXb9W8-8/w1280-h720-p-k-no-nu/eukbp831bJAsTF1oXKOBSaqLGXK.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVi1HYDsxsGWid7ygQ4VW9TtZdn4Dq0FBrsX9JRKvfswPMd7MJ9Ag-aG6TXrhyyqkCIT11F7hrgYgKGZQzkhj_iyae-FC64ene-94t4EIPhh4tFQKYvvDmwMu4vD_OeAhf4JR88LA7Z08s5fBkMwTNjPjXBB3_loI9qDDlLYNemAiHJ1OKOnCFXb9W8-8/w1280-h720-p-k-no-nu/eukbp831bJAsTF1oXKOBSaqLGXK.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC5wbGF5bXljbnZzLmNvbS9tL1BhdmFuYS4yMDI2LjEwODBwLldFQi1ETC54MjY0LkRVQUwuNS4xLm1wND9jbnZzX3Rva2VuPXZfaWQ9MSZwX2lkPTImdG9rZW49MTc3MTg1ODM0Ny0tUmNIOThpNjQ4THEwSE51TFAyejdPQVRpVEVkVEJITVF4bjllSGxrYzRr");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

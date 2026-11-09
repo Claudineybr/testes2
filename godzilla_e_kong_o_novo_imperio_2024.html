@@ -23,10 +23,28 @@
 <title>Godzilla e Kong: O Novo Imperio (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0078.l1s0-cdn-3123123.com/godzilla-e-kong-o-novo-imperio-977ea14f/dubbed/1/702c3356-31dd-47d5-bb98-4a2e155f277f/stream.mp4?type=movie&expires=1769828196&signature=66d5b487ab9d683cb5a467cfa50f39e36636417097977f6848c9662eb7a5179a" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge4fZ79NqqGljsrezEVRbsC2XEEqBeYtHEXAJBK9wPXU8nOZf5k2ock1GUEY6pLLpEvbliIBFxUBN4FL-WWO_fuFyAtQPG_54vZHuS9M_XiuNQJv5_5PEfKVg6tY3dOBzxbNmei5crgeOAxkVrHQJuQTlh_0oOjI-mIuVfLWyuwsDYUhbpapbtVcuFAyg/w1280-h720-p-k-no-nu/bCy9qRrOaFJO0Q60bvDECBSX6Aw.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge4fZ79NqqGljsrezEVRbsC2XEEqBeYtHEXAJBK9wPXU8nOZf5k2ock1GUEY6pLLpEvbliIBFxUBN4FL-WWO_fuFyAtQPG_54vZHuS9M_XiuNQJv5_5PEfKVg6tY3dOBzxbNmei5crgeOAxkVrHQJuQTlh_0oOjI-mIuVfLWyuwsDYUhbpapbtVcuFAyg/w1280-h720-p-k-no-nu/bCy9qRrOaFJO0Q60bvDECBSX6Aw.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA3OC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9nb2R6aWxsYS1lLWtvbmctby1ub3ZvLWltcGVyaW8tOTc3ZWExNGYvZHViYmVkLzEvNzAyYzMzNTYtMzFkZC00N2Q1LWJiOTgtNGEyZTE1NWYyNzdmL3N0cmVhbS5tcDQ/dHlwZT1tb3ZpZSZleHBpcmVzPTE3Njk4MjgxOTYmc2lnbmF0dXJlPTY2ZDViNDg3YWI5ZDY4M2NiNWE0NjdjZmE1MGYzOWUzNjYzNjQxNzA5Nzk3N2Y2ODQ4Yzk2NjJlYjdhNTE3OWE=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

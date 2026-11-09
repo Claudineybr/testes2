@@ -23,10 +23,28 @@
 <title>Pai do Ano (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Pai.do.Ano.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcz_ACnMIt_Q5VSDAcGqLQzLlMdCGtdNvGQl0-2iB_XIbkdqLcFjs2LdJzuC4TrxskwaZGq5Iqyg7Pa1e7SLlz4yRvqlqT5z-v-CaHVTUG_w1i9meOT7bofeMz_XCaeWOTT0jRdx6_9mbOJa6o2yrEsPRxsQWoFutd4VuLZ5Jwp0RyIKRZxsA5sIBvJw0/w1280-h720-p-k-no-nu/olZlknyDDnNZDOQ3MigaxVMW1CY.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcz_ACnMIt_Q5VSDAcGqLQzLlMdCGtdNvGQl0-2iB_XIbkdqLcFjs2LdJzuC4TrxskwaZGq5Iqyg7Pa1e7SLlz4yRvqlqT5z-v-CaHVTUG_w1i9meOT7bofeMz_XCaeWOTT0jRdx6_9mbOJa6o2yrEsPRxsQWoFutd4VuLZ5Jwp0RyIKRZxsA5sIBvJw0/w1280-h720-p-k-no-nu/olZlknyDDnNZDOQ3MigaxVMW1CY.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9QYWkuZG8uQW5vLjIwMjUuMTA4MHAuV0VCLURMLkRVQUwuNS4xLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

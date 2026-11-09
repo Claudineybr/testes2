@@ -23,10 +23,28 @@
 <title>Demonio (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s3.us-east-2.wasabisys.com/cloudpc2/token%3As21expires11365uslink1578l2/filmes/Demonio.2010.mp4?response-content-type=video%2Fmp4&response-content-disposition=inline&response-cache-control=public%2C%20max-age%3D604800&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IU3PEYNXRJ5YLPUKFCA6%2F20260207%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20260207T003543Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43200&X-Amz-Signature=cb1adc71f1158a63292be7fe559e93f399ea91965428d48ed0a18651f66e98f2" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUMlRD2AqAuv5CQvxpmd_nPh5KIi7hVFqMn20vCZrDROrB4evqAKgTTes4Q6fF-MPPZtnROeyYURJom0QBKkkw_XD7lzXkr0ThNk8dCKHtWRXA6BoL5SSCD39sa0NJigm_CWRlbmLUfr8X_aYqGx8dG6Q7dNRDbyqiy3NukpVuGtXzj03_s3P1W11PCYs/w1280-h720-p-k-no-nu/y5sgiV4lMiKeo12KA8L88bgWwNk.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUMlRD2AqAuv5CQvxpmd_nPh5KIi7hVFqMn20vCZrDROrB4evqAKgTTes4Q6fF-MPPZtnROeyYURJom0QBKkkw_XD7lzXkr0ThNk8dCKHtWRXA6BoL5SSCD39sa0NJigm_CWRlbmLUfr8X_aYqGx8dG6Q7dNRDbyqiy3NukpVuGtXzj03_s3P1W11PCYs/w1280-h720-p-k-no-nu/y5sgiV4lMiKeo12KA8L88bgWwNk.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMy51cy1lYXN0LTIud2FzYWJpc3lzLmNvbS9jbG91ZHBjMi90b2tlbiUzQXMyMWV4cGlyZXMxMTM2NXVzbGluazE1NzhsMi9maWxtZXMvRGVtb25pby4yMDEwLm1wND9yZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQmcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj1pbmxpbmUmcmVzcG9uc2UtY2FjaGUtY29udHJvbD1wdWJsaWMlMkMlMjBtYXgtYWdlJTNENjA0ODAwJlgtQW16LUNvbnRlbnQtU2hhMjU2PVVOU0lHTkVELVBBWUxPQUQmWC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1JVTNQRVlOWFJKNVlMUFVLRkNBNiUyRjIwMjYwMjA3JTJGdXMtZWFzdC0yJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDIwN1QwMDM1NDNaJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZYLUFtei1FeHBpcmVzPTQzMjAwJlgtQW16LVNpZ25hdHVyZT1jYjFhZGM3MWYxMTU4YTYzMjkyYmU3ZmU1NTllOTNmMzk5ZWE5MTk2NTQyOGQ0OGVkMGExODY1MWY2NmU5OGYy");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

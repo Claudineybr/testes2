@@ -23,10 +23,28 @@
 <title>Aldeia dos Sussurros (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playcnvs.com/m/Aldeia.dos.Sussurros.2022.1080p.WEB-DL.DUAL.2.0.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5IzNyvr1kLDXuQnFJdcMlKLEeEeEA8FopEAd5c6zW8Qm1YX8rLmlZGkmda1h2tH1q0lbpqUL7gx8HIZlCe2qn9n_-RUHP_QsoKdNiAw9BXCvS-dmt7A-C6UOhNvX_AJjOjWP1mnlmE4Zh65u53YRa8zsmpmYLu5891hejERj3IY4XXq4AvERcHQ09XSY/w1280-h720-p-k-no-nu/55aa8b53334b9f4de8398b23efaeb6c6f9c8852af6211045ea17f7582e440856.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5IzNyvr1kLDXuQnFJdcMlKLEeEeEA8FopEAd5c6zW8Qm1YX8rLmlZGkmda1h2tH1q0lbpqUL7gx8HIZlCe2qn9n_-RUHP_QsoKdNiAw9BXCvS-dmt7A-C6UOhNvX_AJjOjWP1mnlmE4Zh65u53YRa8zsmpmYLu5891hejERj3IY4XXq4AvERcHQ09XSY/w1280-h720-p-k-no-nu/55aa8b53334b9f4de8398b23efaeb6c6f9c8852af6211045ea17f7582e440856.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheWNudnMuY29tL20vQWxkZWlhLmRvcy5TdXNzdXJyb3MuMjAyMi4xMDgwcC5XRUItREwuRFVBTC4yLjAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

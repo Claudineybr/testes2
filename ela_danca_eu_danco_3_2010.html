@@ -23,10 +23,28 @@
 <title>Ela Danca, Eu Danco 3 (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0080.l1s0-cdn-3123123.com/ela-danca-eu-danco-3-424cbceb/dubbed/1/faa5c400-3ed4-4d79-aedf-066778280a36/stream.mp4?type=movie&expires=1769642859&signature=573e1efe501cd28d177cf5c3f2ae41838717ed5d1ef0326274177fe85c478d3d" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYxJ58Vmw2j5aHEyJyZIgnmZL0SPhRtHWIBylRaYqUJC7aWn1vEvg7OIKwOQ3z1hyphenhyphengkd5XX41MyxYjJrkAvGkS-3TqaC7AK0quh-J2Amc8cS5G9sZa947GKgz49u8yqf01a471H_GTpSIA3Rl4OhSaw3OQdCz4OhM2ckJv_lAstiY-Kjq6TRVrEJ8U328/w1280-h720-p-k-no-nu/xeUQjNbUFJpifoNt0uc3d7bB1mm.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYxJ58Vmw2j5aHEyJyZIgnmZL0SPhRtHWIBylRaYqUJC7aWn1vEvg7OIKwOQ3z1hyphenhyphengkd5XX41MyxYjJrkAvGkS-3TqaC7AK0quh-J2Amc8cS5G9sZa947GKgz49u8yqf01a471H_GTpSIA3Rl4OhSaw3OQdCz4OhM2ckJv_lAstiY-Kjq6TRVrEJ8U328/w1280-h720-p-k-no-nu/xeUQjNbUFJpifoNt0uc3d7bB1mm.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA4MC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9lbGEtZGFuY2EtZXUtZGFuY28tMy00MjRjYmNlYi9kdWJiZWQvMS9mYWE1YzQwMC0zZWQ0LTRkNzktYWVkZi0wNjY3NzgyODBhMzYvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc2OTY0Mjg1OSZzaWduYXR1cmU9NTczZTFlZmU1MDFjZDI4ZDE3N2NmNWMzZjJhZTQxODM4NzE3ZWQ1ZDFlZjAzMjYyNzQxNzdmZTg1YzQ3OGQzZA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Muita Calma Nessa Hora (2010) - 🍿Clau",
     "description": "Assista Muita Calma Nessa Hora (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vit_x57llOAv151yQ2coQX3jFP2FZBddvIDvRgPIX0O4qIVKP9fqrmwB3AkfKq295zscWa4Od6V8AVppQ_K8NnL3K_apxXyJgJbXU7dtI3xv6uK5A8QupUdO2DjSBpQPxdzC9sgcQ=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_txPTc8ebQATCVE6A35IO-J2YCsBcJAM-BwtwtK-DlOwgP9Fs-cSkTqVOAiMoQbe9fCQiPW05zRUyMnswhrsTS1Zli7FdwVemPLIOuM8WNrv7Rq0Dn67keZcyWaIzxJM6VQNWzKfXE=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Muita Calma Nessa Hora (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://38.247.70.18/movie/992e36277/5ag02a/45753.mp4?token=TXVsUzZMRzJPN0NSdjQ1" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vit_x57llOAv151yQ2coQX3jFP2FZBddvIDvRgPIX0O4qIVKP9fqrmwB3AkfKq295zscWa4Od6V8AVppQ_K8NnL3K_apxXyJgJbXU7dtI3xv6uK5A8QupUdO2DjSBpQPxdzC9sgcQ=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_txPTc8ebQATCVE6A35IO-J2YCsBcJAM-BwtwtK-DlOwgP9Fs-cSkTqVOAiMoQbe9fCQiPW05zRUyMnswhrsTS1Zli7FdwVemPLIOuM8WNrv7Rq0Dn67keZcyWaIzxJM6VQNWzKfXE=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovLzM4LjI0Ny43MC4xOC9tb3ZpZS85OTJlMzYyNzcvNWFnMDJhLzQ1NzUzLm1wND90b2tlbj1UWFZzVXpaTVJ6SlBOME5TZGpRMQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

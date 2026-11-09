@@ -23,10 +23,28 @@
 <title>Uma Casa de Pernas Pro Ar (2007) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0059.l1s0-cdn-3123123.com/uma-casa-de-pernas-pro-ar-2b7a1bf1/dubbed/1/8b0e6141-b455-4ac7-a042-42386a7b6533/stream.mp4?type=movie&expires=1770528743&signature=4875e26d70390b1d299e097417a06eb5c944da23c8cec38af6c2c540aa9a50ff" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj09CYTiXpxqf3T2OVuGBJQAJktnt6nJv1Z_tnywS7SspysJ0G2wRzFb4bN2mt7d_0ZWnEi3vMGA-4XQrpDvFbrTE_3xqIOMwLnfzpcS-IFYpuF4XNJmSOTMZssejXtgT2UalOUSpH5CI1szPNRHfrnTjjMtgXfC3LdmD6IbkyI63ia0Zzbn1jCOmnV8KI/w1280-h720-p-k-no-nu/images-1.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj09CYTiXpxqf3T2OVuGBJQAJktnt6nJv1Z_tnywS7SspysJ0G2wRzFb4bN2mt7d_0ZWnEi3vMGA-4XQrpDvFbrTE_3xqIOMwLnfzpcS-IFYpuF4XNJmSOTMZssejXtgT2UalOUSpH5CI1szPNRHfrnTjjMtgXfC3LdmD6IbkyI63ia0Zzbn1jCOmnV8KI/w1280-h720-p-k-no-nu/images-1.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1OS5sMXMwLWNkbi0zMTIzMTIzLmNvbS91bWEtY2FzYS1kZS1wZXJuYXMtcHJvLWFyLTJiN2ExYmYxL2R1YmJlZC8xLzhiMGU2MTQxLWI0NTUtNGFjNy1hMDQyLTQyMzg2YTdiNjUzMy9zdHJlYW0ubXA0P3R5cGU9bW92aWUmZXhwaXJlcz0xNzcwNTI4NzQzJnNpZ25hdHVyZT00ODc1ZTI2ZDcwMzkwYjFkMjk5ZTA5NzQxN2EwNmViNWM5NDRkYTIzYzhjZWMzOGFmNmMyYzU0MGFhOWE1MGZm");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

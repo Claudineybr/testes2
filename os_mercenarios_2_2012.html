@@ -23,10 +23,28 @@
 <title>Os Mercenarios 2 (2012) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0008.l1s0-cdn-3123123.com/os-mercenarios-2-784662af/dubbed/1/78dd69b5-2fe8-4f49-8ae6-275f7eaa5bc0/stream.mp4?type=movie&expires=1771020788&signature=a060f60a176d1ff7bcf162136e634d0c7167cf96d13582d2fec48977366c65f7" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv9RGk6U4R-gRkMWst0XY3W68LXgx3eu65D3dZqcOUex76sLnslaeDPRrAnbkoznKuaJs2tqm2qmE1G4VagaZguLmRUWRcf-aL5O5x3N95cnt3HMHRbTsdEc4_au5knQUugMjRQZ7Yfw-OHIaqG40s9m78cblYWI9ez45xVWKeSt-L4BX5D8b7lwKZnL0/w1280-h720-p-k-no-nu/bdMAGPlaWv3DJQoRgKH40ubW5Bk.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv9RGk6U4R-gRkMWst0XY3W68LXgx3eu65D3dZqcOUex76sLnslaeDPRrAnbkoznKuaJs2tqm2qmE1G4VagaZguLmRUWRcf-aL5O5x3N95cnt3HMHRbTsdEc4_au5knQUugMjRQZ7Yfw-OHIaqG40s9m78cblYWI9ez45xVWKeSt-L4BX5D8b7lwKZnL0/w1280-h720-p-k-no-nu/bdMAGPlaWv3DJQoRgKH40ubW5Bk.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwOC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9vcy1tZXJjZW5hcmlvcy0yLTc4NDY2MmFmL2R1YmJlZC8xLzc4ZGQ2OWI1LTJmZTgtNGY0OS04YWU2LTI3NWY3ZWFhNWJjMC9zdHJlYW0ubXA0P3R5cGU9bW92aWUmZXhwaXJlcz0xNzcxMDIwNzg4JnNpZ25hdHVyZT1hMDYwZjYwYTE3NmQxZmY3YmNmMTYyMTM2ZTYzNGQwYzcxNjdjZjk2ZDEzNTgyZDJmZWM0ODk3NzM2NmM2NWY3");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

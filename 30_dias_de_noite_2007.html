@@ -23,10 +23,28 @@
 <title>30 Dias de Noite (2007) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/30%20Dias%20de%20Noite_2007_tt0389722.mp4?cnvs_token=WmpVeFlXVTFZV1U0TWpaaU9HVTBZWXFwVnVTdldFWHhzeFJkU0U2ZE1yOXNWMmU0RFZOb2lGU1dKZzJFRE50ag" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFc210O4zCOD2eer_5WHMeQG9Ykc-CmX5y6t7SGF-1QbArFP5ARVuTkFogNcBfEXTfyspwei2FSNq5Sl9j-C5kWP7HDrSBIw5v48HoaOtw2GTWNvQ20gQoO4WftmHDG6xRIT6WpuVdwalGt8W0wBto0tFPt5jduJt5mEAjlO85-zk6FHKqlioxZkAtlBM/w1280-h720-p-k-no-nu/p34KDNPsn4oUPrqKFQA6nJvvXZi.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFc210O4zCOD2eer_5WHMeQG9Ykc-CmX5y6t7SGF-1QbArFP5ARVuTkFogNcBfEXTfyspwei2FSNq5Sl9j-C5kWP7HDrSBIw5v48HoaOtw2GTWNvQ20gQoO4WftmHDG6xRIT6WpuVdwalGt8W0wBto0tFPt5jduJt5mEAjlO85-zk6FHKqlioxZkAtlBM/w1280-h720-p-k-no-nu/p34KDNPsn4oUPrqKFQA6nJvvXZi.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vMzAlMjBEaWFzJTIwZGUlMjBOb2l0ZV8yMDA3X3R0MDM4OTcyMi5tcDQ/Y252c190b2tlbj1XbXBWZUZsWFZURlpWMVUwVFdwYWFVOUhWVEJaV1hGd1ZuVlRkbGRGV0hoemVGSmtVMFUyWkUxeU9YTldNbVUwUkZaT2IybEdVMWRLWnpKRlJFNTBhZw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

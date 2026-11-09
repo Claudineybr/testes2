@@ -23,10 +23,28 @@
 <title>A Cura (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0060.l1s0-cdn-3123123.com/a-cura-637b685a/dubbed/1/aced7434-ee4f-4285-95ca-96fada0a3017/stream.mp4?type=movie&expires=1769546963&signature=e43ca164ef9a04a1f07cce8dcb06bc558b3c65ca5d38888347378d0ef578eb5a" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw-q-TZ_4A3SQ5szYwscLyGXDs9H1M2YIMalAuVjs_4kHtxOseKNuPW9VeYvI0iS0Jfom5OdhX9VSEZGozeHWrSTtQjxH5X7fzE8EhDSQEMTShGbIOcKqO4TEgw43SRHpcxoPy2h7KPZPd5nqEJhkc0QVVwuX4boH4NEi_yJksY-KgMDe3uvNr1EZz74c/w1280-h720-p-k-no-nu/gI5pMlCUuIj2OlL6uHJrpiCZO63.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw-q-TZ_4A3SQ5szYwscLyGXDs9H1M2YIMalAuVjs_4kHtxOseKNuPW9VeYvI0iS0Jfom5OdhX9VSEZGozeHWrSTtQjxH5X7fzE8EhDSQEMTShGbIOcKqO4TEgw43SRHpcxoPy2h7KPZPd5nqEJhkc0QVVwuX4boH4NEi_yJksY-KgMDe3uvNr1EZz74c/w1280-h720-p-k-no-nu/gI5pMlCUuIj2OlL6uHJrpiCZO63.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA2MC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9hLWN1cmEtNjM3YjY4NWEvZHViYmVkLzEvYWNlZDc0MzQtZWU0Zi00Mjg1LTk1Y2EtOTZmYWRhMGEzMDE3L3N0cmVhbS5tcDQ/dHlwZT1tb3ZpZSZleHBpcmVzPTE3Njk1NDY5NjMmc2lnbmF0dXJlPWU0M2NhMTY0ZWY5YTA0YTFmMDdjY2U4ZGNiMDZiYzU1OGIzYzY1Y2E1ZDM4ODg4MzQ3Mzc4ZDBlZjU3OGViNWE=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>A Pele Fria (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1034385.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPM9pKECAnXFJv97gcesFYLSkBZ_bjxJIAiLZ8oSVMf2QDNnNcT7TiytPk9TjynM3qbezLpmCjRxR2ibfuu3NdsQU3Q3oHAZi63nnNRIYPVDHrvDQxPLixtOHU6jxwPOTB_AhZyTB8VFo74KtFYzuJF8GZxNn5dj_toYJfvnoSx9kZ-0NJzb_wR4P_vLE/w1280-h720-p-k-no-nu/kvQON63OYVTznecoEiMoQWEgFRr.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPM9pKECAnXFJv97gcesFYLSkBZ_bjxJIAiLZ8oSVMf2QDNnNcT7TiytPk9TjynM3qbezLpmCjRxR2ibfuu3NdsQU3Q3oHAZi63nnNRIYPVDHrvDQxPLixtOHU6jxwPOTB_AhZyTB8VFo74KtFYzuJF8GZxNn5dj_toYJfvnoSx9kZ-0NJzb_wR4P_vLE/w1280-h720-p-k-no-nu/kvQON63OYVTznecoEiMoQWEgFRr.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxMDM0Mzg1Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

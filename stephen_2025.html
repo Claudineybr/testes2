@@ -23,10 +23,28 @@
 <title>Stephen (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Stephen.2025.1080p.WEB-DL.x264.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWlcBKWHoZysMyIG0YDSqSx6_em_DNO06fBXiF1mu_jrlF3sqxrB_BWxGP5iVzhfUT0ijK2mSa9hwl2Ov7eiYus7gA4UVMN-2ghSxtqmMQ5Ebi0mFZ8ZS2bb9MQpuT-WqyhXKiRwjd3rs7Z0uVSkoqdbUdriEfXMTUweiBjq3gl356nuxFlv1oVWDnRPU/w1280-h720-p-k-no-nu/pTLbGsRA2D6tFMV6XVbTMbeKxgl.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWlcBKWHoZysMyIG0YDSqSx6_em_DNO06fBXiF1mu_jrlF3sqxrB_BWxGP5iVzhfUT0ijK2mSa9hwl2Ov7eiYus7gA4UVMN-2ghSxtqmMQ5Ebi0mFZ8ZS2bb9MQpuT-WqyhXKiRwjd3rs7Z0uVSkoqdbUdriEfXMTUweiBjq3gl356nuxFlv1oVWDnRPU/w1280-h720-p-k-no-nu/pTLbGsRA2D6tFMV6XVbTMbeKxgl.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9TdGVwaGVuLjIwMjUuMTA4MHAuV0VCLURMLngyNjQuRFVBTC41LjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

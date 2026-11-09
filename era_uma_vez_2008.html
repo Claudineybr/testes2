@@ -23,10 +23,28 @@
 <title>Era uma Vez... (2008) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s3.us-east-2.wasabisys.com/cloudpc2/token%3As21expires11365uslink1578l2/flm21/EraUmaVez.mp4?response-content-type=video%2Fmp4&response-content-disposition=inline&response-cache-control=public%2C%20max-age%3D604800&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IU3PEYNXRJ5YLPUKFCA6%2F20260122%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20260122T213859Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43200&X-Amz-Signature=1d9d2b46a2207ac0b79699ade2511ecd91b3924be35f4da832eb3b98ea94b40d" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfCT9ardG-lAXaj8Gh2tsrkada4FAhb78CbKgwijMya8Wc_TMQf9EhZP_MjduKD3OaiW7OrphMkggzLFI8seaLfNsAfnv-nA4Pjtiv_Mcfe_mz6cLB-GzR5TbdIVVWvgWxqo2Z7adjYvQEnr4lhsxAc2KDjCeKKEc1-yj0y62dJuTJFi2jABVTvGjNbfQ/w1280-h720-p-k-no-nu/A7VILyanMEV67OVs3o5dP49SPx3.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfCT9ardG-lAXaj8Gh2tsrkada4FAhb78CbKgwijMya8Wc_TMQf9EhZP_MjduKD3OaiW7OrphMkggzLFI8seaLfNsAfnv-nA4Pjtiv_Mcfe_mz6cLB-GzR5TbdIVVWvgWxqo2Z7adjYvQEnr4lhsxAc2KDjCeKKEc1-yj0y62dJuTJFi2jABVTvGjNbfQ/w1280-h720-p-k-no-nu/A7VILyanMEV67OVs3o5dP49SPx3.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMy51cy1lYXN0LTIud2FzYWJpc3lzLmNvbS9jbG91ZHBjMi90b2tlbiUzQXMyMWV4cGlyZXMxMTM2NXVzbGluazE1NzhsMi9mbG0yMS9FcmFVbWFWZXoubXA0P3Jlc3BvbnNlLWNvbnRlbnQtdHlwZT12aWRlbyUyRm1wNCZyZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPWlubGluZSZyZXNwb25zZS1jYWNoZS1jb250cm9sPXB1YmxpYyUyQyUyMG1heC1hZ2UlM0Q2MDQ4MDAmWC1BbXotQ29udGVudC1TaGEyNTY9VU5TSUdORUQtUEFZTE9BRCZYLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUlVM1BFWU5YUko1WUxQVUtGQ0E2JTJGMjAyNjAxMjIlMkZ1cy1lYXN0LTIlMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTIyVDIxMzg1OVomWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2lnbmF0dXJlPTFkOWQyYjQ2YTIyMDdhYzBiNzk2OTlhZGUyNTExZWNkOTFiMzkyNGJlMzVmNGRhODMyZWIzYjk4ZWE5NGI0MGQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Nossa Vizinhanca (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.playmycnvs.com/m/Nossa.Vizinhanca.2026.1080p.WEB-DL.NACIONAL.2.0.mp4?cnvs_token=WlRreFl6VmlPV05qWTJOaVpURTRNTitYYVpKUjZwOGlOaFpiNzdOdWVCUE1zMWxZVWRsUzh2UUdVb2ZRTGJUWmtzSXJ2MkhGNkpFaFBJZ1dnczRXVkp4K0t6Z2RzVjRjRU5tZkpxZ1hTVGNFSUdvT24vL1hyZDJzclE0TERUT25pYjBwK2gxaVZMV1d1L0pUWC9HcmVRPT0" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiP-eoYQ_DleBkX-njaflUjRK6DeVqS9Frbcxbg-ah8dZMNaxuM6lcNrhNDwhIx2JG9I5aNzqx40jtr1_ZdQLKKmMzvtyAUk4bbK_-clUmWISzQdkg_o_93kCzS6Eh9b8jMq7Dk1bCjT_dP_lm1nzpa3253Dh6Tzb9W8oV1iGpSzV-Qag6Gq0VvlFjw2pI/w1280-h720-p-k-no-nu/Picsart_26-01-30_10-58-18-871.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiP-eoYQ_DleBkX-njaflUjRK6DeVqS9Frbcxbg-ah8dZMNaxuM6lcNrhNDwhIx2JG9I5aNzqx40jtr1_ZdQLKKmMzvtyAUk4bbK_-clUmWISzQdkg_o_93kCzS6Eh9b8jMq7Dk1bCjT_dP_lm1nzpa3253Dh6Tzb9W8oV1iGpSzV-Qag6Gq0VvlFjw2pI/w1280-h720-p-k-no-nu/Picsart_26-01-30_10-58-18-871.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC5wbGF5bXljbnZzLmNvbS9tL05vc3NhLlZpemluaGFuY2EuMjAyNi4xMDgwcC5XRUItREwuTkFDSU9OQUwuMi4wLm1wND9jbnZzX3Rva2VuPVdsUnJlRmw2Vm1sUFYwNXFXVEpPYVZwVVJUUk5UaXRZWVZwS1VqWndPR2xPYUZwaU56ZE9kV1ZDVUUxek1XeFpWV1JzVXpoMlVVZFZiMlpSVEdKVVdtdHpTWEoyTWtoR05rcEZhRkJKWjFkbmN6UlhWa3A0SzB0NloyUnpWalJqUlU1dFprcHhaMWhUVkdORlNVZHZUMjR2TDFoeVpESnpjbEUwVEVSVVQyNXBZakJ3SzJneGFWWk1WMWQxTDBwVVdDOUhjbVZSUFQw");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

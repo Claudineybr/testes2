@@ -23,10 +23,28 @@
 <title>Encurralado (1971) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.vsutx.com/m/Encurralado.mp4?cnvs_token=1776122892-RlnDrEpd45Z3XegvnjEXYMKo5unwMqJB0fGmwTOObYQ%3D&vid=84762&pid=2216724&t=1776122892" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjduKBH8iBaxKxW7xzSb4iL_JLb3ChEPo-ObnPqfjbdcx7wX7CMcGpw_Zt07tn0szcLsBJbGSng_U77uAAfImJgfUhqIP8lArBgyBTsM5GP645gYipmKjSl6-AYnOBdxsIVTrQC50OeCwZYQz9OX3ZxxqB_IdyUfYQZTRptmkJ-UBttKb7d2c68d12hPmY/w1280-h720-p-k-no-nu/5S2sX0QW86vPMd7WjnHVOgWXW0x.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjduKBH8iBaxKxW7xzSb4iL_JLb3ChEPo-ObnPqfjbdcx7wX7CMcGpw_Zt07tn0szcLsBJbGSng_U77uAAfImJgfUhqIP8lArBgyBTsM5GP645gYipmKjSl6-AYnOBdxsIVTrQC50OeCwZYQz9OX3ZxxqB_IdyUfYQZTRptmkJ-UBttKb7d2c68d12hPmY/w1280-h720-p-k-no-nu/5S2sX0QW86vPMd7WjnHVOgWXW0x.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC52c3V0eC5jb20vbS9FbmN1cnJhbGFkby5tcDQ/Y252c190b2tlbj0xNzc2MTIyODkyLVJsbkRyRXBkNDVaM1hlZ3ZuakVYWU1LbzV1bndNcUpCMGZHbXdUT09iWVElM0QmdmlkPTg0NzYyJnBpZD0yMjE2NzI0JnQ9MTc3NjEyMjg5Mg==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>King Richard: Criando Campeas (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/King%20Richard:%20Criando%20Campe%C3%A3s_2021_tt9620288.mp4?cnvs_token=TUdWaU5HVXlaRGcwTVRVMk1UQTRNbk1ISEhMa1lSZ3NzR0pwVUNiVi9aSEhkZGdoKzRJZjF0K3ZtNFZwV0kzSg" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHKXmvFjOnlU5P2cbLwdh75meuQr_lLTKsgXatdLGjVRuDCRaTRd0Gr4DAKpgMkg5XcuMXzD-ds_yK2T3MXZ2t_1VmVX3DYmmdjaeeQx-zxAjD3qAqpCegYkuCjq6Uk7ZUhtW6EsmddaKFNsG-UdQDNXq53dbtVFn7ewVMBBKDmuLFgokiYVez6loLqg0/w1280-h720-p-k-no-nu/30MMGUsfnLMiXD2t3LBfmaTjwzd.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHKXmvFjOnlU5P2cbLwdh75meuQr_lLTKsgXatdLGjVRuDCRaTRd0Gr4DAKpgMkg5XcuMXzD-ds_yK2T3MXZ2t_1VmVX3DYmmdjaeeQx-zxAjD3qAqpCegYkuCjq6Uk7ZUhtW6EsmddaKFNsG-UdQDNXq53dbtVFn7ewVMBBKDmuLFgokiYVez6loLqg0/w1280-h720-p-k-no-nu/30MMGUsfnLMiXD2t3LBfmaTjwzd.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vS2luZyUyMFJpY2hhcmQ6JTIwQ3JpYW5kbyUyMENhbXBlJUMzJUEzc18yMDIxX3R0OTYyMDI4OC5tcDQ/Y252c190b2tlbj1UVWRXYVU1SFZYbGFSR2N3VFZSVk1rMVVRVFJOYmsxSVNFaE1hMWxTWjNOelIwcHdWVU5pVmk5YVNFaGtaR2RvS3pSSlpqRjBLM1p0TkZad1Ywa3pTZw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

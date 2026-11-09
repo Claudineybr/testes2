@@ -23,10 +23,28 @@
 <title>Uma Familia Do Bagulho (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/Fam%C3%ADlia%20do%20Bagulho_2013_tt1723121.mp4?cnvs_token=TnpNNE5XRmtPR1JpWkRZMk9EZ3dNUUQwb2ZvUml0MWREaDcvcStlNkc4a2l0TXo2eVdrQm8yZ25oVVJPSDRJOQ" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLNjs_V45rbGJVMaWU57JyCYGCapNq0mcJkWMGb77vgWD3IXL1Uq_lIbEhIDYbz1Q1n8QtFyPAROoIn0DxCw0Rp9Ki5ZmWeZW-IwXX-EH-RIcwSX0dID4-qiGvxUX3kNnKFxCmr1jVO854DHvytDeIIdt0MVeQSerB-QhzxUJErVzRcubtSquODTjDIvE/w1280-h720-p-k-no-nu/1000095061.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLNjs_V45rbGJVMaWU57JyCYGCapNq0mcJkWMGb77vgWD3IXL1Uq_lIbEhIDYbz1Q1n8QtFyPAROoIn0DxCw0Rp9Ki5ZmWeZW-IwXX-EH-RIcwSX0dID4-qiGvxUX3kNnKFxCmr1jVO854DHvytDeIIdt0MVeQSerB-QhzxUJErVzRcubtSquODTjDIvE/w1280-h720-p-k-no-nu/1000095061.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vRmFtJUMzJUFEbGlhJTIwZG8lMjBCYWd1bGhvXzIwMTNfdHQxNzIzMTIxLm1wND9jbnZzX3Rva2VuPVRucE5ORTVYUm10UFIxSnBXa1JaTWs5RVozZE5VVVF3YjJadlVtbDBNV1JFYURjdmNTdGxOa2M0YTJsMFRYbzJlVmRyUW04eVoyNW9WVkpQU0RSSk9R");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

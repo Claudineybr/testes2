@@ -23,10 +23,28 @@
 <title>Amor e Vinho (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Amor%20e%20Vinho.2025.1080p.WEB-DL.x264.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikWAbEAD1pBFJUwigkqyuiHeVR4VPIe5-2k1Z5IJJF0ZISoz8pcua2XUOnA3qXc_mHpOjxvNXKKcpOIwi2BdUhuFmyry1PdG2cuZKP9rY63G66SFQEMgpRI84zjXoPePu26N2I-EPRAJMmkaQ7pUKpcuAjBZsG_-410mzOH3YAzIG2vztY09O3OdXhQDk/w1280-h720-p-k-no-nu/Picsart_25-12-05_13-38-08-351.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikWAbEAD1pBFJUwigkqyuiHeVR4VPIe5-2k1Z5IJJF0ZISoz8pcua2XUOnA3qXc_mHpOjxvNXKKcpOIwi2BdUhuFmyry1PdG2cuZKP9rY63G66SFQEMgpRI84zjXoPePu26N2I-EPRAJMmkaQ7pUKpcuAjBZsG_-410mzOH3YAzIG2vztY09O3OdXhQDk/w1280-h720-p-k-no-nu/Picsart_25-12-05_13-38-08-351.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9BbW9yJTIwZSUyMFZpbmhvLjIwMjUuMTA4MHAuV0VCLURMLngyNjQuRFVBTC41LjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

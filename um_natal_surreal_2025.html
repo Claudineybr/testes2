@@ -23,10 +23,28 @@
 <title>Um. Natal. Surreal. (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com.com/m/Um.Natal.Surreal.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoUIgjGaRSjGdN9T8bpp_m008I1FiBzMhuMsQJ7TnBAzJez591csKmMqxz1OE3opApJ34_C1SVegABhy8jeqOThkslpIS2hPMZHLPt8ZtwX-Oq7gY7CRytpE_er5xdhDsB-qQJDPBjUV5h90gnPBMeqJ9wg2KdUBNhS-vfFHlHFGgASKMnaf6ALdnLqz4/w1280-h720-p-k-no-nu/3a8Pl1Jj8ev1ltHmys1BsTH234r.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoUIgjGaRSjGdN9T8bpp_m008I1FiBzMhuMsQJ7TnBAzJez591csKmMqxz1OE3opApJ34_C1SVegABhy8jeqOThkslpIS2hPMZHLPt8ZtwX-Oq7gY7CRytpE_er5xdhDsB-qQJDPBjUV5h90gnPBMeqJ9wg2KdUBNhS-vfFHlHFGgASKMnaf6ALdnLqz4/w1280-h720-p-k-no-nu/3a8Pl1Jj8ev1ltHmys1BsTH234r.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20uY29tL20vVW0uTmF0YWwuU3VycmVhbC4yMDI1LjEwODBwLldFQi1ETC5EVUFMLjUuMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

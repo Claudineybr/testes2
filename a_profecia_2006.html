@@ -23,10 +23,28 @@
 <title>A Profecia (2006) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/A%20Profecia_2006_tt0466909.mp4?cnvs_token=T0ROak9HWm1NbUZrWkRVNE0yRmhOcVpxUGV3bEMwZ0M0dHpnY1kweWt6Rzl5NWVQNFA3VzVmeThYVE1qK2ViQg" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKKQa5eyOYiqbDsZgwgC6RhEN0bAXxup5uDKBUsS4WlTtR41HXrKbYyix6FMNdlVNdTHi3fzviLXOLOB7ixILUMHk0JvOGV-EunHlhLQOpfDR4phtCrPVaHARllE3Qu_32dLHwWRxSVTIXTOJRwfDHXygTj76x8YR0ynyTD7tC33oJc-xClWGgHomqfcA/w1280-h720-p-k-no-nu/1I3BBBMrYkfhhUPzPKWBiQUcGOJ.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKKQa5eyOYiqbDsZgwgC6RhEN0bAXxup5uDKBUsS4WlTtR41HXrKbYyix6FMNdlVNdTHi3fzviLXOLOB7ixILUMHk0JvOGV-EunHlhLQOpfDR4phtCrPVaHARllE3Qu_32dLHwWRxSVTIXTOJRwfDHXygTj76x8YR0ynyTD7tC33oJc-xClWGgHomqfcA/w1280-h720-p-k-no-nu/1I3BBBMrYkfhhUPzPKWBiQUcGOJ.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vQSUyMFByb2ZlY2lhXzIwMDZfdHQwNDY2OTA5Lm1wND9jbnZzX3Rva2VuPVQwUk9hazlIV20xTmJVWnJXa1JWTkUweVJtaE9jVnB4VUdWM2JFTXdaME0wZEhwblkxa3dlV3Q2UnpsNU5XVlFORkEzVnpWbWVUaFlWRTFxSzJWaVFn");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

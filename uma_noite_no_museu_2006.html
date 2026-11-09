@@ -23,10 +23,28 @@
 <title>Uma Noite no Museu (2006) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0090.l1s0-cdn-3123123.com/uma-noite-no-museu-455e1d38/dubbed/1/f2fc38cc-2ca1-4ca7-9a0b-67bd29c67946/stream.mp4?type=movie&expires=1771533239&signature=7883e378c323f4b4499d4e432b23baed1e3fbe52e1b0d2cc69bc3c3465154116" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7Brbc6jRrWlwZQovDRbzp2kCc5EhrVJYyR0TxZWJM3vrbQyke3nUGi8VOp3mJ2zePJpIbLZBe7WeNnaB6RUxKxMmm2MNz_f0zYnZZpd0njHNbAS6tY7vbTxTsdWOnYKQf1nLju6vt532pGmMTqGFg7Nsq3L5nfzwgXyZhJrF-NXjjZNqHsQXTGpHvedQ/w1280-h720-p-k-no-nu/kbmoPgpzcGrPusoRgZRa5TI65Kv.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7Brbc6jRrWlwZQovDRbzp2kCc5EhrVJYyR0TxZWJM3vrbQyke3nUGi8VOp3mJ2zePJpIbLZBe7WeNnaB6RUxKxMmm2MNz_f0zYnZZpd0njHNbAS6tY7vbTxTsdWOnYKQf1nLju6vt532pGmMTqGFg7Nsq3L5nfzwgXyZhJrF-NXjjZNqHsQXTGpHvedQ/w1280-h720-p-k-no-nu/kbmoPgpzcGrPusoRgZRa5TI65Kv.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA5MC5sMXMwLWNkbi0zMTIzMTIzLmNvbS91bWEtbm9pdGUtbm8tbXVzZXUtNDU1ZTFkMzgvZHViYmVkLzEvZjJmYzM4Y2MtMmNhMS00Y2E3LTlhMGItNjdiZDI5YzY3OTQ2L3N0cmVhbS5tcDQ/dHlwZT1tb3ZpZSZleHBpcmVzPTE3NzE1MzMyMzkmc2lnbmF0dXJlPTc4ODNlMzc4YzMyM2Y0YjQ0OTlkNGU0MzJiMjNiYWVkMWUzZmJlNTJlMWIwZDJjYzY5YmMzYzM0NjUxNTQxMTY=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

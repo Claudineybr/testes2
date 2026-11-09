@@ -23,10 +23,28 @@
 <title>Os Mercenarios (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0007.l1s0-cdn-3123123.com/os-mercenarios-5eb11f6b/dubbed/1/f5ed0af7-983b-4f9b-adee-da93fb2eb728/stream.mp4?type=movie&expires=1770930488&signature=aff817d3bfc588713692ce492aa460c8de25d16ffba3b8c3ec1c6f582ccd88b3" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbo5xeHyv3sKJqTgiU82LGpmnh2avYNqdr9YzVwJI84h0hR3tNZsHKPehJB8OVo9JV69ZAmjbdj8eaaP1RCnVm9CEpgCqOCjKTZ4ZYTUSPZ0Vhzi3DdB6e7PO-J6L52JXlPYpXbn0AwIl4A8rqDINUPwuVaZcKYBjk3sZ64dJBtOB9yKV5EOw2qxTkIY8/w1280-h720-p-k-no-nu/vDMQclBWIOFNP51dwrJFP1TAXwO.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbo5xeHyv3sKJqTgiU82LGpmnh2avYNqdr9YzVwJI84h0hR3tNZsHKPehJB8OVo9JV69ZAmjbdj8eaaP1RCnVm9CEpgCqOCjKTZ4ZYTUSPZ0Vhzi3DdB6e7PO-J6L52JXlPYpXbn0AwIl4A8rqDINUPwuVaZcKYBjk3sZ64dJBtOB9yKV5EOw2qxTkIY8/w1280-h720-p-k-no-nu/vDMQclBWIOFNP51dwrJFP1TAXwO.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwNy5sMXMwLWNkbi0zMTIzMTIzLmNvbS9vcy1tZXJjZW5hcmlvcy01ZWIxMWY2Yi9kdWJiZWQvMS9mNWVkMGFmNy05ODNiLTRmOWItYWRlZS1kYTkzZmIyZWI3Mjgvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc3MDkzMDQ4OCZzaWduYXR1cmU9YWZmODE3ZDNiZmM1ODg3MTM2OTJjZTQ5MmFhNDYwYzhkZTI1ZDE2ZmZiYTNiOGMzZWMxYzZmNTgyY2NkODhiMw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Um Time Muito Louco (1994) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0083.l1s0-cdn-3123123.com/um-time-muito-louco-f9ad869e/dubbed/1/ffec9993-2fa1-471b-b161-4de4079fcfec/stream.mp4?type=movie&expires=1770758915&signature=13dc5cf52f49f1291bf9e00b21790eca0a89618b26bb9ba0e0fd6f77cec35dc1" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBgbnyg8MBzGASdYEH_4K7m9mynUkkpo1ls5MwpR67y-_iM35SvJpsjvWrZo6Lp4acm35KL2gQawu8Mv3FSY5IDs7g_JGUlMVFJ8AZOHJRsluihQv3pj9DP66jW84tpJfZt8sKv80OjHshDRBlKlyxa_FR4IGoVBoveGrq4ziDI3asW300UPFnhxAlQjo/w1280-h720-p-k-no-nu/eoT6ee8STQV5ZH65Hu5uR0Mfvvf.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBgbnyg8MBzGASdYEH_4K7m9mynUkkpo1ls5MwpR67y-_iM35SvJpsjvWrZo6Lp4acm35KL2gQawu8Mv3FSY5IDs7g_JGUlMVFJ8AZOHJRsluihQv3pj9DP66jW84tpJfZt8sKv80OjHshDRBlKlyxa_FR4IGoVBoveGrq4ziDI3asW300UPFnhxAlQjo/w1280-h720-p-k-no-nu/eoT6ee8STQV5ZH65Hu5uR0Mfvvf.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA4My5sMXMwLWNkbi0zMTIzMTIzLmNvbS91bS10aW1lLW11aXRvLWxvdWNvLWY5YWQ4NjllL2R1YmJlZC8xL2ZmZWM5OTkzLTJmYTEtNDcxYi1iMTYxLTRkZTQwNzlmY2ZlYy9zdHJlYW0ubXA0P3R5cGU9bW92aWUmZXhwaXJlcz0xNzcwNzU4OTE1JnNpZ25hdHVyZT0xM2RjNWNmNTJmNDlmMTI5MWJmOWUwMGIyMTc5MGVjYTBhODk2MThiMjZiYjliYTBlMGZkNmY3N2NlYzM1ZGMx");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

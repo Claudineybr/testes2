@@ -23,10 +23,28 @@
 <title>Dupla Perigosa (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0049.l1s0-cdn-3123123.com/dupla-perigosa-77311edb/dubbed/1/d1d7cff1-f255-4492-891e-1df53a04de69/stream.mp4?type=movie&expires=1769834621&signature=5d260920f1016d6007c48567d5f6c7bb13a37a2604e67d271cbf67b57a400c2b" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjei6xZujWDhbhZIGdUnrNeqbM66JrfCDnE60EWEQgfwe5rkKcUL42VLUKespSllhBj5OUox-Z1sTI5ZBXAh_dA0py9DIrNg3KceJ-ok1d0wV48eEzfvR2p9eaoeSX3oMuXEFch-6AFBU5Uaph3hFLmMB_eMkd1yi6tURKwVbTjUfvSeoKuZlsuMGOq770/w1280-h720-p-k-no-nu/elRTKUKb0adLZ171tN6VlQroWQr.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjei6xZujWDhbhZIGdUnrNeqbM66JrfCDnE60EWEQgfwe5rkKcUL42VLUKespSllhBj5OUox-Z1sTI5ZBXAh_dA0py9DIrNg3KceJ-ok1d0wV48eEzfvR2p9eaoeSX3oMuXEFch-6AFBU5Uaph3hFLmMB_eMkd1yi6tURKwVbTjUfvSeoKuZlsuMGOq770/w1280-h720-p-k-no-nu/elRTKUKb0adLZ171tN6VlQroWQr.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA0OS5sMXMwLWNkbi0zMTIzMTIzLmNvbS9kdXBsYS1wZXJpZ29zYS03NzMxMWVkYi9kdWJiZWQvMS9kMWQ3Y2ZmMS1mMjU1LTQ0OTItODkxZS0xZGY1M2EwNGRlNjkvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc2OTgzNDYyMSZzaWduYXR1cmU9NWQyNjA5MjBmMTAxNmQ2MDA3YzQ4NTY3ZDVmNmM3YmIxM2EzN2EyNjA0ZTY3ZDI3MWNiZjY3YjU3YTQwMGMyYg==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Um Dia Extraordinario (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-utx.playmycnvs.com/m/Um.Dia.Extraordin%C3%A1rio.2026.1080p.WEB-DL.NACIONAL.2.0.mp4?cnvs_token=T1Roak5HUm1ZelJtTXpOak9XVTVOL0NnZzVpTCsxcThnK0lDaTdBZDZMcFpja3lXclA0QU5rWFVUM0Z6emhSTlFEbnZMZGZqT29ZUTJ5MTE3bk5MOWtoaWVoNzNMRlRPZ05MWm10RExSaXl5dy9EM05wODczNFlnTTdUS1ltM2ZMRTNWeC8xLzlEZzVyWFNMTitjS1dnY3JTQlAzaFF2UlQ2c0JMampwVE5NPQ" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg12Mt4Vk-AyVkhBPnMsb8KtuxjYh00wxM6wdub6XvuKMkQcQvzizsbUu6ebAlSWS9EEAQ-t81arqiBtBzeWYel7qLI17XLyyMUZEBxQeljniKiDDmSEDs_J1UfjvbqCgc72jAZwV9rlVteRnuEHyytCrCdtjNC1vYJV_cix_J4K3iYjqfONuY1L4ud7-o/w1280-h720-p-k-no-nu/Picsart_26-01-30_11-13-06-163.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg12Mt4Vk-AyVkhBPnMsb8KtuxjYh00wxM6wdub6XvuKMkQcQvzizsbUu6ebAlSWS9EEAQ-t81arqiBtBzeWYel7qLI17XLyyMUZEBxQeljniKiDDmSEDs_J1UfjvbqCgc72jAZwV9rlVteRnuEHyytCrCdtjNC1vYJV_cix_J4K3iYjqfONuY1L4ud7-o/w1280-h720-p-k-no-nu/Picsart_26-01-30_11-13-06-163.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LXV0eC5wbGF5bXljbnZzLmNvbS9tL1VtLkRpYS5FeHRyYW9yZGluJUMzJUExcmlvLjIwMjYuMTA4MHAuV0VCLURMLk5BQ0lPTkFMLjIuMC5tcDQ/Y252c190b2tlbj1UMVJvYWs1SFVtMVplbEp0VFhwT2FrOVhWVFZPTDBOblp6VnBUQ3N4Y1RobkswbERhVGRCWkRaTWNGcGphM2xYY2xBMFFVNXJXRlZVTTBaNmVtaFNUbEZFYm5aTVpHWnFUMjlaVVRKNU1URTNiazVNT1d0b2FXVm9Oek5NUmxSUFowNU1XbTEwUkV4U2FYbDVkeTlFTTA1d09EY3pORmxuVFRkVVMxbHRNMlpNUlROV2VDOHhMemxFWnpWeVdGTk1UaXRqUzFkblkzSlRRbEF6YUZGMlVsUTJjMEpNYW1wd1ZFNU5QUQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

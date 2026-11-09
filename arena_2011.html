@@ -23,10 +23,28 @@
 <title>Arena (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0036.l1s0-cdn-3123123.com/arena-1619ba90/dubbed/1/6090ab5d-ef48-4f77-9e36-a695b9114c7a/stream.mp4?type=movie&expires=1770582885&signature=c804dd83fefc5423d78931d2899c3fa5fe66b1951ed97b2ee523222a1112081e" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRuJuB2sCykNpKpNAyk-LK0AuY_s-4PxV5VAmPV4TtfrNYqVqqEcs4ecYNqMXfh4ovB5V9su2u8eTisDhCKNAEmAavaxk_yd_i7kXy8eW8yukbgNHFa5PKEO5DHEoiJkqlGQwmCdQ44N7u5-vuQNiQGD906O8cxLnU4Hc12A5dxVspZMxFso4ojRXZfLs/w1280-h720-p-k-no-nu/kYPwkCraHS1NOWmnYzeh3gOzHr1.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRuJuB2sCykNpKpNAyk-LK0AuY_s-4PxV5VAmPV4TtfrNYqVqqEcs4ecYNqMXfh4ovB5V9su2u8eTisDhCKNAEmAavaxk_yd_i7kXy8eW8yukbgNHFa5PKEO5DHEoiJkqlGQwmCdQ44N7u5-vuQNiQGD906O8cxLnU4Hc12A5dxVspZMxFso4ojRXZfLs/w1280-h720-p-k-no-nu/kYPwkCraHS1NOWmnYzeh3gOzHr1.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAzNi5sMXMwLWNkbi0zMTIzMTIzLmNvbS9hcmVuYS0xNjE5YmE5MC9kdWJiZWQvMS82MDkwYWI1ZC1lZjQ4LTRmNzctOWUzNi1hNjk1YjkxMTRjN2Evc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc3MDU4Mjg4NSZzaWduYXR1cmU9YzgwNGRkODNmZWZjNTQyM2Q3ODkzMWQyODk5YzNmYTVmZTY2YjE5NTFlZDk3YjJlZTUyMzIyMmExMTEyMDgxZQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

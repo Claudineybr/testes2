@@ -23,10 +23,28 @@
 <title>Um Homem Entre Gigantes (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0024.l1s0-cdn-3123123.com/um-homem-entre-gigantes-522f88cd/dubbed/1/ef535d79-a36e-4efd-a889-a0b0e55545de/stream.mp4?type=movie&expires=1770354316&signature=ffb43917b635ffd5e6338acaed43eedda3b3357110833c8c596ecd9572fbdf6e" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGOp-qzjuzXZ5TreCUxXZhO3ZlOgC-k4pcfb_fJ9kKtkwfX83fvbhlh31DgBGtu92hxlU6mCMWC7DvK7DFgOtNjjaR-GPNnrTnT5x309IokXxINFEbr_bCab1_gPsNbTK66WFczCHj7iMz4geAEsZMBClwYFspiVpUmgbEpbnSvJvwUZGjLq27oV11c1o/w1280-h720-p-k-no-nu/35k0KlL5TOYFkMeilQJAztv6ldL.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGOp-qzjuzXZ5TreCUxXZhO3ZlOgC-k4pcfb_fJ9kKtkwfX83fvbhlh31DgBGtu92hxlU6mCMWC7DvK7DFgOtNjjaR-GPNnrTnT5x309IokXxINFEbr_bCab1_gPsNbTK66WFczCHj7iMz4geAEsZMBClwYFspiVpUmgbEpbnSvJvwUZGjLq27oV11c1o/w1280-h720-p-k-no-nu/35k0KlL5TOYFkMeilQJAztv6ldL.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAyNC5sMXMwLWNkbi0zMTIzMTIzLmNvbS91bS1ob21lbS1lbnRyZS1naWdhbnRlcy01MjJmODhjZC9kdWJiZWQvMS9lZjUzNWQ3OS1hMzZlLTRlZmQtYTg4OS1hMGIwZTU1NTQ1ZGUvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc3MDM1NDMxNiZzaWduYXR1cmU9ZmZiNDM5MTdiNjM1ZmZkNWU2MzM4YWNhZWQ0M2VlZGRhM2IzMzU3MTEwODMzYzhjNTk2ZWNkOTU3MmZiZGY2ZQ==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

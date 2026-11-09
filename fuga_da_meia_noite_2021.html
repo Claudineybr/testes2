@@ -23,10 +23,28 @@
 <title>Fuga da Meia-Noite (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/Fuga%20da%20Meia-Noite_2021_tt14757872.mp4?cnvs_token=WkRjME9EaGhNRFF3WlRVMU56TTNNdkdOUkFZYlpKWXRreFV2Y1A4c2daekFORUZJdWJkMFViTGtxKzBkTExSUA" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj1Kg6vtbXSdJLneZuzKBs4Nb_tRcPj2P-YQG-oRBGPhhmVSD-r-tx417tPbzYo3IsUuQq5mFXun5Nop8TAjDvI5k735UByYOLdIsOLHiKF0t5dlHRPr75yElq_ki7zQOqHCmhqeBDtJqNycaxXuEgzU1Qp5blROrdwkr7nsg50ExSa5Tu2SM0Q9fYVTo/w1280-h720-p-k-no-nu/kvT2LSB5vXjxL71YWuS8tRA8tw0.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj1Kg6vtbXSdJLneZuzKBs4Nb_tRcPj2P-YQG-oRBGPhhmVSD-r-tx417tPbzYo3IsUuQq5mFXun5Nop8TAjDvI5k735UByYOLdIsOLHiKF0t5dlHRPr75yElq_ki7zQOqHCmhqeBDtJqNycaxXuEgzU1Qp5blROrdwkr7nsg50ExSa5Tu2SM0Q9fYVTo/w1280-h720-p-k-no-nu/kvT2LSB5vXjxL71YWuS8tRA8tw0.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vRnVnYSUyMGRhJTIwTWVpYS1Ob2l0ZV8yMDIxX3R0MTQ3NTc4NzIubXA0P2NudnNfdG9rZW49V2tSak1FOUVhR2hOUkZGM1dsUlZNVTU2VFROTmRrZE9Va0ZaWWxwS1dYUnJlRlYyWTFBNGMyZGFla0ZPUlVaSmRXSmtNRlZpVEd0eEt6QmtURXhTVUE=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

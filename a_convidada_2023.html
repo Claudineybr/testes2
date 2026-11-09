@@ -23,10 +23,28 @@
 <title>A Convidada (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0049.l1s0-cdn-3123123.com/a-convidada-65093fcc/dubbed/1/a40d1822-3b48-418f-b5af-9ba18e9b8c05/stream.mp4?type=movie&expires=1769547277&signature=984f56131bf1cbd3ed68197c02da81c38a8a8997a9079e33bcfabf95df821c42" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh53dGZGl22Jb4Xm0wp3e4s0yL6_1GijqYaBOiji-f69E2LvxfAQbSnPhdnPnzUUfhrwSfIW2c2RdRsbgw7akSytIPplwmz-A6rVHAXo2mEAKpjr6nqXytXbHPq05wZveI7X-eI1Z0yvT7n6Vlxm8qubqFZr0nKWH8jN7nxZjTb_-AQUV_skuJvQ5U2lJ4/w1280-h720-p-k-no-nu/Picsart_25-11-28_19-13-35-878.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh53dGZGl22Jb4Xm0wp3e4s0yL6_1GijqYaBOiji-f69E2LvxfAQbSnPhdnPnzUUfhrwSfIW2c2RdRsbgw7akSytIPplwmz-A6rVHAXo2mEAKpjr6nqXytXbHPq05wZveI7X-eI1Z0yvT7n6Vlxm8qubqFZr0nKWH8jN7nxZjTb_-AQUV_skuJvQ5U2lJ4/w1280-h720-p-k-no-nu/Picsart_25-11-28_19-13-35-878.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA0OS5sMXMwLWNkbi0zMTIzMTIzLmNvbS9hLWNvbnZpZGFkYS02NTA5M2ZjYy9kdWJiZWQvMS9hNDBkMTgyMi0zYjQ4LTQxOGYtYjVhZi05YmExOGU5YjhjMDUvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc2OTU0NzI3NyZzaWduYXR1cmU9OTg0ZjU2MTMxYmYxY2JkM2VkNjgxOTdjMDJkYTgxYzM4YThhODk5N2E5MDc5ZTMzYmNmYWJmOTVkZjgyMWM0Mg==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -23,10 +23,28 @@
 <title>Rastros de um Sequestro (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt7057496.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiF9GDPN4PVksk1R1ZLfYgF4OKNYluaNTMGhUo3qJ2NkoAe0jr7PJ6ORcUxDjUvDAa5c9mOnieSG9W83qKufLeNj77c6JXa2g4_184cXTsN8ND7RPX6BuWfhG07ptDtvDPFeSqQP6H7h6FfvogF2RTaNvJq189-mwhOuWJN1IjkqVer3eYiAegU7DLNSkg/w1280-h720-p-k-no-nu/Picsart_25-12-20_21-56-12-170.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiF9GDPN4PVksk1R1ZLfYgF4OKNYluaNTMGhUo3qJ2NkoAe0jr7PJ6ORcUxDjUvDAa5c9mOnieSG9W83qKufLeNj77c6JXa2g4_184cXTsN8ND7RPX6BuWfhG07ptDtvDPFeSqQP6H7h6FfvogF2RTaNvJq189-mwhOuWJN1IjkqVer3eYiAegU7DLNSkg/w1280-h720-p-k-no-nu/Picsart_25-12-20_21-56-12-170.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQ3MDU3NDk2Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
