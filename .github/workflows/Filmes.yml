@@ -32,7 +32,17 @@ on:
       tempo_max_min:
         description: 'Minutos máximos de trabalho por run (depois ele salva e encadeia a próxima)'
         required: false
-        default: '40'
+        default: '240'
+        type: string
+      delay_entre_seg:
+        description: 'Segundos de espera entre um filme e outro'
+        required: false
+        default: '12'
+        type: string
+      retry_429_seg:
+        description: 'Base do backoff quando o site devolve 429'
+        required: false
+        default: '30'
         type: string
 
 permissions:
@@ -45,7 +55,7 @@ concurrency:
 jobs:
   extrair:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 280
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v5
@@ -66,10 +76,12 @@ jobs:
         env:
           LOTE_SIZE: ${{ inputs.lote || '100' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
-          TEMPO_MAX_MIN: ${{ inputs.tempo_max_min || '40' }}
+          TEMPO_MAX_MIN: ${{ inputs.tempo_max_min || '240' }}
+          DELAY_ENTRE_SEG: ${{ inputs.delay_entre_seg || '12' }}
+          RETRY_429_SEG: ${{ inputs.retry_429_seg || '30' }}
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
-          import requests, sys, os, json, time
+          import requests, sys, os, json, time, random
           from pathlib import Path
 
           BASE_URL = "https://www.vini7xgrave.site"
@@ -118,7 +130,7 @@ jobs:
                           log(f"Feed HTTP {r.status_code} (tentativa {tentativa + 1}/3)")
                       except Exception as e:
                           log(f"Erro ao buscar feed: {e} (tentativa {tentativa + 1}/3)")
-                      time.sleep(2 * (tentativa + 1))
+                      time.sleep(15 * (tentativa + 1) + random.uniform(0, 5))
                   if entries is None:
                       completo = False
                       break
@@ -150,9 +162,15 @@ jobs:
           MAX_TENTATIVAS = 6
           LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 100)
           MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
-          TEMPO_MAX = int(os.environ.get("TEMPO_MAX_MIN") or 40) * 60
+          TEMPO_MAX = int(os.environ.get("TEMPO_MAX_MIN") or 240) * 60
           FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
           T0 = time.time()
+
+          # --- Ritmo anti-429 ----------------------------------------------------------
+          DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 12)   # pausa entre filmes
+          DELAY_JITTER    = float(os.environ.get("DELAY_JITTER_SEG") or 8)   # variação aleatória
+          RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 30)     # base do backoff 429
+          HTTP_TENTATIVAS = int(os.environ.get("HTTP_TENTATIVAS") or 5)
 
 
           def tempo_esgotado():
@@ -160,22 +178,44 @@ jobs:
 
 
           # ----------------------------------------------------------------------------
-          # Rede
+          # Rede (com backoff generoso e respeito a Retry-After)
           # ----------------------------------------------------------------------------
-          def http_get(url, timeout=20, tentativas=3):
-              """Retorna (status, texto). Se a rede falhar, (None, mensagem_de_erro)."""
+          def http_get(url, timeout=25, tentativas=None):
+              """Retorna (status, texto). Em 429 devolve (429, ""). Se a rede falhar, (None, msg)."""
+              tentativas = tentativas or HTTP_TENTATIVAS
               ultimo = "erro desconhecido"
               for i in range(tentativas):
                   try:
                       r = requests.get(url, headers=HEADERS, timeout=timeout)
-                      if r.status_code in (429, 500, 502, 503, 504):
-                          ultimo = f"HTTP {r.status_code}"
-                          time.sleep(2 * (i + 1))
+
+                      if r.status_code == 429:
+                          ra = r.headers.get("Retry-After")
+                          if ra and ra.strip().isdigit():
+                              espera = float(ra.strip())
+                          else:
+                              espera = RETRY_429_BASE * (2 ** i) + random.uniform(0, 8)
+                          log(f"    429 (tentativa {i+1}/{tentativas}): aguardando {espera:.0f}s...")
+                          time.sleep(espera)
+                          ultimo = "HTTP 429"
                           continue
+
+                      if r.status_code in (500, 502, 503, 504):
+                          espera = 15 * (i + 1) + random.uniform(0, 5)
+                          log(f"    HTTP {r.status_code}: aguardando {espera:.0f}s...")
+                          time.sleep(espera)
+                          ultimo = f"HTTP {r.status_code}"
+                          continue
+
                       return r.status_code, r.text
+
                   except Exception as e:
+                      espera = 6 * (i + 1) + random.uniform(0, 3)
+                      log(f"    Erro de rede: {str(e)[:80]} — aguardando {espera:.0f}s...")
+                      time.sleep(espera)
                       ultimo = str(e)
-                      time.sleep(2 * (i + 1))
+
+              if ultimo == "HTTP 429":
+                  return 429, ""
               return None, ultimo
 
 
@@ -272,8 +312,6 @@ jobs:
           # ----------------------------------------------------------------------------
           # Títulos
           # ----------------------------------------------------------------------------
-          # Prefixos de "lixo" do site. Palavras comuns (arc, inix) só são removidas quando
-          # seguidas de separador, para nunca cortar títulos reais como "Arcane" ou "Arctic".
           _PREFIXO = re.compile(
               r"^(?:(?i:marc[øo]s\s*x\s*7|vini\s*7x)"
               r"|(?:(?i:entre[ _-]nos|inix)|arc)(?=[\s\-_:|]))[\s\-_:|]*"
@@ -315,7 +353,7 @@ jobs:
               t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
               t = re.sub(r"\s+", " ", t).strip(" -–—|:")
 
-              for _ in range(3):  # prefixos empilhados
+              for _ in range(3):
                   novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
                   if novo == t:
                       break
@@ -326,12 +364,9 @@ jobs:
                   r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
                   "", t, flags=re.I)
               t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
-              # (o NFKC transforma "2ª" em "2a", por isso o [ªº°ao])
               t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
               t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
 
-              # Ano: "(2019)" no fim sempre sai; um ano solto no fim só sai se for o mesmo
-              # ano da URL (assim "Blade Runner 2049" e "Wonder Woman 1984" ficam intactos).
               ano_url = ano_da_url(url)
               for _ in range(3):
                   novo = re.sub(r"\s*\(\s*(?:19|20)\d{2}\s*\)\s*$", "", t)
@@ -395,7 +430,7 @@ jobs:
               if re.search(r"\.(?:ico|svg)$", caminho):
                   return True
               if re.search(r"[=/]s(?:16|24|32|48|64|72|96)(?:-[a-z]+)?(?:[/?]|$)", u):
-                  return True  # miniaturas minúsculas do Blogger (favicon / avatar)
+                  return True
               return False
 
 
@@ -442,8 +477,6 @@ jobs:
           # Vídeo
           # ----------------------------------------------------------------------------
           def extrair_link_estatico(html_text, soup=None):
-              """Mesma regra de antes (contentUrl do JSON-LD, senão 1º link que bate), para não
-              gerar duplicados nos arquivos que já existem. <video>/<source> só como último recurso."""
               soup = soup or BeautifulSoup(html_text, "html.parser")
               for ld in ler_ld(soup):
                   v = ld.get("contentUrl")
@@ -531,8 +564,8 @@ jobs:
           # ----------------------------------------------------------------------------
           # Índice de vídeos já existentes (deduplicação)
           # ----------------------------------------------------------------------------
-          INDICE = {}        # link  -> Path
-          LINK_DO_ARQ = {}   # Path  -> link
+          INDICE = {}
+          LINK_DO_ARQ = {}
 
 
           def construir_indice():
@@ -566,7 +599,6 @@ jobs:
 
 
           def nome_ok(nome_atual, stem):
-              """True se o arquivo já tem o nome calculado (ou o nome + sufixo de colisão _2, _3...)."""
               if nome_atual == stem + ".html":
                   return True
               return nome_atual.startswith(stem + "_") and bool(
@@ -574,7 +606,6 @@ jobs:
 
 
           def escolher_nome(stem, link):
-              """Nunca sobrescreve o arquivo de OUTRO vídeo: se o nome já é de outro link, usa _2, _3..."""
               i = 1
               while True:
                   nome = f"{stem}.html" if i == 1 else f"{stem}_{i}.html"
@@ -595,7 +626,6 @@ jobs:
 
 
           def checar_defeitos(arquivo):
-              """Retorna dict: n=nome quebrado, c=capa quebrada, f=formato antigo (src solto no HTML)."""
               d = {"n": True, "c": True, "f": True, "nome": "", "capa": ""}
               try:
                   conteudo = Path(arquivo).read_text(encoding="utf-8")
@@ -624,12 +654,10 @@ jobs:
 
 
           def upsert(stem, nome_json, link, capa, modo, ind="    "):
-              """Cria ou conserta o arquivo de um vídeo. Retorna:
-              novo | corrigido | perfeito | ignorado | pulado | sem_link"""
               existente = INDICE.get(link) if link else None
               if existente is not None and not existente.exists():
                   existente = None
-              if not link:  # sem link novo: ainda dá para consertar nome/capa de um arquivo já existente
+              if not link:
                   existente = buscar_por_stem(stem)
                   if existente is None:
                       return "sem_link"
@@ -665,7 +693,7 @@ jobs:
                   return "corrigido"
 
               destino = Path(escolher_nome(stem, link))
-              if destino.exists():  # arquivo sem contentUrl (quebrado) ocupando o nome
+              if destino.exists():
                   if modo == "apenas_baixar":
                       log(f"{ind}(Arquivo quebrado {destino.name}). Modo Apenas Baixar: ignorando.")
                       return "ignorado"
@@ -683,7 +711,6 @@ jobs:
 
 
           def registrar_erro(erros, url, arq_descartados, maximo=3):
-              """Conta falhas por URL; após `maximo` falhas descarta para a fila não travar. True se descartou."""
               erros[url] = erros.get(url, 0) + 1
               if erros[url] >= maximo:
                   anexar_linha(arq_descartados, url)
@@ -702,14 +729,12 @@ jobs:
           from playwright.async_api import async_playwright
 
           ARQ_FILA        = Path("filmes_fila.txt")
-          ARQ_FEITAS      = Path("filmes_feitos.txt")        # passada de DOWNLOAD concluída
-          ARQ_CONSERTADOS = Path("filmes_consertados.txt")   # passada de CONSERTO concluída
+          ARQ_FEITAS      = Path("filmes_feitos.txt")
+          ARQ_CONSERTADOS = Path("filmes_consertados.txt")
           ARQ_PENDENTES   = Path("filmes_pendentes.json")
           ARQ_DESCARTADOS = Path("filmes_descartados.txt")
           ARQ_ERROS       = Path("filmes_erros.json")
 
-          # 'apenas_consertar' usa a sua própria lista de progresso. Assim rodar o modo de conserto
-          # nunca faz o robô "achar" que os filmes já foram baixados.
           ARQ_PROGRESSO = ARQ_CONSERTADOS if MODO == "apenas_consertar" else ARQ_FEITAS
 
 
@@ -734,10 +759,12 @@ jobs:
 
 
           async def processar_filme(ctx, url):
-              """Retorna (status, info). status:
-              serie | descartar | erro_rede | sem_link | novo | corrigido | perfeito | ignorado | pulado"""
               log(f"\n--> Verificando: {url}")
               status, texto = await asyncio.to_thread(http_get, url)
+
+              if status == 429:
+                  log("    Rate-limit (429) — vou esperar antes de continuar.")
+                  return "rate_limit", None
               if status is None:
                   log(f"    Falha de rede: {texto}")
                   return "erro_rede", None
@@ -813,12 +840,25 @@ jobs:
                       if tempo_esgotado():
                           log("\n⏱️ Tempo máximo da run atingido: parando e salvando o progresso.")
                           break
+
+                      # --- pausa entre requisições (não espera antes do primeiro) ---
+                      if i > 1:
+                          espera = DELAY_ENTRE + random.uniform(0, DELAY_JITTER)
+                          log(f"\n    ⏳ aguardando {espera:.1f}s entre filmes...")
+                          await asyncio.sleep(espera)
+
                       log(f"[{i}/{len(lote)}]")
                       try:
                           status, info = await processar_filme(ctx, url)
                       except Exception as e:
                           log(f"    Erro em {url}: {e}")
                           status, info = "erro", None
+
+                      if status == "rate_limit":
+                          log("    ⏸️ rate-limit: pausa extra de 60s.")
+                          await asyncio.sleep(60 + random.uniform(0, 15))
+                          # não marca como feito — ele volta na próxima run
+                          continue
 
                       if status in ("erro_rede", "erro"):
                           erros_desta_run.append(url)
@@ -849,12 +889,21 @@ jobs:
                       for item in anteriores:
                           if tempo_esgotado():
                               break
+
+                          espera = DELAY_ENTRE + random.uniform(0, DELAY_JITTER)
+                          log(f"\n    ⏳ aguardando {espera:.1f}s antes da retentativa...")
+                          await asyncio.sleep(espera)
+
                           log(f"--> Tentativa {item.get('tentativas', 1) + 1}/{MAX_TENTATIVAS}: {item['arquivo']}")
                           try:
                               status, info = await processar_filme(ctx, item["url"])
                           except Exception as e:
                               log(f"    Erro: {e}")
                               status, info = "erro", None
+
+                          if status == "rate_limit":
+                              log("    (rate-limit: fica para a próxima run.)")
+                              continue
                           if status == "sem_link":
                               item["tentativas"] = item.get("tentativas", 1) + 1
                               if item["tentativas"] >= MAX_TENTATIVAS:
@@ -862,7 +911,7 @@ jobs:
                                   anexar_linha(ARQ_DESCARTADOS, item["url"])
                                   pendentes[:] = [p for p in pendentes if p["arquivo"] != item["arquivo"]]
                           elif status in ("erro", "erro_rede"):
-                              pass  # mantém como está
+                              pass
                           else:
                               pendentes[:] = [p for p in pendentes if p["arquivo"] != item["arquivo"]]
 
@@ -915,7 +964,9 @@ jobs:
           REPO: ${{ github.repository }}
           LOTE_IN: ${{ inputs.lote || '100' }}
           MODO_IN: ${{ inputs.modo || 'baixar_e_consertar' }}
-          TEMPO_IN: ${{ inputs.tempo_max_min || '40' }}
+          TEMPO_IN: ${{ inputs.tempo_max_min || '240' }}
+          DELAY_IN: ${{ inputs.delay_entre_seg || '12' }}
+          RETRY429_IN: ${{ inputs.retry_429_seg || '30' }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "PAT_CHAIN não configurado: sem auto-chain."; exit 0; fi
           FALTAM=$(cat /tmp/faltam.txt 2>/dev/null || echo 0)
@@ -933,4 +984,5 @@ jobs:
           sleep 30
           gh workflow run "Filmes.yml" --repo "$REPO" --ref main \
             -f auto_run=true -f lote="$LOTE_IN" -f reprocessar_tudo=false \
-            -f modo="$MODO_IN" -f tempo_max_min="$TEMPO_IN"
+            -f modo="$MODO_IN" -f tempo_max_min="$TEMPO_IN" \
+            -f delay_entre_seg="$DELAY_IN" -f retry_429_seg="$RETRY429_IN"
