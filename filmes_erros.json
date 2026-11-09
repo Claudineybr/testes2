@@ -338,31 +338,143 @@
       "tipo": "html_invalido",
       "url": "https://www.vini7xgrave.site/2025/03/armadilha-em-alto-mar-2024.html",
       "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:30:00+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/chapolin-colorado-1973.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:32:02+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/deu-louca-na-branca-de-neve-2009.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:47:53+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/03/django-2012.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 4
+    },
+    {
+      "quando": "2026-11-09T20:47:53+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/03/django-2012.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-09T20:52:33+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/eu-vi-o-brilho-na-tv-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T21:39:08+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2024/10/inix-minority-report-nova-lei-14.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T21:46:03+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-saga-x-men.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T21:49:10+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-vida-secreta-de-zoe-2014.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T21:58:29+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/02/apartamento-7a.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 4
+    },
+    {
+      "quando": "2026-11-09T22:09:15+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-carma-de-um-assassino-2018.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:09:58+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-espirito-das-trevas-2022.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:11:14+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-ultimo-desafio-2013.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:13:00+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/os-vingadores-avengers.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:16:48+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/quadrilogia-carga-explosiva.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:19:12+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/radar-as-aventuras-do-cao-bionico.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:24:52+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/vozes-da-escuridao-2016.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:38:45+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/alice-no-pais-das-trevas-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T22:39:21+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/aquelas-que-voces-nao-queimaram.html",
+      "detalhe": "página de erro/bloqueio"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 150,
-      "ok": 93,
-      "429": 57,
+      "requisicoes": 122,
+      "ok": 92,
+      "429": 30,
       "5xx": 0,
-      "retries": 56,
-      "falhas_definitivas": 1,
-      "html_invalido": 18,
+      "retries": 28,
+      "falhas_definitivas": 2,
+      "html_invalido": 15,
       "serie_inconsistente": 0,
       "conflitos": 0,
       "robo": "filmes",
-      "quando": "2026-11-09T20:19:16+00:00",
-      "duracao_min": 197.0
+      "quando": "2026-11-09T22:39:59+00:00",
+      "duracao_min": 139.4
     },
     "acumulado": {
-      "requisicoes": 289,
-      "ok": 120,
-      "429": 169,
+      "requisicoes": 411,
+      "ok": 212,
+      "429": 199,
       "5xx": 0,
-      "retries": 153,
-      "falhas_definitivas": 16,
-      "html_invalido": 19,
+      "retries": 181,
+      "falhas_definitivas": 18,
+      "html_invalido": 34,
       "serie_inconsistente": 0,
       "conflitos": 0
     }
