@@ -1,0 +1,226 @@
+name: Reparar Dados (rodar UMA vez)
+
+on:
+  workflow_dispatch:
+    inputs:
+      aplicar:
+        description: 'Aplicar de verdade? (desmarcado = só mostra o que faria, sem mudar nada)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reparar-dados
+  cancel-in-progress: false
+
+jobs:
+  reparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v5
+
+      - name: Reparar
+        env:
+          APLICAR: ${{ inputs.aplicar == true || inputs.aplicar == 'true' }}
+        run: |
+          cat > /tmp/reparar_repo.py << 'PYEOF'
+          #!/usr/bin/env python3
+          """Reparo de dados do catálogo. Uso:  python3 reparar_repo.py [--aplicar] [pasta_do_repo]
+          Sem --aplicar só MOSTRA o que faria (dry-run). Faz, nesta ordem:
+            1. Into the Badlands: t2eN_2 (N=1..10) e t2e11..16 são na verdade a TEMPORADA 3 -> viram t3e1..16.
+            2. Marília Mendonça: junta o conjunto sem link (null) com o conjunto "_2026_" (com link) num só: *_t1eN.
+            3. Limpa \U0001F47E / vini7x / @vini7xg dos TÍTULOS (name, description, <title>, title="") de todos os .html e .json.
+               Links (contentUrl/embedUrl/src/base64) NUNCA são tocados.
+            4. Renomeia arquivos cujo NOME tem lixo do site (vini7x...). 'baila_vini_2025' é filme real e fica.
+            5. Relatório (sem alterar): arquivos sem link e links duplicados."""
+          import re, sys, json, base64, glob, os, unicodedata
+          from pathlib import Path
+
+          APLICAR = "--aplicar" in sys.argv
+          args = [a for a in sys.argv[1:] if not a.startswith("--")]
+          ROOT = Path(args[0] if args else ".").resolve()
+          os.chdir(ROOT)
+          LIXO = re.compile(r"\U0001F47E+\ufe0f?|(?:\bdo\s+)?@?vini\s*7x\w*", re.I)
+
+
+          def limpar(t):
+              t = unicodedata.normalize("NFKC", t)   # 𝑽iNi𝟕x -> ViNi7x
+              t = LIXO.sub(" ", t)
+              t = re.sub(r"\s+", " ", t)
+              t = re.sub(r"(?:\s*[-–—|:]\s*){2,}", " - ", t)
+              return t.strip(" -–—|:")
+
+
+          def limpar_campo(m):
+              pre, txt, pos = m.group(1), m.group(2), m.group(3)
+              return pre + limpar(txt) + pos
+
+
+          CAMPOS = [  # (regex, só toca em títulos; nunca em URLs)
+              re.compile(r'("name":\s*")([^"]*)(")'),
+              re.compile(r'("description":\s*"Assista )([^"]*)(")'),
+              re.compile(r"(<title>)([^<]*)(</title>)"),
+              re.compile(r'(<video[^>]*\btitle=")([^"]*)(")'),
+          ]
+
+
+          def link_do(t):
+              m = re.search(r'"contentUrl":\s*"([^"]+)"', t)
+              if m:
+                  return m.group(1)
+              m = re.search(r'atob\("([^"]+)"\)', t)
+              return base64.b64decode(m.group(1)).decode() if m else None
+
+
+          def limpar_html(t):
+              for rx in CAMPOS:
+                  t = rx.sub(limpar_campo, t)
+              return t
+
+
+          acoes = []
+          def fazer(msg, fn=None):
+              acoes.append(msg)
+              print("  " + msg)
+              if APLICAR and fn:
+                  fn()
+
+
+          def renomear(a, b, trocar=lambda t: t):
+              t = Path(a).read_text(encoding="utf-8")
+              t = trocar(t)
+              Path(b).write_text(t, encoding="utf-8")
+              if a != b:
+                  Path(a).unlink()
+
+
+          # ---------------------------------------------------------------- 1. Badlands
+          print("\n[1] Into the Badlands (T3 mapeada como T2)")
+          S = "into_the_badlands"
+          for n in range(1, 17):
+              origem = f"{S}_t2e{n}_2.html" if n <= 10 else f"{S}_t2e{n}.html"
+              destino = f"{S}_t3e{n}.html"
+              if Path(origem).exists() and not Path(destino).exists():
+                  # confere: o vídeo tem que ser da temporada 3 (…/3xN.mp4) antes de mover
+                  lk = link_do(Path(origem).read_text(encoding="utf-8")) or ""
+                  if not re.search(rf"/3x0?{n}\.mp4", lk):
+                      print(f"  ⚠️ {origem}: link '{lk[-30:]}' não parece T3E{n}; NÃO movido")
+                      continue
+                  fazer(f"{origem} -> {destino}", lambda o=origem, d=destino, n=n: renomear(
+                      o, d, lambda t: re.sub(r"T2E(\d+)", r"T3E\1", t).replace(f"{S}_t2e{n}_2.html", d).replace(f"{S}_t2e{n}.html", d)))
+          for n in range(1, 11):  # sobras
+              pass
+
+          # ---------------------------------------------------------------- 2. Marília
+          print("\n[2] Marília Mendonça – Sentimento Louco")
+          M, M26 = "marilia_mendonca_sentimento_louco", "marilia_mendonca_sentimento_louco_2026"
+          for n in range(1, 5):
+              novo, velho = f"{M26}_t1e{n}.html", f"{M}_t1e{n}.html"
+              if Path(novo).exists():
+                  def mover(novo=novo, velho=velho, n=n):
+                      renomear(novo, velho, lambda t: t.replace(f"{M26}_t1e{n}.html", velho)
+                               .replace("Sentimento Louco 2026", "Sentimento Louco"))
+                  fazer(f"{novo} (com link) substitui {velho} (sem link)", mover)
+
+          # ---------------------------------------------------------------- 3. Títulos
+          print("\n[3] Limpeza de \U0001F47E / vini7x nos títulos")
+          alterados = 0
+          for f in sorted(glob.glob("*.html")):
+              t = Path(f).read_text(encoding="utf-8", errors="ignore")
+              if "\U0001F47E" not in t and not re.search(r"vini\s*7x", t, re.I):
+                  continue
+              novo = limpar_html(t)
+              if novo != t:
+                  assert link_do(t) == link_do(novo), f"link mudou em {f}!"
+                  alterados += 1
+                  if APLICAR:
+                      Path(f).write_text(novo, encoding="utf-8")
+          print(f"  {alterados} arquivos .html com título limpo")
+          for f in glob.glob("*.json"):
+              t = Path(f).read_text(encoding="utf-8", errors="ignore")
+              if "\U0001F47E" in t:
+                  novo = re.sub(r'("nome_json":\s*")([^"]*)(")', limpar_campo, t)
+                  print(f"  {f}: \U0001F47E removido dos nomes")
+                  if APLICAR:
+                      Path(f).write_text(novo, encoding="utf-8")
+
+          # ---------------------------------------------------------------- 4. Nomes de arquivo
+          print("\n[4] Nomes de arquivo com lixo do site")
+
+          def slug_do_titulo(nome):
+              nome = nome.replace("🍿Clau", "")
+              nome = re.sub(r"\\u0026|&amp;|&", " ", nome)
+              nome = limpar(nome)
+              m = re.search(r"\((\d{4})\)\s*$", nome)
+              ano = m.group(1) if m else None
+              if m:
+                  nome = nome[:m.start()]
+              t = unicodedata.normalize("NFKD", nome)
+              t = "".join(c for c in t if not unicodedata.combining(c)).lower()
+              t = re.sub(r"[^a-z0-9]+", "_", t).strip("_")
+              if ano and not t.endswith(ano):
+                  t += "_" + ano
+              return t
+
+
+          for f in sorted(glob.glob("*vini7x*.html")):
+              t = Path(f).read_text(encoding="utf-8", errors="ignore")
+              m = re.search(r'"name":\s*"([^"]*)"', t)
+              if not m:
+                  continue
+              dest = slug_do_titulo(m.group(1)) + ".html"
+              if dest == f:
+                  continue
+              if Path(dest).exists():
+                  if link_do(Path(dest).read_text(encoding="utf-8", errors="ignore")) == link_do(t):
+                      fazer(f"{f} é duplicata exata (mesmo vídeo) de {dest}: removido", lambda f=f: Path(f).unlink())
+                  else:
+                      print(f"  ⚠️ {f} -> {dest} JÁ EXISTE com OUTRO vídeo: nada feito (conferir à mão)")
+                  continue
+              fazer(f"{f} -> {dest}", lambda f=f, dest=dest: renomear(f, dest, lambda t, f=f, dest=dest: limpar_html(t.replace(f, dest))))
+
+          # ---------------------------------------------------------------- 5. Relatório
+          print("\n[5] Relatório (nada alterado)")
+          sem_link, por_link = [], {}
+          for f in sorted(glob.glob("*.html")):
+              t = Path(f).read_text(encoding="utf-8", errors="ignore")
+              lk = link_do(t)
+              if not lk:
+                  sem_link.append(f)
+              else:
+                  por_link.setdefault(lk, []).append(f)
+          dups = {k: v for k, v in por_link.items() if len(v) > 1}
+          print(f"  sem link (null): {len(sem_link)}  | links usados por 2+ arquivos: {len(dups)}")
+          Path("relatorio_sem_link.txt").write_text("\n".join(sem_link) + "\n", encoding="utf-8") if APLICAR else None
+          Path("relatorio_links_duplicados.txt").write_text(
+              "\n".join(f"{k}\n    " + "\n    ".join(v) for k, v in dups.items()) + "\n", encoding="utf-8") if APLICAR else None
+          print("\n" + ("APLICADO." if APLICAR else "DRY-RUN: nada foi alterado. Use --aplicar."))
+
+          PYEOF
+          if [ "$APLICAR" = "true" ]; then
+            python3 /tmp/reparar_repo.py --aplicar .
+            [ -f series_totais.json ] || echo '{"into_the_badlands": {"1": 6, "2": 10, "3": 16}}' > series_totais.json
+          else
+            python3 /tmp/reparar_repo.py .
+          fi
+
+      - name: Salvar
+        if: ${{ inputs.aplicar == true || inputs.aplicar == 'true' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git reset .github/ 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Nada para salvar."; exit 0; fi
+          git commit -m "fix: reparo de dados (Badlands T3, Marília, títulos sem lixo do site)"
+          for i in 1 2 3 4 5; do
+            git push origin HEAD:main && exit 0
+            git pull origin main --no-rebase -X ours --no-edit
+            sleep 5
+          done
+          exit 1

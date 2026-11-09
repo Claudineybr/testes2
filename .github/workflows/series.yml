@@ -65,9 +65,14 @@ jobs:
           cat > /tmp/mega_series.py << 'PYEOF'
           import requests, sys, os, json, time, re, random, datetime, email.utils
           from pathlib import Path
+          from html import escape as _esc
 
           BASE_URL = "https://www.vini7xgrave.site"
-          HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+          HEADERS = {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
+          }
 
           # ----------------------------------------------------------------------------
           # Configuração de ritmo / rate limit (tudo ajustável por variável de ambiente)
@@ -75,8 +80,8 @@ jobs:
           DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 30)    # pausa entre um item e outro
           DELAY_JITTER    = float(os.environ.get("DELAY_JITTER_SEG") or 8)
           RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 60)      # base do backoff exponencial
-          RETRY_TETO      = float(os.environ.get("RETRY_TETO_SEG") or 600)    # nenhuma espera passa disto
-          HTTP_TENTATIVAS = int(os.environ.get("HTTP_TENTATIVAS") or 5)
+          RETRY_TETO      = float(os.environ.get("RETRY_TETO_SEG") or 300)    # nenhuma espera passa disto
+          HTTP_TENTATIVAS = int(os.environ.get("HTTP_TENTATIVAS") or 4)
           INTERVALO_MIN   = float(os.environ.get("INTERVALO_MIN_SEG") or 2)   # intervalo mínimo GLOBAL entre requisições
 
           METRICAS = {"requisicoes": 0, "ok": 0, "429": 0, "5xx": 0, "retries": 0,
@@ -270,7 +275,14 @@ jobs:
                           u = link.split("?")[0].strip()
                           if u and u not in vistos:
                               vistos.add(u)
-                              entradas.append({"url": u, "tipo": classificar_entrada(e)})
+                              corpo = ""
+                              for campo in ("content", "summary"):
+                                  v = e.get(campo)
+                                  if isinstance(v, dict) and v.get("$t"):
+                                      corpo = v["$t"]
+                                      break
+                              entradas.append({"url": u, "tipo": classificar_entrada(e),
+                                               "titulo": (e.get("title") or {}).get("$t", "") or "", "conteudo": corpo})
                   start += 150
                   if len(entries) < 150:
                       break
@@ -286,6 +298,22 @@ jobs:
               """Só as URLs (usado pelos robôs para criar a fila quando ela ainda não existe)."""
               entradas, completo = buscar_entradas_feed()
               return [e["url"] for e in entradas], completo
+
+
+          def indice_do_feed():
+              """url -> entrada do feed (título + corpo do post). Poucas requisições (≈ 1 por 150 posts) em vez de 1 por post:
+              é isto que evita o 429 nas páginas individuais. Se o feed falhar, devolve o que veio (ou {}) e o robô busca a página."""
+              if (os.environ.get("USAR_FEED") or "1") == "0":
+                  return {}
+              entradas, completo = buscar_entradas_feed()
+              log(f"Feed: {len(entradas)} posts em memória" + ("" if completo else " (INCOMPLETO: o resto vem das páginas)"))
+              return {e["url"]: e for e in entradas}
+
+
+          def pagina_do_feed(ent):
+              """Monta uma 'página' (título + corpo do post, com o JSON-LD) para os extratores de sempre usarem."""
+              t = _esc(ent.get("titulo", ""))
+              return f"<html><head><title>{t}</title></head><body><h1>{t}</h1>{ent.get('conteudo', '')}</body></html>"
 
 
           import asyncio, re, json, base64, unicodedata
@@ -495,7 +523,8 @@ jobs:
 
           def tirar_lixo_do_site(t):
               """Remove emoji-alien, 'vini7x', 'do vini7x', 'ViNi7xemoji-alien', '@vini7xg'... que o site coloca nos títulos."""
-              t = _LIXO_SITE.sub(" ", str(t or ""))
+              t = unicodedata.normalize("NFKC", str(t or ""))   # "𝑽iNi𝟕x" (letras matemáticas do site) vira "ViNi7x"
+              t = _LIXO_SITE.sub(" ", t)
               t = re.sub(r"\s+", " ", t)
               t = re.sub(r"(?:\s*[-–—|:]\s*){2,}", " - ", t)   # "A - - B" (sobrou separador duplo) -> "A - B"
               return t.strip(" -–—|:")
@@ -1026,6 +1055,7 @@ jobs:
           ARQ_TOTAIS      = Path("series_totais.json")       # {"slug": {"1": 6, "2": 10, "3": 16}}  (opcional)
           ARQ_INCONSIST   = Path("series_inconsistentes.txt")
 
+          FEED_POSTS = {}
           ARQ_PROGRESSO = ARQ_CONSERTADAS if MODO == "apenas_consertar" else ARQ_FEITAS
 
 
@@ -1195,36 +1225,46 @@ jobs:
           async def processar_serie(ctx, url_serie, pendentes, totais):
               """Retorna: filme | descartar | erro_rede | rate_limit | interrompido | inconsistente | ok"""
               log(f"\n--> Verificando série: {url_serie}")
-              status, texto = await asyncio.to_thread(http_get, url_serie)
-              if status == 429:
-                  return "rate_limit"
-              if status is None:
-                  log(f"    Falha de rede: {texto}")
-                  return "erro_rede"
-              if status in (404, 410):
-                  log(f"    (Página não existe mais: HTTP {status}. Pulando...)")
-                  return "descartar"
-              if status != 200:
-                  log(f"    HTTP {status}. Tentaremos de novo depois.")
-                  evento("http_status", url_serie, status=status)
-                  return "erro_rede"
-              if not validar_html(texto, url_serie):
-                  return "erro_rede"          # resposta de erro/truncada: NÃO classifica, NÃO salva
+              soup = None
+              ent = FEED_POSTS.get(url_serie)
+              if ent:   # post vindo do feed: sem requisição à página da série (os episódios ainda são buscados um a um)
+                  texto_f = pagina_do_feed(ent)
+                  soup_f = BeautifulSoup(texto_f, "html.parser")
+                  if eh_serie(soup_f) and extrair_episodios(soup_f, 1, url_serie):
+                      soup, texto = soup_f, texto_f
+                      log("    (Dados do feed: sem requisição à página da série.)")
 
-              soup = BeautifulSoup(texto, "html.parser")
-              if not eh_serie(soup):
-                  sem_pistas = not re.search(r"epis[oó]dio|temporada", texto, re.I)
-                  if extrair_link_estatico(texto, soup) and sem_pistas:
-                      log("    (É FILME. Pulando...)")
-                      return "filme"
-                  html_r = await renderizar(ctx, url_serie)
-                  if not html_r or not validar_html(html_r, url_serie):
+              if soup is None:
+                  status, texto = await asyncio.to_thread(http_get, url_serie)
+                  if status == 429:
+                      return "rate_limit"
+                  if status is None:
+                      log(f"    Falha de rede: {texto}")
                       return "erro_rede"
-                  soup_r = BeautifulSoup(html_r, "html.parser")
-                  if not eh_serie(soup_r):
-                      log("    (É FILME. Pulando...)")
-                      return "filme"
-                  soup, texto = soup_r, html_r
+                  if status in (404, 410):
+                      log(f"    (Página não existe mais: HTTP {status}. Pulando...)")
+                      return "descartar"
+                  if status != 200:
+                      log(f"    HTTP {status}. Tentaremos de novo depois.")
+                      evento("http_status", url_serie, status=status)
+                      return "erro_rede"
+                  if not validar_html(texto, url_serie):
+                      return "erro_rede"          # resposta de erro/truncada: NÃO classifica, NÃO salva
+
+                  soup = BeautifulSoup(texto, "html.parser")
+                  if not eh_serie(soup):
+                      sem_pistas = not re.search(r"epis[oó]dio|temporada", texto, re.I)
+                      if extrair_link_estatico(texto, soup) and sem_pistas:
+                          log("    (É FILME. Pulando...)")
+                          return "filme"
+                      html_r = await renderizar(ctx, url_serie)
+                      if not html_r or not validar_html(html_r, url_serie):
+                          return "erro_rede"
+                      soup_r = BeautifulSoup(html_r, "html.parser")
+                      if not eh_serie(soup_r):
+                          log("    (É FILME. Pulando...)")
+                          return "filme"
+                      soup, texto = soup_r, html_r
 
               titulo, _ = escolher_titulo(soup, url_serie, serie=True)
               brutos = candidatos_titulo(soup)
@@ -1287,6 +1327,7 @@ jobs:
 
           async def main():
               construir_indice()
+              FEED_POSTS.update(indice_do_feed())
               if not ARQ_FILA.exists():
                   log("Criando fila de séries...")
                   urls, _ = buscar_urls_feed()
