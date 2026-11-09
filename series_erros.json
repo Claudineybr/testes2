@@ -1,1 +1,108 @@
-{}
+{
+  "contagem": {},
+  "eventos": [
+    {
+      "quando": "2026-11-09T11:27:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-crystal-lake-2026.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T11:27:34+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-crystal-lake-2026.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-09T11:46:00+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/10/inix-marilia-mendonca-sentimento-louco_01688361509.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T11:46:00+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/10/inix-marilia-mendonca-sentimento-louco_01688361509.html",
+      "serie": "https://www.vini7xgrave.site/2026/10/inix-marilia-mendonca-sentimento-louco.html"
+    },
+    {
+      "quando": "2026-11-09T11:46:00+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-marilia-mendonca-sentimento-louco.html",
+      "seguidos": 2
+    },
+    {
+      "quando": "2026-11-09T12:03:59+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-into-badlands-2015_0835136260.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T12:03:59+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-into-badlands-2015_0835136260.html",
+      "seguidos": 3
+    },
+    {
+      "quando": "2026-11-09T12:22:46+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/09/inix-cyberpunk-mercenarios-2022.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T12:22:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/09/inix-cyberpunk-mercenarios-2022.html",
+      "seguidos": 4
+    },
+    {
+      "quando": "2026-11-09T12:42:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/09/inix-assassinato-na-casa-branca-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T12:42:48+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/09/inix-assassinato-na-casa-branca-2025.html",
+      "seguidos": 5
+    }
+  ],
+  "metricas": {
+    "ultima_run": {
+      "requisicoes": 27,
+      "ok": 1,
+      "429": 26,
+      "5xx": 0,
+      "retries": 21,
+      "falhas_definitivas": 5,
+      "html_invalido": 0,
+      "serie_inconsistente": 0,
+      "conflitos": 0,
+      "robo": "series",
+      "quando": "2026-11-09T12:42:48+00:00",
+      "duracao_min": 90.6
+    },
+    "acumulado": {
+      "requisicoes": 27,
+      "ok": 1,
+      "429": 26,
+      "5xx": 0,
+      "retries": 21,
+      "falhas_definitivas": 5,
+      "html_invalido": 0,
+      "serie_inconsistente": 0,
+      "conflitos": 0
+    }
+  }
+}
