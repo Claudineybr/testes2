@@ -23,10 +23,28 @@
 <title>O Chamado do Mal [2018] ‧ Terror/Suspense - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/locfilmes/O-Chamado-do-Mal.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimZBR4_oAIe5ZYkztxMpZwuMyyXnzPjnc04ufq4RszmdNq5dDVVQP4ZnDiXthvlxPhHsQSs9HeRGp-Zd5rLmxOwDFWBTQGa0svJaRIKR1Enix22twy1YbRlqfZW0VN-2r55ZA5d1Xkr7AGIQ01S-oUuwANjHiAxPidklJUVKobyHLnrV2cCco9fXn3o5o/w1280-h720-p-k-no-nu/images%20%288%29.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimZBR4_oAIe5ZYkztxMpZwuMyyXnzPjnc04ufq4RszmdNq5dDVVQP4ZnDiXthvlxPhHsQSs9HeRGp-Zd5rLmxOwDFWBTQGa0svJaRIKR1Enix22twy1YbRlqfZW0VN-2r55ZA5d1Xkr7AGIQ01S-oUuwANjHiAxPidklJUVKobyHLnrV2cCco9fXn3o5o/w1280-h720-p-k-no-nu/images%20%288%29.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2xvY2ZpbG1lcy9PLUNoYW1hZG8tZG8tTWFsLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
