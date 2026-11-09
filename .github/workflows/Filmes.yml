@@ -37,12 +37,12 @@ on:
       delay_entre_seg:
         description: 'Segundos de espera entre um filme e outro'
         required: false
-        default: '12'
+        default: '30'
         type: string
       retry_429_seg:
         description: 'Base do backoff quando o site devolve 429'
         required: false
-        default: '30'
+        default: '60'
         type: string
 
 permissions:
@@ -77,8 +77,8 @@ jobs:
           LOTE_SIZE: ${{ inputs.lote || '100' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
           TEMPO_MAX_MIN: ${{ inputs.tempo_max_min || '240' }}
-          DELAY_ENTRE_SEG: ${{ inputs.delay_entre_seg || '12' }}
-          RETRY_429_SEG: ${{ inputs.retry_429_seg || '30' }}
+          DELAY_ENTRE_SEG: ${{ inputs.delay_entre_seg || '30' }}
+          RETRY_429_SEG: ${{ inputs.retry_429_seg || '60' }}
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
           import requests, sys, os, json, time, random
@@ -167,9 +167,9 @@ jobs:
           T0 = time.time()
 
           # --- Ritmo anti-429 ----------------------------------------------------------
-          DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 12)   # pausa entre filmes
+          DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 30)   # pausa entre filmes
           DELAY_JITTER    = float(os.environ.get("DELAY_JITTER_SEG") or 8)   # variação aleatória
-          RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 30)     # base do backoff 429
+          RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 60)     # base do backoff 429
           HTTP_TENTATIVAS = int(os.environ.get("HTTP_TENTATIVAS") or 5)
 
 
@@ -413,6 +413,16 @@ jobs:
                   m = re.search(r"/([^/?#]+?)(?:\.html)?(?:[?#].*)?$", url or "")
                   s = re.sub(r"[^a-z0-9]+", "_", (m.group(1) if m else "").lower()).strip("_")
               return s or "sem_titulo"
+
+
+          def stem_pela_url(url):
+              """Tenta adivinhar o nome do arquivo só pela URL, sem acessar a rede."""
+              titulo = _titulo_pela_url(url)
+              ano = ano_da_url(url)
+              slug = fazer_slug(titulo, url)
+              if ano and not re.search(r"\d{4}", titulo):
+                  return f"{slug}_{ano}"
+              return slug
 
 
           # ----------------------------------------------------------------------------
@@ -760,6 +770,19 @@ jobs:
 
           async def processar_filme(ctx, url):
               log(f"\n--> Verificando: {url}")
+              
+              # --- ATALHO ANTI-DESPERDÍCIO ---
+              # Tenta adivinhar o arquivo e ver se ele já está perfeito. Se sim, pula a rede.
+              stem_estimado = stem_pela_url(url)
+              existente = buscar_por_stem(stem_estimado)
+              if existente:
+                  d = checar_defeitos(existente)
+                  renomear = not nome_ok(existente.name, stem_estimado)
+                  if not (renomear or d["n"] or d["c"] or d["f"]):
+                      log(f"    (Atalho) Já está perfeito: {existente.name}")
+                      return "perfeito", None
+              # -------------------------------
+              
               status, texto = await asyncio.to_thread(http_get, url)
 
               if status == 429:
@@ -965,8 +988,8 @@ jobs:
           LOTE_IN: ${{ inputs.lote || '100' }}
           MODO_IN: ${{ inputs.modo || 'baixar_e_consertar' }}
           TEMPO_IN: ${{ inputs.tempo_max_min || '240' }}
-          DELAY_IN: ${{ inputs.delay_entre_seg || '12' }}
-          RETRY429_IN: ${{ inputs.retry_429_seg || '30' }}
+          DELAY_IN: ${{ inputs.delay_entre_seg || '30' }}
+          RETRY429_IN: ${{ inputs.retry_429_seg || '60' }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "PAT_CHAIN não configurado: sem auto-chain."; exit 0; fi
           FALTAM=$(cat /tmp/faltam.txt 2>/dev/null || echo 0)
