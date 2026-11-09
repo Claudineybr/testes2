@@ -12,7 +12,7 @@
     "name": "As Tartarugas Ninja (2014) - 🍿Clau",
     "description": "Assista As Tartarugas Ninja (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrjp4XloLYrI3MhGmpPmXOieQ4Tl0KMBoK0OEVS0UMIdUOaE1LhGtU2YNK41u87oRyx0d6oxyO837uTJ5Zg9nowxnKidFOvEhu7b9U4XhFOz7rSI4gwSH79WsuInJZ7P_OGCbgoOAO8Chl55Y0N3wtQplY-bPwplfAVt8SgDZQ9lswFH4EVZ6f3kYzMzQ/w1280-h720-p-k-no-nu/images-36.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrjp4XloLYrI3MhGmpPmXOieQ4Tl0KMBoK0OEVS0UMIdUOaE1LhGtU2YNK41u87oRyx0d6oxyO837uTJ5Zg9nowxnKidFOvEhu7b9U4XhFOz7rSI4gwSH79WsuInJZ7P_OGCbgoOAO8Chl55Y0N3wtQplY-bPwplfAVt8SgDZQ9lswFH4EVZ6f3kYzMzQ/s320/images-36.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>As Tartarugas Ninja (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/As%20Tartarugas%20Ninja_2014_tt1291150.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrjp4XloLYrI3MhGmpPmXOieQ4Tl0KMBoK0OEVS0UMIdUOaE1LhGtU2YNK41u87oRyx0d6oxyO837uTJ5Zg9nowxnKidFOvEhu7b9U4XhFOz7rSI4gwSH79WsuInJZ7P_OGCbgoOAO8Chl55Y0N3wtQplY-bPwplfAVt8SgDZQ9lswFH4EVZ6f3kYzMzQ/w1280-h720-p-k-no-nu/images-36.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrjp4XloLYrI3MhGmpPmXOieQ4Tl0KMBoK0OEVS0UMIdUOaE1LhGtU2YNK41u87oRyx0d6oxyO837uTJ5Zg9nowxnKidFOvEhu7b9U4XhFOz7rSI4gwSH79WsuInJZ7P_OGCbgoOAO8Chl55Y0N3wtQplY-bPwplfAVt8SgDZQ9lswFH4EVZ6f3kYzMzQ/s320/images-36.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL0FzJTIwVGFydGFydWdhcyUyME5pbmphXzIwMTRfdHQxMjkxMTUwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

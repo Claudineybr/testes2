@@ -12,7 +12,7 @@
     "name": "A Origem (2010) - 🍿Clau",
     "description": "Assista A Origem (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcRRgdsggCJZfZW3OHwE0FxXtks_SAP6HxCJF0rHFQm4Gx93QkaYImu5HPdlleJzT2VKMS9jSgJUsEKEz5hABdcNs5L37Y_hT2TQ25yWi8g-C4IJKWK-zOXQZ7_slwPu6why1bbtGlPUf0owlAr_g81yEEafK9mPM2A3JBaf-oS9cEFOlXAF_wId5MJZE/w1280-h720-p-k-no-nu/qxTK2QBdK4quli74ELKteUrOR6Y.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_hh09LN19UY7Kxh6DFTZq6q4Brek-4rAT6Leil5JZYxa3IcYOngs1mLyk95lnmJ-370ifWkRGYXxwel3DlnPdexHJ7Rrm4TRBCOcTv6p_7_MTf-JtmJn0ZFzoiphzMyADaGeaCXnGkzpvK0U27sZZwcXFz5tdpYKBBBihtOF2aNyyGU133ljr9Goys5E/w1280-h720-p-k-no-nu/images-31.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Origem (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1375666.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcRRgdsggCJZfZW3OHwE0FxXtks_SAP6HxCJF0rHFQm4Gx93QkaYImu5HPdlleJzT2VKMS9jSgJUsEKEz5hABdcNs5L37Y_hT2TQ25yWi8g-C4IJKWK-zOXQZ7_slwPu6why1bbtGlPUf0owlAr_g81yEEafK9mPM2A3JBaf-oS9cEFOlXAF_wId5MJZE/w1280-h720-p-k-no-nu/qxTK2QBdK4quli74ELKteUrOR6Y.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_hh09LN19UY7Kxh6DFTZq6q4Brek-4rAT6Leil5JZYxa3IcYOngs1mLyk95lnmJ-370ifWkRGYXxwel3DlnPdexHJ7Rrm4TRBCOcTv6p_7_MTf-JtmJn0ZFzoiphzMyADaGeaCXnGkzpvK0U27sZZwcXFz5tdpYKBBBihtOF2aNyyGU133ljr9Goys5E/w1280-h720-p-k-no-nu/images-31.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTM3NTY2Ni5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
