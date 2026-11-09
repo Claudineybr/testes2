@@ -9,10 +9,10 @@
     "@type": "VideoObject",
     "@id": "https://api-pobreflix-filmes.pages.dev/big_bang_a_teoria_t1e2.html",
     "url": "https://api-pobreflix-filmes.pages.dev/big_bang_a_teoria_t1e2.html",
-    "name": "Big Bang: A Teoria - T1E2 - – O Paradigma da Grama Verde - 🍿Clau",
-    "description": "Assista Big Bang: A Teoria - T1E2 - – O Paradigma da Grama Verde - 🍿Clau",
+    "name": "Big Bang: A Teoria - T1E2 - O Paradigma da Grama Verde - 🍿Clau",
+    "description": "Assista Big Bang: A Teoria - T1E2 - O Paradigma da Grama Verde - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png"
+        "https://image.tmdb.org/t/p/original/zx5DJbzqhQFATMnQP763LBhsL8H.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -20,13 +20,31 @@
     "embedUrl": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/1418/1x2.mp4"
 }
 </script>
-<title>Big Bang: A Teoria - T1E2 - – O Paradigma da Grama Verde - 🍿Clau</title>
+<title>Big Bang: A Teoria - T1E2 - O Paradigma da Grama Verde - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/1418/1x2.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://image.tmdb.org/t/p/original/zx5DJbzqhQFATMnQP763LBhsL8H.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3NoZDEub25lcGxheWVyLnNpdGUveTQ1eTQ1Nnk0NXk1NGV5dGczNDV0NHJmd3NlcmRmd2U0cnRyZjM0dDY1NDM1cmVkc28vU0hEMS8xNDE4LzF4Mi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
