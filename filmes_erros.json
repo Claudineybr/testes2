@@ -216,31 +216,153 @@
       "tipo": "rate_limit",
       "url": "https://www.vini7xgrave.site/2024/10/inix-pets-em-acao-2024-comediaanimacao_30.html",
       "seguidos": 2
+    },
+    {
+      "quando": "2026-11-09T17:37:32+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2024/10/inix-animais-em-apuros_20.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 5
+    },
+    {
+      "quando": "2026-11-09T17:37:32+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2024/10/inix-animais-em-apuros_20.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-09T18:32:50+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-furia-de-becky-2023.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:33:29+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-maldicao-de-savannah-2021.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:36:24+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-saga-x-men.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:37:01+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-semente-do-mal-2023.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:46:06+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/advogado-do-diabo-1997.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:54:05+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/apartamento-7a.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T18:59:12+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/colega-monster-high.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:00:27+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/diabolica-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:07:38+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-carma-de-um-assassino-2018.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:33:12+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/radar-as-aventuras-do-cao-bionico.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:33:52+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/saga-mad-max.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:50:30+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/saga-missao-impossivel.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:51:48+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/shang-chi-e-lenda-dos-dez-aneis-2021.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:52:31+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/um-lobisomem-americano-1981.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T19:58:48+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/60-segundos-2000.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:02:26+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/a-mulher-do-pantano-2011.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:04:08+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/a-piramide-2014.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T20:17:34+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/armadilha-em-alto-mar-2024.html",
+      "detalhe": "página de erro/bloqueio"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 139,
-      "ok": 27,
-      "429": 112,
+      "requisicoes": 150,
+      "ok": 93,
+      "429": 57,
       "5xx": 0,
-      "retries": 97,
-      "falhas_definitivas": 15,
-      "html_invalido": 1,
+      "retries": 56,
+      "falhas_definitivas": 1,
+      "html_invalido": 18,
       "serie_inconsistente": 0,
       "conflitos": 0,
       "robo": "filmes",
-      "quando": "2026-11-09T17:00:49+00:00",
-      "duracao_min": 351.0
+      "quando": "2026-11-09T20:19:16+00:00",
+      "duracao_min": 197.0
     },
     "acumulado": {
-      "requisicoes": 139,
-      "ok": 27,
-      "429": 112,
+      "requisicoes": 289,
+      "ok": 120,
+      "429": 169,
       "5xx": 0,
-      "retries": 97,
-      "falhas_definitivas": 15,
-      "html_invalido": 1,
+      "retries": 153,
+      "falhas_definitivas": 16,
+      "html_invalido": 19,
       "serie_inconsistente": 0,
       "conflitos": 0
     }

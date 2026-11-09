@@ -23,10 +23,28 @@
 <title>Twisters (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0058.l1s0-cdn-3123123.com/twisters-620c7ae3/dubbed/1/a4b0cdbc-3a0c-4229-970c-b188bf20d24b/stream.mp4?type=movie&expires=1771024075&signature=435fe7ab30adf26f04fa7d2a8c345ea5c9bf9892cb3e68fdc79e22419b09cc84" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFV67hKeu1Ww3FccQeUP997pF64CkDjNfvcmJbQTTm2KK0P6R1msnQyG3IydCxMwPxZDUlIb1RSWN2NAnB2gNNWx-FA70Wy_8ENyMcUC7bi0Gttdl1UDTjsL3923g9hj9mMhA-a_yCQ-nPHQ89LngUMEwcutX71GswCKrKQyxPmVY4gh_vL2qT1D9hd4E/w1280-h720-p-k-no-nu/qmsDsg7uAIHppsMXAChKDRFZwKL.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFV67hKeu1Ww3FccQeUP997pF64CkDjNfvcmJbQTTm2KK0P6R1msnQyG3IydCxMwPxZDUlIb1RSWN2NAnB2gNNWx-FA70Wy_8ENyMcUC7bi0Gttdl1UDTjsL3923g9hj9mMhA-a_yCQ-nPHQ89LngUMEwcutX71GswCKrKQyxPmVY4gh_vL2qT1D9hd4E/w1280-h720-p-k-no-nu/qmsDsg7uAIHppsMXAChKDRFZwKL.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1OC5sMXMwLWNkbi0zMTIzMTIzLmNvbS90d2lzdGVycy02MjBjN2FlMy9kdWJiZWQvMS9hNGIwY2RiYy0zYTBjLTQyMjktOTcwYy1iMTg4YmYyMGQyNGIvc3RyZWFtLm1wND90eXBlPW1vdmllJmV4cGlyZXM9MTc3MTAyNDA3NSZzaWduYXR1cmU9NDM1ZmU3YWIzMGFkZjI2ZjA0ZmE3ZDJhOGMzNDVlYTVjOWJmOTg5MmNiM2U2OGZkYzc5ZTIyNDE5YjA5Y2M4NA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
