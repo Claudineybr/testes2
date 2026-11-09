@@ -12,7 +12,7 @@
     "name": "Obsessiva (2009) - 🍿Clau",
     "description": "Assista Obsessiva (2009) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sR_IwUI8QFBX2asDuVlqlMfkCekquHaZudBSxmoUKwKBY_GMjvmgCEWZbZ91D_QK8yCZ9Hrk0LtnqhgUN2T5ZL-a9Hib32JyljW5ff9Wwp5Dxe260vbLdBZ_IYUiRkxAesAfna_TM=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sB2iAHpc9RbD9c2NwfBQDC3o1WYGLfxmQP2C8tqrLWwGzq2Gz1J-R02X13WF3oC_pk0QI2DEtqPfyXO0S6fa7e8VSkaSlwCEDj9HZWX1F6sY6PbbpY2bEKUrbtyqN2scm30bsvcbY=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Obsessiva (2009) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1198138.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sR_IwUI8QFBX2asDuVlqlMfkCekquHaZudBSxmoUKwKBY_GMjvmgCEWZbZ91D_QK8yCZ9Hrk0LtnqhgUN2T5ZL-a9Hib32JyljW5ff9Wwp5Dxe260vbLdBZ_IYUiRkxAesAfna_TM=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sB2iAHpc9RbD9c2NwfBQDC3o1WYGLfxmQP2C8tqrLWwGzq2Gz1J-R02X13WF3oC_pk0QI2DEtqPfyXO0S6fa7e8VSkaSlwCEDj9HZWX1F6sY6PbbpY2bEKUrbtyqN2scm30bsvcbY=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTE5ODEzOC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

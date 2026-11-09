@@ -23,10 +23,28 @@
 <title>Escola de Espioes (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1731701.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxyTjjcmpUsEod-AvCFLRQltSv9vrRlhwRoatWNZweC5af36IdQjKVll2wvzjVv2p6uWdUOnQBjUXg6OS81T1k6i7q7hLut2-MErBvoo4tGCFfuBZEYSLuI9Gc9pgy_lGYosSYa1yCtRoDKyWeb34-7HWkUohSLJWTskTzavsYDSBTIqf_CtkydUtoDhnn/w1280-h720-p-k-no-nu/1000335386.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxyTjjcmpUsEod-AvCFLRQltSv9vrRlhwRoatWNZweC5af36IdQjKVll2wvzjVv2p6uWdUOnQBjUXg6OS81T1k6i7q7hLut2-MErBvoo4tGCFfuBZEYSLuI9Gc9pgy_lGYosSYa1yCtRoDKyWeb34-7HWkUohSLJWTskTzavsYDSBTIqf_CtkydUtoDhnn/w1280-h720-p-k-no-nu/1000335386.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTczMTcwMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

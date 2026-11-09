@@ -23,10 +23,28 @@
 <title>Os Estranhos: Capitulo Final (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt28682323.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOPQ_GxiklztOZQVHzpjzjbgkeFjE__OnTZY1xm-v87CZm6Jbuvy3t0moseyGt-oMeIai2ShVZKWpk1ofkuWJeS-o7f2qxFkYJpAGQ1wbx760VSTQmQ4gUlS9IyCThWZh5prPOQHP1S7De6-gEqJaqL2-nlyjSUtwwS3zwgtgS6Z8WVAPrbtQipHankgr9/w1280-h720-p-k-no-nu/1000300218.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOPQ_GxiklztOZQVHzpjzjbgkeFjE__OnTZY1xm-v87CZm6Jbuvy3t0moseyGt-oMeIai2ShVZKWpk1ofkuWJeS-o7f2qxFkYJpAGQ1wbx760VSTQmQ4gUlS9IyCThWZh5prPOQHP1S7De6-gEqJaqL2-nlyjSUtwwS3zwgtgS6Z8WVAPrbtQipHankgr9/w1280-h720-p-k-no-nu/1000300218.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjg2ODIzMjMubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

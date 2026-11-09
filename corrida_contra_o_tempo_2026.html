@@ -12,7 +12,7 @@
     "name": "Corrida Contra o Tempo (2026) - 🍿Clau",
     "description": "Assista Corrida Contra o Tempo (2026) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vgqXKOQr-RP9OsbAQeAE_ntw4YEYW5Z0G0H7dX-Ab6vlyuFdXZ52KIzMI2Zbr87QbxBtacPOsgt_SJxCT5OLPcKhRJI41wRUZDps4wf1cQAJ1vBG0uQHwfTCdGkyimrtnUO6klK10=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tz6YKLRs6a2zpnZU2pj5THisyHHHZ4HGodz6GdeIf-L-DFzRrjvqzx2JRrG8UUgR44ICjdXfYzw7tLV2Og4PxsDqKxBf-1jlcnNx8RAY5PaMrS9AXQ33tCHwj383aE611Lf_jJI48=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Corrida Contra o Tempo (2026) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt34564059.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vgqXKOQr-RP9OsbAQeAE_ntw4YEYW5Z0G0H7dX-Ab6vlyuFdXZ52KIzMI2Zbr87QbxBtacPOsgt_SJxCT5OLPcKhRJI41wRUZDps4wf1cQAJ1vBG0uQHwfTCdGkyimrtnUO6klK10=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tz6YKLRs6a2zpnZU2pj5THisyHHHZ4HGodz6GdeIf-L-DFzRrjvqzx2JRrG8UUgR44ICjdXfYzw7tLV2Og4PxsDqKxBf-1jlcnNx8RAY5PaMrS9AXQ33tCHwj383aE611Lf_jJI48=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzQ1NjQwNTkubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

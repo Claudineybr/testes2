@@ -12,7 +12,7 @@
     "name": "Conta Comigo (1986) - 🍿Clau",
     "description": "Assista Conta Comigo (1986) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uPFTicBE1NzFwcAqtTIf3BRge7kq-xj4zOKdbmyAzXjeErVhLMxKbJU9q_FEpcfklVS6hYYq6A7xak67SvoxVaN5W4xIa6fSNz9SiZeEcqFQPEWrcKskilk04Io4ahaRkj7qiD2mg=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sVVsvT3pTQXc9Vifo7ZohgQwm5Fj-0m5T9J0xGXL6Iwt9sN3z0FhOAUYVTJyHe-ZBSIfqb_sGaWKFOxsWzevEnn71R2uxc6LQ3IBnl3l4ZzqTPflqeVpMIOt_r_G5JFgDqZ2hc29s=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Conta Comigo (1986) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0092005.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uPFTicBE1NzFwcAqtTIf3BRge7kq-xj4zOKdbmyAzXjeErVhLMxKbJU9q_FEpcfklVS6hYYq6A7xak67SvoxVaN5W4xIa6fSNz9SiZeEcqFQPEWrcKskilk04Io4ahaRkj7qiD2mg=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_sVVsvT3pTQXc9Vifo7ZohgQwm5Fj-0m5T9J0xGXL6Iwt9sN3z0FhOAUYVTJyHe-ZBSIfqb_sGaWKFOxsWzevEnn71R2uxc6LQ3IBnl3l4ZzqTPflqeVpMIOt_r_G5JFgDqZ2hc29s=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDA5MjAwNS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Entrevista com o Vampiro (1994) - 🍿Clau",
     "description": "Assista Entrevista com o Vampiro (1994) - 🍿Clau",
     "thumbnailUrl": [
-        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uA2Ug9bKEBnr5mhlZjLabFrSHjDj9DwN8WuGMNTG2qShOnvpgN0QMfm7-PM3xjDJewAKqp4wptLyW94KiwJJdaqRrcLD6_2ABZU9A1jFdg-GLZvTyApHCwmHa7yfxeNJNSDy8CIJM=w1280-h720-p-k-no-nu"
+        "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_usYvNQvWRwELLJI1LPX-9WX37rzHABbiCohcmDfENa5IRNPPHgROlEO0nxUKtSsZznYNND-bQBi8VOrFUaDbXL4i2cGdKjV2rvPs_SWOGdX-JvF2hRNaazUD8NnXba8yoPBmw5heI=w1280-h720-p-k-no-nu"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Entrevista com o Vampiro (1994) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0110148.mp4" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uA2Ug9bKEBnr5mhlZjLabFrSHjDj9DwN8WuGMNTG2qShOnvpgN0QMfm7-PM3xjDJewAKqp4wptLyW94KiwJJdaqRrcLD6_2ABZU9A1jFdg-GLZvTyApHCwmHa7yfxeNJNSDy8CIJM=w1280-h720-p-k-no-nu" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_usYvNQvWRwELLJI1LPX-9WX37rzHABbiCohcmDfENa5IRNPPHgROlEO0nxUKtSsZznYNND-bQBi8VOrFUaDbXL4i2cGdKjV2rvPs_SWOGdX-JvF2hRNaazUD8NnXba8yoPBmw5heI=w1280-h720-p-k-no-nu"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDExMDE0OC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
