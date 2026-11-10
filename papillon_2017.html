@@ -12,7 +12,7 @@
     "name": "Papillon (2017) - 🍿Clau",
     "description": "Assista Papillon (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBq8Fb-YffKrB3HUzLolaBzZkNMRfy5it9-Wh_siNp8LptPyTgKV4j5qKH_6gxsY382Jt91LRkBCASYyGT5cGPMe7I1Bo3JOmS1Zixo9DqiUtdm2nxiGUKT1qRZesMoYPODxSHJtWmpTMsT2-5NHKgixkPetgslcaB6KxIDiMXC43qeK4hX6C_C8buDKU/w1280-h720-p-k-no-nu/ySc2oJXX7Bbkzasu3h390gnQTQ9.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBq8Fb-YffKrB3HUzLolaBzZkNMRfy5it9-Wh_siNp8LptPyTgKV4j5qKH_6gxsY382Jt91LRkBCASYyGT5cGPMe7I1Bo3JOmS1Zixo9DqiUtdm2nxiGUKT1qRZesMoYPODxSHJtWmpTMsT2-5NHKgixkPetgslcaB6KxIDiMXC43qeK4hX6C_C8buDKU/s320/ySc2oJXX7Bbkzasu3h390gnQTQ9.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Papillon (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0037.speed-stream.online/papillon-c1c87a9b/dubbed/1/b3cb6516-5ce8-420e-ae89-a3aaf324656d/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBq8Fb-YffKrB3HUzLolaBzZkNMRfy5it9-Wh_siNp8LptPyTgKV4j5qKH_6gxsY382Jt91LRkBCASYyGT5cGPMe7I1Bo3JOmS1Zixo9DqiUtdm2nxiGUKT1qRZesMoYPODxSHJtWmpTMsT2-5NHKgixkPetgslcaB6KxIDiMXC43qeK4hX6C_C8buDKU/w1280-h720-p-k-no-nu/ySc2oJXX7Bbkzasu3h390gnQTQ9.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBq8Fb-YffKrB3HUzLolaBzZkNMRfy5it9-Wh_siNp8LptPyTgKV4j5qKH_6gxsY382Jt91LRkBCASYyGT5cGPMe7I1Bo3JOmS1Zixo9DqiUtdm2nxiGUKT1qRZesMoYPODxSHJtWmpTMsT2-5NHKgixkPetgslcaB6KxIDiMXC43qeK4hX6C_C8buDKU/s320/ySc2oJXX7Bbkzasu3h390gnQTQ9.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAzNy5zcGVlZC1zdHJlYW0ub25saW5lL3BhcGlsbG9uLWMxYzg3YTliL2R1YmJlZC8xL2IzY2I2NTE2LTVjZTgtNDIwZS1hZTg5LWEzYWFmMzI0NjU2ZC9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

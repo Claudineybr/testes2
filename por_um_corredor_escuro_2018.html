@@ -12,7 +12,7 @@
     "name": "Por um Corredor Escuro (2018) - 🍿Clau",
     "description": "Assista Por um Corredor Escuro (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWaIO3UvENwD-mD2ZCm0EFekecphdHucBNNnvzMOAd6IoGqhI6lMEV0JV3y7Wq2-k8jAxJw3b3WkbgwttfsC1RFYE5C_MR1uDtTHwKwU96qnoo_7yEJ9DXf90ddBlvez6bRSWW0-mweF1K_l4Kf7r6WzRBAoLECr3scErSx4Ga3SzahMQFNt8YV-0LwE0/w1280-h720-p-k-no-nu/000096-1704457458988-b821ffed052a6d64f81e7ced444f5dd95a2c59420647f9b7efe1e5926c82e856002ec0a59fd7a6025e5be82827f7d7280bd71bc1f65b72317028817dca7ce849.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWaIO3UvENwD-mD2ZCm0EFekecphdHucBNNnvzMOAd6IoGqhI6lMEV0JV3y7Wq2-k8jAxJw3b3WkbgwttfsC1RFYE5C_MR1uDtTHwKwU96qnoo_7yEJ9DXf90ddBlvez6bRSWW0-mweF1K_l4Kf7r6WzRBAoLECr3scErSx4Ga3SzahMQFNt8YV-0LwE0/s320/000096-1704457458988-b821ffed052a6d64f81e7ced444f5dd95a2c59420647f9b7efe1e5926c82e856002ec0a59fd7a6025e5be82827f7d7280bd71bc1f65b72317028817dca7ce849.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Por um Corredor Escuro (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/ncfilmes/PORUMCORREDORESCURO-BAIXO.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWaIO3UvENwD-mD2ZCm0EFekecphdHucBNNnvzMOAd6IoGqhI6lMEV0JV3y7Wq2-k8jAxJw3b3WkbgwttfsC1RFYE5C_MR1uDtTHwKwU96qnoo_7yEJ9DXf90ddBlvez6bRSWW0-mweF1K_l4Kf7r6WzRBAoLECr3scErSx4Ga3SzahMQFNt8YV-0LwE0/w1280-h720-p-k-no-nu/000096-1704457458988-b821ffed052a6d64f81e7ced444f5dd95a2c59420647f9b7efe1e5926c82e856002ec0a59fd7a6025e5be82827f7d7280bd71bc1f65b72317028817dca7ce849.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWaIO3UvENwD-mD2ZCm0EFekecphdHucBNNnvzMOAd6IoGqhI6lMEV0JV3y7Wq2-k8jAxJw3b3WkbgwttfsC1RFYE5C_MR1uDtTHwKwU96qnoo_7yEJ9DXf90ddBlvez6bRSWW0-mweF1K_l4Kf7r6WzRBAoLECr3scErSx4Ga3SzahMQFNt8YV-0LwE0/s320/000096-1704457458988-b821ffed052a6d64f81e7ced444f5dd95a2c59420647f9b7efe1e5926c82e856002ec0a59fd7a6025e5be82827f7d7280bd71bc1f65b72317028817dca7ce849.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL25jZmlsbWVzL1BPUlVNQ09SUkVET1JFU0NVUk8tQkFJWE8ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
