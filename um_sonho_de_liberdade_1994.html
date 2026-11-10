@@ -12,7 +12,7 @@
     "name": "Um Sonho de Liberdade (1994) - 🍿Clau",
     "description": "Assista Um Sonho de Liberdade (1994) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpcLpG94fsZfS9qH0dO4A1HIxCwQ9cPZ8BMZRJwszfsjahDQH46Jq7_1q2U8WGdTVw9kqBOhHXvFRrH34SuDnQ9fGhsAPPmCSkYxsoPT861myYNCfNha5KGN9Z1i2ObimB4ErqFF0xY0tK7EDSx74naQCFthUQE5F6GoBPJBoniz0M1t0b9_HZ8-StoTE/w1280-h720-p-k-no-nu/tXHpvlr5F7gV5DwgS7M5HBrUi2C.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpcLpG94fsZfS9qH0dO4A1HIxCwQ9cPZ8BMZRJwszfsjahDQH46Jq7_1q2U8WGdTVw9kqBOhHXvFRrH34SuDnQ9fGhsAPPmCSkYxsoPT861myYNCfNha5KGN9Z1i2ObimB4ErqFF0xY0tK7EDSx74naQCFthUQE5F6GoBPJBoniz0M1t0b9_HZ8-StoTE/s400/tXHpvlr5F7gV5DwgS7M5HBrUi2C.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Sonho de Liberdade (1994) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0111161.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpcLpG94fsZfS9qH0dO4A1HIxCwQ9cPZ8BMZRJwszfsjahDQH46Jq7_1q2U8WGdTVw9kqBOhHXvFRrH34SuDnQ9fGhsAPPmCSkYxsoPT861myYNCfNha5KGN9Z1i2ObimB4ErqFF0xY0tK7EDSx74naQCFthUQE5F6GoBPJBoniz0M1t0b9_HZ8-StoTE/w1280-h720-p-k-no-nu/tXHpvlr5F7gV5DwgS7M5HBrUi2C.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpcLpG94fsZfS9qH0dO4A1HIxCwQ9cPZ8BMZRJwszfsjahDQH46Jq7_1q2U8WGdTVw9kqBOhHXvFRrH34SuDnQ9fGhsAPPmCSkYxsoPT861myYNCfNha5KGN9Z1i2ObimB4ErqFF0xY0tK7EDSx74naQCFthUQE5F6GoBPJBoniz0M1t0b9_HZ8-StoTE/s400/tXHpvlr5F7gV5DwgS7M5HBrUi2C.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMTExMTYxLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
