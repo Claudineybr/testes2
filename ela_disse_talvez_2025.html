@@ -12,7 +12,7 @@
     "name": "Ela Disse Talvez (2025) - 🍿Clau",
     "description": "Assista Ela Disse Talvez (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijd3Nzpi0Cmlb9uZObAnd5kPGhpWO3Dk0__S63EkSn5qsZVRw8qK4nqRfQAhFqf_zG8_TKZrAuSlHVKvWvyyDs_E_I5v5zmYOkxpm3RL1PI82HDEK9yF3k7OUg7Th6b-SLQIt4Kt0ASNU-ozVokC-6avug9n7_srVzi9B_tvegnoEp-Gj0BebuSHMSP-o/w1280-h720-p-k-no-nu/Picsart_25-09-19_20-37-06-958.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijd3Nzpi0Cmlb9uZObAnd5kPGhpWO3Dk0__S63EkSn5qsZVRw8qK4nqRfQAhFqf_zG8_TKZrAuSlHVKvWvyyDs_E_I5v5zmYOkxpm3RL1PI82HDEK9yF3k7OUg7Th6b-SLQIt4Kt0ASNU-ozVokC-6avug9n7_srVzi9B_tvegnoEp-Gj0BebuSHMSP-o/s400/Picsart_25-09-19_20-37-06-958.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Ela Disse Talvez (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Ela.Disse.Talvez.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijd3Nzpi0Cmlb9uZObAnd5kPGhpWO3Dk0__S63EkSn5qsZVRw8qK4nqRfQAhFqf_zG8_TKZrAuSlHVKvWvyyDs_E_I5v5zmYOkxpm3RL1PI82HDEK9yF3k7OUg7Th6b-SLQIt4Kt0ASNU-ozVokC-6avug9n7_srVzi9B_tvegnoEp-Gj0BebuSHMSP-o/w1280-h720-p-k-no-nu/Picsart_25-09-19_20-37-06-958.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijd3Nzpi0Cmlb9uZObAnd5kPGhpWO3Dk0__S63EkSn5qsZVRw8qK4nqRfQAhFqf_zG8_TKZrAuSlHVKvWvyyDs_E_I5v5zmYOkxpm3RL1PI82HDEK9yF3k7OUg7Th6b-SLQIt4Kt0ASNU-ozVokC-6avug9n7_srVzi9B_tvegnoEp-Gj0BebuSHMSP-o/s400/Picsart_25-09-19_20-37-06-958.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9FbGEuRGlzc2UuVGFsdmV6LjIwMjUuMTA4MHAuV0VCLURMLkRVQUwuNS4xLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

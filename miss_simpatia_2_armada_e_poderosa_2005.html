@@ -12,7 +12,7 @@
     "name": "Miss Simpatia 2: Armada e Poderosa (2005) - 🍿Clau",
     "description": "Assista Miss Simpatia 2: Armada e Poderosa (2005) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilfhmeJseS2-kxQiwQCJ7xglhPt-ljcfTMqE3crw9Ojif9O7Rm0PW9lkv0lwRlLfHPZljzapGOj4OBTRSdWh7i2-yN4cryuRVQT90D7qpuaVT_lyOhXJ-wysSEd5kEZLAAaX9QXVukyk2A0tiBLgwcacIWQC0DfXJ48zjpofafXgnQhq9QbtbNGcdugpA/w1280-h720-p-k-no-nu/images-3.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilfhmeJseS2-kxQiwQCJ7xglhPt-ljcfTMqE3crw9Ojif9O7Rm0PW9lkv0lwRlLfHPZljzapGOj4OBTRSdWh7i2-yN4cryuRVQT90D7qpuaVT_lyOhXJ-wysSEd5kEZLAAaX9QXVukyk2A0tiBLgwcacIWQC0DfXJ48zjpofafXgnQhq9QbtbNGcdugpA/s400/images-3.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Miss Simpatia 2: Armada e Poderosa (2005) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Miss%20Simpatia%202:%20Armada%20e%20Poderosa_2005_tt0385307.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilfhmeJseS2-kxQiwQCJ7xglhPt-ljcfTMqE3crw9Ojif9O7Rm0PW9lkv0lwRlLfHPZljzapGOj4OBTRSdWh7i2-yN4cryuRVQT90D7qpuaVT_lyOhXJ-wysSEd5kEZLAAaX9QXVukyk2A0tiBLgwcacIWQC0DfXJ48zjpofafXgnQhq9QbtbNGcdugpA/w1280-h720-p-k-no-nu/images-3.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilfhmeJseS2-kxQiwQCJ7xglhPt-ljcfTMqE3crw9Ojif9O7Rm0PW9lkv0lwRlLfHPZljzapGOj4OBTRSdWh7i2-yN4cryuRVQT90D7qpuaVT_lyOhXJ-wysSEd5kEZLAAaX9QXVukyk2A0tiBLgwcacIWQC0DfXJ48zjpofafXgnQhq9QbtbNGcdugpA/s400/images-3.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL01pc3MlMjBTaW1wYXRpYSUyMDI6JTIwQXJtYWRhJTIwZSUyMFBvZGVyb3NhXzIwMDVfdHQwMzg1MzA3Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

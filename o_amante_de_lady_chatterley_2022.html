@@ -12,7 +12,7 @@
     "name": "O Amante de Lady Chatterley (2022) - 🍿Clau",
     "description": "Assista O Amante de Lady Chatterley (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxCDIhAEEaaOKXhzzroswjyS5NCpaIwaWCU9_LvVZFDiksxlcF31AVzdHdtbGq-e_RafCm51HMV4YJkIrE5ELziwHZoMwUWsDJ7kzwuhocE3v7fxFw96SqxIY-IYB3wekMpKzzmw4x78nt34d5brSvnasGDuS71K2WkFTcWCmpStzfRT-QgK7YbbZlHJw/w1280-h720-p-k-no-nu/2JUOCRfFsjEUAXrLXxzHUYeNfbS.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxCDIhAEEaaOKXhzzroswjyS5NCpaIwaWCU9_LvVZFDiksxlcF31AVzdHdtbGq-e_RafCm51HMV4YJkIrE5ELziwHZoMwUWsDJ7kzwuhocE3v7fxFw96SqxIY-IYB3wekMpKzzmw4x78nt34d5brSvnasGDuS71K2WkFTcWCmpStzfRT-QgK7YbbZlHJw/s400/2JUOCRfFsjEUAXrLXxzHUYeNfbS.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Amante de Lady Chatterley (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt14369780.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxCDIhAEEaaOKXhzzroswjyS5NCpaIwaWCU9_LvVZFDiksxlcF31AVzdHdtbGq-e_RafCm51HMV4YJkIrE5ELziwHZoMwUWsDJ7kzwuhocE3v7fxFw96SqxIY-IYB3wekMpKzzmw4x78nt34d5brSvnasGDuS71K2WkFTcWCmpStzfRT-QgK7YbbZlHJw/w1280-h720-p-k-no-nu/2JUOCRfFsjEUAXrLXxzHUYeNfbS.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxCDIhAEEaaOKXhzzroswjyS5NCpaIwaWCU9_LvVZFDiksxlcF31AVzdHdtbGq-e_RafCm51HMV4YJkIrE5ELziwHZoMwUWsDJ7kzwuhocE3v7fxFw96SqxIY-IYB3wekMpKzzmw4x78nt34d5brSvnasGDuS71K2WkFTcWCmpStzfRT-QgK7YbbZlHJw/s400/2JUOCRfFsjEUAXrLXxzHUYeNfbS.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTQzNjk3ODAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

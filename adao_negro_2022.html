@@ -12,7 +12,7 @@
     "name": "Adao Negro (2022) - 🍿Clau",
     "description": "Assista Adao Negro (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4kuXVE3sAvb5NSc33UXbWrxgySThls6nwMf9q2wpLqaf_gOm1vCj_i9YZ1QJzkyI9zNFx943f-JEgs6AD6_TlttH3aXgAlnBMh9kyB4nsGWTKSV41dBGX5jK39KtlKw6uf9DNAXd1CXlmDv94jjgQzxSERx6PX23R1bFjKlJlu4JBJY_aBIK83D4QWW4/w1280-h720-p-k-no-nu/Picsart_25-09-20_11-20-48-641.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4kuXVE3sAvb5NSc33UXbWrxgySThls6nwMf9q2wpLqaf_gOm1vCj_i9YZ1QJzkyI9zNFx943f-JEgs6AD6_TlttH3aXgAlnBMh9kyB4nsGWTKSV41dBGX5jK39KtlKw6uf9DNAXd1CXlmDv94jjgQzxSERx6PX23R1bFjKlJlu4JBJY_aBIK83D4QWW4/s400/Picsart_25-09-20_11-20-48-641.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Adao Negro (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://server-1.cnvods.com/m/Ad%C3%A3o%20Negro_2022_tt6443346.mp4?cnvs_token=T1dRM05XUTFPV0UyWXpZek5UWTJOUlUyNHdud0dmMklxTytveWRRYW94YzdhSlJGcEJjTXo5VEplVFphckxGTFJZSUwzZ0ducHlPbUtRa2JBaDR4MVR2M1poVnFNT2ovQjhNNnFudEt2RzQ5WU9BQ0hlVFU4b1BpcHh5TFdhdDA" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4kuXVE3sAvb5NSc33UXbWrxgySThls6nwMf9q2wpLqaf_gOm1vCj_i9YZ1QJzkyI9zNFx943f-JEgs6AD6_TlttH3aXgAlnBMh9kyB4nsGWTKSV41dBGX5jK39KtlKw6uf9DNAXd1CXlmDv94jjgQzxSERx6PX23R1bFjKlJlu4JBJY_aBIK83D4QWW4/w1280-h720-p-k-no-nu/Picsart_25-09-20_11-20-48-641.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4kuXVE3sAvb5NSc33UXbWrxgySThls6nwMf9q2wpLqaf_gOm1vCj_i9YZ1QJzkyI9zNFx943f-JEgs6AD6_TlttH3aXgAlnBMh9kyB4nsGWTKSV41dBGX5jK39KtlKw6uf9DNAXd1CXlmDv94jjgQzxSERx6PX23R1bFjKlJlu4JBJY_aBIK83D4QWW4/s400/Picsart_25-09-20_11-20-48-641.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zZXJ2ZXItMS5jbnZvZHMuY29tL20vQWQlQzMlQTNvJTIwTmVncm9fMjAyMl90dDY0NDMzNDYubXA0P2NudnNfdG9rZW49VDFkUk0wNVhVVEZQVjBVeVdYcFplazVVV1RKT1VsVXlOSGR1ZDBkbU1rbHhUeXR2ZVdSUllXOTRZemRoU2xKR2NFSmpUWG81VkVwbFZGcGhja3hHVEZKWlNVd3paMGR1Y0hsUGJVdFJhMkpCYURSNE1WUjJNMXBvVm5GTlQyb3ZRamhOTm5GdWRFdDJSelE1V1U5QlEwaGxWRlU0YjFCcGNIaDVURmRoZERB");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

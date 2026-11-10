@@ -12,7 +12,7 @@
     "name": "Tal Pai, Tal Filho (2022) - 🍿Clau",
     "description": "Assista Tal Pai, Tal Filho (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTfKtPfWsAwKG_MrA8DUCdEWsE8UbhVTFyLEaeLiek7dW53oy5PkfySx9cBmfwW7_vBimjG39gigQdmPUkbBBI3_PLWzMP0vGh1SlFEDlGwt6CqVIeS-VF4iHAykHG61yhWpZt0k_Tgj9Ex9fRL2k8znXphJZbHD1Qg4YdXBGs8uxlJs8iStRvOUXvL7s/w1280-h720-p-k-no-nu/Picsart_25-10-08_18-26-46-550.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTfKtPfWsAwKG_MrA8DUCdEWsE8UbhVTFyLEaeLiek7dW53oy5PkfySx9cBmfwW7_vBimjG39gigQdmPUkbBBI3_PLWzMP0vGh1SlFEDlGwt6CqVIeS-VF4iHAykHG61yhWpZt0k_Tgj9Ex9fRL2k8znXphJZbHD1Qg4YdXBGs8uxlJs8iStRvOUXvL7s/s400/Picsart_25-10-08_18-26-46-550.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Tal Pai, Tal Filho (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Tal.Pai.Tal.Filho.2024.2024.1080p.WEB-DL.DUAL.2.0.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTfKtPfWsAwKG_MrA8DUCdEWsE8UbhVTFyLEaeLiek7dW53oy5PkfySx9cBmfwW7_vBimjG39gigQdmPUkbBBI3_PLWzMP0vGh1SlFEDlGwt6CqVIeS-VF4iHAykHG61yhWpZt0k_Tgj9Ex9fRL2k8znXphJZbHD1Qg4YdXBGs8uxlJs8iStRvOUXvL7s/w1280-h720-p-k-no-nu/Picsart_25-10-08_18-26-46-550.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTfKtPfWsAwKG_MrA8DUCdEWsE8UbhVTFyLEaeLiek7dW53oy5PkfySx9cBmfwW7_vBimjG39gigQdmPUkbBBI3_PLWzMP0vGh1SlFEDlGwt6CqVIeS-VF4iHAykHG61yhWpZt0k_Tgj9Ex9fRL2k8znXphJZbHD1Qg4YdXBGs8uxlJs8iStRvOUXvL7s/s400/Picsart_25-10-08_18-26-46-550.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9UYWwuUGFpLlRhbC5GaWxoby4yMDI0LjIwMjQuMTA4MHAuV0VCLURMLkRVQUwuMi4wLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

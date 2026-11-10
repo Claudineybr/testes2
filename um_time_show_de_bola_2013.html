@@ -12,7 +12,7 @@
     "name": "Um Time Show de Bola (2013) - 🍿Clau",
     "description": "Assista Um Time Show de Bola (2013) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJLaFwuRvP6vkbhezHEQ0yuVDwAueYepki5S4cP3Mm6YB8V9I9C1cNN6V7xUCjk6t7lORSzV-foaQLBJjX9G26m1aA2pMabnLam9o_90-OfsV__GBLP11aeiqlvbIh2BuGSToVR2yJK8G4o4CvE9hQM7dGWc1l5qrEoBCgDJTROTlbhBNjYswg_DlrZ-Y/w1280-h720-p-k-no-nu/c3i3NrA4rjXANEWWrZ3rq5cE8JA.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJLaFwuRvP6vkbhezHEQ0yuVDwAueYepki5S4cP3Mm6YB8V9I9C1cNN6V7xUCjk6t7lORSzV-foaQLBJjX9G26m1aA2pMabnLam9o_90-OfsV__GBLP11aeiqlvbIh2BuGSToVR2yJK8G4o4CvE9hQM7dGWc1l5qrEoBCgDJTROTlbhBNjYswg_DlrZ-Y/s400/c3i3NrA4rjXANEWWrZ3rq5cE8JA.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Time Show de Bola (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/UmtimeShowdebola.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJLaFwuRvP6vkbhezHEQ0yuVDwAueYepki5S4cP3Mm6YB8V9I9C1cNN6V7xUCjk6t7lORSzV-foaQLBJjX9G26m1aA2pMabnLam9o_90-OfsV__GBLP11aeiqlvbIh2BuGSToVR2yJK8G4o4CvE9hQM7dGWc1l5qrEoBCgDJTROTlbhBNjYswg_DlrZ-Y/w1280-h720-p-k-no-nu/c3i3NrA4rjXANEWWrZ3rq5cE8JA.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJLaFwuRvP6vkbhezHEQ0yuVDwAueYepki5S4cP3Mm6YB8V9I9C1cNN6V7xUCjk6t7lORSzV-foaQLBJjX9G26m1aA2pMabnLam9o_90-OfsV__GBLP11aeiqlvbIh2BuGSToVR2yJK8G4o4CvE9hQM7dGWc1l5qrEoBCgDJTROTlbhBNjYswg_DlrZ-Y/s400/c3i3NrA4rjXANEWWrZ3rq5cE8JA.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9VbXRpbWVTaG93ZGVib2xhLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

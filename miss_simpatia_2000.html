@@ -12,7 +12,7 @@
     "name": "Miss Simpatia (2000) - 🍿Clau",
     "description": "Assista Miss Simpatia (2000) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFiFHybGVD26jL_XxmFhu_KCrINnwOZS6Z7LQhwjQTp-j5LLkgLU_vAbfv7MSZU4E6eHXp73Pm3PljoG1CaK-Mkj427L0WD3m3hGfJ14radwrUnlJBH-FEZZntMtFgf4YtH2X-S951R3gwF3P2unFZQBZ5xxuKAjMr8l2qWDeXNYD-tWgz8fM8thHeHgY/w1280-h720-p-k-no-nu/images-2.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFiFHybGVD26jL_XxmFhu_KCrINnwOZS6Z7LQhwjQTp-j5LLkgLU_vAbfv7MSZU4E6eHXp73Pm3PljoG1CaK-Mkj427L0WD3m3hGfJ14radwrUnlJBH-FEZZntMtFgf4YtH2X-S951R3gwF3P2unFZQBZ5xxuKAjMr8l2qWDeXNYD-tWgz8fM8thHeHgY/s320/images-2.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Miss Simpatia (2000) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Miss%20Simpatia_2001_tt0212346.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFiFHybGVD26jL_XxmFhu_KCrINnwOZS6Z7LQhwjQTp-j5LLkgLU_vAbfv7MSZU4E6eHXp73Pm3PljoG1CaK-Mkj427L0WD3m3hGfJ14radwrUnlJBH-FEZZntMtFgf4YtH2X-S951R3gwF3P2unFZQBZ5xxuKAjMr8l2qWDeXNYD-tWgz8fM8thHeHgY/w1280-h720-p-k-no-nu/images-2.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFiFHybGVD26jL_XxmFhu_KCrINnwOZS6Z7LQhwjQTp-j5LLkgLU_vAbfv7MSZU4E6eHXp73Pm3PljoG1CaK-Mkj427L0WD3m3hGfJ14radwrUnlJBH-FEZZntMtFgf4YtH2X-S951R3gwF3P2unFZQBZ5xxuKAjMr8l2qWDeXNYD-tWgz8fM8thHeHgY/s320/images-2.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL01pc3MlMjBTaW1wYXRpYV8yMDAxX3R0MDIxMjM0Ni5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

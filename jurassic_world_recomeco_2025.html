@@ -12,7 +12,7 @@
     "name": "Jurassic World: Recomeco (2025) - 🍿Clau",
     "description": "Assista Jurassic World: Recomeco (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsxokG9k8R4FQbrlSZ0h3QHc0rAgB_XSyyU9kMB_89yPLUgku8tiT_JeRB-Qr6Cmb7-Z_4BvGe3HjMofsfdkjbDtGowCSJJDp9YngjhcbCd-F0u2PF5fNQ4izLk0xJ5UYsvUjWmoarfPeR63XJLIkMq9_N0setrXuvqdauLtmGCniwPMduvQpAjMyNKjw/w1280-h720-p-k-no-nu/daCF0rwThgXyaFc5iFpAxcKZvEE.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsxokG9k8R4FQbrlSZ0h3QHc0rAgB_XSyyU9kMB_89yPLUgku8tiT_JeRB-Qr6Cmb7-Z_4BvGe3HjMofsfdkjbDtGowCSJJDp9YngjhcbCd-F0u2PF5fNQ4izLk0xJ5UYsvUjWmoarfPeR63XJLIkMq9_N0setrXuvqdauLtmGCniwPMduvQpAjMyNKjw/s400/daCF0rwThgXyaFc5iFpAxcKZvEE.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Jurassic World: Recomeco (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.cnvslink.com/m/Jurassic.World.Recome%C3%A7o.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsxokG9k8R4FQbrlSZ0h3QHc0rAgB_XSyyU9kMB_89yPLUgku8tiT_JeRB-Qr6Cmb7-Z_4BvGe3HjMofsfdkjbDtGowCSJJDp9YngjhcbCd-F0u2PF5fNQ4izLk0xJ5UYsvUjWmoarfPeR63XJLIkMq9_N0setrXuvqdauLtmGCniwPMduvQpAjMyNKjw/w1280-h720-p-k-no-nu/daCF0rwThgXyaFc5iFpAxcKZvEE.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsxokG9k8R4FQbrlSZ0h3QHc0rAgB_XSyyU9kMB_89yPLUgku8tiT_JeRB-Qr6Cmb7-Z_4BvGe3HjMofsfdkjbDtGowCSJJDp9YngjhcbCd-F0u2PF5fNQ4izLk0xJ5UYsvUjWmoarfPeR63XJLIkMq9_N0setrXuvqdauLtmGCniwPMduvQpAjMyNKjw/s400/daCF0rwThgXyaFc5iFpAxcKZvEE.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4uY252c2xpbmsuY29tL20vSnVyYXNzaWMuV29ybGQuUmVjb21lJUMzJUE3by4yMDI1LjEwODBwLldFQi1ETC5EVUFMLjUuMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

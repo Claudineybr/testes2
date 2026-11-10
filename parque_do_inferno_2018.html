@@ -12,7 +12,7 @@
     "name": "Parque do Inferno (2018) - 🍿Clau",
     "description": "Assista Parque do Inferno (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBjyv6X1mwwliQ9kjTJYXdY9HeO_PDZBDMPdIgvGmmdMmfejBCUU0xMbeDm1_Q0dEy5s5VG7-A3RtlFrxRp1N7V-rQtOaZXfTnZhA_2lO89363FZNig_GhhdWQ3V2YvfMDuaVVR-hF6c9lAwMGsbZRa8bUozX3lXe_ykU2Xo7xEV4Ne6gSLigjnPz9tns/w1280-h720-p-k-no-nu/Picsart_25-10-14_17-33-49-942.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBjyv6X1mwwliQ9kjTJYXdY9HeO_PDZBDMPdIgvGmmdMmfejBCUU0xMbeDm1_Q0dEy5s5VG7-A3RtlFrxRp1N7V-rQtOaZXfTnZhA_2lO89363FZNig_GhhdWQ3V2YvfMDuaVVR-hF6c9lAwMGsbZRa8bUozX3lXe_ykU2Xo7xEV4Ne6gSLigjnPz9tns/s400/Picsart_25-10-14_17-33-49-942.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Parque do Inferno (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1999890.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBjyv6X1mwwliQ9kjTJYXdY9HeO_PDZBDMPdIgvGmmdMmfejBCUU0xMbeDm1_Q0dEy5s5VG7-A3RtlFrxRp1N7V-rQtOaZXfTnZhA_2lO89363FZNig_GhhdWQ3V2YvfMDuaVVR-hF6c9lAwMGsbZRa8bUozX3lXe_ykU2Xo7xEV4Ne6gSLigjnPz9tns/w1280-h720-p-k-no-nu/Picsart_25-10-14_17-33-49-942.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBjyv6X1mwwliQ9kjTJYXdY9HeO_PDZBDMPdIgvGmmdMmfejBCUU0xMbeDm1_Q0dEy5s5VG7-A3RtlFrxRp1N7V-rQtOaZXfTnZhA_2lO89363FZNig_GhhdWQ3V2YvfMDuaVVR-hF6c9lAwMGsbZRa8bUozX3lXe_ykU2Xo7xEV4Ne6gSLigjnPz9tns/s400/Picsart_25-10-14_17-33-49-942.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTk5OTg5MC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

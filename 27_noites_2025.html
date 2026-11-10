@@ -12,7 +12,7 @@
     "name": "27 Noites (2025) - 🍿Clau",
     "description": "Assista 27 Noites (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5xUN_zG2YKvasnFck9i82jYX1a4W3xH7vvIUyN7zB2O1xCBQxNeJnipiU8MATIdDjWYwms6Mukfj93phxKSfhclp_KlW81wiZVWELXJwBwI8g4YZ9AkLm0On05d5AJXiwAOY-SGEJzFDwCqm-tEIiprbgw9trNs_RVv0bnnitIuQqMlKdjqiCai48Igo/w1280-h720-p-k-no-nu/Picsart_25-10-19_11-22-10-711.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5xUN_zG2YKvasnFck9i82jYX1a4W3xH7vvIUyN7zB2O1xCBQxNeJnipiU8MATIdDjWYwms6Mukfj93phxKSfhclp_KlW81wiZVWELXJwBwI8g4YZ9AkLm0On05d5AJXiwAOY-SGEJzFDwCqm-tEIiprbgw9trNs_RVv0bnnitIuQqMlKdjqiCai48Igo/s400/Picsart_25-10-19_11-22-10-711.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>27 Noites (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/27%20Noites%202025%20WEB-DL%201080p%20x264%20DUAL%205.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5xUN_zG2YKvasnFck9i82jYX1a4W3xH7vvIUyN7zB2O1xCBQxNeJnipiU8MATIdDjWYwms6Mukfj93phxKSfhclp_KlW81wiZVWELXJwBwI8g4YZ9AkLm0On05d5AJXiwAOY-SGEJzFDwCqm-tEIiprbgw9trNs_RVv0bnnitIuQqMlKdjqiCai48Igo/w1280-h720-p-k-no-nu/Picsart_25-10-19_11-22-10-711.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5xUN_zG2YKvasnFck9i82jYX1a4W3xH7vvIUyN7zB2O1xCBQxNeJnipiU8MATIdDjWYwms6Mukfj93phxKSfhclp_KlW81wiZVWELXJwBwI8g4YZ9AkLm0On05d5AJXiwAOY-SGEJzFDwCqm-tEIiprbgw9trNs_RVv0bnnitIuQqMlKdjqiCai48Igo/s400/Picsart_25-10-19_11-22-10-711.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS8yNyUyME5vaXRlcyUyMDIwMjUlMjBXRUItREwlMjAxMDgwcCUyMHgyNjQlMjBEVUFMJTIwNS4xLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

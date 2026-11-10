@@ -12,7 +12,7 @@
     "name": "RRR: Revolta, Rebeliao, Revolucao (2022) - 🍿Clau",
     "description": "Assista RRR: Revolta, Rebeliao, Revolucao (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnvaBgodZyigDfMjXUMvcxs9cJBu-H9cJauPaGtOKeT534Z4QXi4lNXlNRwLzkNM32-dPmNXfIYYEkexi-hgq4PY_W2WEJkuh3H1FcvJ3qhhIHWjdhmqaPWI6VMPV4NF2SfU_YopR_sOb-Ra7VRkQqWy4GE1nSGZaQZn6Xa6vjDyAYERiOgnuHB2Y0B0k/w1280-h720-p-k-no-nu/dNyBXwTcQ3En959DZmi5vNW2PGp.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnvaBgodZyigDfMjXUMvcxs9cJBu-H9cJauPaGtOKeT534Z4QXi4lNXlNRwLzkNM32-dPmNXfIYYEkexi-hgq4PY_W2WEJkuh3H1FcvJ3qhhIHWjdhmqaPWI6VMPV4NF2SfU_YopR_sOb-Ra7VRkQqWy4GE1nSGZaQZn6Xa6vjDyAYERiOgnuHB2Y0B0k/s400/dNyBXwTcQ3En959DZmi5vNW2PGp.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>RRR: Revolta, Rebeliao, Revolucao (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/RRR%20(Rise%20Roar%20Revolt)_2022_tt8178634.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnvaBgodZyigDfMjXUMvcxs9cJBu-H9cJauPaGtOKeT534Z4QXi4lNXlNRwLzkNM32-dPmNXfIYYEkexi-hgq4PY_W2WEJkuh3H1FcvJ3qhhIHWjdhmqaPWI6VMPV4NF2SfU_YopR_sOb-Ra7VRkQqWy4GE1nSGZaQZn6Xa6vjDyAYERiOgnuHB2Y0B0k/w1280-h720-p-k-no-nu/dNyBXwTcQ3En959DZmi5vNW2PGp.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnvaBgodZyigDfMjXUMvcxs9cJBu-H9cJauPaGtOKeT534Z4QXi4lNXlNRwLzkNM32-dPmNXfIYYEkexi-hgq4PY_W2WEJkuh3H1FcvJ3qhhIHWjdhmqaPWI6VMPV4NF2SfU_YopR_sOb-Ra7VRkQqWy4GE1nSGZaQZn6Xa6vjDyAYERiOgnuHB2Y0B0k/s400/dNyBXwTcQ3En959DZmi5vNW2PGp.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL1JSUiUyMChSaXNlJTIwUm9hciUyMFJldm9sdClfMjAyMl90dDgxNzg2MzQubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

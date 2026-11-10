@@ -12,7 +12,7 @@
     "name": "Dragonball Evolution (2009) - 🍿Clau",
     "description": "Assista Dragonball Evolution (2009) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAXTRlboACgdsVqvYOkii4jRX6d5wBuMXkhA-fUdg9fvVim8u6wAJ7WpCBQ16yF7U80O_quFs6DehIkx0ppAs_2epkDkRBPnpe11gDJWKHMkwYmakWcGcjLulrUC82dBw-IIHJMMkigcKPQkm7IC-WX79sbQ0628JsYNs4HFs1JYw1B8CWGTmbZB9CnDU/w1280-h720-p-k-no-nu/Picsart_25-10-11_20-14-35-442.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAXTRlboACgdsVqvYOkii4jRX6d5wBuMXkhA-fUdg9fvVim8u6wAJ7WpCBQ16yF7U80O_quFs6DehIkx0ppAs_2epkDkRBPnpe11gDJWKHMkwYmakWcGcjLulrUC82dBw-IIHJMMkigcKPQkm7IC-WX79sbQ0628JsYNs4HFs1JYw1B8CWGTmbZB9CnDU/s400/Picsart_25-10-11_20-14-35-442.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Dragonball Evolution (2009) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1098327.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAXTRlboACgdsVqvYOkii4jRX6d5wBuMXkhA-fUdg9fvVim8u6wAJ7WpCBQ16yF7U80O_quFs6DehIkx0ppAs_2epkDkRBPnpe11gDJWKHMkwYmakWcGcjLulrUC82dBw-IIHJMMkigcKPQkm7IC-WX79sbQ0628JsYNs4HFs1JYw1B8CWGTmbZB9CnDU/w1280-h720-p-k-no-nu/Picsart_25-10-11_20-14-35-442.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAXTRlboACgdsVqvYOkii4jRX6d5wBuMXkhA-fUdg9fvVim8u6wAJ7WpCBQ16yF7U80O_quFs6DehIkx0ppAs_2epkDkRBPnpe11gDJWKHMkwYmakWcGcjLulrUC82dBw-IIHJMMkigcKPQkm7IC-WX79sbQ0628JsYNs4HFs1JYw1B8CWGTmbZB9CnDU/s400/Picsart_25-10-11_20-14-35-442.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxMDk4MzI3Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

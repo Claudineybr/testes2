@@ -12,7 +12,7 @@
     "name": "Arthur e a Guerra dos Dois Mundos (2010) - 🍿Clau",
     "description": "Assista Arthur e a Guerra dos Dois Mundos (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEVcbfTkYTHzA5P6kfKo_4R9-vSPsLMSae-ZAnd3119LFEFBAl5rAUrHNZphlykTO0NtGViMEnOhM3NS-kXEcxajXet4Sjmi0whFBBi3IO9W_fzHFjAS8bpHwTRZJJT-Qpbw2x65maAxPAORHp8JrzV0Jsx9tODqVCsPdnRAT71TmYEnz7XLIV0-U9ebw/w1280-h720-p-k-no-nu/5ApJDkmoaG4ENEvtKm6dhibfNRH.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEVcbfTkYTHzA5P6kfKo_4R9-vSPsLMSae-ZAnd3119LFEFBAl5rAUrHNZphlykTO0NtGViMEnOhM3NS-kXEcxajXet4Sjmi0whFBBi3IO9W_fzHFjAS8bpHwTRZJJT-Qpbw2x65maAxPAORHp8JrzV0Jsx9tODqVCsPdnRAT71TmYEnz7XLIV0-U9ebw/s400/5ApJDkmoaG4ENEvtKm6dhibfNRH.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Arthur e a Guerra dos Dois Mundos (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0940656.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEVcbfTkYTHzA5P6kfKo_4R9-vSPsLMSae-ZAnd3119LFEFBAl5rAUrHNZphlykTO0NtGViMEnOhM3NS-kXEcxajXet4Sjmi0whFBBi3IO9W_fzHFjAS8bpHwTRZJJT-Qpbw2x65maAxPAORHp8JrzV0Jsx9tODqVCsPdnRAT71TmYEnz7XLIV0-U9ebw/w1280-h720-p-k-no-nu/5ApJDkmoaG4ENEvtKm6dhibfNRH.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEVcbfTkYTHzA5P6kfKo_4R9-vSPsLMSae-ZAnd3119LFEFBAl5rAUrHNZphlykTO0NtGViMEnOhM3NS-kXEcxajXet4Sjmi0whFBBi3IO9W_fzHFjAS8bpHwTRZJJT-Qpbw2x65maAxPAORHp8JrzV0Jsx9tODqVCsPdnRAT71TmYEnz7XLIV0-U9ebw/s400/5ApJDkmoaG4ENEvtKm6dhibfNRH.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDk0MDY1Ni5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

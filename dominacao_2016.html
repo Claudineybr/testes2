@@ -12,7 +12,7 @@
     "name": "Dominacao (2016) - 🍿Clau",
     "description": "Assista Dominacao (2016) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNl8WK6XhSmkfNZ_bBOv74Evx8ExtJWmoWLestLIcUEu0H3k8usNadj0f4WvPxsMk7S5SqEoAaRTD_p5R-TO0DBxurJUWUAoZxs01B7V9zI13wLG1yWtpM5eTsiKSM6ptA_9uujeQhbgjnglw5j3qPLsPaE0de9nsu3WpDekcQCuq-Tf5nQwBlZdfwdsE/w1280-h720-p-k-no-nu/Picsart_25-10-14_10-51-42-897.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNl8WK6XhSmkfNZ_bBOv74Evx8ExtJWmoWLestLIcUEu0H3k8usNadj0f4WvPxsMk7S5SqEoAaRTD_p5R-TO0DBxurJUWUAoZxs01B7V9zI13wLG1yWtpM5eTsiKSM6ptA_9uujeQhbgjnglw5j3qPLsPaE0de9nsu3WpDekcQCuq-Tf5nQwBlZdfwdsE/s400/Picsart_25-10-14_10-51-42-897.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Dominacao (2016) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt3216348.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNl8WK6XhSmkfNZ_bBOv74Evx8ExtJWmoWLestLIcUEu0H3k8usNadj0f4WvPxsMk7S5SqEoAaRTD_p5R-TO0DBxurJUWUAoZxs01B7V9zI13wLG1yWtpM5eTsiKSM6ptA_9uujeQhbgjnglw5j3qPLsPaE0de9nsu3WpDekcQCuq-Tf5nQwBlZdfwdsE/w1280-h720-p-k-no-nu/Picsart_25-10-14_10-51-42-897.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNl8WK6XhSmkfNZ_bBOv74Evx8ExtJWmoWLestLIcUEu0H3k8usNadj0f4WvPxsMk7S5SqEoAaRTD_p5R-TO0DBxurJUWUAoZxs01B7V9zI13wLG1yWtpM5eTsiKSM6ptA_9uujeQhbgjnglw5j3qPLsPaE0de9nsu3WpDekcQCuq-Tf5nQwBlZdfwdsE/s400/Picsart_25-10-14_10-51-42-897.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MzIxNjM0OC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Inferno de Dante: Uma Animacao Epica (2010) - 🍿Clau",
     "description": "Assista Inferno de Dante: Uma Animacao Epica (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8RcfKl6ft1W9Bn9oDIDMbs8Ut8iNCvaKPmSqTl5hbeSHfK-bEcnBYf4AnFhqlUD6XpPZKaGFBQkzehVT7GNt0mb3nAsEt1dVPH5ua3vzI2ux3jWNs82m7ifgyhdn33aqyqOx-JXndVA2CRL351E2mzDst9AhDSuk8dGPA6_mN6AxXNLp3grfvIW2PcoE/w1280-h720-p-k-no-nu/wv58vcKKFWrn1fobPyxE6eOlBPz.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8RcfKl6ft1W9Bn9oDIDMbs8Ut8iNCvaKPmSqTl5hbeSHfK-bEcnBYf4AnFhqlUD6XpPZKaGFBQkzehVT7GNt0mb3nAsEt1dVPH5ua3vzI2ux3jWNs82m7ifgyhdn33aqyqOx-JXndVA2CRL351E2mzDst9AhDSuk8dGPA6_mN6AxXNLp3grfvIW2PcoE/s400/wv58vcKKFWrn1fobPyxE6eOlBPz.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Inferno de Dante: Uma Animacao Epica (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1401113.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8RcfKl6ft1W9Bn9oDIDMbs8Ut8iNCvaKPmSqTl5hbeSHfK-bEcnBYf4AnFhqlUD6XpPZKaGFBQkzehVT7GNt0mb3nAsEt1dVPH5ua3vzI2ux3jWNs82m7ifgyhdn33aqyqOx-JXndVA2CRL351E2mzDst9AhDSuk8dGPA6_mN6AxXNLp3grfvIW2PcoE/w1280-h720-p-k-no-nu/wv58vcKKFWrn1fobPyxE6eOlBPz.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8RcfKl6ft1W9Bn9oDIDMbs8Ut8iNCvaKPmSqTl5hbeSHfK-bEcnBYf4AnFhqlUD6XpPZKaGFBQkzehVT7GNt0mb3nAsEt1dVPH5ua3vzI2ux3jWNs82m7ifgyhdn33aqyqOx-JXndVA2CRL351E2mzDst9AhDSuk8dGPA6_mN6AxXNLp3grfvIW2PcoE/s400/wv58vcKKFWrn1fobPyxE6eOlBPz.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTQwMTExMy5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

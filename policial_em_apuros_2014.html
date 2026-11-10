@@ -12,7 +12,7 @@
     "name": "Policial em Apuros (2014) - 🍿Clau",
     "description": "Assista Policial em Apuros (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglfH37IBK1Hac7rTqX4pdLuF8-B3CDFYvgxAV4v0xGhtTqNzQdGGp9J6eNc5b4Tmrnv274BTkfsDZ0gRW3g6q-H5A7b5Zvo2kndy4_O6SkRRS13LKC3J1z75-vyZnCaOGyvQeuIGUjz1aANcrblJqaAp8DY2z9ut2IJP-ivladfgP1Jq_SSJLAyC6m5pQ/w1280-h720-p-k-no-nu/Picsart_25-09-27_21-00-19-953.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglfH37IBK1Hac7rTqX4pdLuF8-B3CDFYvgxAV4v0xGhtTqNzQdGGp9J6eNc5b4Tmrnv274BTkfsDZ0gRW3g6q-H5A7b5Zvo2kndy4_O6SkRRS13LKC3J1z75-vyZnCaOGyvQeuIGUjz1aANcrblJqaAp8DY2z9ut2IJP-ivladfgP1Jq_SSJLAyC6m5pQ/s400/Picsart_25-09-27_21-00-19-953.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Policial em Apuros (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt1408253.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglfH37IBK1Hac7rTqX4pdLuF8-B3CDFYvgxAV4v0xGhtTqNzQdGGp9J6eNc5b4Tmrnv274BTkfsDZ0gRW3g6q-H5A7b5Zvo2kndy4_O6SkRRS13LKC3J1z75-vyZnCaOGyvQeuIGUjz1aANcrblJqaAp8DY2z9ut2IJP-ivladfgP1Jq_SSJLAyC6m5pQ/w1280-h720-p-k-no-nu/Picsart_25-09-27_21-00-19-953.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglfH37IBK1Hac7rTqX4pdLuF8-B3CDFYvgxAV4v0xGhtTqNzQdGGp9J6eNc5b4Tmrnv274BTkfsDZ0gRW3g6q-H5A7b5Zvo2kndy4_O6SkRRS13LKC3J1z75-vyZnCaOGyvQeuIGUjz1aANcrblJqaAp8DY2z9ut2IJP-ivladfgP1Jq_SSJLAyC6m5pQ/s400/Picsart_25-09-27_21-00-19-953.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MTQwODI1My5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

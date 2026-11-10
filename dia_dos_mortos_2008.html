@@ -12,7 +12,7 @@
     "name": "Dia dos Mortos (2008) - 🍿Clau",
     "description": "Assista Dia dos Mortos (2008) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw39i1psKWh-HuJB8KlE9IFgILQLBJUazaiPpZUXubGMExV_drOe0-PGAcQTPfhT4osdTd1iOfeTnIC01GMhvuyyhZVyNbrGPPP0q2d06H1wCmHYiviZjU0GYrrVyNZwr-d2KK3zP_txgntQsLqKqHKh_2qRLkYrfxvMbiZAUUJXhquZ3uxQRCJlF6QH0/w1280-h720-p-k-no-nu/Picsart_25-09-27_20-47-05-987.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw39i1psKWh-HuJB8KlE9IFgILQLBJUazaiPpZUXubGMExV_drOe0-PGAcQTPfhT4osdTd1iOfeTnIC01GMhvuyyhZVyNbrGPPP0q2d06H1wCmHYiviZjU0GYrrVyNZwr-d2KK3zP_txgntQsLqKqHKh_2qRLkYrfxvMbiZAUUJXhquZ3uxQRCJlF6QH0/s400/Picsart_25-09-27_20-47-05-987.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Dia dos Mortos (2008) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt0489018.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw39i1psKWh-HuJB8KlE9IFgILQLBJUazaiPpZUXubGMExV_drOe0-PGAcQTPfhT4osdTd1iOfeTnIC01GMhvuyyhZVyNbrGPPP0q2d06H1wCmHYiviZjU0GYrrVyNZwr-d2KK3zP_txgntQsLqKqHKh_2qRLkYrfxvMbiZAUUJXhquZ3uxQRCJlF6QH0/w1280-h720-p-k-no-nu/Picsart_25-09-27_20-47-05-987.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw39i1psKWh-HuJB8KlE9IFgILQLBJUazaiPpZUXubGMExV_drOe0-PGAcQTPfhT4osdTd1iOfeTnIC01GMhvuyyhZVyNbrGPPP0q2d06H1wCmHYiviZjU0GYrrVyNZwr-d2KK3zP_txgntQsLqKqHKh_2qRLkYrfxvMbiZAUUJXhquZ3uxQRCJlF6QH0/s400/Picsart_25-09-27_20-47-05-987.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MDQ4OTAxOC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

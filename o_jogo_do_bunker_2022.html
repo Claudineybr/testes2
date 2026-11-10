@@ -12,7 +12,7 @@
     "name": "O Jogo do Bunker (2022) - 🍿Clau",
     "description": "Assista O Jogo do Bunker (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimY2Wm_e2nf7fWmbENTMXzjoU3wg8HRgZ49qyEphDPQh5edxBoZSxSIFW2Hg6hY2IrS4aEBUirz_1HeW2kvyb9qCRId5zKBR2AAKbm4m2JLZudEMSfihEeqmilbxPLHxYNxMg1pFWY7oWsD4qvKLB8T7M0yVVAVbEEWobO5BUnEy3h3E6o6bHu9UVAgvA/w1280-h720-p-k-no-nu/Picsart_25-10-19_11-51-09-893.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimY2Wm_e2nf7fWmbENTMXzjoU3wg8HRgZ49qyEphDPQh5edxBoZSxSIFW2Hg6hY2IrS4aEBUirz_1HeW2kvyb9qCRId5zKBR2AAKbm4m2JLZudEMSfihEeqmilbxPLHxYNxMg1pFWY7oWsD4qvKLB8T7M0yVVAVbEEWobO5BUnEy3h3E6o6bHu9UVAgvA/s400/Picsart_25-10-19_11-51-09-893.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Jogo do Bunker (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt13893190.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimY2Wm_e2nf7fWmbENTMXzjoU3wg8HRgZ49qyEphDPQh5edxBoZSxSIFW2Hg6hY2IrS4aEBUirz_1HeW2kvyb9qCRId5zKBR2AAKbm4m2JLZudEMSfihEeqmilbxPLHxYNxMg1pFWY7oWsD4qvKLB8T7M0yVVAVbEEWobO5BUnEy3h3E6o6bHu9UVAgvA/w1280-h720-p-k-no-nu/Picsart_25-10-19_11-51-09-893.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimY2Wm_e2nf7fWmbENTMXzjoU3wg8HRgZ49qyEphDPQh5edxBoZSxSIFW2Hg6hY2IrS4aEBUirz_1HeW2kvyb9qCRId5zKBR2AAKbm4m2JLZudEMSfihEeqmilbxPLHxYNxMg1pFWY7oWsD4qvKLB8T7M0yVVAVbEEWobO5BUnEy3h3E6o6bHu9UVAgvA/s400/Picsart_25-10-19_11-51-09-893.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MTM4OTMxOTAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
