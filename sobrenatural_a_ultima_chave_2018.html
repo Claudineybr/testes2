@@ -12,7 +12,7 @@
     "name": "Sobrenatural: A Ultima Chave (2018) - 🍿Clau",
     "description": "Assista Sobrenatural: A Ultima Chave (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm7A0EyIPcd6HDODcfVtUJJCxP3ZtmCc3J-YUc1Vmo-ARQAKx7_QmJkdE6we1XheuuxMuGlcoXHIiur2xk_E0CAN9eEwktHeHdnByhYLQOe7diEQ3Fh6qZ8UktXrMN7Fu5L_9VNZpdFJaRGVYo6cuSc9Pagt98z1ovU7XH6C9tuNi6HwgVvST5Rqkt1wo/w1280-h720-p-k-no-nu/dkCDP31hko9BUYKtkmL4UEVDL6n.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm7A0EyIPcd6HDODcfVtUJJCxP3ZtmCc3J-YUc1Vmo-ARQAKx7_QmJkdE6we1XheuuxMuGlcoXHIiur2xk_E0CAN9eEwktHeHdnByhYLQOe7diEQ3Fh6qZ8UktXrMN7Fu5L_9VNZpdFJaRGVYo6cuSc9Pagt98z1ovU7XH6C9tuNi6HwgVvST5Rqkt1wo/s400/dkCDP31hko9BUYKtkmL4UEVDL6n.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Sobrenatural: A Ultima Chave (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt5726086.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm7A0EyIPcd6HDODcfVtUJJCxP3ZtmCc3J-YUc1Vmo-ARQAKx7_QmJkdE6we1XheuuxMuGlcoXHIiur2xk_E0CAN9eEwktHeHdnByhYLQOe7diEQ3Fh6qZ8UktXrMN7Fu5L_9VNZpdFJaRGVYo6cuSc9Pagt98z1ovU7XH6C9tuNi6HwgVvST5Rqkt1wo/w1280-h720-p-k-no-nu/dkCDP31hko9BUYKtkmL4UEVDL6n.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm7A0EyIPcd6HDODcfVtUJJCxP3ZtmCc3J-YUc1Vmo-ARQAKx7_QmJkdE6we1XheuuxMuGlcoXHIiur2xk_E0CAN9eEwktHeHdnByhYLQOe7diEQ3Fh6qZ8UktXrMN7Fu5L_9VNZpdFJaRGVYo6cuSc9Pagt98z1ovU7XH6C9tuNi6HwgVvST5Rqkt1wo/s400/dkCDP31hko9BUYKtkmL4UEVDL6n.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQ1NzI2MDg2Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

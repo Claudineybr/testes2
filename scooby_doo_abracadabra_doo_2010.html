@@ -12,7 +12,7 @@
     "name": "Scooby-Doo! Abracadabra-Doo (2010) - 🍿Clau",
     "description": "Assista Scooby-Doo! Abracadabra-Doo (2010) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIgyGuHy56udrznOUfcJj4sIbinxT9c8kNQWeQKYbC1hDpSvoffjTJaCxor38UEDGFZjY5xGw-tMR49gDsOrFx5agW0ebH1VIa0swYIay_6kthg4L1aeZRW931FunXzu_Cj4kQXtPXTUYmZbS54yWXI5FLvA-oW09c7s99EtDMWph8Y4kFmmgeJIuW5iU/w1280-h720-p-k-no-nu/images-10.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIgyGuHy56udrznOUfcJj4sIbinxT9c8kNQWeQKYbC1hDpSvoffjTJaCxor38UEDGFZjY5xGw-tMR49gDsOrFx5agW0ebH1VIa0swYIay_6kthg4L1aeZRW931FunXzu_Cj4kQXtPXTUYmZbS54yWXI5FLvA-oW09c7s99EtDMWph8Y4kFmmgeJIuW5iU/s320/images-10.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Scooby-Doo! Abracadabra-Doo (2010) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://pcy.playhdlugo.online/token:s21expires11365uslink1578l2/flm24/ScoobyDooAbracadabraDoo2010.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIgyGuHy56udrznOUfcJj4sIbinxT9c8kNQWeQKYbC1hDpSvoffjTJaCxor38UEDGFZjY5xGw-tMR49gDsOrFx5agW0ebH1VIa0swYIay_6kthg4L1aeZRW931FunXzu_Cj4kQXtPXTUYmZbS54yWXI5FLvA-oW09c7s99EtDMWph8Y4kFmmgeJIuW5iU/w1280-h720-p-k-no-nu/images-10.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIgyGuHy56udrznOUfcJj4sIbinxT9c8kNQWeQKYbC1hDpSvoffjTJaCxor38UEDGFZjY5xGw-tMR49gDsOrFx5agW0ebH1VIa0swYIay_6kthg4L1aeZRW931FunXzu_Cj4kQXtPXTUYmZbS54yWXI5FLvA-oW09c7s99EtDMWph8Y4kFmmgeJIuW5iU/s320/images-10.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3BjeS5wbGF5aGRsdWdvLm9ubGluZS90b2tlbjpzMjFleHBpcmVzMTEzNjV1c2xpbmsxNTc4bDIvZmxtMjQvU2Nvb2J5RG9vQWJyYWNhZGFicmFEb28yMDEwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
