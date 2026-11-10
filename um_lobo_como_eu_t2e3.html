@@ -9,10 +9,10 @@
     "@type": "VideoObject",
     "@id": "https://api-pobreflix-filmes.pages.dev/um_lobo_como_eu_t2e3.html",
     "url": "https://api-pobreflix-filmes.pages.dev/um_lobo_como_eu_t2e3.html",
-    "name": "Um Lobo como Eu - T2E3 -  - 🍿Clau",
-    "description": "Assista Um Lobo como Eu - T2E3 -  - 🍿Clau",
+    "name": "Um Lobo como Eu - T2E3 - 🍿Clau",
+    "description": "Assista Um Lobo como Eu - T2E3 - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png"
+        "https://image.tmdb.org/t/p/original/3L37sDOEZpqh0XIKOhWnMoPYaeT.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -20,13 +20,31 @@
     "embedUrl": "http://shd7.oneplayer.site/u657uy56y5r4tfg4r3eftg345tgy45hj456th45tjh456uj56ujhryz3/SHD7/136738/2x3LEG.mp4"
 }
 </script>
-<title>Um Lobo como Eu - T2E3 -  - 🍿Clau</title>
+<title>Um Lobo como Eu - T2E3 - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://shd7.oneplayer.site/u657uy56y5r4tfg4r3eftg345tgy45hj456th45tjh456uj56ujhryz3/SHD7/136738/2x3LEG.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://image.tmdb.org/t/p/original/3L37sDOEZpqh0XIKOhWnMoPYaeT.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3NoZDcub25lcGxheWVyLnNpdGUvdTY1N3V5NTZ5NXI0dGZnNHIzZWZ0ZzM0NXRneTQ1aGo0NTZ0aDQ1dGpoNDU2dWo1NnVqaHJ5ejMvU0hENy8xMzY3MzgvMngzTEVHLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
