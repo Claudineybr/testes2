@@ -12,7 +12,7 @@
     "name": "Luca (2021) - 🍿Clau",
     "description": "Assista Luca (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8E_BVVNe3021u7QtFt-8NW7nWMFWO7wqrwpuRU8HbAdJm1M0Crdz_P58l-jIqZkzsSnasHdjQfnB6JR5b4wiE8-TG7RM6r0CWSyGgrPp_HOPYEzrYmAbYZ4GSDnatqX_6Oz69ba5XMVNdcNudKyefj0LRvChhRqe71q2A7W5cL4nzf-ptZmSOUw9Crk/w1280-h720-p-k-no-nu/dbMOKbogz8Go6w3dUh9CrOt1AFH.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8E_BVVNe3021u7QtFt-8NW7nWMFWO7wqrwpuRU8HbAdJm1M0Crdz_P58l-jIqZkzsSnasHdjQfnB6JR5b4wiE8-TG7RM6r0CWSyGgrPp_HOPYEzrYmAbYZ4GSDnatqX_6Oz69ba5XMVNdcNudKyefj0LRvChhRqe71q2A7W5cL4nzf-ptZmSOUw9Crk/s320/dbMOKbogz8Go6w3dUh9CrOt1AFH.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Luca (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://pcx.playhdlugo.online/token:s21expires11365uslink1578l2/flm21/Luca2021.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8E_BVVNe3021u7QtFt-8NW7nWMFWO7wqrwpuRU8HbAdJm1M0Crdz_P58l-jIqZkzsSnasHdjQfnB6JR5b4wiE8-TG7RM6r0CWSyGgrPp_HOPYEzrYmAbYZ4GSDnatqX_6Oz69ba5XMVNdcNudKyefj0LRvChhRqe71q2A7W5cL4nzf-ptZmSOUw9Crk/w1280-h720-p-k-no-nu/dbMOKbogz8Go6w3dUh9CrOt1AFH.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8E_BVVNe3021u7QtFt-8NW7nWMFWO7wqrwpuRU8HbAdJm1M0Crdz_P58l-jIqZkzsSnasHdjQfnB6JR5b4wiE8-TG7RM6r0CWSyGgrPp_HOPYEzrYmAbYZ4GSDnatqX_6Oz69ba5XMVNdcNudKyefj0LRvChhRqe71q2A7W5cL4nzf-ptZmSOUw9Crk/s320/dbMOKbogz8Go6w3dUh9CrOt1AFH.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3BjeC5wbGF5aGRsdWdvLm9ubGluZS90b2tlbjpzMjFleHBpcmVzMTEzNjV1c2xpbmsxNTc4bDIvZmxtMjEvTHVjYTIwMjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
