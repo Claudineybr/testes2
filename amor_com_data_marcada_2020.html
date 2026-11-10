@@ -12,7 +12,7 @@
     "name": "Amor com Data Marcada (2020) - 🍿Clau",
     "description": "Assista Amor com Data Marcada (2020) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW9HJ8D49NMnjm8OvMYAgVT-PSRuITFVs2b1G6gWhSvNvsVrjMzUcB5Xc217j7ROGQxWfnBUmQpT9S7CJsQD5_A6HOGqoV_E5BD8jXCh2bPC0QpnNHO1FX5TiWfJawr6o5U5e1E3ul34omLUhbkzH9Wn8O9K3ucNV30WkQlc0NXKjaM_PGsHh-Z6quqgU/w1280-h720-p-k-no-nu/wmjFMEle7tY9TV5Ug5DpPDGcuPt.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW9HJ8D49NMnjm8OvMYAgVT-PSRuITFVs2b1G6gWhSvNvsVrjMzUcB5Xc217j7ROGQxWfnBUmQpT9S7CJsQD5_A6HOGqoV_E5BD8jXCh2bPC0QpnNHO1FX5TiWfJawr6o5U5e1E3ul34omLUhbkzH9Wn8O9K3ucNV30WkQlc0NXKjaM_PGsHh-Z6quqgU/s400/wmjFMEle7tY9TV5Ug5DpPDGcuPt.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Amor com Data Marcada (2020) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://s1-cnvs.watchingvs.com/m/Amor%20com%20Data%20Marcada_2020_tt9866072.mp4?cnvs_token=TkROa05qUmtORGMyTTJVME1UUXdZdHY4ZFVQMjJEeFVUWk5EVHQ2R05FWExraUxzQjljVWVBdDNkeFdrK0U0dg" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW9HJ8D49NMnjm8OvMYAgVT-PSRuITFVs2b1G6gWhSvNvsVrjMzUcB5Xc217j7ROGQxWfnBUmQpT9S7CJsQD5_A6HOGqoV_E5BD8jXCh2bPC0QpnNHO1FX5TiWfJawr6o5U5e1E3ul34omLUhbkzH9Wn8O9K3ucNV30WkQlc0NXKjaM_PGsHh-Z6quqgU/w1280-h720-p-k-no-nu/wmjFMEle7tY9TV5Ug5DpPDGcuPt.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW9HJ8D49NMnjm8OvMYAgVT-PSRuITFVs2b1G6gWhSvNvsVrjMzUcB5Xc217j7ROGQxWfnBUmQpT9S7CJsQD5_A6HOGqoV_E5BD8jXCh2bPC0QpnNHO1FX5TiWfJawr6o5U5e1E3ul34omLUhbkzH9Wn8O9K3ucNV30WkQlc0NXKjaM_PGsHh-Z6quqgU/s400/wmjFMEle7tY9TV5Ug5DpPDGcuPt.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zMS1jbnZzLndhdGNoaW5ndnMuY29tL20vQW1vciUyMGNvbSUyMERhdGElMjBNYXJjYWRhXzIwMjBfdHQ5ODY2MDcyLm1wND9jbnZzX3Rva2VuPVRrUk9hMDVxVW10T1JHTXlUVEpWTUUxVVVYZFpkSFk0WkZWUU1qSkVlRlZVV2s1RVZIUTJSMDVGV0V4cmFVeHpRamxqVldWQmRETmtlRmRySzBVMGRn");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

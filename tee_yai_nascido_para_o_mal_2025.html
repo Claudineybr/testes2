@@ -12,7 +12,7 @@
     "name": "Tee Yai: Nascido para o Mal (2025) - 🍿Clau",
     "description": "Assista Tee Yai: Nascido para o Mal (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiFIW8Hga0uv3oM_fffVN1Ak-e5qIb7CITuKJLXSrLEwFAG475odgpvdXgyh-3CERFU2fWZUBiGT1652BiKgIJp5dAE-rsQlqVE54bN1gDfkS8qlwTC160lJ8R_ucqCe1gygO_Fvmrwe5tFNvDxuhUHDcw-eART-jj360rkzBbQWHEoH80GeoSFlPUU0k/w1280-h720-p-k-no-nu/Picsart_25-11-14_13-08-03-025.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiFIW8Hga0uv3oM_fffVN1Ak-e5qIb7CITuKJLXSrLEwFAG475odgpvdXgyh-3CERFU2fWZUBiGT1652BiKgIJp5dAE-rsQlqVE54bN1gDfkS8qlwTC160lJ8R_ucqCe1gygO_Fvmrwe5tFNvDxuhUHDcw-eART-jj360rkzBbQWHEoH80GeoSFlPUU0k/s400/Picsart_25-11-14_13-08-03-025.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Tee Yai: Nascido para o Mal (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Tee.Yai.Nascido.para.o.Mal.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiFIW8Hga0uv3oM_fffVN1Ak-e5qIb7CITuKJLXSrLEwFAG475odgpvdXgyh-3CERFU2fWZUBiGT1652BiKgIJp5dAE-rsQlqVE54bN1gDfkS8qlwTC160lJ8R_ucqCe1gygO_Fvmrwe5tFNvDxuhUHDcw-eART-jj360rkzBbQWHEoH80GeoSFlPUU0k/w1280-h720-p-k-no-nu/Picsart_25-11-14_13-08-03-025.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiFIW8Hga0uv3oM_fffVN1Ak-e5qIb7CITuKJLXSrLEwFAG475odgpvdXgyh-3CERFU2fWZUBiGT1652BiKgIJp5dAE-rsQlqVE54bN1gDfkS8qlwTC160lJ8R_ucqCe1gygO_Fvmrwe5tFNvDxuhUHDcw-eART-jj360rkzBbQWHEoH80GeoSFlPUU0k/s400/Picsart_25-11-14_13-08-03-025.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9UZWUuWWFpLk5hc2NpZG8ucGFyYS5vLk1hbC4yMDI1LjEwODBwLldFQi1ETC5EVUFMLjUuMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

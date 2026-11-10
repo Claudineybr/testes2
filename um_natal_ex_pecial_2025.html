@@ -12,7 +12,7 @@
     "name": "Um Natal Ex-pecial (2025) - 🍿Clau",
     "description": "Assista Um Natal Ex-pecial (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsQ-Kx8ePPOCgAuiolnByxt8Xq_N_H3jqxUjVc3Jsk8hxVMCC_JQ2RoUdivUgJ24-fBR42qAVSQ7DQpJH9dXIDRsvUZLmadBmYtSxsuACtEHfbG3SNcQMuTU5dwV6gwESLE2ZA7fq6LYdVTZGqRT7gEZK2_W2p_kEgKzkyV145vn0Hhv9y3U0A_YojBBE/w1280-h720-p-k-no-nu/Picsart_25-11-12_13-03-18-268.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsQ-Kx8ePPOCgAuiolnByxt8Xq_N_H3jqxUjVc3Jsk8hxVMCC_JQ2RoUdivUgJ24-fBR42qAVSQ7DQpJH9dXIDRsvUZLmadBmYtSxsuACtEHfbG3SNcQMuTU5dwV6gwESLE2ZA7fq6LYdVTZGqRT7gEZK2_W2p_kEgKzkyV145vn0Hhv9y3U0A_YojBBE/s400/Picsart_25-11-12_13-03-18-268.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Natal Ex-pecial (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Um.Natal.Ex-pecial.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsQ-Kx8ePPOCgAuiolnByxt8Xq_N_H3jqxUjVc3Jsk8hxVMCC_JQ2RoUdivUgJ24-fBR42qAVSQ7DQpJH9dXIDRsvUZLmadBmYtSxsuACtEHfbG3SNcQMuTU5dwV6gwESLE2ZA7fq6LYdVTZGqRT7gEZK2_W2p_kEgKzkyV145vn0Hhv9y3U0A_YojBBE/w1280-h720-p-k-no-nu/Picsart_25-11-12_13-03-18-268.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsQ-Kx8ePPOCgAuiolnByxt8Xq_N_H3jqxUjVc3Jsk8hxVMCC_JQ2RoUdivUgJ24-fBR42qAVSQ7DQpJH9dXIDRsvUZLmadBmYtSxsuACtEHfbG3SNcQMuTU5dwV6gwESLE2ZA7fq6LYdVTZGqRT7gEZK2_W2p_kEgKzkyV145vn0Hhv9y3U0A_YojBBE/s400/Picsart_25-11-12_13-03-18-268.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9VbS5OYXRhbC5FeC1wZWNpYWwuMjAyNS4xMDgwcC5XRUItREwuRFVBTC41LjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
