@@ -12,7 +12,7 @@
     "name": "Dungeon Meshi - T1E15 - 🍿Clau",
     "description": "Assista Dungeon Meshi - T1E15 - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlN5WZEPs0jPtZlp1pVC9DDRQ1_0YMo0UCtG7z-5XZzWwq16y0q2-zrJTRHKOB3yTyIhyKTNiNyOqjxs3JytqXGO7hYtzuJICRZ-gLT2x9yFO3x1Cu08bcTpLWdyoOjIP5crReKMZYxIqZcbHNdlW6tmOjsRGe-CpHjN2qhNs_PX_DVl-XUfakPIwbqI8/w1280-h720-p-k-no-nu/7aTlXATGdz6PnWpo2K7S23UAsMU.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlN5WZEPs0jPtZlp1pVC9DDRQ1_0YMo0UCtG7z-5XZzWwq16y0q2-zrJTRHKOB3yTyIhyKTNiNyOqjxs3JytqXGO7hYtzuJICRZ-gLT2x9yFO3x1Cu08bcTpLWdyoOjIP5crReKMZYxIqZcbHNdlW6tmOjsRGe-CpHjN2qhNs_PX_DVl-XUfakPIwbqI8/s320/7aTlXATGdz6PnWpo2K7S23UAsMU.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Dungeon Meshi - T1E15 - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://stream.4nm-cdn-0483964.com/b-16/dungeon-meshi-0742f89f/dubbed/15/0dee66b8-dbd5-4d24-8d2e-0b04126eb9d2/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlN5WZEPs0jPtZlp1pVC9DDRQ1_0YMo0UCtG7z-5XZzWwq16y0q2-zrJTRHKOB3yTyIhyKTNiNyOqjxs3JytqXGO7hYtzuJICRZ-gLT2x9yFO3x1Cu08bcTpLWdyoOjIP5crReKMZYxIqZcbHNdlW6tmOjsRGe-CpHjN2qhNs_PX_DVl-XUfakPIwbqI8/w1280-h720-p-k-no-nu/7aTlXATGdz6PnWpo2K7S23UAsMU.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlN5WZEPs0jPtZlp1pVC9DDRQ1_0YMo0UCtG7z-5XZzWwq16y0q2-zrJTRHKOB3yTyIhyKTNiNyOqjxs3JytqXGO7hYtzuJICRZ-gLT2x9yFO3x1Cu08bcTpLWdyoOjIP5crReKMZYxIqZcbHNdlW6tmOjsRGe-CpHjN2qhNs_PX_DVl-XUfakPIwbqI8/s320/7aTlXATGdz6PnWpo2K7S23UAsMU.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zdHJlYW0uNG5tLWNkbi0wNDgzOTY0LmNvbS9iLTE2L2R1bmdlb24tbWVzaGktMDc0MmY4OWYvZHViYmVkLzE1LzBkZWU2NmI4LWRiZDUtNGQyNC04ZDJlLTBiMDQxMjZlYjlkMi9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

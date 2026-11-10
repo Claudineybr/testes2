@@ -12,7 +12,7 @@
     "name": "Akame ga Kill! - T1E2 – . Mate a autoridade - 🍿Clau",
     "description": "Assista Akame ga Kill! - T1E2 – . Mate a autoridade - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc4MpQZPVJB9i6-_YKQBUpqxkPIXUckzCAm351qrdh4pC_VvIAJMOp9P1Vt7p8aJwyjTE-9WOCHQTzTpPPObtU8h12UHNa9ZbZD58FARw9CeWjFKuaOsZ_L3sTs0lOFeeFq2DkEl37cinn34Ne-hVbUa_0cTv79gUhu2WE4-DQ5RWtAob8hTpXl4l5FK8/w1280-h720-p-k-no-nu/sNQw3BC4nXzfamnreobIkuKI0tY.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc4MpQZPVJB9i6-_YKQBUpqxkPIXUckzCAm351qrdh4pC_VvIAJMOp9P1Vt7p8aJwyjTE-9WOCHQTzTpPPObtU8h12UHNa9ZbZD58FARw9CeWjFKuaOsZ_L3sTs0lOFeeFq2DkEl37cinn34Ne-hVbUa_0cTv79gUhu2WE4-DQ5RWtAob8hTpXl4l5FK8/s320/sNQw3BC4nXzfamnreobIkuKI0tY.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Akame ga Kill! - T1E2 – . Mate a autoridade - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://stream.4nm-cdn-0483964.com/b-03/akame-ga-kill-52477b94/dubbed/2/7c201625-3674-4ba9-b8b0-db4c868d80d2/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc4MpQZPVJB9i6-_YKQBUpqxkPIXUckzCAm351qrdh4pC_VvIAJMOp9P1Vt7p8aJwyjTE-9WOCHQTzTpPPObtU8h12UHNa9ZbZD58FARw9CeWjFKuaOsZ_L3sTs0lOFeeFq2DkEl37cinn34Ne-hVbUa_0cTv79gUhu2WE4-DQ5RWtAob8hTpXl4l5FK8/w1280-h720-p-k-no-nu/sNQw3BC4nXzfamnreobIkuKI0tY.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc4MpQZPVJB9i6-_YKQBUpqxkPIXUckzCAm351qrdh4pC_VvIAJMOp9P1Vt7p8aJwyjTE-9WOCHQTzTpPPObtU8h12UHNa9ZbZD58FARw9CeWjFKuaOsZ_L3sTs0lOFeeFq2DkEl37cinn34Ne-hVbUa_0cTv79gUhu2WE4-DQ5RWtAob8hTpXl4l5FK8/s320/sNQw3BC4nXzfamnreobIkuKI0tY.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zdHJlYW0uNG5tLWNkbi0wNDgzOTY0LmNvbS9iLTAzL2FrYW1lLWdhLWtpbGwtNTI0NzdiOTQvZHViYmVkLzIvN2MyMDE2MjUtMzY3NC00YmE5LWI4YjAtZGI0Yzg2OGQ4MGQyL3N0cmVhbS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

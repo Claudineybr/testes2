@@ -90,3 +90,9 @@ https://www.vini7xgrave.site/2025/05/inix-o-conta-da-aia.html  # o_conta_da_aia:
 https://www.vini7xgrave.site/2025/05/inix-outsider.html  # the_outsider: T1E9 aparece 2x com URLs diferentes
 https://www.vini7xgrave.site/2025/05/inix-round-6.html  # round_6: T1E2 aparece 2x com URLs diferentes; T1E3 aparece 2x com URLs diferentes; T1E4 aparece 2x com URLs diferentes; T2: faltam episódios [2, 3, 4]
 https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html  # shadowhunters_instrumentos_mortais: T2E2 aparece 2x com URLs diferentes; T2E3 aparece 2x com URLs diferentes; T2: faltam episódios [12, 13]
+https://www.vini7xgrave.site/2025/05/inix-walking-dead-2010.html  # the_walking_dead: T8: faltam episódios [1]
+https://www.vini7xgrave.site/2025/05/s.html  # s_w_a_t_forca_de_intervencao: T1E8 aparece 2x com URLs diferentes; T1: faltam episódios [9]
+https://www.vini7xgrave.site/2025/06/berserk-1-temporada-episodio-1.html  # berserk_2016_legendado: T1E2 aparece 2x com URLs diferentes; T1: faltam episódios [3]
+https://www.vini7xgrave.site/2025/06/inix-dr-stone.html  # dr_stone: T4E2 aparece 2x com URLs diferentes; T4E3 aparece 2x com URLs diferentes; T4E4 aparece 2x com URLs diferentes; T4E5 aparece 2x com URLs diferentes; T4E6 aparece 2x com URLs diferentes; T4E7 aparece 2x com URLs diferentes; T4E8 aparece 3x com URLs diferentes; T4E10 aparece 2x com URLs diferentes; T4E11 aparece 2x com URLs diferentes
+https://www.vini7xgrave.site/2025/06/inix-haikyu-2014.html  # haikyu: T2E16 aparece 2x com URLs diferentes; T2: faltam episódios [17]
+https://www.vini7xgrave.site/2025/06/inix-hells-paradise-2023.html  # hell_s_paradise: T1E11 aparece 2x com URLs diferentes; T1: faltam episódios [12]

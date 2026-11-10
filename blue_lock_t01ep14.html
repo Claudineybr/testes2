@@ -12,7 +12,7 @@
     "name": "BLUE LOCK - T1E14 – Os Gênios e os Medíocres - 🍿Clau",
     "description": "Assista BLUE LOCK - T1E14 – Os Gênios e os Medíocres - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8JNZBbwy2lC6Y3sWWsyNgumGMHmfr8rnZsru7Ic0AhX5dXYNIAQwliGW_BvdOwBoWpFQuJKsXHAlhh1juq1N1uXZIaA8x9XitGpEU1dDZSG5t-PnqzgViikMCSC1WddHWSNKfSruguxnGFuU_VCGMDDmmbQ5R_4wpihKUSEOimVpySNxvbnnGUuZQp7A/w1280-h720-p-k-no-nu/images-1.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8JNZBbwy2lC6Y3sWWsyNgumGMHmfr8rnZsru7Ic0AhX5dXYNIAQwliGW_BvdOwBoWpFQuJKsXHAlhh1juq1N1uXZIaA8x9XitGpEU1dDZSG5t-PnqzgViikMCSC1WddHWSNKfSruguxnGFuU_VCGMDDmmbQ5R_4wpihKUSEOimVpySNxvbnnGUuZQp7A/s320/images-1.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>BLUE LOCK - T1E14 – Os Gênios e os Medíocres - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://stream.4nm-cdn-0483964.com/b-10/blue-lock-cf59d248/dubbed/14/ab0a88be-bb1e-40b6-a282-903761d14d57/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8JNZBbwy2lC6Y3sWWsyNgumGMHmfr8rnZsru7Ic0AhX5dXYNIAQwliGW_BvdOwBoWpFQuJKsXHAlhh1juq1N1uXZIaA8x9XitGpEU1dDZSG5t-PnqzgViikMCSC1WddHWSNKfSruguxnGFuU_VCGMDDmmbQ5R_4wpihKUSEOimVpySNxvbnnGUuZQp7A/w1280-h720-p-k-no-nu/images-1.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8JNZBbwy2lC6Y3sWWsyNgumGMHmfr8rnZsru7Ic0AhX5dXYNIAQwliGW_BvdOwBoWpFQuJKsXHAlhh1juq1N1uXZIaA8x9XitGpEU1dDZSG5t-PnqzgViikMCSC1WddHWSNKfSruguxnGFuU_VCGMDDmmbQ5R_4wpihKUSEOimVpySNxvbnnGUuZQp7A/s320/images-1.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zdHJlYW0uNG5tLWNkbi0wNDgzOTY0LmNvbS9iLTEwL2JsdWUtbG9jay1jZjU5ZDI0OC9kdWJiZWQvMTQvYWIwYTg4YmUtYmIxZS00MGI2LWEyODItOTAzNzYxZDE0ZDU3L3N0cmVhbS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
