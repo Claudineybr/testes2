@@ -1,6 +1,6 @@
 {
   "contagem": {
-    "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html": 1
+    "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html": 2
   },
   "eventos": [
     {
@@ -312,12 +312,18 @@
       "tipo": "excecao",
       "url": "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html",
       "detalhe": "link inválido para academia_de_viloes_2025.html: 'com/m/Academia.de.Vil%C3%B5es.2025.1080p.WEB-DL.DUAL.5.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T10:35:12+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html",
+      "detalhe": "link inválido para academia_de_viloes_2025.html: 'com/m/Academia.de.Vil%C3%B5es.2025.1080p.WEB-DL.DUAL.5.1.mp4'"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 39,
-      "ok": 39,
+      "requisicoes": 41,
+      "ok": 41,
       "429": 0,
       "5xx": 0,
       "retries": 0,
@@ -327,21 +333,21 @@
       "conflitos": 0,
       "proxy_fallback": 0,
       "proxy_hit": 0,
-      "pausas_evitadas": 99,
-      "http_realizados": 0,
-      "playwright_skip": 8,
+      "pausas_evitadas": 96,
+      "http_realizados": 3,
+      "playwright_skip": 9,
       "proxmint_listas": 0,
-      "link_em_a_href": 2,
+      "link_em_a_href": 3,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T10:25:36+00:00",
-      "duracao_min": 11.6
+      "quando": "2026-11-10T10:38:52+00:00",
+      "duracao_min": 12.2
     },
     "acumulado": {
-      "requisicoes": 947,
-      "ok": 923,
+      "requisicoes": 988,
+      "ok": 964,
       "429": 23,
       "5xx": 0,
       "retries": 0,
@@ -351,11 +357,11 @@
       "conflitos": 0,
       "proxy_fallback": 23,
       "proxy_hit": 23,
-      "pausas_evitadas": 2329,
-      "http_realizados": 47,
-      "playwright_skip": 158,
+      "pausas_evitadas": 2425,
+      "http_realizados": 50,
+      "playwright_skip": 167,
       "proxmint_listas": 23,
-      "link_em_a_href": 77,
+      "link_em_a_href": 80,
       "link_convertido_w2embed": 186,
       "multifilme_paginas": 15,
       "multifilme_arquivos": 64

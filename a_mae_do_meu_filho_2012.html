@@ -12,7 +12,7 @@
     "name": "A Mae do Meu Filho (2012) - 🍿Clau",
     "description": "Assista A Mae do Meu Filho (2012) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp8wA3CIqTGGsHFxOl0H9yg10tHq24OQpki2ixqLFdA36jlmhfdOsHVyTP3cJR9IHaMQjPVGJ6xcHZwHvUz5JUxAqt2bGTCU7VM4VbbUz9JlJs33PnZFj5bS7DQWUNu7DIELibA2E0YxP2OgTYTi7O8PGwzJlUfsii5cgGSrIArtPWxBToyqeQLwuS0SE/w1280-h720-p-k-no-nu/Picsart_25-09-18_12-43-53-294.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp8wA3CIqTGGsHFxOl0H9yg10tHq24OQpki2ixqLFdA36jlmhfdOsHVyTP3cJR9IHaMQjPVGJ6xcHZwHvUz5JUxAqt2bGTCU7VM4VbbUz9JlJs33PnZFj5bS7DQWUNu7DIELibA2E0YxP2OgTYTi7O8PGwzJlUfsii5cgGSrIArtPWxBToyqeQLwuS0SE/s400/Picsart_25-09-18_12-43-53-294.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Mae do Meu Filho (2012) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/A.Mae.do.Meu.Filho.2022.1080p.WEB-DL.DUAL.2.0.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp8wA3CIqTGGsHFxOl0H9yg10tHq24OQpki2ixqLFdA36jlmhfdOsHVyTP3cJR9IHaMQjPVGJ6xcHZwHvUz5JUxAqt2bGTCU7VM4VbbUz9JlJs33PnZFj5bS7DQWUNu7DIELibA2E0YxP2OgTYTi7O8PGwzJlUfsii5cgGSrIArtPWxBToyqeQLwuS0SE/w1280-h720-p-k-no-nu/Picsart_25-09-18_12-43-53-294.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp8wA3CIqTGGsHFxOl0H9yg10tHq24OQpki2ixqLFdA36jlmhfdOsHVyTP3cJR9IHaMQjPVGJ6xcHZwHvUz5JUxAqt2bGTCU7VM4VbbUz9JlJs33PnZFj5bS7DQWUNu7DIELibA2E0YxP2OgTYTi7O8PGwzJlUfsii5cgGSrIArtPWxBToyqeQLwuS0SE/s400/Picsart_25-09-18_12-43-53-294.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9BLk1hZS5kby5NZXUuRmlsaG8uMjAyMi4xMDgwcC5XRUItREwuRFVBTC4yLjAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

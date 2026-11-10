@@ -12,7 +12,7 @@
     "name": "Destinos Opostos (2023) - 🍿Clau",
     "description": "Assista Destinos Opostos (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCYsO7QL-n7eDJG4DP-MJ5_HLiirnPbr80-UQyFcDVJ5-pfbknrqSSHyUuguoIcWztTduJnUq6X6Qet0EMreUsHsMkkD3xs2dA2ADvlB2NUFUKvtFDHeBXiPOr-0UPzSvbzt1LnIROdNdb16NlskfSx1SPbGi2BDVpsucAnDlZVbiQOI6IMsABk5qEXN0/w1280-h720-p-k-no-nu/j6le1JyvrFQXjgKiz30yuSdzujr.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCYsO7QL-n7eDJG4DP-MJ5_HLiirnPbr80-UQyFcDVJ5-pfbknrqSSHyUuguoIcWztTduJnUq6X6Qet0EMreUsHsMkkD3xs2dA2ADvlB2NUFUKvtFDHeBXiPOr-0UPzSvbzt1LnIROdNdb16NlskfSx1SPbGi2BDVpsucAnDlZVbiQOI6IMsABk5qEXN0/s400/j6le1JyvrFQXjgKiz30yuSdzujr.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Destinos Opostos (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Destinos.Opostos.2022.1080p.WEB-DL.NACIONAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCYsO7QL-n7eDJG4DP-MJ5_HLiirnPbr80-UQyFcDVJ5-pfbknrqSSHyUuguoIcWztTduJnUq6X6Qet0EMreUsHsMkkD3xs2dA2ADvlB2NUFUKvtFDHeBXiPOr-0UPzSvbzt1LnIROdNdb16NlskfSx1SPbGi2BDVpsucAnDlZVbiQOI6IMsABk5qEXN0/w1280-h720-p-k-no-nu/j6le1JyvrFQXjgKiz30yuSdzujr.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCYsO7QL-n7eDJG4DP-MJ5_HLiirnPbr80-UQyFcDVJ5-pfbknrqSSHyUuguoIcWztTduJnUq6X6Qet0EMreUsHsMkkD3xs2dA2ADvlB2NUFUKvtFDHeBXiPOr-0UPzSvbzt1LnIROdNdb16NlskfSx1SPbGi2BDVpsucAnDlZVbiQOI6IMsABk5qEXN0/s400/j6le1JyvrFQXjgKiz30yuSdzujr.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9EZXN0aW5vcy5PcG9zdG9zLjIwMjIuMTA4MHAuV0VCLURMLk5BQ0lPTkFMLjUuMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
