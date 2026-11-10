@@ -12,7 +12,7 @@
     "name": "Me Chame Pelo Seu Nome (2017) - 🍿Clau",
     "description": "Assista Me Chame Pelo Seu Nome (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC4Pc7FxuEeVtWEJ-YUCPcY2gIGOqjqOG5uSgayPxN6TB6I4FEyn4c91vABiNSmCiAYWzRlqRra5a-8ki0mkNptvyeHTBd-jdmCrja5GCkCOfCsGz9-4lRiWC-ugyqTLZJ7lEBH2ypwhVsD0bO8lKcDpa8QMRN4duLWkJfpD0Lgeq1dW-AGrNDKX8HvA8/w1280-h720-p-k-no-nu/iOt1r9XYw2L3cRmuRoyiW979MWk.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC4Pc7FxuEeVtWEJ-YUCPcY2gIGOqjqOG5uSgayPxN6TB6I4FEyn4c91vABiNSmCiAYWzRlqRra5a-8ki0mkNptvyeHTBd-jdmCrja5GCkCOfCsGz9-4lRiWC-ugyqTLZJ7lEBH2ypwhVsD0bO8lKcDpa8QMRN4duLWkJfpD0Lgeq1dW-AGrNDKX8HvA8/s400/iOt1r9XYw2L3cRmuRoyiW979MWk.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Me Chame Pelo Seu Nome (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Me%20Chame%20pelo%20Seu%20Nome_2018_tt5726616.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC4Pc7FxuEeVtWEJ-YUCPcY2gIGOqjqOG5uSgayPxN6TB6I4FEyn4c91vABiNSmCiAYWzRlqRra5a-8ki0mkNptvyeHTBd-jdmCrja5GCkCOfCsGz9-4lRiWC-ugyqTLZJ7lEBH2ypwhVsD0bO8lKcDpa8QMRN4duLWkJfpD0Lgeq1dW-AGrNDKX8HvA8/w1280-h720-p-k-no-nu/iOt1r9XYw2L3cRmuRoyiW979MWk.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC4Pc7FxuEeVtWEJ-YUCPcY2gIGOqjqOG5uSgayPxN6TB6I4FEyn4c91vABiNSmCiAYWzRlqRra5a-8ki0mkNptvyeHTBd-jdmCrja5GCkCOfCsGz9-4lRiWC-ugyqTLZJ7lEBH2ypwhVsD0bO8lKcDpa8QMRN4duLWkJfpD0Lgeq1dW-AGrNDKX8HvA8/s400/iOt1r9XYw2L3cRmuRoyiW979MWk.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL01lJTIwQ2hhbWUlMjBwZWxvJTIwU2V1JTIwTm9tZV8yMDE4X3R0NTcyNjYxNi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

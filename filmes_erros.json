@@ -1,8 +1,5 @@
 {
-  "contagem": {
-    "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html": 2,
-    "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html": 2
-  },
+  "contagem": {},
   "eventos": [
     {
       "quando": "2026-11-10T05:10:57+00:00",
@@ -251,12 +248,60 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:53:46+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html",
+      "detalhe": "link inválido para nossos_tempos_2025.html: 'ht/m/Nossos%20Tempos.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:54:01+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html",
+      "detalhe": "link inválido para quebrando_regras_2025.html: 'htt/m/Quebrando.Regras.2025.1080p.WEB-DL.DUAL.2.0.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:54:37+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html",
+      "motivo": "3 falhas seguidas"
+    },
+    {
+      "quando": "2026-11-10T09:54:37+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html",
+      "motivo": "3 falhas seguidas"
+    },
+    {
+      "quando": "2026-11-10T09:55:22+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-ate-ultima-gota-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:56:53+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-mountainhead-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:57:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-o-ultimo-mergulho-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 48,
-      "ok": 45,
+      "requisicoes": 45,
+      "ok": 42,
       "429": 3,
       "5xx": 0,
       "retries": 0,
@@ -266,36 +311,36 @@
       "conflitos": 0,
       "proxy_fallback": 3,
       "proxy_hit": 3,
-      "pausas_evitadas": 97,
-      "http_realizados": 2,
-      "playwright_skip": 13,
+      "pausas_evitadas": 98,
+      "http_realizados": 1,
+      "playwright_skip": 10,
       "proxmint_listas": 3,
-      "link_em_a_href": 1,
-      "link_convertido_w2embed": 0,
+      "link_em_a_href": 2,
+      "link_convertido_w2embed": 1,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T09:43:53+00:00",
-      "duracao_min": 15.2
+      "quando": "2026-11-10T09:59:19+00:00",
+      "duracao_min": 14.1
     },
     "acumulado": {
-      "requisicoes": 822,
-      "ok": 802,
-      "429": 19,
+      "requisicoes": 867,
+      "ok": 844,
+      "429": 22,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 19,
+      "falhas_definitivas": 22,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 19,
-      "proxy_hit": 19,
-      "pausas_evitadas": 2034,
-      "http_realizados": 45,
-      "playwright_skip": 132,
-      "proxmint_listas": 19,
-      "link_em_a_href": 72,
-      "link_convertido_w2embed": 185,
+      "proxy_fallback": 22,
+      "proxy_hit": 22,
+      "pausas_evitadas": 2132,
+      "http_realizados": 46,
+      "playwright_skip": 142,
+      "proxmint_listas": 22,
+      "link_em_a_href": 74,
+      "link_convertido_w2embed": 186,
       "multifilme_paginas": 14,
       "multifilme_arquivos": 62
     }

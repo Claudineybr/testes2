@@ -12,7 +12,7 @@
     "name": "LEGO Disney Princesa: Viloes Unidos (2025) - 🍿Clau",
     "description": "Assista LEGO Disney Princesa: Viloes Unidos (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-FD6UP5gGuOYOFhDvnhNCQa4GF0SA1H_UN3mb9MRTnAJbaQIy1OVRZH4GeyG6a7oYr4QZuyyi6cN-hhB-c8d6kQH7HcELRZutgwzQ5JaoWdoH3GXJtYiPsUj5ponfZWawb3XTwrQS96ZjC55b4brQaZOxgDfLjvQN9vdC_rAQR39xgCODnBGRj2jKEII/w1280-h720-p-k-no-nu/images-1.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-FD6UP5gGuOYOFhDvnhNCQa4GF0SA1H_UN3mb9MRTnAJbaQIy1OVRZH4GeyG6a7oYr4QZuyyi6cN-hhB-c8d6kQH7HcELRZutgwzQ5JaoWdoH3GXJtYiPsUj5ponfZWawb3XTwrQS96ZjC55b4brQaZOxgDfLjvQN9vdC_rAQR39xgCODnBGRj2jKEII/s400/images-1.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>LEGO Disney Princesa: Viloes Unidos (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.cnvslink.com/m/LEGO.Disney.Princesa.Vil%C3%B5es.Unidos.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-FD6UP5gGuOYOFhDvnhNCQa4GF0SA1H_UN3mb9MRTnAJbaQIy1OVRZH4GeyG6a7oYr4QZuyyi6cN-hhB-c8d6kQH7HcELRZutgwzQ5JaoWdoH3GXJtYiPsUj5ponfZWawb3XTwrQS96ZjC55b4brQaZOxgDfLjvQN9vdC_rAQR39xgCODnBGRj2jKEII/w1280-h720-p-k-no-nu/images-1.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-FD6UP5gGuOYOFhDvnhNCQa4GF0SA1H_UN3mb9MRTnAJbaQIy1OVRZH4GeyG6a7oYr4QZuyyi6cN-hhB-c8d6kQH7HcELRZutgwzQ5JaoWdoH3GXJtYiPsUj5ponfZWawb3XTwrQS96ZjC55b4brQaZOxgDfLjvQN9vdC_rAQR39xgCODnBGRj2jKEII/s400/images-1.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4uY252c2xpbmsuY29tL20vTEVHTy5EaXNuZXkuUHJpbmNlc2EuVmlsJUMzJUI1ZXMuVW5pZG9zLjIwMjUuMTA4MHAuV0VCLURMLkRVQUwuNS4xLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
