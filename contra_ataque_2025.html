@@ -12,7 +12,7 @@
     "name": "Contra-Ataque (2025) - 🍿Clau",
     "description": "Assista Contra-Ataque (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTRvoU3-fX90gh3TSxFcr2wPvii_lPF4YWmQ6HLhAVUFA8WO0z5Rv0pFLBCBgzFSdAE_-Na_X5GrCoXhRUx9AIs_IBvp1lp-M9FP7mWh3BU8XOp62nIg0h_91Bsa3Mnc72DEBBXdj9GkYG6nYg1kjhnNBySIsUMvpDdsVzT1hc-BBkJ0xiwdry10OnXeY/w1280-h720-p-k-no-nu/zuJxFE6EztS8rwwYhDIe60oWg3a.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTRvoU3-fX90gh3TSxFcr2wPvii_lPF4YWmQ6HLhAVUFA8WO0z5Rv0pFLBCBgzFSdAE_-Na_X5GrCoXhRUx9AIs_IBvp1lp-M9FP7mWh3BU8XOp62nIg0h_91Bsa3Mnc72DEBBXdj9GkYG6nYg1kjhnNBySIsUMvpDdsVzT1hc-BBkJ0xiwdry10OnXeY/s320/zuJxFE6EztS8rwwYhDIe60oWg3a.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Contra-Ataque (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0001.speed-stream.online/contra-ataque-4e6c536d/dubbed/1/f6d12457-a074-4135-a70a-0ea241ab2228/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTRvoU3-fX90gh3TSxFcr2wPvii_lPF4YWmQ6HLhAVUFA8WO0z5Rv0pFLBCBgzFSdAE_-Na_X5GrCoXhRUx9AIs_IBvp1lp-M9FP7mWh3BU8XOp62nIg0h_91Bsa3Mnc72DEBBXdj9GkYG6nYg1kjhnNBySIsUMvpDdsVzT1hc-BBkJ0xiwdry10OnXeY/w1280-h720-p-k-no-nu/zuJxFE6EztS8rwwYhDIe60oWg3a.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTRvoU3-fX90gh3TSxFcr2wPvii_lPF4YWmQ6HLhAVUFA8WO0z5Rv0pFLBCBgzFSdAE_-Na_X5GrCoXhRUx9AIs_IBvp1lp-M9FP7mWh3BU8XOp62nIg0h_91Bsa3Mnc72DEBBXdj9GkYG6nYg1kjhnNBySIsUMvpDdsVzT1hc-BBkJ0xiwdry10OnXeY/s320/zuJxFE6EztS8rwwYhDIe60oWg3a.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwMS5zcGVlZC1zdHJlYW0ub25saW5lL2NvbnRyYS1hdGFxdWUtNGU2YzUzNmQvZHViYmVkLzEvZjZkMTI0NTctYTA3NC00MTM1LWE3MGEtMGVhMjQxYWIyMjI4L3N0cmVhbS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

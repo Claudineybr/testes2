@@ -12,7 +12,7 @@
     "name": "Conclave (2024) - 🍿Clau",
     "description": "Assista Conclave (2024) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPZoqht-DSt_S-_MYSHcwbymz8-Ov061Ki6eeGjTns5GCeI2TR49ckwL5Ux5HZRMK1K44G5-doR1Y7Cq8788V-K0MzufJaOhG6zssm2GnyMBDawJ3oL4bCgOd2S-SihzQO8gCl8xawlw9YLR-PQP-Xi3LS15W-VcgWKH56hOM7PouWlqJytECkBUE3g_M/w1280-h720-p-k-no-nu/images-35.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPZoqht-DSt_S-_MYSHcwbymz8-Ov061Ki6eeGjTns5GCeI2TR49ckwL5Ux5HZRMK1K44G5-doR1Y7Cq8788V-K0MzufJaOhG6zssm2GnyMBDawJ3oL4bCgOd2S-SihzQO8gCl8xawlw9YLR-PQP-Xi3LS15W-VcgWKH56hOM7PouWlqJytECkBUE3g_M/s320/images-35.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Conclave (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Conclave_2024_tt20215234.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPZoqht-DSt_S-_MYSHcwbymz8-Ov061Ki6eeGjTns5GCeI2TR49ckwL5Ux5HZRMK1K44G5-doR1Y7Cq8788V-K0MzufJaOhG6zssm2GnyMBDawJ3oL4bCgOd2S-SihzQO8gCl8xawlw9YLR-PQP-Xi3LS15W-VcgWKH56hOM7PouWlqJytECkBUE3g_M/w1280-h720-p-k-no-nu/images-35.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPZoqht-DSt_S-_MYSHcwbymz8-Ov061Ki6eeGjTns5GCeI2TR49ckwL5Ux5HZRMK1K44G5-doR1Y7Cq8788V-K0MzufJaOhG6zssm2GnyMBDawJ3oL4bCgOd2S-SihzQO8gCl8xawlw9YLR-PQP-Xi3LS15W-VcgWKH56hOM7PouWlqJytECkBUE3g_M/s320/images-35.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL0NvbmNsYXZlXzIwMjRfdHQyMDIxNTIzNC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -450,31 +450,121 @@
       "tipo": "html_invalido",
       "url": "https://www.vini7xgrave.site/2025/03/aquelas-que-voces-nao-queimaram.html",
       "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T23:42:46+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-semente-do-mal-2023.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T23:45:33+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/apartamento-7a.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-09T23:56:35+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/chamada-de-emergencia-2013.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:07:52+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/lobos-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:13:46+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-exterminador-do-futuro.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:15:04+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/os-vingadores-avengers.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:17:35+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/saga-mad-max.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:18:59+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/saga-missao-impossivel.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:26:06+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/a-ilha-fantasma-2020.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:28:05+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/a-proxima-vitima-2021.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:30:07+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/aquelas-que-voces-nao-queimaram.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:36:03+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/cacada-fantasma-2023.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:37:19+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/chapolin-colorado-1973.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:37:56+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/coringa-2019.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T00:42:56+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/experimento-maldito-2023.html",
+      "detalhe": "página de erro/bloqueio"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 122,
-      "ok": 92,
-      "429": 30,
+      "requisicoes": 112,
+      "ok": 94,
+      "429": 18,
       "5xx": 0,
-      "retries": 28,
-      "falhas_definitivas": 2,
+      "retries": 18,
+      "falhas_definitivas": 0,
       "html_invalido": 15,
       "serie_inconsistente": 0,
       "conflitos": 0,
       "robo": "filmes",
-      "quando": "2026-11-09T22:39:59+00:00",
-      "duracao_min": 139.4
+      "quando": "2026-11-10T00:43:39+00:00",
+      "duracao_min": 122.6
     },
     "acumulado": {
-      "requisicoes": 411,
-      "ok": 212,
-      "429": 199,
+      "requisicoes": 523,
+      "ok": 306,
+      "429": 217,
       "5xx": 0,
-      "retries": 181,
+      "retries": 199,
       "falhas_definitivas": 18,
-      "html_invalido": 34,
+      "html_invalido": 49,
       "serie_inconsistente": 0,
       "conflitos": 0
     }
