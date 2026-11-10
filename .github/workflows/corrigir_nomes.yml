@@ -13,6 +13,11 @@ on:
         required: false
         default: false
         type: boolean
+      buscar_anos_no_feed:
+        description: 'Consultar o feed do site para descobrir o ano de filmes sem ano? (lento: 1 página a cada 15 s, ~8 min; padrão: NÃO)'
+        required: false
+        default: false
+        type: boolean
   push:
     branches: [main]
     paths:
@@ -60,14 +65,14 @@ jobs:
             série : Nome - T2E11 – Título - 🍿Clau      (T/E em maiúsculo, sem zero à esquerda, travessão antes do título)
 
           Garantias: nunca apaga arquivo, nunca sobrescreve um destino que já existe, nunca mexe em URLs/links, e
-          rodar duas vezes não altera nada na segunda. Variáveis: DRY_RUN=1 (só mostra), USAR_FEED=0 (não consulta o feed).
+          rodar duas vezes não altera nada na segunda. Variáveis: DRY_RUN=1 (só mostra), USAR_FEED=1 (consulta o feed para achar o ano; 1 página a cada 15 s).
           """
           import re, os, sys, json, html, time, glob, unicodedata, collections
           from pathlib import Path
 
           SUFIXO = "🍿Clau"
           DRY = (os.environ.get("DRY_RUN") or "0") == "1"
-          USAR_FEED = (os.environ.get("USAR_FEED") or "1") != "0"
+          USAR_FEED = (os.environ.get("USAR_FEED") or "0") == "1"   # padrão: NÃO consulta o feed (o Blogger limita ~11 req/min por IP)
           REMOVER_DUPLICATAS = (os.environ.get("REMOVER_DUPLICATAS") or "0") == "1"   # OPT-IN: remove duplicata exata (mesmo vídeo)
           BASE_URL = "https://www.vini7xgrave.site"
 
@@ -220,14 +225,18 @@ jobs:
               """contentUrl -> ano, só quando o link pertence a UM único post com ano no título. Falha = {} (sem erro)."""
               if not USAR_FEED:
                   return {}
-              import urllib.request
+              import urllib.request, urllib.error
               por_link = collections.defaultdict(set)
               start = 1
               try:
                   while True:
                       url = f"{BASE_URL}/feeds/posts/default?alt=json&max-results=150&start-index={start}"
                       req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/124.0 Safari/537.36"})
-                      feed = json.loads(urllib.request.urlopen(req, timeout=30).read().decode("utf-8")).get("feed", {})
+                      try:
+                          feed = json.loads(urllib.request.urlopen(req, timeout=30).read().decode("utf-8")).get("feed", {})
+                      except urllib.error.HTTPError as ex:
+                          print(f"(feed: HTTP {ex.code}; paro aqui e sigo sem os anos que faltam — sem retentativa, para não piorar o 429)")
+                          break
                       ents = feed.get("entry", []) or []
                       for e in ents:
                           titulo = unicodedata.normalize("NFKC", (e.get("title") or {}).get("$t", ""))
@@ -239,7 +248,7 @@ jobs:
                       if len(ents) < 150:
                           break
                       start += 150
-                      time.sleep(2)
+                      time.sleep(15)   # respeita o limite do Blogger (~11-12 req/min por IP): 4 req/min
               except Exception as ex:
                   print(f"(feed indisponível para buscar anos: {str(ex)[:80]}; sigo sem ele)")
                   return {}
@@ -389,6 +398,7 @@ jobs:
 
       - name: Corrigir, commitar e dar push
         env:
+          USAR_FEED: ${{ (inputs.buscar_anos_no_feed == true || inputs.buscar_anos_no_feed == 'true') && '1' || '0' }}
           REMOVER_DUPLICATAS: ${{ (inputs.remover_duplicatas == true || inputs.remover_duplicatas == 'true') && '1' || '0' }}
           RELATORIO: /tmp/relatorio_corrigir_nomes.txt
         run: |
