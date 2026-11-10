@@ -12,7 +12,7 @@
     "name": "Dois Mundos, Um Desejo (2025) - 🍿Clau",
     "description": "Assista Dois Mundos, Um Desejo (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs4XKcuAeh43I7X-xLwQGClAEaMc4Qq-Bgw8Y3oJYRnHrdmjm0L3Ifb7C1hrdMTyzAzdAXI2ECpZvYo8xgra39q0Fv60UKv_xmI2Z8OBswlOSc8_WZB6ZbOtm-m3Wgmr6nx7Y5FogvFaKC3Mz3r4agU-Dc-zZu4D19wwMNHP_IEXCuKEmmj49i6ALmsN4/w1280-h720-p-k-no-nu/nwUkntG3zIhTn3RP5S95QXX1vhw.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs4XKcuAeh43I7X-xLwQGClAEaMc4Qq-Bgw8Y3oJYRnHrdmjm0L3Ifb7C1hrdMTyzAzdAXI2ECpZvYo8xgra39q0Fv60UKv_xmI2Z8OBswlOSc8_WZB6ZbOtm-m3Wgmr6nx7Y5FogvFaKC3Mz3r4agU-Dc-zZu4D19wwMNHP_IEXCuKEmmj49i6ALmsN4/s400/nwUkntG3zIhTn3RP5S95QXX1vhw.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Dois Mundos, Um Desejo (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Dois.Mundos.Um.Desejo.2025.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs4XKcuAeh43I7X-xLwQGClAEaMc4Qq-Bgw8Y3oJYRnHrdmjm0L3Ifb7C1hrdMTyzAzdAXI2ECpZvYo8xgra39q0Fv60UKv_xmI2Z8OBswlOSc8_WZB6ZbOtm-m3Wgmr6nx7Y5FogvFaKC3Mz3r4agU-Dc-zZu4D19wwMNHP_IEXCuKEmmj49i6ALmsN4/w1280-h720-p-k-no-nu/nwUkntG3zIhTn3RP5S95QXX1vhw.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhs4XKcuAeh43I7X-xLwQGClAEaMc4Qq-Bgw8Y3oJYRnHrdmjm0L3Ifb7C1hrdMTyzAzdAXI2ECpZvYo8xgra39q0Fv60UKv_xmI2Z8OBswlOSc8_WZB6ZbOtm-m3Wgmr6nx7Y5FogvFaKC3Mz3r4agU-Dc-zZu4D19wwMNHP_IEXCuKEmmj49i6ALmsN4/s400/nwUkntG3zIhTn3RP5S95QXX1vhw.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9Eb2lzLk11bmRvcy5VbS5EZXNlam8uMjAyNS4xMDgwcC5XRUItREwuRFVBTC41LjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

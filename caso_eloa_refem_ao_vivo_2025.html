@@ -12,7 +12,7 @@
     "name": "Caso Eloa: Refem ao Vivo (2025) - 🍿Clau",
     "description": "Assista Caso Eloa: Refem ao Vivo (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghWZwJGW4QT0Zq31fouy___0tzG2Np6NMbrXw1f2ZVe8xK9QpGHmFIh2lNM6C00WsiXXRo8fKsEo5IKmBCmfhusWwRf3-9jCegAHb20HQtDESJSNQVDYk9xJyHKtwW2gVdfT2F8lQejvrAyYJOKOf7qhZK4dQYOjms0bRS3iOWyGiSpZubZhD1AUydw3M/w1280-h720-p-k-no-nu/Picsart_25-11-12_12-48-17-112.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghWZwJGW4QT0Zq31fouy___0tzG2Np6NMbrXw1f2ZVe8xK9QpGHmFIh2lNM6C00WsiXXRo8fKsEo5IKmBCmfhusWwRf3-9jCegAHb20HQtDESJSNQVDYk9xJyHKtwW2gVdfT2F8lQejvrAyYJOKOf7qhZK4dQYOjms0bRS3iOWyGiSpZubZhD1AUydw3M/s400/Picsart_25-11-12_12-48-17-112.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Caso Eloa: Refem ao Vivo (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Caso.Elo%C3%A1.Ref%C3%A9m.ao.Vivo.2025.1080p.WEB-DL.NACIONAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghWZwJGW4QT0Zq31fouy___0tzG2Np6NMbrXw1f2ZVe8xK9QpGHmFIh2lNM6C00WsiXXRo8fKsEo5IKmBCmfhusWwRf3-9jCegAHb20HQtDESJSNQVDYk9xJyHKtwW2gVdfT2F8lQejvrAyYJOKOf7qhZK4dQYOjms0bRS3iOWyGiSpZubZhD1AUydw3M/w1280-h720-p-k-no-nu/Picsart_25-11-12_12-48-17-112.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghWZwJGW4QT0Zq31fouy___0tzG2Np6NMbrXw1f2ZVe8xK9QpGHmFIh2lNM6C00WsiXXRo8fKsEo5IKmBCmfhusWwRf3-9jCegAHb20HQtDESJSNQVDYk9xJyHKtwW2gVdfT2F8lQejvrAyYJOKOf7qhZK4dQYOjms0bRS3iOWyGiSpZubZhD1AUydw3M/s400/Picsart_25-11-12_12-48-17-112.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9DYXNvLkVsbyVDMyVBMS5SZWYlQzMlQTltLmFvLlZpdm8uMjAyNS4xMDgwcC5XRUItREwuTkFDSU9OQUwuNS4xLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
