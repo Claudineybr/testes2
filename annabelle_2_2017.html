@@ -12,7 +12,7 @@
     "name": "Annabelle 2 (2017) - 🍿Clau",
     "description": "Assista Annabelle 2 (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3933zc92jd4oQHKbHSrFEiZCmKQhtafXCRxBidueVa0aL_iEAJHkgzbEUndpFmZwEVQwbJQKVivgJFX0wD28U8ZgK9eFzX1aTAZSaAvnNniII146JP7dO1nSKk2sxbCfIV2SB2u6vlgnNU6f7BDo1OdX3vbha4c4rJITENRMa9MaEaLhkM5SE2AOziEw/w1280-h720-p-k-no-nu/imszMw4h1HE9oy3OzQmXW0CrlLc.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3933zc92jd4oQHKbHSrFEiZCmKQhtafXCRxBidueVa0aL_iEAJHkgzbEUndpFmZwEVQwbJQKVivgJFX0wD28U8ZgK9eFzX1aTAZSaAvnNniII146JP7dO1nSKk2sxbCfIV2SB2u6vlgnNU6f7BDo1OdX3vbha4c4rJITENRMa9MaEaLhkM5SE2AOziEw/s320/imszMw4h1HE9oy3OzQmXW0CrlLc.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Annabelle 2 (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/d6f74065-8fc4-400f-95f7-60f9427fb8e7" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3933zc92jd4oQHKbHSrFEiZCmKQhtafXCRxBidueVa0aL_iEAJHkgzbEUndpFmZwEVQwbJQKVivgJFX0wD28U8ZgK9eFzX1aTAZSaAvnNniII146JP7dO1nSKk2sxbCfIV2SB2u6vlgnNU6f7BDo1OdX3vbha4c4rJITENRMa9MaEaLhkM5SE2AOziEw/w1280-h720-p-k-no-nu/imszMw4h1HE9oy3OzQmXW0CrlLc.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3933zc92jd4oQHKbHSrFEiZCmKQhtafXCRxBidueVa0aL_iEAJHkgzbEUndpFmZwEVQwbJQKVivgJFX0wD28U8ZgK9eFzX1aTAZSaAvnNniII146JP7dO1nSKk2sxbCfIV2SB2u6vlgnNU6f7BDo1OdX3vbha4c4rJITENRMa9MaEaLhkM5SE2AOziEw/s320/imszMw4h1HE9oy3OzQmXW0CrlLc.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvZDZmNzQwNjUtOGZjNC00MDBmLTk1ZjctNjBmOTQyN2ZiOGU3");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

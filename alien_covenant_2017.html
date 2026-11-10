@@ -12,7 +12,7 @@
     "name": "Alien: Covenant (2017) - 🍿Clau",
     "description": "Assista Alien: Covenant (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsxLzRUIuzwgEcPLETc0y-3F1RKac6TscnTi2ZnXJ5LIX4bAs1O_7_jGAdQFowoYWk2aPKwmqtMNesTFBQAaXUfTn0OqcoOZtv2EoY8-f7yJPFKFD1hHcVVyukSFnXazlFW0ka91HQPHWwCJzz6Icx534w-ZrOsCV7ilRwvYmltTEFYIpUqaa1UunwWZk/w1280-h720-p-k-no-nu/1000042993.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsxLzRUIuzwgEcPLETc0y-3F1RKac6TscnTi2ZnXJ5LIX4bAs1O_7_jGAdQFowoYWk2aPKwmqtMNesTFBQAaXUfTn0OqcoOZtv2EoY8-f7yJPFKFD1hHcVVyukSFnXazlFW0ka91HQPHWwCJzz6Icx534w-ZrOsCV7ilRwvYmltTEFYIpUqaa1UunwWZk/s320/1000042993.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Alien: Covenant (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/video/alien-covenant-2017-ficcao-cientifica-terror-2h-3m?utm_campaign=embed&utm_medium=embed-link&utm_source=embed-link" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsxLzRUIuzwgEcPLETc0y-3F1RKac6TscnTi2ZnXJ5LIX4bAs1O_7_jGAdQFowoYWk2aPKwmqtMNesTFBQAaXUfTn0OqcoOZtv2EoY8-f7yJPFKFD1hHcVVyukSFnXazlFW0ka91HQPHWwCJzz6Icx534w-ZrOsCV7ilRwvYmltTEFYIpUqaa1UunwWZk/w1280-h720-p-k-no-nu/1000042993.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsxLzRUIuzwgEcPLETc0y-3F1RKac6TscnTi2ZnXJ5LIX4bAs1O_7_jGAdQFowoYWk2aPKwmqtMNesTFBQAaXUfTn0OqcoOZtv2EoY8-f7yJPFKFD1hHcVVyukSFnXazlFW0ka91HQPHWwCJzz6Icx534w-ZrOsCV7ilRwvYmltTEFYIpUqaa1UunwWZk/s320/1000042993.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS92aWRlby9hbGllbi1jb3ZlbmFudC0yMDE3LWZpY2Nhby1jaWVudGlmaWNhLXRlcnJvci0yaC0zbT91dG1fY2FtcGFpZ249ZW1iZWQmdXRtX21lZGl1bT1lbWJlZC1saW5rJnV0bV9zb3VyY2U9ZW1iZWQtbGluaw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

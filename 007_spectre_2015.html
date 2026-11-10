@@ -12,7 +12,7 @@
     "name": "007 Spectre (2015) - 🍿Clau",
     "description": "Assista 007 Spectre (2015) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxktTqWTXfqRh6mEMykXbI2HY9ltjUaPvhJH-ocN1Fo9YJMjWvlAWlnDAB7Ck17ixvgB8X-76NCPJdAyP6OygXU_xBXUv0QnwNOfI2RicRuNQ4ro3JlQuQOJMk7wEVawQ_1hCVaxtBUKWCAKaDjOSY0Sj2HSN3W04zY2PUGnJ9UKKk3Czybs_1NaGc6Ic/w1280-h720-p-k-no-nu/n5x6HD9p39hNyZNw2tMBiH2XE0K.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxktTqWTXfqRh6mEMykXbI2HY9ltjUaPvhJH-ocN1Fo9YJMjWvlAWlnDAB7Ck17ixvgB8X-76NCPJdAyP6OygXU_xBXUv0QnwNOfI2RicRuNQ4ro3JlQuQOJMk7wEVawQ_1hCVaxtBUKWCAKaDjOSY0Sj2HSN3W04zY2PUGnJ9UKKk3Czybs_1NaGc6Ic/s320/n5x6HD9p39hNyZNw2tMBiH2XE0K.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>007 Spectre (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0038.speed-stream.online/007-contra-spectre-7c8954ec/dubbed/1/984aaaa5-415d-4789-9d8c-aebe731ef11d/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxktTqWTXfqRh6mEMykXbI2HY9ltjUaPvhJH-ocN1Fo9YJMjWvlAWlnDAB7Ck17ixvgB8X-76NCPJdAyP6OygXU_xBXUv0QnwNOfI2RicRuNQ4ro3JlQuQOJMk7wEVawQ_1hCVaxtBUKWCAKaDjOSY0Sj2HSN3W04zY2PUGnJ9UKKk3Czybs_1NaGc6Ic/w1280-h720-p-k-no-nu/n5x6HD9p39hNyZNw2tMBiH2XE0K.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxktTqWTXfqRh6mEMykXbI2HY9ltjUaPvhJH-ocN1Fo9YJMjWvlAWlnDAB7Ck17ixvgB8X-76NCPJdAyP6OygXU_xBXUv0QnwNOfI2RicRuNQ4ro3JlQuQOJMk7wEVawQ_1hCVaxtBUKWCAKaDjOSY0Sj2HSN3W04zY2PUGnJ9UKKk3Czybs_1NaGc6Ic/s320/n5x6HD9p39hNyZNw2tMBiH2XE0K.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAzOC5zcGVlZC1zdHJlYW0ub25saW5lLzAwNy1jb250cmEtc3BlY3RyZS03Yzg5NTRlYy9kdWJiZWQvMS85ODRhYWFhNS00MTVkLTQ3ODktOWQ4Yy1hZWJlNzMxZWYxMWQvc3RyZWFtLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Brinquedo Assassino (1988) - 🍿Clau",
     "description": "Assista Brinquedo Assassino (1988) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8SD1_fLJRRO0gSgIEi05zRB8lYHsu8htFzevwo4ZyhS_6z2k8MfG9Rr9_rddU1c3PaktwVtTCKX3mX-vSuqZo7KpSdiijXIYAtY0Jz1ibYzXeDxSSBWl9FLzYnoo42s-CK2EgV4Ob_6vp4vWjL25Q4LOZ5GiQppGXIbU5KRxdxvnyg7lNfuPAQyC2tiY/w1280-h720-p-k-no-nu/vKqVFQOGBNuxywiOOR0vK5REgYn.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8SD1_fLJRRO0gSgIEi05zRB8lYHsu8htFzevwo4ZyhS_6z2k8MfG9Rr9_rddU1c3PaktwVtTCKX3mX-vSuqZo7KpSdiijXIYAtY0Jz1ibYzXeDxSSBWl9FLzYnoo42s-CK2EgV4Ob_6vp4vWjL25Q4LOZ5GiQppGXIbU5KRxdxvnyg7lNfuPAQyC2tiY/s320/vKqVFQOGBNuxywiOOR0vK5REgYn.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Brinquedo Assassino (1988) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/ff2e852a-ed79-4af5-907d-c8a370037d42" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8SD1_fLJRRO0gSgIEi05zRB8lYHsu8htFzevwo4ZyhS_6z2k8MfG9Rr9_rddU1c3PaktwVtTCKX3mX-vSuqZo7KpSdiijXIYAtY0Jz1ibYzXeDxSSBWl9FLzYnoo42s-CK2EgV4Ob_6vp4vWjL25Q4LOZ5GiQppGXIbU5KRxdxvnyg7lNfuPAQyC2tiY/w1280-h720-p-k-no-nu/vKqVFQOGBNuxywiOOR0vK5REgYn.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8SD1_fLJRRO0gSgIEi05zRB8lYHsu8htFzevwo4ZyhS_6z2k8MfG9Rr9_rddU1c3PaktwVtTCKX3mX-vSuqZo7KpSdiijXIYAtY0Jz1ibYzXeDxSSBWl9FLzYnoo42s-CK2EgV4Ob_6vp4vWjL25Q4LOZ5GiQppGXIbU5KRxdxvnyg7lNfuPAQyC2tiY/s320/vKqVFQOGBNuxywiOOR0vK5REgYn.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvZmYyZTg1MmEtZWQ3OS00YWY1LTkwN2QtYzhhMzcwMDM3ZDQy");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

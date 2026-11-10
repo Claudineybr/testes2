@@ -12,7 +12,7 @@
     "name": "Assassino (2023) - 🍿Clau",
     "description": "Assista Assassino (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaTrKe3AzIpG-ILJW5lcHZm46nRry_x71W-fEH9NzM8TF8LOrFdV9aP09ZSZk9TKprnpcoTqZD1TfcrM9wxVojLqt-mX6HAZve1O80VlX3iyA0x3E6y5ORPVWDW3CV4679YIOdQYzfU9ix4v7RFVlTtsFQBWz10EqWexeuopDM0MP2KvsEJIGNM8BfkhI/w1280-h720-p-k-no-nu/qvXYbTcWKYGeWPRMlxoPHqwCStJ.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaTrKe3AzIpG-ILJW5lcHZm46nRry_x71W-fEH9NzM8TF8LOrFdV9aP09ZSZk9TKprnpcoTqZD1TfcrM9wxVojLqt-mX6HAZve1O80VlX3iyA0x3E6y5ORPVWDW3CV4679YIOdQYzfU9ix4v7RFVlTtsFQBWz10EqWexeuopDM0MP2KvsEJIGNM8BfkhI/s320/qvXYbTcWKYGeWPRMlxoPHqwCStJ.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Assassino (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://sinalprivado.info/cache/37497211-0d78-4b6a-a70b-ff653a9cf511/playlist.m3u8" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaTrKe3AzIpG-ILJW5lcHZm46nRry_x71W-fEH9NzM8TF8LOrFdV9aP09ZSZk9TKprnpcoTqZD1TfcrM9wxVojLqt-mX6HAZve1O80VlX3iyA0x3E6y5ORPVWDW3CV4679YIOdQYzfU9ix4v7RFVlTtsFQBWz10EqWexeuopDM0MP2KvsEJIGNM8BfkhI/w1280-h720-p-k-no-nu/qvXYbTcWKYGeWPRMlxoPHqwCStJ.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaTrKe3AzIpG-ILJW5lcHZm46nRry_x71W-fEH9NzM8TF8LOrFdV9aP09ZSZk9TKprnpcoTqZD1TfcrM9wxVojLqt-mX6HAZve1O80VlX3iyA0x3E6y5ORPVWDW3CV4679YIOdQYzfU9ix4v7RFVlTtsFQBWz10EqWexeuopDM0MP2KvsEJIGNM8BfkhI/s320/qvXYbTcWKYGeWPRMlxoPHqwCStJ.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zaW5hbHByaXZhZG8uaW5mby9jYWNoZS8zNzQ5NzIxMS0wZDc4LTRiNmEtYTcwYi1mZjY1M2E5Y2Y1MTEvcGxheWxpc3QubTN1OA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
