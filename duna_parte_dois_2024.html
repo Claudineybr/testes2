@@ -12,7 +12,7 @@
     "name": "Duna: Parte Dois (2024) - 🍿Clau",
     "description": "Assista Duna: Parte Dois (2024) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIytiTSUb6hc2hgSo9OA_7C01onFXeDooo_lrOeg_Wu-T2BOf8Ff9MRSeqDOOyopODZqD1wc4AZVQ008s6bAdr6zlRPJ-xbzDCn_ZmgfBWbsq_vxZf2pPYE017qs1qmSGyCGF-yZa_730Z39fFXFRqr-C_Qvc7B5wOh7J7eKfQnexqbxmYQ-OO905AHIU/w1280-h720-p-k-no-nu/8zW2gWU32fEA4clJRPfjMPxUeod.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIytiTSUb6hc2hgSo9OA_7C01onFXeDooo_lrOeg_Wu-T2BOf8Ff9MRSeqDOOyopODZqD1wc4AZVQ008s6bAdr6zlRPJ-xbzDCn_ZmgfBWbsq_vxZf2pPYE017qs1qmSGyCGF-yZa_730Z39fFXFRqr-C_Qvc7B5wOh7J7eKfQnexqbxmYQ-OO905AHIU/s400/8zW2gWU32fEA4clJRPfjMPxUeod.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Duna: Parte Dois (2024) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0018.l1s0-cdn-3123123.com/duna-parte-2-dd9917ff/dubbed/1/d35c6210-e203-4131-85b5-e188dd523bdb/stream.mp4?storage=0018&expires=1775612233&signature=bec8a8525cd8893005283c960febb54213e42ac0269e5974104629f970500c36&type=movie" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIytiTSUb6hc2hgSo9OA_7C01onFXeDooo_lrOeg_Wu-T2BOf8Ff9MRSeqDOOyopODZqD1wc4AZVQ008s6bAdr6zlRPJ-xbzDCn_ZmgfBWbsq_vxZf2pPYE017qs1qmSGyCGF-yZa_730Z39fFXFRqr-C_Qvc7B5wOh7J7eKfQnexqbxmYQ-OO905AHIU/w1280-h720-p-k-no-nu/8zW2gWU32fEA4clJRPfjMPxUeod.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIytiTSUb6hc2hgSo9OA_7C01onFXeDooo_lrOeg_Wu-T2BOf8Ff9MRSeqDOOyopODZqD1wc4AZVQ008s6bAdr6zlRPJ-xbzDCn_ZmgfBWbsq_vxZf2pPYE017qs1qmSGyCGF-yZa_730Z39fFXFRqr-C_Qvc7B5wOh7J7eKfQnexqbxmYQ-OO905AHIU/s400/8zW2gWU32fEA4clJRPfjMPxUeod.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAxOC5sMXMwLWNkbi0zMTIzMTIzLmNvbS9kdW5hLXBhcnRlLTItZGQ5OTE3ZmYvZHViYmVkLzEvZDM1YzYyMTAtZTIwMy00MTMxLTg1YjUtZTE4OGRkNTIzYmRiL3N0cmVhbS5tcDQ/c3RvcmFnZT0wMDE4JmV4cGlyZXM9MTc3NTYxMjIzMyZzaWduYXR1cmU9YmVjOGE4NTI1Y2Q4ODkzMDA1MjgzYzk2MGZlYmI1NDIxM2U0MmFjMDI2OWU1OTc0MTA0NjI5Zjk3MDUwMGMzNiZ0eXBlPW1vdmll");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

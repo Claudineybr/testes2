@@ -1,6 +1,6 @@
 {
   "contagem": {
-    "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html": 2
+    "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html": 1
   },
   "eventos": [
     {
@@ -118,49 +118,75 @@
       "tipo": "excecao",
       "url": "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html",
       "detalhe": "link inválido para stitches_o_retorno_do_palhaco_assassino_2012.html: 'ttps://www.tokyvideo.com/br/video/stitches-o-retorno-do-palhaco-assassino-2012?utm_campaign=embed&utm_medium=embed-link&utm_sourc"
+    },
+    {
+      "quando": "2026-11-10T08:30:28+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html",
+      "detalhe": "link inválido para stitches_o_retorno_do_palhaco_assassino_2012.html: 'ttps://www.tokyvideo.com/br/video/stitches-o-retorno-do-palhaco-assassino-2012?utm_campaign=embed&utm_medium=embed-link&utm_sourc"
+    },
+    {
+      "quando": "2026-11-10T08:30:43+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-as-duas-faces-de-um-crime-1996.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T08:31:30+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html",
+      "detalhe": "link inválido para conduzido_para_matar_2009.html: '//videa.hu/player?v=ESkGEMafNKVHQI8M'"
+    },
+    {
+      "quando": "2026-11-10T08:32:12+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html",
+      "motivo": "3 falhas seguidas"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 36,
-      "ok": 36,
-      "429": 0,
+      "requisicoes": 40,
+      "ok": 39,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 0,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 0,
-      "proxy_hit": 0,
-      "pausas_evitadas": 99,
-      "http_realizados": 0,
-      "playwright_skip": 5,
-      "proxmint_listas": 0,
+      "proxy_fallback": 1,
+      "proxy_hit": 1,
+      "pausas_evitadas": 97,
+      "http_realizados": 2,
+      "playwright_skip": 8,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T08:20:49+00:00",
-      "duracao_min": 10.1
+      "quando": "2026-11-10T08:33:45+00:00",
+      "duracao_min": 11.8
     },
     "acumulado": {
-      "requisicoes": 578,
-      "ok": 564,
-      "429": 13,
+      "requisicoes": 618,
+      "ok": 603,
+      "429": 14,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 13,
+      "falhas_definitivas": 14,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 13,
-      "proxy_hit": 13,
-      "pausas_evitadas": 1455,
-      "http_realizados": 30,
-      "playwright_skip": 85,
-      "proxmint_listas": 13,
+      "proxy_fallback": 14,
+      "proxy_hit": 14,
+      "pausas_evitadas": 1552,
+      "http_realizados": 32,
+      "playwright_skip": 93,
+      "proxmint_listas": 14,
       "link_em_a_href": 71,
       "link_convertido_w2embed": 185,
       "multifilme_paginas": 11,

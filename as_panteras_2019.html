@@ -12,7 +12,7 @@
     "name": "As Panteras (2019) - 🍿Clau",
     "description": "Assista As Panteras (2019) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOlf5whVf8SNwhWk0-OZV_9GTp1QVuKFsfTmq_pLnLFrIeqQJKbuAmuVhDHznlvN0hgCTcZ_vZ8RUZv3TohxWc4JvDvyvmGNWJ_ZdZaQOSzBlOa9GyDCK_ZKUnelN0teV3J8P7AswbHh4u95KXhkPrgoM5cXgq1rs3mDeaWV8V559Hlk8_sJCqzy3Wbo0/w1280-h720-p-k-no-nu/k4Yu4zMcWgkPgwswuxzKpqB55Ex.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOlf5whVf8SNwhWk0-OZV_9GTp1QVuKFsfTmq_pLnLFrIeqQJKbuAmuVhDHznlvN0hgCTcZ_vZ8RUZv3TohxWc4JvDvyvmGNWJ_ZdZaQOSzBlOa9GyDCK_ZKUnelN0teV3J8P7AswbHh4u95KXhkPrgoM5cXgq1rs3mDeaWV8V559Hlk8_sJCqzy3Wbo0/s320/k4Yu4zMcWgkPgwswuxzKpqB55Ex.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>As Panteras (2019) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0051.speed-stream.online/as-panteras-48a11ec8/dubbed/1/cebc276d-2b03-45c9-9aef-3f50a652b87f/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOlf5whVf8SNwhWk0-OZV_9GTp1QVuKFsfTmq_pLnLFrIeqQJKbuAmuVhDHznlvN0hgCTcZ_vZ8RUZv3TohxWc4JvDvyvmGNWJ_ZdZaQOSzBlOa9GyDCK_ZKUnelN0teV3J8P7AswbHh4u95KXhkPrgoM5cXgq1rs3mDeaWV8V559Hlk8_sJCqzy3Wbo0/w1280-h720-p-k-no-nu/k4Yu4zMcWgkPgwswuxzKpqB55Ex.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOlf5whVf8SNwhWk0-OZV_9GTp1QVuKFsfTmq_pLnLFrIeqQJKbuAmuVhDHznlvN0hgCTcZ_vZ8RUZv3TohxWc4JvDvyvmGNWJ_ZdZaQOSzBlOa9GyDCK_ZKUnelN0teV3J8P7AswbHh4u95KXhkPrgoM5cXgq1rs3mDeaWV8V559Hlk8_sJCqzy3Wbo0/s320/k4Yu4zMcWgkPgwswuxzKpqB55Ex.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1MS5zcGVlZC1zdHJlYW0ub25saW5lL2FzLXBhbnRlcmFzLTQ4YTExZWM4L2R1YmJlZC8xL2NlYmMyNzZkLTJiMDMtNDVjOS05YWVmLTNmNTBhNjUyYjg3Zi9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

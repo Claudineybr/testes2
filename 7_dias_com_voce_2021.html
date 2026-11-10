@@ -12,7 +12,7 @@
     "name": "7 Dias com Voce (2021) - 🍿Clau",
     "description": "Assista 7 Dias com Voce (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkoUo2ZrvNiOg1NAOZpNAL4-XXvCUS4V22IR9P7mLyEHiE4czx5M2Rgwa1kAnXFFwKZ-B8EoFB7DrRHoqdC4zREsEAxAj7wz2iL7PnFpHI5nJrkBeK8jYt3P-LCA6jP9azJpcqdFfPWZx6Tg67ZFMEJ-gbdv0KTK2bmQu9SamvgUNMgxgX84GkOcKE4x4/w1280-h720-p-k-no-nu/47GT2DjrOgRjCpApqF34PPxe6n5.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkoUo2ZrvNiOg1NAOZpNAL4-XXvCUS4V22IR9P7mLyEHiE4czx5M2Rgwa1kAnXFFwKZ-B8EoFB7DrRHoqdC4zREsEAxAj7wz2iL7PnFpHI5nJrkBeK8jYt3P-LCA6jP9azJpcqdFfPWZx6Tg67ZFMEJ-gbdv0KTK2bmQu9SamvgUNMgxgX84GkOcKE4x4/s320/47GT2DjrOgRjCpApqF34PPxe6n5.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>7 Dias com Voce (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.vod-cinevs.com/f/7%20Dias%20com%20Voc%C3%AA_821046.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkoUo2ZrvNiOg1NAOZpNAL4-XXvCUS4V22IR9P7mLyEHiE4czx5M2Rgwa1kAnXFFwKZ-B8EoFB7DrRHoqdC4zREsEAxAj7wz2iL7PnFpHI5nJrkBeK8jYt3P-LCA6jP9azJpcqdFfPWZx6Tg67ZFMEJ-gbdv0KTK2bmQu9SamvgUNMgxgX84GkOcKE4x4/w1280-h720-p-k-no-nu/47GT2DjrOgRjCpApqF34PPxe6n5.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkoUo2ZrvNiOg1NAOZpNAL4-XXvCUS4V22IR9P7mLyEHiE4czx5M2Rgwa1kAnXFFwKZ-B8EoFB7DrRHoqdC4zREsEAxAj7wz2iL7PnFpHI5nJrkBeK8jYt3P-LCA6jP9azJpcqdFfPWZx6Tg67ZFMEJ-gbdv0KTK2bmQu9SamvgUNMgxgX84GkOcKE4x4/s320/47GT2DjrOgRjCpApqF34PPxe6n5.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4udm9kLWNpbmV2cy5jb20vZi83JTIwRGlhcyUyMGNvbSUyMFZvYyVDMyVBQV84MjEwNDYubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

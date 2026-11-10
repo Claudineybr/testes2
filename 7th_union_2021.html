@@ -12,7 +12,7 @@
     "name": "7th & Union (2021) - 🍿Clau",
     "description": "Assista 7th & Union (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiACJibP1Cb6X_zmOMsnhWsSHx1kx63kgVr-Yw6MI8G7V816QUSUbuamupsZ675pmLc4lpbWjTCpPe7U3HdB26nix5VkPKeu6IOPb_Cqs9lU-n_UowDpaEXct8qWltc7cgxYi37kUqYchCRrIEMaRQqqPPfNta8gFzjayBIAd3bx0WA0lbrCFFEjIxL_b4/w1280-h720-p-k-no-nu/guKz4dhvKViiyeI7vqgnnllxOJG.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiACJibP1Cb6X_zmOMsnhWsSHx1kx63kgVr-Yw6MI8G7V816QUSUbuamupsZ675pmLc4lpbWjTCpPe7U3HdB26nix5VkPKeu6IOPb_Cqs9lU-n_UowDpaEXct8qWltc7cgxYi37kUqYchCRrIEMaRQqqPPfNta8gFzjayBIAd3bx0WA0lbrCFFEjIxL_b4/s320/guKz4dhvKViiyeI7vqgnnllxOJG.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -20,13 +20,31 @@
     "embedUrl": "https://cdn.vod-cinevs.com/f/7th%20%26%20Union_845887.mp4"
 }
 </script>
-<title>7th & Union (2021) - 🍿Clau</title>
+<title>7th &amp; Union (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.vod-cinevs.com/f/7th%20%26%20Union_845887.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiACJibP1Cb6X_zmOMsnhWsSHx1kx63kgVr-Yw6MI8G7V816QUSUbuamupsZ675pmLc4lpbWjTCpPe7U3HdB26nix5VkPKeu6IOPb_Cqs9lU-n_UowDpaEXct8qWltc7cgxYi37kUqYchCRrIEMaRQqqPPfNta8gFzjayBIAd3bx0WA0lbrCFFEjIxL_b4/w1280-h720-p-k-no-nu/guKz4dhvKViiyeI7vqgnnllxOJG.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiACJibP1Cb6X_zmOMsnhWsSHx1kx63kgVr-Yw6MI8G7V816QUSUbuamupsZ675pmLc4lpbWjTCpPe7U3HdB26nix5VkPKeu6IOPb_Cqs9lU-n_UowDpaEXct8qWltc7cgxYi37kUqYchCRrIEMaRQqqPPfNta8gFzjayBIAd3bx0WA0lbrCFFEjIxL_b4/s320/guKz4dhvKViiyeI7vqgnnllxOJG.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4udm9kLWNpbmV2cy5jb20vZi83dGglMjAlMjYlMjBVbmlvbl84NDU4ODcubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
