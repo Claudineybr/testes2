@@ -1,8 +1,7 @@
 {
   "contagem": {
-    "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html": 2,
-    "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html": 1,
-    "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html": 1
+    "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html": 2,
+    "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html": 2
   },
   "eventos": [
     {
@@ -204,50 +203,98 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:37:16+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html",
+      "detalhe": "link inválido para viagem_de_formatura_mallorca_2025.html: 'htt/m/Viagem%20de%20Formatura%20-%20Mallorca%202025%20WEB-DL%201080p%20x264%20DUAL%205.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:37:32+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html",
+      "detalhe": "link inválido para nossos_tempos_2025.html: 'ht/m/Nossos%20Tempos.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:37:46+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html",
+      "detalhe": "link inválido para quebrando_regras_2025.html: 'htt/m/Quebrando.Regras.2025.1080p.WEB-DL.DUAL.2.0.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:38:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/08/inix-donzela-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:39:12+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html",
+      "motivo": "3 falhas seguidas"
+    },
+    {
+      "quando": "2026-11-10T09:40:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-zoe-minha-amiga-morta-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:43:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-pronto-falei-2018.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 46,
-      "ok": 44,
-      "429": 2,
+      "requisicoes": 48,
+      "ok": 45,
+      "429": 3,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2,
+      "falhas_definitivas": 3,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 2,
-      "proxy_hit": 2,
-      "pausas_evitadas": 92,
-      "http_realizados": 7,
-      "playwright_skip": 12,
-      "proxmint_listas": 2,
-      "link_em_a_href": 0,
+      "proxy_fallback": 3,
+      "proxy_hit": 3,
+      "pausas_evitadas": 97,
+      "http_realizados": 2,
+      "playwright_skip": 13,
+      "proxmint_listas": 3,
+      "link_em_a_href": 1,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T09:23:47+00:00",
-      "duracao_min": 14.0
+      "quando": "2026-11-10T09:43:53+00:00",
+      "duracao_min": 15.2
     },
     "acumulado": {
-      "requisicoes": 774,
-      "ok": 757,
-      "429": 16,
+      "requisicoes": 822,
+      "ok": 802,
+      "429": 19,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 16,
+      "falhas_definitivas": 19,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 16,
-      "proxy_hit": 16,
-      "pausas_evitadas": 1937,
-      "http_realizados": 43,
-      "playwright_skip": 119,
-      "proxmint_listas": 16,
-      "link_em_a_href": 71,
+      "proxy_fallback": 19,
+      "proxy_hit": 19,
+      "pausas_evitadas": 2034,
+      "http_realizados": 45,
+      "playwright_skip": 132,
+      "proxmint_listas": 19,
+      "link_em_a_href": 72,
       "link_convertido_w2embed": 185,
       "multifilme_paginas": 14,
       "multifilme_arquivos": 62

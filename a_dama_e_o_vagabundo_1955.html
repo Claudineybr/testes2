@@ -12,7 +12,7 @@
     "name": "A Dama e o Vagabundo (1955) - 🍿Clau",
     "description": "Assista A Dama e o Vagabundo (1955) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq2QNBFeer9FYwenqp55RvnOHlv7jSdPDhohNXZp-30UvgLlfD8CewMOfMKUAjgwNMn8gSpZzfu8vfd2ZV32I06RAgvyQTVx4N6C73usvJvxrAOuccb1M6K_2SDauVoW3SY99qDx30HSl46-3dv6qla0IqIE8PimmFlQz5wRMCkPWz2Z961NVeMxPpoQo/w1280-h720-p-k-no-nu/moLRRSWjMOZULvBmXhFJaeRsEWX.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq2QNBFeer9FYwenqp55RvnOHlv7jSdPDhohNXZp-30UvgLlfD8CewMOfMKUAjgwNMn8gSpZzfu8vfd2ZV32I06RAgvyQTVx4N6C73usvJvxrAOuccb1M6K_2SDauVoW3SY99qDx30HSl46-3dv6qla0IqIE8PimmFlQz5wRMCkPWz2Z961NVeMxPpoQo/s400/moLRRSWjMOZULvBmXhFJaeRsEWX.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Dama e o Vagabundo (1955) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0048280.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq2QNBFeer9FYwenqp55RvnOHlv7jSdPDhohNXZp-30UvgLlfD8CewMOfMKUAjgwNMn8gSpZzfu8vfd2ZV32I06RAgvyQTVx4N6C73usvJvxrAOuccb1M6K_2SDauVoW3SY99qDx30HSl46-3dv6qla0IqIE8PimmFlQz5wRMCkPWz2Z961NVeMxPpoQo/w1280-h720-p-k-no-nu/moLRRSWjMOZULvBmXhFJaeRsEWX.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq2QNBFeer9FYwenqp55RvnOHlv7jSdPDhohNXZp-30UvgLlfD8CewMOfMKUAjgwNMn8gSpZzfu8vfd2ZV32I06RAgvyQTVx4N6C73usvJvxrAOuccb1M6K_2SDauVoW3SY99qDx30HSl46-3dv6qla0IqIE8PimmFlQz5wRMCkPWz2Z961NVeMxPpoQo/s400/moLRRSWjMOZULvBmXhFJaeRsEWX.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMDQ4MjgwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

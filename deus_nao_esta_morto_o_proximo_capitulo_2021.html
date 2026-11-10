@@ -12,7 +12,7 @@
     "name": "Deus Nao Esta Morto: O Proximo Capitulo (2021) - 🍿Clau",
     "description": "Assista Deus Nao Esta Morto: O Proximo Capitulo (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix2myAbpMuCIaMDSB9EBs7-bzVPQ2W1EUBjver4BzHwB87SEVgO64k5gJtZfSiN1h7sGyJql_tyItIOZiQphrOXy2CR5ySvjCimFhUaTVaBbIE3MmarGCJXJcpf6eBwTkYht4IuxsXdARmj-7c1AeSkKjLQAhmbmtjsoWuJrn61IV3b8s0oyHRmVpxV1E/w1280-h720-p-k-no-nu/aBsVA4L6uWG6Y72ueX1Js5U782Q.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix2myAbpMuCIaMDSB9EBs7-bzVPQ2W1EUBjver4BzHwB87SEVgO64k5gJtZfSiN1h7sGyJql_tyItIOZiQphrOXy2CR5ySvjCimFhUaTVaBbIE3MmarGCJXJcpf6eBwTkYht4IuxsXdARmj-7c1AeSkKjLQAhmbmtjsoWuJrn61IV3b8s0oyHRmVpxV1E/s400/aBsVA4L6uWG6Y72ueX1Js5U782Q.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Deus Nao Esta Morto: O Proximo Capitulo (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://pcy.playhdlugo.online/token:s21expires11365uslink1578l2/flm22/DeusNaoEstaMortoOProximoCapitulo2021.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix2myAbpMuCIaMDSB9EBs7-bzVPQ2W1EUBjver4BzHwB87SEVgO64k5gJtZfSiN1h7sGyJql_tyItIOZiQphrOXy2CR5ySvjCimFhUaTVaBbIE3MmarGCJXJcpf6eBwTkYht4IuxsXdARmj-7c1AeSkKjLQAhmbmtjsoWuJrn61IV3b8s0oyHRmVpxV1E/w1280-h720-p-k-no-nu/aBsVA4L6uWG6Y72ueX1Js5U782Q.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix2myAbpMuCIaMDSB9EBs7-bzVPQ2W1EUBjver4BzHwB87SEVgO64k5gJtZfSiN1h7sGyJql_tyItIOZiQphrOXy2CR5ySvjCimFhUaTVaBbIE3MmarGCJXJcpf6eBwTkYht4IuxsXdARmj-7c1AeSkKjLQAhmbmtjsoWuJrn61IV3b8s0oyHRmVpxV1E/s400/aBsVA4L6uWG6Y72ueX1Js5U782Q.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3BjeS5wbGF5aGRsdWdvLm9ubGluZS90b2tlbjpzMjFleHBpcmVzMTEzNjV1c2xpbmsxNTc4bDIvZmxtMjIvRGV1c05hb0VzdGFNb3J0b09Qcm94aW1vQ2FwaXR1bG8yMDIxLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Descendentes (2015) - 🍿Clau",
     "description": "Assista Descendentes (2015) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjwFkh22r3VlwF_CqirrnP0WcQpNEyGYPVOGI-6nGDGvKAqGuDbmu71hXxatiREnzLGBnYsLIoblIsh19n7xAkaC3uOOZOltPDMDYVapuXw9-c38Zq4RCZ0kh3PUQ_fW0WEZOH9Xr7O1_pNZWZlxHxao8EXUoZGsE9QOi2ByQmePX3hkvNwg3QZjdGPvM/w1280-h720-p-k-no-nu/lS1W0EyY1SmhWU6qoFo5mMfJQNH.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjwFkh22r3VlwF_CqirrnP0WcQpNEyGYPVOGI-6nGDGvKAqGuDbmu71hXxatiREnzLGBnYsLIoblIsh19n7xAkaC3uOOZOltPDMDYVapuXw9-c38Zq4RCZ0kh3PUQ_fW0WEZOH9Xr7O1_pNZWZlxHxao8EXUoZGsE9QOi2ByQmePX3hkvNwg3QZjdGPvM/s400/lS1W0EyY1SmhWU6qoFo5mMfJQNH.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Descendentes (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt3440298.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjwFkh22r3VlwF_CqirrnP0WcQpNEyGYPVOGI-6nGDGvKAqGuDbmu71hXxatiREnzLGBnYsLIoblIsh19n7xAkaC3uOOZOltPDMDYVapuXw9-c38Zq4RCZ0kh3PUQ_fW0WEZOH9Xr7O1_pNZWZlxHxao8EXUoZGsE9QOi2ByQmePX3hkvNwg3QZjdGPvM/w1280-h720-p-k-no-nu/lS1W0EyY1SmhWU6qoFo5mMfJQNH.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjwFkh22r3VlwF_CqirrnP0WcQpNEyGYPVOGI-6nGDGvKAqGuDbmu71hXxatiREnzLGBnYsLIoblIsh19n7xAkaC3uOOZOltPDMDYVapuXw9-c38Zq4RCZ0kh3PUQ_fW0WEZOH9Xr7O1_pNZWZlxHxao8EXUoZGsE9QOi2ByQmePX3hkvNwg3QZjdGPvM/s400/lS1W0EyY1SmhWU6qoFo5mMfJQNH.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0MzQ0MDI5OC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

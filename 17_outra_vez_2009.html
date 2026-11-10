@@ -12,7 +12,7 @@
     "name": "17 Outra Vez (2009) - 🍿Clau",
     "description": "Assista 17 Outra Vez (2009) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-V2mpDkJqkMtG3SLS0wUnw94xdvF7SW_grH8N9mVNr7otU-tAOuwbJFIbEjO_gnD3q_60Q-_keVdefAMq5gScIe1Y_smaozmsFDGJQNK9FiaqoaSD9ud8wk2md_jV8jJz9LBenUCKODJE0u4rdMGo-XTaSesCaIxak2ty3WGXG_YpX69U0nqSHYtXozE/w1280-h720-p-k-no-nu/mbLbrv82Vim8UJ1F9rkOn5KzA1p.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-V2mpDkJqkMtG3SLS0wUnw94xdvF7SW_grH8N9mVNr7otU-tAOuwbJFIbEjO_gnD3q_60Q-_keVdefAMq5gScIe1Y_smaozmsFDGJQNK9FiaqoaSD9ud8wk2md_jV8jJz9LBenUCKODJE0u4rdMGo-XTaSesCaIxak2ty3WGXG_YpX69U0nqSHYtXozE/s400/mbLbrv82Vim8UJ1F9rkOn5KzA1p.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>17 Outra Vez (2009) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://pcy.playhdlugo.online/token:s21expires11365uslink1578l2/ncfilmes/17AGAINDUB-BAIXO.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-V2mpDkJqkMtG3SLS0wUnw94xdvF7SW_grH8N9mVNr7otU-tAOuwbJFIbEjO_gnD3q_60Q-_keVdefAMq5gScIe1Y_smaozmsFDGJQNK9FiaqoaSD9ud8wk2md_jV8jJz9LBenUCKODJE0u4rdMGo-XTaSesCaIxak2ty3WGXG_YpX69U0nqSHYtXozE/w1280-h720-p-k-no-nu/mbLbrv82Vim8UJ1F9rkOn5KzA1p.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-V2mpDkJqkMtG3SLS0wUnw94xdvF7SW_grH8N9mVNr7otU-tAOuwbJFIbEjO_gnD3q_60Q-_keVdefAMq5gScIe1Y_smaozmsFDGJQNK9FiaqoaSD9ud8wk2md_jV8jJz9LBenUCKODJE0u4rdMGo-XTaSesCaIxak2ty3WGXG_YpX69U0nqSHYtXozE/s400/mbLbrv82Vim8UJ1F9rkOn5KzA1p.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3BjeS5wbGF5aGRsdWdvLm9ubGluZS90b2tlbjpzMjFleHBpcmVzMTEzNjV1c2xpbmsxNTc4bDIvbmNmaWxtZXMvMTdBR0FJTkRVQi1CQUlYTy5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
