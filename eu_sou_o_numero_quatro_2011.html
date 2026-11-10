@@ -12,7 +12,7 @@
     "name": "Eu Sou o Numero Quatro (2011) - 🍿Clau",
     "description": "Assista Eu Sou o Numero Quatro (2011) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicgA1AylaXhXlk0orAW3MH1mJ3822apUCzucZV1EfPbsSbeuLjGlcmheVSRQiPi_pgb0bJNA2vPWi6vMOxZ9_0a385UKBUnaak4n4-4J2kobjE6ax2yqyhFDxKe0h7_0te4wed8zR_CGgA0D501D9mAlYSUP_XisqGonlG6Zz1xl3BCnp3xNehKjJeM4/w1280-h720-p-k-no-nu/images-1.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicgA1AylaXhXlk0orAW3MH1mJ3822apUCzucZV1EfPbsSbeuLjGlcmheVSRQiPi_pgb0bJNA2vPWi6vMOxZ9_0a385UKBUnaak4n4-4J2kobjE6ax2yqyhFDxKe0h7_0te4wed8zR_CGgA0D501D9mAlYSUP_XisqGonlG6Zz1xl3BCnp3xNehKjJeM4/s400/images-1.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Eu Sou o Numero Quatro (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt1464540.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicgA1AylaXhXlk0orAW3MH1mJ3822apUCzucZV1EfPbsSbeuLjGlcmheVSRQiPi_pgb0bJNA2vPWi6vMOxZ9_0a385UKBUnaak4n4-4J2kobjE6ax2yqyhFDxKe0h7_0te4wed8zR_CGgA0D501D9mAlYSUP_XisqGonlG6Zz1xl3BCnp3xNehKjJeM4/w1280-h720-p-k-no-nu/images-1.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicgA1AylaXhXlk0orAW3MH1mJ3822apUCzucZV1EfPbsSbeuLjGlcmheVSRQiPi_pgb0bJNA2vPWi6vMOxZ9_0a385UKBUnaak4n4-4J2kobjE6ax2yqyhFDxKe0h7_0te4wed8zR_CGgA0D501D9mAlYSUP_XisqGonlG6Zz1xl3BCnp3xNehKjJeM4/s400/images-1.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQxNDY0NTQwLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Drone (2017) - 🍿Clau",
     "description": "Assista Drone (2017) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLmFhe9FkzVHOEANcQq5AlGXMAtglE2Yl74xdhGH12aTWq0d4DBXs2ZP8eMDQMJ6m9hqT1d3psBHM70y0x8WZpytU77_umaLupSnl0hLNw4MoEuZnlQeL4kijCr9tPUE0Zbk8-seg9XgpfwqADIemksj9Cwz3c7A3viNiKNFnAXeYtsFSt7l7SMV4kEgU/w1280-h720-p-k-no-nu/jTkJ0oflgtnZRtZtJBkZi0ApqXQ.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLmFhe9FkzVHOEANcQq5AlGXMAtglE2Yl74xdhGH12aTWq0d4DBXs2ZP8eMDQMJ6m9hqT1d3psBHM70y0x8WZpytU77_umaLupSnl0hLNw4MoEuZnlQeL4kijCr9tPUE0Zbk8-seg9XgpfwqADIemksj9Cwz3c7A3viNiKNFnAXeYtsFSt7l7SMV4kEgU/s320/jTkJ0oflgtnZRtZtJBkZi0ApqXQ.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Drone (2017) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0028.speed-stream.online/drone-193e0386/dubbed/1/b1d51e65-189b-42b9-b559-3e3f80392114/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLmFhe9FkzVHOEANcQq5AlGXMAtglE2Yl74xdhGH12aTWq0d4DBXs2ZP8eMDQMJ6m9hqT1d3psBHM70y0x8WZpytU77_umaLupSnl0hLNw4MoEuZnlQeL4kijCr9tPUE0Zbk8-seg9XgpfwqADIemksj9Cwz3c7A3viNiKNFnAXeYtsFSt7l7SMV4kEgU/w1280-h720-p-k-no-nu/jTkJ0oflgtnZRtZtJBkZi0ApqXQ.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLmFhe9FkzVHOEANcQq5AlGXMAtglE2Yl74xdhGH12aTWq0d4DBXs2ZP8eMDQMJ6m9hqT1d3psBHM70y0x8WZpytU77_umaLupSnl0hLNw4MoEuZnlQeL4kijCr9tPUE0Zbk8-seg9XgpfwqADIemksj9Cwz3c7A3viNiKNFnAXeYtsFSt7l7SMV4kEgU/s320/jTkJ0oflgtnZRtZtJBkZi0ApqXQ.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAyOC5zcGVlZC1zdHJlYW0ub25saW5lL2Ryb25lLTE5M2UwMzg2L2R1YmJlZC8xL2IxZDUxZTY1LTE4OWItNDJiOS1iNTU5LTNlM2Y4MDM5MjExNC9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

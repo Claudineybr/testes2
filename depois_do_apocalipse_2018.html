@@ -12,7 +12,7 @@
     "name": "Depois do Apocalipse (2018) - 🍿Clau",
     "description": "Assista Depois do Apocalipse (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4XEQcag0JmiKYudyctzmC0JoQcHWgPWTRZxTkrjFTWABcXRP3jHRzZTVD6RhdfyqZDLK1Qz1nH6ypZj56o1qc5wXQKjSBQwm2oMJjVMLvYhWELUC7XjWq4jsEiiLi72oIBqr6xKHvROkjX7TZRZTS1OhiHAkLFUZ2_lABvQ3PvonTFoidTGMHUm9nkM/w1280-h720-p-k-no-nu/68KOWivdkYA9oeCDxRRfNFxtuYc.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4XEQcag0JmiKYudyctzmC0JoQcHWgPWTRZxTkrjFTWABcXRP3jHRzZTVD6RhdfyqZDLK1Qz1nH6ypZj56o1qc5wXQKjSBQwm2oMJjVMLvYhWELUC7XjWq4jsEiiLi72oIBqr6xKHvROkjX7TZRZTS1OhiHAkLFUZ2_lABvQ3PvonTFoidTGMHUm9nkM/s320/68KOWivdkYA9oeCDxRRfNFxtuYc.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Depois do Apocalipse (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0056.speed-stream.online/depois-do-apocalipse-adcbe364/dubbed/1/b92a41e5-3500-48e1-a3d6-3fc1dc537b93/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4XEQcag0JmiKYudyctzmC0JoQcHWgPWTRZxTkrjFTWABcXRP3jHRzZTVD6RhdfyqZDLK1Qz1nH6ypZj56o1qc5wXQKjSBQwm2oMJjVMLvYhWELUC7XjWq4jsEiiLi72oIBqr6xKHvROkjX7TZRZTS1OhiHAkLFUZ2_lABvQ3PvonTFoidTGMHUm9nkM/w1280-h720-p-k-no-nu/68KOWivdkYA9oeCDxRRfNFxtuYc.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4XEQcag0JmiKYudyctzmC0JoQcHWgPWTRZxTkrjFTWABcXRP3jHRzZTVD6RhdfyqZDLK1Qz1nH6ypZj56o1qc5wXQKjSBQwm2oMJjVMLvYhWELUC7XjWq4jsEiiLi72oIBqr6xKHvROkjX7TZRZTS1OhiHAkLFUZ2_lABvQ3PvonTFoidTGMHUm9nkM/s320/68KOWivdkYA9oeCDxRRfNFxtuYc.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1Ni5zcGVlZC1zdHJlYW0ub25saW5lL2RlcG9pcy1kby1hcG9jYWxpcHNlLWFkY2JlMzY0L2R1YmJlZC8xL2I5MmE0MWU1LTM1MDAtNDhlMS1hM2Q2LTNmYzFkYzUzN2I5My9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

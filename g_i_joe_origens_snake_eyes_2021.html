@@ -12,7 +12,7 @@
     "name": "G.I. Joe Origens: Snake Eyes (2021) - 🍿Clau",
     "description": "Assista G.I. Joe Origens: Snake Eyes (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdxsmX_yI4DnoQ8QQtqpyKg3TNioQ-ewUdoG9zPmpBWemZqnqKqi463f0baGIeFlDHK1AbNaKftgScBwioa-A__QU8cUKzq0NIWuqzo_-eLFk6xjx8FfWsHeu-oniNt6KgsiSQUJi8zclKaqHQMzxDdEVwH6npYHmZzTKnocLvZUZ1OUU274K9Z6LgU6Q/w1280-h720-p-k-no-nu/cUKBgjLC1GpLkTTzrAs5soNPFq7.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdxsmX_yI4DnoQ8QQtqpyKg3TNioQ-ewUdoG9zPmpBWemZqnqKqi463f0baGIeFlDHK1AbNaKftgScBwioa-A__QU8cUKzq0NIWuqzo_-eLFk6xjx8FfWsHeu-oniNt6KgsiSQUJi8zclKaqHQMzxDdEVwH6npYHmZzTKnocLvZUZ1OUU274K9Z6LgU6Q/s320/cUKBgjLC1GpLkTTzrAs5soNPFq7.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>G.I. Joe Origens: Snake Eyes (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/video/g-i-joe-origens-snake-eyes-2021-acao-aventura-vini7xg?utm_campaign=embed&utm_medium=embed-link&utm_source=embed-link" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdxsmX_yI4DnoQ8QQtqpyKg3TNioQ-ewUdoG9zPmpBWemZqnqKqi463f0baGIeFlDHK1AbNaKftgScBwioa-A__QU8cUKzq0NIWuqzo_-eLFk6xjx8FfWsHeu-oniNt6KgsiSQUJi8zclKaqHQMzxDdEVwH6npYHmZzTKnocLvZUZ1OUU274K9Z6LgU6Q/w1280-h720-p-k-no-nu/cUKBgjLC1GpLkTTzrAs5soNPFq7.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdxsmX_yI4DnoQ8QQtqpyKg3TNioQ-ewUdoG9zPmpBWemZqnqKqi463f0baGIeFlDHK1AbNaKftgScBwioa-A__QU8cUKzq0NIWuqzo_-eLFk6xjx8FfWsHeu-oniNt6KgsiSQUJi8zclKaqHQMzxDdEVwH6npYHmZzTKnocLvZUZ1OUU274K9Z6LgU6Q/s320/cUKBgjLC1GpLkTTzrAs5soNPFq7.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS92aWRlby9nLWktam9lLW9yaWdlbnMtc25ha2UtZXllcy0yMDIxLWFjYW8tYXZlbnR1cmEtdmluaTd4Zz91dG1fY2FtcGFpZ249ZW1iZWQmdXRtX21lZGl1bT1lbWJlZC1saW5rJnV0bV9zb3VyY2U9ZW1iZWQtbGluaw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

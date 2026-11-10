@@ -540,31 +540,115 @@
       "tipo": "html_invalido",
       "url": "https://www.vini7xgrave.site/2025/03/experimento-maldito-2023.html",
       "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T01:50:51+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/a-serie-velozes-e-furiosos.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T01:55:46+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/ate-as-ultimas-consequencias-1996.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:00:11+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/capita-marvel-2019.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:00:51+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/chamada-de-emergencia-2013.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:02:46+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/diabolica-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:07:51+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/feios-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:15:04+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/o-espirito-das-trevas-2022.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:27:49+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/shang-chi-e-lenda-dos-dez-aneis-2021.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:28:30+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/02/um-lobisomem-americano-1981.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:31:07+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/a-ilha-fantasma-2020.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:38:59+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/armadilha-em-alto-mar-2024.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:40:19+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/ben-10-invasao-alienigena-2009.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:43:30+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/chapolin-colorado-1973.html",
+      "detalhe": "página de erro/bloqueio"
+    },
+    {
+      "quando": "2026-11-10T02:52:23+00:00",
+      "tipo": "html_invalido",
+      "url": "https://www.vini7xgrave.site/2025/03/django-2012.html",
+      "detalhe": "página de erro/bloqueio"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 112,
-      "ok": 94,
-      "429": 18,
+      "requisicoes": 117,
+      "ok": 95,
+      "429": 22,
       "5xx": 0,
-      "retries": 18,
+      "retries": 22,
       "falhas_definitivas": 0,
-      "html_invalido": 15,
+      "html_invalido": 14,
       "serie_inconsistente": 0,
       "conflitos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T00:43:39+00:00",
-      "duracao_min": 122.6
+      "quando": "2026-11-10T02:52:55+00:00",
+      "duracao_min": 128.0
     },
     "acumulado": {
-      "requisicoes": 523,
-      "ok": 306,
-      "429": 217,
+      "requisicoes": 640,
+      "ok": 401,
+      "429": 239,
       "5xx": 0,
-      "retries": 199,
+      "retries": 221,
       "falhas_definitivas": 18,
-      "html_invalido": 49,
+      "html_invalido": 63,
       "serie_inconsistente": 0,
       "conflitos": 0
     }
