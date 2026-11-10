@@ -12,7 +12,7 @@
     "name": "Caramelo (2025) - 🍿Clau",
     "description": "Assista Caramelo (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGdzHDkBadif3nWV_ZfAeeXIuWSCn-wymMcDR2Tm7Pss0OpKwph80kfjubB6qja_Pb_CMOC1Z5gNQkuq-VTHJF_NMEMBfkyxdCW4wLZo8bjH6SITz2azB0Yw-7kYrZhd3FvGHUFuLBBOJ3L-Ectf8lLczL5HaSSwR1LXpjmR4TIyJkXjMGbIAinvtLwfw/w1280-h720-p-k-no-nu/Picsart_25-10-08_13-49-02-712.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGdzHDkBadif3nWV_ZfAeeXIuWSCn-wymMcDR2Tm7Pss0OpKwph80kfjubB6qja_Pb_CMOC1Z5gNQkuq-VTHJF_NMEMBfkyxdCW4wLZo8bjH6SITz2azB0Yw-7kYrZhd3FvGHUFuLBBOJ3L-Ectf8lLczL5HaSSwR1LXpjmR4TIyJkXjMGbIAinvtLwfw/s400/Picsart_25-10-08_13-49-02-712.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Caramelo (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Caramelo.2025.720p.WEBRip.x264.AAC-%5BYTS.MX%5D.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGdzHDkBadif3nWV_ZfAeeXIuWSCn-wymMcDR2Tm7Pss0OpKwph80kfjubB6qja_Pb_CMOC1Z5gNQkuq-VTHJF_NMEMBfkyxdCW4wLZo8bjH6SITz2azB0Yw-7kYrZhd3FvGHUFuLBBOJ3L-Ectf8lLczL5HaSSwR1LXpjmR4TIyJkXjMGbIAinvtLwfw/w1280-h720-p-k-no-nu/Picsart_25-10-08_13-49-02-712.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGdzHDkBadif3nWV_ZfAeeXIuWSCn-wymMcDR2Tm7Pss0OpKwph80kfjubB6qja_Pb_CMOC1Z5gNQkuq-VTHJF_NMEMBfkyxdCW4wLZo8bjH6SITz2azB0Yw-7kYrZhd3FvGHUFuLBBOJ3L-Ectf8lLczL5HaSSwR1LXpjmR4TIyJkXjMGbIAinvtLwfw/s400/Picsart_25-10-08_13-49-02-712.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9DYXJhbWVsby4yMDI1LjcyMHAuV0VCUmlwLngyNjQuQUFDLSU1QllUUy5NWCU1RC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
