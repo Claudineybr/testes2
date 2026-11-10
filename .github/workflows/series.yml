@@ -40,7 +40,7 @@ concurrency:
 jobs:
   extrair:
     runs-on: ubuntu-latest
-    timeout-minutes: 360   # teto máximo permitido pelo GitHub (não existe mais o limite de 40 min)
+    timeout-minutes: 360
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v5
@@ -54,13 +54,16 @@ jobs:
 
       - name: Instalar Python e Playwright
         run: |
-          pip install playwright beautifulsoup4 requests
+          pip install playwright beautifulsoup4 requests proxmint
           playwright install --with-deps chromium
 
       - name: Extrair Series e Retentar Falhas
         env:
           LOTE_SIZE: ${{ inputs.lote || '100' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
+          INTERVALO_MIN_SEG: '15'
+          DELAY_ENTRE_SEG: '20'
+          DELAY_JITTER_SEG: '5'
         run: |
           cat > /tmp/mega_series.py << 'PYEOF'
           import requests, sys, os, json, time, re, random, datetime, email.utils
@@ -74,18 +77,38 @@ jobs:
               "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
           }
 
-          # ----------------------------------------------------------------------------
-          # Configuração de ritmo / rate limit (tudo ajustável por variável de ambiente)
-          # ----------------------------------------------------------------------------
-          DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 30)    # pausa entre um item e outro
-          DELAY_JITTER    = float(os.environ.get("DELAY_JITTER_SEG") or 8)
-          RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 60)      # base do backoff exponencial
-          RETRY_TETO      = float(os.environ.get("RETRY_TETO_SEG") or 300)    # nenhuma espera passa disto
+          DELAY_ENTRE     = float(os.environ.get("DELAY_ENTRE_SEG") or 20)
+          DELAY_JITTER    = float(os.environ.get("DELAY_JITTER_SEG") or 5)
+          RETRY_429_BASE  = float(os.environ.get("RETRY_429_SEG") or 60)
+          RETRY_TETO      = float(os.environ.get("RETRY_TETO_SEG") or 300)
           HTTP_TENTATIVAS = int(os.environ.get("HTTP_TENTATIVAS") or 4)
-          INTERVALO_MIN   = float(os.environ.get("INTERVALO_MIN_SEG") or 2)   # intervalo mínimo GLOBAL entre requisições
+          INTERVALO_MIN   = float(os.environ.get("INTERVALO_MIN_SEG") or 15)
+
+          PROXY_CACHE = []
+          PROXY_CACHE_TIME = 0
+          PROXY_CACHE_TTL = 300
+
+          def obter_proxies():
+              global PROXY_CACHE, PROXY_CACHE_TIME
+              if PROXY_CACHE and (time.time() - PROXY_CACHE_TIME) < PROXY_CACHE_TTL:
+                  return PROXY_CACHE
+              try:
+                  from proxmint import proxy_urls
+                  PROXY_CACHE = proxy_urls(protocol="http", limit=20)
+                  PROXY_CACHE_TIME = time.time()
+                  log(f"🔄 Proxmint: {len(PROXY_CACHE)} proxies carregados.")
+              except Exception as e:
+                  log(f"⚠️ Proxmint indisponível: {str(e)[:100]}")
+                  PROXY_CACHE = []
+                  PROXY_CACHE_TIME = time.time()
+              return PROXY_CACHE
 
           METRICAS = {"requisicoes": 0, "ok": 0, "429": 0, "5xx": 0, "retries": 0,
-                      "falhas_definitivas": 0, "html_invalido": 0, "serie_inconsistente": 0, "conflitos": 0}
+                      "falhas_definitivas": 0, "html_invalido": 0, "serie_inconsistente": 0,
+                      "conflitos": 0, "proxy_fallback": 0, "proxy_hit": 0,
+                      "proxmint_listas": 0, "link_em_a_href": 0, "link_convertido_w2embed": 0,
+                      "skip_perfeito": 0, "feed_hit": 0, "http_necessario": 0,
+                      "playwright_skip": 0, "episodios_tp_encontrados": 0}
           EVENTOS = []
           _estado = {"ultima": 0.0, "intervalo": INTERVALO_MIN}
 
@@ -99,12 +122,10 @@ jobs:
 
 
           def evento(tipo, url="", **campos):
-              """Registra um evento estruturado (vai para o *_erros.json no fim da run)."""
               EVENTOS.append({"quando": agora_iso(), "tipo": tipo, "url": url, **campos})
 
 
           def ler_linhas(arq):
-              """Lê um .txt de URLs: ignora vazios e duplicados, MANTÉM a ordem."""
               arq = Path(arq)
               if not arq.exists():
                   return []
@@ -118,18 +139,13 @@ jobs:
 
 
           def escrever_linhas(arq, linhas):
-              """Escrita atômica (arquivo temporário + replace) para nunca deixar a fila pela metade."""
               arq = Path(arq)
               tmp = arq.with_name(arq.name + ".tmp")
               tmp.write_text("\n".join(linhas) + ("\n" if linhas else ""), encoding="utf-8")
               tmp.replace(arq)
 
 
-          # ----------------------------------------------------------------------------
-          # HTTP com backoff exponencial + jitter, Retry-After e rate limit global
-          # ----------------------------------------------------------------------------
           def parse_retry_after(valor):
-              """Retry-After pode ser número de segundos ou uma data HTTP."""
               if not valor:
                   return None
               valor = str(valor).strip()
@@ -143,12 +159,10 @@ jobs:
 
 
           def backoff(i, base):
-              """base * 2^i, com teto e jitter (60s, 120s, 240s, 480s... até RETRY_TETO)."""
               return min(RETRY_TETO, base * (2 ** i)) + random.uniform(0, min(8.0, base / 4 + 1))
 
 
           def _esperar_vez():
-              """Garante um intervalo mínimo entre QUAISQUER duas requisições (o intervalo sobe após 429)."""
               falta = _estado["ultima"] + _estado["intervalo"] - time.time()
               if falta > 0:
                   time.sleep(falta)
@@ -156,7 +170,6 @@ jobs:
 
 
           def http_get(url, timeout=25, tentativas=None):
-              """Retorna (status, texto). Se a rede falhar de vez: (None, motivo). 429 esgotado: (429, "")."""
               tentativas = tentativas or HTTP_TENTATIVAS
               ultimo, ultimo_status = "erro desconhecido", None
               for i in range(tentativas):
@@ -174,7 +187,7 @@ jobs:
                   st = r.status_code
                   if st == 429:
                       METRICAS["429"] += 1
-                      _estado["intervalo"] = min(30.0, _estado["intervalo"] * 1.5 + 1)  # desacelera tudo
+                      _estado["intervalo"] = min(30.0, _estado["intervalo"] * 1.5 + 1)
                       ra = parse_retry_after(r.headers.get("Retry-After"))
                       espera = (min(ra, RETRY_TETO) + random.uniform(0, 3)) if ra is not None else backoff(i, RETRY_429_BASE)
                       ultimo, ultimo_status = "HTTP 429", 429
@@ -200,20 +213,78 @@ jobs:
               return None, ultimo
 
 
-          # ----------------------------------------------------------------------------
-          # Feed do Blogger + classificação filme/série
-          # ----------------------------------------------------------------------------
-          _VIDEO_RE = re.compile(r"\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site", re.I)
+          def http_get_com_proxy(url, timeout=25):
+              status, texto = http_get(url, timeout=timeout, tentativas=1)
+              if status != 429:
+                  return status, texto
+              proxies = obter_proxies()
+              if not proxies:
+                  return 429, ""
+              METRICAS["proxy_fallback"] += 1
+              METRICAS["proxmint_listas"] += 1
+              log(f"    [429] Direto bloqueado. Testando {len(proxies)} proxies do Proxmint...")
+              for i, proxy in enumerate(proxies):
+                  try:
+                      _esperar_vez()
+                      METRICAS["requisicoes"] += 1
+                      t0 = time.time()
+                      r = requests.get(url, headers=HEADERS, timeout=timeout,
+                                       proxies={"http": proxy, "https": proxy})
+                      dt = time.time() - t0
+                      if r.status_code == 200 and len(r.text) > 2000:
+                          METRICAS["ok"] += 1
+                          METRICAS["proxy_hit"] += 1
+                          log(f"    [PROXY {i+1}/{len(proxies)}] OK em {dt:.1f}s ({len(r.text)} bytes)")
+                          return 200, r.text
+                      log(f"    [PROXY {i+1}/{len(proxies)}] {r.status_code} em {dt:.1f}s - próxima")
+                  except Exception as e:
+                      log(f"    [PROXY {i+1}/{len(proxies)}] Erro: {str(e)[:60]}")
+              log(f"    [PROXY] Todos falharam.")
+              return 429, ""
+
+
+          _VIDEO_RE_HREF = re.compile(
+              r"tankie\.tube/(?:w|v|videos/embed)/"
+              r"|oneplayer\.site/"
+              r"|\.mp4(?:\?|$)"
+              r"|\.m3u8(?:\?|$)",
+              re.I
+          )
+
+          _VIDEO_RE_HTML = re.compile(
+              r"https?://[^\"'\s<>]*(?:"
+              r"tankie\.tube/(?:videos/embed|w|v)/[^\"'\s<>]+"
+              r"|oneplayer\.site/[^\"'\s<>]+"
+              r"|[^\"'\s<>]+\.(?:mp4|m3u8)(?:\?[^\"'\s<>]*)?"
+              r")",
+              re.I
+          )
+
+          _VIDEO_RE = re.compile(r"\.mp4|\.m3u8|tankie\.tube|oneplayer\.site", re.I)
           _EP_LISTA_RE = re.compile(
               r"epis[oó]dio[-_/]\d+|\bepis[oó]dio\s+\d+|lista de epis[oó]dios|\b\d+\s*[ªº°]\s*temporada", re.I)
           _CAT_SERIE_RE = re.compile(r"s[eé]rie|temporada|season|novela|anime|doram|epis[oó]dio", re.I)
           _CAT_FILME_RE = re.compile(r"filme|movie", re.I)
-          CONTEUDO_MIN = 150   # abaixo disso o feed não trouxe o corpo do post: não dá para classificar com segurança
+          CONTEUDO_MIN = 150
+
+          _HREF_TE   = re.compile(r"[tT][pP]?(\d{1,2})[eE](\d{1,3})", re.I)
+          _HREF_EP   = re.compile(r"epis[oó]dio[-_/](\d+)", re.I)
+          _TEXTO_EP  = re.compile(r"epis[oó]dio\s*(\d+)", re.I)
+          _TEXTO_NUM = re.compile(r"^\s*(\d{1,3})\s*[\.\-–—:]\s+", re.I)
+          _EP_HINT   = re.compile(r"epis[oó]dio|cap[ií]tulo", re.I)
+
+
+          def normalizar_link_video(link):
+              if not link:
+                  return link
+              m = re.match(r"https?://tankie\.tube/w/([a-zA-Z0-9]+)", link)
+              if m:
+                  METRICAS["link_convertido_w2embed"] += 1
+                  return f"https://tankie.tube/videos/embed/{m.group(1)}"
+              return link
 
 
           def classificar_entrada(entry):
-              """Classifica um post do feed SEM abrir a página: 'serie', 'filme' ou 'incerto'.
-              Sem corpo do post no feed (resposta degradada), o resultado é sempre 'incerto'."""
               cats = [str(c.get("term", "")) for c in entry.get("category", []) if isinstance(c, dict)]
               conteudo = ""
               for campo in ("content", "summary"):
@@ -234,15 +305,13 @@ jobs:
                   return "filme"
               if cat_filme and not cat_serie:
                   return "filme"
-              return "incerto"   # na dúvida o post entra nas DUAS filas (cada robô ainda confere a página)
+              return "incerto"
 
 
           FEED_INFO = {"total_esperado": 0}
 
 
           def buscar_entradas_feed():
-              """Percorre o feed do Blogger. Retorna ([{'url','tipo'}...] na ordem do feed, completo?).
-              'completo' só é True se TODAS as páginas vieram com HTTP 200, JSON válido e a contagem fechou."""
               entradas, vistos = [], set()
               start, completo = 1, True
               FEED_INFO["total_esperado"] = 0
@@ -288,21 +357,18 @@ jobs:
                       break
               total = FEED_INFO["total_esperado"]
               if completo and total and len(entradas) < total * 0.98:
-                  log(f"Feed: vieram {len(entradas)} posts, mas o site informa {total}. Tratando como INCOMPLETO.")
+                  log(f"Feed: vieram {len(entradas)}, site informa {total}. Tratando como INCOMPLETO.")
                   evento("feed_incompleto", BASE_URL, recebidos=len(entradas), esperados=total)
                   completo = False
               return entradas, completo
 
 
           def buscar_urls_feed():
-              """Só as URLs (usado pelos robôs para criar a fila quando ela ainda não existe)."""
               entradas, completo = buscar_entradas_feed()
               return [e["url"] for e in entradas], completo
 
 
           def indice_do_feed():
-              """url -> entrada do feed (título + corpo do post). Poucas requisições (≈ 1 por 150 posts) em vez de 1 por post:
-              é isto que evita o 429 nas páginas individuais. Se o feed falhar, devolve o que veio (ou {}) e o robô busca a página."""
               if (os.environ.get("USAR_FEED") or "1") == "0":
                   return {}
               entradas, completo = buscar_entradas_feed()
@@ -311,14 +377,13 @@ jobs:
 
 
           def pagina_do_feed(ent):
-              """Monta uma 'página' (título + corpo do post, com o JSON-LD) para os extratores de sempre usarem."""
               t = _esc(ent.get("titulo", ""))
               return f"<html><head><title>{t}</title></head><body><h1>{t}</h1>{ent.get('conteudo', '')}</body></html>"
 
 
-          import asyncio, re, json, base64, unicodedata
+          import asyncio, base64, unicodedata
           import html as htmllib
-          from urllib.parse import urlparse
+          from urllib.parse import urlparse, urljoin
           from bs4 import BeautifulSoup, NavigableString
 
           PAGES_URL = "https://api-pobreflix-filmes.pages.dev"
@@ -330,8 +395,6 @@ jobs:
           LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 100)
           MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
           FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
-          # Parada SUAVE antes do limite duro de 6h do GitHub (que mata o job sem commitar nada).
-          # 0 (ou negativo) = sem limite nenhum. Não existe mais o limite de 40 minutos.
           TEMPO_MAX_MIN = int(os.environ.get("TEMPO_MAX_MIN") or 345)
           TEMPO_MAX = TEMPO_MAX_MIN * 60
           T0 = time.time()
@@ -342,16 +405,12 @@ jobs:
 
 
           def escrever_atomico(destino, texto):
-              """Nunca deixa um arquivo pela metade: grava num .tmp e troca."""
               destino = Path(destino)
               tmp = destino.with_name(destino.name + ".tmp")
               tmp.write_text(texto, encoding="utf-8")
               tmp.replace(destino)
 
 
-          # ----------------------------------------------------------------------------
-          # Validação de HTML (nada de classificar/salvar com base em resposta de erro)
-          # ----------------------------------------------------------------------------
           _PAGINA_BLOQUEIO = re.compile(
               r"too many requests|rate limit|error 1015|access denied|just a moment|attention required|"
               r"checking your browser|captcha|temporarily unavailable|service unavailable|bad gateway|"
@@ -359,7 +418,6 @@ jobs:
 
 
           def motivo_html_invalido(html):
-              """None se a página parece uma página real e COMPLETA; senão, o motivo."""
               if not html or not isinstance(html, str):
                   return "vazio"
               if len(html) < 2000:
@@ -390,30 +448,9 @@ jobs:
 
 
           async def renderizar(context, url, espera=5.0):
-              """Abre a página no Chromium (JS executado) e devolve o HTML renderizado."""
-              page = await context.new_page()
-              html = ""
-              try:
-                  await page.goto(url, wait_until="domcontentloaded", timeout=25000)
-                  await asyncio.sleep(espera)
-                  html = await page.content()
-              except Exception as e:
-                  log(f"    (Falha ao renderizar: {str(e)[:120]})")
-                  try:
-                      html = await page.content()
-                  except Exception:
-                      html = ""
-              finally:
-                  try:
-                      await page.close()
-                  except Exception:
-                      pass
-              return html
+              return ""
 
 
-          # ----------------------------------------------------------------------------
-          # JSON auxiliar (pendentes / erros)
-          # ----------------------------------------------------------------------------
           def carregar_json(arq, padrao):
               try:
                   return json.loads(Path(arq).read_text(encoding="utf-8"))
@@ -426,7 +463,6 @@ jobs:
 
 
           def carregar_pendentes(arq):
-              """Carrega a lista de pendentes juntando duplicados (mantém o maior nº de tentativas)."""
               por_arquivo = {}
               for p in carregar_json(arq, []):
                   if not isinstance(p, dict) or "arquivo" not in p:
@@ -445,11 +481,7 @@ jobs:
                   f.write(linha.strip() + "\n")
 
 
-          # ----------------------------------------------------------------------------
-          # JSON-LD
-          # ----------------------------------------------------------------------------
           def ler_ld(soup):
-              """Gera todos os objetos JSON-LD (dict) da página, inclusive dentro de listas e @graph."""
               for s in soup.find_all("script", type="application/ld+json"):
                   try:
                       dados = json.loads(s.string or s.get_text())
@@ -479,11 +511,6 @@ jobs:
               return []
 
 
-          # ----------------------------------------------------------------------------
-          # Títulos
-          # ----------------------------------------------------------------------------
-          # Prefixos de "lixo" do site. Palavras comuns (arc, inix) só são removidas quando
-          # seguidas de separador, para nunca cortar títulos reais como "Arcane" ou "Arctic".
           _PREFIXO = re.compile(
               r"^(?:(?i:marc[øo]s\s*x\s*7|vini\s*7x)"
               r"|(?:(?i:entre[ _-]nos|inix)|arc)(?=[\s\-_:|]))[\s\-_:|]*"
@@ -522,11 +549,10 @@ jobs:
 
 
           def tirar_lixo_do_site(t):
-              """Remove emoji-alien, 'vini7x', 'do vini7x', 'ViNi7xemoji-alien', '@vini7xg'... que o site coloca nos títulos."""
-              t = unicodedata.normalize("NFKC", str(t or ""))   # "𝑽iNi𝟕x" (letras matemáticas do site) vira "ViNi7x"
+              t = unicodedata.normalize("NFKC", str(t or ""))
               t = _LIXO_SITE.sub(" ", t)
               t = re.sub(r"\s+", " ", t)
-              t = re.sub(r"(?:\s*[-–—|:]\s*){2,}", " - ", t)   # "A - - B" (sobrou separador duplo) -> "A - B"
+              t = re.sub(r"(?:\s*[-–—|:]\s*){2,}", " - ", t)
               return t.strip(" -–—|:")
 
 
@@ -536,36 +562,29 @@ jobs:
                   t = ""
               t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
               t = tirar_lixo_do_site(t)
-
-              for _ in range(3):  # prefixos empilhados
+              for _ in range(3):
                   novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
                   if novo == t:
                       break
                   t = novo
-
               t = re.sub(r"^(?:assistir|baixar|download)\s+", "", t, flags=re.I)
               t = re.sub(
                   r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
                   "", t, flags=re.I)
               t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
-              # (o NFKC transforma "2ª" em "2a", por isso o [ªº°ao])
               t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
               t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
-
-              # Ano: "(2019)" no fim sempre sai; um ano solto no fim só sai se for o mesmo
-              # ano da URL (assim "Blade Runner 2049" e "Wonder Woman 1984" ficam intactos).
               ano_url = ano_da_url(url)
               for _ in range(3):
                   novo = re.sub(r"\s*\(\s*(?:19|20)\d{2}\s*\)\s*$", "", t)
                   if ano_url:
                       novo = re.sub(r"\s+" + ano_url + r"\s*$", "", novo)
-                  if serie:  # em séries o ano solto no fim ("... 2026") é só ano de estreia: não entra no nome do arquivo
+                  if serie:
                       novo = re.sub(r"\s+(?:19|20)\d{2}\s*$", "", novo)
                   novo = novo.strip(" -–—|:")
                   if novo == t:
                       break
                   t = novo
-
               if len(t) < 3 and fallback:
                   t = _titulo_pela_url(url)
               return t.strip()
@@ -585,7 +604,6 @@ jobs:
 
 
           def escolher_titulo(soup, url, serie=False):
-              """Prioridade: <h1>, og:title, <title>, e só por último a URL. Retorna (titulo, ano)."""
               for raw in candidatos_titulo(soup):
                   t = limpar_titulo_bruto(raw, url, fallback=False, serie=serie)
                   if len(t) >= 3:
@@ -604,9 +622,6 @@ jobs:
               return s or "sem_titulo"
 
 
-          # ----------------------------------------------------------------------------
-          # Capas
-          # ----------------------------------------------------------------------------
           def is_icon_url(url):
               if not url:
                   return True
@@ -619,7 +634,7 @@ jobs:
               if re.search(r"\.(?:ico|svg)$", caminho):
                   return True
               if re.search(r"[=/]s(?:16|24|32|48|64|72|96)(?:-[a-z]+)?(?:[/?]|$)", u):
-                  return True  # miniaturas minúsculas do Blogger (favicon / avatar)
+                  return True
               return False
 
 
@@ -662,32 +677,27 @@ jobs:
               return PLACEHOLDER
 
 
-          # ----------------------------------------------------------------------------
-          # Vídeo
-          # ----------------------------------------------------------------------------
           def extrair_link_estatico(html_text, soup=None):
-              """Mesma regra de antes (contentUrl do JSON-LD, senão 1º link que bate), para não
-              gerar duplicados nos arquivos que já existem. <video>/<source> só como último recurso."""
               soup = soup or BeautifulSoup(html_text, "html.parser")
               for ld in ler_ld(soup):
                   v = ld.get("contentUrl")
                   if isinstance(v, str) and v.startswith("http"):
-                      return v
-              m = re.findall(
-                  r"(https?://[^\"'\s<>]+(?:\.mp4|\.m3u8|tankie\.tube/videos/embed|oneplayer\.site)[^\"'\s<>]*)",
-                  html_text)
+                      return normalizar_link_video(v)
+              for a in soup.find_all("a", href=True):
+                  href = a["href"].strip()
+                  if _VIDEO_RE_HREF.search(href):
+                      METRICAS["link_em_a_href"] += 1
+                      return normalizar_link_video(href)
+              m = _VIDEO_RE_HTML.search(html_text)
               if m:
-                  return m[0]
+                  return normalizar_link_video(m.group(0))
               for tag in soup.find_all(["video", "source"]):
                   src = tag.get("src") or ""
                   if src.startswith("http"):
-                      return src
+                      return normalizar_link_video(src)
               return None
 
 
-          # ----------------------------------------------------------------------------
-          # Arquivos .html (saída para o Rave)
-          # ----------------------------------------------------------------------------
           _TEMPLATE = """<!DOCTYPE html>
           <html lang="pt-BR">
           <head>
@@ -728,7 +738,7 @@ jobs:
 
 
           def montar_html(arquivo, nome_json, link, capa):
-              nome_json = tirar_lixo_do_site(nome_json)   # defesa final: emoji-alien/vini7x nunca entram num arquivo gerado
+              nome_json = tirar_lixo_do_site(nome_json)
               file_url = f"{PAGES_URL}/{arquivo}"
               dados = {
                   "@context": "https://schema.org", "@type": "VideoObject",
@@ -751,15 +761,12 @@ jobs:
           def salvar_html(destino, nome_json, link, capa):
               destino = Path(destino)
               if not link or not str(link).startswith("http"):
-                  raise ValueError(f"link inválido para {destino.name}: {link!r}")  # nunca grava arquivo sem vídeo
+                  raise ValueError(f"link inválido para {destino.name}: {link!r}")
               escrever_atomico(destino, montar_html(destino.name, nome_json, link, capa))
 
 
-          # ----------------------------------------------------------------------------
-          # Índice de vídeos já existentes (deduplicação)
-          # ----------------------------------------------------------------------------
-          INDICE = {}        # link  -> Path
-          LINK_DO_ARQ = {}   # Path  -> link
+          INDICE = {}
+          LINK_DO_ARQ = {}
 
 
           def construir_indice():
@@ -793,7 +800,6 @@ jobs:
 
 
           def nome_ok(nome_atual, stem):
-              """True se o arquivo já tem o nome calculado (ou o nome + sufixo de colisão _2, _3...)."""
               if nome_atual == stem + ".html":
                   return True
               return nome_atual.startswith(stem + "_") and bool(
@@ -815,7 +821,6 @@ jobs:
 
 
           def titulo_do_episodio(nome):
-              """Só o título do episódio, normalizado (sem acento/pontuação), p/ comparar dois arquivos."""
               n = str(nome or "").replace(SUFIXO, "")
               m = re.search(r"T\d+E\d+\s*-\s*(.*?)\s*-?\s*$", n)
               t = unicodedata.normalize("NFKD", m.group(1) if m else "")
@@ -824,8 +829,6 @@ jobs:
 
 
           def escolher_nome(stem, link):
-              """FILMES: nunca sobrescreve o arquivo de OUTRO vídeo (usa _2, _3...).
-              EPISÓDIOS: nunca existe sufixo; o nome é sempre <serie>_t<T>e<E>.html (ver upsert)."""
               if chave_ep_stem(stem) is not None:
                   return f"{stem}.html"
               i = 1
@@ -847,8 +850,14 @@ jobs:
               return None
 
 
+          def _localizar_arquivo_episodio(stem):
+              direto = Path(stem + ".html")
+              if direto.exists():
+                  return direto
+              return buscar_por_stem(stem)
+
+
           def checar_defeitos(arquivo):
-              """n=nome quebrado, c=capa quebrada, f=formato antigo, l=sem link de vídeo."""
               d = {"n": True, "c": True, "f": True, "l": True, "nome": "", "capa": "", "link": None}
               try:
                   conteudo = Path(arquivo).read_text(encoding="utf-8")
@@ -882,10 +891,6 @@ jobs:
 
 
           def _resolver_slot(ocupante, nome_json):
-              """Um episódio já existe no 'slot' (série+temporada+episódio) com OUTRO link. Compara o conteúdo:
-              - ocupante quebrado (sem link)          -> sobrescrever
-              - mesmo título de episódio              -> sobrescrever (o site atualizou o link)
-              - títulos diferentes / não comparáveis  -> descartar o novo (provável erro de mapeamento)"""
               d = checar_defeitos(ocupante)
               if d["l"]:
                   return "sobrescrever", d
@@ -904,13 +909,11 @@ jobs:
 
 
           def upsert(stem, nome_json, link, capa, modo, ind="    "):
-              """Cria ou conserta o arquivo de um vídeo. Retorna:
-              novo | corrigido | perfeito | ignorado | pulado | sem_link | conflito"""
               ep = chave_ep_stem(stem) is not None
               existente = INDICE.get(link) if link else None
               if existente is not None and not existente.exists():
                   existente = None
-              if not link:  # sem link novo: ainda dá para consertar nome/capa de um arquivo já existente
+              if not link:
                   existente = buscar_por_stem(stem)
                   if existente is None:
                       return "sem_link"
@@ -926,7 +929,6 @@ jobs:
                   if ep and renomear:
                       antigo, novo = chave_ep_arquivo(existente.name), chave_ep_stem(stem)
                       if antigo and novo and antigo != novo:
-                          # Mesmo vídeo, mas agora cairia em OUTRA temporada/episódio: NUNCA renomear sozinho.
                           METRICAS["conflitos"] += 1
                           log(f"{ind}[⚠️] REMAPEAMENTO BLOQUEADO: {existente.name} -> {stem}.html (T/E diferente).")
                           evento("remapeamento_bloqueado", "", arquivo=existente.name, novo=stem + ".html", link=link)
@@ -987,15 +989,10 @@ jobs:
               return "novo"
 
 
-          # ----------------------------------------------------------------------------
-          # Arquivo de erros/métricas (*_erros.json)
-          # ----------------------------------------------------------------------------
           MAX_EVENTOS = 500
 
 
           def carregar_erros(arq):
-              """Formato novo: {contagem:{url:n}, eventos:[...], metricas:{ultima_run, acumulado}}.
-              Aceita o formato antigo (dict url->n) e converte."""
               d = carregar_json(arq, {})
               if not isinstance(d, dict):
                   d = {}
@@ -1008,7 +1005,6 @@ jobs:
 
 
           def salvar_erros(arq, erros, robo):
-              """Grava os eventos desta run + métricas (da run e acumuladas) e imprime o resumo."""
               erros["eventos"] = (erros.get("eventos", []) + EVENTOS)[-MAX_EVENTOS:]
               ultima = dict(METRICAS, robo=robo, quando=agora_iso(), duracao_min=round((time.time() - T0) / 60, 1))
               acum = erros["metricas"].get("acumulado", {})
@@ -1025,7 +1021,6 @@ jobs:
 
 
           def registrar_erro(erros, url, arq_descartados, maximo=3):
-              """Conta falhas por URL; após `maximo` falhas descarta para a fila não travar. True se descartou."""
               c = erros.setdefault("contagem", {})
               c[url] = c.get(url, 0) + 1
               if c[url] >= maximo:
@@ -1043,16 +1038,15 @@ jobs:
                   log(f"(não consegui gravar {FALTAM_ARQ}: {e})")
 
 
-          from urllib.parse import urljoin
           from playwright.async_api import async_playwright
 
           ARQ_FILA        = Path("series_fila.txt")
-          ARQ_FEITAS      = Path("series_feitas.txt")        # passada de DOWNLOAD concluída
-          ARQ_CONSERTADAS = Path("series_consertadas.txt")   # passada de CONSERTO concluída
+          ARQ_FEITAS      = Path("series_feitas.txt")
+          ARQ_CONSERTADAS = Path("series_consertadas.txt")
           ARQ_PENDENTES   = Path("episodios_pendentes.json")
           ARQ_DESCARTADOS = Path("series_descartados.txt")
           ARQ_ERROS       = Path("series_erros.json")
-          ARQ_TOTAIS      = Path("series_totais.json")       # {"slug": {"1": 6, "2": 10, "3": 16}}  (opcional)
+          ARQ_TOTAIS      = Path("series_totais.json")
           ARQ_INCONSIST   = Path("series_inconsistentes.txt")
 
           FEED_POSTS = {}
@@ -1072,20 +1066,25 @@ jobs:
                   if any(t in ("TVSeries", "TVSeason", "TVEpisode") for t in tipos):
                       return True
               for a in soup.find_all("a", href=True):
-                  if re.search(r"epis[oó]dio[-_/]\d+", a["href"], re.I):
+                  href = a.get("href", "")
+                  texto = a.get_text(" ", strip=True)
+                  if re.search(r"epis[oó]dio[-_/]\d+", href, re.I):
                       return True
-                  if re.search(r"\bepis[oó]dio\s+\d+", a.get_text(strip=True), re.I):
+                  if re.search(r"\bepis[oó]dio\s+\d+", texto, re.I):
+                      return True
+                  if _HREF_TE.search(href):
                       return True
               texto = soup.get_text(" ", strip=True).lower()
               if re.search(r"lista de epis[oó]dios", texto):
                   return True
               if re.search(r"\b\d+\s*[ªº°]\s*temporada", texto):
                   return True
+              if re.search(r"temporada\s*\d+", texto):
+                  return True
               return False
 
 
           def temporada_inicial(titulo_bruto, url):
-              """Se a página já é de uma temporada específica ('Nome 2ª Temporada'), começa dela."""
               for texto in (titulo_bruto or "", (url or "").replace("-", " ").replace("_", " ")):
                   m = re.search(r"(\d+)\s*[ªº°]?\s*(?:a\s+)?temporada", texto, re.I)
                   if m:
@@ -1093,8 +1092,6 @@ jobs:
               return 1
 
 
-          # Cabeçalhos de temporada aceitos (várias grafias): "2ª Temporada", "Temporada 2", "TEMPORADA 02 (10 eps)",
-          # "Season 2", "2a temporada", "T2".
           _TEMP_PATS = (
               re.compile(r"(?<!\d)(\d{1,2})\s*[ªº°]?\s*(?:a\s+)?temporada", re.I),
               re.compile(r"temporada\s*[:\-]?\s*(\d{1,2})(?!\d)", re.I),
@@ -1115,51 +1112,75 @@ jobs:
 
 
           def extrair_episodios(soup, temp_inicial=1, url=""):
-              """Percorre a página NA ORDEM DO DOCUMENTO. Qualquer elemento curto que não seja link e mencione
-              'Temporada N' muda a temporada corrente (b/strong/h1-h6/p/span/div/li/td/font/em/u...).
-              Se o número do episódio volta a 1 sem cabeçalho novo, a temporada é INFERIDA (e registrada)."""
               temporada, eps, vistos = temp_inicial, [], set()
               ultimo_ep = 0
+
               for tag in soup.find_all(True):
                   if tag.name in ("script", "style", "head", "title", "meta", "link"):
                       continue
                   if tag.name != "a":
-                      # só trata elementos "folha de texto": filhos que não sejam só formatação inline contam como bloco maior
                       if tag.find("a"):
                           continue
                       n = numero_temporada(tag.get_text(" ", strip=True))
                       if n is not None and n != temporada:
                           temporada, ultimo_ep = n, 0
                       continue
+
                   texto = tag.get_text(" ", strip=True)
-                  if not re.search(r"epis[oó]dio", texto, re.I):
-                      continue
-                  href = tag.get("href")
+                  href = tag.get("href") or ""
                   if not href or href.startswith(("#", "javascript:")):
                       continue
-                  href = urljoin(BASE_URL + "/", href)
-                  if href in vistos:
+
+                  href_abs = urljoin(BASE_URL + "/", href)
+                  if href_abs in vistos:
                       continue
-                  vistos.add(href)
-                  m_ep = re.search(r"Epis[oó]dio\s*(\d+)", texto, re.I)
-                  num = int(m_ep.group(1)) if m_ep else sum(1 for e in eps if e["temp"] == temporada) + 1
-                  # link escrito como "T3 Episódio 4" / "3x04": a própria linha manda
-                  m_t = re.search(r"\bT\s*(\d{1,2})\s*[Ex ]", texto) or re.search(r"\b(\d{1,2})\s*x\s*\d{1,3}\b", texto)
-                  if m_t and int(m_t.group(1)) != temporada:
-                      temporada, ultimo_ep = int(m_t.group(1)), 0
-                  elif num == 1 and ultimo_ep > 1 and any(e["temp"] == temporada and int(e["ep"]) == 1 for e in eps):
+
+                  m_href_te   = _HREF_TE.search(href)
+                  m_href_ep   = _HREF_EP.search(href)
+                  m_texto_ep  = _TEXTO_EP.search(texto)
+                  m_texto_num = _TEXTO_NUM.match(texto)
+                  tem_hint    = _EP_HINT.search(texto)
+
+                  if not (m_href_te or m_href_ep or m_texto_ep or m_texto_num or tem_hint):
+                      continue
+
+                  vistos.add(href_abs)
+
+                  temp_ep, num = None, None
+                  if m_href_te:
+                      temp_ep = int(m_href_te.group(1))
+                      num = int(m_href_te.group(2))
+                      METRICAS["episodios_tp_encontrados"] += 1
+                  elif m_href_ep:
+                      num = int(m_href_ep.group(1))
+                  elif m_texto_ep:
+                      num = int(m_texto_ep.group(1))
+                  elif m_texto_num:
+                      num = int(m_texto_num.group(1))
+
+                  if temp_ep and temp_ep != temporada:
+                      temporada, ultimo_ep = temp_ep, 0
+
+                  if num is None:
+                      num = sum(1 for e in eps if e["temp"] == temporada) + 1
+
+                  if num == 1 and ultimo_ep > 1 and any(e["temp"] == temporada and int(e["ep"]) == 1 for e in eps):
                       temporada, ultimo_ep = temporada + 1, 0
-                      evento("temporada_inferida", url, nova_temporada=temporada, motivo="episódio voltou a 1 sem cabeçalho")
+                      evento("temporada_inferida", url, nova_temporada=temporada, motivo="episódio voltou a 1")
                       log(f"    (Episódio voltou a 1 sem cabeçalho: assumindo T{temporada}.)")
+
                   ultimo_ep = num
-                  titulo_ep = re.sub(r"(?:\bT\s*\d+\s*)?Epis[oó]dio\s*\d+\s*[-–:]?\s*", "", texto, count=1, flags=re.I).strip()
-                  eps.append({"temp": temporada, "ep": str(num), "titulo": titulo_ep, "url": href})
+
+                  titulo_ep = _TEXTO_NUM.sub("", texto)
+                  titulo_ep = re.sub(r"^Epis[oó]dio\s*\d+\s*[-–:]\s*", "", titulo_ep, flags=re.I)
+                  titulo_ep = titulo_ep.strip()
+
+                  eps.append({"temp": temporada, "ep": str(num), "titulo": titulo_ep, "url": href_abs})
+
               return eps
 
 
           def validar_estrutura(slug, eps, totais):
-              """Confere a estrutura ANTES de criar/alterar qualquer arquivo. Retorna lista de problemas (vazia = ok).
-              Nada é criado/removido se houver problema: vai para series_erros.json + series_inconsistentes.txt."""
               problemas = []
               por_temp = {}
               chaves = {}
@@ -1182,7 +1203,6 @@ jobs:
               for t in por_temp:
                   if conhecido and str(t) not in conhecido:
                       problemas.append(f"T{t} não existe no total conhecido {sorted(conhecido)}")
-              # temporada que existe em disco e sumiu da página (sinal clássico de mapeamento errado)
               em_disco = set()
               for f in Path(".").glob(f"{slug}_t*e*.html"):
                   m = _EP_ARQ.search(f.name)
@@ -1195,8 +1215,17 @@ jobs:
 
 
           async def obter_link_episodio(ctx, url_ep):
-              """Retorna (link, motivo). motivo: None | 'rate_limit' | 'rede' | 'html_invalido' | 'sem_link'."""
-              status, texto = await asyncio.to_thread(http_get, url_ep)
+              ent = FEED_POSTS.get(url_ep)
+              if ent and len(ent.get("conteudo", "")) >= CONTEUDO_MIN:
+                  texto = pagina_do_feed(ent)
+                  link = extrair_link_estatico(texto)
+                  if link:
+                      METRICAS["feed_hit"] += 1
+                      return link, None
+
+              METRICAS["http_necessario"] += 1
+              status, texto = await asyncio.to_thread(http_get_com_proxy, url_ep, timeout=25)
+
               if status == 429:
                   return None, "rate_limit"
               if status is None or status in (500, 502, 503, 504):
@@ -1207,11 +1236,8 @@ jobs:
                   link = extrair_link_estatico(texto)
                   if link:
                       return link, None
-              html = await renderizar(ctx, url_ep)
-              if html and validar_html(html, url_ep):
-                  link = extrair_link_estatico(html)
-                  if link:
-                      return link, None
+
+              METRICAS["playwright_skip"] += 1
               return None, "sem_link"
 
 
@@ -1223,11 +1249,13 @@ jobs:
 
 
           async def processar_serie(ctx, url_serie, pendentes, totais):
-              """Retorna: filme | descartar | erro_rede | rate_limit | interrompido | inconsistente | ok"""
               log(f"\n--> Verificando série: {url_serie}")
               soup = None
               ent = FEED_POSTS.get(url_serie)
-              if ent:   # post vindo do feed: sem requisição à página da série (os episódios ainda são buscados um a um)
+              if ent:
+                  if ent.get("tipo") == "filme":
+                      log("    (Feed classificou como filme; pulando sem HTTP)")
+                      return "filme"
                   texto_f = pagina_do_feed(ent)
                   soup_f = BeautifulSoup(texto_f, "html.parser")
                   if eh_serie(soup_f) and extrair_episodios(soup_f, 1, url_serie):
@@ -1235,7 +1263,7 @@ jobs:
                       log("    (Dados do feed: sem requisição à página da série.)")
 
               if soup is None:
-                  status, texto = await asyncio.to_thread(http_get, url_serie)
+                  status, texto = await asyncio.to_thread(http_get_com_proxy, url_serie, timeout=25)
                   if status == 429:
                       return "rate_limit"
                   if status is None:
@@ -1249,22 +1277,11 @@ jobs:
                       evento("http_status", url_serie, status=status)
                       return "erro_rede"
                   if not validar_html(texto, url_serie):
-                      return "erro_rede"          # resposta de erro/truncada: NÃO classifica, NÃO salva
-
+                      return "erro_rede"
                   soup = BeautifulSoup(texto, "html.parser")
                   if not eh_serie(soup):
-                      sem_pistas = not re.search(r"epis[oó]dio|temporada", texto, re.I)
-                      if extrair_link_estatico(texto, soup) and sem_pistas:
-                          log("    (É FILME. Pulando...)")
-                          return "filme"
-                      html_r = await renderizar(ctx, url_serie)
-                      if not html_r or not validar_html(html_r, url_serie):
-                          return "erro_rede"
-                      soup_r = BeautifulSoup(html_r, "html.parser")
-                      if not eh_serie(soup_r):
-                          log("    (É FILME. Pulando...)")
-                          return "filme"
-                      soup, texto = soup_r, html_r
+                      log("    (É FILME. Pulando...)")
+                      return "filme"
 
               titulo, _ = escolher_titulo(soup, url_serie, serie=True)
               brutos = candidatos_titulo(soup)
@@ -1298,13 +1315,22 @@ jobs:
                       return "interrompido"
                   stem = f"{slug}_t{it['temp']}e{it['ep']}"
                   nome_json = nome_episodio(titulo, it["temp"], it["ep"], it["titulo"])
+
+                  existente = _localizar_arquivo_episodio(stem)
+                  if existente:
+                      d = checar_defeitos(existente)
+                      if not (d["n"] or d["c"] or d["f"] or d["l"]):
+                          METRICAS["skip_perfeito"] += 1
+                          log(f"      T{it['temp']}E{it['ep']}: já perfeito (skip, sem HTTP)")
+                          continue
+
                   try:
                       link, motivo = await obter_link_episodio(ctx, it["url"])
                       if motivo == "rate_limit":
                           evento("rate_limit", it["url"], serie=url_serie)
-                          return "rate_limit"        # nada parcial: os já salvos estão completos, o resto vem na próxima run
-                      if motivo in ("rede", "html_invalido"):
-                          log(f"      T{it['temp']}E{it['ep']}: página do episódio inválida ({motivo}); retentativa depois.")
+                          return "rate_limit"
+                      if motivo in ("rede", "html_invalido", "sem_link"):
+                          log(f"      T{it['temp']}E{it['ep']}: {motivo}; retentativa depois.")
                           link = None
                       res = upsert(stem, nome_json, link, capa, MODO, ind="      ")
                   except Exception as e:
@@ -1328,6 +1354,11 @@ jobs:
           async def main():
               construir_indice()
               FEED_POSTS.update(indice_do_feed())
+
+              log("\n⏳ Feed carregado. Aguardando 60s para esvaziar janela de rate limit...")
+              time.sleep(60)
+              log("✅ Cooldown concluído. Iniciando processamento de séries.\n")
+
               if not ARQ_FILA.exists():
                   log("Criando fila de séries...")
                   urls, _ = buscar_urls_feed()
@@ -1372,7 +1403,7 @@ jobs:
                           seguidos_429 += 1
                           evento("rate_limit", url, seguidos=seguidos_429)
                           if seguidos_429 >= 5:
-                              log("\n🚫 5 séries seguidas com 429 mesmo após os retries: o site está bloqueando. Encerrando a run.")
+                              log("\n🚫 5 séries seguidas com 429 mesmo após os proxies: o site está bloqueando. Encerrando a run.")
                               bloqueado = True
                               break
                           log("    ⏸️ rate-limit: pausa extra.")
@@ -1450,7 +1481,7 @@ jobs:
           git add -A
           git reset .github/ 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
-          git commit -m "feat: mega extracao de series (logs detalhados)"
+          git commit -m "feat: series (aceita tp1e01 + Capitulo N + capitulos)"
           ok=0
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then ok=1; break; fi
@@ -1480,7 +1511,6 @@ jobs:
           echo "Faltam: $FALTAM"
           if [ "${FALTAM:-0}" -le 0 ]; then exit 0; fi
 
-          # Freio de segurança: no máximo 60 encadeamentos por hora
           LIMITE_ISO=$(date -u -d '60 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
           RECENTES=$(gh run list --workflow="series.yml" --event workflow_dispatch --limit 100 \
             --json createdAt --jq "[.[] | select(.createdAt > \"$LIMITE_ISO\")] | length" \
