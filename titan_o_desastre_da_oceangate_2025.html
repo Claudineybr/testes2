@@ -12,7 +12,7 @@
     "name": "Titan: O Desastre da OceanGate (2025) - 🍿Clau",
     "description": "Assista Titan: O Desastre da OceanGate (2025) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnQVj6rekfUraTBLfvE-18reU03gDlnj8Y-jjYI3Rx1ZmbCs4EKlXHJyM9-YPjjle3VZXhEQxyH6kA4wt-1GUqeswlyTeKH_-6SwtxYOgApJtS62uvAWF9qcipDhumAhKpHAyEsqqnuEW2wNHRMHM87MNOD4ih-5FMTebbQbUlT9t1xrA97yKp2_UnNFI/w1280-h720-p-k-no-nu/Picsart_25-06-11_11-53-55-493.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnQVj6rekfUraTBLfvE-18reU03gDlnj8Y-jjYI3Rx1ZmbCs4EKlXHJyM9-YPjjle3VZXhEQxyH6kA4wt-1GUqeswlyTeKH_-6SwtxYOgApJtS62uvAWF9qcipDhumAhKpHAyEsqqnuEW2wNHRMHM87MNOD4ih-5FMTebbQbUlT9t1xrA97yKp2_UnNFI/s320/Picsart_25-06-11_11-53-55-493.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Titan: O Desastre da OceanGate (2025) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.cnvslink.com/m/Titan_%20O%20Desastre%20da%20OceanGate.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnQVj6rekfUraTBLfvE-18reU03gDlnj8Y-jjYI3Rx1ZmbCs4EKlXHJyM9-YPjjle3VZXhEQxyH6kA4wt-1GUqeswlyTeKH_-6SwtxYOgApJtS62uvAWF9qcipDhumAhKpHAyEsqqnuEW2wNHRMHM87MNOD4ih-5FMTebbQbUlT9t1xrA97yKp2_UnNFI/w1280-h720-p-k-no-nu/Picsart_25-06-11_11-53-55-493.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnQVj6rekfUraTBLfvE-18reU03gDlnj8Y-jjYI3Rx1ZmbCs4EKlXHJyM9-YPjjle3VZXhEQxyH6kA4wt-1GUqeswlyTeKH_-6SwtxYOgApJtS62uvAWF9qcipDhumAhKpHAyEsqqnuEW2wNHRMHM87MNOD4ih-5FMTebbQbUlT9t1xrA97yKp2_UnNFI/s320/Picsart_25-06-11_11-53-55-493.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4uY252c2xpbmsuY29tL20vVGl0YW5fJTIwTyUyMERlc2FzdHJlJTIwZGElMjBPY2VhbkdhdGUubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

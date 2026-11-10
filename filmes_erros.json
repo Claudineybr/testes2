@@ -1,6 +1,8 @@
 {
   "contagem": {
-    "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html": 1
+    "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html": 2,
+    "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html": 1,
+    "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html": 1
   },
   "eventos": [
     {
@@ -168,49 +170,83 @@
       "tipo": "excecao",
       "url": "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html",
       "detalhe": "link inválido para viagem_de_formatura_mallorca_2025.html: 'htt/m/Viagem%20de%20Formatura%20-%20Mallorca%202025%20WEB-DL%201080p%20x264%20DUAL%205.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:18:16+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html",
+      "detalhe": "link inválido para viagem_de_formatura_mallorca_2025.html: 'htt/m/Viagem%20de%20Formatura%20-%20Mallorca%202025%20WEB-DL%201080p%20x264%20DUAL%205.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:20:03+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-nossos-tempos-2025.html",
+      "detalhe": "link inválido para nossos_tempos_2025.html: 'ht/m/Nossos%20Tempos.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:21:04+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-quebrando-regras-2025.html",
+      "detalhe": "link inválido para quebrando_regras_2025.html: 'htt/m/Quebrando.Regras.2025.1080p.WEB-DL.DUAL.2.0.mp4'"
+    },
+    {
+      "quando": "2026-11-10T09:21:19+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/08/arc-bird-box-barcelona-2023.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T09:23:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-zoe-minha-amiga-morta-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 38,
-      "ok": 38,
-      "429": 0,
+      "requisicoes": 46,
+      "ok": 44,
+      "429": 2,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 0,
+      "falhas_definitivas": 2,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 0,
-      "proxy_hit": 0,
-      "pausas_evitadas": 95,
-      "http_realizados": 4,
-      "playwright_skip": 4,
-      "proxmint_listas": 0,
+      "proxy_fallback": 2,
+      "proxy_hit": 2,
+      "pausas_evitadas": 92,
+      "http_realizados": 7,
+      "playwright_skip": 12,
+      "proxmint_listas": 2,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "multifilme_paginas": 3,
-      "multifilme_arquivos": 5,
+      "multifilme_paginas": 0,
+      "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T09:08:43+00:00",
-      "duracao_min": 11.1
+      "quando": "2026-11-10T09:23:47+00:00",
+      "duracao_min": 14.0
     },
     "acumulado": {
-      "requisicoes": 728,
-      "ok": 713,
-      "429": 14,
+      "requisicoes": 774,
+      "ok": 757,
+      "429": 16,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 14,
+      "falhas_definitivas": 16,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 14,
-      "proxy_hit": 14,
-      "pausas_evitadas": 1845,
-      "http_realizados": 36,
-      "playwright_skip": 107,
-      "proxmint_listas": 14,
+      "proxy_fallback": 16,
+      "proxy_hit": 16,
+      "pausas_evitadas": 1937,
+      "http_realizados": 43,
+      "playwright_skip": 119,
+      "proxmint_listas": 16,
       "link_em_a_href": 71,
       "link_convertido_w2embed": 185,
       "multifilme_paginas": 14,
