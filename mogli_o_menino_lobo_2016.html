@@ -12,7 +12,7 @@
     "name": "Mogli: O Menino Lobo (2016) - 🍿Clau",
     "description": "Assista Mogli: O Menino Lobo (2016) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCFnR7tltn-3ZM5A6drdpkA3z8MY3XhpMxzgb-bWXmurqDH7c87HKVMM7KLElUqz29Wa5xvqCiiky-ljOz-xXdws2q-n6FvCYVLi_oyzh8tSNdEq2gOgc0xvzEWWkzCcco1mYze3FTH0wRS1duiDQ2lrHFPcWbVNdE3yQKwclLeQdcUH4wJ2jXrwl4AWc/w1280-h720-p-k-no-nu/Picsart_25-05-28_13-05-00-247.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCFnR7tltn-3ZM5A6drdpkA3z8MY3XhpMxzgb-bWXmurqDH7c87HKVMM7KLElUqz29Wa5xvqCiiky-ljOz-xXdws2q-n6FvCYVLi_oyzh8tSNdEq2gOgc0xvzEWWkzCcco1mYze3FTH0wRS1duiDQ2lrHFPcWbVNdE3yQKwclLeQdcUH4wJ2jXrwl4AWc/s320/Picsart_25-05-28_13-05-00-247.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Mogli: O Menino Lobo (2016) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Mogli%20-%20O%20Menino%20Lobo_2016_tt3040964.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCFnR7tltn-3ZM5A6drdpkA3z8MY3XhpMxzgb-bWXmurqDH7c87HKVMM7KLElUqz29Wa5xvqCiiky-ljOz-xXdws2q-n6FvCYVLi_oyzh8tSNdEq2gOgc0xvzEWWkzCcco1mYze3FTH0wRS1duiDQ2lrHFPcWbVNdE3yQKwclLeQdcUH4wJ2jXrwl4AWc/w1280-h720-p-k-no-nu/Picsart_25-05-28_13-05-00-247.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCFnR7tltn-3ZM5A6drdpkA3z8MY3XhpMxzgb-bWXmurqDH7c87HKVMM7KLElUqz29Wa5xvqCiiky-ljOz-xXdws2q-n6FvCYVLi_oyzh8tSNdEq2gOgc0xvzEWWkzCcco1mYze3FTH0wRS1duiDQ2lrHFPcWbVNdE3yQKwclLeQdcUH4wJ2jXrwl4AWc/s320/Picsart_25-05-28_13-05-00-247.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL01vZ2xpJTIwLSUyME8lMjBNZW5pbm8lMjBMb2JvXzIwMTZfdHQzMDQwOTY0Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

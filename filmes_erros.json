@@ -1,7 +1,5 @@
 {
-  "contagem": {
-    "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html": 2
-  },
+  "contagem": {},
   "eventos": [
     {
       "quando": "2026-11-10T05:10:57+00:00",
@@ -150,6 +148,18 @@
       "tipo": "excecao",
       "url": "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html",
       "detalhe": "link inválido para conduzido_para_matar_2009.html: '//videa.hu/player?v=ESkGEMafNKVHQI8M'"
+    },
+    {
+      "quando": "2026-11-10T08:54:35+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html",
+      "detalhe": "link inválido para conduzido_para_matar_2009.html: '//videa.hu/player?v=ESkGEMafNKVHQI8M'"
+    },
+    {
+      "quando": "2026-11-10T08:54:35+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html",
+      "motivo": "3 falhas seguidas"
     }
   ],
   "metricas": {
@@ -174,12 +184,12 @@
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T08:45:00+00:00",
-      "duracao_min": 10.1
+      "quando": "2026-11-10T08:56:04+00:00",
+      "duracao_min": 10.0
     },
     "acumulado": {
-      "requisicoes": 654,
-      "ok": 639,
+      "requisicoes": 690,
+      "ok": 675,
       "429": 14,
       "5xx": 0,
       "retries": 0,
@@ -189,9 +199,9 @@
       "conflitos": 0,
       "proxy_fallback": 14,
       "proxy_hit": 14,
-      "pausas_evitadas": 1651,
+      "pausas_evitadas": 1750,
       "http_realizados": 32,
-      "playwright_skip": 98,
+      "playwright_skip": 103,
       "proxmint_listas": 14,
       "link_em_a_href": 71,
       "link_convertido_w2embed": 185,
