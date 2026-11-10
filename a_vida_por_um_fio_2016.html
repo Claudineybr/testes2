@@ -12,7 +12,7 @@
     "name": "A Vida Por um Fio (2016) - 🍿Clau",
     "description": "Assista A Vida Por um Fio (2016) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFeppD9VHcwktx1EtBUhUwCO1EUSdg9UFMVkJ1Gfd2KJBv5LaKKan4rPcguRX8_P-Fa7-16Prcxfizw_a5u0mxX6ghd9AheYhhlhWZ03LxiQCAhz-41MdNwIocpY5lTv1b1B3l3yHwa3jrnZQ1TVoOfX0tGDO2L_O14z_NMkQj6rTIaOWfugxICyxuEKg/w1280-h720-p-k-no-nu/hxnq2sSOhT6c6kAdNMdeXwZ7S6q.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFeppD9VHcwktx1EtBUhUwCO1EUSdg9UFMVkJ1Gfd2KJBv5LaKKan4rPcguRX8_P-Fa7-16Prcxfizw_a5u0mxX6ghd9AheYhhlhWZ03LxiQCAhz-41MdNwIocpY5lTv1b1B3l3yHwa3jrnZQ1TVoOfX0tGDO2L_O14z_NMkQj6rTIaOWfugxICyxuEKg/s320/hxnq2sSOhT6c6kAdNMdeXwZ7S6q.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Vida Por um Fio (2016) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0001.speed-stream.online/a-vida-por-um-fio-2bad18a2/dubbed/1/15a3052a-8bcd-49db-add3-144a50993d74/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFeppD9VHcwktx1EtBUhUwCO1EUSdg9UFMVkJ1Gfd2KJBv5LaKKan4rPcguRX8_P-Fa7-16Prcxfizw_a5u0mxX6ghd9AheYhhlhWZ03LxiQCAhz-41MdNwIocpY5lTv1b1B3l3yHwa3jrnZQ1TVoOfX0tGDO2L_O14z_NMkQj6rTIaOWfugxICyxuEKg/w1280-h720-p-k-no-nu/hxnq2sSOhT6c6kAdNMdeXwZ7S6q.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFeppD9VHcwktx1EtBUhUwCO1EUSdg9UFMVkJ1Gfd2KJBv5LaKKan4rPcguRX8_P-Fa7-16Prcxfizw_a5u0mxX6ghd9AheYhhlhWZ03LxiQCAhz-41MdNwIocpY5lTv1b1B3l3yHwa3jrnZQ1TVoOfX0tGDO2L_O14z_NMkQj6rTIaOWfugxICyxuEKg/s320/hxnq2sSOhT6c6kAdNMdeXwZ7S6q.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwMS5zcGVlZC1zdHJlYW0ub25saW5lL2EtdmlkYS1wb3ItdW0tZmlvLTJiYWQxOGEyL2R1YmJlZC8xLzE1YTMwNTJhLThiY2QtNDlkYi1hZGQzLTE0NGE1MDk5M2Q3NC9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

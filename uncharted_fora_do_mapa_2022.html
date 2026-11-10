@@ -12,7 +12,7 @@
     "name": "Uncharted: Fora do Mapa (2022) - 🍿Clau",
     "description": "Assista Uncharted: Fora do Mapa (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFtKM0BteOS2yUtDvUA_KgYU77SkF5GcxyPni7axptvX6SQ7i_uWfxLrOocOJ_SE8Hnv8wqlUpBFeitcTpM1in422WTeGnv8pIeouqqU_7yO6IC5Zfmqk51iqTYNa5uDfW8AkxPhNwHX5bYybTE-hQM8zl00oXkwQJ1cUeEQy85NTQkvl-q9TGRLJ6yhI/w1280-h720-p-k-no-nu/rIlgpgohavwxk7JvXFbQP9Yf3Q2.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFtKM0BteOS2yUtDvUA_KgYU77SkF5GcxyPni7axptvX6SQ7i_uWfxLrOocOJ_SE8Hnv8wqlUpBFeitcTpM1in422WTeGnv8pIeouqqU_7yO6IC5Zfmqk51iqTYNa5uDfW8AkxPhNwHX5bYybTE-hQM8zl00oXkwQJ1cUeEQy85NTQkvl-q9TGRLJ6yhI/w400-h225/rIlgpgohavwxk7JvXFbQP9Yf3Q2.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Uncharted: Fora do Mapa (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Uncharted%20-%20Fora%20do%20Mapa_2022_tt1464335.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFtKM0BteOS2yUtDvUA_KgYU77SkF5GcxyPni7axptvX6SQ7i_uWfxLrOocOJ_SE8Hnv8wqlUpBFeitcTpM1in422WTeGnv8pIeouqqU_7yO6IC5Zfmqk51iqTYNa5uDfW8AkxPhNwHX5bYybTE-hQM8zl00oXkwQJ1cUeEQy85NTQkvl-q9TGRLJ6yhI/w1280-h720-p-k-no-nu/rIlgpgohavwxk7JvXFbQP9Yf3Q2.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFtKM0BteOS2yUtDvUA_KgYU77SkF5GcxyPni7axptvX6SQ7i_uWfxLrOocOJ_SE8Hnv8wqlUpBFeitcTpM1in422WTeGnv8pIeouqqU_7yO6IC5Zfmqk51iqTYNa5uDfW8AkxPhNwHX5bYybTE-hQM8zl00oXkwQJ1cUeEQy85NTQkvl-q9TGRLJ6yhI/w400-h225/rIlgpgohavwxk7JvXFbQP9Yf3Q2.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL1VuY2hhcnRlZCUyMC0lMjBGb3JhJTIwZG8lMjBNYXBhXzIwMjJfdHQxNDY0MzM1Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Velozes & Furiosos 7 (2015) - 🍿Clau",
     "description": "Assista Velozes & Furiosos 7 (2015) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0kqeYnVrmezJn0SB69SAFGdW5Nrpv1okasrmcVT1O3AQ54ny6MVlC5pdPbJKjKE66uNVUYmh4JhLLjtda7nKt5zbryFFSSiQiCEer58gWaWpQSlXsvB0eDKv-98UpGbmeEjHzCeUX8lHx5IW42QZUozdhmpmtN4bADihuvZnRIQ-Mpdq-9VTq0d8_yIU/w1280-h720-p-k-no-nu/lWQjYI7pJXS2C8CwHWSuhLmG46U.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0kqeYnVrmezJn0SB69SAFGdW5Nrpv1okasrmcVT1O3AQ54ny6MVlC5pdPbJKjKE66uNVUYmh4JhLLjtda7nKt5zbryFFSSiQiCEer58gWaWpQSlXsvB0eDKv-98UpGbmeEjHzCeUX8lHx5IW42QZUozdhmpmtN4bADihuvZnRIQ-Mpdq-9VTq0d8_yIU/s320/lWQjYI7pJXS2C8CwHWSuhLmG46U.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -20,13 +20,31 @@
     "embedUrl": "https://tankie.tube/videos/embed/eefade55-7d4a-43ab-a391-8bffb2e3141e"
 }
 </script>
-<title>Velozes & Furiosos 7 (2015) - 🍿Clau</title>
+<title>Velozes &amp; Furiosos 7 (2015) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/eefade55-7d4a-43ab-a391-8bffb2e3141e" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0kqeYnVrmezJn0SB69SAFGdW5Nrpv1okasrmcVT1O3AQ54ny6MVlC5pdPbJKjKE66uNVUYmh4JhLLjtda7nKt5zbryFFSSiQiCEer58gWaWpQSlXsvB0eDKv-98UpGbmeEjHzCeUX8lHx5IW42QZUozdhmpmtN4bADihuvZnRIQ-Mpdq-9VTq0d8_yIU/w1280-h720-p-k-no-nu/lWQjYI7pJXS2C8CwHWSuhLmG46U.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0kqeYnVrmezJn0SB69SAFGdW5Nrpv1okasrmcVT1O3AQ54ny6MVlC5pdPbJKjKE66uNVUYmh4JhLLjtda7nKt5zbryFFSSiQiCEer58gWaWpQSlXsvB0eDKv-98UpGbmeEjHzCeUX8lHx5IW42QZUozdhmpmtN4bADihuvZnRIQ-Mpdq-9VTq0d8_yIU/s320/lWQjYI7pJXS2C8CwHWSuhLmG46U.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvZWVmYWRlNTUtN2Q0YS00M2FiLWEzOTEtOGJmZmIyZTMxNDFl");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
