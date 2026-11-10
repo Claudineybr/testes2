@@ -12,7 +12,7 @@
     "name": "Tropa de Elite (2007) - 🍿Clau",
     "description": "Assista Tropa de Elite (2007) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIWVDVWJLZLbVTaHEGk7A8-jHvz7_VWJeZAw3e6TKkiKoo412TVvCb8X6R0sAQvLZMdUnZsVx1A1rIzvCe9hvAdQ1PGJ_z0AkVMhElotjDj1SvnlCZz7_dGDesiysG8GDZQbXxLsAIXuuNfiQAj3oDPIjW5L4Nz6e2-p1Kp8K4RNVQ4-Vj4-daU5hV8eI/w1280-h720-p-k-no-nu/Picsart_25-09-13_20-53-24-659.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIWVDVWJLZLbVTaHEGk7A8-jHvz7_VWJeZAw3e6TKkiKoo412TVvCb8X6R0sAQvLZMdUnZsVx1A1rIzvCe9hvAdQ1PGJ_z0AkVMhElotjDj1SvnlCZz7_dGDesiysG8GDZQbXxLsAIXuuNfiQAj3oDPIjW5L4Nz6e2-p1Kp8K4RNVQ4-Vj4-daU5hV8eI/s400/Picsart_25-09-13_20-53-24-659.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Tropa de Elite (2007) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-1.cnvods.com/m/Tropa%20de%20Elite_2007_tt0861739.mp4?cnvs_token=WWprNU5EUTRObVE1TUROaU1XRmpOUHcrcFdXYzVrbkhsZUlmR1V2YWErZ3ZVTUlUdTZ5WGxRbzdFb0M0WVptZkl5VHRsb0d6eDc2ekp1ekRkd2JIR2RHRVFMTlF0SGNFWGZ0UnhJS3lOU0Q2RkhLZkdKa0N2anE3Z3g4c0o5K3o4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIWVDVWJLZLbVTaHEGk7A8-jHvz7_VWJeZAw3e6TKkiKoo412TVvCb8X6R0sAQvLZMdUnZsVx1A1rIzvCe9hvAdQ1PGJ_z0AkVMhElotjDj1SvnlCZz7_dGDesiysG8GDZQbXxLsAIXuuNfiQAj3oDPIjW5L4Nz6e2-p1Kp8K4RNVQ4-Vj4-daU5hV8eI/w1280-h720-p-k-no-nu/Picsart_25-09-13_20-53-24-659.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIWVDVWJLZLbVTaHEGk7A8-jHvz7_VWJeZAw3e6TKkiKoo412TVvCb8X6R0sAQvLZMdUnZsVx1A1rIzvCe9hvAdQ1PGJ_z0AkVMhElotjDj1SvnlCZz7_dGDesiysG8GDZQbXxLsAIXuuNfiQAj3oDPIjW5L4Nz6e2-p1Kp8K4RNVQ4-Vj4-daU5hV8eI/s400/Picsart_25-09-13_20-53-24-659.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LTEuY252b2RzLmNvbS9tL1Ryb3BhJTIwZGUlMjBFbGl0ZV8yMDA3X3R0MDg2MTczOS5tcDQ/Y252c190b2tlbj1XV3ByTlU1RVVUUk9iVkUxVFVST2FVMVhSbXBPVUhjcmNGZFhZelZyYmtoc1pVbG1SMVYyWVdFclozWlZUVWxVZFRaNVdHeFJiemRGYjBNMFdWcHRaa2w1VkhSc2IwZDZlRGMyZWtwMWVrUmtkMkpJUjJSSFJWRk1UbEYwU0dORldHWjBVbmhKUzNsT1UwUTJSa2hMWmtkS2EwTjJhbkUzWjNnNGMwbzVLM280");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

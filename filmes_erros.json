@@ -1,5 +1,7 @@
 {
-  "contagem": {},
+  "contagem": {
+    "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html": 1
+  },
   "eventos": [
     {
       "quando": "2026-11-10T05:10:57+00:00",
@@ -96,50 +98,64 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T08:06:38+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-stitches-o-retorno-do-palhaco.html",
+      "detalhe": "link inválido para stitches_o_retorno_do_palhaco_assassino_2012.html: 'ttps://www.tokyvideo.com/br/video/stitches-o-retorno-do-palhaco-assassino-2012?utm_campaign=embed&utm_medium=embed-link&utm_sourc"
+    },
+    {
+      "quando": "2026-11-10T08:07:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/04/arc-halloween-2-1981.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 38,
-      "ok": 38,
-      "429": 0,
+      "requisicoes": 41,
+      "ok": 39,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 0,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 0,
-      "proxy_hit": 0,
-      "pausas_evitadas": 97,
-      "http_realizados": 2,
+      "proxy_fallback": 1,
+      "proxy_hit": 1,
+      "pausas_evitadas": 98,
+      "http_realizados": 1,
       "playwright_skip": 7,
-      "proxmint_listas": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 1,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T07:56:39+00:00",
-      "duracao_min": 11.2
+      "quando": "2026-11-10T08:09:39+00:00",
+      "duracao_min": 11.9
     },
     "acumulado": {
-      "requisicoes": 501,
-      "ok": 489,
-      "429": 12,
+      "requisicoes": 542,
+      "ok": 528,
+      "429": 13,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 12,
+      "falhas_definitivas": 13,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 12,
-      "proxy_hit": 12,
-      "pausas_evitadas": 1258,
-      "http_realizados": 29,
-      "playwright_skip": 73,
-      "proxmint_listas": 12,
-      "link_em_a_href": 70,
+      "proxy_fallback": 13,
+      "proxy_hit": 13,
+      "pausas_evitadas": 1356,
+      "http_realizados": 30,
+      "playwright_skip": 80,
+      "proxmint_listas": 13,
+      "link_em_a_href": 71,
       "link_convertido_w2embed": 185,
       "multifilme_paginas": 11,
       "multifilme_arquivos": 57
