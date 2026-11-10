@@ -12,7 +12,7 @@
     "name": "Proximo! - T1E3 – #Ghosting - 🍿Clau",
     "description": "Assista Proximo! - T1E3 – #Ghosting - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHMa0mp2DQ5v8VcIf25gn4h3t1qvGoq3Yp2VRJUpX5goqQ_8aBPJTBAxh8iYBZfoioIJJDCNBlKiFjb43Ktw8jESvnvIRAiKRuyScVG8XNWOXO-JgexLpdYAQWlI-RVauI1ZyBr4s4_9iNXOR_sbB136cUFVyegcCHEg-4oLYnffQ1nWP1e_deEGemGJQ/w1280-h720-p-k-no-nu/Picsart_25-04-27_19-43-06-703.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHMa0mp2DQ5v8VcIf25gn4h3t1qvGoq3Yp2VRJUpX5goqQ_8aBPJTBAxh8iYBZfoioIJJDCNBlKiFjb43Ktw8jESvnvIRAiKRuyScVG8XNWOXO-JgexLpdYAQWlI-RVauI1ZyBr4s4_9iNXOR_sbB136cUFVyegcCHEg-4oLYnffQ1nWP1e_deEGemGJQ/s320/Picsart_25-04-27_19-43-06-703.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Proximo! - T1E3 – #Ghosting - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://shd11.oneplayer.site/token/SHD11/251883/1x3.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHMa0mp2DQ5v8VcIf25gn4h3t1qvGoq3Yp2VRJUpX5goqQ_8aBPJTBAxh8iYBZfoioIJJDCNBlKiFjb43Ktw8jESvnvIRAiKRuyScVG8XNWOXO-JgexLpdYAQWlI-RVauI1ZyBr4s4_9iNXOR_sbB136cUFVyegcCHEg-4oLYnffQ1nWP1e_deEGemGJQ/w1280-h720-p-k-no-nu/Picsart_25-04-27_19-43-06-703.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHMa0mp2DQ5v8VcIf25gn4h3t1qvGoq3Yp2VRJUpX5goqQ_8aBPJTBAxh8iYBZfoioIJJDCNBlKiFjb43Ktw8jESvnvIRAiKRuyScVG8XNWOXO-JgexLpdYAQWlI-RVauI1ZyBr4s4_9iNXOR_sbB136cUFVyegcCHEg-4oLYnffQ1nWP1e_deEGemGJQ/s320/Picsart_25-04-27_19-43-06-703.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL3NoZDExLm9uZXBsYXllci5zaXRlL3Rva2VuL1NIRDExLzI1MTg4My8xeDMubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Rick e Morty - T2E8 – Interdimensional Cable 2: Tempting Fate - 🍿Clau",
     "description": "Assista Rick e Morty - T2E8 – Interdimensional Cable 2: Tempting Fate - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdi5itnW2pbsUWZJ74z2gSIqjJZ_gagmyxRv9ck9EXqJ7XlnWOHvyFk-RcVykbznDrJ3tjo1jXZtPun9Ns6AzUa4wwhpAuSZEOmNxbYIhp0zkq3IpMuUtU-H8QajjWCjQzzL3NhgZb-tJaV80Ul64h58RGWNUR4rBBXFDGINPcGMvyiSuGkmm39F396Zw/w1280-h720-p-k-no-nu/1000040329.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdi5itnW2pbsUWZJ74z2gSIqjJZ_gagmyxRv9ck9EXqJ7XlnWOHvyFk-RcVykbznDrJ3tjo1jXZtPun9Ns6AzUa4wwhpAuSZEOmNxbYIhp0zkq3IpMuUtU-H8QajjWCjQzzL3NhgZb-tJaV80Ul64h58RGWNUR4rBBXFDGINPcGMvyiSuGkmm39F396Zw/s320/1000040329.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Rick e Morty - T2E8 – Interdimensional Cable 2: Tempting Fate - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0004.speed-stream.online/rick-e-morty-b3decbc5/s2/dubbed/8/3f9ef868-663d-425f-849c-b2c1d28aa989/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdi5itnW2pbsUWZJ74z2gSIqjJZ_gagmyxRv9ck9EXqJ7XlnWOHvyFk-RcVykbznDrJ3tjo1jXZtPun9Ns6AzUa4wwhpAuSZEOmNxbYIhp0zkq3IpMuUtU-H8QajjWCjQzzL3NhgZb-tJaV80Ul64h58RGWNUR4rBBXFDGINPcGMvyiSuGkmm39F396Zw/w1280-h720-p-k-no-nu/1000040329.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdi5itnW2pbsUWZJ74z2gSIqjJZ_gagmyxRv9ck9EXqJ7XlnWOHvyFk-RcVykbznDrJ3tjo1jXZtPun9Ns6AzUa4wwhpAuSZEOmNxbYIhp0zkq3IpMuUtU-H8QajjWCjQzzL3NhgZb-tJaV80Ul64h58RGWNUR4rBBXFDGINPcGMvyiSuGkmm39F396Zw/s320/1000040329.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwNC5zcGVlZC1zdHJlYW0ub25saW5lL3JpY2stZS1tb3J0eS1iM2RlY2JjNS9zMi9kdWJiZWQvOC8zZjllZjg2OC02NjNkLTQyNWYtODQ5Yy1iMmMxZDI4YWE5ODkvc3RyZWFtLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
