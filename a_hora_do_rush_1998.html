@@ -12,7 +12,7 @@
     "name": "A Hora do Rush (1998) - 🍿Clau",
     "description": "Assista A Hora do Rush (1998) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBwKGvxuxX_1R1lirlSvmJfze_o86f-EHlj-dLlB1VM09djDzTuMQ97QcSrf_AEqPT9AMqZE0O_T0S4Kx8MP7O7dH8i-NyRGxci9ncIxGPDPsdncje_s-ovmPDcBX7nNPxdURQu8BOfMUeE6yKyhP1JALTYoXLp1SVbGqGZSsB30kxbYVrFQjiF9ReUjw/w1280-h720-p-k-no-nu/images-101.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBwKGvxuxX_1R1lirlSvmJfze_o86f-EHlj-dLlB1VM09djDzTuMQ97QcSrf_AEqPT9AMqZE0O_T0S4Kx8MP7O7dH8i-NyRGxci9ncIxGPDPsdncje_s-ovmPDcBX7nNPxdURQu8BOfMUeE6yKyhP1JALTYoXLp1SVbGqGZSsB30kxbYVrFQjiF9ReUjw/s1600/images-101.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Hora do Rush (1998) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0053.l1s0-cdn-3123123.com/a-hora-do-rush-98d80f81/dubbed/1/39765769-70da-470b-bbc2-94e39668a15e/stream.mp4?storage=0053&expires=1774648008&signature=1650b268a7b867e06cdc97b2430c9e6fc99c28a314f0f07a7dde32df82c08b66&type=movie" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBwKGvxuxX_1R1lirlSvmJfze_o86f-EHlj-dLlB1VM09djDzTuMQ97QcSrf_AEqPT9AMqZE0O_T0S4Kx8MP7O7dH8i-NyRGxci9ncIxGPDPsdncje_s-ovmPDcBX7nNPxdURQu8BOfMUeE6yKyhP1JALTYoXLp1SVbGqGZSsB30kxbYVrFQjiF9ReUjw/w1280-h720-p-k-no-nu/images-101.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBwKGvxuxX_1R1lirlSvmJfze_o86f-EHlj-dLlB1VM09djDzTuMQ97QcSrf_AEqPT9AMqZE0O_T0S4Kx8MP7O7dH8i-NyRGxci9ncIxGPDPsdncje_s-ovmPDcBX7nNPxdURQu8BOfMUeE6yKyhP1JALTYoXLp1SVbGqGZSsB30kxbYVrFQjiF9ReUjw/s1600/images-101.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA1My5sMXMwLWNkbi0zMTIzMTIzLmNvbS9hLWhvcmEtZG8tcnVzaC05OGQ4MGY4MS9kdWJiZWQvMS8zOTc2NTc2OS03MGRhLTQ3MGItYmJjMi05NGUzOTY2OGExNWUvc3RyZWFtLm1wND9zdG9yYWdlPTAwNTMmZXhwaXJlcz0xNzc0NjQ4MDA4JnNpZ25hdHVyZT0xNjUwYjI2OGE3Yjg2N2UwNmNkYzk3YjI0MzBjOWU2ZmM5OWMyOGEzMTRmMGYwN2E3ZGRlMzJkZjgyYzA4YjY2JnR5cGU9bW92aWU=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
