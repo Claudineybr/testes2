@@ -1,7 +1,7 @@
 {
   "contagem": {
-    "https://www.vini7xgrave.site/2026/08/inix-morte-do-demonio-em-chamas-2026.html": 1,
-    "https://www.vini7xgrave.site/2026/09/inix-hipotese-do-amor-2026.html": 1
+    "https://www.vini7xgrave.site/2026/08/inix-morte-do-demonio-em-chamas-2026.html": 2,
+    "https://www.vini7xgrave.site/2026/09/inix-hipotese-do-amor-2026.html": 2
   },
   "eventos": [
     {
@@ -511,50 +511,70 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-10T14:24:34+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2026/08/inix-morte-do-demonio-em-chamas-2026.html",
+      "detalhe": "link inválido para a_morte_do_demonio_em_chamas_cinema_2026.html: 'ttp://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt31170389.mp4'"
+    },
+    {
+      "quando": "2026-11-10T14:24:34+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2026/09/inix-hipotese-do-amor-2026.html",
+      "detalhe": "link inválido para a_hipotese_do_amor_2026.html: 'ttp://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt22526100.mp4'"
+    },
+    {
+      "quando": "2026-11-10T14:24:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 35,
-      "ok": 33,
-      "429": 2,
+      "requisicoes": 33,
+      "ok": 32,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 2,
-      "proxy_hit": 2,
-      "pausas_evitadas": 99,
+      "proxy_fallback": 1,
+      "proxy_hit": 1,
+      "pausas_evitadas": 25,
       "http_realizados": 0,
-      "playwright_skip": 2,
-      "proxmint_listas": 2,
+      "playwright_skip": 1,
+      "proxmint_listas": 1,
       "link_em_a_href": 2,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T14:13:32+00:00",
-      "duracao_min": 10.3
+      "quando": "2026-11-10T14:25:21+00:00",
+      "duracao_min": 9.3
     },
     "acumulado": {
-      "requisicoes": 1596,
-      "ok": 1548,
-      "429": 44,
+      "requisicoes": 1629,
+      "ok": 1580,
+      "429": 45,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 44,
+      "falhas_definitivas": 45,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 44,
-      "proxy_hit": 44,
-      "pausas_evitadas": 4100,
+      "proxy_fallback": 45,
+      "proxy_hit": 45,
+      "pausas_evitadas": 4125,
       "http_realizados": 58,
-      "playwright_skip": 224,
-      "proxmint_listas": 44,
-      "link_em_a_href": 95,
+      "playwright_skip": 225,
+      "proxmint_listas": 45,
+      "link_em_a_href": 97,
       "link_convertido_w2embed": 186,
       "multifilme_paginas": 15,
       "multifilme_arquivos": 64
