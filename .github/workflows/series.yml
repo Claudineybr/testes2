@@ -530,7 +530,7 @@ jobs:
               ano = ano_da_url(url)
               if ano:
                   return ano
-              m = re.search(r"\(\s*((?:19|20)\d{2})\s*\)", str(titulo_bruto or ""))
+              m = re.search(r"[(\[]\s*((?:19|20)\d{2})\s*[)\]]", str(titulo_bruto or ""))
               return m.group(1) if m else ""
 
 
@@ -562,6 +562,9 @@ jobs:
                   t = ""
               t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
               t = tirar_lixo_do_site(t)
+              # Site: "Nome [2021] ‧ Ação/Comédia" -> fica só "Nome" (o ano é lido à parte por extrair_ano)
+              t = re.sub(r"\s*\[\s*(?:19|20)\d{2}\s*\].*$", "", t)
+              t = re.sub(r"\s*[\u2027\u00b7\u2022]\s*.*$", "", t).strip(" -–—|:")
               for _ in range(3):
                   novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
                   if novo == t:
@@ -571,7 +574,7 @@ jobs:
               t = re.sub(
                   r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
                   "", t, flags=re.I)
-              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
+              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo|hdcam|hdts|webrip|cam))+$", "", t, flags=re.I)
               t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
               t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
               ano_url = ano_da_url(url)
@@ -758,8 +761,26 @@ jobs:
                       .replace("__B64__", b64))
 
 
+          def reparar_link(link):
+              """Conserta links com defeito simples ('ttps://', 'https:https://', '//host', host sem https).
+              Devolve o link corrigido, ou None se não for uma URL aproveitável (texto solto, '!', link cortado)."""
+              if not isinstance(link, str):
+                  return None
+              l = link.strip().strip("\"'")
+              l = re.sub(r"^https?:(?=https?://)", "", l, flags=re.I)
+              l = re.sub(r"^h?ttp(s?)://", lambda m: "http" + m.group(1) + "://", l, flags=re.I)
+              if l.startswith("//"):
+                  l = "https:" + l
+              elif not re.match(r"https?://", l, re.I) and re.match(r"[a-z0-9-]+(?:\.[a-z0-9-]+)+/", l, re.I):
+                  l = "https://" + l
+              if re.fullmatch(r"https?://[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+(?::\d+)?(?:[/?#].*)?", l):
+                  return l
+              return None
+
+
           def salvar_html(destino, nome_json, link, capa):
               destino = Path(destino)
+              link = reparar_link(link) or link
               if not link or not str(link).startswith("http"):
                   raise ValueError(f"link inválido para {destino.name}: {link!r}")
               escrever_atomico(destino, montar_html(destino.name, nome_json, link, capa))
@@ -782,6 +803,10 @@ jobs:
                   if not m:
                       continue
                   link = m.group(1)
+                  fix = reparar_link(link)
+                  if fix is None:
+                      continue   # link impossível de aproveitar: o robô refaz o arquivo quando achar o post
+                  link = fix
                   if link in INDICE:
                       duplicados += 1
                   INDICE[link] = f
@@ -804,6 +829,14 @@ jobs:
                   return True
               return nome_atual.startswith(stem + "_") and bool(
                   re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
+
+
+          def nome_fora_do_padrao(nome):
+              """True se o nome do arquivo tem lixo depois do ano (gênero, legendado, hdcam...)."""
+              base = re.sub(r"\.html?$", "", str(nome or ""), flags=re.I)
+              if re.search(r"_(?:19|20)\d{2}_(?!\d{1,2}$)[a-z]", base):
+                  return True
+              return bool(re.search(r"(?:^|_)(?:legendado|hdcam|hdts|webrip)(?:_|$)", base))
 
 
           _EP_STEM = re.compile(r"^(.*)_t(\d+)e(?:p)?(\d+)$")
@@ -885,7 +918,7 @@ jobs:
               link = ld.get("contentUrl")
               d["nome"], d["capa"] = nome, capa
               d["link"] = link if isinstance(link, str) and link.startswith("http") else None
-              d["l"] = d["link"] is None
+              d["l"] = d["link"] is None or reparar_link(link) != link
               d["n"] = bool(
                   len(nome.strip()) < 3
                   or re.search(r"https?:|\.html?\b|\bNone\b", nome)
@@ -917,6 +950,8 @@ jobs:
 
 
           def upsert(stem, nome_json, link, capa, modo, ind="    "):
+              if link:
+                  link = reparar_link(link)   # None => tratado como "sem link" (nunca grava link quebrado)
               ep = chave_ep_stem(stem) is not None
               existente = INDICE.get(link) if link else None
               if existente is not None and not existente.exists():
@@ -929,7 +964,9 @@ jobs:
 
               if existente is not None:
                   d = checar_defeitos(existente)
-                  renomear = not nome_ok(existente.name, stem)
+                  # Filmes: só renomeia se o nome atual estiver FORA do padrão (gênero, 'legendado'...).
+                  # Se vários posts usam o mesmo vídeo, o arquivo NÃO fica trocando de nome a cada run.
+                  renomear = not nome_ok(existente.name, stem) and (ep or nome_fora_do_padrao(existente.name))
                   log(f"{ind}(Arquivo existente: {existente.name})")
                   if modo == "apenas_baixar":
                       log(f"{ind}Modo Apenas Baixar: ignorando conserto.")
