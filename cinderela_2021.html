@@ -12,7 +12,7 @@
     "name": "Cinderela (2021) - 🍿Clau",
     "description": "Assista Cinderela (2021) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpbzUdoY0LwMvYrzz5hflbU0pmkVfL00I1_yTQvx3i_5YTze8uhL9nXAmx-2hReJLifgKGjn6RPM-SmDU7OW7RGdcSH3HKrxZ-2VS-Aci-oGAkIBAcEnZiy_bkchqgHTzCxdcbKBDoEHMcuGKpR88chpzAOeV_SClT34SCNIo5qSxtNdGjIfEYEt7QFWs/w1280-h720-p-k-no-nu/q6o6Rvx3qwPKtjFYP5apnjx19O.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpbzUdoY0LwMvYrzz5hflbU0pmkVfL00I1_yTQvx3i_5YTze8uhL9nXAmx-2hReJLifgKGjn6RPM-SmDU7OW7RGdcSH3HKrxZ-2VS-Aci-oGAkIBAcEnZiy_bkchqgHTzCxdcbKBDoEHMcuGKpR88chpzAOeV_SClT34SCNIo5qSxtNdGjIfEYEt7QFWs/s320/q6o6Rvx3qwPKtjFYP5apnjx19O.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Cinderela (2021) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0039.speed-stream.online/cinderela-ff40e51e/dubbed/1/53767094-d290-48d3-80da-194478a45c4e/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpbzUdoY0LwMvYrzz5hflbU0pmkVfL00I1_yTQvx3i_5YTze8uhL9nXAmx-2hReJLifgKGjn6RPM-SmDU7OW7RGdcSH3HKrxZ-2VS-Aci-oGAkIBAcEnZiy_bkchqgHTzCxdcbKBDoEHMcuGKpR88chpzAOeV_SClT34SCNIo5qSxtNdGjIfEYEt7QFWs/w1280-h720-p-k-no-nu/q6o6Rvx3qwPKtjFYP5apnjx19O.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpbzUdoY0LwMvYrzz5hflbU0pmkVfL00I1_yTQvx3i_5YTze8uhL9nXAmx-2hReJLifgKGjn6RPM-SmDU7OW7RGdcSH3HKrxZ-2VS-Aci-oGAkIBAcEnZiy_bkchqgHTzCxdcbKBDoEHMcuGKpR88chpzAOeV_SClT34SCNIo5qSxtNdGjIfEYEt7QFWs/s320/q6o6Rvx3qwPKtjFYP5apnjx19O.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAzOS5zcGVlZC1zdHJlYW0ub25saW5lL2NpbmRlcmVsYS1mZjQwZTUxZS9kdWJiZWQvMS81Mzc2NzA5NC1kMjkwLTQ4ZDMtODBkYS0xOTQ0NzhhNDVjNGUvc3RyZWFtLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

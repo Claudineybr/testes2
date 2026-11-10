@@ -12,7 +12,7 @@
     "name": "Castores Zumbis (2014) - 🍿Clau",
     "description": "Assista Castores Zumbis (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtF5DJ3ADT2ioJ4Uv5kkrykYy9O8kapUjBfibObpdwaFSrUq5ZcfPSEJuaThnkUmXTd-YiT0xcbzOUib8cdZk8LZhhie3GzcTCTX7cC4DmviYspwuMIjf2LNtTc5jKml5WZpJUIK0CN16iUu8OklR6J7YZny7XAbn3EJQo-62o7JLHO44oa28e-_s0Yg/w1280-h720-p-k-no-nu/1000041428.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtF5DJ3ADT2ioJ4Uv5kkrykYy9O8kapUjBfibObpdwaFSrUq5ZcfPSEJuaThnkUmXTd-YiT0xcbzOUib8cdZk8LZhhie3GzcTCTX7cC4DmviYspwuMIjf2LNtTc5jKml5WZpJUIK0CN16iUu8OklR6J7YZny7XAbn3EJQo-62o7JLHO44oa28e-_s0Yg/s320/1000041428.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Castores Zumbis (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd4.oneplayer.site/343rt342wtg34wetg34retg4rgh5kh4/FHD4/tt2784512.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtF5DJ3ADT2ioJ4Uv5kkrykYy9O8kapUjBfibObpdwaFSrUq5ZcfPSEJuaThnkUmXTd-YiT0xcbzOUib8cdZk8LZhhie3GzcTCTX7cC4DmviYspwuMIjf2LNtTc5jKml5WZpJUIK0CN16iUu8OklR6J7YZny7XAbn3EJQo-62o7JLHO44oa28e-_s0Yg/w1280-h720-p-k-no-nu/1000041428.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMtF5DJ3ADT2ioJ4Uv5kkrykYy9O8kapUjBfibObpdwaFSrUq5ZcfPSEJuaThnkUmXTd-YiT0xcbzOUib8cdZk8LZhhie3GzcTCTX7cC4DmviYspwuMIjf2LNtTc5jKml5WZpJUIK0CN16iUu8OklR6J7YZny7XAbn3EJQo-62o7JLHO44oa28e-_s0Yg/s320/1000041428.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDQub25lcGxheWVyLnNpdGUvMzQzcnQzNDJ3dGczNHdldGczNHJldGc0cmdoNWtoNC9GSEQ0L3R0Mjc4NDUxMi5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

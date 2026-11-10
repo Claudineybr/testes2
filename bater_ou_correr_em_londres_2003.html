@@ -12,7 +12,7 @@
     "name": "Bater ou Correr em Londres (2003) - 🍿Clau",
     "description": "Assista Bater ou Correr em Londres (2003) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWP4y7F-foVET3kWOHfwAjd8E60Jk9jXBu8iJ1n9iEHJUQx0bL_7HivYB41i1xMfFsmH55IhwoCmDL9kQJmUfppzlR0I3ziBYHm2CLFCCVwYs4-dczFmTk7cyjiq-L8OejWroKujY9lDSex5bP69pTZ4QD2A5Q64-h5M5KB0iTAAOI16U_4DQWXOEk0ls/w1280-h720-p-k-no-nu/5VPjRg5W3mXn9gj4Q5ITas85kHg.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWP4y7F-foVET3kWOHfwAjd8E60Jk9jXBu8iJ1n9iEHJUQx0bL_7HivYB41i1xMfFsmH55IhwoCmDL9kQJmUfppzlR0I3ziBYHm2CLFCCVwYs4-dczFmTk7cyjiq-L8OejWroKujY9lDSex5bP69pTZ4QD2A5Q64-h5M5KB0iTAAOI16U_4DQWXOEk0ls/s320/5VPjRg5W3mXn9gj4Q5ITas85kHg.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Bater ou Correr em Londres (2003) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/video/bater-ou-correr-em-londres-2003-vini7xg?utm_campaign=embed&utm_medium=embed-link&utm_source=embed-link" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWP4y7F-foVET3kWOHfwAjd8E60Jk9jXBu8iJ1n9iEHJUQx0bL_7HivYB41i1xMfFsmH55IhwoCmDL9kQJmUfppzlR0I3ziBYHm2CLFCCVwYs4-dczFmTk7cyjiq-L8OejWroKujY9lDSex5bP69pTZ4QD2A5Q64-h5M5KB0iTAAOI16U_4DQWXOEk0ls/w1280-h720-p-k-no-nu/5VPjRg5W3mXn9gj4Q5ITas85kHg.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWP4y7F-foVET3kWOHfwAjd8E60Jk9jXBu8iJ1n9iEHJUQx0bL_7HivYB41i1xMfFsmH55IhwoCmDL9kQJmUfppzlR0I3ziBYHm2CLFCCVwYs4-dczFmTk7cyjiq-L8OejWroKujY9lDSex5bP69pTZ4QD2A5Q64-h5M5KB0iTAAOI16U_4DQWXOEk0ls/s320/5VPjRg5W3mXn9gj4Q5ITas85kHg.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS92aWRlby9iYXRlci1vdS1jb3JyZXItZW0tbG9uZHJlcy0yMDAzLXZpbmk3eGc/dXRtX2NhbXBhaWduPWVtYmVkJnV0bV9tZWRpdW09ZW1iZWQtbGluayZ1dG1fc291cmNlPWVtYmVkLWxpbms=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

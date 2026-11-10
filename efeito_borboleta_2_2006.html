@@ -12,7 +12,7 @@
     "name": "Efeito Borboleta 2 (2006) - 🍿Clau",
     "description": "Assista Efeito Borboleta 2 (2006) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1jL0TNbiBP6qvRjX-NxFZFnL9YSZLiNcpRBrWiikTOoHVEeeXJ-aqJetxCOpaOax8Q3PN9PvdrB0j8p7OYL3hzma-4mU5KbbTXyhCfAYe70DYJPlCTqXDDIemm0NnZSTl-N67n-ahLOcNyQSAAKGxlP_xjnH0mZiWoGxIvUNKfzx5Y2fYKEE91vhwqnY/w1280-h720-p-k-no-nu/5xSWJia2TF3ZvOQCHkXjXSftTt9.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1jL0TNbiBP6qvRjX-NxFZFnL9YSZLiNcpRBrWiikTOoHVEeeXJ-aqJetxCOpaOax8Q3PN9PvdrB0j8p7OYL3hzma-4mU5KbbTXyhCfAYe70DYJPlCTqXDDIemm0NnZSTl-N67n-ahLOcNyQSAAKGxlP_xjnH0mZiWoGxIvUNKfzx5Y2fYKEE91vhwqnY/s320/5xSWJia2TF3ZvOQCHkXjXSftTt9.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Efeito Borboleta 2 (2006) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Efeito%20Borboleta%202_2006_tt0457297.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1jL0TNbiBP6qvRjX-NxFZFnL9YSZLiNcpRBrWiikTOoHVEeeXJ-aqJetxCOpaOax8Q3PN9PvdrB0j8p7OYL3hzma-4mU5KbbTXyhCfAYe70DYJPlCTqXDDIemm0NnZSTl-N67n-ahLOcNyQSAAKGxlP_xjnH0mZiWoGxIvUNKfzx5Y2fYKEE91vhwqnY/w1280-h720-p-k-no-nu/5xSWJia2TF3ZvOQCHkXjXSftTt9.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1jL0TNbiBP6qvRjX-NxFZFnL9YSZLiNcpRBrWiikTOoHVEeeXJ-aqJetxCOpaOax8Q3PN9PvdrB0j8p7OYL3hzma-4mU5KbbTXyhCfAYe70DYJPlCTqXDDIemm0NnZSTl-N67n-ahLOcNyQSAAKGxlP_xjnH0mZiWoGxIvUNKfzx5Y2fYKEE91vhwqnY/s320/5xSWJia2TF3ZvOQCHkXjXSftTt9.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL0VmZWl0byUyMEJvcmJvbGV0YSUyMDJfMjAwNl90dDA0NTcyOTcubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
