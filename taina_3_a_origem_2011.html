@@ -12,7 +12,7 @@
     "name": "Taina 3: A Origem (2011) - 🍿Clau",
     "description": "Assista Taina 3: A Origem (2011) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRda4qIzofBR6f7JQL1jkkosOg67n-_wdQ3IDyzthVwI1PME0oIykHKoN9v4hKfPNgTqiMwB3wd4EEWqnYfnjQvp2coux26rjmMCYVzzSXtlSODhq3uxvl4Vd9QLKT5m0WX7Jw8IhNHwYPiP254a1ZrVKN8fx2Y4nBrzpK1CXeH48K5tqhHkHWHIO1fXg/w1280-h720-p-k-no-nu/images.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRda4qIzofBR6f7JQL1jkkosOg67n-_wdQ3IDyzthVwI1PME0oIykHKoN9v4hKfPNgTqiMwB3wd4EEWqnYfnjQvp2coux26rjmMCYVzzSXtlSODhq3uxvl4Vd9QLKT5m0WX7Jw8IhNHwYPiP254a1ZrVKN8fx2Y4nBrzpK1CXeH48K5tqhHkHWHIO1fXg/s320/images.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Taina 3: A Origem (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Tain%C3%A1:%20A%20Origem_2011_tt1708510.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRda4qIzofBR6f7JQL1jkkosOg67n-_wdQ3IDyzthVwI1PME0oIykHKoN9v4hKfPNgTqiMwB3wd4EEWqnYfnjQvp2coux26rjmMCYVzzSXtlSODhq3uxvl4Vd9QLKT5m0WX7Jw8IhNHwYPiP254a1ZrVKN8fx2Y4nBrzpK1CXeH48K5tqhHkHWHIO1fXg/w1280-h720-p-k-no-nu/images.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRda4qIzofBR6f7JQL1jkkosOg67n-_wdQ3IDyzthVwI1PME0oIykHKoN9v4hKfPNgTqiMwB3wd4EEWqnYfnjQvp2coux26rjmMCYVzzSXtlSODhq3uxvl4Vd9QLKT5m0WX7Jw8IhNHwYPiP254a1ZrVKN8fx2Y4nBrzpK1CXeH48K5tqhHkHWHIO1fXg/s320/images.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL1RhaW4lQzMlQTE6JTIwQSUyME9yaWdlbV8yMDExX3R0MTcwODUxMC5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

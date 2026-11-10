@@ -1,5 +1,7 @@
 {
-  "contagem": {},
+  "contagem": {
+    "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html": 1
+  },
   "eventos": [
     {
       "quando": "2026-11-10T05:10:57+00:00",
@@ -160,12 +162,18 @@
       "tipo": "url_descartada",
       "url": "https://www.vini7xgrave.site/2025/05/inix-conduzido-para-matar-2009.html",
       "motivo": "3 falhas seguidas"
+    },
+    {
+      "quando": "2026-11-10T09:07:23+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-viagem-de-formatura-mallorca-2025.html",
+      "detalhe": "link inválido para viagem_de_formatura_mallorca_2025.html: 'htt/m/Viagem%20de%20Formatura%20-%20Mallorca%202025%20WEB-DL%201080p%20x264%20DUAL%205.1.mp4'"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 36,
-      "ok": 36,
+      "requisicoes": 38,
+      "ok": 38,
       "429": 0,
       "5xx": 0,
       "retries": 0,
@@ -175,21 +183,21 @@
       "conflitos": 0,
       "proxy_fallback": 0,
       "proxy_hit": 0,
-      "pausas_evitadas": 99,
-      "http_realizados": 0,
-      "playwright_skip": 5,
+      "pausas_evitadas": 95,
+      "http_realizados": 4,
+      "playwright_skip": 4,
       "proxmint_listas": 0,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "multifilme_paginas": 0,
-      "multifilme_arquivos": 0,
+      "multifilme_paginas": 3,
+      "multifilme_arquivos": 5,
       "robo": "filmes",
-      "quando": "2026-11-10T08:56:04+00:00",
-      "duracao_min": 10.0
+      "quando": "2026-11-10T09:08:43+00:00",
+      "duracao_min": 11.1
     },
     "acumulado": {
-      "requisicoes": 690,
-      "ok": 675,
+      "requisicoes": 728,
+      "ok": 713,
       "429": 14,
       "5xx": 0,
       "retries": 0,
@@ -199,14 +207,14 @@
       "conflitos": 0,
       "proxy_fallback": 14,
       "proxy_hit": 14,
-      "pausas_evitadas": 1750,
-      "http_realizados": 32,
-      "playwright_skip": 103,
+      "pausas_evitadas": 1845,
+      "http_realizados": 36,
+      "playwright_skip": 107,
       "proxmint_listas": 14,
       "link_em_a_href": 71,
       "link_convertido_w2embed": 185,
-      "multifilme_paginas": 11,
-      "multifilme_arquivos": 57
+      "multifilme_paginas": 14,
+      "multifilme_arquivos": 62
     }
   }
 }
