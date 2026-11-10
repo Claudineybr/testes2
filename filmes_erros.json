@@ -1,7 +1,5 @@
 {
-  "contagem": {
-    "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html": 2
-  },
+  "contagem": {},
   "eventos": [
     {
       "quando": "2026-11-10T05:10:57+00:00",
@@ -318,50 +316,70 @@
       "tipo": "excecao",
       "url": "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html",
       "detalhe": "link inválido para academia_de_viloes_2025.html: 'com/m/Academia.de.Vil%C3%B5es.2025.1080p.WEB-DL.DUAL.5.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T10:50:36+00:00",
+      "tipo": "excecao",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html",
+      "detalhe": "link inválido para academia_de_viloes_2025.html: 'com/m/Academia.de.Vil%C3%B5es.2025.1080p.WEB-DL.DUAL.5.1.mp4'"
+    },
+    {
+      "quando": "2026-11-10T10:51:22+00:00",
+      "tipo": "url_descartada",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-academia-de-viloes-2025.html",
+      "motivo": "3 falhas seguidas"
+    },
+    {
+      "quando": "2026-11-10T10:52:11+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-doente-de-amor-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 41,
-      "ok": 41,
-      "429": 0,
+      "requisicoes": 37,
+      "ok": 36,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 0,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 0,
-      "proxy_hit": 0,
-      "pausas_evitadas": 96,
-      "http_realizados": 3,
-      "playwright_skip": 9,
-      "proxmint_listas": 0,
+      "proxy_fallback": 1,
+      "proxy_hit": 1,
+      "pausas_evitadas": 97,
+      "http_realizados": 2,
+      "playwright_skip": 5,
+      "proxmint_listas": 1,
       "link_em_a_href": 3,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-10T10:38:52+00:00",
-      "duracao_min": 12.2
+      "quando": "2026-11-10T10:53:01+00:00",
+      "duracao_min": 10.9
     },
     "acumulado": {
-      "requisicoes": 988,
-      "ok": 964,
-      "429": 23,
+      "requisicoes": 1025,
+      "ok": 1000,
+      "429": 24,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 23,
+      "falhas_definitivas": 24,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 23,
-      "proxy_hit": 23,
-      "pausas_evitadas": 2425,
-      "http_realizados": 50,
-      "playwright_skip": 167,
-      "proxmint_listas": 23,
-      "link_em_a_href": 80,
+      "proxy_fallback": 24,
+      "proxy_hit": 24,
+      "pausas_evitadas": 2522,
+      "http_realizados": 52,
+      "playwright_skip": 172,
+      "proxmint_listas": 24,
+      "link_em_a_href": 83,
       "link_convertido_w2embed": 186,
       "multifilme_paginas": 15,
       "multifilme_arquivos": 64
