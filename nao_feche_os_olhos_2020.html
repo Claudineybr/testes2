@@ -12,7 +12,7 @@
     "name": "Nao Feche Os Olhos (2020) - 🍿Clau",
     "description": "Assista Nao Feche Os Olhos (2020) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgThDYHufyLi_fGI0casBMGZig3oVR7EeETMKIbRTQGrHLPT_sBsFAkftqSnASn5TN08XwlKKM4efot77nwKabAfbucvpNDgg7EgryEs4Z3XOcGRGAPtmWGhu_pJB34sQAV1GWmHrDX60Q4gBjTKN7BazUiJYEAnlcJLCEUgMvIeF28_VnW6-I7msXWOlo/w1280-h720-p-k-no-nu/7a890rjcATtE7gBzzvc6LV7MaVu.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgThDYHufyLi_fGI0casBMGZig3oVR7EeETMKIbRTQGrHLPT_sBsFAkftqSnASn5TN08XwlKKM4efot77nwKabAfbucvpNDgg7EgryEs4Z3XOcGRGAPtmWGhu_pJB34sQAV1GWmHrDX60Q4gBjTKN7BazUiJYEAnlcJLCEUgMvIeF28_VnW6-I7msXWOlo/s320/7a890rjcATtE7gBzzvc6LV7MaVu.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Nao Feche Os Olhos (2020) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/flm21/NaoFecheOsOlhos2021.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgThDYHufyLi_fGI0casBMGZig3oVR7EeETMKIbRTQGrHLPT_sBsFAkftqSnASn5TN08XwlKKM4efot77nwKabAfbucvpNDgg7EgryEs4Z3XOcGRGAPtmWGhu_pJB34sQAV1GWmHrDX60Q4gBjTKN7BazUiJYEAnlcJLCEUgMvIeF28_VnW6-I7msXWOlo/w1280-h720-p-k-no-nu/7a890rjcATtE7gBzzvc6LV7MaVu.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgThDYHufyLi_fGI0casBMGZig3oVR7EeETMKIbRTQGrHLPT_sBsFAkftqSnASn5TN08XwlKKM4efot77nwKabAfbucvpNDgg7EgryEs4Z3XOcGRGAPtmWGhu_pJB34sQAV1GWmHrDX60Q4gBjTKN7BazUiJYEAnlcJLCEUgMvIeF28_VnW6-I7msXWOlo/s320/7a890rjcATtE7gBzzvc6LV7MaVu.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2ZsbTIxL05hb0ZlY2hlT3NPbGhvczIwMjEubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
