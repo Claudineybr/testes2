@@ -545,7 +545,7 @@ jobs:
               return " ".join(p[:1].upper() + p[1:] for p in palavras)
 
 
-          _LIXO_SITE = re.compile(r"\U0001F47E+\ufe0f?|(?:\bdo\s+)?@?vini\s*7x\w*", re.I)
+          _LIXO_SITE = re.compile(r"\U0001F47E+\ufe0f?|(?:\bdo\s+)?@?vini\s*7x\w*|marc[øo_]\s*s\s*x\s*7(?![0-9])", re.I)
 
 
           def tirar_lixo_do_site(t):
@@ -806,8 +806,8 @@ jobs:
                   re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
 
 
-          _EP_STEM = re.compile(r"^(.*)_t(\d+)e(\d+)$")
-          _EP_ARQ = re.compile(r"_t(\d+)e(\d+)(?:_\d+)?\.html$")
+          _EP_STEM = re.compile(r"^(.*)_t(\d+)e(?:p)?(\d+)$")
+          _EP_ARQ = re.compile(r"_t(\d+)e(?:p)?(\d+)(?:_\d+)?\.html$")
 
 
           def chave_ep_stem(stem):
@@ -822,7 +822,7 @@ jobs:
 
           def titulo_do_episodio(nome):
               n = str(nome or "").replace(SUFIXO, "")
-              m = re.search(r"T\d+E\d+\s*-\s*(.*?)\s*-?\s*$", n)
+              m = re.search(r"T\d+E\d+\s*[-–—]\s*(.*?)\s*[-–—]?\s*$", n)
               t = unicodedata.normalize("NFKD", m.group(1) if m else "")
               t = "".join(c for c in t if not unicodedata.combining(c))
               return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
@@ -854,6 +854,14 @@ jobs:
               direto = Path(stem + ".html")
               if direto.exists():
                   return direto
+              m = re.match(r"^(.*)_t(\d+)ep(\d+)$", stem)
+              if m:   # ainda não renomeado pelo corrigir_nomes: t1e1, t01e01, t1e01, t01e1
+                  base, t, e = m.group(1), int(m.group(2)), int(m.group(3))
+                  for a in (f"{t}", f"{t:02d}"):
+                      for b in (f"{e}", f"{e:02d}"):
+                          velho = Path(f"{base}_t{a}e{b}.html")
+                          if velho.exists():
+                              return velho
               return buscar_por_stem(stem)
 
 
@@ -1244,7 +1252,7 @@ jobs:
           def nome_episodio(titulo, temp, ep, titulo_ep):
               nome = f"{titulo} - T{temp}E{ep}"
               if titulo_ep:
-                  nome += f" - {titulo_ep}"
+                  nome += f" – {titulo_ep}"      # travessão entre T#E# e o título do episódio
               return f"{nome} - {SUFIXO}"
 
 
@@ -1313,7 +1321,7 @@ jobs:
                   if tempo_esgotado():
                       log("    ⏱️ Parada suave: a série continua na próxima run.")
                       return "interrompido"
-                  stem = f"{slug}_t{it['temp']}e{it['ep']}"
+                  stem = f"{slug}_t{int(it['temp']):02d}ep{int(it['ep']):02d}"
                   nome_json = nome_episodio(titulo, it["temp"], it["ep"], it["titulo"])
 
                   existente = _localizar_arquivo_episodio(stem)
