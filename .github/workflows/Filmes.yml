@@ -541,7 +541,7 @@ jobs:
               return " ".join(p[:1].upper() + p[1:] for p in palavras)
 
 
-          _LIXO_SITE = re.compile(r"\U0001F47E+\ufe0f?|(?:\bdo\s+)?@?vini\s*7x\w*", re.I)
+          _LIXO_SITE = re.compile(r"\U0001F47E+\ufe0f?|(?:\bdo\s+)?@?vini\s*7x\w*|marc[øo_]\s*s\s*x\s*7(?![0-9])", re.I)
 
 
           def tirar_lixo_do_site(t):
@@ -841,8 +841,8 @@ jobs:
                   re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
 
 
-          _EP_STEM = re.compile(r"^(.*)_t(\d+)e(\d+)$")
-          _EP_ARQ = re.compile(r"_t(\d+)e(\d+)(?:_\d+)?\.html$")
+          _EP_STEM = re.compile(r"^(.*)_t(\d+)e(?:p)?(\d+)$")
+          _EP_ARQ = re.compile(r"_t(\d+)e(?:p)?(\d+)(?:_\d+)?\.html$")
 
 
           def chave_ep_stem(stem):
@@ -857,7 +857,7 @@ jobs:
 
           def titulo_do_episodio(nome):
               n = str(nome or "").replace(SUFIXO, "")
-              m = re.search(r"T\d+E\d+\s*-\s*(.*?)\s*-?\s*$", n)
+              m = re.search(r"T\d+E\d+\s*[-–—]\s*(.*?)\s*[-–—]?\s*$", n)
               t = unicodedata.normalize("NFKD", m.group(1) if m else "")
               t = "".join(c for c in t if not unicodedata.combining(c))
               return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
