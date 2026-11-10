@@ -12,7 +12,7 @@
     "name": "Simplesmente Acontece (2014) - 🍿Clau",
     "description": "Assista Simplesmente Acontece (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAFSJqedlB9aYOtzyRkMNXqkR28ntF30r4lxvPoGTWUS_GH-Cay6IAlqgDBku88cICRGigJUAemmsRat_AKkbWI51cn9P_Z4S3vo0gtOK9cfFu97YWQBppTlofwkTwnOxDaZHQE2MrkMm7oa_0DVaeupuGwZ2tVshJ5gw-I8NpHwGv1J-dhDAM_zBFytk/w1280-h720-p-k-no-nu/images-136.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAFSJqedlB9aYOtzyRkMNXqkR28ntF30r4lxvPoGTWUS_GH-Cay6IAlqgDBku88cICRGigJUAemmsRat_AKkbWI51cn9P_Z4S3vo0gtOK9cfFu97YWQBppTlofwkTwnOxDaZHQE2MrkMm7oa_0DVaeupuGwZ2tVshJ5gw-I8NpHwGv1J-dhDAM_zBFytk/s320/images-136.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Simplesmente Acontece (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0007.l1s0-cdn-3123123.com/simplesmente-acontece-1a25c6d6/dubbed/1/354a6b36-9033-4e5f-8359-6d180e20a36c/stream.mp4?type=movie&expires=1770942507&signature=55099408cfca0d44bab1803519731286bb15b238803f8be82ea914511ab37042" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAFSJqedlB9aYOtzyRkMNXqkR28ntF30r4lxvPoGTWUS_GH-Cay6IAlqgDBku88cICRGigJUAemmsRat_AKkbWI51cn9P_Z4S3vo0gtOK9cfFu97YWQBppTlofwkTwnOxDaZHQE2MrkMm7oa_0DVaeupuGwZ2tVshJ5gw-I8NpHwGv1J-dhDAM_zBFytk/w1280-h720-p-k-no-nu/images-136.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAFSJqedlB9aYOtzyRkMNXqkR28ntF30r4lxvPoGTWUS_GH-Cay6IAlqgDBku88cICRGigJUAemmsRat_AKkbWI51cn9P_Z4S3vo0gtOK9cfFu97YWQBppTlofwkTwnOxDaZHQE2MrkMm7oa_0DVaeupuGwZ2tVshJ5gw-I8NpHwGv1J-dhDAM_zBFytk/s320/images-136.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAwNy5sMXMwLWNkbi0zMTIzMTIzLmNvbS9zaW1wbGVzbWVudGUtYWNvbnRlY2UtMWEyNWM2ZDYvZHViYmVkLzEvMzU0YTZiMzYtOTAzMy00ZTVmLTgzNTktNmQxODBlMjBhMzZjL3N0cmVhbS5tcDQ/dHlwZT1tb3ZpZSZleHBpcmVzPTE3NzA5NDI1MDcmc2lnbmF0dXJlPTU1MDk5NDA4Y2ZjYTBkNDRiYWIxODAzNTE5NzMxMjg2YmIxNWIyMzg4MDNmOGJlODJlYTkxNDUxMWFiMzcwNDI=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

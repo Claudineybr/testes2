@@ -12,7 +12,7 @@
     "name": "Scooby-Doo e Batman: Os Bravos e Destemidos (2018) - 🍿Clau",
     "description": "Assista Scooby-Doo e Batman: Os Bravos e Destemidos (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdN6hipRKKQdUTGKBU1b6q9a6SMrWYB1qO_Gz-5yObbw5oUp-v3eeH4Ca15S99RAGa6UIr9K0nIsmAeC6OYd2CyUhw1GTuEYu4IyFAILcAa34CdimCeop9D8YGFaQmdiTMO2MfUbwl0aFhiSshtbRoFeCybIXUf7wxuOyjxJICAyAPDBMF_Jct4T28pEc/w1280-h720-p-k-no-nu/images-23.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdN6hipRKKQdUTGKBU1b6q9a6SMrWYB1qO_Gz-5yObbw5oUp-v3eeH4Ca15S99RAGa6UIr9K0nIsmAeC6OYd2CyUhw1GTuEYu4IyFAILcAa34CdimCeop9D8YGFaQmdiTMO2MfUbwl0aFhiSshtbRoFeCybIXUf7wxuOyjxJICAyAPDBMF_Jct4T28pEc/s320/images-23.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Scooby-Doo e Batman: Os Bravos e Destemidos (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/ncfilmes/SCOOBYEBATMANDUB-BAIXO.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdN6hipRKKQdUTGKBU1b6q9a6SMrWYB1qO_Gz-5yObbw5oUp-v3eeH4Ca15S99RAGa6UIr9K0nIsmAeC6OYd2CyUhw1GTuEYu4IyFAILcAa34CdimCeop9D8YGFaQmdiTMO2MfUbwl0aFhiSshtbRoFeCybIXUf7wxuOyjxJICAyAPDBMF_Jct4T28pEc/w1280-h720-p-k-no-nu/images-23.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdN6hipRKKQdUTGKBU1b6q9a6SMrWYB1qO_Gz-5yObbw5oUp-v3eeH4Ca15S99RAGa6UIr9K0nIsmAeC6OYd2CyUhw1GTuEYu4IyFAILcAa34CdimCeop9D8YGFaQmdiTMO2MfUbwl0aFhiSshtbRoFeCybIXUf7wxuOyjxJICAyAPDBMF_Jct4T28pEc/s320/images-23.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL25jZmlsbWVzL1NDT09CWUVCQVRNQU5EVUItQkFJWE8ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

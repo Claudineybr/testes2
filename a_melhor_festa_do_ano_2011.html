@@ -12,7 +12,7 @@
     "name": "A Melhor Festa do Ano (2011) - 🍿Clau",
     "description": "Assista A Melhor Festa do Ano (2011) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN0gE0flSX4M0KuZcriWz_xcg3NNoCr46eNMNcFHr17-g5okNW3zxs2HN5T-iUGUewPKLWjOQhMAhuThl9iF_kqxngfwl55ZnW02JbXmiMFhjrEikChLYNA7h54MxD7HP9OEP28p-_8S0EOv4kpQRrfx5sBYxxUk9XJuOhwm-cyJlyaFPNRII0S5-AkbU/w1280-h720-p-k-no-nu/ezxNjtuSXe5wAYHCFt2QaKNGsxb.webp"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN0gE0flSX4M0KuZcriWz_xcg3NNoCr46eNMNcFHr17-g5okNW3zxs2HN5T-iUGUewPKLWjOQhMAhuThl9iF_kqxngfwl55ZnW02JbXmiMFhjrEikChLYNA7h54MxD7HP9OEP28p-_8S0EOv4kpQRrfx5sBYxxUk9XJuOhwm-cyJlyaFPNRII0S5-AkbU/s320/ezxNjtuSXe5wAYHCFt2QaKNGsxb.webp"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Melhor Festa do Ano (2011) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/343rt342wtg34wetg34retghksi68ssk/FHD5/tt1604171.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN0gE0flSX4M0KuZcriWz_xcg3NNoCr46eNMNcFHr17-g5okNW3zxs2HN5T-iUGUewPKLWjOQhMAhuThl9iF_kqxngfwl55ZnW02JbXmiMFhjrEikChLYNA7h54MxD7HP9OEP28p-_8S0EOv4kpQRrfx5sBYxxUk9XJuOhwm-cyJlyaFPNRII0S5-AkbU/w1280-h720-p-k-no-nu/ezxNjtuSXe5wAYHCFt2QaKNGsxb.webp" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN0gE0flSX4M0KuZcriWz_xcg3NNoCr46eNMNcFHr17-g5okNW3zxs2HN5T-iUGUewPKLWjOQhMAhuThl9iF_kqxngfwl55ZnW02JbXmiMFhjrEikChLYNA7h54MxD7HP9OEP28p-_8S0EOv4kpQRrfx5sBYxxUk9XJuOhwm-cyJlyaFPNRII0S5-AkbU/s320/ezxNjtuSXe5wAYHCFt2QaKNGsxb.webp"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS8zNDNydDM0Mnd0ZzM0d2V0ZzM0cmV0Z2hrc2k2OHNzay9GSEQ1L3R0MTYwNDE3MS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

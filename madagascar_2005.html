@@ -12,7 +12,7 @@
     "name": "Madagascar (2005) - 🍿Clau",
     "description": "Assista Madagascar (2005) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCSINWccxcDtqCwZZO19vwA0j97csM7yKIqwA74tigwFBJrFL_xtQEZUX3dACLLuaQcYcXN6gR50bDRMq0dCLB6dRIiWsiF5fDXudSXyxANBeZdSiZnd35deKlXVhVf78aweYvt-QDc6n3GmLJLsTBPGl3ZFa2IjYVpyBFbGvA1x_74a1_uQVX_ifDdbM/w1280-h720-p-k-no-nu/2WLZi8563nJGSF8O3ay6cUT7L6e.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCSINWccxcDtqCwZZO19vwA0j97csM7yKIqwA74tigwFBJrFL_xtQEZUX3dACLLuaQcYcXN6gR50bDRMq0dCLB6dRIiWsiF5fDXudSXyxANBeZdSiZnd35deKlXVhVf78aweYvt-QDc6n3GmLJLsTBPGl3ZFa2IjYVpyBFbGvA1x_74a1_uQVX_ifDdbM/s320/2WLZi8563nJGSF8O3ay6cUT7L6e.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Madagascar (2005) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/88e677dd-9e59-41c5-9769-833a9010e2d9" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCSINWccxcDtqCwZZO19vwA0j97csM7yKIqwA74tigwFBJrFL_xtQEZUX3dACLLuaQcYcXN6gR50bDRMq0dCLB6dRIiWsiF5fDXudSXyxANBeZdSiZnd35deKlXVhVf78aweYvt-QDc6n3GmLJLsTBPGl3ZFa2IjYVpyBFbGvA1x_74a1_uQVX_ifDdbM/w1280-h720-p-k-no-nu/2WLZi8563nJGSF8O3ay6cUT7L6e.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCSINWccxcDtqCwZZO19vwA0j97csM7yKIqwA74tigwFBJrFL_xtQEZUX3dACLLuaQcYcXN6gR50bDRMq0dCLB6dRIiWsiF5fDXudSXyxANBeZdSiZnd35deKlXVhVf78aweYvt-QDc6n3GmLJLsTBPGl3ZFa2IjYVpyBFbGvA1x_74a1_uQVX_ifDdbM/s320/2WLZi8563nJGSF8O3ay6cUT7L6e.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvODhlNjc3ZGQtOWU1OS00MWM1LTk3NjktODMzYTkwMTBlMmQ5");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Um Jantar Entre Espioes (2022) - 🍿Clau",
     "description": "Assista Um Jantar Entre Espioes (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizksx14_ZPuA8G5TEtNw4p1IMKHkZndZX26nn3zIRdSZ41Y_qNY020RPu_sW6xwDHCUo1Bzp9qOLppTRv8Le03IspAXbY9Qt-KyTv2UAYccXyAaXToUPNTJAabgtxCabA3Ynu6sJJsQlGC5SsoIUdfklvzjRvjaz_D39lx4-BX6gOrjwitSlcybgLRSos/w1280-h720-p-k-no-nu/gQ6HqwbrBRqCGWvoucN8PCogCvr.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizksx14_ZPuA8G5TEtNw4p1IMKHkZndZX26nn3zIRdSZ41Y_qNY020RPu_sW6xwDHCUo1Bzp9qOLppTRv8Le03IspAXbY9Qt-KyTv2UAYccXyAaXToUPNTJAabgtxCabA3Ynu6sJJsQlGC5SsoIUdfklvzjRvjaz_D39lx4-BX6gOrjwitSlcybgLRSos/s320/gQ6HqwbrBRqCGWvoucN8PCogCvr.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Jantar Entre Espioes (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0015.speed-stream.online/um-jantar-entre-espioes-5d0ee402/dubbed/1/dcec5de3-dd59-4976-bec6-d8b60041eadf/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizksx14_ZPuA8G5TEtNw4p1IMKHkZndZX26nn3zIRdSZ41Y_qNY020RPu_sW6xwDHCUo1Bzp9qOLppTRv8Le03IspAXbY9Qt-KyTv2UAYccXyAaXToUPNTJAabgtxCabA3Ynu6sJJsQlGC5SsoIUdfklvzjRvjaz_D39lx4-BX6gOrjwitSlcybgLRSos/w1280-h720-p-k-no-nu/gQ6HqwbrBRqCGWvoucN8PCogCvr.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizksx14_ZPuA8G5TEtNw4p1IMKHkZndZX26nn3zIRdSZ41Y_qNY020RPu_sW6xwDHCUo1Bzp9qOLppTRv8Le03IspAXbY9Qt-KyTv2UAYccXyAaXToUPNTJAabgtxCabA3Ynu6sJJsQlGC5SsoIUdfklvzjRvjaz_D39lx4-BX6gOrjwitSlcybgLRSos/s320/gQ6HqwbrBRqCGWvoucN8PCogCvr.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAxNS5zcGVlZC1zdHJlYW0ub25saW5lL3VtLWphbnRhci1lbnRyZS1lc3Bpb2VzLTVkMGVlNDAyL2R1YmJlZC8xL2RjZWM1ZGUzLWRkNTktNDk3Ni1iZWM2LWQ4YjYwMDQxZWFkZi9zdHJlYW0ubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

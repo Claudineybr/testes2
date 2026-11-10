@@ -12,7 +12,7 @@
     "name": "Planeta dos Macacos (2001) - 🍿Clau",
     "description": "Assista Planeta dos Macacos (2001) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdShjv2fhX4TDSOWeOB1Q0PQCrdfi2ow1qx72IWZKwnZUKechQfUgu86nnrCLMPZ57q6aYVBIo7gX0qPOZOG1EcHFMKV9891BEZ8i5V1w_hJeiLCG0UWba0lCGKX0dqm1UWCY5B2Q5sFBjM5WuOCqMeHcPRxQLBvEuxaXMVIYtt5rifTbFl_anMfxkbJw/w1280-h720-p-k-no-nu/AeWTVKHfzbpXgFqL6bNIZnhK260.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdShjv2fhX4TDSOWeOB1Q0PQCrdfi2ow1qx72IWZKwnZUKechQfUgu86nnrCLMPZ57q6aYVBIo7gX0qPOZOG1EcHFMKV9891BEZ8i5V1w_hJeiLCG0UWba0lCGKX0dqm1UWCY5B2Q5sFBjM5WuOCqMeHcPRxQLBvEuxaXMVIYtt5rifTbFl_anMfxkbJw/s320/AeWTVKHfzbpXgFqL6bNIZnhK260.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Planeta dos Macacos (2001) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/br/video/o-planeta-dos-macacos-2001-dublado?utm_campaign=embed&utm_medium=embed-link&utm_source=embed-link" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdShjv2fhX4TDSOWeOB1Q0PQCrdfi2ow1qx72IWZKwnZUKechQfUgu86nnrCLMPZ57q6aYVBIo7gX0qPOZOG1EcHFMKV9891BEZ8i5V1w_hJeiLCG0UWba0lCGKX0dqm1UWCY5B2Q5sFBjM5WuOCqMeHcPRxQLBvEuxaXMVIYtt5rifTbFl_anMfxkbJw/w1280-h720-p-k-no-nu/AeWTVKHfzbpXgFqL6bNIZnhK260.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdShjv2fhX4TDSOWeOB1Q0PQCrdfi2ow1qx72IWZKwnZUKechQfUgu86nnrCLMPZ57q6aYVBIo7gX0qPOZOG1EcHFMKV9891BEZ8i5V1w_hJeiLCG0UWba0lCGKX0dqm1UWCY5B2Q5sFBjM5WuOCqMeHcPRxQLBvEuxaXMVIYtt5rifTbFl_anMfxkbJw/s320/AeWTVKHfzbpXgFqL6bNIZnhK260.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS9ici92aWRlby9vLXBsYW5ldGEtZG9zLW1hY2Fjb3MtMjAwMS1kdWJsYWRvP3V0bV9jYW1wYWlnbj1lbWJlZCZ1dG1fbWVkaXVtPWVtYmVkLWxpbmsmdXRtX3NvdXJjZT1lbWJlZC1saW5r");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

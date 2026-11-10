@@ -12,7 +12,7 @@
     "name": "Panico 3 (2000) - 🍿Clau",
     "description": "Assista Panico 3 (2000) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDXqxWveifLVjJ9FiA5z7rmj4wegrlsl-lP_I2sv6GmbhbLBpbimNLVfUjJReS2aJErXqIpkfdaxYIkzts7L4LZYoZd1S-ckR1wHprmdupEF7NTIGoUlzTsgoZ83lC7K_rvzX3rJBVQ2g4bf8P-eBVKSrqfjCT57oE_xaNbaNrLTNxGEVk8c_bdDJ67-M/w1280-h720-p-k-no-nu/AYKmRu1vKXzcElGXCBBfdgm8Ho.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDXqxWveifLVjJ9FiA5z7rmj4wegrlsl-lP_I2sv6GmbhbLBpbimNLVfUjJReS2aJErXqIpkfdaxYIkzts7L4LZYoZd1S-ckR1wHprmdupEF7NTIGoUlzTsgoZ83lC7K_rvzX3rJBVQ2g4bf8P-eBVKSrqfjCT57oE_xaNbaNrLTNxGEVk8c_bdDJ67-M/w400-h225/AYKmRu1vKXzcElGXCBBfdgm8Ho.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Panico 3 (2000) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/d04fa875-751c-4f57-b66a-04a07a41f7bd" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDXqxWveifLVjJ9FiA5z7rmj4wegrlsl-lP_I2sv6GmbhbLBpbimNLVfUjJReS2aJErXqIpkfdaxYIkzts7L4LZYoZd1S-ckR1wHprmdupEF7NTIGoUlzTsgoZ83lC7K_rvzX3rJBVQ2g4bf8P-eBVKSrqfjCT57oE_xaNbaNrLTNxGEVk8c_bdDJ67-M/w1280-h720-p-k-no-nu/AYKmRu1vKXzcElGXCBBfdgm8Ho.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDXqxWveifLVjJ9FiA5z7rmj4wegrlsl-lP_I2sv6GmbhbLBpbimNLVfUjJReS2aJErXqIpkfdaxYIkzts7L4LZYoZd1S-ckR1wHprmdupEF7NTIGoUlzTsgoZ83lC7K_rvzX3rJBVQ2g4bf8P-eBVKSrqfjCT57oE_xaNbaNrLTNxGEVk8c_bdDJ67-M/w400-h225/AYKmRu1vKXzcElGXCBBfdgm8Ho.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvZDA0ZmE4NzUtNzUxYy00ZjU3LWI2NmEtMDRhMDdhNDFmN2Jk");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

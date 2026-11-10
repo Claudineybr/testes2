@@ -12,7 +12,7 @@
     "name": "Um Panda em Apuros 2 (2022) - 🍿Clau",
     "description": "Assista Um Panda em Apuros 2 (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaRteoes9XZdrMDiIhvE85NgnmqOPVjhQlMRrGwZmr9nmrErFeb8Y3JUTiFqKbSPmD29ugX1UzWdBO9rRNOirjk7dfTqeXGzn6Lt7uX0GYEEMUfxZvKtgB_DElCal7l81lZjhhHSxdAd_zUQIKqps0ql-vcOyUi0iB-ZclaeLrICsDN4AYSL9VmluLWOQ/w1280-h720-p-k-no-nu/zMY0rK0a4VLvkkfD4UXHSinhQSi.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaRteoes9XZdrMDiIhvE85NgnmqOPVjhQlMRrGwZmr9nmrErFeb8Y3JUTiFqKbSPmD29ugX1UzWdBO9rRNOirjk7dfTqeXGzn6Lt7uX0GYEEMUfxZvKtgB_DElCal7l81lZjhhHSxdAd_zUQIKqps0ql-vcOyUi0iB-ZclaeLrICsDN4AYSL9VmluLWOQ/s320/zMY0rK0a4VLvkkfD4UXHSinhQSi.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Um Panda em Apuros 2 (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.vod-cinevs.com/m/Um.Panda.em.Apuros.2.2022.1080p.WEB-DL.DUAL.5.1.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaRteoes9XZdrMDiIhvE85NgnmqOPVjhQlMRrGwZmr9nmrErFeb8Y3JUTiFqKbSPmD29ugX1UzWdBO9rRNOirjk7dfTqeXGzn6Lt7uX0GYEEMUfxZvKtgB_DElCal7l81lZjhhHSxdAd_zUQIKqps0ql-vcOyUi0iB-ZclaeLrICsDN4AYSL9VmluLWOQ/w1280-h720-p-k-no-nu/zMY0rK0a4VLvkkfD4UXHSinhQSi.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaRteoes9XZdrMDiIhvE85NgnmqOPVjhQlMRrGwZmr9nmrErFeb8Y3JUTiFqKbSPmD29ugX1UzWdBO9rRNOirjk7dfTqeXGzn6Lt7uX0GYEEMUfxZvKtgB_DElCal7l81lZjhhHSxdAd_zUQIKqps0ql-vcOyUi0iB-ZclaeLrICsDN4AYSL9VmluLWOQ/s320/zMY0rK0a4VLvkkfD4UXHSinhQSi.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4udm9kLWNpbmV2cy5jb20vbS9VbS5QYW5kYS5lbS5BcHVyb3MuMi4yMDIyLjEwODBwLldFQi1ETC5EVUFMLjUuMS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Sorte no Amor (2006) - 🍿Clau",
     "description": "Assista Sorte no Amor (2006) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVPi-380vKx78vl7FzP9I2Ok7qnumVeGH0AFZA-vqMWZpbEOOATJdBCHXFyGcU9d7knSM5sD3JaNvMB3OaK3Wu0fBwKtitJJ3W19PiDQHu7ZjSy78AkkKY2l323cTAjABHbv6vCMtDxulUrPINEHImaYx2h0l4jj2i8CbcdtXM1B1nHm0wm2Lo0jV6oxk/w1280-h720-p-k-no-nu/tVJRdwHItzJn9hrlr3PWqZRl8Ip.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVPi-380vKx78vl7FzP9I2Ok7qnumVeGH0AFZA-vqMWZpbEOOATJdBCHXFyGcU9d7knSM5sD3JaNvMB3OaK3Wu0fBwKtitJJ3W19PiDQHu7ZjSy78AkkKY2l323cTAjABHbv6vCMtDxulUrPINEHImaYx2h0l4jj2i8CbcdtXM1B1nHm0wm2Lo0jV6oxk/s320/tVJRdwHItzJn9hrlr3PWqZRl8Ip.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Sorte no Amor (2006) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://fhd1.oneplayer.site/ertg43r5g34ty34yt543t43wer234t34y3s7/FHD3/tt0397078.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVPi-380vKx78vl7FzP9I2Ok7qnumVeGH0AFZA-vqMWZpbEOOATJdBCHXFyGcU9d7knSM5sD3JaNvMB3OaK3Wu0fBwKtitJJ3W19PiDQHu7ZjSy78AkkKY2l323cTAjABHbv6vCMtDxulUrPINEHImaYx2h0l4jj2i8CbcdtXM1B1nHm0wm2Lo0jV6oxk/w1280-h720-p-k-no-nu/tVJRdwHItzJn9hrlr3PWqZRl8Ip.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVPi-380vKx78vl7FzP9I2Ok7qnumVeGH0AFZA-vqMWZpbEOOATJdBCHXFyGcU9d7knSM5sD3JaNvMB3OaK3Wu0fBwKtitJJ3W19PiDQHu7ZjSy78AkkKY2l323cTAjABHbv6vCMtDxulUrPINEHImaYx2h0l4jj2i8CbcdtXM1B1nHm0wm2Lo0jV6oxk/s320/tVJRdwHItzJn9hrlr3PWqZRl8Ip.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2ZoZDEub25lcGxheWVyLnNpdGUvZXJ0ZzQzcjVnMzR0eTM0eXQ1NDN0NDN3ZXIyMzR0MzR5M3M3L0ZIRDMvdHQwMzk3MDc4Lm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Titanic (1997) - 🍿Clau",
     "description": "Assista Titanic (1997) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnczLJl2FBbraz8UYTy7UA5d3RQ7EUFKjNEFAvGUPLQ2Dinl2RFDLp82yYItn21mmMqo95Q6oHIhEdiLWBlWkKS4KE0SxuzPfuOwqBXrKHgD_X5_Olj-Dp0UspFdkYIowb16mqUWNSpu_TWZiJRJQ1u-XzaNPtIQtUH5ALJAAE1SuOsd5LJDwWR2hJEnA/w1280-h720-p-k-no-nu/rdWtyMwp7iWMy8wYrcztyvG592O.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnczLJl2FBbraz8UYTy7UA5d3RQ7EUFKjNEFAvGUPLQ2Dinl2RFDLp82yYItn21mmMqo95Q6oHIhEdiLWBlWkKS4KE0SxuzPfuOwqBXrKHgD_X5_Olj-Dp0UspFdkYIowb16mqUWNSpu_TWZiJRJQ1u-XzaNPtIQtUH5ALJAAE1SuOsd5LJDwWR2hJEnA/s400/rdWtyMwp7iWMy8wYrcztyvG592O.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Titanic (1997) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Titanic_1997_tt0120338.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnczLJl2FBbraz8UYTy7UA5d3RQ7EUFKjNEFAvGUPLQ2Dinl2RFDLp82yYItn21mmMqo95Q6oHIhEdiLWBlWkKS4KE0SxuzPfuOwqBXrKHgD_X5_Olj-Dp0UspFdkYIowb16mqUWNSpu_TWZiJRJQ1u-XzaNPtIQtUH5ALJAAE1SuOsd5LJDwWR2hJEnA/w1280-h720-p-k-no-nu/rdWtyMwp7iWMy8wYrcztyvG592O.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnczLJl2FBbraz8UYTy7UA5d3RQ7EUFKjNEFAvGUPLQ2Dinl2RFDLp82yYItn21mmMqo95Q6oHIhEdiLWBlWkKS4KE0SxuzPfuOwqBXrKHgD_X5_Olj-Dp0UspFdkYIowb16mqUWNSpu_TWZiJRJQ1u-XzaNPtIQtUH5ALJAAE1SuOsd5LJDwWR2hJEnA/s400/rdWtyMwp7iWMy8wYrcztyvG592O.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL1RpdGFuaWNfMTk5N190dDAxMjAzMzgubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

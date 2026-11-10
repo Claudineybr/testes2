@@ -12,7 +12,7 @@
     "name": "O Segredo dos Animais (2006) - 🍿Clau",
     "description": "Assista O Segredo dos Animais (2006) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkefo6f67cz7SaPsGNs-L2Cc9vgjWn6agrGQ0UrMBotugl5YwoGQ9BM-Xl7RvEaZpJIphGMQ_BKnkr1gtkUyjbCChW85bydqUM9mFz_GORjOecKFEurMLQtt_SKYPoHsRlwb5g_CQA2sOv1Az1XLNUpXVk40c5yAegxk8FDyXcTsGySVgEoz9NuX6sEM/w1280-h720-p-k-no-nu/images-34.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkefo6f67cz7SaPsGNs-L2Cc9vgjWn6agrGQ0UrMBotugl5YwoGQ9BM-Xl7RvEaZpJIphGMQ_BKnkr1gtkUyjbCChW85bydqUM9mFz_GORjOecKFEurMLQtt_SKYPoHsRlwb5g_CQA2sOv1Az1XLNUpXVk40c5yAegxk8FDyXcTsGySVgEoz9NuX6sEM/s320/images-34.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Segredo dos Animais (2006) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://hd5.oneplayer.site/token/FHD5/tt0414853.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkefo6f67cz7SaPsGNs-L2Cc9vgjWn6agrGQ0UrMBotugl5YwoGQ9BM-Xl7RvEaZpJIphGMQ_BKnkr1gtkUyjbCChW85bydqUM9mFz_GORjOecKFEurMLQtt_SKYPoHsRlwb5g_CQA2sOv1Az1XLNUpXVk40c5yAegxk8FDyXcTsGySVgEoz9NuX6sEM/w1280-h720-p-k-no-nu/images-34.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkefo6f67cz7SaPsGNs-L2Cc9vgjWn6agrGQ0UrMBotugl5YwoGQ9BM-Xl7RvEaZpJIphGMQ_BKnkr1gtkUyjbCChW85bydqUM9mFz_GORjOecKFEurMLQtt_SKYPoHsRlwb5g_CQA2sOv1Az1XLNUpXVk40c5yAegxk8FDyXcTsGySVgEoz9NuX6sEM/s320/images-34.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2hkNS5vbmVwbGF5ZXIuc2l0ZS90b2tlbi9GSEQ1L3R0MDQxNDg1My5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

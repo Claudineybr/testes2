@@ -12,7 +12,7 @@
     "name": "O Grande Hotel Budapeste (2014) - 🍿Clau",
     "description": "Assista O Grande Hotel Budapeste (2014) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis3orSI0Yb0x2p9B0qSKmdCFOJ7Iv9yi1m1fV-17RbFaTuayVnhNEk1Aj3pYKIDlJOmXJy7kU_xUg-It3mn035-FEyxPWYoUpPRRS__-sach82E6OpoL8RU8CNoklpFbvuDh2K8cI6_B_vFg-6OkJwJd3BI8uUySFk5LhwA1jX5g9YYtAcQXQMtER005M/w1280-h720-p-k-no-nu/bTWbXmZjNHwPT0gLsIz7HEVjOud.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis3orSI0Yb0x2p9B0qSKmdCFOJ7Iv9yi1m1fV-17RbFaTuayVnhNEk1Aj3pYKIDlJOmXJy7kU_xUg-It3mn035-FEyxPWYoUpPRRS__-sach82E6OpoL8RU8CNoklpFbvuDh2K8cI6_B_vFg-6OkJwJd3BI8uUySFk5LhwA1jX5g9YYtAcQXQMtER005M/s320/bTWbXmZjNHwPT0gLsIz7HEVjOud.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Grande Hotel Budapeste (2014) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/flm25/OGrandeHotelBudapeste2014.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis3orSI0Yb0x2p9B0qSKmdCFOJ7Iv9yi1m1fV-17RbFaTuayVnhNEk1Aj3pYKIDlJOmXJy7kU_xUg-It3mn035-FEyxPWYoUpPRRS__-sach82E6OpoL8RU8CNoklpFbvuDh2K8cI6_B_vFg-6OkJwJd3BI8uUySFk5LhwA1jX5g9YYtAcQXQMtER005M/w1280-h720-p-k-no-nu/bTWbXmZjNHwPT0gLsIz7HEVjOud.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis3orSI0Yb0x2p9B0qSKmdCFOJ7Iv9yi1m1fV-17RbFaTuayVnhNEk1Aj3pYKIDlJOmXJy7kU_xUg-It3mn035-FEyxPWYoUpPRRS__-sach82E6OpoL8RU8CNoklpFbvuDh2K8cI6_B_vFg-6OkJwJd3BI8uUySFk5LhwA1jX5g9YYtAcQXQMtER005M/s320/bTWbXmZjNHwPT0gLsIz7HEVjOud.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2ZsbTI1L09HcmFuZGVIb3RlbEJ1ZGFwZXN0ZTIwMTQubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

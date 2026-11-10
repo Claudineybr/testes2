@@ -12,7 +12,7 @@
     "name": "O Misterio da Ilha (2019) - 🍿Clau",
     "description": "Assista O Misterio da Ilha (2019) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5F_AErgMCpRRKU3VIGisxJiUwY1Z_WpF895lJ4uCHWEYvBh9aG5dBXyU2yggZbpUtr5OjumBAzyH6Q_u4ee5InoZplwryPuoCB-g3ElWy8h1pHPNhw_TceXZe7pFTiWhDngVisiDSUg_tm-ZgawUT2ek_C6bRSeCS_rQthXNLg5J8mLy-Te88Hb9GuuM/w1280-h720-p-k-no-nu/images-28.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5F_AErgMCpRRKU3VIGisxJiUwY1Z_WpF895lJ4uCHWEYvBh9aG5dBXyU2yggZbpUtr5OjumBAzyH6Q_u4ee5InoZplwryPuoCB-g3ElWy8h1pHPNhw_TceXZe7pFTiWhDngVisiDSUg_tm-ZgawUT2ek_C6bRSeCS_rQthXNLg5J8mLy-Te88Hb9GuuM/s320/images-28.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Misterio da Ilha (2019) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/locfilmes/Sweetheart2019.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5F_AErgMCpRRKU3VIGisxJiUwY1Z_WpF895lJ4uCHWEYvBh9aG5dBXyU2yggZbpUtr5OjumBAzyH6Q_u4ee5InoZplwryPuoCB-g3ElWy8h1pHPNhw_TceXZe7pFTiWhDngVisiDSUg_tm-ZgawUT2ek_C6bRSeCS_rQthXNLg5J8mLy-Te88Hb9GuuM/w1280-h720-p-k-no-nu/images-28.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5F_AErgMCpRRKU3VIGisxJiUwY1Z_WpF895lJ4uCHWEYvBh9aG5dBXyU2yggZbpUtr5OjumBAzyH6Q_u4ee5InoZplwryPuoCB-g3ElWy8h1pHPNhw_TceXZe7pFTiWhDngVisiDSUg_tm-ZgawUT2ek_C6bRSeCS_rQthXNLg5J8mLy-Te88Hb9GuuM/s320/images-28.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2xvY2ZpbG1lcy9Td2VldGhlYXJ0MjAxOS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

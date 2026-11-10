@@ -12,7 +12,7 @@
     "name": "Ninho do Mal (2022) - 🍿Clau",
     "description": "Assista Ninho do Mal (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu_GYQfkf7S79CTXN-DLcjnnpZ-8tu0K0jNegPRkUTRTnLxsuwvNOQYnYCGS50p8mbYI7UY2j8zh6Hb3aLuHnFSlnqniUoSkRTlpfeSyNZpqz2gOSrbIVoJ6JLBubBPdg2DBqvAvCxZltGzVnMMoM7qUZASiUCq_SFxNzSO7JHTCQabCSGlsfjCnbSwZU/w1280-h720-p-k-no-nu/iN7dFxYakNzsDVqB6plLW9AH1vH.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu_GYQfkf7S79CTXN-DLcjnnpZ-8tu0K0jNegPRkUTRTnLxsuwvNOQYnYCGS50p8mbYI7UY2j8zh6Hb3aLuHnFSlnqniUoSkRTlpfeSyNZpqz2gOSrbIVoJ6JLBubBPdg2DBqvAvCxZltGzVnMMoM7qUZASiUCq_SFxNzSO7JHTCQabCSGlsfjCnbSwZU/s320/iN7dFxYakNzsDVqB6plLW9AH1vH.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Ninho do Mal (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="http://cloudfm.playhdlugo.online/token:s21expires11365uslink1578l2/flm23/NinhoDoMal2022.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu_GYQfkf7S79CTXN-DLcjnnpZ-8tu0K0jNegPRkUTRTnLxsuwvNOQYnYCGS50p8mbYI7UY2j8zh6Hb3aLuHnFSlnqniUoSkRTlpfeSyNZpqz2gOSrbIVoJ6JLBubBPdg2DBqvAvCxZltGzVnMMoM7qUZASiUCq_SFxNzSO7JHTCQabCSGlsfjCnbSwZU/w1280-h720-p-k-no-nu/iN7dFxYakNzsDVqB6plLW9AH1vH.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu_GYQfkf7S79CTXN-DLcjnnpZ-8tu0K0jNegPRkUTRTnLxsuwvNOQYnYCGS50p8mbYI7UY2j8zh6Hb3aLuHnFSlnqniUoSkRTlpfeSyNZpqz2gOSrbIVoJ6JLBubBPdg2DBqvAvCxZltGzVnMMoM7qUZASiUCq_SFxNzSO7JHTCQabCSGlsfjCnbSwZU/s320/iN7dFxYakNzsDVqB6plLW9AH1vH.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cDovL2Nsb3VkZm0ucGxheWhkbHVnby5vbmxpbmUvdG9rZW46czIxZXhwaXJlczExMzY1dXNsaW5rMTU3OGwyL2ZsbTIzL05pbmhvRG9NYWwyMDIyLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

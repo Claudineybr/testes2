@@ -12,7 +12,7 @@
     "name": "A Batalha das Ardenas: A Ultima Ofensiva de Hitler (2018) - 🍿Clau",
     "description": "Assista A Batalha das Ardenas: A Ultima Ofensiva de Hitler (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOqMItHp8OYGJWLxerXoiMkQuI1eHhnwCJa7WlhHidysFlrCAJOEz7rYde1HOb_u3UqHIJadqCHALD1NSpviSakojWAib-_t0yymuH492JLZUx8mJIQaEN93Eo1K8JHcl1J2yqa4hzDguhDvhHWtnwhk8gqsFk8veli7reTgoqhtoHVJ8LKuwEn-9lKQs/w1280-h720-p-k-no-nu/oHz76UVAS058Y09okhMVO419Vub.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOqMItHp8OYGJWLxerXoiMkQuI1eHhnwCJa7WlhHidysFlrCAJOEz7rYde1HOb_u3UqHIJadqCHALD1NSpviSakojWAib-_t0yymuH492JLZUx8mJIQaEN93Eo1K8JHcl1J2yqa4hzDguhDvhHWtnwhk8gqsFk8veli7reTgoqhtoHVJ8LKuwEn-9lKQs/s320/oHz76UVAS058Y09okhMVO419Vub.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>A Batalha das Ardenas: A Ultima Ofensiva de Hitler (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://play-1.cnvods.com/m/A%20Batalha%20das%20Ardenas%20-%20A%20%C3%9Altima%20Ofensiva%20de%20Hitler_2018_tt5815078.mp4?cnvs_token=1774548637-loeX4Al1M3pa7%2BibyDQrWM%2FxbdSYBLo456uH1NHozjk%3D&vid=80366&pid=2216724&t=1774548637" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOqMItHp8OYGJWLxerXoiMkQuI1eHhnwCJa7WlhHidysFlrCAJOEz7rYde1HOb_u3UqHIJadqCHALD1NSpviSakojWAib-_t0yymuH492JLZUx8mJIQaEN93Eo1K8JHcl1J2yqa4hzDguhDvhHWtnwhk8gqsFk8veli7reTgoqhtoHVJ8LKuwEn-9lKQs/w1280-h720-p-k-no-nu/oHz76UVAS058Y09okhMVO419Vub.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOqMItHp8OYGJWLxerXoiMkQuI1eHhnwCJa7WlhHidysFlrCAJOEz7rYde1HOb_u3UqHIJadqCHALD1NSpviSakojWAib-_t0yymuH492JLZUx8mJIQaEN93Eo1K8JHcl1J2yqa4hzDguhDvhHWtnwhk8gqsFk8veli7reTgoqhtoHVJ8LKuwEn-9lKQs/s320/oHz76UVAS058Y09okhMVO419Vub.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9wbGF5LTEuY252b2RzLmNvbS9tL0ElMjBCYXRhbGhhJTIwZGFzJTIwQXJkZW5hcyUyMC0lMjBBJTIwJUMzJTlBbHRpbWElMjBPZmVuc2l2YSUyMGRlJTIwSGl0bGVyXzIwMThfdHQ1ODE1MDc4Lm1wND9jbnZzX3Rva2VuPTE3NzQ1NDg2MzctbG9lWDRBbDFNM3BhNyUyQmlieURRcldNJTJGeGJkU1lCTG80NTZ1SDFOSG96amslM0QmdmlkPTgwMzY2JnBpZD0yMjE2NzI0JnQ9MTc3NDU0ODYzNw==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

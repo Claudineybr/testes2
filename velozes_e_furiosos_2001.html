@@ -12,7 +12,7 @@
     "name": "Velozes e Furiosos (2001) - 🍿Clau",
     "description": "Assista Velozes e Furiosos (2001) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMRcO6SzEscgTlR_FhtTeGO6N4if8SBBS6-OOMEHhFLxi-om0Omj80XWho76uQUqDKzSzL-d6nuTafAr6E8eQW4x4jY-67zhGhtQvxDz7WEl-03Am7JYmmJbw4kZDgrgHw12ibeCSHveM4qIE28-sszMFsaiFeoWnth5kcpghT4etEbIs7Nw6zLhuhkFQ/w1280-h720-p-k-no-nu/ibZ3CHL01rU0n3TkMiDzObBZjIn.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMRcO6SzEscgTlR_FhtTeGO6N4if8SBBS6-OOMEHhFLxi-om0Omj80XWho76uQUqDKzSzL-d6nuTafAr6E8eQW4x4jY-67zhGhtQvxDz7WEl-03Am7JYmmJbw4kZDgrgHw12ibeCSHveM4qIE28-sszMFsaiFeoWnth5kcpghT4etEbIs7Nw6zLhuhkFQ/s320/ibZ3CHL01rU0n3TkMiDzObBZjIn.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Velozes e Furiosos (2001) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/f2fc51f2-d2dc-477c-b76b-dbb09dc452aa" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMRcO6SzEscgTlR_FhtTeGO6N4if8SBBS6-OOMEHhFLxi-om0Omj80XWho76uQUqDKzSzL-d6nuTafAr6E8eQW4x4jY-67zhGhtQvxDz7WEl-03Am7JYmmJbw4kZDgrgHw12ibeCSHveM4qIE28-sszMFsaiFeoWnth5kcpghT4etEbIs7Nw6zLhuhkFQ/w1280-h720-p-k-no-nu/ibZ3CHL01rU0n3TkMiDzObBZjIn.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMRcO6SzEscgTlR_FhtTeGO6N4if8SBBS6-OOMEHhFLxi-om0Omj80XWho76uQUqDKzSzL-d6nuTafAr6E8eQW4x4jY-67zhGhtQvxDz7WEl-03Am7JYmmJbw4kZDgrgHw12ibeCSHveM4qIE28-sszMFsaiFeoWnth5kcpghT4etEbIs7Nw6zLhuhkFQ/s320/ibZ3CHL01rU0n3TkMiDzObBZjIn.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvZjJmYzUxZjItZDJkYy00NzdjLWI3NmItZGJiMDlkYzQ1MmFh");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "Comando Imbativel (1990) - 🍿Clau",
     "description": "Assista Comando Imbativel (1990) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDnobjFHRzoMScrzTzfPNXr7KJN0-2MwjwXMBsAMSHqJKdeRI5G8KuuMRzeRAyBkNVh0FYIfWQC_996UJs0OWGfBjNlJW8Fpv6ATjQd8tjpQfz_Ofwcu6CwlgIiRoZnYSBril5lC60v716D5lBYtyVx6hFpqxzc31DezjAipu0kwIVoWbXtV1TNFh1hpU/w1280-h720-p-k-no-nu/1CZtQNg42xBIEcI157LUjSsKl7T.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDnobjFHRzoMScrzTzfPNXr7KJN0-2MwjwXMBsAMSHqJKdeRI5G8KuuMRzeRAyBkNVh0FYIfWQC_996UJs0OWGfBjNlJW8Fpv6ATjQd8tjpQfz_Ofwcu6CwlgIiRoZnYSBril5lC60v716D5lBYtyVx6hFpqxzc31DezjAipu0kwIVoWbXtV1TNFh1hpU/s320/1CZtQNg42xBIEcI157LUjSsKl7T.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Comando Imbativel (1990) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://sinalprivado.info/cache/e0e82ff2-a597-47df-b245-9cd1329caa5b/playlist.m3u8" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDnobjFHRzoMScrzTzfPNXr7KJN0-2MwjwXMBsAMSHqJKdeRI5G8KuuMRzeRAyBkNVh0FYIfWQC_996UJs0OWGfBjNlJW8Fpv6ATjQd8tjpQfz_Ofwcu6CwlgIiRoZnYSBril5lC60v716D5lBYtyVx6hFpqxzc31DezjAipu0kwIVoWbXtV1TNFh1hpU/w1280-h720-p-k-no-nu/1CZtQNg42xBIEcI157LUjSsKl7T.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDnobjFHRzoMScrzTzfPNXr7KJN0-2MwjwXMBsAMSHqJKdeRI5G8KuuMRzeRAyBkNVh0FYIfWQC_996UJs0OWGfBjNlJW8Fpv6ATjQd8tjpQfz_Ofwcu6CwlgIiRoZnYSBril5lC60v716D5lBYtyVx6hFpqxzc31DezjAipu0kwIVoWbXtV1TNFh1hpU/s320/1CZtQNg42xBIEcI157LUjSsKl7T.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9zaW5hbHByaXZhZG8uaW5mby9jYWNoZS9lMGU4MmZmMi1hNTk3LTQ3ZGYtYjI0NS05Y2QxMzI5Y2FhNWIvcGxheWxpc3QubTN1OA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
