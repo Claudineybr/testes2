@@ -12,7 +12,7 @@
     "name": "100 Dias de Resistencia (2019) - 🍿Clau",
     "description": "Assista 100 Dias de Resistencia (2019) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTzbE0YWpyRv-anR4uTkbnMdW4rCsG9XJVuRETj0MDvXHrL0rcVbrSELX_3vvy25CoNyBtGKcvklM82CE9yqzprc4vJeU30dQdY1wfXd0QEYvJ91cebx3O52TnR0w_Yu6tUmk1a2F8NOvipbPm-zrRz8jG0nnvEcuX2xy-eA4Xgcui45FzlIu5xotn-sg/w1280-h720-p-k-no-nu/kkwIaDrsnWyhJ1EYF1fFCwBpKix.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTzbE0YWpyRv-anR4uTkbnMdW4rCsG9XJVuRETj0MDvXHrL0rcVbrSELX_3vvy25CoNyBtGKcvklM82CE9yqzprc4vJeU30dQdY1wfXd0QEYvJ91cebx3O52TnR0w_Yu6tUmk1a2F8NOvipbPm-zrRz8jG0nnvEcuX2xy-eA4Xgcui45FzlIu5xotn-sg/s320/kkwIaDrsnWyhJ1EYF1fFCwBpKix.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>100 Dias de Resistencia (2019) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.vod-cinevs.com/f/100%20Dias%20de%20Resist%C3%AAncia_662876.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTzbE0YWpyRv-anR4uTkbnMdW4rCsG9XJVuRETj0MDvXHrL0rcVbrSELX_3vvy25CoNyBtGKcvklM82CE9yqzprc4vJeU30dQdY1wfXd0QEYvJ91cebx3O52TnR0w_Yu6tUmk1a2F8NOvipbPm-zrRz8jG0nnvEcuX2xy-eA4Xgcui45FzlIu5xotn-sg/w1280-h720-p-k-no-nu/kkwIaDrsnWyhJ1EYF1fFCwBpKix.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTzbE0YWpyRv-anR4uTkbnMdW4rCsG9XJVuRETj0MDvXHrL0rcVbrSELX_3vvy25CoNyBtGKcvklM82CE9yqzprc4vJeU30dQdY1wfXd0QEYvJ91cebx3O52TnR0w_Yu6tUmk1a2F8NOvipbPm-zrRz8jG0nnvEcuX2xy-eA4Xgcui45FzlIu5xotn-sg/s320/kkwIaDrsnWyhJ1EYF1fFCwBpKix.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4udm9kLWNpbmV2cy5jb20vZi8xMDAlMjBEaWFzJTIwZGUlMjBSZXNpc3QlQzMlQUFuY2lhXzY2Mjg3Ni5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

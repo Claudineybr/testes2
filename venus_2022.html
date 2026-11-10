@@ -12,7 +12,7 @@
     "name": "Venus (2022) - 🍿Clau",
     "description": "Assista Venus (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkkPFx5FEIc77dC0o2w95GqemRdruOzOFSSxiMF4PBjFqFp1eMXMoXsfevI5QBFi9RKLVldzNRzy9-A1j1NrQdkTt97fYZp8eAUn7w7kGsWMkN9Nze_YHE-W2PmkUr7jg0ChWywg0B0s5Mj19wEVZtd2une_vzcI5a4xKPaLhWoxUgXobm8WP-PZ6JXr8/w1280-h720-p-k-no-nu/tzXVhTBJOFj6DMeOiyMuqVb1tXe.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkkPFx5FEIc77dC0o2w95GqemRdruOzOFSSxiMF4PBjFqFp1eMXMoXsfevI5QBFi9RKLVldzNRzy9-A1j1NrQdkTt97fYZp8eAUn7w7kGsWMkN9Nze_YHE-W2PmkUr7jg0ChWywg0B0s5Mj19wEVZtd2une_vzcI5a4xKPaLhWoxUgXobm8WP-PZ6JXr8/s320/tzXVhTBJOFj6DMeOiyMuqVb1tXe.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Venus (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/video/venus-2022-terror-suspense-1h-41m?utm_campaign=embed&utm_medium=embed-link&utm_source=embed-link" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkkPFx5FEIc77dC0o2w95GqemRdruOzOFSSxiMF4PBjFqFp1eMXMoXsfevI5QBFi9RKLVldzNRzy9-A1j1NrQdkTt97fYZp8eAUn7w7kGsWMkN9Nze_YHE-W2PmkUr7jg0ChWywg0B0s5Mj19wEVZtd2une_vzcI5a4xKPaLhWoxUgXobm8WP-PZ6JXr8/w1280-h720-p-k-no-nu/tzXVhTBJOFj6DMeOiyMuqVb1tXe.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkkPFx5FEIc77dC0o2w95GqemRdruOzOFSSxiMF4PBjFqFp1eMXMoXsfevI5QBFi9RKLVldzNRzy9-A1j1NrQdkTt97fYZp8eAUn7w7kGsWMkN9Nze_YHE-W2PmkUr7jg0ChWywg0B0s5Mj19wEVZtd2une_vzcI5a4xKPaLhWoxUgXobm8WP-PZ6JXr8/s320/tzXVhTBJOFj6DMeOiyMuqVb1tXe.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS92aWRlby92ZW51cy0yMDIyLXRlcnJvci1zdXNwZW5zZS0xaC00MW0/dXRtX2NhbXBhaWduPWVtYmVkJnV0bV9tZWRpdW09ZW1iZWQtbGluayZ1dG1fc291cmNlPWVtYmVkLWxpbms=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
