@@ -12,7 +12,7 @@
     "name": "O Ultimo Cacador de Bruxas (2013) - 🍿Clau",
     "description": "Assista O Ultimo Cacador de Bruxas (2013) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJpva4M5nqei79-gpl2ZSZfmA7UddXUiaodO93fD6YoBsKXvJR0tw0RtqdM_6R95eWByOwzQ9cc-9gGDS-eBB47tBEVqLGOovlEbFjENC2uBFHmGui36CKtqVQmRJHQtzrF2vI_YDN20VOuT_LItRdFsMrOG059RfxP2-7LRmbSW2PDWFFwAN9ZtB6-4/w1280-h720-p-k-no-nu/2vbFaujte2pYTXaWTsHG582BGS.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJpva4M5nqei79-gpl2ZSZfmA7UddXUiaodO93fD6YoBsKXvJR0tw0RtqdM_6R95eWByOwzQ9cc-9gGDS-eBB47tBEVqLGOovlEbFjENC2uBFHmGui36CKtqVQmRJHQtzrF2vI_YDN20VOuT_LItRdFsMrOG059RfxP2-7LRmbSW2PDWFFwAN9ZtB6-4/s320/2vbFaujte2pYTXaWTsHG582BGS.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Ultimo Cacador de Bruxas (2013) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/a0135c3f-7d36-4dc8-96fc-c42e5f6b99e3" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJpva4M5nqei79-gpl2ZSZfmA7UddXUiaodO93fD6YoBsKXvJR0tw0RtqdM_6R95eWByOwzQ9cc-9gGDS-eBB47tBEVqLGOovlEbFjENC2uBFHmGui36CKtqVQmRJHQtzrF2vI_YDN20VOuT_LItRdFsMrOG059RfxP2-7LRmbSW2PDWFFwAN9ZtB6-4/w1280-h720-p-k-no-nu/2vbFaujte2pYTXaWTsHG582BGS.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJpva4M5nqei79-gpl2ZSZfmA7UddXUiaodO93fD6YoBsKXvJR0tw0RtqdM_6R95eWByOwzQ9cc-9gGDS-eBB47tBEVqLGOovlEbFjENC2uBFHmGui36CKtqVQmRJHQtzrF2vI_YDN20VOuT_LItRdFsMrOG059RfxP2-7LRmbSW2PDWFFwAN9ZtB6-4/s320/2vbFaujte2pYTXaWTsHG582BGS.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvYTAxMzVjM2YtN2QzNi00ZGM4LTk2ZmMtYzQyZTVmNmI5OWUz");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     "name": "O Escorpiao Rei 5: O Livro das Almas (2018) - 🍿Clau",
     "description": "Assista O Escorpiao Rei 5: O Livro das Almas (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHElduLNuUpkAdvEaf6xDopuv3my9kBtkc4V7HQ_D0W-mnBF4SaLxYNw1a1ptBaaVpCjGgA2V19DtZ3pGbyGwUI4J_TXIjUTwimREV1-7sAVkugleiHg3QaIz5oZlFEEXCAE4aSEN31cBhUPdtXJDte0Lj4JvljJFZ1GT73QrzJNq5IdEqrKqW6KXBNpo/w1280-h720-p-k-no-nu/images-2.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHElduLNuUpkAdvEaf6xDopuv3my9kBtkc4V7HQ_D0W-mnBF4SaLxYNw1a1ptBaaVpCjGgA2V19DtZ3pGbyGwUI4J_TXIjUTwimREV1-7sAVkugleiHg3QaIz5oZlFEEXCAE4aSEN31cBhUPdtXJDte0Lj4JvljJFZ1GT73QrzJNq5IdEqrKqW6KXBNpo/s320/images-2.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Escorpiao Rei 5: O Livro das Almas (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://www.tokyvideo.com/br/video/escorpiao-rei" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHElduLNuUpkAdvEaf6xDopuv3my9kBtkc4V7HQ_D0W-mnBF4SaLxYNw1a1ptBaaVpCjGgA2V19DtZ3pGbyGwUI4J_TXIjUTwimREV1-7sAVkugleiHg3QaIz5oZlFEEXCAE4aSEN31cBhUPdtXJDte0Lj4JvljJFZ1GT73QrzJNq5IdEqrKqW6KXBNpo/w1280-h720-p-k-no-nu/images-2.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHElduLNuUpkAdvEaf6xDopuv3my9kBtkc4V7HQ_D0W-mnBF4SaLxYNw1a1ptBaaVpCjGgA2V19DtZ3pGbyGwUI4J_TXIjUTwimREV1-7sAVkugleiHg3QaIz5oZlFEEXCAE4aSEN31cBhUPdtXJDte0Lj4JvljJFZ1GT73QrzJNq5IdEqrKqW6KXBNpo/s320/images-2.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly93d3cudG9reXZpZGVvLmNvbS9ici92aWRlby9lc2NvcnBpYW8tcmVp");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
