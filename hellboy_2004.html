@@ -12,7 +12,7 @@
     "name": "Hellboy (2004) - 🍿Clau",
     "description": "Assista Hellboy (2004) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik9YYIx2QhyphenhyphengXrpwLKZ_-YsRRvnLcQGsKZQjcmIzsb7tXloAy181Ze0FT4_jHbNeaU_160JQ8CiXRgSwM43C3qLhcpFXx0-7VCZ0glSMH3XrRyKvzrp7-9POuOTxANGArGUo-tWWRQ0C4Y8EaWMiJN8aU6XxZDefYcIC5Zjn51kOoksIyaO7S8nIntv9I/w1280-h720-p-k-no-nu/wSJXfIZl1zPz8F94adfASk5CgiE.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik9YYIx2QhyphenhyphengXrpwLKZ_-YsRRvnLcQGsKZQjcmIzsb7tXloAy181Ze0FT4_jHbNeaU_160JQ8CiXRgSwM43C3qLhcpFXx0-7VCZ0glSMH3XrRyKvzrp7-9POuOTxANGArGUo-tWWRQ0C4Y8EaWMiJN8aU6XxZDefYcIC5Zjn51kOoksIyaO7S8nIntv9I/s320/wSJXfIZl1zPz8F94adfASk5CgiE.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Hellboy (2004) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://tankie.tube/videos/embed/4d08f317-8895-46b2-ba31-f9a99f887ff6" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik9YYIx2QhyphenhyphengXrpwLKZ_-YsRRvnLcQGsKZQjcmIzsb7tXloAy181Ze0FT4_jHbNeaU_160JQ8CiXRgSwM43C3qLhcpFXx0-7VCZ0glSMH3XrRyKvzrp7-9POuOTxANGArGUo-tWWRQ0C4Y8EaWMiJN8aU6XxZDefYcIC5Zjn51kOoksIyaO7S8nIntv9I/w1280-h720-p-k-no-nu/wSJXfIZl1zPz8F94adfASk5CgiE.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik9YYIx2QhyphenhyphengXrpwLKZ_-YsRRvnLcQGsKZQjcmIzsb7tXloAy181Ze0FT4_jHbNeaU_160JQ8CiXRgSwM43C3qLhcpFXx0-7VCZ0glSMH3XrRyKvzrp7-9POuOTxANGArGUo-tWWRQ0C4Y8EaWMiJN8aU6XxZDefYcIC5Zjn51kOoksIyaO7S8nIntv9I/s320/wSJXfIZl1zPz8F94adfASk5CgiE.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly90YW5raWUudHViZS92aWRlb3MvZW1iZWQvNGQwOGYzMTctODg5NS00NmIyLWJhMzEtZjlhOTlmODg3ZmY2");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

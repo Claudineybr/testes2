@@ -12,7 +12,7 @@
     "name": "Irma Morte (2023) - 🍿Clau",
     "description": "Assista Irma Morte (2023) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6IeOrzye5GxbyjSobUK1zb4fRiF57HlnOHpqc-YCtj-9PR57mBCu2HQQlSvKKasjLVCjB6BWVTN-FHwPRcZFHVKbBwLJGEi8Isbqz3AefymvtQFDmUsKg0nkSebfkc6iERyeJdFQYY98OEwuA9gWpwwLFZ1_cm-aV_4b-g3vl4P0QEiLBBI_EtNKHj_E/w1280-h720-p-k-no-nu/ZsiP0qr8TRUJTAd1VE0VNkLzhH.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6IeOrzye5GxbyjSobUK1zb4fRiF57HlnOHpqc-YCtj-9PR57mBCu2HQQlSvKKasjLVCjB6BWVTN-FHwPRcZFHVKbBwLJGEi8Isbqz3AefymvtQFDmUsKg0nkSebfkc6iERyeJdFQYY98OEwuA9gWpwwLFZ1_cm-aV_4b-g3vl4P0QEiLBBI_EtNKHj_E/s320/ZsiP0qr8TRUJTAd1VE0VNkLzhH.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Irma Morte (2023) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0033.speed-stream.online/irma-morte-27ab4815/dubbed/1/26384f81-b6ba-422d-8715-4e9345d6219f/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6IeOrzye5GxbyjSobUK1zb4fRiF57HlnOHpqc-YCtj-9PR57mBCu2HQQlSvKKasjLVCjB6BWVTN-FHwPRcZFHVKbBwLJGEi8Isbqz3AefymvtQFDmUsKg0nkSebfkc6iERyeJdFQYY98OEwuA9gWpwwLFZ1_cm-aV_4b-g3vl4P0QEiLBBI_EtNKHj_E/w1280-h720-p-k-no-nu/ZsiP0qr8TRUJTAd1VE0VNkLzhH.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6IeOrzye5GxbyjSobUK1zb4fRiF57HlnOHpqc-YCtj-9PR57mBCu2HQQlSvKKasjLVCjB6BWVTN-FHwPRcZFHVKbBwLJGEi8Isbqz3AefymvtQFDmUsKg0nkSebfkc6iERyeJdFQYY98OEwuA9gWpwwLFZ1_cm-aV_4b-g3vl4P0QEiLBBI_EtNKHj_E/s320/ZsiP0qr8TRUJTAd1VE0VNkLzhH.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAzMy5zcGVlZC1zdHJlYW0ub25saW5lL2lybWEtbW9ydGUtMjdhYjQ4MTUvZHViYmVkLzEvMjYzODRmODEtYjZiYS00MjJkLTg3MTUtNGU5MzQ1ZDYyMTlmL3N0cmVhbS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
