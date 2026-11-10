@@ -12,7 +12,7 @@
     "name": "Sol da Meia-Noite (2018) - 🍿Clau",
     "description": "Assista Sol da Meia-Noite (2018) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYg4mntyxL_cjzEaRhFKbGEseSl8UeRQP2sK50k3k41rpkKVJwUBOz7_6SHGn-pO6FzbC_WXJ_FIW_zoW6gT09bKPdwgS4ebDz3nzBmvjeKXe5sn62ZGGC7glaRO6RVgoacLFiim6v-pRh6oGrjcqhkysgX3-Wk7wdyRC9FjRhFV-A_gVvv7O97ZF06V8/w1280-h720-p-k-no-nu/images-1.jpeg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYg4mntyxL_cjzEaRhFKbGEseSl8UeRQP2sK50k3k41rpkKVJwUBOz7_6SHGn-pO6FzbC_WXJ_FIW_zoW6gT09bKPdwgS4ebDz3nzBmvjeKXe5sn62ZGGC7glaRO6RVgoacLFiim6v-pRh6oGrjcqhkysgX3-Wk7wdyRC9FjRhFV-A_gVvv7O97ZF06V8/s320/images-1.jpeg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Sol da Meia-Noite (2018) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://vods1.watchingvs.com/m/Sol%20da%20Meia-Noite_2018_tt4799066.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYg4mntyxL_cjzEaRhFKbGEseSl8UeRQP2sK50k3k41rpkKVJwUBOz7_6SHGn-pO6FzbC_WXJ_FIW_zoW6gT09bKPdwgS4ebDz3nzBmvjeKXe5sn62ZGGC7glaRO6RVgoacLFiim6v-pRh6oGrjcqhkysgX3-Wk7wdyRC9FjRhFV-A_gVvv7O97ZF06V8/w1280-h720-p-k-no-nu/images-1.jpeg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYg4mntyxL_cjzEaRhFKbGEseSl8UeRQP2sK50k3k41rpkKVJwUBOz7_6SHGn-pO6FzbC_WXJ_FIW_zoW6gT09bKPdwgS4ebDz3nzBmvjeKXe5sn62ZGGC7glaRO6RVgoacLFiim6v-pRh6oGrjcqhkysgX3-Wk7wdyRC9FjRhFV-A_gVvv7O97ZF06V8/s320/images-1.jpeg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly92b2RzMS53YXRjaGluZ3ZzLmNvbS9tL1NvbCUyMGRhJTIwTWVpYS1Ob2l0ZV8yMDE4X3R0NDc5OTA2Ni5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

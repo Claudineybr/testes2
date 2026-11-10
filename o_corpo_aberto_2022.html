@@ -12,7 +12,7 @@
     "name": "O Corpo Aberto (2022) - 🍿Clau",
     "description": "Assista O Corpo Aberto (2022) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE46azQNB2cc9V3vag9qZI4dO_ZQindFEyrFJ9tTgBq7bksKr3q6vorDniD0EJHdGJkrIBmYlJKe8RczwxtSLxjX1VhDeNIh-7v38pojS7JLS_8nN9fGo1RoUAAHPqbuGNm9yEred8JJrp2sEu80GEgnOAm2JcH8ccFmZKAW-9xO4Bmi_1quO14f2dF20/w1280-h720-p-k-no-nu/bUr2b9Obd9VkHpZOraVjLnb0IZj.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE46azQNB2cc9V3vag9qZI4dO_ZQindFEyrFJ9tTgBq7bksKr3q6vorDniD0EJHdGJkrIBmYlJKe8RczwxtSLxjX1VhDeNIh-7v38pojS7JLS_8nN9fGo1RoUAAHPqbuGNm9yEred8JJrp2sEu80GEgnOAm2JcH8ccFmZKAW-9xO4Bmi_1quO14f2dF20/s400/bUr2b9Obd9VkHpZOraVjLnb0IZj.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>O Corpo Aberto (2022) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/O.Corpo.Aberto.2022.720p.WEB-DL.DUBLADO.2.0.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE46azQNB2cc9V3vag9qZI4dO_ZQindFEyrFJ9tTgBq7bksKr3q6vorDniD0EJHdGJkrIBmYlJKe8RczwxtSLxjX1VhDeNIh-7v38pojS7JLS_8nN9fGo1RoUAAHPqbuGNm9yEred8JJrp2sEu80GEgnOAm2JcH8ccFmZKAW-9xO4Bmi_1quO14f2dF20/w1280-h720-p-k-no-nu/bUr2b9Obd9VkHpZOraVjLnb0IZj.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE46azQNB2cc9V3vag9qZI4dO_ZQindFEyrFJ9tTgBq7bksKr3q6vorDniD0EJHdGJkrIBmYlJKe8RczwxtSLxjX1VhDeNIh-7v38pojS7JLS_8nN9fGo1RoUAAHPqbuGNm9yEred8JJrp2sEu80GEgnOAm2JcH8ccFmZKAW-9xO4Bmi_1quO14f2dF20/s400/bUr2b9Obd9VkHpZOraVjLnb0IZj.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9PLkNvcnBvLkFiZXJ0by4yMDIyLjcyMHAuV0VCLURMLkRVQkxBRE8uMi4wLm1wNA==");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
