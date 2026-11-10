@@ -12,7 +12,7 @@
     "name": "Demolidor: Renascido - T1E6 – Julgamento Final - 🍿Clau",
     "description": "Assista Demolidor: Renascido - T1E6 – Julgamento Final - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaLhynGJawGWXXaEBscbhXlUqFjbqivdWwErXUnAXkBSruQBiDiNvIX8-kNYU2RwxIRvl4-Y6XPb4d4vN4HlHOH0wxSRJGQBdTqKMAufrecRVxvaH_6KprlESRN-CHOEa9J18IhdHsFERM7t0hcg1prJVdrd4K71grgXORbtffLWIF6kULNSdIaf9HwDo/w1280-h720-p-k-no-nu/x6zUbBxm14C9RPZujUImeZtBrVk.jpg"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaLhynGJawGWXXaEBscbhXlUqFjbqivdWwErXUnAXkBSruQBiDiNvIX8-kNYU2RwxIRvl4-Y6XPb4d4vN4HlHOH0wxSRJGQBdTqKMAufrecRVxvaH_6KprlESRN-CHOEa9J18IhdHsFERM7t0hcg1prJVdrd4K71grgXORbtffLWIF6kULNSdIaf9HwDo/s320/x6zUbBxm14C9RPZujUImeZtBrVk.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Demolidor: Renascido - T1E6 – Julgamento Final - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0062.speed-stream.online/demolidor-renascido-38cde01a/s1/dubbed/6/275fce78-ad74-4888-8f92-ea92b449ad4f/stream.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaLhynGJawGWXXaEBscbhXlUqFjbqivdWwErXUnAXkBSruQBiDiNvIX8-kNYU2RwxIRvl4-Y6XPb4d4vN4HlHOH0wxSRJGQBdTqKMAufrecRVxvaH_6KprlESRN-CHOEa9J18IhdHsFERM7t0hcg1prJVdrd4K71grgXORbtffLWIF6kULNSdIaf9HwDo/w1280-h720-p-k-no-nu/x6zUbBxm14C9RPZujUImeZtBrVk.jpg" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaLhynGJawGWXXaEBscbhXlUqFjbqivdWwErXUnAXkBSruQBiDiNvIX8-kNYU2RwxIRvl4-Y6XPb4d4vN4HlHOH0wxSRJGQBdTqKMAufrecRVxvaH_6KprlESRN-CHOEa9J18IhdHsFERM7t0hcg1prJVdrd4K71grgXORbtffLWIF6kULNSdIaf9HwDo/s320/x6zUbBxm14C9RPZujUImeZtBrVk.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDA2Mi5zcGVlZC1zdHJlYW0ub25saW5lL2RlbW9saWRvci1yZW5hc2NpZG8tMzhjZGUwMWEvczEvZHViYmVkLzYvMjc1ZmNlNzgtYWQ3NC00ODg4LThmOTItZWE5MmI0NDlhZDRmL3N0cmVhbS5tcDQ=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
