@@ -12,7 +12,7 @@
     "name": "Vitalina Varela (2019) - 🍿Clau",
     "description": "Assista Vitalina Varela (2019) - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi46MxNhEt2ofQ7y8IymEr2jEbB3-CZ3lXxc5MNpqrE3OL-WJDvJZ7QCTkg5uFgOng-C_au1XCxACvhfPlVWtFT8MuZPs2epkWMHPq7-TSsFOFwSMOXfdHOsCuKqfDg9RPliIHWdAjVZED3o4VgMpcYwrJNPSnvw2sbElSWq4LHE8Yobqf2kDra0z2EZ1g/w1280-h720-p-k-no-nu/Picsart_25-10-03_10-50-27-057.png"
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi46MxNhEt2ofQ7y8IymEr2jEbB3-CZ3lXxc5MNpqrE3OL-WJDvJZ7QCTkg5uFgOng-C_au1XCxACvhfPlVWtFT8MuZPs2epkWMHPq7-TSsFOFwSMOXfdHOsCuKqfDg9RPliIHWdAjVZED3o4VgMpcYwrJNPSnvw2sbElSWq4LHE8Yobqf2kDra0z2EZ1g/s400/Picsart_25-10-03_10-50-27-057.png"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Vitalina Varela (2019) - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn.playmycnvs.com/m/Vitalina%20Varela%20%28Nacional%29%20-%202019%20-%201080p.mp4" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi46MxNhEt2ofQ7y8IymEr2jEbB3-CZ3lXxc5MNpqrE3OL-WJDvJZ7QCTkg5uFgOng-C_au1XCxACvhfPlVWtFT8MuZPs2epkWMHPq7-TSsFOFwSMOXfdHOsCuKqfDg9RPliIHWdAjVZED3o4VgMpcYwrJNPSnvw2sbElSWq4LHE8Yobqf2kDra0z2EZ1g/w1280-h720-p-k-no-nu/Picsart_25-10-03_10-50-27-057.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi46MxNhEt2ofQ7y8IymEr2jEbB3-CZ3lXxc5MNpqrE3OL-WJDvJZ7QCTkg5uFgOng-C_au1XCxACvhfPlVWtFT8MuZPs2epkWMHPq7-TSsFOFwSMOXfdHOsCuKqfDg9RPliIHWdAjVZED3o4VgMpcYwrJNPSnvw2sbElSWq4LHE8Yobqf2kDra0z2EZ1g/s400/Picsart_25-10-03_10-50-27-057.png"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4ucGxheW15Y252cy5jb20vbS9WaXRhbGluYSUyMFZhcmVsYSUyMCUyOE5hY2lvbmFsJTI5JTIwLSUyMDIwMTklMjAtJTIwMTA4MHAubXA0");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
