@@ -181,59 +181,87 @@ jobs:
               cache[chave] = tipo_top
               return tipo_top
 
-          def get_all_entries():
-              entries = {}
-              start = 1
-              while True:
-                  url_feed = (
-                      f"{BASE_URL}/feeds/posts/default?alt=json"
-                      f"&max-results=150&start-index={start}"
-                  )
+          INTERVALO_FEED = float(os.environ.get("INTERVALO_FEED_SEG") or 15)   # Blogger: ~11-12 req/min por IP -> 4 req/min
+
+
+          def _get_feed_pagina(url_feed):
+              """GET com espera entre tentativas: 429/5xx -> Retry-After (ou 60s, 120s, 240s). Retorna o JSON ou None."""
+              for tentativa in range(4):
                   try:
-                      r = requests.get(url_feed, headers=HEADERS, timeout=20)
-                      if r.status_code != 200:
-                          log(f"  ⚠️ Feed {r.status_code} em start={start}")
-                          break
-                      feed_entries = r.json().get("feed", {}).get("entry", [])
-                      if not feed_entries:
-                          break
-                      for e in feed_entries:
-                          link = next(
-                              (l["href"] for l in e.get("link", [])
-                               if l.get("rel") == "alternate"),
-                              None,
-                          )
-                          if not link:
-                              continue
-                          url = link.split("?")[0].strip()
-                          labels = {
-                              c.get("term", "").strip().lower()
-                              for c in e.get("category", [])
-                              if c.get("term")
-                          }
-                          conteudo = ""
-                          for campo in ("content", "summary"):
-                              v = e.get(campo)
-                              if isinstance(v, dict) and v.get("$t"):
-                                  conteudo = v["$t"]
-                                  break
-                          entries[url] = {"labels": labels, "conteudo": conteudo}
-                      start += 150
-                      if len(feed_entries) < 150:
-                          break
+                      r = requests.get(url_feed, headers=HEADERS, timeout=30)
                   except Exception as e:
-                      log(f"  ❌ Erro feed start={start}: {e}")
+                      log(f"  ❌ Erro de rede no feed: {str(e)[:100]} (tentativa {tentativa + 1}/4)")
+                      time.sleep(10 * (tentativa + 1))
+                      continue
+                  if r.status_code == 200:
+                      try:
+                          return r.json()
+                      except Exception as e:
+                          log(f"  ❌ JSON inválido no feed: {e}")
+                          return None
+                  if r.status_code in (429, 500, 502, 503, 504):
+                      ra = r.headers.get("Retry-After", "")
+                      espera = float(ra) if ra.isdigit() else min(300, 60 * (2 ** tentativa))
+                      log(f"  ⏳ Feed HTTP {r.status_code} (tentativa {tentativa + 1}/4): aguardando {espera:.0f}s...")
+                      if tentativa < 3:
+                          time.sleep(min(espera, 300))
+                      continue
+                  log(f"  ⚠️ Feed HTTP {r.status_code}")
+                  return None
+              return None
+
+
+          def get_all_entries(conhecidas=None):
+              """Percorre o feed (mais novo primeiro). Com `conhecidas` (URLs que já estão nas filas), PARA na primeira
+              página sem nenhuma URL nova: no dia a dia é 1 requisição por hora em vez de 31. Sem `conhecidas`
+              (modo apagar/reconstruir) percorre tudo, com 15s entre páginas."""
+              entries = {}
+              start, completo = 1, True
+              while True:
+                  url_feed = (f"{BASE_URL}/feeds/posts/default?alt=json"
+                              f"&max-results=150&start-index={start}")
+                  dados = _get_feed_pagina(url_feed)
+                  if dados is None:
+                      log(f"  ⚠️ Feed falhou em start={start}; uso o que já veio.")
+                      completo = False
                       break
-              return entries
+                  feed_entries = dados.get("feed", {}).get("entry", [])
+                  if not feed_entries:
+                      break
+                  novas_na_pagina = 0
+                  for e in feed_entries:
+                      link = next((l["href"] for l in e.get("link", []) if l.get("rel") == "alternate"), None)
+                      if not link:
+                          continue
+                      url = link.split("?")[0].strip()
+                      labels = {c.get("term", "").strip().lower() for c in e.get("category", []) if c.get("term")}
+                      conteudo = ""
+                      for campo in ("content", "summary"):
+                          v = e.get(campo)
+                          if isinstance(v, dict) and v.get("$t"):
+                              conteudo = v["$t"]
+                              break
+                      if conhecidas is not None and url not in conhecidas:
+                          novas_na_pagina += 1
+                      entries[url] = {"labels": labels, "conteudo": conteudo}
+                  start += 150
+                  if len(feed_entries) < 150:
+                      break
+                  if conhecidas is not None and novas_na_pagina == 0:
+                      log("  (página inteira já conhecida: o resto do feed também; paro por aqui)")
+                      break
+                  time.sleep(INTERVALO_FEED)
+              return entries, completo
+
 
           def detectar_serie_no_conteudo(conteudo):
               if not conteudo:
                   return False, None
               c_lower = conteudo.lower()
 
-              if re.search(r"\bepis[oó]dios?\s*\d+", c_lower):
-                  n = len(re.findall(r"\bepis[oó]dios?\s*\d+", c_lower))
-                  return True, f"conteúdo: {n}× Episódio(s) N"
+              eps_n = set(re.findall(r"\bepis[oó]dios?\s*(\d+)", c_lower))
+              if len(eps_n) >= 2:   # 1 menção só pode ser título de filme ("Star Wars: Episódio 1")
+                  return True, f"conteúdo: {len(eps_n)} episódios distintos"
 
               if re.search(r"\bT\d{1,2}\s*E\d{1,3}\b", conteudo):
                   n = len(re.findall(r"\bT\d{1,2}\s*E\d{1,3}\b", conteudo))
@@ -269,6 +297,10 @@ jobs:
               if re.search(r"temporada|season", slug):
                   return {"classe": "serie", "motivos": ["URL: temporada/season"]}
 
+              # post com UM vídeo direto (JSON-LD VideoObject) e sem lista de episódios = filme (sem gastar TMDB)
+              if re.search(r'"contentUrl"\s*:\s*"https?://', conteudo or ""):
+                  return {"classe": "filme", "motivos": ["conteúdo: vídeo direto (VideoObject), sem lista de episódios"]}
+
               titulo = extrair_titulo_da_url(url)
               ano = extrair_ano_da_url(url)
               tipo = tmdb_classificar(titulo, ano)
@@ -294,52 +326,51 @@ jobs:
                       out.append(u); vistos.add(u)
               return out
 
-          def main():
-              log("Buscando feed...")
-              feed = get_all_entries()
-              log(f"📥 {len(feed)} posts.")
+          def escrever_atomico(arq, linhas):
+              tmp = arq.with_name(arq.name + ".tmp")
+              tmp.write_text("\n".join(linhas) + ("\n" if linhas else ""), encoding="utf-8")
+              tmp.replace(arq)
 
+
+          def main():
+              if APAGAR_FILAS:
+                  log("⚠️ MODO APAGAR: reconstruindo do zero.")
+                  filmes_old, series_old = [], []
+              else:
+                  filmes_old = list(dict.fromkeys(carregar_lista(ARQ_FILA_FILMES)))   # sem duplicadas, mesma ordem
+                  series_old = list(dict.fromkeys(carregar_lista(ARQ_FILA_SERIES)))
+                  log(f"Filmes atual: {len(filmes_old)} | Séries atual: {len(series_old)}")
+              set_f, set_s = set(filmes_old), set(series_old)
+
+              log("Buscando feed...")
+              feed, completo = get_all_entries(None if APAGAR_FILAS else (set_f | set_s))
+              log(f"📥 {len(feed)} posts lidos do feed" + ("" if completo else " (feed INCOMPLETO)"))
               if not feed:
-                  log("❌ Feed vazio, abortando.")
+                  log("❌ Feed vazio, abortando (as filas não foram alteradas).")
+                  return
+              if APAGAR_FILAS and not completo:
+                  log("❌ Feed incompleto no modo APAGAR: abortando para NÃO apagar as filas com dados pela metade.")
                   return
 
               if not TMDB_KEY:
                   log("⚠️ TMDB_API_KEY ausente.")
 
-              if APAGAR_FILAS:
-                  log("⚠️ MODO APAGAR: reconstruindo do zero.")
-                  filmes_old, series_old = [], []
-              else:
-                  filmes_old = carregar_lista(ARQ_FILA_FILMES)
-                  series_old = carregar_lista(ARQ_FILA_SERIES)
-                  log(f"Filmes atual: {len(filmes_old)} | Séries atual: {len(series_old)}")
-
-              set_f = set(filmes_old)
-              set_s = set(series_old)
-
-              if APAGAR_FILAS:
-                  a_class = set(feed.keys())
-              else:
-                  a_class = {u for u in feed if u not in set_f and u not in set_s}
-
-              if not a_class and not APAGAR_FILAS:
+              a_class = list(feed.keys()) if APAGAR_FILAS else [u for u in feed if u not in set_f and u not in set_s]
+              if not a_class:
                   log("✅ Nada novo.")
                   return
 
               log(f"🔍 Classificando {len(a_class)} URLs...")
-
               contagem = {"filme": 0, "serie": 0, "ambos": 0}
               resultado = {}
               total = len(a_class)
-
-              for i, url in enumerate(sorted(a_class), 1):
+              for i, url in enumerate(a_class, 1):          # ordem do feed (mais novo primeiro)
                   info_feed = feed.get(url, {})
                   labels = info_feed.get("labels", set()) if isinstance(info_feed, dict) else set()
                   conteudo = info_feed.get("conteudo", "") if isinstance(info_feed, dict) else ""
                   info = classificar_url(url, labels, conteudo)
                   resultado[url] = info
                   contagem[info["classe"]] += 1
-
                   if i % 100 == 0 or i == total:
                       log(f"  [{i}/{total}] (🎬 {contagem['filme']} | 📺 {contagem['serie']} | ❓ {contagem['ambos']})")
                       salvar_cache()
@@ -347,8 +378,7 @@ jobs:
               log("\n📊 Resultado:")
               log(f"   🎬 Filmes:   {contagem['filme']}")
               log(f"   📺 Séries:   {contagem['serie']}")
-              log(f"   ❓ Ambíguos: {contagem['ambos']}")
-
+              log(f"   ❓ Ambíguos: {contagem['ambos']} (entram nas DUAS filas)")
               for classe in ("filme", "serie", "ambos"):
                   itens = [(u, info) for u, info in resultado.items() if info["classe"] == classe][:5]
                   if itens:
@@ -357,30 +387,22 @@ jobs:
                           log(f"     • {url.split('/')[-1]}")
                           log(f"       {'; '.join(info['motivos'])}")
 
-              if APAGAR_FILAS:
-                  nf, ns = set(), set()
-              else:
-                  nf, ns = set(filmes_old), set(series_old)
+              # ambíguo -> DUAS filas: o robô de filmes só PULA série (não encaminha), então um ambíguo que seja série
+              # sumiria se ficasse só na fila de filmes. Cada robô ainda confere a página.
+              novas_f = [u for u in a_class if resultado[u]["classe"] in ("filme", "ambos")]
+              novas_s = [u for u in a_class if resultado[u]["classe"] in ("serie", "ambos")]
+              # novos NO INÍCIO (posts recentes primeiro), ordem do resto preservada, sem duplicadas
+              filme_final = list(dict.fromkeys(novas_f + filmes_old))
+              series_final = list(dict.fromkeys(novas_s + series_old))
+              escrever_atomico(ARQ_FILA_FILMES, filme_final)
+              escrever_atomico(ARQ_FILA_SERIES, series_final)
 
-              for url, info in resultado.items():
-                  if info["classe"] == "filme":
-                      nf.add(url)
-                  elif info["classe"] == "serie":
-                      ns.add(url)
-                  else:
-                      nf.add(url)
-
-              filme_final = ordenar(filmes_old, nf - set(filmes_old))
-              series_final = ordenar(series_old, ns - set(series_old))
-
-              ARQ_FILA_FILMES.write_text("\n".join(filme_final), encoding="utf-8")
-              ARQ_FILA_SERIES.write_text("\n".join(series_final), encoding="utf-8")
-
-              log(f"\n✅ Filmes fila: {len(filme_final)} URLs")
-              log(f"✅ Séries fila: {len(series_final)} URLs")
-              log(f"   (ambos vão só pra fila de filmes — robô de filmes pula série)")
-
+              f_fin, s_fin = carregar_lista(ARQ_FILA_FILMES), carregar_lista(ARQ_FILA_SERIES)   # totais lidos dos arquivos
+              log(f"\n✅ Filmes fila: {len(f_fin)} URLs únicas (+{len(f_fin) - len(filmes_old)})")
+              log(f"✅ Séries fila: {len(s_fin)} URLs únicas (+{len(s_fin) - len(series_old)})")
+              log(f"   Interseção filmes∩séries: {len(set(f_fin) & set(s_fin))} (os ambíguos)")
               salvar_cache()
+
 
           if __name__ == "__main__":
               main()
