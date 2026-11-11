@@ -10,3 +10,6 @@ https://www.vini7xgrave.site/2025/04/inix-boys.html | série inconsistente (the_
 https://www.vini7xgrave.site/2025/08/inix-saga-crepusculo-amanhecer-parte-2.html | SAGA: 2 vídeos no mesmo post -> a_crepusculo_amanhecer_parte_2_2012_1.html [sequencial], abrir_player.html [texto do link]
 https://www.vini7xgrave.site/2025/05/inix-saga-crepusculo-eclipse-2010.html | SAGA: 2 vídeos no mesmo post -> a_crepusculo_eclipse_1.html [sequencial], abrir_player.html [texto do link]
 https://www.vini7xgrave.site/2025/05/inix-saga-crepusculo-lua-nova-2009.html | SAGA: 2 vídeos no mesmo post -> a_crepusculo_lua_nova_1.html [sequencial], abrir_player.html [texto do link]
+https://www.vini7xgrave.site/2026/01/inix-one-piece-serie-2023.html | série inconsistente (one_piece_a_serie): T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
+https://www.vini7xgrave.site/2026/01/inix-dexter-2006.html | URL dizia 10, mas texto dizia 11 (usei 11) - link: https://viniraveon.blogspot.com/2026/03/inix-dexter-tp8e10_5.html
+https://www.vini7xgrave.site/2026/03/inix-estacao-19-2018.html | URL dizia 5, mas texto dizia 6 (usei 6) - link: https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp4e05_3.html
