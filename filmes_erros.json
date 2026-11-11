@@ -16,6 +16,14 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T00:36:28+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/06/inix-indiana-jones-e-ultima-cruzada-1989.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
@@ -40,25 +48,25 @@
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-11T00:26:31+00:00",
-      "duracao_min": 9.3
+      "quando": "2026-11-11T00:36:57+00:00",
+      "duracao_min": 9.4
     },
     "acumulado": {
-      "requisicoes": 131,
-      "ok": 128,
-      "429": 2,
+      "requisicoes": 164,
+      "ok": 160,
+      "429": 3,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2,
+      "falhas_definitivas": 3,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 2,
-      "proxy_hit": 2,
-      "pausas_evitadas": 395,
+      "proxy_fallback": 3,
+      "proxy_hit": 3,
+      "pausas_evitadas": 494,
       "http_realizados": 1,
-      "playwright_skip": 4,
-      "proxmint_listas": 2,
+      "playwright_skip": 5,
+      "proxmint_listas": 3,
       "link_em_a_href": 2,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
