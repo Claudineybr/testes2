@@ -67,6 +67,7 @@ jobs:
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
           import requests, sys, os, json, time, re, random, datetime, email.utils
+          import html as html_lib
           from pathlib import Path
           from html import escape as _esc
 
@@ -477,6 +478,26 @@ jobs:
                   f.write(linha.strip() + "\n")
 
 
+          ARQ_REVISAR = Path("revisar.txt")
+          _REVISAR_VISTOS = set()
+
+
+          def registrar_revisao(url, motivo):
+              """Arquivo unificado revisar.txt: uma linha 'URL | motivo' por caso que precisa de olho humano."""
+              motivo = re.sub(r"\s+", " ", str(motivo)).strip()
+              linha = f"{url} | {motivo}"
+              try:
+                  if not _REVISAR_VISTOS and ARQ_REVISAR.exists():
+                      _REVISAR_VISTOS.update(l.strip() for l in ARQ_REVISAR.read_text(encoding="utf-8").splitlines())
+                  if linha in _REVISAR_VISTOS:
+                      return
+                  _REVISAR_VISTOS.add(linha)
+                  with open(ARQ_REVISAR, "a", encoding="utf-8") as f:
+                      f.write(linha + "\n")
+              except Exception as e:
+                  log(f"    (não consegui gravar revisar.txt: {e})")
+
+
           def ler_ld(soup):
               for s in soup.find_all("script", type="application/ld+json"):
                   try:
@@ -526,7 +547,7 @@ jobs:
               ano = ano_da_url(url)
               if ano:
                   return ano
-              m = re.search(r"\(\s*((?:19|20)\d{2})\s*\)", str(titulo_bruto or ""))
+              m = re.search(r"[(\[]\s*((?:19|20)\d{2})\s*[)\]]", str(titulo_bruto or ""))
               return m.group(1) if m else ""
 
 
@@ -558,6 +579,9 @@ jobs:
                   t = ""
               t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
               t = tirar_lixo_do_site(t)
+              # Site: "Nome [2021] ‧ Ação/Comédia" -> fica só "Nome" (o ano é lido à parte por extrair_ano)
+              t = re.sub(r"\s*\[\s*(?:19|20)\d{2}\s*\].*$", "", t)
+              t = re.sub(r"\s*[\u2027\u00b7\u2022]\s*.*$", "", t).strip(" -–—|:")
               for _ in range(3):
                   novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
                   if novo == t:
@@ -567,7 +591,7 @@ jobs:
               t = re.sub(
                   r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
                   "", t, flags=re.I)
-              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
+              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo|hdcam|hdts|webrip|cam))+$", "", t, flags=re.I)
               t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
               t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
               ano_url = ano_da_url(url)
@@ -793,8 +817,26 @@ jobs:
                       .replace("__B64__", b64))
 
 
+          def reparar_link(link):
+              """Conserta links com defeito simples ('ttps://', 'https:https://', '//host', host sem https).
+              Devolve o link corrigido, ou None se não for uma URL aproveitável (texto solto, '!', link cortado)."""
+              if not isinstance(link, str):
+                  return None
+              l = link.strip().strip("\"'")
+              l = re.sub(r"^https?:(?=https?://)", "", l, flags=re.I)
+              l = re.sub(r"^h?ttp(s?)://", lambda m: "http" + m.group(1) + "://", l, flags=re.I)
+              if l.startswith("//"):
+                  l = "https:" + l
+              elif not re.match(r"https?://", l, re.I) and re.match(r"[a-z0-9-]+(?:\.[a-z0-9-]+)+/", l, re.I):
+                  l = "https://" + l
+              if re.fullmatch(r"https?://[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+(?::\d+)?(?:[/?#].*)?", l):
+                  return l
+              return None
+
+
           def salvar_html(destino, nome_json, link, capa):
               destino = Path(destino)
+              link = reparar_link(link) or link
               if not link or not str(link).startswith("http"):
                   raise ValueError(f"link inválido para {destino.name}: {link!r}")
               escrever_atomico(destino, montar_html(destino.name, nome_json, link, capa))
@@ -817,6 +859,10 @@ jobs:
                   if not m:
                       continue
                   link = m.group(1)
+                  fix = reparar_link(link)
+                  if fix is None:
+                      continue   # link impossível de aproveitar: o robô refaz o arquivo quando achar o post
+                  link = fix
                   if link in INDICE:
                       duplicados += 1
                   INDICE[link] = f
@@ -839,6 +885,14 @@ jobs:
                   return True
               return nome_atual.startswith(stem + "_") and bool(
                   re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
+
+
+          def nome_fora_do_padrao(nome):
+              """True se o nome do arquivo tem lixo depois do ano (gênero, legendado, hdcam...)."""
+              base = re.sub(r"\.html?$", "", str(nome or ""), flags=re.I)
+              if re.search(r"_(?:19|20)\d{2}_(?!\d{1,2}$)[a-z]", base):
+                  return True
+              return bool(re.search(r"(?:^|_)(?:legendado|hdcam|hdts|webrip)(?:_|$)", base))
 
 
           _EP_STEM = re.compile(r"^(.*)_t(\d+)e(?:p)?(\d+)$")
@@ -905,7 +959,7 @@ jobs:
               link = ld.get("contentUrl")
               d["nome"], d["capa"] = nome, capa
               d["link"] = link if isinstance(link, str) and link.startswith("http") else None
-              d["l"] = d["link"] is None
+              d["l"] = d["link"] is None or reparar_link(link) != link
               d["n"] = bool(
                   len(nome.strip()) < 3
                   or re.search(r"https?:|\.html?\b|\bNone\b", nome)
@@ -937,6 +991,8 @@ jobs:
 
 
           def upsert(stem, nome_json, link, capa, modo, ind="    "):
+              if link:
+                  link = reparar_link(link)   # None => tratado como "sem link" (nunca grava link quebrado)
               ep = chave_ep_stem(stem) is not None
               existente = INDICE.get(link) if link else None
               if existente is not None and not existente.exists():
@@ -949,7 +1005,9 @@ jobs:
 
               if existente is not None:
                   d = checar_defeitos(existente)
-                  renomear = not nome_ok(existente.name, stem)
+                  # Filmes: só renomeia se o nome atual estiver FORA do padrão (gênero, 'legendado'...).
+                  # Se vários posts usam o mesmo vídeo, o arquivo NÃO fica trocando de nome a cada run.
+                  renomear = not nome_ok(existente.name, stem) and (ep or nome_fora_do_padrao(existente.name))
                   log(f"{ind}(Arquivo existente: {existente.name})")
                   if modo == "apenas_baixar":
                       log(f"{ind}Modo Apenas Baixar: ignorando conserto.")
@@ -1108,31 +1166,73 @@ jobs:
               return slug
 
 
-          def _salvar_multifilme(stem_base, titulo_base, ano_base, links, capa, pendentes):
+          _GENERICO_LINK = re.compile(
+              r"^(?:filme|parte|part|vol(?:ume)?|cd|link|op[çc][ãa]o|player|assistir|download|baixar|clique aqui|"
+              r"video|vídeo|fonte|source|aqui|filmes)?\s*\d*$", re.I)
+
+
+          def base_da_saga(titulo):
+              """'Saga Tinker Bell' / 'Tinker Bell - Coleção' -> 'Tinker Bell' (para o nome dos arquivos)."""
+              t = re.sub(r"\b(?:saga|cole[çc][ãa]o|colet[âa]nea|quadrilogia|duologia|trilogia|box|franquia|completa?)\b",
+                         " ", str(titulo or ""), flags=re.I)
+              t = re.sub(r"\s+", " ", t).strip(" -–—|:")
+              return t if len(t) >= 3 else str(titulo or "").strip()
+
+
+          def titulo_do_embed(link):
+              """Player do tankie.tube: o <title> da página traz o nome certo do filme
+              ('ViNi7x - Homem-Formiga e a Vespa: Quantumania [ 2023 ] ‧ Ação/Aventura - TankieTube').
+              Devolve (titulo_limpo, ano) ou ("", ""). Outro site que não o Blogger: não usa a fila global de 429."""
+              if not re.match(r"https?://(?:www\.)?tankie\.tube/", str(link or "")):
+                  return "", ""
+              for tentativa in range(2):
+                  try:
+                      r = requests.get(link, headers=HEADERS, timeout=20)
+                      if r.status_code == 200:
+                          m = re.search(r"<title[^>]*>(.*?)</title>", r.text, re.I | re.S)
+                          if not m:
+                              return "", ""
+                          bruto = html_lib.unescape(m.group(1)).strip()
+                          bruto = re.sub(r"\s*[-–—|]\s*Tankie\s*Tube\s*$", "", bruto, flags=re.I)
+                          titulo = limpar_titulo_bruto(bruto, "", fallback=False)
+                          return (titulo, extrair_ano(bruto, "")) if len(titulo) >= 3 else ("", "")
+                  except Exception:
+                      pass
+                  time.sleep(3)
+              return "", ""
+
+
+          def _salvar_multifilme(stem_base, titulo_base, ano_base, links, capa, pendentes, url=""):
               METRICAS["multifilme_paginas"] += 1
-              log(f"    (Página com {len(links)} vídeos — salvando múltiplos arquivos)")
+              base = base_da_saga(titulo_base)
+              slug_base = fazer_slug(base, "")
+              log(f"    (SAGA: página com {len(links)} vídeos)")
+              nomes = []
 
               for idx, item in enumerate(links):
                   link_unico = item["link"]
                   texto = item["texto"].strip()
 
-                  if not texto or texto.lower() in ("filme", "assistir", "download", "baixar", "clique aqui", "player", "video", "vídeo", "fonte", "source", "aqui", "filmes"):
-                      texto = titulo_base if idx == 0 else f"{titulo_base} ({idx + 1})"
-
-                  ano_m = re.search(r"((?:19|20)\d{2})", texto)
-                  ano_extraido = ano_m.group(1) if ano_m else (ano_base if idx == 0 else "")
-
-                  slug = fazer_slug(texto, "")
-                  if ano_extraido and not re.search(r"\d{4}", texto):
-                      stem = f"{slug}_{ano_extraido}"
+                  # 1) nome certo do filme, lido do próprio player; 2) texto do link, se for um título de verdade;
+                  # 3) título do post + número sequencial (tinker_bell_1, tinker_bell_2...)
+                  if idx:
+                      time.sleep(2)
+                  tit, ano = titulo_do_embed(link_unico)
+                  origem = "player"
+                  if not tit and texto and not _GENERICO_LINK.match(texto):
+                      tit = limpar_titulo_bruto(texto, "", fallback=False)
+                      ano = extrair_ano(texto, "") if len(tit) >= 3 else ""
+                      origem = "texto do link"
+                  if len(tit) >= 3:
+                      slug = fazer_slug(tit, "")
+                      stem = f"{slug}_{ano}" if ano and not re.search(r"\d{4}", tit) else slug
+                      nome_json = f"{tit} ({ano}) - {SUFIXO}" if ano else f"{tit} - {SUFIXO}"
                   else:
-                      stem = slug
-
-                  titulo_json = limpar_titulo_bruto(texto, "", fallback=False)
-                  if len(titulo_json) < 3:
-                      titulo_json = texto
-
-                  nome_json = f"{titulo_json} - {SUFIXO}"
+                      origem = "sequencial"
+                      stem = f"{slug_base}_{idx + 1}"
+                      nome_json = f"{base} {idx + 1} - {SUFIXO}"
+                  nomes.append(f"{stem}.html [{origem}]")
+                  log(f"      Vídeo {idx + 1}: {stem}.html (nome vindo de: {origem})")
 
                   res = upsert(stem, nome_json, link_unico, capa, MODO, ind="      ")
                   if res == "sem_link":
@@ -1143,6 +1243,7 @@ jobs:
                                             "url": link_unico, "capa": capa, "tentativas": 1})
                   elif res in ("novo", "corrigido"):
                       METRICAS["multifilme_arquivos"] += 1
+              registrar_revisao(url, f"SAGA: {len(links)} vídeos no mesmo post -> " + ", ".join(nomes))
 
 
           async def processar_filme(ctx, url, pendentes=None):
@@ -1229,7 +1330,7 @@ jobs:
                   nome_json = f"{titulo} - {SUFIXO}"
 
               if links_todos and len(links_todos) > 1:
-                  _salvar_multifilme(stem, titulo, ano, links_todos, capa, pendentes)
+                  _salvar_multifilme(stem, titulo, ano, links_todos, capa, pendentes, url)
                   return "novo", None
 
               log(f"    Título: '{titulo}' | ano: {ano or '-'} | stem: {stem} | link: {'SIM' if link else 'NÃO'}")
@@ -1386,6 +1487,7 @@ jobs:
           ok=0
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then ok=1; break; fi
+            mkdir -p .git/info && echo "revisar.txt merge=union" >> .git/info/attributes
             git pull origin main --no-rebase -X ours --no-edit
             git add -A
             git reset .github/ 2>/dev/null || true

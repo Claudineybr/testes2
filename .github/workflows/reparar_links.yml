@@ -1,0 +1,101 @@
+name: Reparar Links de Vídeo
+
+# Conserta nos .html já existentes os links de vídeo com defeito simples:
+#   ttp://  ttps://  ->  http://  https://      |  https:https://x -> https://x
+#   //site.com/v -> https://site.com/v           |  site.com/v      -> https://site.com/v
+# Links que não têm conserto (texto solto, "!", link cortado) NÃO são tocados: ficam listados no relatório
+# e o Filmes/Séries em modo "apenas_consertar" refaz esses arquivos quando achar o post.
+# Nunca apaga nem renomeia arquivo. O Python está EMBUTIDO abaixo.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reparar-links
+  cancel-in-progress: false
+
+jobs:
+  reparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v5
+
+      - name: Consertar links
+        run: |
+          cat > /tmp/reparar_links.py << 'PYEOF'
+          import re
+          from pathlib import Path
+
+
+          def reparar_link(link):
+              if not isinstance(link, str):
+                  return None
+              l = link.strip().strip("\"'")
+              l = re.sub(r"^https?:(?=https?://)", "", l, flags=re.I)
+              l = re.sub(r"^h?ttp(s?)://", lambda m: "http" + m.group(1) + "://", l, flags=re.I)
+              if l.startswith("//"):
+                  l = "https:" + l
+              elif not re.match(r"https?://", l, re.I) and re.match(r"[a-z0-9-]+(?:\.[a-z0-9-]+)+/", l, re.I):
+                  l = "https://" + l
+              if re.fullmatch(r"https?://[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+(?::\d+)?(?:[/?#].*)?", l):
+                  return l
+              return None
+
+
+          consertados, sem_conserto, ok = [], [], 0
+          for f in sorted(Path(".").glob("*.html")):
+              try:
+                  txt = f.read_text(encoding="utf-8")
+              except Exception:
+                  continue
+              m = re.search(r'"contentUrl":\s*"([^"]*)"', txt)
+              if not m:
+                  continue
+              bruto = m.group(1)
+              novo = reparar_link(bruto)
+              if novo == bruto:
+                  ok += 1
+              elif novo is None:
+                  sem_conserto.append((f.name, bruto))
+              else:
+                  f.write_text(txt.replace(bruto, novo), encoding="utf-8")
+                  consertados.append((f.name, bruto, novo))
+
+          linhas = [f"OK: {ok} | consertados: {len(consertados)} | sem conserto: {len(sem_conserto)}", ""]
+          linhas += ["=== CONSERTADOS ==="] + [f"{n}\n   antes : {a}\n   depois: {b}" for n, a, b in consertados]
+          linhas += ["", "=== SEM CONSERTO (o robô refaz quando achar o post) ==="] + [f"{n}  ->  {a[:120]}" for n, a in sem_conserto]
+          Path("/tmp/relatorio_links.txt").write_text("\n".join(linhas), encoding="utf-8")
+          print("\n".join(linhas))
+          PYEOF
+          python3 /tmp/reparar_links.py
+
+      - name: Commit e push (só se mudou algo)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ok=0
+          for i in 1 2 3 4 5; do
+            git add -- '*.html'
+            if git diff --cached --quiet; then echo "Nada para commitar."; ok=1; break; fi
+            git diff --cached --shortstat
+            git commit -m "fix: repara links de vídeo com defeito"
+            if git push origin HEAD:main; then ok=1; break; fi
+            git fetch origin main
+            git reset --hard origin/main
+            python3 /tmp/reparar_links.py > /dev/null
+            sleep $((RANDOM % 10 + 5))
+          done
+          if [ "$ok" != "1" ]; then echo "::error::Não consegui dar push"; exit 1; fi
+
+      - name: Guardar relatório
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-links
+          path: /tmp/relatorio_links.txt
+          if-no-files-found: ignore

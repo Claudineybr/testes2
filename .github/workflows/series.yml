@@ -1,4 +1,4 @@
-name: Mega Extrair Series (Lotes de 100)
+name: Mega Extrair Series (Lotes de 25)
 
 on:
   schedule:
@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       lote:
-        description: 'URLs para visitar por run'
+        description: 'URLs para visitar por run (máximo 25)'
         required: false
-        default: '100'
+        default: '25'
         type: string
       reprocessar_tudo:
         description: 'Recomeçar do zero? (apaga só o progresso; a fila NUNCA é apagada)'
@@ -59,7 +59,7 @@ jobs:
 
       - name: Extrair Series e Retentar Falhas
         env:
-          LOTE_SIZE: ${{ inputs.lote || '100' }}
+          LOTE_SIZE: ${{ inputs.lote || '25' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
           INTERVALO_MIN_SEG: '15'
           DELAY_ENTRE_SEG: '20'
@@ -392,7 +392,7 @@ jobs:
           MARCADOR_FORMATO = 'data-rave="2"'
 
           MAX_TENTATIVAS = 6
-          LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 100)
+          LOTE_SIZE = min(int(os.environ.get("LOTE_SIZE") or 25), 25)   # teto fixo: no máximo 25 links por run
           MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
           FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
           TEMPO_MAX_MIN = int(os.environ.get("TEMPO_MAX_MIN") or 345)
@@ -481,6 +481,26 @@ jobs:
                   f.write(linha.strip() + "\n")
 
 
+          ARQ_REVISAR = Path("revisar.txt")
+          _REVISAR_VISTOS = set()
+
+
+          def registrar_revisao(url, motivo):
+              """Arquivo unificado revisar.txt: uma linha 'URL | motivo' por caso que precisa de olho humano."""
+              motivo = re.sub(r"\s+", " ", str(motivo)).strip()
+              linha = f"{url} | {motivo}"
+              try:
+                  if not _REVISAR_VISTOS and ARQ_REVISAR.exists():
+                      _REVISAR_VISTOS.update(l.strip() for l in ARQ_REVISAR.read_text(encoding="utf-8").splitlines())
+                  if linha in _REVISAR_VISTOS:
+                      return
+                  _REVISAR_VISTOS.add(linha)
+                  with open(ARQ_REVISAR, "a", encoding="utf-8") as f:
+                      f.write(linha + "\n")
+              except Exception as e:
+                  log(f"    (não consegui gravar revisar.txt: {e})")
+
+
           def ler_ld(soup):
               for s in soup.find_all("script", type="application/ld+json"):
                   try:
@@ -530,7 +550,7 @@ jobs:
               ano = ano_da_url(url)
               if ano:
                   return ano
-              m = re.search(r"\(\s*((?:19|20)\d{2})\s*\)", str(titulo_bruto or ""))
+              m = re.search(r"[(\[]\s*((?:19|20)\d{2})\s*[)\]]", str(titulo_bruto or ""))
               return m.group(1) if m else ""
 
 
@@ -562,6 +582,9 @@ jobs:
                   t = ""
               t = unicodedata.normalize("NFKC", t).replace(SUFIXO, "")
               t = tirar_lixo_do_site(t)
+              # Site: "Nome [2021] ‧ Ação/Comédia" -> fica só "Nome" (o ano é lido à parte por extrair_ano)
+              t = re.sub(r"\s*\[\s*(?:19|20)\d{2}\s*\].*$", "", t)
+              t = re.sub(r"\s*[\u2027\u00b7\u2022]\s*.*$", "", t).strip(" -–—|:")
               for _ in range(3):
                   novo = _PREFIXO.sub("", t, count=1).strip(" -–—|:_")
                   if novo == t:
@@ -571,7 +594,7 @@ jobs:
               t = re.sub(
                   r"\s*[-–—|]\s*(?:assistir|online|filme|completo|dublado|legendado|hd|temporada|serie|série|download).*$",
                   "", t, flags=re.I)
-              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo))+$", "", t, flags=re.I)
+              t = re.sub(r"(?:\s+(?:dublado|legendado|online|completo|hdcam|hdts|webrip|cam))+$", "", t, flags=re.I)
               t = re.sub(r"\s*[-–—]\s*(?:\d+\s*[ªº°ao]?\s*)?(?:temporada|season)\b.*$", "", t, flags=re.I)
               t = re.sub(r"\s+\d+\s*[ªº°ao]\s*temporada\b.*$", "", t, flags=re.I)
               ano_url = ano_da_url(url)
@@ -758,8 +781,26 @@ jobs:
                       .replace("__B64__", b64))
 
 
+          def reparar_link(link):
+              """Conserta links com defeito simples ('ttps://', 'https:https://', '//host', host sem https).
+              Devolve o link corrigido, ou None se não for uma URL aproveitável (texto solto, '!', link cortado)."""
+              if not isinstance(link, str):
+                  return None
+              l = link.strip().strip("\"'")
+              l = re.sub(r"^https?:(?=https?://)", "", l, flags=re.I)
+              l = re.sub(r"^h?ttp(s?)://", lambda m: "http" + m.group(1) + "://", l, flags=re.I)
+              if l.startswith("//"):
+                  l = "https:" + l
+              elif not re.match(r"https?://", l, re.I) and re.match(r"[a-z0-9-]+(?:\.[a-z0-9-]+)+/", l, re.I):
+                  l = "https://" + l
+              if re.fullmatch(r"https?://[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+(?::\d+)?(?:[/?#].*)?", l):
+                  return l
+              return None
+
+
           def salvar_html(destino, nome_json, link, capa):
               destino = Path(destino)
+              link = reparar_link(link) or link
               if not link or not str(link).startswith("http"):
                   raise ValueError(f"link inválido para {destino.name}: {link!r}")
               escrever_atomico(destino, montar_html(destino.name, nome_json, link, capa))
@@ -782,6 +823,10 @@ jobs:
                   if not m:
                       continue
                   link = m.group(1)
+                  fix = reparar_link(link)
+                  if fix is None:
+                      continue   # link impossível de aproveitar: o robô refaz o arquivo quando achar o post
+                  link = fix
                   if link in INDICE:
                       duplicados += 1
                   INDICE[link] = f
@@ -804,6 +849,14 @@ jobs:
                   return True
               return nome_atual.startswith(stem + "_") and bool(
                   re.fullmatch(r"\d{1,2}\.html", nome_atual[len(stem) + 1:]))
+
+
+          def nome_fora_do_padrao(nome):
+              """True se o nome do arquivo tem lixo depois do ano (gênero, legendado, hdcam...)."""
+              base = re.sub(r"\.html?$", "", str(nome or ""), flags=re.I)
+              if re.search(r"_(?:19|20)\d{2}_(?!\d{1,2}$)[a-z]", base):
+                  return True
+              return bool(re.search(r"(?:^|_)(?:legendado|hdcam|hdts|webrip)(?:_|$)", base))
 
 
           _EP_STEM = re.compile(r"^(.*)_t(\d+)e(?:p)?(\d+)$")
@@ -885,7 +938,7 @@ jobs:
               link = ld.get("contentUrl")
               d["nome"], d["capa"] = nome, capa
               d["link"] = link if isinstance(link, str) and link.startswith("http") else None
-              d["l"] = d["link"] is None
+              d["l"] = d["link"] is None or reparar_link(link) != link
               d["n"] = bool(
                   len(nome.strip()) < 3
                   or re.search(r"https?:|\.html?\b|\bNone\b", nome)
@@ -917,6 +970,8 @@ jobs:
 
 
           def upsert(stem, nome_json, link, capa, modo, ind="    "):
+              if link:
+                  link = reparar_link(link)   # None => tratado como "sem link" (nunca grava link quebrado)
               ep = chave_ep_stem(stem) is not None
               existente = INDICE.get(link) if link else None
               if existente is not None and not existente.exists():
@@ -929,7 +984,9 @@ jobs:
 
               if existente is not None:
                   d = checar_defeitos(existente)
-                  renomear = not nome_ok(existente.name, stem)
+                  # Filmes: só renomeia se o nome atual estiver FORA do padrão (gênero, 'legendado'...).
+                  # Se vários posts usam o mesmo vídeo, o arquivo NÃO fica trocando de nome a cada run.
+                  renomear = not nome_ok(existente.name, stem) and (ep or nome_fora_do_padrao(existente.name))
                   log(f"{ind}(Arquivo existente: {existente.name})")
                   if modo == "apenas_baixar":
                       log(f"{ind}Modo Apenas Baixar: ignorando conserto.")
@@ -1155,16 +1212,26 @@ jobs:
                   vistos.add(href_abs)
 
                   temp_ep, num = None, None
+                  num_href = num_texto = None
                   if m_href_te:
                       temp_ep = int(m_href_te.group(1))
-                      num = int(m_href_te.group(2))
+                      num_href = int(m_href_te.group(2))      # sufixos _N no fim da URL (ex.: tp1e08_1) são ignorados
                       METRICAS["episodios_tp_encontrados"] += 1
                   elif m_href_ep:
-                      num = int(m_href_ep.group(1))
-                  elif m_texto_ep:
-                      num = int(m_texto_ep.group(1))
+                      num_href = int(m_href_ep.group(1))
+                  if m_texto_ep:
+                      num_texto = int(m_texto_ep.group(1))
                   elif m_texto_num:
-                      num = int(m_texto_num.group(1))
+                      num_texto = int(m_texto_num.group(1))
+
+                  if num_href is not None and num_texto is not None and num_href != num_texto:
+                      # O admin erra o endereço, mas o texto do link está certo: o TEXTO vence.
+                      log(f"    [⚠️] URL dizia {num_href}, mas texto dizia {num_texto}: usando {num_texto} ({href_abs})")
+                      evento("href_vs_texto", url, href=href_abs, numero_href=num_href, numero_texto=num_texto, texto=texto[:80])
+                      registrar_revisao(url, f"URL dizia {num_href}, mas texto dizia {num_texto} (usei {num_texto}) - link: {href_abs}")
+                      num = num_texto
+                  else:
+                      num = num_href if num_href is not None else num_texto
 
                   if temp_ep and temp_ep != temporada:
                       temporada, ultimo_ep = temp_ep, 0
@@ -1314,6 +1381,7 @@ jobs:
                   evento("serie_inconsistente", url_serie, slug=slug, problemas=problemas,
                          encontrado={f"T{t}": n for t, n in sorted(contagem.items())})
                   anexar_linha(ARQ_INCONSIST, f"{url_serie}  # {slug}: " + "; ".join(problemas))
+                  registrar_revisao(url_serie, f"série inconsistente ({slug}): " + "; ".join(problemas))
                   log("    Nenhum arquivo foi criado/alterado/removido para esta série.")
                   return "inconsistente"
 
@@ -1493,6 +1561,7 @@ jobs:
           ok=0
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then ok=1; break; fi
+            mkdir -p .git/info && echo "revisar.txt merge=union" >> .git/info/attributes
             git pull origin main --no-rebase -X ours --no-edit
             git add -A
             git reset .github/ 2>/dev/null || true
@@ -1511,7 +1580,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_CHAIN }}
           REPO: ${{ github.repository }}
-          LOTE_IN: ${{ inputs.lote || '100' }}
+          LOTE_IN: ${{ inputs.lote || '25' }}
           MODO_IN: ${{ inputs.modo || 'baixar_e_consertar' }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "PAT_CHAIN não configurado: sem auto-chain."; exit 0; fi
