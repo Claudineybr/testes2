@@ -12,7 +12,7 @@
     "name": "Task: Unidade Especial - T1E5 – Vagabundos - 🍿Clau",
     "description": "Assista Task: Unidade Especial - T1E5 – Vagabundos - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png"
+        "https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Task: Unidade Especial - T1E5 – Vagabundos - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0023.l1s0-cdn-3123123.com/task-unidade-especial-39998ec5/s1/dubbed/5/1b6e2303-dc51-483a-b892-b882cb636b1a/stream.mp4?type=serie&expires=1774035642&signature=a855f29ae5945935317f1df1934b982e67d3da61c46e9b1456594f8253a6b811" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAyMy5sMXMwLWNkbi0zMTIzMTIzLmNvbS90YXNrLXVuaWRhZGUtZXNwZWNpYWwtMzk5OThlYzUvczEvZHViYmVkLzUvMWI2ZTIzMDMtZGM1MS00ODNhLWI4OTItYjg4MmNiNjM2YjFhL3N0cmVhbS5tcDQ/dHlwZT1zZXJpZSZleHBpcmVzPTE3NzQwMzU2NDImc2lnbmF0dXJlPWE4NTVmMjlhZTU5NDU5MzUzMTdmMWRmMTkzNGI5ODJlNjdkM2RhNjFjNDZlOWIxNDU2NTk0ZjgyNTNhNmI4MTE=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

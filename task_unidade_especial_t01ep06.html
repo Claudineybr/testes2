@@ -12,7 +12,7 @@
     "name": "Task: Unidade Especial - T1E6 – Além das ideias de certo e errado, existe um rio - 🍿Clau",
     "description": "Assista Task: Unidade Especial - T1E6 – Além das ideias de certo e errado, existe um rio - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png"
+        "https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Task: Unidade Especial - T1E6 – Além das ideias de certo e errado, existe um rio - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0023.l1s0-cdn-3123123.com/task-unidade-especial-39998ec5/s1/dubbed/6/510f6bfc-6d96-41b9-9c67-f704d39d2082/stream.mp4?type=serie&expires=1774035657&signature=41dd9a6795cf6ba66a92d1b57ee66ff77e32e27337057ae8c0edf0f3dca6a798" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAyMy5sMXMwLWNkbi0zMTIzMTIzLmNvbS90YXNrLXVuaWRhZGUtZXNwZWNpYWwtMzk5OThlYzUvczEvZHViYmVkLzYvNTEwZjZiZmMtNmQ5Ni00MWI5LTljNjctZjcwNGQzOWQyMDgyL3N0cmVhbS5tcDQ/dHlwZT1zZXJpZSZleHBpcmVzPTE3NzQwMzU2NTcmc2lnbmF0dXJlPTQxZGQ5YTY3OTVjZjZiYTY2YTkyZDFiNTdlZTY2ZmY3N2UzMmUyNzMzNzA1N2FlOGMwZWRmMGYzZGNhNmE3OTg=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>

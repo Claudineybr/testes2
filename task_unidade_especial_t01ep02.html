@@ -12,7 +12,7 @@
     "name": "Task: Unidade Especial - T1E2 – Declaração Familiar - 🍿Clau",
     "description": "Assista Task: Unidade Especial - T1E2 – Declaração Familiar - 🍿Clau",
     "thumbnailUrl": [
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png"
+        "https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"
     ],
     "uploadDate": "2020-01-01T00:00:00+00:00",
     "inLanguage": "pt",
@@ -23,10 +23,28 @@
 <title>Task: Unidade Especial - T1E2 – Declaração Familiar - 🍿Clau</title>
 <style>
 body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-video { width: 100%; height: 100%; outline: none; }
+video { width: 100%; height: 100%; outline: none; background: #000; }
 </style>
 </head>
 <body>
-<video src="https://cdn-0023.l1s0-cdn-3123123.com/task-unidade-especial-39998ec5/s1/dubbed/2/0c7e2a8d-62f2-4ed2-8ded-3036762b2a77/stream.mp4?type=serie&expires=1774035549&signature=1ed97c4729455da600e7e3b6c1550b2f74fafff7c11834bcdf5ee610394d9415" poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisldTSPR5qQSsrqZDyfYV81HFSq4Pko5u8xpbzKJ7V05CZAaCkfxG550uqbp2xlCxukxcVL4i2so2XxNri-wqqUO0yuVLLznfFes1rdmg7Ywq8pWE8FXwWQfcyrNiAPlyI3_ngX12x7-KGzAVPfjiTWPMP3HdwelG4pn729xMfH05-hdWVbQyaIsgMkQg/w144-h144-p-k-no-nu/favicon.png" controls autoplay playsinline></video>
+<video id="v" data-rave="2" controls playsinline preload="none" poster="https://image.tmdb.org/t/p/original/bwzERPU6WzK3oG8YzAgYQRlwxaV.jpg"></video>
+<script>
+(function () {
+  var v = document.getElementById("v");
+  var u = atob("aHR0cHM6Ly9jZG4tMDAyMy5sMXMwLWNkbi0zMTIzMTIzLmNvbS90YXNrLXVuaWRhZGUtZXNwZWNpYWwtMzk5OThlYzUvczEvZHViYmVkLzIvMGM3ZTJhOGQtNjJmMi00ZWQyLThkZWQtMzAzNjc2MmIyYTc3L3N0cmVhbS5tcDQ/dHlwZT1zZXJpZSZleHBpcmVzPTE3NzQwMzU1NDkmc2lnbmF0dXJlPTFlZDk3YzQ3Mjk0NTVkYTYwMGU3ZTNiNmMxNTUwYjJmNzRmYWZmZjdjMTE4MzRiY2RmNWVlNjEwMzk0ZDk0MTU=");
+  var iniciado = false;
+  function iniciar() {
+    if (iniciado) { return; }
+    iniciado = true;
+    v.src = u;
+    v.load();
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () {}); }
+  }
+  v.addEventListener("click", iniciar);
+  v.addEventListener("touchend", iniciar);
+  v.addEventListener("play", iniciar);
+})();
+</script>
 </body>
 </html>
