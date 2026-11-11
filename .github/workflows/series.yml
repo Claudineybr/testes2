@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       lote:
-        description: 'URLs para visitar por run'
+        description: 'URLs para visitar por run (máximo 25)'
         required: false
         default: '25'
         type: string
@@ -392,7 +392,7 @@ jobs:
           MARCADOR_FORMATO = 'data-rave="2"'
 
           MAX_TENTATIVAS = 6
-          LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 25)
+          LOTE_SIZE = min(int(os.environ.get("LOTE_SIZE") or 25), 25)   # teto fixo: no máximo 25 links por run
           MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
           FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
           TEMPO_MAX_MIN = int(os.environ.get("TEMPO_MAX_MIN") or 345)
@@ -479,6 +479,26 @@ jobs:
           def anexar_linha(arq, linha):
               with open(arq, "a", encoding="utf-8") as f:
                   f.write(linha.strip() + "\n")
+
+
+          ARQ_REVISAR = Path("revisar.txt")
+          _REVISAR_VISTOS = set()
+
+
+          def registrar_revisao(url, motivo):
+              """Arquivo unificado revisar.txt: uma linha 'URL | motivo' por caso que precisa de olho humano."""
+              motivo = re.sub(r"\s+", " ", str(motivo)).strip()
+              linha = f"{url} | {motivo}"
+              try:
+                  if not _REVISAR_VISTOS and ARQ_REVISAR.exists():
+                      _REVISAR_VISTOS.update(l.strip() for l in ARQ_REVISAR.read_text(encoding="utf-8").splitlines())
+                  if linha in _REVISAR_VISTOS:
+                      return
+                  _REVISAR_VISTOS.add(linha)
+                  with open(ARQ_REVISAR, "a", encoding="utf-8") as f:
+                      f.write(linha + "\n")
+              except Exception as e:
+                  log(f"    (não consegui gravar revisar.txt: {e})")
 
 
           def ler_ld(soup):
@@ -1192,16 +1212,26 @@ jobs:
                   vistos.add(href_abs)
 
                   temp_ep, num = None, None
+                  num_href = num_texto = None
                   if m_href_te:
                       temp_ep = int(m_href_te.group(1))
-                      num = int(m_href_te.group(2))
+                      num_href = int(m_href_te.group(2))      # sufixos _N no fim da URL (ex.: tp1e08_1) são ignorados
                       METRICAS["episodios_tp_encontrados"] += 1
                   elif m_href_ep:
-                      num = int(m_href_ep.group(1))
-                  elif m_texto_ep:
-                      num = int(m_texto_ep.group(1))
+                      num_href = int(m_href_ep.group(1))
+                  if m_texto_ep:
+                      num_texto = int(m_texto_ep.group(1))
                   elif m_texto_num:
-                      num = int(m_texto_num.group(1))
+                      num_texto = int(m_texto_num.group(1))
+
+                  if num_href is not None and num_texto is not None and num_href != num_texto:
+                      # O admin erra o endereço, mas o texto do link está certo: o TEXTO vence.
+                      log(f"    [⚠️] URL dizia {num_href}, mas texto dizia {num_texto}: usando {num_texto} ({href_abs})")
+                      evento("href_vs_texto", url, href=href_abs, numero_href=num_href, numero_texto=num_texto, texto=texto[:80])
+                      registrar_revisao(url, f"URL dizia {num_href}, mas texto dizia {num_texto} (usei {num_texto}) - link: {href_abs}")
+                      num = num_texto
+                  else:
+                      num = num_href if num_href is not None else num_texto
 
                   if temp_ep and temp_ep != temporada:
                       temporada, ultimo_ep = temp_ep, 0
@@ -1351,6 +1381,7 @@ jobs:
                   evento("serie_inconsistente", url_serie, slug=slug, problemas=problemas,
                          encontrado={f"T{t}": n for t, n in sorted(contagem.items())})
                   anexar_linha(ARQ_INCONSIST, f"{url_serie}  # {slug}: " + "; ".join(problemas))
+                  registrar_revisao(url_serie, f"série inconsistente ({slug}): " + "; ".join(problemas))
                   log("    Nenhum arquivo foi criado/alterado/removido para esta série.")
                   return "inconsistente"
 
@@ -1530,6 +1561,7 @@ jobs:
           ok=0
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then ok=1; break; fi
+            mkdir -p .git/info && echo "revisar.txt merge=union" >> .git/info/attributes
             git pull origin main --no-rebase -X ours --no-edit
             git add -A
             git reset .github/ 2>/dev/null || true
