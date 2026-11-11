@@ -1,4 +1,4 @@
-name: Mega Extrair Series (Lotes de 100)
+name: Mega Extrair Series (Lotes de 25)
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
       lote:
         description: 'URLs para visitar por run'
         required: false
-        default: '100'
+        default: '25'
         type: string
       reprocessar_tudo:
         description: 'Recomeçar do zero? (apaga só o progresso; a fila NUNCA é apagada)'
@@ -59,7 +59,7 @@ jobs:
 
       - name: Extrair Series e Retentar Falhas
         env:
-          LOTE_SIZE: ${{ inputs.lote || '100' }}
+          LOTE_SIZE: ${{ inputs.lote || '25' }}
           MODO_EXECUCAO: ${{ inputs.modo || 'baixar_e_consertar' }}
           INTERVALO_MIN_SEG: '15'
           DELAY_ENTRE_SEG: '20'
@@ -392,7 +392,7 @@ jobs:
           MARCADOR_FORMATO = 'data-rave="2"'
 
           MAX_TENTATIVAS = 6
-          LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 100)
+          LOTE_SIZE = int(os.environ.get("LOTE_SIZE") or 25)
           MODO = (os.environ.get("MODO_EXECUCAO") or "baixar_e_consertar").lower()
           FALTAM_ARQ = Path(os.environ.get("FALTAM_FILE") or "/tmp/faltam.txt")
           TEMPO_MAX_MIN = int(os.environ.get("TEMPO_MAX_MIN") or 345)
@@ -1548,7 +1548,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_CHAIN }}
           REPO: ${{ github.repository }}
-          LOTE_IN: ${{ inputs.lote || '100' }}
+          LOTE_IN: ${{ inputs.lote || '25' }}
           MODO_IN: ${{ inputs.modo || 'baixar_e_consertar' }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "PAT_CHAIN não configurado: sem auto-chain."; exit 0; fi
