@@ -2,7 +2,7 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-11T01:49:28+00:00",
+      "quando": "2026-11-11T04:50:20+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/06/inix-indiana-jones-e-ultima-cruzada-1989.html",
       "status": 429,
@@ -10,7 +10,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T02:00:24+00:00",
+      "quando": "2026-11-11T05:01:20+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/06/inix-indiana-jones-e-ultima-cruzada-1989.html",
       "status": 429,
@@ -18,7 +18,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T02:10:46+00:00",
+      "quando": "2026-11-11T05:11:47+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/06/inix-indiana-jones-e-ultima-cruzada-1989.html",
       "status": 429,
@@ -26,7 +26,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T02:31:10+00:00",
+      "quando": "2026-11-11T05:42:08+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/06/inix-indiana-jones-e-ultima-cruzada-1989.html",
       "status": 429,
@@ -34,7 +34,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:01:12+00:00",
+      "quando": "2026-11-11T06:03:11+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-finja-se-de-morta-2025.html",
       "status": 429,
@@ -42,7 +42,23 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:12:23+00:00",
+      "quando": "2026-11-11T06:15:02+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T06:26:59+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T06:27:49+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
       "status": 429,
@@ -50,31 +66,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:13:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T03:25:09+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T03:25:57+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/03/inix-finja-se-de-morta-2025.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T03:36:56+00:00",
+      "quando": "2026-11-11T06:37:59+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/05/inix-saga-crepusculo-amanhecer-parte-1.html",
       "status": 429,
@@ -82,7 +74,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:38:08+00:00",
+      "quando": "2026-11-11T06:39:41+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
       "status": 429,
@@ -90,7 +82,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:39:35+00:00",
+      "quando": "2026-11-11T06:41:38+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
       "status": 429,
@@ -98,7 +90,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:40:35+00:00",
+      "quando": "2026-11-11T06:43:08+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
       "status": 429,
@@ -106,7 +98,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:41:35+00:00",
+      "quando": "2026-11-11T06:45:08+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/02/inix-coisa-1985.html",
       "status": 429,
@@ -114,7 +106,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:52:26+00:00",
+      "quando": "2026-11-11T06:56:33+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
       "status": 429,
@@ -122,15 +114,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T03:53:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T03:54:37+00:00",
+      "quando": "2026-11-11T06:58:03+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
       "status": 429,
@@ -138,15 +122,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T04:05:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/03/inix-finja-se-de-morta-2025.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T04:07:07+00:00",
+      "quando": "2026-11-11T06:59:02+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/02/inix-coisa-1985.html",
       "status": 429,
@@ -154,15 +130,7 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T04:08:06+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/12/inix-mahavatar-narsimha-2025-legendado.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T04:18:46+00:00",
+      "quando": "2026-11-11T07:09:54+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
       "status": 429,
@@ -170,17 +138,9 @@
       "tentativas": 1
     },
     {
-      "quando": "2026-11-11T04:19:33+00:00",
+      "quando": "2026-11-11T07:10:41+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T04:30:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2026/02/inix-coisa-1985.html",
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
@@ -188,49 +148,49 @@
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 34,
-      "ok": 33,
-      "429": 1,
+      "requisicoes": 38,
+      "ok": 36,
+      "429": 2,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 1,
+      "falhas_definitivas": 2,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 1,
-      "proxy_hit": 1,
+      "proxy_fallback": 2,
+      "proxy_hit": 2,
       "pausas_evitadas": 99,
       "http_realizados": 0,
-      "playwright_skip": 2,
-      "proxmint_listas": 1,
-      "link_em_a_href": 0,
+      "playwright_skip": 5,
+      "proxmint_listas": 2,
+      "link_em_a_href": 1,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-11T04:32:05+00:00",
-      "duracao_min": 10.1
+      "quando": "2026-11-11T07:12:08+00:00",
+      "duracao_min": 11.6
     },
     "acumulado": {
-      "requisicoes": 529,
-      "ok": 506,
-      "429": 23,
+      "requisicoes": 462,
+      "ok": 438,
+      "429": 18,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 23,
+      "falhas_definitivas": 18,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 23,
-      "proxy_hit": 23,
-      "pausas_evitadas": 1477,
+      "proxy_fallback": 18,
+      "proxy_hit": 18,
+      "pausas_evitadas": 1279,
       "http_realizados": 8,
-      "playwright_skip": 40,
-      "proxmint_listas": 23,
-      "link_em_a_href": 6,
+      "playwright_skip": 34,
+      "proxmint_listas": 18,
+      "link_em_a_href": 8,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 1,
-      "multifilme_arquivos": 0
+      "multifilme_arquivos": 2
     }
   }
 }
