@@ -389,7 +389,7 @@ jobs:
           PAGES_URL = "https://api-pobreflix-filmes.pages.dev"
           PLACEHOLDER = "https://placehold.co/500x750?text=Sem+Capa"
           SUFIXO = "🍿Clau"
-          MARCADOR_FORMATO = 'data-rave="2"'
+          MARCADOR_FORMATO = 'linear-gradient(135deg,#7a00ff,#c000ff)'   # assinatura do formato padrão (card com ▶)
 
           MAX_TENTATIVAS = 6
           LOTE_SIZE = min(int(os.environ.get("LOTE_SIZE") or 25), 25)   # teto fixo: no máximo 25 links por run
@@ -726,35 +726,32 @@ jobs:
           <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <script type="application/ld+json">
-          __JSON__
-          </script>
+          <script type="application/ld+json">__JSON__</script>
           <title>__TITULO__</title>
           <style>
-          body, html { margin: 0; padding: 0; background-color: #000; height: 100%; width: 100%; overflow: hidden; }
-          video { width: 100%; height: 100%; outline: none; background: #000; }
+            body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 20px; }
+            h1 { font-size: 24px; text-align: center; margin-bottom: 30px; }
           </style>
           </head>
           <body>
-          <video id="v" __MARCADOR__ controls playsinline preload="none" poster="__CAPA__"></video>
-          <script>
-          (function () {
-            var v = document.getElementById("v");
-            var u = atob("__B64__");
-            var iniciado = false;
-            function iniciar() {
-              if (iniciado) { return; }
-              iniciado = true;
-              v.src = u;
-              v.load();
-              var p = v.play();
-              if (p && p.catch) { p.catch(function () {}); }
-            }
-            v.addEventListener("click", iniciar);
-            v.addEventListener("touchend", iniciar);
-            v.addEventListener("play", iniciar);
-          })();
-          </script>
+
+          <h1>__TITULO__</h1>
+
+          <div style="background: #0b0b12; border-radius:20px; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.8); margin:25px 0; border:1px solid rgba(255,255,255,.06);">
+
+            <a href="__LINK__" target="_blank" style="display: block; position: relative; text-decoration: none;">
+
+              <img src="__CAPA__" style="width:100%; display:block;">
+
+              <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);"></div>
+
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:70px; height:70px; background:linear-gradient(135deg,#7a00ff,#c000ff); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(120,0,255,.6); color:white; font-size:26px; border:2px solid rgba(255,255,255,.2);">▶</div>
+
+              <div style="position:absolute; top:12px; right:12px; background:#ff003c; padding:6px 12px; border-radius:20px; font-size:11px; color:#fff; font-weight:bold;">HD</div>
+            </a>
+
+          </div>
+
           </body>
           </html>
           """
@@ -762,23 +759,19 @@ jobs:
 
           def montar_html(arquivo, nome_json, link, capa):
               nome_json = tirar_lixo_do_site(nome_json)
-              file_url = f"{PAGES_URL}/{arquivo}"
               dados = {
                   "@context": "https://schema.org", "@type": "VideoObject",
-                  "@id": file_url, "url": file_url,
+                  "supportPlatform": ["https://schema.org/IOSPlatform", "https://schema.org/AndroidPlatform"],
                   "name": nome_json, "description": f"Assista {nome_json}",
                   "thumbnailUrl": [capa],
-                  "uploadDate": "2020-01-01T00:00:00+00:00", "inLanguage": "pt",
-                  "contentUrl": link, "embedUrl": link,
+                  "contentUrl": link,
               }
-              js = json.dumps(dados, ensure_ascii=False, indent=4).replace("</", "<\\/")
-              b64 = base64.b64encode(link.encode("utf-8")).decode("ascii")
+              js = json.dumps(dados, ensure_ascii=False, indent=2).replace("</", "<\\/")
               return (_TEMPLATE
                       .replace("__JSON__", js)
                       .replace("__TITULO__", htmllib.escape(nome_json))
-                      .replace("__MARCADOR__", MARCADOR_FORMATO)
-                      .replace("__CAPA__", htmllib.escape(capa, quote=True))
-                      .replace("__B64__", b64))
+                      .replace("__LINK__", htmllib.escape(link, quote=True))
+                      .replace("__CAPA__", htmllib.escape(capa, quote=True)))
 
 
           def reparar_link(link):
