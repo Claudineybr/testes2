@@ -40,52 +40,148 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:12:23+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:13:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:25:09+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:25:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-finja-se-de-morta-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:36:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-saga-crepusculo-amanhecer-parte-1.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:38:08+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:39:35+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:40:35+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:41:35+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-coisa-1985.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:52:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-um-sonho-de-natal-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:53:37+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-o-segredo-da-chef-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-11T03:54:37+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-song-sung-blue-um-sonho-dois-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 34,
-      "ok": 33,
-      "429": 1,
+      "requisicoes": 40,
+      "ok": 37,
+      "429": 3,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 1,
+      "falhas_definitivas": 3,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 1,
-      "proxy_hit": 1,
+      "proxy_fallback": 3,
+      "proxy_hit": 3,
       "pausas_evitadas": 98,
       "http_realizados": 1,
-      "playwright_skip": 2,
-      "proxmint_listas": 1,
+      "playwright_skip": 6,
+      "proxmint_listas": 3,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-11T03:02:21+00:00",
-      "duracao_min": 9.7
+      "quando": "2026-11-11T03:55:37+00:00",
+      "duracao_min": 12.4
     },
     "acumulado": {
-      "requisicoes": 262,
-      "ok": 257,
-      "429": 5,
+      "requisicoes": 419,
+      "ok": 402,
+      "429": 17,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 5,
+      "falhas_definitivas": 17,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 5,
-      "proxy_hit": 5,
-      "pausas_evitadas": 789,
-      "http_realizados": 3,
-      "playwright_skip": 9,
-      "proxmint_listas": 5,
+      "proxy_fallback": 17,
+      "proxy_hit": 17,
+      "pausas_evitadas": 1180,
+      "http_realizados": 8,
+      "playwright_skip": 29,
+      "proxmint_listas": 17,
       "link_em_a_href": 4,
       "link_convertido_w2embed": 0,
-      "multifilme_paginas": 0,
+      "multifilme_paginas": 1,
       "multifilme_arquivos": 0
     }
   }
