@@ -67,6 +67,7 @@ jobs:
         run: |
           cat > /tmp/mega_filmes.py << 'PYEOF'
           import requests, sys, os, json, time, re, random, datetime, email.utils
+          import html as html_lib
           from pathlib import Path
           from html import escape as _esc
 
@@ -1178,29 +1179,60 @@ jobs:
               return t if len(t) >= 3 else str(titulo or "").strip()
 
 
+          def titulo_do_embed(link):
+              """Player do tankie.tube: o <title> da página traz o nome certo do filme
+              ('ViNi7x - Homem-Formiga e a Vespa: Quantumania [ 2023 ] ‧ Ação/Aventura - TankieTube').
+              Devolve (titulo_limpo, ano) ou ("", ""). Outro site que não o Blogger: não usa a fila global de 429."""
+              if not re.match(r"https?://(?:www\.)?tankie\.tube/", str(link or "")):
+                  return "", ""
+              for tentativa in range(2):
+                  try:
+                      r = requests.get(link, headers=HEADERS, timeout=20)
+                      if r.status_code == 200:
+                          m = re.search(r"<title[^>]*>(.*?)</title>", r.text, re.I | re.S)
+                          if not m:
+                              return "", ""
+                          bruto = html_lib.unescape(m.group(1)).strip()
+                          bruto = re.sub(r"\s*[-–—|]\s*Tankie\s*Tube\s*$", "", bruto, flags=re.I)
+                          titulo = limpar_titulo_bruto(bruto, "", fallback=False)
+                          return (titulo, extrair_ano(bruto, "")) if len(titulo) >= 3 else ("", "")
+                  except Exception:
+                      pass
+                  time.sleep(3)
+              return "", ""
+
+
           def _salvar_multifilme(stem_base, titulo_base, ano_base, links, capa, pendentes, url=""):
               METRICAS["multifilme_paginas"] += 1
               base = base_da_saga(titulo_base)
               slug_base = fazer_slug(base, "")
-              log(f"    (SAGA: página com {len(links)} vídeos — arquivos {slug_base}_1 ... {slug_base}_{len(links)})")
-              registrar_revisao(url, f"SAGA: {len(links)} vídeos no mesmo post -> {slug_base}_1.html ... {slug_base}_{len(links)}.html")
+              log(f"    (SAGA: página com {len(links)} vídeos)")
+              nomes = []
 
               for idx, item in enumerate(links):
                   link_unico = item["link"]
                   texto = item["texto"].strip()
 
-                  # Nome do ARQUIVO: título principal do post + número sequencial (nunca o texto do link).
-                  stem = f"{slug_base}_{idx + 1}"
-
-                  # Nome dentro do arquivo: o texto do link só se for um título de verdade ("Filme 1" não é).
-                  if not texto or _GENERICO_LINK.match(texto):
-                      titulo_json = f"{base} {idx + 1}"
+                  # 1) nome certo do filme, lido do próprio player; 2) texto do link, se for um título de verdade;
+                  # 3) título do post + número sequencial (tinker_bell_1, tinker_bell_2...)
+                  if idx:
+                      time.sleep(2)
+                  tit, ano = titulo_do_embed(link_unico)
+                  origem = "player"
+                  if not tit and texto and not _GENERICO_LINK.match(texto):
+                      tit = limpar_titulo_bruto(texto, "", fallback=False)
+                      ano = extrair_ano(texto, "") if len(tit) >= 3 else ""
+                      origem = "texto do link"
+                  if len(tit) >= 3:
+                      slug = fazer_slug(tit, "")
+                      stem = f"{slug}_{ano}" if ano and not re.search(r"\d{4}", tit) else slug
+                      nome_json = f"{tit} ({ano}) - {SUFIXO}" if ano else f"{tit} - {SUFIXO}"
                   else:
-                      titulo_json = limpar_titulo_bruto(texto, "", fallback=False)
-                      if len(titulo_json) < 3:
-                          titulo_json = f"{base} {idx + 1}"
-
-                  nome_json = f"{titulo_json} - {SUFIXO}"
+                      origem = "sequencial"
+                      stem = f"{slug_base}_{idx + 1}"
+                      nome_json = f"{base} {idx + 1} - {SUFIXO}"
+                  nomes.append(f"{stem}.html [{origem}]")
+                  log(f"      Vídeo {idx + 1}: {stem}.html (nome vindo de: {origem})")
 
                   res = upsert(stem, nome_json, link_unico, capa, MODO, ind="      ")
                   if res == "sem_link":
@@ -1211,6 +1243,7 @@ jobs:
                                             "url": link_unico, "capa": capa, "tentativas": 1})
                   elif res in ("novo", "corrigido"):
                       METRICAS["multifilme_arquivos"] += 1
+              registrar_revisao(url, f"SAGA: {len(links)} vídeos no mesmo post -> " + ", ".join(nomes))
 
 
           async def processar_filme(ctx, url, pendentes=None):
