@@ -477,6 +477,26 @@ jobs:
                   f.write(linha.strip() + "\n")
 
 
+          ARQ_REVISAR = Path("revisar.txt")
+          _REVISAR_VISTOS = set()
+
+
+          def registrar_revisao(url, motivo):
+              """Arquivo unificado revisar.txt: uma linha 'URL | motivo' por caso que precisa de olho humano."""
+              motivo = re.sub(r"\s+", " ", str(motivo)).strip()
+              linha = f"{url} | {motivo}"
+              try:
+                  if not _REVISAR_VISTOS and ARQ_REVISAR.exists():
+                      _REVISAR_VISTOS.update(l.strip() for l in ARQ_REVISAR.read_text(encoding="utf-8").splitlines())
+                  if linha in _REVISAR_VISTOS:
+                      return
+                  _REVISAR_VISTOS.add(linha)
+                  with open(ARQ_REVISAR, "a", encoding="utf-8") as f:
+                      f.write(linha + "\n")
+              except Exception as e:
+                  log(f"    (não consegui gravar revisar.txt: {e})")
+
+
           def ler_ld(soup):
               for s in soup.find_all("script", type="application/ld+json"):
                   try:
@@ -1145,29 +1165,40 @@ jobs:
               return slug
 
 
-          def _salvar_multifilme(stem_base, titulo_base, ano_base, links, capa, pendentes):
+          _GENERICO_LINK = re.compile(
+              r"^(?:filme|parte|part|vol(?:ume)?|cd|link|op[çc][ãa]o|player|assistir|download|baixar|clique aqui|"
+              r"video|vídeo|fonte|source|aqui|filmes)?\s*\d*$", re.I)
+
+
+          def base_da_saga(titulo):
+              """'Saga Tinker Bell' / 'Tinker Bell - Coleção' -> 'Tinker Bell' (para o nome dos arquivos)."""
+              t = re.sub(r"\b(?:saga|cole[çc][ãa]o|colet[âa]nea|quadrilogia|duologia|trilogia|box|franquia|completa?)\b",
+                         " ", str(titulo or ""), flags=re.I)
+              t = re.sub(r"\s+", " ", t).strip(" -–—|:")
+              return t if len(t) >= 3 else str(titulo or "").strip()
+
+
+          def _salvar_multifilme(stem_base, titulo_base, ano_base, links, capa, pendentes, url=""):
               METRICAS["multifilme_paginas"] += 1
-              log(f"    (Página com {len(links)} vídeos — salvando múltiplos arquivos)")
+              base = base_da_saga(titulo_base)
+              slug_base = fazer_slug(base, "")
+              log(f"    (SAGA: página com {len(links)} vídeos — arquivos {slug_base}_1 ... {slug_base}_{len(links)})")
+              registrar_revisao(url, f"SAGA: {len(links)} vídeos no mesmo post -> {slug_base}_1.html ... {slug_base}_{len(links)}.html")
 
               for idx, item in enumerate(links):
                   link_unico = item["link"]
                   texto = item["texto"].strip()
 
-                  if not texto or texto.lower() in ("filme", "assistir", "download", "baixar", "clique aqui", "player", "video", "vídeo", "fonte", "source", "aqui", "filmes"):
-                      texto = titulo_base if idx == 0 else f"{titulo_base} ({idx + 1})"
+                  # Nome do ARQUIVO: título principal do post + número sequencial (nunca o texto do link).
+                  stem = f"{slug_base}_{idx + 1}"
 
-                  ano_m = re.search(r"((?:19|20)\d{2})", texto)
-                  ano_extraido = ano_m.group(1) if ano_m else (ano_base if idx == 0 else "")
-
-                  slug = fazer_slug(texto, "")
-                  if ano_extraido and not re.search(r"\d{4}", texto):
-                      stem = f"{slug}_{ano_extraido}"
+                  # Nome dentro do arquivo: o texto do link só se for um título de verdade ("Filme 1" não é).
+                  if not texto or _GENERICO_LINK.match(texto):
+                      titulo_json = f"{base} {idx + 1}"
                   else:
-                      stem = slug
-
-                  titulo_json = limpar_titulo_bruto(texto, "", fallback=False)
-                  if len(titulo_json) < 3:
-                      titulo_json = texto
+                      titulo_json = limpar_titulo_bruto(texto, "", fallback=False)
+                      if len(titulo_json) < 3:
+                          titulo_json = f"{base} {idx + 1}"
 
                   nome_json = f"{titulo_json} - {SUFIXO}"
 
@@ -1266,7 +1297,7 @@ jobs:
                   nome_json = f"{titulo} - {SUFIXO}"
 
               if links_todos and len(links_todos) > 1:
-                  _salvar_multifilme(stem, titulo, ano, links_todos, capa, pendentes)
+                  _salvar_multifilme(stem, titulo, ano, links_todos, capa, pendentes, url)
                   return "novo", None
 
               log(f"    Título: '{titulo}' | ano: {ano or '-'} | stem: {stem} | link: {'SIM' if link else 'NÃO'}")
@@ -1423,6 +1454,7 @@ jobs:
           ok=0
           for i in $(seq 1 5); do
             if git push origin HEAD:main; then ok=1; break; fi
+            mkdir -p .git/info && echo "revisar.txt merge=union" >> .git/info/attributes
             git pull origin main --no-rebase -X ours --no-edit
             git add -A
             git reset .github/ 2>/dev/null || true
