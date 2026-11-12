@@ -78,8 +78,8 @@ jobs:
 
           # lixo que o site coloca nos títulos: alien, vini7x (ViNi7x, @vini7xg, "do vini7x") e Marcøsx7 / marc_sx7
           LIXO = re.compile(
-              r"\U0001F47E+️?|(?:\bdo\s+)?@?vini\s*7x\w*|marc[øo_]\s*s\s*x\s*7\w*|marc_sx7\w*", re.I)
-          LIXO_STEM = re.compile(r"(?:^|_)(?:marc_?[o0]?_?sx7|vini7x[a-z0-9]*)(?=_|$)", re.I)
+              r"\U0001F47E+️?|(?:\bdo\s+)?@?vini\s*7x\w*|marc[\s_øo0-]{0,3}s[\s_]?x[\s_]?7\w*", re.I)
+          LIXO_STEM = re.compile(r"(?:^|_)(?:marc_?[o0]?_?s_?x_?7|vini7x[a-z0-9]*)(?=_|$)", re.I)
 
           SERIE_ARQ = re.compile(r"^(?P<stem>.+?)_t(?P<t>\d+)e(?:p)?(?P<e>\d+)(?:_\d+)?\.html$", re.I)
           SERIE_NOME = re.compile(
@@ -172,11 +172,17 @@ jobs:
               if m_nome or m_arq:
                   if m_arq and m_nome and (int(m_arq["t"]), int(m_arq["e"])) != (int(m_nome["t"]), int(m_nome["e"])):
                       return {"skip": f"arquivo T{int(m_arq['t'])}E{int(m_arq['e'])} x nome T{int(m_nome['t'])}E{int(m_nome['e'])}"}
-                  if not m_nome:
-                      return {"skip": "arquivo de série sem T#E# no name"}
-                  t, e = int(m_nome["t"]), int(m_nome["e"])
-                  serie = m_nome["serie"].strip(" -–—|:")
-                  tit = (m_nome["tit"] or "").strip(" -–—|:")
+                  if m_nome:
+                      t, e = int(m_nome["t"]), int(m_nome["e"])
+                      serie = m_nome["serie"].strip(" -–—|:")
+                      tit = (m_nome["tit"] or "").strip(" -–—|:")
+                  else:
+                      # name sem T#E# (ex.: "Marc Sx7 O Domo De Vidro"): o T#E# vem do nome do arquivo; o título do episódio é desconhecido
+                      t, e = int(m_arq["t"]), int(m_arq["e"])
+                      serie = base.strip(" -–—|:")
+                      tit = ""
+                      if len(serie) < 2:
+                          return {"skip": "série sem nome utilizável"}
                   if m_arq:
                       stem = LIXO_STEM.sub("", m_arq["stem"]).strip("_")
                       stem = re.sub(r"_+", "_", stem)
