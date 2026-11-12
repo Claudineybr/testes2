@@ -5,3 +5,6 @@ https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html  # os_simpsons: 
 https://www.vini7xgrave.site/2026/02/inix-this-is-us.html  # this_is_us: T3: faltam episódios [1, 2, 3, 4, 5, 6, 8, 9, 12]; T8: faltam episódios [7, 10, 11]
 https://www.vini7xgrave.site/2026/01/inix-skins-juventude-flor-da-pele.html  # skins_juventude_a_flor_da_pele: temporadas [7] existem em disco mas não foram achadas na página
 https://www.vini7xgrave.site/2025/11/inix-arcanjo-renegado-2020.html  # arcanjo_renegado: T3: faltam episódios [8]
+https://www.vini7xgrave.site/2025/11/inix-diarios-de-uma-apoticaria-2023.html  # diarios_de_uma_apoticaria: temporadas [1] existem em disco mas não foram achadas na página
+https://www.vini7xgrave.site/2025/04/inix-witcher-2019.html  # the_witcher: T1: faltam episódios [1, 2, 3, 4, 5, 6]
+https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html  # american_horror_story: T5E1 aparece 2x com URLs diferentes; T6: faltam episódios [1]
