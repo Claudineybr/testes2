@@ -12,3 +12,5 @@ https://www.vini7xgrave.site/2025/10/inix-as-aventuras-de-tintim-1991.html  # as
 https://www.vini7xgrave.site/2025/04/inix-tulsa-king.html  # tulsa_king: T1E1 aparece 2x com URLs diferentes; T1E3 aparece 3x com URLs diferentes; T2: faltam episódios [1, 3]
 https://www.vini7xgrave.site/2025/09/inix-naruto-shippuden-2007.html  # naruto_shippuden: T12E6 aparece 2x com URLs diferentes; T16: faltam episódios [6]
 https://www.vini7xgrave.site/2025/05/inix-alice-in-borderland.html  # alice_in_borderland: T2E4 aparece 2x com URLs diferentes; T3: faltam episódios [4]
+https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html  # o_verao_que_mudou_minha_vida: T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
+https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html  # shadowhunters_instrumentos_mortais: T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

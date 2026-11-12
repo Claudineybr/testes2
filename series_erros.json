@@ -2,1737 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-11T23:19:21+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/07/inix-orphan-black-tp03ep06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:21:36+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/07/inix-orphan-black-tp04ep02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:23:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-orphan-black-tp04ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:25:35+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-orphan-black-tp05ep02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:26:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-orphan-black-tp05ep03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:30:30+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp1e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:34:25+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:35:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:37:58+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:40:20+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:41:20+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:42:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e11.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:43:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:45:14+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e14.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:47:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-south-park-tp2e18.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:50:00+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2026/01/inix-garota-sequestrada-tp1e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:52:50+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-percy-jackson-e-os-olimpianos_2.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:55:11+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-percy-jackson-e-os-olimpianos_62.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:57:02+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-percy-jackson-e-os-olimpianos_26.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-11T23:58:20+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "percy_jackson_e_os_olimpianos_t01ep04.html",
-      "novo": "percy_jackson_e_os_olimpianos_t02ep04.html",
-      "link": "https://cdn3.playmycnvs.com/Percy%20Jackson%20e%20os%20Olimpianos%20S01%20E04_103540.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:00:00+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/03/inix-armazem-13-tp4ep20.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:10:20+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:18:10+00:00",
-      "tipo": "rate_limit",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
-      "serie": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html"
-    },
-    {
-      "quando": "2026-11-12T00:18:10+00:00",
-      "tipo": "rate_limit",
-      "url": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html",
-      "seguidos": 1
-    },
-    {
-      "quando": "2026-11-12T00:19:46+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep01.html",
-      "ocupante": "doctor_who_t01ep01.html",
-      "nome_ocupante": "Doctor Who - T1E1 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E1 – Episódio 1 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E01_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E01_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:20:07+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep02.html",
-      "ocupante": "doctor_who_t01ep02.html",
-      "nome_ocupante": "Doctor Who - T1E2 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E2 – Episódio 2 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E02_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E02_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:20:26+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep03.html",
-      "ocupante": "doctor_who_t01ep03.html",
-      "nome_ocupante": "Doctor Who - T1E3 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E3 – Episódio 3 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E03_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E03_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:20:43+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep04.html",
-      "ocupante": "doctor_who_t01ep04.html",
-      "nome_ocupante": "Doctor Who - T1E4 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E4 – Episódio 4 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E04_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E04_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:20:58+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:21:25+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep05.html",
-      "ocupante": "doctor_who_t01ep05.html",
-      "nome_ocupante": "Doctor Who - T1E5 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E5 – Episódio 5 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E05_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E05_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:21:46+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep06.html",
-      "ocupante": "doctor_who_t01ep06.html",
-      "nome_ocupante": "Doctor Who - T1E6 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E6 – Episódio 6 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E06_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E06_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:22:08+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep07.html",
-      "ocupante": "doctor_who_t01ep07.html",
-      "nome_ocupante": "Doctor Who - T1E7 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E7 – Episódio 7 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E07_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E07_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:22:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:22:59+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep08.html",
-      "ocupante": "doctor_who_t01ep08.html",
-      "nome_ocupante": "Doctor Who - T1E8 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E8 – Episódio 8 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E08_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E08_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:23:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:23:59+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep09.html",
-      "ocupante": "doctor_who_t01ep09.html",
-      "nome_ocupante": "Doctor Who - T1E9 - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E9 – Episódio 9 - 🍿Clau",
-      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E09_57243.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E09_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:24:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:25:10+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep10.html",
-      "ocupante": "doctor_who_t01ep10.html",
-      "nome_ocupante": "Doctor Who - T1E10 – O Doutor Danca - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E10 – Episódio 10 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x10..mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E10_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:25:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep11.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:25:58+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep11.html",
-      "ocupante": "doctor_who_t01ep11.html",
-      "nome_ocupante": "Doctor Who - T1E11 – Cidade Explosiva - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E11 – Episódio 11 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x11..mp4",
-      "link_novo": "https://cdn01.vod-cinevs.com/s/tt0436992/Doctor%20Who%20S01E11.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:26:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:26:59+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep12.html",
-      "ocupante": "doctor_who_t01ep12.html",
-      "nome_ocupante": "Doctor Who - T1E12 – Lobo Mau - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E12 – Episódio 12 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x12..mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E12_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:27:28+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep13.html",
-      "ocupante": "doctor_who_t01ep13.html",
-      "nome_ocupante": "Doctor Who - T1E13 – Seguindo Caminhos Separados - 🍿Clau",
-      "nome_novo": "Doctor Who - T1E13 – Episódio 13 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x13..mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E13_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:27:55+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp02ep01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:28:26+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep01.html",
-      "novo": "doctor_who_t02ep01.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E01_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:28:55+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp02ep02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:29:26+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep02.html",
-      "novo": "doctor_who_t02ep02.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E02_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:29:55+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep03.html",
-      "novo": "doctor_who_t02ep03.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E03_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:30:22+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep04.html",
-      "novo": "doctor_who_t02ep04.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E04_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:30:46+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp02ep05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:31:18+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep05.html",
-      "novo": "doctor_who_t02ep05.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E05_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:31:46+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep06.html",
-      "novo": "doctor_who_t02ep06.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E06_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:32:13+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep07.html",
-      "novo": "doctor_who_t02ep07.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E07_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:32:38+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp02ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:33:09+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep08.html",
-      "novo": "doctor_who_t02ep08.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E08_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:33:37+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "doctor_who_t01ep09.html",
-      "novo": "doctor_who_t02ep09.html",
-      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E09_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:34:04+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t02ep10.html",
-      "ocupante": "doctor_who_t02ep10.html",
-      "nome_ocupante": "Doctor Who - T2E10 – Amor Nunca Mais - 🍿Clau",
-      "nome_novo": "Doctor Who - T2E10 – Episódio 10 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/02/Doctor.Who.S02E10.Dual.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E10_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:35:10+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t02ep13.html",
-      "ocupante": "doctor_who_t02ep13.html",
-      "nome_ocupante": "Doctor Who - T2E13 – Adeus, Rose - 🍿Clau",
-      "nome_novo": "Doctor Who - T2E13 – Episódio 13 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/02/Doctor.Who.S02E13.Dual.mp4",
-      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E13_57243.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:35:28+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep01.html",
-      "ocupante": "doctor_who_t03ep01.html",
-      "nome_ocupante": "Doctor Who - T3E1 – Smith e Jones - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E1 – Episódio 1 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E01.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/1/237fde4a-2dc5-4de1-a61f-b321ab1f6935/stream.mp4?type=serie&expires=1769553908&signature=a1158dc289ae9c589ab8bcc6dd135f5db40eab0dd9b9fe139f9e948515720633"
-    },
-    {
-      "quando": "2026-11-12T00:35:44+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep02.html",
-      "ocupante": "doctor_who_t03ep02.html",
-      "nome_ocupante": "Doctor Who - T3E2 – O Codigo Shakespeare - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E2 – Episódio 2 - 🍿Clau",
-      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/57243/3x2.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/2/0393e955-55fa-487b-a5eb-a271c624d95d/stream.mp4?type=serie&expires=1769554002&signature=e1244ef5aa81c534fd60623e9a02ec0d65ff9e754dbec4c68200b083df8c98e9"
-    },
-    {
-      "quando": "2026-11-12T00:35:59+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp03ep03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:36:24+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep03.html",
-      "ocupante": "doctor_who_t03ep03.html",
-      "nome_ocupante": "Doctor Who - T3E3 – Encontro na Lua de Mel - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E3 – Episódio 3 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E03.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/3/351f3baa-4e7c-4c19-82bc-7ff01a7d6306/stream.mp4?type=serie&expires=1769554083&signature=75c409addc76a668b88c22143fd5769bf03111220345cf01a1e02a7c6a64a4b8"
-    },
-    {
-      "quando": "2026-11-12T00:36:46+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp03ep04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:37:17+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep04.html",
-      "ocupante": "doctor_who_t03ep04.html",
-      "nome_ocupante": "Doctor Who - T3E4 – Daleks em Manhattan - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E4 – Episódio 4 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E04.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/4/dff43e78-db3a-4a9a-9433-bec9ed66c9e2/stream.mp4?type=serie&expires=1769554136&signature=8599206cbad3f5bebc1cee7174ca0cff55034c0f535d80723b80bd3b7d62b793"
-    },
-    {
-      "quando": "2026-11-12T00:37:46+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep05.html",
-      "ocupante": "doctor_who_t03ep05.html",
-      "nome_ocupante": "Doctor Who - T3E5 – Evolucao dos Daleks - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E5 – Episódio 5 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E05.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/5/961cf06f-2d24-4e96-af56-1354482417ae/stream.mp4?type=serie&expires=1769554175&signature=5a4f53f8f0ab32f63309d88a75b0b94938e29575e37d1e86dd449a5a2bb2627f"
-    },
-    {
-      "quando": "2026-11-12T00:38:13+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep06.html",
-      "ocupante": "doctor_who_t03ep06.html",
-      "nome_ocupante": "Doctor Who - T3E6 – O Experimento Lazarus - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E6 – Episódio 6 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E06.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/6/5d2564e1-915a-4983-a3f4-17d775b93d37/stream.mp4?type=serie&expires=1769554214&signature=15744f69bba1f9429a143f7c55a798c861705613ab960a2eba51f5db7177d3dc"
-    },
-    {
-      "quando": "2026-11-12T00:38:37+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep07.html",
-      "ocupante": "doctor_who_t03ep07.html",
-      "nome_ocupante": "Doctor Who - T3E7 – Tp3E07 27 - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E7 – Episódio 7 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E07.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/7/da8c6683-d601-45f3-b1a6-a4f648c9198f/stream.mp4?type=serie&expires=1769555732&signature=f9bbccde82f52a9b401f3aa50d0eab726a5bac4c9b05bb4ea836bc07feec70c5"
-    },
-    {
-      "quando": "2026-11-12T00:38:59+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep08.html",
-      "ocupante": "doctor_who_t03ep08.html",
-      "nome_ocupante": "Doctor Who - T3E8 – Natureza Humana - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E8 – Episódio 8 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E08.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/8/907f342e-a4da-4ff6-a021-0d9532563cd4/stream.mp4?type=serie&expires=1769555863&signature=e6ff1078c6c2b7985f4da4364ab0056224a0fb44ebbc308b4a5dd5d1de5f8905"
-    },
-    {
-      "quando": "2026-11-12T00:39:19+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep09.html",
-      "ocupante": "doctor_who_t03ep09.html",
-      "nome_ocupante": "Doctor Who - T3E9 – A Familia de Sangue - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E9 – Episódio 9 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E09.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/9/9953c1a2-61a5-4a28-8006-df3f58104f71/stream.mp4?type=serie&expires=1769555916&signature=3a893a055fdcc196d5b8aad71c201a7099de95a54c8f7f8a756c2def210d1e4f"
-    },
-    {
-      "quando": "2026-11-12T00:39:36+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep10.html",
-      "ocupante": "doctor_who_t03ep10.html",
-      "nome_ocupante": "Doctor Who - T3E10 – Pisque - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E10 – Episódio 10 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E10.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/10/5399f12f-b62a-40ff-8eb7-25269405e9ab/stream.mp4?type=serie&expires=1769555970&signature=fa3d9ae6f70eecbc48dbf009aed801932243eff645fa2cadac2c71344a57a49d"
-    },
-    {
-      "quando": "2026-11-12T00:39:53+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp03ep11.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:40:19+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep11.html",
-      "ocupante": "doctor_who_t03ep11.html",
-      "nome_ocupante": "Doctor Who - T3E11 – Utopia - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E11 – Episódio 11 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E11.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/11/76237355-6564-428f-89a3-6444ef303a61/stream.mp4?type=serie&expires=1769556024&signature=8ffa20cbfd9375ebaf43fd233eef6a354ef4826b7a51b083b1b58023ad677d4b"
-    },
-    {
-      "quando": "2026-11-12T00:40:43+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp03ep12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:41:14+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep12.html",
-      "ocupante": "doctor_who_t03ep12.html",
-      "nome_ocupante": "Doctor Who - T3E12 – O Som dos Tambores - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E12 – Episódio 12 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E12.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s3/dubbed/12/403d4db3-d5de-4841-b782-2187d4a3a089/stream.mp4?type=serie&expires=1769556099&signature=fc1778148269acba8b43fef1e166dd948a5b35d369dc7cee18c6c4d4c246d55d"
-    },
-    {
-      "quando": "2026-11-12T00:41:42+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t03ep13.html",
-      "ocupante": "doctor_who_t03ep13.html",
-      "nome_ocupante": "Doctor Who - T3E13 – O Ultimo Senhor do Tempo - 🍿Clau",
-      "nome_novo": "Doctor Who - T3E13 – Episódio 13 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/03/T03E13.mp4",
-      "link_novo": "https://cdn01.vod-cinevs.com/s/tt0436992/Doctor%20Who%20S03E13.mp4"
-    },
-    {
-      "quando": "2026-11-12T00:42:56+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp04ep03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:44:47+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep06.html",
-      "ocupante": "doctor_who_t04ep06.html",
-      "nome_ocupante": "Doctor Who - T4E6 – O Ceu Venenoso - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E6 – Episódio 6 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E06.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/6/e2e0cec6-3627-4cc3-9ba8-a875e5bdb4e5/stream.mp4?type=serie&expires=1769553190&signature=abf95216560cd4db2c20927f65c6dfb63edd63c84aee35670fb738db4b852095"
-    },
-    {
-      "quando": "2026-11-12T00:45:09+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp04ep07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:45:40+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep07.html",
-      "ocupante": "doctor_who_t04ep07.html",
-      "nome_ocupante": "Doctor Who - T4E7 – O Unicornio e a Vespa - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E7 – Episódio 7 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E07.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/7/d8f690f1-a997-42ca-931a-eacbe15abf8a/stream.mp4?type=serie&expires=1769553269&signature=4068e1e1c1e0032f7f5936edff5127cd701ee5afba47e5013858c8d1b514f98a"
-    },
-    {
-      "quando": "2026-11-12T00:46:09+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep08.html",
-      "ocupante": "doctor_who_t04ep08.html",
-      "nome_ocupante": "Doctor Who - T4E8 – Silencio na Biblioteca - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E8 – Episódio 8 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E08.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/8/072cd106-e1a6-4dfc-b2e1-c5a51df2ccb2/stream.mp4?type=serie&expires=1769553349&signature=40c7caa765f2d74620edad31303af0d484a0acbe5b5d249570d244f58604c262"
-    },
-    {
-      "quando": "2026-11-12T00:46:36+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep09.html",
-      "ocupante": "doctor_who_t04ep09.html",
-      "nome_ocupante": "Doctor Who - T4E9 – Floresta dos Mortos - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E9 – Episódio 9 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E09.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/9/49f57ab1-0fd1-4efb-806f-26ded7f84db9/stream.mp4?type=serie&expires=1769553388&signature=a3ea7f07977db7b8ff32daca9377d546817486415fc075a55cf931263321ea5f"
-    },
-    {
-      "quando": "2026-11-12T00:47:00+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep10.html",
-      "ocupante": "doctor_who_t04ep10.html",
-      "nome_ocupante": "Doctor Who - T4E10 – A Meia-Noite - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E10 – Episódio 10 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E10.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/10/0ff37404-84fe-4132-855a-97f1cc20cb4f/stream.mp4?type=serie&expires=1769553426&signature=8c83fa9af25bb4424819fccdfe2ac5f2fa72b4ac43423862bc5976218afa06b5"
-    },
-    {
-      "quando": "2026-11-12T00:47:22+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep11.html",
-      "ocupante": "doctor_who_t04ep11.html",
-      "nome_ocupante": "Doctor Who - T4E11 – Vire a Esquerda - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E11 – Episódio 11 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E11.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/11/da8da2fe-cd04-4163-8e2d-89dd57b6300c/stream.mp4?type=serie&expires=1769553459&signature=009301bc332bb4ad4c0b4c3829dfff64ae982bd4243156eb089abbb4e19c4720"
-    },
-    {
-      "quando": "2026-11-12T00:47:41+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "doctor_who_t04ep12.html",
-      "ocupante": "doctor_who_t04ep12.html",
-      "nome_ocupante": "Doctor Who - T4E12 – A Terra Roubada - 🍿Clau",
-      "nome_novo": "Doctor Who - T4E12 – Episódio 12 - 🍿Clau",
-      "link_ocupante": "http://cloud2.playhdlugo.online/series/Doctor.Who/04/DW.S04E12.Dual.%5Bwww.torrentdosfilmes.com%5D.mp4",
-      "link_novo": "https://cdn-0024.l1s0-cdn-3123123.com/doctor-who-777a102b/s4/dubbed/12/eab18bf8-779c-4eed-9a8c-b06baf528cda/stream.mp4?type=serie&expires=1769553495&signature=fda443475f45b941635c1396128a8c8820bc3079945a1cac04ce591b7aeaa9b2"
-    },
-    {
-      "quando": "2026-11-12T00:47:59+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp04ep13.htm",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T00:57:13+00:00",
-      "tipo": "rate_limit",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp04ep13.htm",
-      "serie": "https://www.vini7xgrave.site/2026/01/arc-doctor-who-2024.html"
-    },
-    {
-      "quando": "2026-11-12T00:57:13+00:00",
-      "tipo": "rate_limit",
-      "url": "https://www.vini7xgrave.site/2026/01/arc-doctor-who-2024.html",
-      "seguidos": 2
-    },
-    {
-      "quando": "2026-11-12T00:59:49+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2026/01/inix-skins-juventude-flor-da-pele.html",
-      "slug": "skins_juventude_a_flor_da_pele",
-      "problemas": [
-        "temporadas [7] existem em disco mas não foram achadas na página"
-      ],
-      "encontrado": {
-        "T1": 9,
-        "T2": 10
-      }
-    },
-    {
-      "quando": "2026-11-12T01:02:23+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-casa-da-coruja-tp01ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:03:50+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-casa-da-coruja-tp01ep11.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:07:09+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-casa-da-coruja-tp01ep19.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:09:39+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e07_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:11:53+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e05_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:13:38+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e09_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:15:54+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp3e05_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:17:55+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp4e01_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:18:55+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp4e02_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:21:08+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp4e06_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:22:59+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp4e09_8.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:25:32+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-stranger-things-tp5e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:27:24+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2026/01/inix-stranger-things-tp5e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:28:24+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp01ep01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:30:15+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp01ep04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:31:15+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp01ep05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:33:06+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp01ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:34:06+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp01ep09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:38:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp02ep03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:39:36+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/arc-desejo-sombrio-tp02ep05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:44:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-mary-e-george-tp01ep02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:45:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-mary-e-george-tp01ep06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:46:44+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-mary-e-george-tp01ep07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:48:59+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-pluribus-tp01ep04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:50:26+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-pluribus-tp01ep06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:51:26+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-pluribus-tp01ep07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:52:53+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-pluribus-tp01ep09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:53:53+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-chernobyl-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:55:44+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-chernobyl-tp1e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:56:44+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-chernobyl-tp1e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T01:58:36+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-ravenswood-tp01ep03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:00:49+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-ravenswood-tp01ep07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:02:40+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-ravenswood-tp01ep10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:05:30+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-orange-is-new-black-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:07:13+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-orange-is-new-black-tp1e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:09:26+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-orange-is-new-black-tp1e13.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:13:32+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "grey_s_anatomy_t02ep25.html",
-      "novo": "grey_s_anatomy_t02ep02.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/1416/2x2.mp4"
-    },
-    {
-      "quando": "2026-11-12T02:13:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:14:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:16:01+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:17:53+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:19:44+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:21:57+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e16.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:23:24+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e18.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:25:15+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e21.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:26:16+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e22.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:28:48+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e27.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:30:15+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:31:15+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:32:42+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:33:42+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:34:42+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:36:09+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:37:09+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-segredo-alem-do-jardim-tp1e10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:38:59+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/11/inix-robin-hood-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/12/inix-robin-hood-tp1e05.html",
-      "numero_href": 5,
-      "numero_texto": 6,
-      "texto": "Episódio 6 - Unidos Pelo Amor, Separados por Mentiras"
-    },
-    {
-      "quando": "2026-11-12T02:38:59+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/11/inix-robin-hood-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/12/inix-robin-hood-tp1e05.html",
-      "numero_href": 5,
-      "numero_texto": 6,
-      "texto": "Episódio 6 - Unidos Pelo Amor, Separados por Mentiras"
-    },
-    {
-      "quando": "2026-11-12T02:39:01+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-robin-hood-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:40:01+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-robin-hood-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:42:55+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:45:16+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:46:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/10/inix-it-bem-vindos-derry-tp1e01_31.html",
-      "numero_href": 1,
-      "numero_texto": 2,
-      "texto": "Episódio 2 - Bem-Vindos a Escuridão"
-    },
-    {
-      "quando": "2026-11-12T02:46:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/12/inix-it-bem-vindos-derry-tp1e07_14.html",
-      "numero_href": 7,
-      "numero_texto": 8,
-      "texto": "Episódio 8 -"
-    },
-    {
-      "quando": "2026-11-12T02:46:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/10/inix-it-bem-vindos-derry-tp1e01_31.html",
-      "numero_href": 1,
-      "numero_texto": 2,
-      "texto": "Episódio 2 - Bem-Vindos a Escuridão"
-    },
-    {
-      "quando": "2026-11-12T02:46:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
-      "href": "https://viniraveon.blogspot.com/2025/12/inix-it-bem-vindos-derry-tp1e07_14.html",
-      "numero_href": 7,
-      "numero_texto": 8,
-      "texto": "Episódio 8 -"
-    },
-    {
-      "quando": "2026-11-12T02:46:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/10/inix-it-bem-vindos-derry-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:49:10+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-it-bem-vindos-derry-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:51:02+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/contexthttpsschema.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:54:08+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/inix-dom-tp01ep08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:56:30+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/09/inix-gen-v-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T02:58:23+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/09/inix-gen-v-tp2e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:00:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/12/arc-gen-v-tp02-ep05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:02:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:03:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:05:14+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:07:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:08:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:09:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp1e10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:10:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:11:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:12:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:13:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:16:18+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:17:13+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e11.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:18:40+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e13.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:19:40+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-la-brea-terra-perdida-tp2e14.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:21:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:22:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp1e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:23:58+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp1e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:25:49+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp1e09.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:26:49+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp1e10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:28:16+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp2e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:29:43+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp2e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:31:10+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/12/inix-o-exorcista-tp2e06.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:34:39+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-ultima-fronteira-tp1e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:36:23+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-ultima-fronteira-tp1e07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:37:38+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
-      "numero_href": 6,
-      "numero_texto": 7,
-      "texto": "Episódio 7 – Acabei Com Ele"
-    },
-    {
-      "quando": "2026-11-12T03:37:38+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
-      "numero_href": 6,
-      "numero_texto": 7,
-      "texto": "Episódio 7 – Acabei Com Ele"
-    },
-    {
-      "quando": "2026-11-12T03:37:40+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:38:40+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:40:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:41:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:42:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e07.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:43:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:46:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp1e13.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:47:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:48:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:49:34+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:52:25+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e10.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:54:27+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp3e04.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T03:57:38+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/11/inix-arcanjo-renegado-2020.html",
-      "slug": "arcanjo_renegado",
-      "problemas": [
-        "T3: faltam episódios [8]"
-      ],
-      "encontrado": {
-        "T1": 10,
-        "T2": 10,
-        "T3": 9,
-        "T4": 10
-      }
-    },
-    {
-      "quando": "2026-11-12T03:58:02+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T04:06:23+00:00",
-      "tipo": "rate_limit",
-      "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
-      "retentativa": true
-    },
-    {
-      "quando": "2026-11-12T04:17:16+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-12T04:18:03+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e13.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-12T04:20:16+00:00",
       "tipo": "http_esgotado",
       "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp9e01.html",
@@ -4327,53 +2596,1749 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-12T11:44:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-zumbis-tp1e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:45:54+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-zumbis-tp1e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:48:12+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e04_12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:50:01+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-sword-art-online-2012.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - O Mundo das Espadas"
+    },
+    {
+      "quando": "2026-11-12T11:50:01+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-sword-art-online-2012.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - O Mundo das Espadas"
+    },
+    {
+      "quando": "2026-11-12T11:50:04+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e0.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:51:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:52:58+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:55:30+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:57:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T11:58:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sword-art-online-tp1e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:02:59+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-o-verao-que-mudou-minha-vida-tp1e08.html",
+      "numero_href": 8,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Sem Amor"
+    },
+    {
+      "quando": "2026-11-12T12:02:59+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-o-verao-que-mudou-minha-vida-tp2e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Cena de Amor"
+    },
+    {
+      "quando": "2026-11-12T12:02:59+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-o-verao-que-mudou-minha-vida-tp1e08.html",
+      "numero_href": 8,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Sem Amor"
+    },
+    {
+      "quando": "2026-11-12T12:02:59+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-o-verao-que-mudou-minha-vida-tp2e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Cena de Amor"
+    },
+    {
+      "quando": "2026-11-12T12:02:59+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-o-verao-que-mudou-minha-vida-2022.html",
+      "slug": "o_verao_que_mudou_minha_vida",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T2: faltam episódios [1]"
+      ],
+      "encontrado": {
+        "T1": 8,
+        "T2": 7,
+        "T3": 11
+      }
+    },
+    {
+      "quando": "2026-11-12T12:03:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-melancia-cintilante-tp1e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:05:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-melancia-cintilante-tp1e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:07:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-melancia-cintilante-tp1e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:08:37+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-melancia-cintilante-tp1e14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp2e02_76.html",
+      "numero_href": 2,
+      "numero_texto": 12,
+      "texto": "Episódio 12 - Você Não Pertence a Si Mesmo"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp2e03_83.html",
+      "numero_href": 3,
+      "numero_texto": 13,
+      "texto": "Episódio 13 - Sangue de Demônio"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e01_16.html",
+      "numero_href": 1,
+      "numero_texto": 11,
+      "texto": "Episódio 11 - Almas Perdidas"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e02_16.html",
+      "numero_href": 2,
+      "numero_texto": 12,
+      "texto": "Episódio 12 - Pecado Original"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e03_16.html",
+      "numero_href": 3,
+      "numero_texto": 13,
+      "texto": "Episódio 13 - Beati Bellicosi"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e04_16.html",
+      "numero_href": 4,
+      "numero_texto": 14,
+      "texto": "Episódio 14 - Um Beijo de uma Rosa"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e05_16.html",
+      "numero_href": 5,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - Para as Crianças da Noite"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e06_16.html",
+      "numero_href": 6,
+      "numero_texto": 16,
+      "texto": "Episódio 16 - Fique Comigo"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e07_16.html",
+      "numero_href": 7,
+      "numero_texto": 17,
+      "texto": "Episódio 17 - Fogo Celestial"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e08_16.html",
+      "numero_href": 8,
+      "numero_texto": 18,
+      "texto": "Episódio 18 - A Fera Interior"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e09_16.html",
+      "numero_href": 9,
+      "numero_texto": 19,
+      "texto": "Episódio 19 - Aku Cinta Kamu"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e10_16.html",
+      "numero_href": 10,
+      "numero_texto": 20,
+      "texto": "Episódio 20 - Cidade de Vidro"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e11_16.html",
+      "numero_href": 11,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Aliança"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e12_16.html",
+      "numero_href": 12,
+      "numero_texto": 22,
+      "texto": "Episódio 22 - Todas as Coisas Boas..."
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp2e02_76.html",
+      "numero_href": 2,
+      "numero_texto": 12,
+      "texto": "Episódio 12 - Você Não Pertence a Si Mesmo"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp2e03_83.html",
+      "numero_href": 3,
+      "numero_texto": 13,
+      "texto": "Episódio 13 - Sangue de Demônio"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e01_16.html",
+      "numero_href": 1,
+      "numero_texto": 11,
+      "texto": "Episódio 11 - Almas Perdidas"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e02_16.html",
+      "numero_href": 2,
+      "numero_texto": 12,
+      "texto": "Episódio 12 - Pecado Original"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e03_16.html",
+      "numero_href": 3,
+      "numero_texto": 13,
+      "texto": "Episódio 13 - Beati Bellicosi"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e04_16.html",
+      "numero_href": 4,
+      "numero_texto": 14,
+      "texto": "Episódio 14 - Um Beijo de uma Rosa"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e05_16.html",
+      "numero_href": 5,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - Para as Crianças da Noite"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e06_16.html",
+      "numero_href": 6,
+      "numero_texto": 16,
+      "texto": "Episódio 16 - Fique Comigo"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e07_16.html",
+      "numero_href": 7,
+      "numero_texto": 17,
+      "texto": "Episódio 17 - Fogo Celestial"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e08_16.html",
+      "numero_href": 8,
+      "numero_texto": 18,
+      "texto": "Episódio 18 - A Fera Interior"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e09_16.html",
+      "numero_href": 9,
+      "numero_texto": 19,
+      "texto": "Episódio 19 - Aku Cinta Kamu"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e10_16.html",
+      "numero_href": 10,
+      "numero_texto": 20,
+      "texto": "Episódio 20 - Cidade de Vidro"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e11_16.html",
+      "numero_href": 11,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Aliança"
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp4e12_16.html",
+      "numero_href": 12,
+      "numero_texto": 22,
+      "texto": "Episódio 22 - Todas as Coisas Boas..."
+    },
+    {
+      "quando": "2026-11-12T12:10:28+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/05/inix-shadowhunters-instrumentos-mortais.html",
+      "slug": "shadowhunters_instrumentos_mortais",
+      "problemas": [
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      ],
+      "encontrado": {
+        "T1": 13,
+        "T2": 20,
+        "T3": 10,
+        "T4": 12
+      }
+    },
+    {
+      "quando": "2026-11-12T12:10:53+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e01_54.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:13:06+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e05_5.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:14:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e08_76.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:15:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e09_29.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:20:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp3e03_29.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:27:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-adolescencia-tp1e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:29:21+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-o-justiceiro-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:31:08+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-o-justiceiro-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:32:03+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-o-justiceiro-tp1e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:36:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-o-justiceiro-tp2e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:38:39+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-marvel-o-justiceiro-tp2e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:39:29+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-rainha-dos-golpes-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-rainha-dos-golpes-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1"
+    },
+    {
+      "quando": "2026-11-12T12:39:29+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-rainha-dos-golpes-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-rainha-dos-golpes-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1"
+    },
+    {
+      "quando": "2026-11-12T12:40:47+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-bon-appetit-vossa-majestade-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:41:35+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-bon-appetit-vossa-majestade-tp1e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:43:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-madame-aema-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:46:33+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-alem-do-direito-tp1e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:49:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sem-piedade-tp1e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:51:04+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sem-piedade-tp1e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:52:21+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-sem-piedade-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:53:22+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-gatilho-tp1e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T12:54:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-gatilho-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:04:48+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-gatilho-tp1e03.html",
+      "serie": "https://www.vini7xgrave.site/2025/09/inix-gatilho-2025.html"
+    },
+    {
+      "quando": "2026-11-12T13:04:48+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-gatilho-2025.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-12T13:06:21+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-resident-playbook-tp1e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:07:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-resident-playbook-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:11:10+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-resident-playbook-tp1e11.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:12:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-uma-seul-desconhecida-tp1e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:14:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-uma-seul-desconhecida-tp1e06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:15:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-uma-seul-desconhecida-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:17:19+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-uma-seul-desconhecida-tp1e09.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:20:12+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-namorada-ideal-tp1e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:22:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-namorada-ideal-tp1e06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e1.html",
+      "numero_href": 1,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - AK-51"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e8.html",
+      "numero_href": 8,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - Ossos Antigos"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e9.html",
+      "numero_href": 9,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - A Atração"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e10.html",
+      "numero_href": 10,
+      "numero_texto": 9,
+      "texto": "Episódio 9 - Inferno Seguiu"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e6_14.html",
+      "numero_href": 6,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Receita da Família"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e9_14.html",
+      "numero_href": 9,
+      "numero_texto": 11,
+      "texto": "Episódio 11 - Chamado à Ação"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e05.html",
+      "numero_href": 5,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - Bicicleta Roubada"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e06_14.html",
+      "numero_href": 6,
+      "numero_texto": 5,
+      "texto": "Episódio 5 - Orca Encolheu"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e1.html",
+      "numero_href": 1,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - AK-51"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e8.html",
+      "numero_href": 8,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - Ossos Antigos"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e9.html",
+      "numero_href": 9,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - A Atração"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e10.html",
+      "numero_href": 10,
+      "numero_texto": 9,
+      "texto": "Episódio 9 - Inferno Seguiu"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e6_14.html",
+      "numero_href": 6,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Receita da Família"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e9_14.html",
+      "numero_href": 9,
+      "numero_texto": 11,
+      "texto": "Episódio 11 - Chamado à Ação"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e05.html",
+      "numero_href": 5,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - Bicicleta Roubada"
+    },
+    {
+      "quando": "2026-11-12T13:23:18+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-filhos-da-anarquia-2008.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e06_14.html",
+      "numero_href": 6,
+      "numero_texto": 5,
+      "texto": "Episódio 5 - Orca Encolheu"
+    },
+    {
+      "quando": "2026-11-12T13:23:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e1_14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:25:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e4.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:28:38+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp1e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:30:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp2e5.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:32:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp2e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:34:02+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp2e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:36:53+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp3e5.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:37:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp3e6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:38:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp3e7.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:40:15+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp3e9.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:43:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e1.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:44:18+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e2.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:46:09+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e5.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:50:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:53:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e11.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:54:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:55:54+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp6e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T13:59:01+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp6e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:01:08+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp6e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:01:59+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp7e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:03:50+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp7e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:06:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp7e11.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:08:29+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-manifest-o-misterio-do-voo-828-2018.html",
+      "href": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp2e01_14.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Grounded"
+    },
+    {
+      "quando": "2026-11-12T14:08:29+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-manifest-o-misterio-do-voo-828-2018.html",
+      "href": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp2e01_14.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Grounded"
+    },
+    {
+      "quando": "2026-11-12T14:09:19+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp1e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:12:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp1e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:14:33+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:15:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp2e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:16:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp2e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:21:03+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp3e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:21:50+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp3e06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:23:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp3e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:26:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:29:14+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e09.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:30:41+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:31:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:33:32+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e16.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:35:23+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/09/inix-manifest-tp4e19.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:36:50+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e01_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:38:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e03_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:39:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e05_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:40:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e06_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:43:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e12_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:44:30+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e01_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:46:21+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e04_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:49:28+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e11_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:50:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e12_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:52:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp3e04_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:54:01+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp3e05_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T14:56:51+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp3e11_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:00:43+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp3e22.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:03:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp4e03_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:05:10+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp4e08_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:06:22+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp4e10_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:08:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp4e11_6.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:11:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp5e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:14:42+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp5e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:16:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/05/inix-tp5e18.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:18:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:19:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:20:50+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:22:41+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:25:14+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:27:47+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp6e17.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
+      "numero_href": 13,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - O Mago de Diamond"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
+      "numero_href": 20,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Motim na Capital"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
+      "numero_href": 25,
+      "numero_texto": 26,
+      "texto": "Episódio 26 - Feras Feridas"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
+      "numero_href": 26,
+      "numero_texto": 27,
+      "texto": "Episódio 27 - Luz"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
+      "numero_href": 29,
+      "numero_texto": 30,
+      "texto": "Episódio 30 - O Mago Espelho"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
+      "numero_href": 33,
+      "numero_texto": 31,
+      "texto": "Episódio 31 - Perseguição na Neve"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
+      "numero_href": 32,
+      "numero_texto": 33,
+      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
+      "numero_href": 49,
+      "numero_texto": 48,
+      "texto": "Episódio 48 - Desespero vs. Esperança"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Chamas de Ódio"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
+      "numero_href": 13,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - O Mago de Diamond"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
+      "numero_href": 20,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Motim na Capital"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
+      "numero_href": 25,
+      "numero_texto": 26,
+      "texto": "Episódio 26 - Feras Feridas"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
+      "numero_href": 26,
+      "numero_texto": 27,
+      "texto": "Episódio 27 - Luz"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
+      "numero_href": 29,
+      "numero_texto": 30,
+      "texto": "Episódio 30 - O Mago Espelho"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
+      "numero_href": 33,
+      "numero_texto": 31,
+      "texto": "Episódio 31 - Perseguição na Neve"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
+      "numero_href": 32,
+      "numero_texto": 33,
+      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
+      "numero_href": 49,
+      "numero_texto": 48,
+      "texto": "Episódio 48 - Desespero vs. Esperança"
+    },
+    {
+      "quando": "2026-11-12T15:30:02+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Chamas de Ódio"
+    },
+    {
+      "quando": "2026-11-12T15:30:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e4.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:33:18+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:36:26+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e18.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:38:11+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e22.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:40:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:43:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e34.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:44:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e37.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:45:43+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e38.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:47:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e41.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:48:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e42.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:51:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e47.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:52:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49_13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:55:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:56:58+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "black_clover_t02ep07.html",
+      "novo": "black_clover_t02ep06.html",
+      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/73223/1x57.mp4"
+    },
+    {
+      "quando": "2026-11-12T15:57:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T15:58:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e09.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:03:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e22.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:05:46+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e29.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:06:33+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e30.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:08:46+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e34.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:13:38+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-12T16:21:35+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 622,
-      "ok": 490,
-      "429": 107,
+      "requisicoes": 738,
+      "ok": 566,
+      "429": 124,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 107,
+      "falhas_definitivas": 124,
       "html_invalido": 0,
-      "serie_inconsistente": 4,
-      "conflitos": 0,
-      "proxy_fallback": 107,
-      "proxy_hit": 106,
-      "proxmint_listas": 107,
-      "link_em_a_href": 4,
+      "serie_inconsistente": 2,
+      "conflitos": 1,
+      "proxy_fallback": 124,
+      "proxy_hit": 122,
+      "proxmint_listas": 124,
+      "link_em_a_href": 2,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 27,
+      "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 459,
-      "playwright_skip": 12,
-      "episodios_tp_encontrados": 1698,
+      "http_necessario": 537,
+      "playwright_skip": 14,
+      "episodios_tp_encontrados": 1242,
       "robo": "series",
-      "quando": "2026-11-12T11:34:35+00:00",
-      "duracao_min": 243.2
+      "quando": "2026-11-12T16:21:35+00:00",
+      "duracao_min": 285.7
     },
     "acumulado": {
-      "requisicoes": 4319,
-      "ok": 3030,
-      "429": 1046,
+      "requisicoes": 5057,
+      "ok": 3596,
+      "429": 1170,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 1046,
+      "falhas_definitivas": 1170,
       "html_invalido": 0,
-      "serie_inconsistente": 14,
-      "conflitos": 100,
-      "proxy_fallback": 1046,
-      "proxy_hit": 1038,
-      "proxmint_listas": 1046,
-      "link_em_a_href": 8,
+      "serie_inconsistente": 16,
+      "conflitos": 101,
+      "proxy_fallback": 1170,
+      "proxy_hit": 1160,
+      "proxmint_listas": 1170,
+      "link_em_a_href": 10,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 330,
       "feed_hit": 0,
-      "http_necessario": 2806,
-      "playwright_skip": 39,
-      "episodios_tp_encontrados": 7168
+      "http_necessario": 3343,
+      "playwright_skip": 53,
+      "episodios_tp_encontrados": 8410
     }
   }
 }
