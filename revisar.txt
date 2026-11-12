@@ -13,3 +13,11 @@ https://www.vini7xgrave.site/2025/05/inix-saga-crepusculo-lua-nova-2009.html | S
 https://www.vini7xgrave.site/2026/01/inix-one-piece-serie-2023.html | série inconsistente (one_piece_a_serie): T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
 https://www.vini7xgrave.site/2026/01/inix-dexter-2006.html | URL dizia 10, mas texto dizia 11 (usei 11) - link: https://viniraveon.blogspot.com/2026/03/inix-dexter-tp8e10_5.html
 https://www.vini7xgrave.site/2026/03/inix-estacao-19-2018.html | URL dizia 5, mas texto dizia 6 (usei 6) - link: https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp4e05_3.html
+https://www.vini7xgrave.site/2026/02/inix-todo-mundo-me-ama-2024.html | URL dizia 19, mas texto dizia 20 (usei 20) - link: https://vini7xgseries2.blogspot.com/2026/02/inix-todo-mundo-me-ama-tp1e19_26.html
+https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html | URL dizia 14, mas texto dizia 1 (usei 1) - link: https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp1e14.html
+https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html | URL dizia 4, mas texto dizia 5 (usei 5) - link: https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp3e04_19.html
+https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html | série inconsistente (os_simpsons): T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
+https://www.vini7xgrave.site/2025/04/inix-futurama.html | URL dizia 13, mas texto dizia 14 (usei 14) - link: https://viniraveon.blogspot.com/2025/04/inix-tp2e13_78.html
+https://www.vini7xgrave.site/2025/04/inix-futurama.html | URL dizia 14, mas texto dizia 15 (usei 15) - link: https://viniraveon.blogspot.com/2025/04/inix-tp2e14_11.html
+https://www.vini7xgrave.site/2026/02/inix-this-is-us.html | série inconsistente (this_is_us): T3: faltam episódios [1, 2, 3, 4, 5, 6, 8, 9, 12]; T8: faltam episódios [7, 10, 11]
+https://www.vini7xgrave.site/2026/02/inix-o-cuco-de-cristal-2025.html | URL dizia 1, mas texto dizia 2 (usei 2) - link: https://viniraveon.blogspot.com/2026/02/inix-o-cuco-de-cristal-tp1e01_9.html

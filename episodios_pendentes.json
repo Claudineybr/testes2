@@ -5,7 +5,7 @@
     "nome_json": "Big Bang: A Teoria - T5E1 – Análise do Reflexo do Skank - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
     "capa": "https://image.tmdb.org/t/p/original/zx5DJbzqhQFATMnQP763LBhsL8H.jpg",
-    "tentativas": 1
+    "tentativas": 2
   },
   {
     "arquivo": "armazem_13_t04ep20.html",
@@ -13,6 +13,38 @@
     "nome_json": "Armazém 13 - T4E20 – Episódio 20 - 🍿Clau",
     "url": "https://marcosx7.blogspot.com/2026/03/inix-armazem-13-tp4ep20.html",
     "capa": "https://image.tmdb.org/t/p/original/veIu3hM6z5luuT87yu6h8pA9ppE.jpg",
+    "tentativas": 2
+  },
+  {
+    "arquivo": "uma_familia_da_pesada_t02ep03.html",
+    "stem": "uma_familia_da_pesada_t02ep03",
+    "nome_json": "Uma Família da Pesada - T2E3 – Da Boom - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+    "capa": "https://image.tmdb.org/t/p/original/dzO0fsOsyKYxizjwHS7qlUZ1lhx.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "uma_familia_da_pesada_t02ep15.html",
+    "stem": "uma_familia_da_pesada_t02ep15",
+    "nome_json": "Uma Família da Pesada - T2E15 – Droga, Janet - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+    "capa": "https://image.tmdb.org/t/p/original/dzO0fsOsyKYxizjwHS7qlUZ1lhx.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "uma_familia_da_pesada_t02ep17.html",
+    "stem": "uma_familia_da_pesada_t02ep17",
+    "nome_json": "Uma Família da Pesada - T2E17 – Sexy Demais Para o Meu Corpo - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
+    "capa": "https://image.tmdb.org/t/p/original/dzO0fsOsyKYxizjwHS7qlUZ1lhx.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "percy_jackson_e_os_olimpianos_t02ep06.html",
+    "stem": "percy_jackson_e_os_olimpianos_t02ep06",
+    "nome_json": "Percy Jackson e os Olimpianos - T2E6 – Capítulo Seis - 🍿Clau",
+    "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+    "capa": "https://image.tmdb.org/t/p/original/5PPjIlgY17DNBqTDnCzZs2p6jM0.jpg",
     "tentativas": 1
   }
 ]
