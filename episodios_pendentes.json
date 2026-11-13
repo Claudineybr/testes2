@@ -5,7 +5,7 @@
     "nome_json": "Big Bang: A Teoria - T5E1 – Análise do Reflexo do Skank - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
     "capa": "https://image.tmdb.org/t/p/original/zx5DJbzqhQFATMnQP763LBhsL8H.jpg",
-    "tentativas": 4
+    "tentativas": 5
   },
   {
     "arquivo": "armazem_13_t04ep20.html",
@@ -13,7 +13,7 @@
     "nome_json": "Armazém 13 - T4E20 – Episódio 20 - 🍿Clau",
     "url": "https://marcosx7.blogspot.com/2026/03/inix-armazem-13-tp4ep20.html",
     "capa": "https://image.tmdb.org/t/p/original/veIu3hM6z5luuT87yu6h8pA9ppE.jpg",
-    "tentativas": 4
+    "tentativas": 5
   },
   {
     "arquivo": "uma_familia_da_pesada_t02ep03.html",
@@ -493,6 +493,14 @@
     "nome_json": "Fate: The Winx Saga - T2E7 – Todas as Bruxas Selvagens - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e07_7.html",
     "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBkb4QQndsy90tGL9HMk6SGbCzRMUyM2Qpc0ysyGiq-IWXJR8Cr9FVvWk2KW0kzm5pSqJE0xfQ_pH1xd2Pb-ibq4y9yQEpURy2y1_opX0eiVIMJUCBaJCFIFW8dfGE9flBGkgLe1Gh9G6CbQyP8mQnPQsafU3G7sG6qdEsS3dg442QR1inaR2o6YNZ0qs/s320/8dUb8PBFfILOylcHc7ajL1Ffnvb.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "friends_t02ep04.html",
+    "stem": "friends_t02ep04",
+    "nome_json": "Friends - T2E4 – Aquele com o Marido da Phoebe - 🍿Clau",
+    "url": "https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e04_4.html",
+    "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsNx1WKHQ48RjEAQ_jZr-SJ3Rq9XQegX0MFXmQqSJZhyphenhyphenVndyTILqhLvF5C01Oi990SlYpQesb_IGMFXEq2-ibgs4f1hvmvVW_8PJFa58B6VgZINwOe0FUZfMyMXw_mLjo8JHRZ5EatrkoJCXPuCNfBa2E1poEeV1A49rGtnrmRlzmyWmQC0_3pJWFmKBM/s320/ihlC60R6KKOhkzz0piqvSdsAQ6Y.jpg",
     "tentativas": 1
   }
 ]

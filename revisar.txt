@@ -236,3 +236,60 @@ https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html | UR
 https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html | série inconsistente (eu_a_patroa_e_as_criancas): T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
 https://www.vini7xgrave.site/2025/05/inix-casa-do-dragao.html | série inconsistente (a_casa_do_dragao): T1E5 aparece 2x com URLs diferentes; T2: faltam episódios [5]
 https://www.vini7xgrave.site/2025/05/inix-ash-vs-evil-dead-2015.html | URL dizia 5, mas texto dizia 3 (usei 3) - link: https://viniseries3.blogspot.com/2025/05/inix-tp1e05_6.html
+https://www.vini7xgrave.site/2025/05/s.html | URL dizia 8, mas texto dizia 9 (usei 9) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp1e08_25.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 4, mas texto dizia 5 (usei 5) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e04_7.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 5, mas texto dizia 6 (usei 6) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e05_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e06_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 7, mas texto dizia 8 (usei 8) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e07_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 8, mas texto dizia 9 (usei 9) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e08_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 9, mas texto dizia 10 (usei 10) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e09_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 10, mas texto dizia 11 (usei 11) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e10_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 11, mas texto dizia 12 (usei 12) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e11.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 12, mas texto dizia 13 (usei 13) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e12.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 13, mas texto dizia 14 (usei 14) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e13.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 14, mas texto dizia 15 (usei 15) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e14.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 15, mas texto dizia 16 (usei 16) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e15.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 16, mas texto dizia 17 (usei 17) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e16.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 16, mas texto dizia 18 (usei 18) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e16_4.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 18, mas texto dizia 19 (usei 19) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e18.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 19, mas texto dizia 20 (usei 20) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e19.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 20, mas texto dizia 21 (usei 21) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e20.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 21, mas texto dizia 22 (usei 22) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e21.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 22, mas texto dizia 23 (usei 23) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e22.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 23, mas texto dizia 24 (usei 24) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp2e23.html
+https://www.vini7xgrave.site/2025/05/blog-post.html | URL dizia 17, mas texto dizia 18 (usei 18) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp3e17_5.html
+https://www.vini7xgrave.site/2025/05/inix-o-conta-da-aia.html | série inconsistente (o_conta_da_aia): T3: faltam episódios [3]; T4: faltam episódios [4]; T5: faltam episódios [4, 7, 8]
+https://www.vini7xgrave.site/2025/05/inix-round-6.html | série inconsistente (round_6): T1E2 aparece 2x com URLs diferentes; T1E3 aparece 2x com URLs diferentes; T1E4 aparece 2x com URLs diferentes; T2: faltam episódios [2, 3, 4]
+https://www.vini7xgrave.site/2025/05/inix-alquimia-das-almas.html | URL dizia 16, mas texto dizia 17 (usei 17) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp1e16_14.html
+https://www.vini7xgrave.site/2025/05/inix-com-carinho-kitty.html | URL dizia 11, mas texto dizia 1 (usei 1) - link: https://vini7xgseries2.blogspot.com/2025/05/inix-tp1e11.html
+https://www.vini7xgrave.site/2025/05/inix-com-carinho-kitty.html | série inconsistente (com_carinho_kitty): T1E1 aparece 2x com URLs diferentes; T2: faltam episódios [1]
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 6, mas texto dizia 5 (usei 5) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e06_87.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 7, mas texto dizia 6 (usei 6) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e07_59.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 8, mas texto dizia 7 (usei 7) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e08_20.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 9, mas texto dizia 8 (usei 8) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e09_29.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 11, mas texto dizia 10 (usei 10) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e11_81.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 12, mas texto dizia 11 (usei 11) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e12_18.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 13, mas texto dizia 12 (usei 12) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e13_46.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 14, mas texto dizia 13 (usei 13) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e14_52.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 15, mas texto dizia 14 (usei 14) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e15_68.html
+https://www.vini7xgrave.site/2025/05/inix-meu-demonio-favorito.html | URL dizia 16, mas texto dizia 15 (usei 15) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e16_14.html
+https://www.vini7xgrave.site/2025/05/inix-all-of-us-are-dead.html | URL dizia 4, mas texto dizia 5 (usei 5) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e04_83.html
+https://www.vini7xgrave.site/2025/05/inix-cacadores-de-demonios.html | URL dizia 3, mas texto dizia 4 (usei 4) - link: https://viniraveon.blogspot.com/2025/05/inix-tp2e03_54.html
+https://www.vini7xgrave.site/2025/05/inix-outsider.html | URL dizia 9, mas texto dizia 10 (usei 10) - link: https://viniraveon.blogspot.com/2025/05/inix-tp1e09_2.html
+https://www.vini7xgrave.site/2025/05/inix-breaking-bad.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://viniraveon.blogspot.com/2025/05/inix-tp4e06_2.html
+https://www.vini7xgrave.site/2025/05/inix-breaking-bad.html | URL dizia 6, mas texto dizia 8 (usei 8) - link: https://viniraveon.blogspot.com/2025/05/inix-tp5e06_2.html
+https://www.vini7xgrave.site/2025/05/inix-breaking-bad.html | URL dizia 8, mas texto dizia 9 (usei 9) - link: https://viniraveon.blogspot.com/2025/05/inix-tp5e08.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 4, mas texto dizia 5 (usei 5) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e04_30.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 17, mas texto dizia 1 (usei 1) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e17_27.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 18, mas texto dizia 2 (usei 2) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e18_27.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 19, mas texto dizia 3 (usei 3) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e19_27.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 20, mas texto dizia 4 (usei 4) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e20.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 21, mas texto dizia 5 (usei 5) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e21.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 22, mas texto dizia 6 (usei 6) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e22.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e06_28.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 0, mas texto dizia 1 (usei 1) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp8e0.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 3, mas texto dizia 4 (usei 4) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp9e03_29.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 0, mas texto dizia 1 (usei 1) - link: https://viniseries3.blogspot.com/2025/05/inix-tp14e0.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | URL dizia 21, mas texto dizia 1 (usei 1) - link: https://viniseries3.blogspot.com/2025/05/inix-tp14e21.html
+https://www.vini7xgrave.site/2025/04/inix-supernatural.html | série inconsistente (supernatural_sobrenatural): T2E2 aparece 2x com URLs diferentes; T3E1 aparece 2x com URLs diferentes; T3E2 aparece 2x com URLs diferentes; T3E3 aparece 2x com URLs diferentes; T3E4 aparece 2x com URLs diferentes; T3E5 aparece 2x com URLs diferentes; T3E6 aparece 2x com URLs diferentes; T14E1 aparece 2x com URLs diferentes; T4: faltam episódios [1, 2, 3, 4, 5, 6]; T15: faltam episódios [1, 2]
+https://www.vini7xgrave.site/2025/04/inix-festa-da-salsicha-comilandia.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://viniraveon.blogspot.com/2025/04/inix-tp1e06_54.html
