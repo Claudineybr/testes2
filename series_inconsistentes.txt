@@ -52,3 +52,13 @@ https://www.vini7xgrave.site/2025/04/inix-tp4e13_15.html  # tp5_e13: T4E13 apare
 https://www.vini7xgrave.site/2025/04/inix-tp5e08.html  # tp5_e08: T5E8 aparece 8x com URLs diferentes; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7]
 https://www.vini7xgrave.site/2025/04/inix-tp4e13.html  # tp4_e13: T4E13 aparece 8x com URLs diferentes; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 https://www.vini7xgrave.site/2025/04/inix-tp3e10.html  # tp3_e10: T3E10 aparece 8x com URLs diferentes; T3: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]
+https://www.vini7xgrave.site/2025/04/inix-tp2e08.html  # tp2_e08: T2E8 aparece 8x com URLs diferentes; T2: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-elite.html  # elite: T4E5 aparece 2x com URLs diferentes; T4E6 aparece 2x com URLs diferentes; T3: faltam episódios [5, 6]
+https://www.vini7xgrave.site/2025/04/inix-tp1e13.html  # tp2_e22: T1E13 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/04/inix-tp6e01.html  # tp6_e17: T6E1 aparece 8x com URLs diferentes
+https://www.vini7xgrave.site/2025/04/inix-tp1e10_14.html  # tp1_e10: T1E10 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6, 7, 8, 9]
+https://www.vini7xgrave.site/2025/04/inix-tp1e10.html  # tp1_e10: T1E10 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6, 7, 8, 9]
+https://www.vini7xgrave.site/2025/04/inix-tp2e01.html  # tp2_e01: T2E1 aparece 8x com URLs diferentes
+https://www.vini7xgrave.site/2025/04/inix-apenas-um-show.html  # apenas_um_show: T1E10 aparece 2x com URLs diferentes; T1E11 aparece 2x com URLs diferentes; T2: faltam episódios [10, 11]
+https://www.vini7xgrave.site/2025/04/inix-os-originais-originals.html  # os_originais_the_originals: T1E2 aparece 2x com URLs diferentes; T1E6 aparece 2x com URLs diferentes; T1E16 aparece 2x com URLs diferentes; T1E18 aparece 2x com URLs diferentes; T1E19 aparece 2x com URLs diferentes; T1E21 aparece 2x com URLs diferentes; T2: faltam episódios [2, 6, 16, 18, 19, 21]
+https://www.vini7xgrave.site/2025/04/inix-ponto-cego.html  # ponto_cego: T1E13 aparece 2x com URLs diferentes; T1: faltam episódios [12]; T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17]

@@ -1,21 +1,5 @@
 [
   {
-    "arquivo": "big_bang_a_teoria_t05ep01.html",
-    "stem": "big_bang_a_teoria_t05ep01",
-    "nome_json": "Big Bang: A Teoria - T5E1 – Análise do Reflexo do Skank - 🍿Clau",
-    "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
-    "capa": "https://image.tmdb.org/t/p/original/zx5DJbzqhQFATMnQP763LBhsL8H.jpg",
-    "tentativas": 5
-  },
-  {
-    "arquivo": "armazem_13_t04ep20.html",
-    "stem": "armazem_13_t04ep20",
-    "nome_json": "Armazém 13 - T4E20 – Episódio 20 - 🍿Clau",
-    "url": "https://marcosx7.blogspot.com/2026/03/inix-armazem-13-tp4ep20.html",
-    "capa": "https://image.tmdb.org/t/p/original/veIu3hM6z5luuT87yu6h8pA9ppE.jpg",
-    "tentativas": 5
-  },
-  {
     "arquivo": "uma_familia_da_pesada_t02ep03.html",
     "stem": "uma_familia_da_pesada_t02ep03",
     "nome_json": "Uma Família da Pesada - T2E3 – Da Boom - 🍿Clau",
@@ -629,6 +613,14 @@
     "nome_json": "Game of Thrones (GOT) - T2E6 – Os Velhos Deuses e os Novos - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e06_23.html",
     "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWtW01TaBbNQEFZe-pWHGbCNX5xmroEgoptqlP6TmsD14mFeWiL-7G_N7w-ZMS6rcqJY-nN6aUkbi3n3iYAUxUxWZGBlBP65mMLA8TutgKqTLpqlr3NZ8Jv9DPyr6xeMzR_HWe_ziOGUC80HWA3nFzyj7tVr_bhbMkdeJ2OrXbwWDgJQVg2JT2J-AX7A/s320/nwFFvIpBpW3SNrAA4zmOv9gsIa1.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "cacador_de_demonios_t01ep03.html",
+    "stem": "cacador_de_demonios_t01ep03",
+    "nome_json": "Caçador de Demônios - T1E3 – Episódio 3 - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e03_6.html",
+    "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPEE7fLy48W-apGzinuCUhFTOqV5mch5KI939h6i7TPOOuSvHMawI1CNQnGMszNYWOhV8DVGb2Z_M4LYefBlKpcV-bIIjsTfDpGbrI8-7ilI_X31lUy46gY24XmuJl7NGNL_-O4I79gaxzV2hPgWK0qKe5WLgUdu6l66VFI89m9FvKMYdbnMJGmRjr50M/s320/ix1TAQUxrH87svQGE2mW7Eo6EOd.jpg",
     "tentativas": 1
   }
 ]
