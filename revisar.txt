@@ -308,3 +308,28 @@ https://www.vini7xgrave.site/2025/04/inix-tp1e07.html | série inconsistente (tp
 https://www.vini7xgrave.site/2025/04/inix-tp5e10_23.html | série inconsistente (tp5_e10): T5E10 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6]; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]
 https://www.vini7xgrave.site/2025/04/inix-tp8e06.html | série inconsistente (tp8_e06): T8E6 aparece 8x com URLs diferentes; T8: faltam episódios [1, 2, 3, 4, 5]
 https://www.vini7xgrave.site/2025/04/blog-post_23.html | URL dizia 8, mas texto dizia 9 (usei 9) - link: https://viniraveon.blogspot.com/2025/04/inix-tp4e08_91.html
+https://www.vini7xgrave.site/2025/04/inix-tp2e10.html | série inconsistente (tp2_e10): T2E10 aparece 8x com URLs diferentes; T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-tp4e08.html | série inconsistente (tp4_e08): T4E8 aparece 8x com URLs diferentes; T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html | URL dizia 12, mas texto dizia 1 (usei 1) - link: https://viniraveon.blogspot.com/2025/04/inix-tp1e12_22.html
+https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html | URL dizia 13, mas texto dizia 2 (usei 2) - link: https://viniraveon.blogspot.com/2025/04/inix-tp1e13_22.html
+https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html | série inconsistente (vis_a_vis): T1E1 aparece 2x com URLs diferentes; T1E2 aparece 2x com URLs diferentes; T2: faltam episódios [1, 2]
+https://www.vini7xgrave.site/2025/04/cobra-kai-2018.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://viniraveon.blogspot.com/2025/04/inix-tp5e06_47.html
+https://www.vini7xgrave.site/2025/04/cobra-kai-2018.html | série inconsistente (cobra_kai): T2E10 aparece 2x com URLs diferentes
+https://www.vini7xgrave.site/2025/04/inix-tp2e06.html | série inconsistente (tp2_e06): T2E6 aparece 8x com URLs diferentes; T2: faltam episódios [1, 2, 3, 4, 5]
+https://www.vini7xgrave.site/2025/04/inix-tp5e10.html | série inconsistente (tp5_e10): T5E10 aparece 8x com URLs diferentes; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]
+https://www.vini7xgrave.site/2025/04/inix-bates-motel.html | série inconsistente (bates_motel): T2E3 aparece 2x com URLs diferentes; T4: faltam episódios [3]
+https://www.vini7xgrave.site/2025/04/inix-tp3e08.html | série inconsistente (tp3_e08): T3E8 aparece 8x com URLs diferentes; T3: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-tp5e22.html | série inconsistente (tp8_e16): T5E22 aparece 8x com URLs diferentes; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+https://www.vini7xgrave.site/2025/04/inix-diarios-do-vampiro-2009.html | URL dizia 5, mas texto dizia 6 (usei 6) - link: https://viniraveon.blogspot.com/2025/04/inix-tp4e05_5.html
+https://www.vini7xgrave.site/2025/04/inix-diarios-do-vampiro-2009.html | URL dizia 13, mas texto dizia 15 (usei 15) - link: https://vini7xgseries2.blogspot.com/2025/04/inix-tp5e13_16.html
+https://www.vini7xgrave.site/2025/04/inix-tp3e13.html | série inconsistente (tp5_e09): T3E13 aparece 8x com URLs diferentes; T3: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/04/inix-prison-break-em-busca-da-verdade.html | URL dizia 6, mas texto dizia 23 (usei 23) - link: https://viniraveon.blogspot.com/2025/04/inix-tp4e06_46.html
+https://www.vini7xgrave.site/2025/04/inix-prison-break-em-busca-da-verdade.html | URL dizia 6, mas texto dizia 7 (usei 7) - link: https://viniraveon.blogspot.com/2025/04/inix-tp5e06_97.html
+https://www.vini7xgrave.site/2025/04/inix-prison-break-em-busca-da-verdade.html | série inconsistente (prison_break_em_busca_da_verdade): T1E12 aparece 2x com URLs diferentes; T1E13 aparece 2x com URLs diferentes; T4E8 aparece 2x com URLs diferentes; T4E9 aparece 2x com URLs diferentes; T2: faltam episódios [12, 13]
+https://www.vini7xgrave.site/2025/04/inix-tp1e06_16.html | série inconsistente (tp1_e06): T1E6 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5]
+https://www.vini7xgrave.site/2025/04/inix-tp1e09.html | série inconsistente (tp1_e09): T1E9 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6, 7, 8]; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/04/inix-tp4e13_15.html | série inconsistente (tp5_e13): T4E13 aparece 8x com URLs diferentes; T1: faltam episódios [2, 3, 4, 5, 6, 7, 8]; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-tp5e08.html | série inconsistente (tp5_e08): T5E8 aparece 8x com URLs diferentes; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; T5: faltam episódios [1, 2, 3, 4, 5, 6, 7]
+https://www.vini7xgrave.site/2025/04/inix-tp4e13.html | série inconsistente (tp4_e13): T4E13 aparece 8x com URLs diferentes; T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/04/inix-ben-10.html | URL dizia 4, mas texto dizia 5 (usei 5) - link: https://viniraveon.blogspot.com/2025/04/inix-tp1e04_90.html
+https://www.vini7xgrave.site/2025/04/inix-tp3e10.html | série inconsistente (tp3_e10): T3E10 aparece 8x com URLs diferentes; T3: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]
