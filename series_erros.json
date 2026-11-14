@@ -2,30 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-13T17:05:07+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/04/inix-tp5e08.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-13T17:05:38+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/04/inix-tp5e08.html",
-      "slug": "tp5_e08",
-      "problemas": [
-        "T5E8 aparece 8x com URLs diferentes",
-        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]",
-        "T5: faltam episódios [1, 2, 3, 4, 5, 6, 7]"
-      ],
-      "encontrado": {
-        "T1": 1,
-        "T4": 1,
-        "T5": 8
-      }
-    },
-    {
       "quando": "2026-11-13T17:06:07+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/04/inix-tp4e13.html",
@@ -4333,52 +4309,66 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-14T01:52:00+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-14T01:59:52+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 172,
-      "ok": 105,
-      "429": 47,
+      "requisicoes": 57,
+      "ok": 36,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 47,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
-      "serie_inconsistente": 9,
+      "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 47,
-      "proxy_hit": 46,
-      "proxmint_listas": 47,
+      "proxy_fallback": 1,
+      "proxy_hit": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 10,
+      "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 71,
-      "playwright_skip": 0,
-      "episodios_tp_encontrados": 970,
+      "http_necessario": 4,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-14T01:33:06+00:00",
-      "duracao_min": 82.1
+      "quando": "2026-11-14T01:59:52+00:00",
+      "duracao_min": 25.6
     },
     "acumulado": {
-      "requisicoes": 9781,
-      "ok": 7010,
-      "429": 2266,
+      "requisicoes": 9838,
+      "ok": 7046,
+      "429": 2267,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2266,
+      "falhas_definitivas": 2267,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 188,
-      "proxy_fallback": 2266,
+      "proxy_fallback": 2267,
       "proxy_hit": 2248,
-      "proxmint_listas": 2266,
+      "proxmint_listas": 2267,
       "link_em_a_href": 11,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 585,
       "feed_hit": 0,
-      "http_necessario": 6478,
-      "playwright_skip": 101,
+      "http_necessario": 6482,
+      "playwright_skip": 104,
       "episodios_tp_encontrados": 18428
     }
   }
