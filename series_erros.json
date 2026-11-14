@@ -2,24 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-13T17:07:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/04/inix-ben-10.html",
-      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e04_90.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Luta na Mão"
-    },
-    {
-      "quando": "2026-11-13T17:07:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/04/inix-ben-10.html",
-      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e04_90.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Luta na Mão"
-    },
-    {
       "quando": "2026-11-13T17:07:07+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e01_77.html",
@@ -4315,12 +4297,26 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-14T14:03:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-14T14:11:16+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 53,
-      "ok": 32,
+      "requisicoes": 52,
+      "ok": 31,
       "429": 1,
       "5xx": 0,
       "retries": 0,
@@ -4335,31 +4331,31 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 2,
-      "playwright_skip": 1,
+      "http_necessario": 1,
+      "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-14T07:07:35+00:00",
-      "duracao_min": 17.2
+      "quando": "2026-11-14T14:11:16+00:00",
+      "duracao_min": 16.8
     },
     "acumulado": {
-      "requisicoes": 9891,
-      "ok": 7078,
-      "429": 2268,
+      "requisicoes": 9943,
+      "ok": 7109,
+      "429": 2269,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2268,
+      "falhas_definitivas": 2269,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 188,
-      "proxy_fallback": 2268,
+      "proxy_fallback": 2269,
       "proxy_hit": 2248,
-      "proxmint_listas": 2268,
+      "proxmint_listas": 2269,
       "link_em_a_href": 11,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 585,
       "feed_hit": 0,
-      "http_necessario": 6484,
+      "http_necessario": 6485,
       "playwright_skip": 105,
       "episodios_tp_encontrados": 18428
     }
