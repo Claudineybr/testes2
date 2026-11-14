@@ -2,22 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-13T17:16:03+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e01_71.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-13T17:17:03+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e02_63.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-13T17:18:54+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e05_83.html",
@@ -4309,51 +4293,65 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/arc-act-tp01ep07.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-14T23:00:03+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-14T23:07:58+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 71,
-      "ok": 46,
-      "429": 5,
+      "requisicoes": 52,
+      "ok": 31,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 5,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 5,
-      "proxy_hit": 4,
-      "proxmint_listas": 5,
+      "proxy_fallback": 1,
+      "proxy_hit": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 16,
-      "playwright_skip": 15,
+      "http_necessario": 1,
+      "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-14T19:22:45+00:00",
-      "duracao_min": 27.0
+      "quando": "2026-11-14T23:07:58+00:00",
+      "duracao_min": 16.8
     },
     "acumulado": {
-      "requisicoes": 10014,
-      "ok": 7155,
-      "429": 2274,
+      "requisicoes": 10066,
+      "ok": 7186,
+      "429": 2275,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2274,
+      "falhas_definitivas": 2275,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 188,
-      "proxy_fallback": 2274,
+      "proxy_fallback": 2275,
       "proxy_hit": 2252,
-      "proxmint_listas": 2274,
+      "proxmint_listas": 2275,
       "link_em_a_href": 11,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 585,
       "feed_hit": 0,
-      "http_necessario": 6501,
+      "http_necessario": 6502,
       "playwright_skip": 120,
       "episodios_tp_encontrados": 18428
     }
