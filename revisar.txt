@@ -382,3 +382,30 @@ https://www.vini7xgrave.site/2025/03/inix-chaves.html | URL dizia 0, mas texto d
 https://www.vini7xgrave.site/2025/03/inix-chaves.html | URL dizia 12, mas texto dizia 22 (usei 22) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e12_49.html
 https://www.vini7xgrave.site/2025/03/the-chosen-os-escolhidos.html | URL dizia 5, mas texto dizia 6 (usei 6) - link: https://viniraveon.blogspot.com/2025/03/inix-tp4e05_81.html
 https://www.vini7xgrave.site/2025/03/inix-titas.html | série inconsistente (titas): T2E1 aparece 2x com URLs diferentes; T1: faltam episódios [2]
+https://www.vini7xgrave.site/2025/03/inix-scooby-doo-misterio-sa.html | série inconsistente (scooby_doo_misterio_s_a): T1E19 aparece 2x com URLs diferentes; T2E3 aparece 2x com URLs diferentes; T1: faltam episódios [20]; T2: faltam episódios [4]
+https://www.vini7xgrave.site/2025/03/inix-o-que-ha-de-novo-scooby-doo.html | série inconsistente (o_que_ha_de_novo_scooby_doo): T1E10 aparece 2x com URLs diferentes; T1E14 aparece 2x com URLs diferentes; T1: faltam episódios [9, 15]; T2: faltam episódios [1, 2, 3, 4, 5, 6]
+https://www.vini7xgrave.site/2025/03/inix-constantine.html | série inconsistente (constantine): T1: faltam episódios [1, 3]; T2: faltam episódios [1, 2]
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | URL dizia 6, mas texto dizia 5 (usei 5) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e06_89.html
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | URL dizia 16, mas texto dizia 15 (usei 15) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e16_15.html
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | URL dizia 22, mas texto dizia 23 (usei 23) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e22_16.html
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | URL dizia 3, mas texto dizia 4 (usei 4) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp2e03_22.html
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | URL dizia 10, mas texto dizia 11 (usei 11) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp2e10_17.html
+https://www.vini7xgrave.site/2025/03/inix-shingeki-no-kyojin-shingeki-no.html | série inconsistente (shingeki_no_kyojin_attack_on_titan): T1: faltam episódios [22]; T2: faltam episódios [13, 14, 15, 16, 17, 18, 19, 20, 21]; T3: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/03/inix-invencivel.html | série inconsistente (invencivel): T2E6 aparece 2x com URLs diferentes; T2E3 aparece 2x com URLs diferentes; T2: faltam episódios [4, 5]
+https://www.vini7xgrave.site/2025/03/inix-spartacus_13.html | série inconsistente (spartacus): T1E9 aparece 2x com URLs diferentes; T1: faltam episódios [4]; T4: faltam episódios [2]
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 12, mas texto dizia 10 (usei 10) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e12.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 10, mas texto dizia 13 (usei 13) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp1e010_12.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 14, mas texto dizia 15 (usei 15) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp2e14.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 19, mas texto dizia 18 (usei 18) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp2e19.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 20, mas texto dizia 19 (usei 19) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp2e20.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 2, mas texto dizia 3 (usei 3) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp3e02_47.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 10, mas texto dizia 9 (usei 9) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp3e10_17.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 16, mas texto dizia 17 (usei 17) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp4e16_20.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 6, mas texto dizia 5 (usei 5) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp5e06.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 7, mas texto dizia 8 (usei 8) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp5e07_21.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 14, mas texto dizia 13 (usei 13) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp5e14.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 4, mas texto dizia 3 (usei 3) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp6e04.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | URL dizia 5, mas texto dizia 4 (usei 4) - link: https://viniseriesonline.blogspot.com/2025/03/inix-tp6e05.html
+https://www.vini7xgrave.site/2025/03/inix-grimm-contos-de-terror.html | série inconsistente (grimm_contos_de_terror): T1: faltam episódios [14]; T26: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+https://www.vini7xgrave.site/2025/03/inix-o-domo.html | série inconsistente (under_the_dome_o_domo): T1E2 aparece 2x com URLs diferentes; T3: faltam episódios [2, 3]
+https://www.vini7xgrave.site/2025/03/inix-rising-of-shield-hero-heroi-de.html | série inconsistente (the_rising_of_the_shield_hero_heroi_de_escudo): T1E15 aparece 2x com URLs diferentes; T1E3 aparece 2x com URLs diferentes; T1E12 aparece 2x com URLs diferentes; T1: faltam episódios [10, 14]; T2: faltam episódios [3, 6, 7]
