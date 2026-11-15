@@ -1,0 +1,137 @@
+{
+  "contagem": {},
+  "eventos": [
+    {
+      "quando": "2026-11-15T16:34:36+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-into-badlands-2015_0835136260.html",
+      "href": "https://viniraveon.blogspot.com/2026/10/inix-into-badlands-2015-tp3e03.html",
+      "numero_href": 3,
+      "numero_texto": 2,
+      "texto": "Episódio 2 – Chapter XVIII: Moon Rises, Raven Seeks (A Lua Sobe, o Corvo Procura"
+    },
+    {
+      "quando": "2026-11-15T16:34:36+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-into-badlands-2015_0835136260.html",
+      "href": "https://viniraveon.blogspot.com/2026/10/inix-into-badlands-2015-tp3e03.html",
+      "numero_href": 3,
+      "numero_texto": 2,
+      "texto": "Episódio 2 – Chapter XVIII: Moon Rises, Raven Seeks (A Lua Sobe, o Corvo Procura"
+    },
+    {
+      "quando": "2026-11-15T16:34:36+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2026/10/inix-into-badlands-2015_0835136260.html",
+      "slug": "into_the_badlands",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T1E2 aparece 2x com URLs diferentes",
+        "T1E3 aparece 2x com URLs diferentes",
+        "T1E4 aparece 2x com URLs diferentes",
+        "T1E5 aparece 2x com URLs diferentes",
+        "T1E6 aparece 2x com URLs diferentes",
+        "T1: esperado 6 eps, encontrado 10",
+        "T2: esperado 10 eps, encontrado 0",
+        "temporadas [2] existem em disco mas não foram achadas na página"
+      ],
+      "encontrado": {
+        "T1": 16,
+        "T3": 16
+      }
+    },
+    {
+      "quando": "2026-11-15T16:37:36+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/06/inix-alem-do-ceu-2020.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T16:39:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/06/inix-violet-evergarden-memorias-2021.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T16:41:13+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/06/inix-ni-no-kuni-2019.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T16:43:01+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/05/inix-scarlet-2025.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T16:45:19+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T16:55:19+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
+      "retentativa": true
+    }
+  ],
+  "metricas": {
+    "ultima_run": {
+      "requisicoes": 64,
+      "ok": 39,
+      "429": 5,
+      "5xx": 0,
+      "retries": 0,
+      "falhas_definitivas": 5,
+      "html_invalido": 0,
+      "serie_inconsistente": 1,
+      "conflitos": 0,
+      "proxy_fallback": 5,
+      "proxy_hit": 4,
+      "proxmint_listas": 5,
+      "link_em_a_href": 0,
+      "link_convertido_w2embed": 0,
+      "skip_perfeito": 186,
+      "feed_hit": 0,
+      "http_necessario": 1,
+      "playwright_skip": 0,
+      "episodios_tp_encontrados": 412,
+      "robo": "series",
+      "quando": "2026-11-15T16:55:19+00:00",
+      "duracao_min": 30.0
+    },
+    "acumulado": {
+      "requisicoes": 64,
+      "ok": 39,
+      "429": 5,
+      "5xx": 0,
+      "retries": 0,
+      "falhas_definitivas": 5,
+      "html_invalido": 0,
+      "serie_inconsistente": 1,
+      "conflitos": 0,
+      "proxy_fallback": 5,
+      "proxy_hit": 4,
+      "proxmint_listas": 5,
+      "link_em_a_href": 0,
+      "link_convertido_w2embed": 0,
+      "skip_perfeito": 186,
+      "feed_hit": 0,
+      "http_necessario": 1,
+      "playwright_skip": 0,
+      "episodios_tp_encontrados": 412
+    }
+  }
+}
