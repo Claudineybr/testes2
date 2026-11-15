@@ -85,53 +85,184 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-15T17:06:33+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e07_0964997324.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 – Permutação da Isca para o Isolamento"
+    },
+    {
+      "quando": "2026-11-15T17:06:33+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/05/inix-big-bang-teoria-tp5e25.html",
+      "numero_href": 25,
+      "numero_texto": 24,
+      "texto": "Episódio 24 – Countdown Reflection"
+    },
+    {
+      "quando": "2026-11-15T17:06:33+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e07_0964997324.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 – Permutação da Isca para o Isolamento"
+    },
+    {
+      "quando": "2026-11-15T17:06:33+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/05/inix-big-bang-teoria-tp5e25.html",
+      "numero_href": 25,
+      "numero_texto": 24,
+      "texto": "Episódio 24 – Countdown Reflection"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e11_23.html",
+      "numero_href": 11,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - O Nome do Jogo"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e12_23.html",
+      "numero_href": 12,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Cerimônia de Abertura"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e13_23.html",
+      "numero_href": 13,
+      "numero_texto": 3,
+      "texto": "Episódio 3 - Obtenha Alguma"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e11_23.html",
+      "numero_href": 11,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - O Nome do Jogo"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e12_23.html",
+      "numero_href": 12,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Cerimônia de Abertura"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp4e13_23.html",
+      "numero_href": 13,
+      "numero_texto": 3,
+      "texto": "Episódio 3 - Obtenha Alguma"
+    },
+    {
+      "quando": "2026-11-15T17:07:58+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-boys.html",
+      "slug": "the_boys",
+      "problemas": [
+        "T4E1 aparece 2x com URLs diferentes",
+        "T4E2 aparece 2x com URLs diferentes",
+        "T4E3 aparece 2x com URLs diferentes",
+        "T1: faltam episódios [1, 2, 3]"
+      ],
+      "encontrado": {
+        "T1": 5,
+        "T2": 8,
+        "T3": 8,
+        "T4": 11,
+        "T5": 8
+      }
+    },
+    {
+      "quando": "2026-11-15T17:08:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-o-castelo-no-ceu-1986-legendado.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T17:15:59+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T17:24:52+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 64,
-      "ok": 39,
-      "429": 5,
+      "requisicoes": 59,
+      "ok": 36,
+      "429": 2,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 5,
+      "falhas_definitivas": 2,
       "html_invalido": 0,
       "serie_inconsistente": 1,
       "conflitos": 0,
-      "proxy_fallback": 5,
-      "proxy_hit": 4,
-      "proxmint_listas": 5,
+      "proxy_fallback": 2,
+      "proxy_hit": 1,
+      "proxmint_listas": 2,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 186,
+      "skip_perfeito": 642,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
-      "episodios_tp_encontrados": 412,
+      "http_necessario": 4,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 1344,
       "robo": "series",
-      "quando": "2026-11-15T16:55:19+00:00",
-      "duracao_min": 30.0
+      "quando": "2026-11-15T17:24:52+00:00",
+      "duracao_min": 28.3
     },
     "acumulado": {
-      "requisicoes": 64,
-      "ok": 39,
-      "429": 5,
+      "requisicoes": 123,
+      "ok": 75,
+      "429": 7,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 5,
+      "falhas_definitivas": 7,
       "html_invalido": 0,
-      "serie_inconsistente": 1,
+      "serie_inconsistente": 2,
       "conflitos": 0,
-      "proxy_fallback": 5,
-      "proxy_hit": 4,
-      "proxmint_listas": 5,
+      "proxy_fallback": 7,
+      "proxy_hit": 5,
+      "proxmint_listas": 7,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 186,
+      "skip_perfeito": 828,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
-      "episodios_tp_encontrados": 412
+      "http_necessario": 5,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 1756
     }
   }
 }
