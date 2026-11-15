@@ -224,53 +224,438 @@
         "T4": 11,
         "T5": 8
       }
+    },
+    {
+      "quando": "2026-11-15T05:41:21+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e07_0964997324.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 – Permutação da Isca para o Isolamento"
+    },
+    {
+      "quando": "2026-11-15T05:41:21+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/05/inix-big-bang-teoria-tp5e25.html",
+      "numero_href": 25,
+      "numero_texto": 24,
+      "texto": "Episódio 24 – Countdown Reflection"
+    },
+    {
+      "quando": "2026-11-15T05:41:21+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e07_0964997324.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 – Permutação da Isca para o Isolamento"
+    },
+    {
+      "quando": "2026-11-15T05:41:21+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/04/inix-big-bang-teoria-2007.html",
+      "href": "https://viniraveon.blogspot.com/2026/05/inix-big-bang-teoria-tp5e25.html",
+      "numero_href": 25,
+      "numero_texto": 24,
+      "texto": "Episódio 24 – Countdown Reflection"
+    },
+    {
+      "quando": "2026-11-15T05:42:28+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-one-piece-serie-2023.html",
+      "slug": "one_piece_a_serie",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T2: faltam episódios [1]"
+      ],
+      "encontrado": {
+        "T1": 9,
+        "T2": 7
+      }
+    },
+    {
+      "quando": "2026-11-15T05:43:36+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-dexter-2006.html",
+      "href": "https://viniraveon.blogspot.com/2026/03/inix-dexter-tp8e10_5.html",
+      "numero_href": 10,
+      "numero_texto": 11,
+      "texto": "Episódio 11 – Macaco na Caixa"
+    },
+    {
+      "quando": "2026-11-15T05:43:36+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-dexter-2006.html",
+      "href": "https://viniraveon.blogspot.com/2026/03/inix-dexter-tp8e10_5.html",
+      "numero_href": 10,
+      "numero_texto": 11,
+      "texto": "Episódio 11 – Macaco na Caixa"
+    },
+    {
+      "quando": "2026-11-15T05:43:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-estacao-19-2018.html",
+      "href": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp4e05_3.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "E06 Treinar em Vão Episódio 6"
+    },
+    {
+      "quando": "2026-11-15T05:43:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/03/inix-estacao-19-2018.html",
+      "href": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp4e05_3.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "E06 Treinar em Vão Episódio 6"
+    },
+    {
+      "quando": "2026-11-15T05:43:58+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep11.html",
+      "novo": "estacao_19_t02ep11.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x11.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:44:13+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep12.html",
+      "novo": "estacao_19_t02ep12.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x12.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:44:29+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp2e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:44:54+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep13.html",
+      "novo": "estacao_19_t02ep13.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x13.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:45:15+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp2e14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:45:47+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep14.html",
+      "novo": "estacao_19_t02ep14.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x14.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:46:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:46:46+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep15.html",
+      "novo": "estacao_19_t02ep15.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x15.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:47:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp2e16.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:47:47+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep16.html",
+      "novo": "estacao_19_t02ep16.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x16.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:48:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp2e17.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:48:46+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep17.html",
+      "novo": "estacao_19_t02ep17.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/2x17.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:49:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2026/03/inix-estacao-19-tp5e18.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:49:46+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "estacao_19_t01ep18.html",
+      "novo": "estacao_19_t05ep18.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/76773/5x18.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:50:51+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-todo-mundo-me-ama-2024.html",
+      "href": "https://vini7xgseries2.blogspot.com/2026/02/inix-todo-mundo-me-ama-tp1e19_26.html",
+      "numero_href": 19,
+      "numero_texto": 20,
+      "texto": "Episódio 20"
+    },
+    {
+      "quando": "2026-11-15T05:50:51+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-todo-mundo-me-ama-2024.html",
+      "href": "https://vini7xgseries2.blogspot.com/2026/02/inix-todo-mundo-me-ama-tp1e19_26.html",
+      "numero_href": 19,
+      "numero_texto": 20,
+      "texto": "Episódio 20"
+    },
+    {
+      "quando": "2026-11-15T05:51:40+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp1e14.html",
+      "numero_href": 14,
+      "numero_texto": 1,
+      "texto": "Episódio 1 – A Prova Final"
+    },
+    {
+      "quando": "2026-11-15T05:51:40+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp3e04_19.html",
+      "numero_href": 4,
+      "numero_texto": 5,
+      "texto": "Episódio 5 – Definindo Homer"
+    },
+    {
+      "quando": "2026-11-15T05:51:40+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp1e14.html",
+      "numero_href": 14,
+      "numero_texto": 1,
+      "texto": "Episódio 1 – A Prova Final"
+    },
+    {
+      "quando": "2026-11-15T05:51:40+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-os-simpsons-tp3e04_19.html",
+      "numero_href": 4,
+      "numero_texto": 5,
+      "texto": "Episódio 5 – Definindo Homer"
+    },
+    {
+      "quando": "2026-11-15T05:51:40+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-os-simpsons-1989.html",
+      "slug": "os_simpsons",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T2: faltam episódios [1]"
+      ],
+      "encontrado": {
+        "T1": 14,
+        "T2": 21,
+        "T3": 24,
+        "T4": 22
+      }
+    },
+    {
+      "quando": "2026-11-15T05:52:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://vini7xgseries2.blogspot.com/2026/02/inix-prisao-de-mulheres-tp1e34.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T05:53:04+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "avlu_prisao_de_mulheres_t01ep35.html",
+      "novo": "avlu_prisao_de_mulheres_t01ep34.html",
+      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/78058/2x23.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:53:27+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-futurama.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp2e13_78.html",
+      "numero_href": 13,
+      "numero_texto": 14,
+      "texto": "Episódio 14 – Como Hermes Requisitou Sua Frequência de Volta"
+    },
+    {
+      "quando": "2026-11-15T05:53:27+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-futurama.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp2e14_11.html",
+      "numero_href": 14,
+      "numero_texto": 15,
+      "texto": "Episódio 15 – Um Clone Meu"
+    },
+    {
+      "quando": "2026-11-15T05:53:27+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-futurama.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp2e13_78.html",
+      "numero_href": 13,
+      "numero_texto": 14,
+      "texto": "Episódio 14 – Como Hermes Requisitou Sua Frequência de Volta"
+    },
+    {
+      "quando": "2026-11-15T05:53:27+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-futurama.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp2e14_11.html",
+      "numero_href": 14,
+      "numero_texto": 15,
+      "texto": "Episódio 15 – Um Clone Meu"
+    },
+    {
+      "quando": "2026-11-15T05:53:28+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "futurama_t02ep03.html",
+      "novo": "futurama_t02ep02.html",
+      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/615/2x2.mp4"
+    },
+    {
+      "quando": "2026-11-15T05:54:19+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T06:04:22+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html"
+    },
+    {
+      "quando": "2026-11-15T06:04:22+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T06:05:59+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-this-is-us.html",
+      "slug": "this_is_us",
+      "problemas": [
+        "T3: faltam episódios [1, 2, 3, 4, 5, 6, 8, 9, 12]",
+        "T8: faltam episódios [7, 10, 11]"
+      ],
+      "encontrado": {
+        "T1": 18,
+        "T2": 18,
+        "T3": 9,
+        "T4": 18,
+        "T5": 16,
+        "T6": 18,
+        "T8": 9
+      }
+    },
+    {
+      "quando": "2026-11-15T06:08:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-o-cuco-de-cristal-2025.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-o-cuco-de-cristal-tp1e01_9.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 –"
+    },
+    {
+      "quando": "2026-11-15T06:08:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-o-cuco-de-cristal-2025.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-o-cuco-de-cristal-tp1e01_9.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 –"
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 54,
-      "ok": 33,
-      "429": 1,
-      "5xx": 0,
-      "retries": 0,
-      "falhas_definitivas": 1,
-      "html_invalido": 0,
-      "serie_inconsistente": 1,
-      "conflitos": 0,
-      "proxy_fallback": 1,
-      "proxy_hit": 0,
-      "proxmint_listas": 1,
-      "link_em_a_href": 0,
-      "link_convertido_w2embed": 0,
-      "skip_perfeito": 499,
-      "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
-      "episodios_tp_encontrados": 1344,
-      "robo": "series",
-      "quando": "2026-11-15T05:31:37+00:00",
-      "duracao_min": 26.6
-    },
-    "acumulado": {
-      "requisicoes": 101,
-      "ok": 72,
+      "requisicoes": 72,
+      "ok": 44,
       "429": 8,
       "5xx": 0,
       "retries": 0,
       "falhas_definitivas": 8,
       "html_invalido": 0,
-      "serie_inconsistente": 2,
-      "conflitos": 0,
+      "serie_inconsistente": 3,
+      "conflitos": 10,
       "proxy_fallback": 8,
       "proxy_hit": 7,
       "proxmint_listas": 8,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 685,
+      "skip_perfeito": 803,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
-      "episodios_tp_encontrados": 1756
+      "http_necessario": 14,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 1828,
+      "robo": "series",
+      "quando": "2026-11-15T06:08:41+00:00",
+      "duracao_min": 35.8
+    },
+    "acumulado": {
+      "requisicoes": 173,
+      "ok": 116,
+      "429": 16,
+      "5xx": 0,
+      "retries": 0,
+      "falhas_definitivas": 16,
+      "html_invalido": 0,
+      "serie_inconsistente": 5,
+      "conflitos": 10,
+      "proxy_fallback": 16,
+      "proxy_hit": 14,
+      "proxmint_listas": 16,
+      "link_em_a_href": 0,
+      "link_convertido_w2embed": 0,
+      "skip_perfeito": 1488,
+      "feed_hit": 0,
+      "http_necessario": 15,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 3584
     }
   }
 }
