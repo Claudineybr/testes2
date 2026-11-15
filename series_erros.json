@@ -843,53 +843,230 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-15T19:07:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:14:59+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html"
+    },
+    {
+      "quando": "2026-11-15T19:14:59+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T19:17:35+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 – Acabei Com Ele"
+    },
+    {
+      "quando": "2026-11-15T19:17:35+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 – Acabei Com Ele"
+    },
+    {
+      "quando": "2026-11-15T19:17:57+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-arcanjo-renegado-2020.html",
+      "slug": "arcanjo_renegado",
+      "problemas": [
+        "T3: faltam episódios [8]"
+      ],
+      "encontrado": {
+        "T1": 10,
+        "T2": 10,
+        "T3": 9,
+        "T4": 10
+      }
+    },
+    {
+      "quando": "2026-11-15T19:18:44+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-marvel-os-defensores-2017.html",
+      "href": "https://viniraveon.blogspot.com/2025/11/inix-marvel-os-defensores-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Gancho de Direita"
+    },
+    {
+      "quando": "2026-11-15T19:18:44+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-marvel-os-defensores-2017.html",
+      "href": "https://viniraveon.blogspot.com/2025/11/inix-marvel-os-defensores-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Gancho de Direita"
+    },
+    {
+      "quando": "2026-11-15T19:19:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:21:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:23:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:25:03+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-diarios-de-uma-apoticaria-2023.html",
+      "slug": "diarios_de_uma_apoticaria",
+      "problemas": [
+        "temporadas [1] existem em disco mas não foram achadas na página"
+      ],
+      "encontrado": {
+        "T2": 24
+      }
+    },
+    {
+      "quando": "2026-11-15T19:26:55+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:36:56+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "serie": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html"
+    },
+    {
+      "quando": "2026-11-15T19:36:56+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T19:40:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/arc-act-tp01ep07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T19:50:21+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/arc-act-tp01ep07.html",
+      "serie": "https://www.vini7xgrave.site/2025/10/arc-act.html"
+    },
+    {
+      "quando": "2026-11-15T19:50:21+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/10/arc-act.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T19:51:46+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-witcher-2019.html",
+      "slug": "the_witcher",
+      "problemas": [
+        "T1: faltam episódios [1, 2, 3, 4, 5, 6]"
+      ],
+      "encontrado": {
+        "T1": 2,
+        "T2": 8,
+        "T3": 8,
+        "T4": 8,
+        "T6": 6
+      }
+    },
+    {
+      "quando": "2026-11-15T19:52:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T20:02:57+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 93,
+      "requisicoes": 133,
       "ok": 46,
       "429": 7,
       "5xx": 0,
       "retries": 0,
       "falhas_definitivas": 7,
       "html_invalido": 0,
-      "serie_inconsistente": 1,
-      "conflitos": 12,
+      "serie_inconsistente": 3,
+      "conflitos": 0,
       "proxy_fallback": 7,
-      "proxy_hit": 5,
+      "proxy_hit": 3,
       "proxmint_listas": 7,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 537,
+      "skip_perfeito": 296,
       "feed_hit": 0,
-      "http_necessario": 17,
-      "playwright_skip": 3,
-      "episodios_tp_encontrados": 728,
+      "http_necessario": 15,
+      "playwright_skip": 11,
+      "episodios_tp_encontrados": 610,
       "robo": "series",
-      "quando": "2026-11-15T18:57:10+00:00",
-      "duracao_min": 43.7
+      "quando": "2026-11-15T20:02:57+00:00",
+      "duracao_min": 64.6
     },
     "acumulado": {
-      "requisicoes": 307,
-      "ok": 163,
-      "429": 23,
+      "requisicoes": 440,
+      "ok": 209,
+      "429": 30,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 23,
+      "falhas_definitivas": 30,
       "html_invalido": 0,
-      "serie_inconsistente": 6,
+      "serie_inconsistente": 9,
       "conflitos": 22,
-      "proxy_fallback": 23,
-      "proxy_hit": 17,
-      "proxmint_listas": 23,
+      "proxy_fallback": 30,
+      "proxy_hit": 20,
+      "proxmint_listas": 30,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 1935,
+      "skip_perfeito": 2231,
       "feed_hit": 0,
-      "http_necessario": 35,
-      "playwright_skip": 7,
-      "episodios_tp_encontrados": 3850
+      "http_necessario": 50,
+      "playwright_skip": 18,
+      "episodios_tp_encontrados": 4460
     }
   }
 }
