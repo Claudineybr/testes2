@@ -941,53 +941,238 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/04/inix-big-bang-teoria-tp5e01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-15T07:39:03+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T07:46:55+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html"
+    },
+    {
+      "quando": "2026-11-15T07:46:55+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T07:48:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T07:58:41+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "serie": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html"
+    },
+    {
+      "quando": "2026-11-15T07:58:41+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html",
+      "seguidos": 2
+    },
+    {
+      "quando": "2026-11-15T08:01:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/12/inix-percy-jackson-e-os-olimpianos_26.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:01:36+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "percy_jackson_e_os_olimpianos_t01ep04.html",
+      "novo": "percy_jackson_e_os_olimpianos_t02ep04.html",
+      "link": "https://cdn3.playmycnvs.com/Percy%20Jackson%20e%20os%20Olimpianos%20S01%20E04_103540.mp4"
+    },
+    {
+      "quando": "2026-11-15T08:03:39+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/11/arc-o-castelo-no-ceu-1997-legendado.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:05:26+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 – Acabei Com Ele"
+    },
+    {
+      "quando": "2026-11-15T08:05:26+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-icarly-reuniao-2021.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/11/inix-icarly-reuniao-tp2e06_27.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 – Acabei Com Ele"
+    },
+    {
+      "quando": "2026-11-15T08:05:49+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-arcanjo-renegado-2020.html",
+      "slug": "arcanjo_renegado",
+      "problemas": [
+        "T3: faltam episódios [8]"
+      ],
+      "encontrado": {
+        "T1": 10,
+        "T2": 10,
+        "T3": 9,
+        "T4": 10
+      }
+    },
+    {
+      "quando": "2026-11-15T08:06:32+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-marvel-os-defensores-2017.html",
+      "href": "https://viniraveon.blogspot.com/2025/11/inix-marvel-os-defensores-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Gancho de Direita"
+    },
+    {
+      "quando": "2026-11-15T08:06:32+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-marvel-os-defensores-2017.html",
+      "href": "https://viniraveon.blogspot.com/2025/11/inix-marvel-os-defensores-tp1e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Gancho de Direita"
+    },
+    {
+      "quando": "2026-11-15T08:09:16+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:10:03+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e09.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:11:46+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-diarios-de-uma-apoticaria-2023.html",
+      "slug": "diarios_de_uma_apoticaria",
+      "problemas": [
+        "temporadas [1] existem em disco mas não foram achadas na página"
+      ],
+      "encontrado": {
+        "T2": 24
+      }
+    },
+    {
+      "quando": "2026-11-15T08:12:30+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/11/arc-o-conto-da-princesa-kaguya-2013.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:15:08+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:25:33+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep06.html",
+      "serie": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html"
+    },
+    {
+      "quando": "2026-11-15T08:25:33+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-15T08:29:55+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-15T08:40:03+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 156,
-      "ok": 44,
-      "429": 11,
+      "requisicoes": 142,
+      "ok": 51,
+      "429": 9,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 11,
+      "falhas_definitivas": 9,
       "html_invalido": 0,
-      "serie_inconsistente": 1,
-      "conflitos": 12,
-      "proxy_fallback": 11,
-      "proxy_hit": 6,
-      "proxmint_listas": 11,
+      "serie_inconsistente": 2,
+      "conflitos": 1,
+      "proxy_fallback": 9,
+      "proxy_hit": 5,
+      "proxmint_listas": 9,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 514,
+      "skip_perfeito": 424,
       "feed_hit": 0,
-      "http_necessario": 18,
-      "playwright_skip": 1,
-      "episodios_tp_encontrados": 682,
+      "http_necessario": 20,
+      "playwright_skip": 15,
+      "episodios_tp_encontrados": 848,
       "robo": "series",
-      "quando": "2026-11-15T07:28:50+00:00",
-      "duracao_min": 78.8
+      "quando": "2026-11-15T08:40:03+00:00",
+      "duracao_min": 69.6
     },
     "acumulado": {
-      "requisicoes": 329,
-      "ok": 160,
-      "429": 27,
+      "requisicoes": 471,
+      "ok": 211,
+      "429": 36,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 27,
+      "falhas_definitivas": 36,
       "html_invalido": 0,
-      "serie_inconsistente": 6,
-      "conflitos": 22,
-      "proxy_fallback": 27,
-      "proxy_hit": 20,
-      "proxmint_listas": 27,
+      "serie_inconsistente": 8,
+      "conflitos": 23,
+      "proxy_fallback": 36,
+      "proxy_hit": 25,
+      "proxmint_listas": 36,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 2002,
+      "skip_perfeito": 2426,
       "feed_hit": 0,
-      "http_necessario": 33,
-      "playwright_skip": 4,
-      "episodios_tp_encontrados": 4266
+      "http_necessario": 53,
+      "playwright_skip": 19,
+      "episodios_tp_encontrados": 5114
     }
   }
 }
