@@ -1,13 +1,5 @@
 [
   {
-    "arquivo": "percy_jackson_e_os_olimpianos_t02ep06.html",
-    "stem": "percy_jackson_e_os_olimpianos_t02ep06",
-    "nome_json": "Percy Jackson e os Olimpianos - T2E6 – Capítulo Seis - 🍿Clau",
-    "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
-    "capa": "https://image.tmdb.org/t/p/original/5PPjIlgY17DNBqTDnCzZs2p6jM0.jpg",
-    "tentativas": 5
-  },
-  {
     "arquivo": "os_abandonados_t01ep07.html",
     "stem": "os_abandonados_t01ep07",
     "nome_json": "Os Abandonados - T1E7 – Episódio 7 - 🍿Clau",
@@ -597,6 +589,14 @@
     "nome_json": "Star Contra as Forças do Mal - T2E12 – \"Matemagia\" - 🍿Clau",
     "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e12_14.html",
     "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhM8c2-vxKS1TAYgoPXP_TaoK8sRsgBRa64r5Cv3Og0qAnA5_aezU1Phv_4AtxuqebT5hCN-VKfRMK3GwzrWSO_bKCQJnc7Uk3Akqabhe9ABFsDnVHM-4cONFQASP-bkZuxG045ExKTITR4f1F6whqfCUILxQ_FqFvKhE9mZgZYImOva_MQZ5glM0yWSUQ/s320/7bUrAlKnMJG4IRdFgjSrTatM072-1.jpg",
+    "tentativas": 1
+  },
+  {
+    "arquivo": "game_of_thrones_got_t02ep06.html",
+    "stem": "game_of_thrones_got_t02ep06",
+    "nome_json": "Game of Thrones (GOT) - T2E6 – Os Velhos Deuses e os Novos - 🍿Clau",
+    "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e06_23.html",
+    "capa": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHWtW01TaBbNQEFZe-pWHGbCNX5xmroEgoptqlP6TmsD14mFeWiL-7G_N7w-ZMS6rcqJY-nN6aUkbi3n3iYAUxUxWZGBlBP65mMLA8TutgKqTLpqlr3NZ8Jv9DPyr6xeMzR_HWe_ziOGUC80HWA3nFzyj7tVr_bhbMkdeJ2OrXbwWDgJQVg2JT2J-AX7A/s320/nwFFvIpBpW3SNrAA4zmOv9gsIa1.jpg",
     "tentativas": 1
   }
 ]
