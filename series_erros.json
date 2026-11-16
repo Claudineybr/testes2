@@ -5,51 +5,6 @@
       "quando": "2026-11-16T00:21:03+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e18_8.html",
-      "numero_href": 18,
-      "numero_texto": 43,
-      "texto": "Episódio 43 - A Baleia Carmesim encontra o Peixe Monstro"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e19_8.html",
-      "numero_href": 19,
-      "numero_texto": 44,
-      "texto": "Episódio 44 - Reviva, cidade destruída, a Paz vai acabar"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e20_8.html",
-      "numero_href": 20,
-      "numero_texto": 45,
-      "texto": "Episódio 45 - Hora de filetar um Peixe Dragão"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e21_8.html",
-      "numero_href": 21,
-      "numero_texto": 46,
-      "texto": "Episódio 46 - Lobos aventureiros, do fundo do mar até arranha-céus"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e22_8.html",
-      "numero_href": 22,
-      "numero_texto": 47,
-      "texto": "Episódio 47 - A luz brilha forte, mas apenas por um instante"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
       "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e23_8.html",
       "numero_href": 23,
       "numero_texto": 48,
@@ -4829,51 +4784,89 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-16T05:23:22+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/03/duologia-o-auto-da-compadecida.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-16T05:28:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/02/a-serie-velozes-e-furiosos.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-16T05:32:38+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2024/10/inix-minority-report-nova-lei-14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-16T05:35:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-16T05:45:31+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 69,
-      "ok": 43,
+      "requisicoes": 61,
+      "ok": 34,
       "429": 4,
       "5xx": 0,
       "retries": 0,
       "falhas_definitivas": 4,
       "html_invalido": 0,
-      "serie_inconsistente": 12,
-      "conflitos": 9,
+      "serie_inconsistente": 0,
+      "conflitos": 0,
       "proxy_fallback": 4,
       "proxy_hit": 3,
       "proxmint_listas": 4,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 164,
+      "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 10,
+      "http_necessario": 1,
       "playwright_skip": 0,
-      "episodios_tp_encontrados": 1430,
+      "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-16T05:13:36+00:00",
-      "duracao_min": 32.6
+      "quando": "2026-11-16T05:45:31+00:00",
+      "duracao_min": 30.7
     },
     "acumulado": {
-      "requisicoes": 1602,
-      "ok": 791,
-      "429": 131,
+      "requisicoes": 1663,
+      "ok": 825,
+      "429": 135,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 131,
+      "falhas_definitivas": 135,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 131,
-      "proxy_hit": 98,
-      "proxmint_listas": 131,
+      "proxy_fallback": 135,
+      "proxy_hit": 101,
+      "proxmint_listas": 135,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 306,
+      "http_necessario": 307,
       "playwright_skip": 158,
       "episodios_tp_encontrados": 18668
     }
