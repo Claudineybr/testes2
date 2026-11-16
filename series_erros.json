@@ -2,28 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/06/inix-tp2e25_8.html",
-      "numero_href": 25,
-      "numero_texto": 50,
-      "texto": "Episódio 50 - O time A Anônimo (Idiota) e tempos conturbados"
-    },
-    {
-      "quando": "2026-11-16T00:21:03+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-shangri-la-frontier-2023.html",
-      "slug": "shangri_la_frontier",
-      "problemas": [
-        "T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]"
-      ],
-      "encontrado": {
-        "T1": 25,
-        "T2": 25
-      }
-    },
-    {
       "quando": "2026-11-16T00:21:24+00:00",
       "tipo": "temporada_inferida",
       "url": "https://www.vini7xgrave.site/2025/06/inix-dr-stone.html",
@@ -4818,12 +4796,26 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-16T08:24:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/arc-act-tp01ep07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-16T08:32:20+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/arc-act-tp01ep07.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 53,
-      "ok": 32,
+      "requisicoes": 55,
+      "ok": 34,
       "429": 1,
       "5xx": 0,
       "retries": 0,
@@ -4838,32 +4830,32 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 2,
-      "playwright_skip": 1,
+      "http_necessario": 4,
+      "playwright_skip": 3,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-16T06:04:40+00:00",
-      "duracao_min": 17.2
+      "quando": "2026-11-16T08:32:20+00:00",
+      "duracao_min": 18.1
     },
     "acumulado": {
-      "requisicoes": 1716,
-      "ok": 857,
-      "429": 136,
+      "requisicoes": 1771,
+      "ok": 891,
+      "429": 137,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 136,
+      "falhas_definitivas": 137,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 136,
+      "proxy_fallback": 137,
       "proxy_hit": 101,
-      "proxmint_listas": 136,
+      "proxmint_listas": 137,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 309,
-      "playwright_skip": 159,
+      "http_necessario": 313,
+      "playwright_skip": 162,
       "episodios_tp_encontrados": 18668
     }
   }
