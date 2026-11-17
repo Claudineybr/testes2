@@ -592,11 +592,27 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-17T11:55:43+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/03/duologia-o-auto-da-compadecida.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-17T11:56:33+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-mudanca-de-habito-2-de-volta-ao.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 39,
+      "requisicoes": 37,
       "ok": 35,
       "429": 2,
       "5xx": 0,
@@ -616,25 +632,25 @@
       "multifilme_paginas": 0,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-17T03:06:59+00:00",
-      "duracao_min": 11.9
+      "quando": "2026-11-17T11:58:00+00:00",
+      "duracao_min": 11.2
     },
     "acumulado": {
-      "requisicoes": 1830,
-      "ok": 1690,
-      "429": 74,
+      "requisicoes": 1867,
+      "ok": 1725,
+      "429": 76,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 74,
+      "falhas_definitivas": 76,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 74,
-      "proxy_hit": 74,
+      "proxy_fallback": 76,
+      "proxy_hit": 76,
       "pausas_evitadas": 4183,
       "http_realizados": 59,
-      "playwright_skip": 245,
-      "proxmint_listas": 74,
+      "playwright_skip": 249,
+      "proxmint_listas": 76,
       "link_em_a_href": 24,
       "link_convertido_w2embed": 128,
       "multifilme_paginas": 15,
