@@ -2,29 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T00:29:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp1e13_10.html",
-      "numero_href": 13,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - A Mamãe Está Fora de Casa Parte 1"
-    },
-    {
-      "quando": "2026-11-16T00:29:33+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "slug": "eu_a_patroa_e_as_criancas",
-      "problemas": [
-        "T1E1 aparece 2x com URLs diferentes",
-        "T2: faltam episódios [1]"
-      ],
-      "encontrado": {
-        "T1": 13,
-        "T2": 27
-      }
-    },
-    {
       "quando": "2026-11-16T00:31:10+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e02.html",
@@ -4769,6 +4746,20 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-18T10:05:55+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-18T10:13:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4793,27 +4784,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-18T02:17:18+00:00",
-      "duracao_min": 17.2
+      "quando": "2026-11-18T10:13:46+00:00",
+      "duracao_min": 16.8
     },
     "acumulado": {
-      "requisicoes": 2055,
-      "ok": 1065,
-      "429": 147,
+      "requisicoes": 2107,
+      "ok": 1096,
+      "429": 148,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 147,
+      "falhas_definitivas": 148,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 147,
+      "proxy_fallback": 148,
       "proxy_hit": 106,
-      "proxmint_listas": 147,
+      "proxmint_listas": 148,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 337,
+      "http_necessario": 338,
       "playwright_skip": 163,
       "episodios_tp_encontrados": 18704
     }
