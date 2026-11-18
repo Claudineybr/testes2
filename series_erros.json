@@ -2,24 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T00:29:08+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-walking-dead-2010.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/05/inix-tp8e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Piedade"
-    },
-    {
-      "quando": "2026-11-16T00:29:33+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp1e13_10.html",
-      "numero_href": 13,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - A Mamãe Está Fora de Casa Parte 1"
-    },
-    {
       "quando": "2026-11-16T00:29:33+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
@@ -4773,6 +4755,20 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-18T02:09:01+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-18T02:17:18+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4797,27 +4793,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-17T19:51:16+00:00",
-      "duracao_min": 16.7
+      "quando": "2026-11-18T02:17:18+00:00",
+      "duracao_min": 17.2
     },
     "acumulado": {
-      "requisicoes": 2003,
-      "ok": 1034,
-      "429": 146,
+      "requisicoes": 2055,
+      "ok": 1065,
+      "429": 147,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 146,
+      "falhas_definitivas": 147,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 146,
+      "proxy_fallback": 147,
       "proxy_hit": 106,
-      "proxmint_listas": 146,
+      "proxmint_listas": 147,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 336,
+      "http_necessario": 337,
       "playwright_skip": 163,
       "episodios_tp_encontrados": 18704
     }
