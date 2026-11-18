@@ -2,22 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T00:31:10+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-16T00:33:01+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e05.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-16T00:34:01+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/11/inix-marvel-punho-de-ferro-tp2e06.html",
@@ -4760,12 +4744,26 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-18T18:48:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-18T18:56:17+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 52,
-      "ok": 31,
+      "requisicoes": 53,
+      "ok": 32,
       "429": 1,
       "5xx": 0,
       "retries": 0,
@@ -4780,32 +4778,32 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
+      "http_necessario": 2,
+      "playwright_skip": 1,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-18T10:13:46+00:00",
-      "duracao_min": 16.8
+      "quando": "2026-11-18T18:56:17+00:00",
+      "duracao_min": 17.3
     },
     "acumulado": {
-      "requisicoes": 2107,
-      "ok": 1096,
-      "429": 148,
+      "requisicoes": 2160,
+      "ok": 1128,
+      "429": 149,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 148,
+      "falhas_definitivas": 149,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 148,
+      "proxy_fallback": 149,
       "proxy_hit": 106,
-      "proxmint_listas": 148,
+      "proxmint_listas": 149,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 338,
-      "playwright_skip": 163,
+      "http_necessario": 340,
+      "playwright_skip": 164,
       "episodios_tp_encontrados": 18704
     }
   }
