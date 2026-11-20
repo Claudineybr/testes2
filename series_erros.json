@@ -5,24 +5,6 @@
       "quando": "2026-11-16T01:02:03+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
-      "numero_href": 26,
-      "numero_texto": 27,
-      "texto": "Episódio 27 - Luz"
-    },
-    {
-      "quando": "2026-11-16T01:02:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
-      "numero_href": 29,
-      "numero_texto": 30,
-      "texto": "Episódio 30 - O Mago Espelho"
-    },
-    {
-      "quando": "2026-11-16T01:02:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
       "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
       "numero_href": 33,
       "numero_texto": 31,
@@ -4751,6 +4733,20 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-20T00:19:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-20T00:27:47+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e17.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4775,27 +4771,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-19T17:47:48+00:00",
-      "duracao_min": 16.8
+      "quando": "2026-11-20T00:27:47+00:00",
+      "duracao_min": 17.0
     },
     "acumulado": {
-      "requisicoes": 2327,
-      "ok": 1226,
-      "429": 155,
+      "requisicoes": 2379,
+      "ok": 1257,
+      "429": 156,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 155,
+      "falhas_definitivas": 156,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 155,
+      "proxy_fallback": 156,
       "proxy_hit": 109,
-      "proxmint_listas": 155,
+      "proxmint_listas": 156,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 348,
+      "http_necessario": 349,
       "playwright_skip": 169,
       "episodios_tp_encontrados": 18704
     }
