@@ -2,24 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T01:12:07+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-overlord-2017.html",
-      "href": "https://viniraveon.blogspot.com/2025/06/inix-tp1e11_93.html",
-      "numero_href": 11,
-      "numero_texto": 12,
-      "texto": "Episódio 12. A Valquíria Sanguinária"
-    },
-    {
-      "quando": "2026-11-16T01:12:07+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-overlord-2017.html",
-      "href": "https://viniraveon.blogspot.com/2025/06/inix-tp1e11_93.html",
-      "numero_href": 11,
-      "numero_texto": 12,
-      "texto": "Episódio 12. A Valquíria Sanguinária"
-    },
-    {
       "quando": "2026-11-16T01:12:51+00:00",
       "tipo": "serie_inconsistente",
       "url": "https://www.vini7xgrave.site/2025/05/inix-casa-do-dragao.html",
@@ -4726,51 +4708,65 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-21T23:50:12+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-21T23:58:51+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 60,
-      "ok": 35,
-      "429": 3,
+      "requisicoes": 53,
+      "ok": 32,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 3,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 3,
-      "proxy_hit": 2,
-      "proxmint_listas": 3,
+      "proxy_fallback": 1,
+      "proxy_hit": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 5,
+      "http_necessario": 1,
       "playwright_skip": 0,
-      "episodios_tp_encontrados": 8,
+      "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-21T19:13:51+00:00",
-      "duracao_min": 22.0
+      "quando": "2026-11-21T23:58:51+00:00",
+      "duracao_min": 17.8
     },
     "acumulado": {
-      "requisicoes": 2713,
-      "ok": 1459,
-      "429": 166,
+      "requisicoes": 2766,
+      "ok": 1491,
+      "429": 167,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 166,
+      "falhas_definitivas": 167,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 166,
+      "proxy_fallback": 167,
       "proxy_hit": 113,
-      "proxmint_listas": 166,
+      "proxmint_listas": 167,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 371,
+      "http_necessario": 372,
       "playwright_skip": 181,
       "episodios_tp_encontrados": 18712
     }
