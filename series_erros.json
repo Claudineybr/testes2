@@ -2,22 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T01:13:46+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "o_jogo_do_diabo_t01ep00.html",
-      "novo": "o_jogo_do_diabo_t01ep01.html",
-      "link": "http://shd9.oneplayer.site/y456y654uj54tyg34gfwer45r3hj465yh354rtgfwe4rfgtwku51/SHD9/214582/1x1.mp4"
-    },
-    {
-      "quando": "2026-11-16T01:15:24+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e03_7.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-16T01:18:31+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e04_7.html",
@@ -4714,12 +4698,26 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-22T13:09:51+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T13:17:43+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 53,
-      "ok": 32,
+      "requisicoes": 55,
+      "ok": 34,
       "429": 1,
       "5xx": 0,
       "retries": 0,
@@ -4734,32 +4732,32 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
+      "http_necessario": 3,
+      "playwright_skip": 2,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-22T04:55:01+00:00",
-      "duracao_min": 17.0
+      "quando": "2026-11-22T13:17:43+00:00",
+      "duracao_min": 17.8
     },
     "acumulado": {
-      "requisicoes": 2819,
-      "ok": 1523,
-      "429": 168,
+      "requisicoes": 2874,
+      "ok": 1557,
+      "429": 169,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 168,
+      "falhas_definitivas": 169,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 168,
+      "proxy_fallback": 169,
       "proxy_hit": 113,
-      "proxmint_listas": 168,
+      "proxmint_listas": 169,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 373,
-      "playwright_skip": 181,
+      "http_necessario": 376,
+      "playwright_skip": 183,
       "episodios_tp_encontrados": 18712
     }
   }
