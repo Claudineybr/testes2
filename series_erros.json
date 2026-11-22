@@ -2,28 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-16T01:12:51+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-casa-do-dragao.html",
-      "slug": "a_casa_do_dragao",
-      "problemas": [
-        "T1E5 aparece 2x com URLs diferentes",
-        "T2: faltam episódios [5]"
-      ],
-      "encontrado": {
-        "T1": 11,
-        "T2": 7
-      }
-    },
-    {
-      "quando": "2026-11-16T01:13:16+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e01_52.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-16T01:13:46+00:00",
       "tipo": "remapeamento_bloqueado",
       "url": "",
@@ -4722,6 +4700,20 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-22T04:47:09+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T04:55:01+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4746,27 +4738,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-21T23:58:51+00:00",
-      "duracao_min": 17.8
+      "quando": "2026-11-22T04:55:01+00:00",
+      "duracao_min": 17.0
     },
     "acumulado": {
-      "requisicoes": 2766,
-      "ok": 1491,
-      "429": 167,
+      "requisicoes": 2819,
+      "ok": 1523,
+      "429": 168,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 167,
+      "falhas_definitivas": 168,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 111,
-      "proxy_fallback": 167,
+      "proxy_fallback": 168,
       "proxy_hit": 113,
-      "proxmint_listas": 167,
+      "proxmint_listas": 168,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6513,
       "feed_hit": 0,
-      "http_necessario": 372,
+      "http_necessario": 373,
       "playwright_skip": 181,
       "episodios_tp_encontrados": 18712
     }
