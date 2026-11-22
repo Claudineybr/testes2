@@ -553,53 +553,435 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep06.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-22T22:14:47+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:22:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html"
+    },
+    {
+      "quando": "2026-11-22T22:22:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-22T22:24:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-o-cuco-de-cristal-2025.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-o-cuco-de-cristal-tp1e01_9.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 –"
+    },
+    {
+      "quando": "2026-11-22T22:24:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2026/02/inix-o-cuco-de-cristal-2025.html",
+      "href": "https://viniraveon.blogspot.com/2026/02/inix-o-cuco-de-cristal-tp1e01_9.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 –"
+    },
+    {
+      "quando": "2026-11-22T22:25:22+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:35:25+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-suits-tp8e08.html",
+      "serie": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html"
+    },
+    {
+      "quando": "2026-11-22T22:35:25+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-suits-homens-de-terno-2011.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-22T22:37:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/12/inix-percy-jackson-e-os-olimpianos_26.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:38:27+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "percy_jackson_e_os_olimpianos_t01ep04.html",
+      "novo": "percy_jackson_e_os_olimpianos_t02ep04.html",
+      "link": "https://cdn3.playmycnvs.com/Percy%20Jackson%20e%20os%20Olimpianos%20S01%20E04_103540.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:38:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:48:56+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "serie": "https://www.vini7xgrave.site/2025/12/inix-percy-jackson-e-os-olimpianos-2023.html"
+    },
+    {
+      "quando": "2026-11-22T22:48:56+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/12/inix-percy-jackson-e-os-olimpianos-2023.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-22T22:50:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:50:56+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep01.html",
+      "ocupante": "doctor_who_t01ep01.html",
+      "nome_ocupante": "Doctor Who - T1E1 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E1 – Episódio 1 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E01_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E01_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:51:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:51:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep02.html",
+      "ocupante": "doctor_who_t01ep02.html",
+      "nome_ocupante": "Doctor Who - T1E2 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E2 – Episódio 2 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E02_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E02_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:52:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:52:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep03.html",
+      "ocupante": "doctor_who_t01ep03.html",
+      "nome_ocupante": "Doctor Who - T1E3 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E3 – Episódio 3 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E03_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E03_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:53:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:53:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep04.html",
+      "ocupante": "doctor_who_t01ep04.html",
+      "nome_ocupante": "Doctor Who - T1E4 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E4 – Episódio 4 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E04_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E04_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:54:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:54:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep05.html",
+      "ocupante": "doctor_who_t01ep05.html",
+      "nome_ocupante": "Doctor Who - T1E5 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E5 – Episódio 5 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E05_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E05_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:55:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:55:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep06.html",
+      "ocupante": "doctor_who_t01ep06.html",
+      "nome_ocupante": "Doctor Who - T1E6 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E6 – Episódio 6 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E06_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E06_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:56:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:56:56+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep07.html",
+      "ocupante": "doctor_who_t01ep07.html",
+      "nome_ocupante": "Doctor Who - T1E7 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E7 – Episódio 7 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E07_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E07_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:57:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-doctor-who-tp01ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T22:57:55+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep08.html",
+      "ocupante": "doctor_who_t01ep08.html",
+      "nome_ocupante": "Doctor Who - T1E8 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E8 – Episódio 8 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E08_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E08_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:58:25+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep09.html",
+      "ocupante": "doctor_who_t01ep09.html",
+      "nome_ocupante": "Doctor Who - T1E9 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E9 – Episódio 9 - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E09_57243.mp4",
+      "link_novo": "https://cdn3.playmycnvs.com/Doctor%20Who%20S01%20E09_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:58:51+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep01.html",
+      "novo": "doctor_who_t02ep01.html",
+      "link": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E01_57243.mp4"
+    },
+    {
+      "quando": "2026-11-22T22:59:12+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2026/01/inix-skins-juventude-flor-da-pele.html",
+      "slug": "skins_juventude_a_flor_da_pele",
+      "problemas": [
+        "temporadas [7] existem em disco mas não foram achadas na página"
+      ],
+      "encontrado": {
+        "T1": 9,
+        "T2": 10
+      }
+    },
+    {
+      "quando": "2026-11-22T23:02:28+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/12/inix-greys-anatomy-tp2e02.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T23:02:58+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "grey_s_anatomy_t02ep25.html",
+      "novo": "grey_s_anatomy_t02ep02.html",
+      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/1416/2x2.mp4"
+    },
+    {
+      "quando": "2026-11-22T23:04:06+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-robin-hood-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/12/inix-robin-hood-tp1e05.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - Unidos Pelo Amor, Separados por Mentiras"
+    },
+    {
+      "quando": "2026-11-22T23:04:06+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-robin-hood-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/12/inix-robin-hood-tp1e05.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - Unidos Pelo Amor, Separados por Mentiras"
+    },
+    {
+      "quando": "2026-11-22T23:04:27+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T23:14:29+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e07.html",
+      "serie": "https://www.vini7xgrave.site/2025/12/inix-os-abandonados-2025.html"
+    },
+    {
+      "quando": "2026-11-22T23:14:29+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/12/inix-os-abandonados-2025.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-22T23:15:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/10/inix-it-bem-vindos-derry-tp1e01_31.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Bem-Vindos a Escuridão"
+    },
+    {
+      "quando": "2026-11-22T23:15:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/12/inix-it-bem-vindos-derry-tp1e07_14.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 -"
+    },
+    {
+      "quando": "2026-11-22T23:15:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/10/inix-it-bem-vindos-derry-tp1e01_31.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Bem-Vindos a Escuridão"
+    },
+    {
+      "quando": "2026-11-22T23:15:58+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/10/inix-it-bem-vindos-derry-2025.html",
+      "href": "https://viniraveon.blogspot.com/2025/12/inix-it-bem-vindos-derry-tp1e07_14.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 -"
+    },
+    {
+      "quando": "2026-11-22T23:16:49+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T23:26:51+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 94,
+      "requisicoes": 160,
       "ok": 45,
-      "429": 9,
-      "5xx": 0,
-      "retries": 0,
-      "falhas_definitivas": 9,
-      "html_invalido": 0,
-      "serie_inconsistente": 3,
-      "conflitos": 10,
-      "proxy_fallback": 9,
-      "proxy_hit": 7,
-      "proxmint_listas": 9,
-      "link_em_a_href": 0,
-      "link_convertido_w2embed": 0,
-      "skip_perfeito": 569,
-      "feed_hit": 0,
-      "http_necessario": 15,
-      "playwright_skip": 3,
-      "episodios_tp_encontrados": 1356,
-      "robo": "series",
-      "quando": "2026-11-22T22:04:44+00:00",
-      "duracao_min": 47.4
-    },
-    "acumulado": {
-      "requisicoes": 217,
-      "ok": 120,
       "429": 15,
       "5xx": 0,
       "retries": 0,
       "falhas_definitivas": 15,
       "html_invalido": 0,
-      "serie_inconsistente": 5,
-      "conflitos": 10,
+      "serie_inconsistente": 1,
+      "conflitos": 12,
       "proxy_fallback": 15,
-      "proxy_hit": 11,
+      "proxy_hit": 10,
       "proxmint_listas": 15,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 1397,
+      "skip_perfeito": 506,
       "feed_hit": 0,
       "http_necessario": 18,
-      "playwright_skip": 4,
-      "episodios_tp_encontrados": 3112
+      "playwright_skip": 1,
+      "episodios_tp_encontrados": 712,
+      "robo": "series",
+      "quando": "2026-11-22T23:26:51+00:00",
+      "duracao_min": 80.8
+    },
+    "acumulado": {
+      "requisicoes": 377,
+      "ok": 165,
+      "429": 30,
+      "5xx": 0,
+      "retries": 0,
+      "falhas_definitivas": 30,
+      "html_invalido": 0,
+      "serie_inconsistente": 6,
+      "conflitos": 22,
+      "proxy_fallback": 30,
+      "proxy_hit": 21,
+      "proxmint_listas": 30,
+      "link_em_a_href": 0,
+      "link_convertido_w2embed": 0,
+      "skip_perfeito": 1903,
+      "feed_hit": 0,
+      "http_necessario": 36,
+      "playwright_skip": 5,
+      "episodios_tp_encontrados": 3824
     }
   }
 }
