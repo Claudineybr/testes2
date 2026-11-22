@@ -384,12 +384,44 @@
       "status": 429,
       "detalhe": "HTTP 429",
       "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T21:05:38+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/08/inix-ilha-das-sombras-2023.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T21:06:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/08/inix-saga-crepusculo-amanhecer-parte-2.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T21:08:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-marcas-do-passado-2022.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-22T21:09:34+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/09/inix-sequestro-1971-2024.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 43,
-      "ok": 37,
+      "requisicoes": 45,
+      "ok": 39,
       "429": 4,
       "5xx": 0,
       "retries": 0,
@@ -399,37 +431,37 @@
       "conflitos": 0,
       "proxy_fallback": 4,
       "proxy_hit": 4,
-      "pausas_evitadas": 99,
-      "http_realizados": 0,
+      "pausas_evitadas": 97,
+      "http_realizados": 2,
       "playwright_skip": 5,
       "proxmint_listas": 4,
       "link_em_a_href": 1,
       "link_convertido_w2embed": 0,
-      "multifilme_paginas": 0,
+      "multifilme_paginas": 1,
       "multifilme_arquivos": 0,
       "robo": "filmes",
-      "quando": "2026-11-22T20:55:42+00:00",
-      "duracao_min": 14.1
+      "quando": "2026-11-22T21:11:42+00:00",
+      "duracao_min": 14.8
     },
     "acumulado": {
-      "requisicoes": 946,
-      "ok": 862,
-      "429": 48,
+      "requisicoes": 991,
+      "ok": 901,
+      "429": 52,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 48,
+      "falhas_definitivas": 52,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 48,
-      "proxy_hit": 48,
-      "pausas_evitadas": 2463,
-      "http_realizados": 13,
-      "playwright_skip": 61,
-      "proxmint_listas": 48,
-      "link_em_a_href": 14,
+      "proxy_fallback": 52,
+      "proxy_hit": 52,
+      "pausas_evitadas": 2560,
+      "http_realizados": 15,
+      "playwright_skip": 66,
+      "proxmint_listas": 52,
+      "link_em_a_href": 15,
       "link_convertido_w2embed": 1,
-      "multifilme_paginas": 1,
+      "multifilme_paginas": 2,
       "multifilme_arquivos": 0
     }
   }
