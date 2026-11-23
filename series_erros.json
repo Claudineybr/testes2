@@ -2,22 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T06:51:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/06/arc-tumulo-dos-vagalumes-1988.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T06:53:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-voz-do-silencio-2016.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-23T06:55:18+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/05/inix-pegando-uma-onda-com-voce-2019.html",
@@ -4798,52 +4782,66 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-23T21:50:20+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/06/arc-era-uma-vez-tp01ep22-2011.html7",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T21:58:11+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/06/arc-era-uma-vez-tp01ep22-2011.html7",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 59,
-      "ok": 37,
-      "429": 2,
+      "requisicoes": 66,
+      "ok": 45,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 2,
-      "proxy_hit": 1,
-      "proxmint_listas": 2,
+      "proxy_fallback": 1,
+      "proxy_hit": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 4,
-      "playwright_skip": 3,
+      "http_necessario": 14,
+      "playwright_skip": 13,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-23T12:36:40+00:00",
-      "duracao_min": 26.1
+      "quando": "2026-11-23T21:58:12+00:00",
+      "duracao_min": 21.9
     },
     "acumulado": {
-      "requisicoes": 1977,
-      "ok": 829,
-      "429": 142,
+      "requisicoes": 2043,
+      "ok": 874,
+      "429": 143,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 142,
+      "falhas_definitivas": 143,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 142,
+      "proxy_fallback": 143,
       "proxy_hit": 93,
-      "proxmint_listas": 142,
+      "proxmint_listas": 143,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 278,
-      "playwright_skip": 108,
+      "http_necessario": 292,
+      "playwright_skip": 121,
       "episodios_tp_encontrados": 19318
     }
   }
