@@ -1192,53 +1192,335 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-23T01:18:08+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T01:26:00+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/02/inix-uma-familia-da-pesada-tp2e15.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html"
+    },
+    {
+      "quando": "2026-11-23T01:26:00+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-uma-familia-da-pesada.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-23T01:27:57+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "percy_jackson_e_os_olimpianos_t01ep04.html",
+      "novo": "percy_jackson_e_os_olimpianos_t02ep04.html",
+      "link": "https://cdn3.playmycnvs.com/Percy%20Jackson%20e%20os%20Olimpianos%20S01%20E04_103540.mp4"
+    },
+    {
+      "quando": "2026-11-23T01:28:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T01:38:10+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2026/01/inix-percy-jackson-e-os-olimpianos_9.html",
+      "serie": "https://www.vini7xgrave.site/2025/12/inix-percy-jackson-e-os-olimpianos-2023.html"
+    },
+    {
+      "quando": "2026-11-23T01:38:10+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/12/inix-percy-jackson-e-os-olimpianos-2023.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-23T01:39:43+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T01:49:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/12/inix-os-abandonados-tp1e07.html",
+      "serie": "https://www.vini7xgrave.site/2025/12/inix-os-abandonados-2025.html"
+    },
+    {
+      "quando": "2026-11-23T01:49:46+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/12/inix-os-abandonados-2025.html",
+      "seguidos": 2
+    },
+    {
+      "quando": "2026-11-23T01:52:15+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T02:02:17+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep05_2.html",
+      "serie": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html"
+    },
+    {
+      "quando": "2026-11-23T02:02:17+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/11/inix-mushuku-tensei-2021.html",
+      "seguidos": 3
+    },
+    {
+      "quando": "2026-11-23T02:06:52+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-witcher-2019.html",
+      "slug": "the_witcher",
+      "problemas": [
+        "T1: faltam episódios [1, 2, 3, 4, 5, 6]"
+      ],
+      "encontrado": {
+        "T1": 2,
+        "T2": 8,
+        "T3": 8,
+        "T4": 8,
+        "T6": 6
+      }
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp5e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Calhas e Escadas"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp5e13.html",
+      "numero_href": 13,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Capítulo 1"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp6e01.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Capítulo 2"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp5e0.html",
+      "numero_href": 0,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Calhas e Escadas"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp5e13.html",
+      "numero_href": 13,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Capítulo 1"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "href": "https://viniraveon.blogspot.com/2025/09/inix-american-horror-story-tp6e01.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Capítulo 2"
+    },
+    {
+      "quando": "2026-11-23T02:08:04+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/09/american-horror-story-sinopse-uma.html",
+      "slug": "american_horror_story",
+      "problemas": [
+        "T5E1 aparece 2x com URLs diferentes",
+        "T6: faltam episódios [1]"
+      ],
+      "encontrado": {
+        "T1": 12,
+        "T2": 13,
+        "T3": 13,
+        "T4": 13,
+        "T5": 13,
+        "T6": 9,
+        "T7": 11,
+        "T8": 10
+      }
+    },
+    {
+      "quando": "2026-11-23T02:10:23+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp01ep07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T02:20:49+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp01ep07.html",
+      "serie": "https://www.vini7xgrave.site/2025/10/inix.html"
+    },
+    {
+      "quando": "2026-11-23T02:20:49+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/10/inix.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-23T02:22:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-o-dia-do-chacal-2024.html",
+      "href": "https://viniraveon.blogspot.com/2025/03/inix-tp1e08_30.html",
+      "numero_href": 8,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - O Ataque"
+    },
+    {
+      "quando": "2026-11-23T02:22:17+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-o-dia-do-chacal-2024.html",
+      "href": "https://viniraveon.blogspot.com/2025/03/inix-tp1e08_30.html",
+      "numero_href": 8,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - O Ataque"
+    },
+    {
+      "quando": "2026-11-23T02:23:44+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-solo-leveling.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-solo-leveling-tp2e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Você não é um Rank E, né?"
+    },
+    {
+      "quando": "2026-11-23T02:23:44+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-solo-leveling.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-solo-leveling-tp2e0.html",
+      "numero_href": 0,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - Você não é um Rank E, né?"
+    },
+    {
+      "quando": "2026-11-23T02:24:07+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/08/inix-dragon-ball-super-2015.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/08/inix-dragon-ball-super-tp1e05_31.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - Não Irritem o Deus da Destruição! A Festa de Aniversário Empolgante"
+    },
+    {
+      "quando": "2026-11-23T02:24:07+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/08/inix-dragon-ball-super-2015.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/08/inix-dragon-ball-super-tp1e05_31.html",
+      "numero_href": 5,
+      "numero_texto": 6,
+      "texto": "Episódio 6 - Não Irritem o Deus da Destruição! A Festa de Aniversário Empolgante"
+    },
+    {
+      "quando": "2026-11-23T02:24:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/03/inix-sorte-2022.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T02:25:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniseries3.blogspot.com/2025/10/inix-911-tp1e09.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T02:26:31+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T02:36:57+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 186,
-      "ok": 47,
-      "429": 15,
+      "requisicoes": 168,
+      "ok": 40,
+      "429": 8,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 15,
+      "falhas_definitivas": 8,
       "html_invalido": 0,
       "serie_inconsistente": 2,
       "conflitos": 1,
-      "proxy_fallback": 15,
-      "proxy_hit": 9,
-      "proxmint_listas": 15,
+      "proxy_fallback": 8,
+      "proxy_hit": 2,
+      "proxmint_listas": 8,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 375,
+      "skip_perfeito": 530,
       "feed_hit": 0,
-      "http_necessario": 17,
-      "playwright_skip": 10,
-      "episodios_tp_encontrados": 726,
+      "http_necessario": 13,
+      "playwright_skip": 6,
+      "episodios_tp_encontrados": 1136,
       "robo": "series",
-      "quando": "2026-11-23T01:07:47+00:00",
-      "duracao_min": 99.7
+      "quando": "2026-11-23T02:36:57+00:00",
+      "duracao_min": 87.8
     },
     "acumulado": {
-      "requisicoes": 563,
-      "ok": 212,
-      "429": 45,
+      "requisicoes": 731,
+      "ok": 252,
+      "429": 53,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 45,
+      "falhas_definitivas": 53,
       "html_invalido": 0,
-      "serie_inconsistente": 8,
-      "conflitos": 23,
-      "proxy_fallback": 45,
-      "proxy_hit": 30,
-      "proxmint_listas": 45,
+      "serie_inconsistente": 10,
+      "conflitos": 24,
+      "proxy_fallback": 53,
+      "proxy_hit": 32,
+      "proxmint_listas": 53,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 2278,
+      "skip_perfeito": 2808,
       "feed_hit": 0,
-      "http_necessario": 53,
-      "playwright_skip": 15,
-      "episodios_tp_encontrados": 4550
+      "http_necessario": 66,
+      "playwright_skip": 21,
+      "episodios_tp_encontrados": 5686
     }
   }
 }
