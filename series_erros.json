@@ -2,1081 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp1e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Piloto: Parte Um"
-    },
-    {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp2e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Fora do Tempo"
-    },
-    {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp2e04_9.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Comprometido"
-    },
-    {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp1e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Piloto: Parte Um"
-    },
-    {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp2e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Fora do Tempo"
-    },
-    {
-      "quando": "2026-11-23T04:34:30+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/lendas-do-amanha-legends-of-tomorrow.html",
-      "href": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp2e04_9.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Comprometido"
-    },
-    {
-      "quando": "2026-11-23T04:36:05+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/10/arc-walking-dead-daryl-tp03ep07_26.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T04:45:28+00:00",
-      "tipo": "rate_limit",
-      "url": "https://marcosx7.blogspot.com/2025/10/arc-walking-dead-daryl-tp03ep07_26.html",
-      "retentativa": true
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
-      "numero_href": 13,
-      "numero_texto": 15,
-      "texto": "Episódio 15 - O Mago de Diamond"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
-      "numero_href": 20,
-      "numero_texto": 21,
-      "texto": "Episódio 21 - Motim na Capital"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
-      "numero_href": 25,
-      "numero_texto": 26,
-      "texto": "Episódio 26 - Feras Feridas"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
-      "numero_href": 26,
-      "numero_texto": 27,
-      "texto": "Episódio 27 - Luz"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
-      "numero_href": 29,
-      "numero_texto": 30,
-      "texto": "Episódio 30 - O Mago Espelho"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
-      "numero_href": 33,
-      "numero_texto": 31,
-      "texto": "Episódio 31 - Perseguição na Neve"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
-      "numero_href": 32,
-      "numero_texto": 33,
-      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
-      "numero_href": 49,
-      "numero_texto": 48,
-      "texto": "Episódio 48 - Desespero vs. Esperança"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
-      "numero_href": 7,
-      "numero_texto": 8,
-      "texto": "Episódio 8 - Chamas de Ódio"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
-      "numero_href": 13,
-      "numero_texto": 15,
-      "texto": "Episódio 15 - O Mago de Diamond"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
-      "numero_href": 20,
-      "numero_texto": 21,
-      "texto": "Episódio 21 - Motim na Capital"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
-      "numero_href": 25,
-      "numero_texto": 26,
-      "texto": "Episódio 26 - Feras Feridas"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
-      "numero_href": 26,
-      "numero_texto": 27,
-      "texto": "Episódio 27 - Luz"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
-      "numero_href": 29,
-      "numero_texto": 30,
-      "texto": "Episódio 30 - O Mago Espelho"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
-      "numero_href": 33,
-      "numero_texto": 31,
-      "texto": "Episódio 31 - Perseguição na Neve"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
-      "numero_href": 32,
-      "numero_texto": 33,
-      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
-      "numero_href": 49,
-      "numero_texto": 48,
-      "texto": "Episódio 48 - Desespero vs. Esperança"
-    },
-    {
-      "quando": "2026-11-23T04:56:36+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
-      "numero_href": 7,
-      "numero_texto": 8,
-      "texto": "Episódio 8 - Chamas de Ódio"
-    },
-    {
-      "quando": "2026-11-23T04:56:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e12.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:04:31+00:00",
-      "tipo": "rate_limit",
-      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e12.html",
-      "serie": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html"
-    },
-    {
-      "quando": "2026-11-23T05:04:31+00:00",
-      "tipo": "rate_limit",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "seguidos": 1
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp1e18_7.html",
-      "numero_href": 18,
-      "numero_texto": 19,
-      "texto": "Episódio 19 - Negócios Inacabados"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp3e04_8.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - A Origem Secreta de Felicity Smoak"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Arqueiro Verde"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e05.html",
-      "numero_href": 5,
-      "numero_texto": 4,
-      "texto": "Episódio 4 - Além da Redenção"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e06.html",
-      "numero_href": 6,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Assombrado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e07.html",
-      "numero_href": 7,
-      "numero_texto": 6,
-      "texto": "Episódio 6 - Almas Perdidas"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e08.html",
-      "numero_href": 8,
-      "numero_texto": 7,
-      "texto": "Episódio 7 - Irmandade"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e09.html",
-      "numero_href": 9,
-      "numero_texto": 8,
-      "texto": "Episódio 8 - Lendas de Ontem"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e10.html",
-      "numero_href": 10,
-      "numero_texto": 9,
-      "texto": "Episódio 9 - Águas Negras"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e11.html",
-      "numero_href": 11,
-      "numero_texto": 10,
-      "texto": "Episódio 10 - Dívidas de Sangue"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e12.html",
-      "numero_href": 12,
-      "numero_texto": 11,
-      "texto": "Episódio 11 - Ausente sem Licença"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e13.html",
-      "numero_href": 13,
-      "numero_texto": 12,
-      "texto": "Episódio 12 - Desacorrentado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e14.html",
-      "numero_href": 14,
-      "numero_texto": 13,
-      "texto": "Episódio 13 - Pecados do Pai"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e15.html",
-      "numero_href": 15,
-      "numero_texto": 14,
-      "texto": "Episódio 14 - Código de Silêncio"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e16.html",
-      "numero_href": 16,
-      "numero_texto": 15,
-      "texto": "Episódio 15 - Levado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e17.html",
-      "numero_href": 17,
-      "numero_texto": 16,
-      "texto": "Episódio 16 - Corações Partidos"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e18.html",
-      "numero_href": 18,
-      "numero_texto": 17,
-      "texto": "Episódio 17 - Farol de Esperança"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e19.html",
-      "numero_href": 19,
-      "numero_texto": 18,
-      "texto": "Episódio 18 - Onze e Cinquenta e Nove"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e20.html",
-      "numero_href": 20,
-      "numero_texto": 19,
-      "texto": "Episódio 19 - O Grito da Canário"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e21.html",
-      "numero_href": 21,
-      "numero_texto": 20,
-      "texto": "Episódio 20 - Gênesis"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e22.html",
-      "numero_href": 22,
-      "numero_texto": 21,
-      "texto": "Episódio 21 - Ponto Monumental"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e23.html",
-      "numero_href": 23,
-      "numero_texto": 22,
-      "texto": "Episódio 22 - Perdido no Dilúvio"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp1e18_7.html",
-      "numero_href": 18,
-      "numero_texto": 19,
-      "texto": "Episódio 19 - Negócios Inacabados"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp3e04_8.html",
-      "numero_href": 4,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - A Origem Secreta de Felicity Smoak"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Arqueiro Verde"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e05.html",
-      "numero_href": 5,
-      "numero_texto": 4,
-      "texto": "Episódio 4 - Além da Redenção"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e06.html",
-      "numero_href": 6,
-      "numero_texto": 5,
-      "texto": "Episódio 5 - Assombrado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e07.html",
-      "numero_href": 7,
-      "numero_texto": 6,
-      "texto": "Episódio 6 - Almas Perdidas"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e08.html",
-      "numero_href": 8,
-      "numero_texto": 7,
-      "texto": "Episódio 7 - Irmandade"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e09.html",
-      "numero_href": 9,
-      "numero_texto": 8,
-      "texto": "Episódio 8 - Lendas de Ontem"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e10.html",
-      "numero_href": 10,
-      "numero_texto": 9,
-      "texto": "Episódio 9 - Águas Negras"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e11.html",
-      "numero_href": 11,
-      "numero_texto": 10,
-      "texto": "Episódio 10 - Dívidas de Sangue"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e12.html",
-      "numero_href": 12,
-      "numero_texto": 11,
-      "texto": "Episódio 11 - Ausente sem Licença"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e13.html",
-      "numero_href": 13,
-      "numero_texto": 12,
-      "texto": "Episódio 12 - Desacorrentado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e14.html",
-      "numero_href": 14,
-      "numero_texto": 13,
-      "texto": "Episódio 13 - Pecados do Pai"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e15.html",
-      "numero_href": 15,
-      "numero_texto": 14,
-      "texto": "Episódio 14 - Código de Silêncio"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e16.html",
-      "numero_href": 16,
-      "numero_texto": 15,
-      "texto": "Episódio 15 - Levado"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e17.html",
-      "numero_href": 17,
-      "numero_texto": 16,
-      "texto": "Episódio 16 - Corações Partidos"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e18.html",
-      "numero_href": 18,
-      "numero_texto": 17,
-      "texto": "Episódio 17 - Farol de Esperança"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e19.html",
-      "numero_href": 19,
-      "numero_texto": 18,
-      "texto": "Episódio 18 - Onze e Cinquenta e Nove"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e20.html",
-      "numero_href": 20,
-      "numero_texto": 19,
-      "texto": "Episódio 19 - O Grito da Canário"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e21.html",
-      "numero_href": 21,
-      "numero_texto": 20,
-      "texto": "Episódio 20 - Gênesis"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e22.html",
-      "numero_href": 22,
-      "numero_texto": 21,
-      "texto": "Episódio 21 - Ponto Monumental"
-    },
-    {
-      "quando": "2026-11-23T05:05:57+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-arqueiro-verde-arrow-2012.html",
-      "href": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e23.html",
-      "numero_href": 23,
-      "numero_texto": 22,
-      "texto": "Episódio 22 - Perdido no Dilúvio"
-    },
-    {
-      "quando": "2026-11-23T05:05:58+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniseries3.blogspot.com/2025/09/inix-arqueiro-tp4e23.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:06:58+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "arqueiro_verde_arrow_t04ep23.html",
-      "novo": "arqueiro_verde_arrow_t04ep22.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/1412/4x23.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:07:22+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-flash-2014.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp1e22_7.html",
-      "numero_href": 22,
-      "numero_texto": 23,
-      "texto": "Episódio 23 - Rápido o Bastante"
-    },
-    {
-      "quando": "2026-11-23T05:07:22+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/inix-flash-2014.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp1e22_7.html",
-      "numero_href": 22,
-      "numero_texto": 23,
-      "texto": "Episódio 23 - Rápido o Bastante"
-    },
-    {
-      "quando": "2026-11-23T05:07:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:08:28+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep02.html",
-      "novo": "flash_t01ep02.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x2.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:08:58+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp1e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:09:28+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep03.html",
-      "novo": "flash_t01ep03.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x3.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:09:58+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep10.html",
-      "novo": "flash_t01ep10.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x10.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:10:25+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep14.html",
-      "novo": "flash_t01ep14.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x14.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:10:49+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp1e15.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:11:19+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep15.html",
-      "novo": "flash_t01ep15.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x15.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:11:49+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep16.html",
-      "novo": "flash_t01ep16.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x16.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:12:16+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep17.html",
-      "novo": "flash_t01ep17.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x17.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:12:41+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep18.html",
-      "novo": "flash_t01ep18.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x18.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:13:02+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep19.html",
-      "novo": "flash_t01ep19.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x19.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:13:22+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep20.html",
-      "novo": "flash_t01ep20.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x20.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:13:40+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep21.html",
-      "novo": "flash_t01ep21.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x21.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:13:56+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep22.html",
-      "novo": "flash_t01ep22.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x22.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:14:11+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "flash_t02ep23.html",
-      "novo": "flash_t01ep23.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x23.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:14:26+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep02.html",
-      "ocupante": "flash_t02ep02.html",
-      "nome_ocupante": "Flash - T2E2 – O Homem Mais Rápido do Mundo - 🍿Clau",
-      "nome_novo": "Flash - T2E2 – Flash de Dois Mundos - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x2.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x2.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:14:41+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp2e03.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:15:04+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep03.html",
-      "ocupante": "flash_t02ep03.html",
-      "nome_ocupante": "Flash - T2E3 – O Que Não Dá para Ultrapassar - 🍿Clau",
-      "nome_novo": "Flash - T2E3 – A Família de Rogues - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x3.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x3.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:15:28+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep10.html",
-      "ocupante": "flash_t02ep10.html",
-      "nome_ocupante": "Flash - T2E10 – A Vingança dos Ladrões - 🍿Clau",
-      "nome_novo": "Flash - T2E10 – Energia Potencial - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x10.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x10.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:15:49+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep14.html",
-      "ocupante": "flash_t02ep14.html",
-      "nome_ocupante": "Flash - T2E14 – Chuva Radioativa - 🍿Clau",
-      "nome_novo": "Flash - T2E14 – Tubarão Rei - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x14.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x14.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:16:08+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp2e15.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:17:07+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep15.html",
-      "ocupante": "flash_t02ep15.html",
-      "nome_ocupante": "Flash - T2E15 – Fórum do Tempo - 🍿Clau",
-      "nome_novo": "Flash - T2E15 – Trajetória - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x15.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x15.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:17:37+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep16.html",
-      "ocupante": "flash_t02ep16.html",
-      "nome_ocupante": "Flash - T2E16 – O Retorno dos Ladrões - 🍿Clau",
-      "nome_novo": "Flash - T2E16 – Flash Back - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x16.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x16.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:18:03+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep17.html",
-      "ocupante": "flash_t02ep17.html",
-      "nome_ocupante": "Flash - T2E17 – Os Trapaceiros - 🍿Clau",
-      "nome_novo": "Flash - T2E17 – Contra Zoom - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x17.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x17.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:18:28+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep18.html",
-      "ocupante": "flash_t02ep18.html",
-      "nome_ocupante": "Flash - T2E18 – Heróis - 🍿Clau",
-      "nome_novo": "Flash - T2E18 – De Volta ao Normal - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x18.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x18.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:18:49+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep19.html",
-      "ocupante": "flash_t02ep19.html",
-      "nome_ocupante": "Flash - T2E19 – Quem é Harrison Wells? - 🍿Clau",
-      "nome_novo": "Flash - T2E19 – Ruptura - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x19.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x19.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:19:08+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://vini7xgseries2.blogspot.com/2025/09/inix-flash-tp2e20.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:20:08+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep20.html",
-      "ocupante": "flash_t02ep20.html",
-      "nome_ocupante": "Flash - T2E20 – A Armadilha - 🍿Clau",
-      "nome_novo": "Flash - T2E20 – Dinossauro Fujão - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x20.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x20.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:20:38+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep21.html",
-      "ocupante": "flash_t02ep21.html",
-      "nome_ocupante": "Flash - T2E21 – Surge Grodd - 🍿Clau",
-      "nome_novo": "Flash - T2E21 – Invencível - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x21.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x21.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:21:05+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep22.html",
-      "ocupante": "flash_t02ep22.html",
-      "nome_ocupante": "Flash - T2E22 – Acerto de Contas - 🍿Clau",
-      "nome_novo": "Flash - T2E22 – A Corrida de Sua Vida - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x22.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x22.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:21:29+00:00",
-      "tipo": "slot_ocupado",
-      "url": "",
-      "arquivo": "flash_t02ep23.html",
-      "ocupante": "flash_t02ep23.html",
-      "nome_ocupante": "Flash - T2E23 – Rápido o Bastante - 🍿Clau",
-      "nome_novo": "Flash - T2E23 – Final - 🍿Clau",
-      "link_ocupante": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/1x23.mp4",
-      "link_novo": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/60735/2x23.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:22:17+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "dead_like_me_t02ep01.html",
-      "novo": "dead_like_me_t01ep01.html",
-      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x1.mp4"
-    },
-    {
-      "quando": "2026-11-23T05:22:37+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:32:40+00:00",
-      "tipo": "rate_limit",
-      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e02.html",
-      "serie": "https://www.vini7xgrave.site/2025/08/inix-dead-like-me-2003.html"
-    },
-    {
-      "quando": "2026-11-23T05:32:40+00:00",
-      "tipo": "rate_limit",
-      "url": "https://www.vini7xgrave.site/2025/08/inix-dead-like-me-2003.html",
-      "seguidos": 1
-    },
-    {
-      "quando": "2026-11-23T05:34:08+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/08/inix-minha-vida-com-familia-walter-tp2e01.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T05:44:11+00:00",
-      "tipo": "rate_limit",
-      "url": "https://viniraveon.blogspot.com/2025/08/inix-minha-vida-com-familia-walter-tp2e01.html",
-      "serie": "https://www.vini7xgrave.site/2025/08/inix-minha-vida-com-familia-walter.html"
-    },
-    {
-      "quando": "2026-11-23T05:44:11+00:00",
-      "tipo": "rate_limit",
-      "url": "https://www.vini7xgrave.site/2025/08/inix-minha-vida-com-familia-walter.html",
-      "seguidos": 2
-    },
-    {
-      "quando": "2026-11-23T05:47:02+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/04/blog-post_44.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/08/inix-peaky-blinders-tp5e05.html",
-      "numero_href": 5,
-      "numero_texto": 6,
-      "texto": "Episódio 6"
-    },
-    {
-      "quando": "2026-11-23T05:47:02+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/04/blog-post_44.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/08/inix-peaky-blinders-tp5e05.html",
-      "numero_href": 5,
-      "numero_texto": 6,
-      "texto": "Episódio 6"
-    },
-    {
-      "quando": "2026-11-23T05:47:02+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/04/blog-post_44.html",
-      "slug": "peaky_blinders",
-      "problemas": [
-        "T2E5 aparece 2x com URLs diferentes",
-        "T2E6 aparece 2x com URLs diferentes",
-        "T3E1 aparece 2x com URLs diferentes",
-        "T3E2 aparece 2x com URLs diferentes",
-        "T3E3 aparece 2x com URLs diferentes",
-        "T3E4 aparece 2x com URLs diferentes",
-        "T4E5 aparece 2x com URLs diferentes",
-        "T5E6 aparece 2x com URLs diferentes",
-        "T5: faltam episódios [5]",
-        "T6: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8]"
-      ],
-      "encontrado": {
-        "T1": 6,
-        "T2": 8,
-        "T3": 10,
-        "T4": 6,
-        "T5": 6,
-        "T6": 1
-      }
-    },
-    {
-      "quando": "2026-11-23T05:47:47+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/08/inix-chespirito-sem-querer-querendo-2025.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-23T05:49:31+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/06/inix-haikyu-2014.html",
@@ -4513,53 +3438,1189 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
+      "numero_href": 13,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - O Mago de Diamond"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
+      "numero_href": 20,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Motim na Capital"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
+      "numero_href": 25,
+      "numero_texto": 26,
+      "texto": "Episódio 26 - Feras Feridas"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
+      "numero_href": 26,
+      "numero_texto": 27,
+      "texto": "Episódio 27 - Luz"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
+      "numero_href": 29,
+      "numero_texto": 30,
+      "texto": "Episódio 30 - O Mago Espelho"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
+      "numero_href": 33,
+      "numero_texto": 31,
+      "texto": "Episódio 31 - Perseguição na Neve"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
+      "numero_href": 32,
+      "numero_texto": 33,
+      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
+      "numero_href": 49,
+      "numero_texto": 48,
+      "texto": "Episódio 48 - Desespero vs. Esperança"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Chamas de Ódio"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
+      "numero_href": 13,
+      "numero_texto": 15,
+      "texto": "Episódio 15 - O Mago de Diamond"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
+      "numero_href": 20,
+      "numero_texto": 21,
+      "texto": "Episódio 21 - Motim na Capital"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
+      "numero_href": 25,
+      "numero_texto": 26,
+      "texto": "Episódio 26 - Feras Feridas"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
+      "numero_href": 26,
+      "numero_texto": 27,
+      "texto": "Episódio 27 - Luz"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e29_13.html",
+      "numero_href": 29,
+      "numero_texto": 30,
+      "texto": "Episódio 30 - O Mago Espelho"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e33.html",
+      "numero_href": 33,
+      "numero_texto": 31,
+      "texto": "Episódio 31 - Perseguição na Neve"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
+      "numero_href": 32,
+      "numero_texto": 33,
+      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
+      "numero_href": 49,
+      "numero_texto": 48,
+      "texto": "Episódio 48 - Desespero vs. Esperança"
+    },
+    {
+      "quando": "2026-11-23T08:35:03+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
+      "numero_href": 7,
+      "numero_texto": 8,
+      "texto": "Episódio 8 - Chamas de Ódio"
+    },
+    {
+      "quando": "2026-11-23T08:35:04+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:42:55+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e12.html",
+      "serie": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html"
+    },
+    {
+      "quando": "2026-11-23T08:42:55+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-23T08:44:17+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:44:47+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep01.html",
+      "novo": "dead_like_me_t01ep01.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x1.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:45:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:46:14+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep03.html",
+      "novo": "dead_like_me_t01ep03.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x3.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:46:44+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep04.html",
+      "novo": "dead_like_me_t01ep04.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x4.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:47:11+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:47:42+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep05.html",
+      "novo": "dead_like_me_t01ep05.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x5.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:48:11+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:48:41+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep06.html",
+      "novo": "dead_like_me_t01ep06.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x6.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:49:11+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep07.html",
+      "novo": "dead_like_me_t01ep07.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x7.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:49:38+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:50:09+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep08.html",
+      "novo": "dead_like_me_t01ep08.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x8.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:50:39+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep09.html",
+      "novo": "dead_like_me_t01ep09.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x9.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:51:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:51:47+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep10.html",
+      "novo": "dead_like_me_t01ep10.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x10.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:52:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e11.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:52:43+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep11.html",
+      "novo": "dead_like_me_t01ep11.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x11.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:53:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:53:39+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep13.html",
+      "novo": "dead_like_me_t01ep13.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x13.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:54:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp1e14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:54:42+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep14.html",
+      "novo": "dead_like_me_t01ep14.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x14.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:55:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp2e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:55:41+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep01.html",
+      "ocupante": "dead_like_me_t02ep01.html",
+      "nome_ocupante": "Dead Like Me - T2E1 – Pilot (Piloto) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E1 – Entra o Palhaço - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x1.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x1.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:56:05+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:56:41+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep03.html",
+      "ocupante": "dead_like_me_t02ep03.html",
+      "nome_ocupante": "Dead Like Me - T2E3 – Curious George (A curiosidade matou o gato) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E3 – História Fantasma - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x3.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x3.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:57:05+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep04.html",
+      "ocupante": "dead_like_me_t02ep04.html",
+      "nome_ocupante": "Dead Like Me - T2E4 – Reapercussions (Repercussões de ceifador) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E4 – A Margem Rasa - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x4.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x4.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:57:32+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep05.html",
+      "ocupante": "dead_like_me_t02ep05.html",
+      "nome_ocupante": "Dead Like Me - T2E5 – Reaping Havoc (Ceifando o caos) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E5 – Pressa - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x5.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x5.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:57:57+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp2e06.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T08:58:27+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep06.html",
+      "ocupante": "dead_like_me_t02ep06.html",
+      "nome_ocupante": "Dead Like Me - T2E6 – My Room (Meu Quarto) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E6 – Em Custódia - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x6.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x6.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:58:56+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep07.html",
+      "ocupante": "dead_like_me_t02ep07.html",
+      "nome_ocupante": "Dead Like Me - T2E7 – Reaper Madness (Loucura de ceifador) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E7 – Ritos de Passagem - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x7.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x7.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:59:23+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep08.html",
+      "ocupante": "dead_like_me_t02ep08.html",
+      "nome_ocupante": "Dead Like Me - T2E8 – A Cook (Um cozinheiro) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E8 – O Artista da Fuga - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x8.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x8.mp4"
+    },
+    {
+      "quando": "2026-11-23T08:59:48+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep09.html",
+      "ocupante": "dead_like_me_t02ep09.html",
+      "nome_ocupante": "Dead Like Me - T2E9 – Sunday Mornings (Manhã de domingo) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E9 – Fica Quieto, Meu Coração - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x9.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x9.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:00:10+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-dead-like-me-tp2e10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:00:40+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep10.html",
+      "ocupante": "dead_like_me_t02ep10.html",
+      "nome_ocupante": "Dead Like Me - T2E10 – Business Unfinished (Negócios inacabados) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E10 – Desafiando a Morte - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x10.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x10.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:01:09+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep11.html",
+      "ocupante": "dead_like_me_t02ep11.html",
+      "nome_ocupante": "Dead Like Me - T2E11 – The Bicycle Thief (Ladra de bicicleta) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E11 – Cinzas ao Vento - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x11.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x11.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:01:37+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep13.html",
+      "ocupante": "dead_like_me_t02ep13.html",
+      "nome_ocupante": "Dead Like Me - T2E13 – Vacation (Férias) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E13 – Última Chamada - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x13.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x13.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:02:01+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "dead_like_me_t02ep14.html",
+      "ocupante": "dead_like_me_t02ep14.html",
+      "nome_ocupante": "Dead Like Me - T2E14 – Rest in Peace (Descanse em paz) - 🍿Clau",
+      "nome_novo": "Dead Like Me - T2E14 – Sempre - 🍿Clau",
+      "link_ocupante": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/1x14.mp4",
+      "link_novo": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/2566/2x14.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:02:47+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep01.html",
+      "ocupante": "doctor_who_t01ep01.html",
+      "nome_ocupante": "Doctor Who - T1E1 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E1 – Rose - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E01_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x01..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:03:04+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep02.html",
+      "ocupante": "doctor_who_t01ep02.html",
+      "nome_ocupante": "Doctor Who - T1E2 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E2 – O Fim do Mundo - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E02_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x02..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:03:21+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e03_65.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:04:12+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep03.html",
+      "ocupante": "doctor_who_t01ep03.html",
+      "nome_ocupante": "Doctor Who - T1E3 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E3 – Os Mortos Inquietos - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E03_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x03..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:04:36+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e04_27.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:06:06+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep04.html",
+      "ocupante": "doctor_who_t01ep04.html",
+      "nome_ocupante": "Doctor Who - T1E4 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E4 – Alienígenas em Londres - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E04_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x04..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:06:35+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep05.html",
+      "ocupante": "doctor_who_t01ep05.html",
+      "nome_ocupante": "Doctor Who - T1E5 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E5 – Terceira Guerra Mundial - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E05_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x05..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:07:02+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e06_27.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:08:04+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep06.html",
+      "ocupante": "doctor_who_t01ep06.html",
+      "nome_ocupante": "Doctor Who - T1E6 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E6 – Dalek - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E06_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x06..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:08:32+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep07.html",
+      "ocupante": "doctor_who_t01ep07.html",
+      "nome_ocupante": "Doctor Who - T1E7 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E7 – O Jogo Longo - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E07_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x07..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:08:59+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep08.html",
+      "ocupante": "doctor_who_t01ep08.html",
+      "nome_ocupante": "Doctor Who - T1E8 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E8 – O Dia do Pai - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E08_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x08..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:09:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp1e09_27.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:09:54+00:00",
+      "tipo": "slot_ocupado",
+      "url": "",
+      "arquivo": "doctor_who_t01ep09.html",
+      "ocupante": "doctor_who_t01ep09.html",
+      "nome_ocupante": "Doctor Who - T1E9 - 🍿Clau",
+      "nome_novo": "Doctor Who - T1E9 – A Criança Vazia - 🍿Clau",
+      "link_ocupante": "https://cdn3.playmycnvs.com/Doctor%20Who%20S02%20E09_57243.mp4",
+      "link_novo": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x09..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:10:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e01_45.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:11:25+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "doctor_who_t1e1.html",
+      "novo": "doctor_who_t02ep01.html",
+      "link": "http://cloud2.playhdlugo.online/series/Doctor.Who/01/Doctor.Who.1x01..mp4"
+    },
+    {
+      "quando": "2026-11-23T09:14:00+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp5e07_28.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:17:33+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp7e13.html",
+      "slug": "tp7_e13",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T7E13 aparece 8x com URLs diferentes",
+        "T7: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+      ],
+      "encontrado": {
+        "T1": 2,
+        "T7": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:17:56+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep06.html",
+      "novo": "supermaes_t02ep06.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x6.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:18:10+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep07.html",
+      "novo": "supermaes_t02ep07.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x7.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:18:25+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep08.html",
+      "novo": "supermaes_t02ep08.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x8.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:18:40+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep09.html",
+      "novo": "supermaes_t02ep09.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x9.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:18:56+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep11.html",
+      "novo": "supermaes_t02ep11.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x11.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:19:10+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep12.html",
+      "novo": "supermaes_t02ep12.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x12.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:19:25+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep13.html",
+      "novo": "supermaes_t02ep13.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x13.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:19:41+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/04/arc-supermaes-tp07ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:20:04+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep08.html",
+      "novo": "supermaes_t07ep08.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x8.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:20:27+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "supermaes_t01ep09.html",
+      "novo": "supermaes_t07ep09.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/69555/1x9.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:20:50+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp7e16.html",
+      "slug": "tp7_e16",
+      "problemas": [
+        "T7E16 aparece 8x com URLs diferentes",
+        "T7: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T7": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:21:13+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/blog-post_25.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp6e0.html",
+      "numero_href": 0,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - O Sagrado Não Mente"
+    },
+    {
+      "quando": "2026-11-23T09:21:13+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/blog-post_25.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp6e0.html",
+      "numero_href": 0,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - O Sagrado Não Mente"
+    },
+    {
+      "quando": "2026-11-23T09:21:14+00:00",
+      "tipo": "remapeamento_bloqueado",
+      "url": "",
+      "arquivo": "the_100_t07ep12.html",
+      "novo": "the_100_t07ep01.html",
+      "link": "http://shd1.oneplayer.site/y45y456y45y54eytg345t4rfwserdfwe4rtrf34t65435redso/SHD1/48866/7x1.mp4"
+    },
+    {
+      "quando": "2026-11-23T09:21:37+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e01_57.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Escola de Magia / O Monstro do Baú"
+    },
+    {
+      "quando": "2026-11-23T09:21:37+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e06_19.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - \"Dia de Tênis\""
+    },
+    {
+      "quando": "2026-11-23T09:21:37+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e01_57.html",
+      "numero_href": 1,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - Escola de Magia / O Monstro do Baú"
+    },
+    {
+      "quando": "2026-11-23T09:21:37+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html",
+      "href": "https://vini7xgseries2.blogspot.com/2025/04/inix-tp3e06_19.html",
+      "numero_href": 6,
+      "numero_texto": 7,
+      "texto": "Episódio 7 - \"Dia de Tênis\""
+    },
+    {
+      "quando": "2026-11-23T09:21:37+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e12_14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:30:33+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e12_14.html",
+      "serie": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html"
+    },
+    {
+      "quando": "2026-11-23T09:30:33+00:00",
+      "tipo": "rate_limit",
+      "url": "https://www.vini7xgrave.site/2025/04/star-contra-as-forcas-do-mal.html",
+      "seguidos": 1
+    },
+    {
+      "quando": "2026-11-23T09:32:30+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp4e10.html",
+      "slug": "tp5_e10",
+      "problemas": [
+        "T4E10 aparece 8x com URLs diferentes",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T4": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:32:53+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-voce-you.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp3e03_77.html",
+      "numero_href": 3,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - Pergunte ao Amor"
+    },
+    {
+      "quando": "2026-11-23T09:32:53+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-voce-you.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp3e04_21.html",
+      "numero_href": 4,
+      "numero_texto": 5,
+      "texto": "Episódio 5 - Traga o Bebê de Volta"
+    },
+    {
+      "quando": "2026-11-23T09:32:53+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-voce-you.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp3e03_77.html",
+      "numero_href": 3,
+      "numero_texto": 4,
+      "texto": "Episódio 4 - Pergunte ao Amor"
+    },
+    {
+      "quando": "2026-11-23T09:32:53+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-voce-you.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp3e04_21.html",
+      "numero_href": 4,
+      "numero_texto": 5,
+      "texto": "Episódio 5 - Traga o Bebê de Volta"
+    },
+    {
+      "quando": "2026-11-23T09:33:17+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp3e08_23.html",
+      "slug": "tp3_e08",
+      "problemas": [
+        "T3E8 aparece 8x com URLs diferentes",
+        "T3: faltam episódios [1, 2, 3, 4, 5, 6, 7]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T3": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:33:39+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/iinix-tp6e06.html",
+      "slug": "vi_tp6_e06",
+      "problemas": [
+        "T6E6 aparece 8x com URLs diferentes",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]",
+        "T6: faltam episódios [1, 2, 3, 4, 5]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T4": 1,
+        "T6": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:34:02+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp4e8.html",
+      "slug": "tp4_e8",
+      "problemas": [
+        "T4E8 aparece 8x com URLs diferentes",
+        "T1: faltam episódios [2, 3, 4, 5, 6]",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]",
+        "T6: faltam episódios [1, 2, 3, 4, 5]"
+      ],
+      "encontrado": {
+        "T1": 2,
+        "T4": 8,
+        "T6": 1
+      }
+    },
+    {
+      "quando": "2026-11-23T09:34:24+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp1e07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:34:51+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp1e07.html",
+      "slug": "tp1_e07",
+      "problemas": [
+        "T1E7 aparece 8x com URLs diferentes",
+        "T1: faltam episódios [2, 3, 4, 5, 6]",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]",
+        "T5: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+      ],
+      "encontrado": {
+        "T1": 9,
+        "T4": 1,
+        "T5": 1
+      }
+    },
+    {
+      "quando": "2026-11-23T09:35:18+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp5e10_23.html",
+      "slug": "tp5_e10",
+      "problemas": [
+        "T5E10 aparece 8x com URLs diferentes",
+        "T1: faltam episódios [2, 3, 4, 5, 6]",
+        "T5: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+      ],
+      "encontrado": {
+        "T1": 2,
+        "T5": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:36:02+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp8e06.html",
+      "slug": "tp8_e06",
+      "problemas": [
+        "T8E6 aparece 8x com URLs diferentes",
+        "T8: faltam episódios [1, 2, 3, 4, 5]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T8": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:36:25+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/blog-post_23.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp4e08_91.html",
+      "numero_href": 8,
+      "numero_texto": 9,
+      "texto": "Episódio 9 - Os Patrulheiros"
+    },
+    {
+      "quando": "2026-11-23T09:36:25+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/blog-post_23.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp4e08_91.html",
+      "numero_href": 8,
+      "numero_texto": 9,
+      "texto": "Episódio 9 - Os Patrulheiros"
+    },
+    {
+      "quando": "2026-11-23T09:36:25+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/04/inix-tp2e06_23.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:37:55+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp2e10.html",
+      "slug": "tp2_e10",
+      "problemas": [
+        "T2E10 aparece 8x com URLs diferentes",
+        "T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T2": 8,
+        "T4": 1
+      }
+    },
+    {
+      "quando": "2026-11-23T09:38:22+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-tp4e08.html",
+      "slug": "tp4_e08",
+      "problemas": [
+        "T4E8 aparece 8x com URLs diferentes",
+        "T2: faltam episódios [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+        "T4: faltam episódios [1, 2, 3, 4, 5, 6, 7]"
+      ],
+      "encontrado": {
+        "T1": 1,
+        "T2": 1,
+        "T4": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:38:45+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e12_22.html",
+      "numero_href": 12,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - A Queda"
+    },
+    {
+      "quando": "2026-11-23T09:38:45+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e13_22.html",
+      "numero_href": 13,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - A Caça"
+    },
+    {
+      "quando": "2026-11-23T09:38:45+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e12_22.html",
+      "numero_href": 12,
+      "numero_texto": 1,
+      "texto": "Episódio 1 - A Queda"
+    },
+    {
+      "quando": "2026-11-23T09:38:45+00:00",
+      "tipo": "href_vs_texto",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html",
+      "href": "https://viniraveon.blogspot.com/2025/04/inix-tp1e13_22.html",
+      "numero_href": 13,
+      "numero_texto": 2,
+      "texto": "Episódio 2 - A Caça"
+    },
+    {
+      "quando": "2026-11-23T09:38:45+00:00",
+      "tipo": "serie_inconsistente",
+      "url": "https://www.vini7xgrave.site/2025/04/inix-vis-vis-2015.html",
+      "slug": "vis_a_vis",
+      "problemas": [
+        "T1E1 aparece 2x com URLs diferentes",
+        "T1E2 aparece 2x com URLs diferentes",
+        "T2: faltam episódios [1, 2]"
+      ],
+      "encontrado": {
+        "T1": 13,
+        "T2": 11,
+        "T3": 8,
+        "T4": 8
+      }
+    },
+    {
+      "quando": "2026-11-23T09:39:32+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T09:49:38+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/11/inix-mushoku-tensei-tp02ep08.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 121,
-      "ok": 36,
-      "429": 5,
+      "requisicoes": 196,
+      "ok": 104,
+      "429": 25,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 5,
+      "falhas_definitivas": 25,
       "html_invalido": 0,
-      "serie_inconsistente": 4,
-      "conflitos": 1,
-      "proxy_fallback": 5,
-      "proxy_hit": 1,
-      "proxmint_listas": 5,
+      "serie_inconsistente": 12,
+      "conflitos": 44,
+      "proxy_fallback": 25,
+      "proxy_hit": 22,
+      "proxmint_listas": 25,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 343,
+      "skip_perfeito": 631,
       "feed_hit": 0,
-      "http_necessario": 7,
-      "playwright_skip": 2,
-      "episodios_tp_encontrados": 1596,
+      "http_necessario": 64,
+      "playwright_skip": 17,
+      "episodios_tp_encontrados": 1520,
       "robo": "series",
-      "quando": "2026-11-23T08:25:09+00:00",
-      "duracao_min": 63.6
+      "quando": "2026-11-23T09:49:38+00:00",
+      "duracao_min": 83.4
     },
     "acumulado": {
-      "requisicoes": 1425,
-      "ok": 501,
-      "429": 92,
+      "requisicoes": 1621,
+      "ok": 605,
+      "429": 117,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 92,
+      "falhas_definitivas": 117,
       "html_invalido": 0,
-      "serie_inconsistente": 28,
-      "conflitos": 60,
-      "proxy_fallback": 92,
-      "proxy_hit": 51,
-      "proxmint_listas": 92,
+      "serie_inconsistente": 40,
+      "conflitos": 104,
+      "proxy_fallback": 117,
+      "proxy_hit": 73,
+      "proxmint_listas": 117,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 5351,
+      "skip_perfeito": 5982,
       "feed_hit": 0,
-      "http_necessario": 170,
-      "playwright_skip": 69,
-      "episodios_tp_encontrados": 13296
+      "http_necessario": 234,
+      "playwright_skip": 86,
+      "episodios_tp_encontrados": 14816
     }
   }
 }
