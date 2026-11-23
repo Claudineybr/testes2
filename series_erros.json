@@ -2,39 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T06:51:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-kakegurui-2017.html",
-      "href": "https://viniraveon.blogspot.com/2025/06/inix-tp2e07.html",
-      "numero_href": 7,
-      "numero_texto": 6,
-      "texto": "Episódio 6. A Garota de Hollywood"
-    },
-    {
-      "quando": "2026-11-23T06:51:03+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-kakegurui-2017.html",
-      "href": "https://viniraveon.blogspot.com/2025/06/inix-tp2e07.html",
-      "numero_href": 7,
-      "numero_texto": 6,
-      "texto": "Episódio 6. A Garota de Hollywood"
-    },
-    {
-      "quando": "2026-11-23T06:51:03+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/06/inix-kakegurui-2017.html",
-      "slug": "kakegurui",
-      "problemas": [
-        "T1E1 aparece 2x com URLs diferentes",
-        "T1E2 aparece 2x com URLs diferentes",
-        "T2: faltam episódios [1, 2]"
-      ],
-      "encontrado": {
-        "T1": 14,
-        "T2": 10
-      }
-    },
-    {
       "quando": "2026-11-23T06:51:51+00:00",
       "tipo": "http_esgotado",
       "url": "https://www.vini7xgrave.site/2025/06/arc-tumulo-dos-vagalumes-1988.html",
@@ -4809,52 +4776,74 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp01ep07.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-23T12:23:56+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://www.vini7xgrave.site/2024/10/inix-minority-report-nova-lei-14.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T12:27:45+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-23T12:36:40+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
       "requisicoes": 59,
-      "ok": 36,
+      "ok": 37,
       "429": 2,
       "5xx": 0,
       "retries": 0,
       "falhas_definitivas": 2,
       "html_invalido": 0,
-      "serie_inconsistente": 7,
+      "serie_inconsistente": 0,
       "conflitos": 0,
       "proxy_fallback": 2,
       "proxy_hit": 1,
       "proxmint_listas": 2,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
-      "skip_perfeito": 80,
+      "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 2,
-      "playwright_skip": 1,
-      "episodios_tp_encontrados": 822,
+      "http_necessario": 4,
+      "playwright_skip": 3,
+      "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-23T12:09:30+00:00",
-      "duracao_min": 28.3
+      "quando": "2026-11-23T12:36:40+00:00",
+      "duracao_min": 26.1
     },
     "acumulado": {
-      "requisicoes": 1918,
-      "ok": 792,
-      "429": 140,
+      "requisicoes": 1977,
+      "ok": 829,
+      "429": 142,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 140,
+      "falhas_definitivas": 142,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 140,
-      "proxy_hit": 92,
-      "proxmint_listas": 140,
+      "proxy_fallback": 142,
+      "proxy_hit": 93,
+      "proxmint_listas": 142,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 274,
-      "playwright_skip": 105,
+      "http_necessario": 278,
+      "playwright_skip": 108,
       "episodios_tp_encontrados": 19318
     }
   }
