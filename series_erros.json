@@ -2,32 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T06:55:18+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-pegando-uma-onda-com-voce-2019.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T06:56:09+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-walking-dead-2010.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/05/inix-tp8e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Piedade"
-    },
-    {
-      "quando": "2026-11-23T06:56:09+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-walking-dead-2010.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/05/inix-tp8e0.html",
-      "numero_href": 0,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - Piedade"
-    },
-    {
       "quando": "2026-11-23T06:56:32+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
@@ -4796,52 +4770,74 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/06/arc-era-uma-vez-tp01ep22-2011.html7",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-24T05:54:45+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp5e05.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-24T05:56:40+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-minha-vida-com-familia-walter-tp2e01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-24T06:05:35+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/08/inix-minha-vida-com-familia-walter-tp2e01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 66,
-      "ok": 45,
-      "429": 1,
+      "requisicoes": 65,
+      "ok": 43,
+      "429": 2,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 1,
+      "falhas_definitivas": 2,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 1,
-      "proxy_hit": 0,
-      "proxmint_listas": 1,
+      "proxy_fallback": 2,
+      "proxy_hit": 1,
+      "proxmint_listas": 2,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 14,
-      "playwright_skip": 13,
+      "http_necessario": 12,
+      "playwright_skip": 11,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-23T21:58:12+00:00",
-      "duracao_min": 21.9
+      "quando": "2026-11-24T06:05:35+00:00",
+      "duracao_min": 22.8
     },
     "acumulado": {
-      "requisicoes": 2043,
-      "ok": 874,
-      "429": 143,
+      "requisicoes": 2108,
+      "ok": 917,
+      "429": 145,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 143,
+      "falhas_definitivas": 145,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 143,
-      "proxy_hit": 93,
-      "proxmint_listas": 143,
+      "proxy_fallback": 145,
+      "proxy_hit": 94,
+      "proxmint_listas": 145,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 292,
-      "playwright_skip": 121,
+      "http_necessario": 304,
+      "playwright_skip": 132,
       "episodios_tp_encontrados": 19318
     }
   }
