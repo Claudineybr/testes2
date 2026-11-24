@@ -3,24 +3,6 @@
   "eventos": [
     {
       "quando": "2026-11-23T06:56:32+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp1e13_10.html",
-      "numero_href": 13,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - A Mamãe Está Fora de Casa Parte 1"
-    },
-    {
-      "quando": "2026-11-23T06:56:32+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "href": "https://viniraveon.blogspot.com/2025/05/inix-tp1e13_10.html",
-      "numero_href": 13,
-      "numero_texto": 1,
-      "texto": "Episódio 1 - A Mamãe Está Fora de Casa Parte 1"
-    },
-    {
-      "quando": "2026-11-23T06:56:32+00:00",
       "tipo": "serie_inconsistente",
       "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
       "slug": "eu_a_patroa_e_as_criancas",
@@ -4792,52 +4774,66 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2025/08/inix-minha-vida-com-familia-walter-tp2e01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-24T17:00:48+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-24T17:08:41+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 65,
-      "ok": 43,
-      "429": 2,
+      "requisicoes": 54,
+      "ok": 33,
+      "429": 1,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 2,
+      "falhas_definitivas": 1,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 2,
-      "proxy_hit": 1,
-      "proxmint_listas": 2,
+      "proxy_fallback": 1,
+      "proxy_hit": 0,
+      "proxmint_listas": 1,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 12,
-      "playwright_skip": 11,
+      "http_necessario": 2,
+      "playwright_skip": 1,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-24T06:05:35+00:00",
-      "duracao_min": 22.8
+      "quando": "2026-11-24T17:08:41+00:00",
+      "duracao_min": 17.5
     },
     "acumulado": {
-      "requisicoes": 2108,
-      "ok": 917,
-      "429": 145,
+      "requisicoes": 2162,
+      "ok": 950,
+      "429": 146,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 145,
+      "falhas_definitivas": 146,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 145,
+      "proxy_fallback": 146,
       "proxy_hit": 94,
-      "proxmint_listas": 145,
+      "proxmint_listas": 146,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 304,
-      "playwright_skip": 132,
+      "http_necessario": 306,
+      "playwright_skip": 133,
       "episodios_tp_encontrados": 19318
     }
   }
