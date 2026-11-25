@@ -2,66 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T06:56:32+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-eu-patroa-e-as-criancas-2001.html",
-      "slug": "eu_a_patroa_e_as_criancas",
-      "problemas": [
-        "T1E1 aparece 2x com URLs diferentes",
-        "T2: faltam episódios [1]"
-      ],
-      "encontrado": {
-        "T1": 13,
-        "T2": 27
-      }
-    },
-    {
-      "quando": "2026-11-23T06:56:55+00:00",
-      "tipo": "serie_inconsistente",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-casa-do-dragao.html",
-      "slug": "a_casa_do_dragao",
-      "problemas": [
-        "T1E5 aparece 2x com URLs diferentes",
-        "T2: faltam episódios [5]"
-      ],
-      "encontrado": {
-        "T1": 11,
-        "T2": 7
-      }
-    },
-    {
-      "quando": "2026-11-23T06:57:16+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "o_jogo_do_diabo_t01ep00.html",
-      "novo": "o_jogo_do_diabo_t01ep01.html",
-      "link": "http://shd9.oneplayer.site/y456y654uj54tyg34gfwer45r3hj465yh354rtgfwe4rfgtwku51/SHD9/214582/1x1.mp4"
-    },
-    {
-      "quando": "2026-11-23T06:58:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e03_7.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T06:59:51+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp1e04_7.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
-      "quando": "2026-11-23T07:02:24+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e03_7.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-23T07:03:51+00:00",
       "tipo": "http_esgotado",
       "url": "https://viniraveon.blogspot.com/2025/05/inix-tp2e05_7.html",
@@ -4788,52 +4728,98 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-25T01:24:45+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e13.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T01:26:44+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp2e04.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T01:30:10+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2026/03/inix-armazem-13-tp4ep20.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T01:33:02+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/05/arc-classe-dos-herois-fraco-tp02ep07.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T01:33:52+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/06/inix-tp4e02_10.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T01:43:52+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/06/inix-tp4e02_10.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 54,
-      "ok": 33,
-      "429": 1,
+      "requisicoes": 78,
+      "ok": 51,
+      "429": 5,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 1,
+      "falhas_definitivas": 5,
       "html_invalido": 0,
       "serie_inconsistente": 0,
       "conflitos": 0,
-      "proxy_fallback": 1,
-      "proxy_hit": 0,
-      "proxmint_listas": 1,
+      "proxy_fallback": 5,
+      "proxy_hit": 4,
+      "proxmint_listas": 5,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 2,
-      "playwright_skip": 1,
+      "http_necessario": 20,
+      "playwright_skip": 19,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-24T17:08:41+00:00",
-      "duracao_min": 17.5
+      "quando": "2026-11-25T01:43:52+00:00",
+      "duracao_min": 29.5
     },
     "acumulado": {
-      "requisicoes": 2162,
-      "ok": 950,
-      "429": 146,
+      "requisicoes": 2240,
+      "ok": 1001,
+      "429": 151,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 146,
+      "falhas_definitivas": 151,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 146,
-      "proxy_hit": 94,
-      "proxmint_listas": 146,
+      "proxy_fallback": 151,
+      "proxy_hit": 98,
+      "proxmint_listas": 151,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 306,
-      "playwright_skip": 133,
+      "http_necessario": 326,
+      "playwright_skip": 152,
       "episodios_tp_encontrados": 19318
     }
   }
