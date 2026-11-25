@@ -2,22 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T07:06:04+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "o_domo_de_vidro_t01ep01.html",
-      "novo": "lucifer_t06ep01.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/63174/6x1.mp4"
-    },
-    {
-      "quando": "2026-11-23T07:06:23+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/05/arc-lucifer-tp06ep02.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-23T07:06:54+00:00",
       "tipo": "remapeamento_bloqueado",
       "url": "",
@@ -4772,6 +4756,20 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-25T20:11:07+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-25T20:18:58+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4796,27 +4794,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-25T10:21:22+00:00",
+      "quando": "2026-11-25T20:18:58+00:00",
       "duracao_min": 17.0
     },
     "acumulado": {
-      "requisicoes": 2293,
-      "ok": 1033,
-      "429": 152,
+      "requisicoes": 2346,
+      "ok": 1065,
+      "429": 153,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 152,
+      "falhas_definitivas": 153,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 152,
+      "proxy_fallback": 153,
       "proxy_hit": 98,
-      "proxmint_listas": 152,
+      "proxmint_listas": 153,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 327,
+      "http_necessario": 328,
       "playwright_skip": 152,
       "episodios_tp_encontrados": 19318
     }
