@@ -2,23 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T07:09:12+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/s.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/05/inix-tp1e08_25.html",
-      "numero_href": 8,
-      "numero_texto": 9,
-      "texto": "Episódio 9 - Ponto Cego"
-    },
-    {
-      "quando": "2026-11-23T07:10:28+00:00",
-      "tipo": "http_esgotado",
-      "url": "https://marcosx7.blogspot.com/2025/10/arc-walking-dead-daryl-tp03ep07_26.html",
-      "status": 429,
-      "detalhe": "HTTP 429",
-      "tentativas": 1
-    },
-    {
       "quando": "2026-11-23T07:20:29+00:00",
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/arc-walking-dead-daryl-tp03ep07_26.html",
@@ -4763,6 +4746,20 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-26T21:14:36+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-26T21:22:26+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4787,27 +4784,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-26T12:15:30+00:00",
+      "quando": "2026-11-26T21:22:26+00:00",
       "duracao_min": 17.0
     },
     "acumulado": {
-      "requisicoes": 2453,
-      "ok": 1130,
-      "429": 155,
+      "requisicoes": 2506,
+      "ok": 1162,
+      "429": 156,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 155,
+      "falhas_definitivas": 156,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 155,
+      "proxy_fallback": 156,
       "proxy_hit": 98,
-      "proxmint_listas": 155,
+      "proxmint_listas": 156,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 331,
+      "http_necessario": 332,
       "playwright_skip": 153,
       "episodios_tp_encontrados": 19318
     }
