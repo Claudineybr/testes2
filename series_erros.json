@@ -2,23 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T07:06:54+00:00",
-      "tipo": "remapeamento_bloqueado",
-      "url": "",
-      "arquivo": "o_domo_de_vidro_t01ep02.html",
-      "novo": "lucifer_t06ep02.html",
-      "link": "http://shd2.oneplayer.site/5yu456y45tge4rtfg4w3ertf34t43retg54y65uj65npw/SHD2/63174/6x2.mp4"
-    },
-    {
-      "quando": "2026-11-23T07:07:19+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/05/inix-ash-vs-evil-dead-2015.html",
-      "href": "https://viniseries3.blogspot.com/2025/05/inix-tp1e05_6.html",
-      "numero_href": 5,
-      "numero_texto": 3,
-      "texto": "Episódio 3 - Livros do Além"
-    },
-    {
       "quando": "2026-11-23T07:07:19+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/05/inix-ash-vs-evil-dead-2015.html",
@@ -4770,12 +4753,26 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-26T03:07:39+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-gatilho-tp1e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-26T03:15:30+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-gatilho-tp1e03.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 53,
-      "ok": 32,
+      "requisicoes": 54,
+      "ok": 33,
       "429": 1,
       "5xx": 0,
       "retries": 0,
@@ -4790,32 +4787,32 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 1,
-      "playwright_skip": 0,
+      "http_necessario": 2,
+      "playwright_skip": 1,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-25T20:18:58+00:00",
-      "duracao_min": 17.0
+      "quando": "2026-11-26T03:15:30+00:00",
+      "duracao_min": 17.4
     },
     "acumulado": {
-      "requisicoes": 2346,
-      "ok": 1065,
-      "429": 153,
+      "requisicoes": 2400,
+      "ok": 1098,
+      "429": 154,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 153,
+      "falhas_definitivas": 154,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 153,
+      "proxy_fallback": 154,
       "proxy_hit": 98,
-      "proxmint_listas": 153,
+      "proxmint_listas": 154,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 328,
-      "playwright_skip": 152,
+      "http_necessario": 330,
+      "playwright_skip": 153,
       "episodios_tp_encontrados": 19318
     }
   }
