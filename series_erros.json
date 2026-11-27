@@ -2,21 +2,6 @@
   "contagem": {},
   "eventos": [
     {
-      "quando": "2026-11-23T07:20:29+00:00",
-      "tipo": "rate_limit",
-      "url": "https://marcosx7.blogspot.com/2025/10/arc-walking-dead-daryl-tp03ep07_26.html",
-      "retentativa": true
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
-      "numero_href": 13,
-      "numero_texto": 15,
-      "texto": "Episódio 15 - O Mago de Diamond"
-    },
-    {
       "quando": "2026-11-23T07:30:21+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
@@ -4760,6 +4745,20 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-27T03:51:37+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-27T03:59:29+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4784,27 +4783,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-26T21:22:26+00:00",
-      "duracao_min": 17.0
+      "quando": "2026-11-27T03:59:29+00:00",
+      "duracao_min": 17.1
     },
     "acumulado": {
-      "requisicoes": 2506,
-      "ok": 1162,
-      "429": 156,
+      "requisicoes": 2559,
+      "ok": 1194,
+      "429": 157,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 156,
+      "falhas_definitivas": 157,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 156,
+      "proxy_fallback": 157,
       "proxy_hit": 98,
-      "proxmint_listas": 156,
+      "proxmint_listas": 157,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 332,
+      "http_necessario": 333,
       "playwright_skip": 153,
       "episodios_tp_encontrados": 19318
     }
