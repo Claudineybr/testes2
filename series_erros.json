@@ -5,24 +5,6 @@
       "quando": "2026-11-23T07:30:21+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e20_13.html",
-      "numero_href": 20,
-      "numero_texto": 21,
-      "texto": "Episódio 21 - Motim na Capital"
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e25_13.html",
-      "numero_href": 25,
-      "numero_texto": 26,
-      "texto": "Episódio 26 - Feras Feridas"
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
       "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e26.html",
       "numero_href": 26,
       "numero_texto": 27,
@@ -4759,6 +4741,20 @@
       "tipo": "rate_limit",
       "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-27T13:33:59+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-27T13:41:49+00:00",
+      "tipo": "rate_limit",
+      "url": "https://marcosx7.blogspot.com/2025/10/inix-bom-dia-veronica-tp02ep01.html",
+      "retentativa": true
     }
   ],
   "metricas": {
@@ -4783,27 +4779,27 @@
       "playwright_skip": 0,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-27T03:59:29+00:00",
-      "duracao_min": 17.1
+      "quando": "2026-11-27T13:41:49+00:00",
+      "duracao_min": 17.0
     },
     "acumulado": {
-      "requisicoes": 2559,
-      "ok": 1194,
-      "429": 157,
+      "requisicoes": 2612,
+      "ok": 1226,
+      "429": 158,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 157,
+      "falhas_definitivas": 158,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 157,
+      "proxy_fallback": 158,
       "proxy_hit": 98,
-      "proxmint_listas": 157,
+      "proxmint_listas": 158,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 333,
+      "http_necessario": 334,
       "playwright_skip": 153,
       "episodios_tp_encontrados": 19318
     }
