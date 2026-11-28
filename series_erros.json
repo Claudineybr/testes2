@@ -5,33 +5,6 @@
       "quando": "2026-11-23T07:30:21+00:00",
       "tipo": "href_vs_texto",
       "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e32_13.html",
-      "numero_href": 32,
-      "numero_texto": 33,
-      "texto": "Episódio 33 - Para Ajudar Alguém um Dia"
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e49.html",
-      "numero_href": 49,
-      "numero_texto": 48,
-      "texto": "Episódio 48 - Desespero vs. Esperança"
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
-      "href": "https://vini7xgseries2.blogspot.com/2025/09/inix-black-clover-tp2e07_13.html",
-      "numero_href": 7,
-      "numero_texto": 8,
-      "texto": "Episódio 8 - Chamas de Ódio"
-    },
-    {
-      "quando": "2026-11-23T07:30:21+00:00",
-      "tipo": "href_vs_texto",
-      "url": "https://www.vini7xgrave.site/2025/09/black-clover-1-temporada-sinopse-num.html",
       "href": "https://marcosx7.blogspot.com/2025/09/inix-black-clover-tp1e13_13.html",
       "numero_href": 13,
       "numero_texto": 15,
@@ -4750,12 +4723,34 @@
       "tipo": "rate_limit",
       "url": "https://viniraveon.blogspot.com/2025/09/inix-lendas-do-amanha-tp5e04.html",
       "retentativa": true
+    },
+    {
+      "quando": "2026-11-28T04:13:41+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2025/09/inix-filhos-da-anarquia-tp4e12.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-28T04:19:28+00:00",
+      "tipo": "http_esgotado",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "status": 429,
+      "detalhe": "HTTP 429",
+      "tentativas": 1
+    },
+    {
+      "quando": "2026-11-28T04:27:25+00:00",
+      "tipo": "rate_limit",
+      "url": "https://viniraveon.blogspot.com/2026/01/inix-uma-familia-da-pesada-tp2e03.html",
+      "retentativa": true
     }
   ],
   "metricas": {
     "ultima_run": {
-      "requisicoes": 61,
-      "ok": 39,
+      "requisicoes": 69,
+      "ok": 47,
       "429": 2,
       "5xx": 0,
       "retries": 0,
@@ -4770,32 +4765,32 @@
       "link_convertido_w2embed": 0,
       "skip_perfeito": 0,
       "feed_hit": 0,
-      "http_necessario": 8,
-      "playwright_skip": 7,
+      "http_necessario": 16,
+      "playwright_skip": 15,
       "episodios_tp_encontrados": 0,
       "robo": "series",
-      "quando": "2026-11-27T22:34:59+00:00",
-      "duracao_min": 22.1
+      "quando": "2026-11-28T04:27:25+00:00",
+      "duracao_min": 23.2
     },
     "acumulado": {
-      "requisicoes": 2673,
-      "ok": 1265,
-      "429": 160,
+      "requisicoes": 2742,
+      "ok": 1312,
+      "429": 162,
       "5xx": 0,
       "retries": 0,
-      "falhas_definitivas": 160,
+      "falhas_definitivas": 162,
       "html_invalido": 0,
       "serie_inconsistente": 84,
       "conflitos": 117,
-      "proxy_fallback": 160,
-      "proxy_hit": 99,
-      "proxmint_listas": 160,
+      "proxy_fallback": 162,
+      "proxy_hit": 100,
+      "proxmint_listas": 162,
       "link_em_a_href": 0,
       "link_convertido_w2embed": 0,
       "skip_perfeito": 6863,
       "feed_hit": 0,
-      "http_necessario": 342,
-      "playwright_skip": 160,
+      "http_necessario": 358,
+      "playwright_skip": 175,
       "episodios_tp_encontrados": 19318
     }
   }
